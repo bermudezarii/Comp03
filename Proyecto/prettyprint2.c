@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <string.h> 
 
-extern void startBeamer(FILE * archivoPretty);
-extern void addExplanation(FILE * archivoPretty); 
-extern void startListing(FILE * archivoPretty);
+extern void startListing(FILE * archivoPretty, char * titulo);
 extern void endListing(FILE * archivoPretty); 
-extern void endBeamer(FILE * archivoPretty); 
+extern FILE * beamer; 
 extern FILE * yyin;
 extern int yylex();
 extern int yylineno;
@@ -38,15 +36,7 @@ int iActual = 0; /* esta variable ayuda a ver por donde va del array de tramposo
 int contadorBeamer = 0; 
 int banderaCuidadoEspacios = 0; 
 
-//los pasos de beamer 
-void stepsBeamerPretty(int value, FILE * archivoPretty, char*name){
-  startBeamer(archivoPretty); 
-  addExplanation(archivoPretty); 
-  startListing(archivoPretty); 
-  prettyprintSelect(value, archivoPretty, name); 
-  endListing(archivoPretty); 
-  endBeamer(archivoPretty); 
-}
+
 
 
 void prettyprintSelect(int value, FILE * archivoPretty, char*name){
@@ -423,7 +413,7 @@ int prettyprintGNU(FILE * archivoPretty, char*name){
       }
       if(contadorBeamer >= 13){
         endListing(archivoPretty); 
-        startListing(archivoPretty); 
+        startListing(archivoPretty, "C\\'odigo Pretty Print GNU"); 
         contadorBeamer = 0; 
         if(banderaCuidadoEspacios == 1){
           generadorEspacios(contador, archivoPretty); 
@@ -813,7 +803,7 @@ int prettyprintBSD(FILE * archivoPretty, char*name){
       }
       if(contadorBeamer >= 13){
         endListing(archivoPretty); 
-        startListing(archivoPretty); 
+        startListing(archivoPretty, "C\\'odigo Pretty Print BSD"); 
         contadorBeamer = 0; 
         if(banderaCuidadoEspacios == 1){
           generadorEspacios(contador, archivoPretty); 
@@ -1167,7 +1157,7 @@ int prettyprintAllman(FILE * archivoPretty, char*name){
       }
       if(contadorBeamer >= 13){
         endListing(archivoPretty); 
-        startListing(archivoPretty); 
+        startListing(archivoPretty, "C\\'odigo Pretty Print Allman"); 
         contadorBeamer = 0; 
         if(banderaCuidadoEspacios == 1){
           generadorEspacios(contador, archivoPretty); 

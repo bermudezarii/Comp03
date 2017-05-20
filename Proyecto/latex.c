@@ -42,8 +42,10 @@ void addExplanation(FILE * archivoPretty){
 
 
 
-void startListing(FILE * archivoPretty){
-    fputs("\\begin{frame}[fragile]\n\\frametitle{C\\'odigo Analizado}\n\\begin{lstlisting}[style=CStyle]\n", archivoPretty); 
+void startListing(FILE * archivoPretty, char * titulo){
+    fputs("\\begin{frame}[fragile]\n\\frametitle{", archivoPretty); 
+    fputs(titulo, archivoPretty); 
+    fputs("}\n\\begin{lstlisting}[style=CStyle]\n", archivoPretty);
 }
 
 void endListing(FILE * archivoPretty){

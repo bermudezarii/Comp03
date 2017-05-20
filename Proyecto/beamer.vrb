@@ -1,0 +1,7 @@
+\frametitle{C\'odigo Preprocesado (Sin Pretty Print)}
+\begin{lstlisting}[style=CStyle]
+( k % 80 ? b [ k ] : 10 ) ;
+A += 0.04 ;
+B += 0.02 ;
+}
+} \end{lstlisting}
