@@ -7,6 +7,11 @@
 #include <stdlib.h>
 #include <math.h>
 
+extern void startBeamer(FILE * archivoPretty);
+extern void addExplanation(FILE * archivoPretty); 
+extern void startListing(FILE * archivoPretty);
+extern void endListing(FILE * archivoPretty); 
+extern void endBeamer(FILE * archivoPretty); 
 extern FILE * yyin;
 extern int yylex();
 extern int yylineno;
@@ -14,7 +19,9 @@ extern int yyleng;
 extern char* yytext;
 extern int endline=1; 
 
-
+//banderas para el beamer 
+int contadorBeamerP = 0; 
+int banderaCuidadoEspaciosP = 0; 
 
 int preprocesador1(FILE* archivoActual,FILE* archivoTemporal){	
     

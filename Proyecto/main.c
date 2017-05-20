@@ -8,6 +8,7 @@
 #include "preprocess.c"
 #include "myscanner.c" 
 #include "prettyprint2.c"
+#include "latex.c" 
 
 extern int  yyparse();
 extern FILE* archivotmp;
@@ -45,6 +46,8 @@ int main(int argc, char *argv[])
         archivotmp=tmpfile;
         /*
             Se le indica a flex cuál es el archivo actual que se está leyendo
+    1 es el archivo q lee, 2 el tipo de pretty print, 3 es si quiere en el mismo archivo o no, 4 es si quiere el preprocess
+
         */
         yyin = archivoEntrada; 
 		if(archivoEntrada && argc>=5){
@@ -79,9 +82,9 @@ int main(int argc, char *argv[])
                 memset(gramaticas,0,sizeof(gramaticas));
                 
                 if(strcmp(argv[3],"1")==0) 
-                    stepsBeamer(atoi(argv[2]), tmpPretty,"tmpPretty");
+                    stepsBeamerPretty(atoi(argv[2]), tmpPretty,"tmpPretty");
                 else 
-                    stepsBeamer(atoi(argv[2]), archivoEntrada, argv[1]);
+                    stepsBeamerPretty(atoi(argv[2]), archivoEntrada, argv[1]);
                 
                 
                 //prettyprintSelect(atoi(argv[2]), tmpPretty);

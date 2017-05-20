@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <string.h> 
-#include "latex.c"
+
+extern void startBeamer(FILE * archivoPretty);
+extern void addExplanation(FILE * archivoPretty); 
+extern void startListing(FILE * archivoPretty);
+extern void endListing(FILE * archivoPretty); 
+extern void endBeamer(FILE * archivoPretty); 
 extern FILE * yyin;
 extern int yylex();
 extern int yylineno;
 extern int yyleng;
 extern char* yytext;
 
-extern int tabs;
 static char espacios[1000] = ""; /*String de espacios*/
 int contador = 0; /*Contador es espacios, encargado de ver cuántos espacios dejar*/
-#define espaciosLlave 2
-#define espaciosParentesis 1
-static char prettyprint[1000] = "";
-static char nuevo[1000][1000];
-static char viejo[1000][1000];
+
 // muchas banderas que nos ayudan a determinar casos para los prettyprint
 int ciclo = 0;                              //si hay ciclos, se deben de contar para saber cuantos devolver espacios devolver
 int banderaDo = 0;                          // el do es un caso especial porque luego sigue un while /
@@ -39,14 +39,13 @@ int contadorBeamer = 0;
 int banderaCuidadoEspacios = 0; 
 
 //los pasos de beamer 
-void stepsBeamer(int value, FILE * archivoPretty, char*name){
+void stepsBeamerPretty(int value, FILE * archivoPretty, char*name){
   startBeamer(archivoPretty); 
   addExplanation(archivoPretty); 
   startListing(archivoPretty); 
   prettyprintSelect(value, archivoPretty, name); 
   endListing(archivoPretty); 
   endBeamer(archivoPretty); 
-
 }
 
 
