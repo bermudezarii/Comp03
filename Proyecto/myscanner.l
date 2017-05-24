@@ -1,11 +1,18 @@
 %{
 //#include "myscanner.h"
 #include "parser.tab.h"
+#include "yyltype.h"
 void yyerror(char *);
 int linea = 1;
+int columna = 1; 
+YYLTYPE yylloc = {1,1,1,1}; 
 int endline;
 int fdefine=1;
 char* gramaticas[500000];
+
+#define YY_USER_ACTION yylloc.first_line = yylloc.last_line = linea; \
+    yylloc.first_column = columna; yylloc.last_column = columna + yyleng - 1; \
+    columna += yyleng;
 
 
 %}
@@ -113,7 +120,7 @@ L?'(\\.|[^\\'])+'	             											{strcat(gramaticas,yytext);strcat(gram
 ["]([^"]|\\.)*["]	   	      	 											{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
 
 L?'(\\.|[^\\']|\n)*'          	  											{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
-\n|\z|\s|\r		 															{linea++;endline=0;/*ignore*/;if(fdefine==0){fdefine=1;return ('\n');}else{fdefine=1;}}
+\n|\z|\s|\r		 															{columna = 1; linea++;endline=0;/*ignore*/;if(fdefine==0){fdefine=1;return ('\n');}else{fdefine=1;}}
 
 
 [ \t\n]

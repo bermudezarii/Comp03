@@ -211,12 +211,17 @@ declaration
 declaration_specifiers
 	: storage_class_specifier {/*printf("%d con %s  declaration_specifiers: storage_class_specifier \n",linea, gramaticas);*/}
 	| storage_class_specifier declaration_specifiers {/*printf("%d con %s  declaration_specifiers: storage_class_specifier declaration_specifiers\n",linea, gramaticas);*/}
+	| storage_class_specifier error {yyerror("missing declaration_specifiers");}
 	| type_specifier {/*printf("%d con %s  declaration_specifiers: type_specifier\n",linea, gramaticas);*/}
-	| type_name
+	| type_name {}
 	| type_specifier declaration_specifiers {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
-	| type_name declaration_specifiers 
+	| type_specifier error {yyerror("missing declaration_specifiers");}
+	| type_name declaration_specifiers {}
+	| type_name error {yyerror("missing declaration_specifiers");}
 	| type_specifier pointer {/*printf("%d con %s  declaration_specifiers: type_specifier\n",linea, gramaticas);*/}
+	| type_specifier error  {yyerror("missing pointer");}
 	| type_name pointer
+	| type_name error {yyerror("missing pointer");}
 	| type_specifier pointer declaration_specifiers {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
 	| type_name pointer declaration_specifiers {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
 
@@ -504,7 +509,9 @@ jump_statement
 	| CONTINUE SEMICOLON {/*printf("%d con %s  jump_statement: CONTINUE SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 	| BREAK SEMICOLON {/*printf("%d con %s  jump_statement: BREAK SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 	| RETURN SEMICOLON {/*printf("%d con %s  jump_statement: RETURN SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+	| RETURN error {yyerror(" missing ; ");}
 	| RETURN expression SEMICOLON {/*printf("%d con %s  jump_statement: RETURN expression SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+	| RETURN expression error {yyerror("missing ;");}
 	;
 
 translation_unit

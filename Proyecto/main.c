@@ -15,6 +15,7 @@ extern FILE* archivotmp;
 extern int linea;
 extern banderaSyntaxError; 
 
+char * nombre; 
 FILE * beamer; 
 
 
@@ -41,6 +42,7 @@ int main(int argc, char *argv[])
         FILE *archivoEntrada;
         FILE *archivoEntradaTem;
         FILE *tmpfile = fopen("tmpfile.c", "w");
+        nombre = argv[1];
         archivoEntrada  = fopen(argv[1], "r");
         archivotmp=tmpfile;
         yyin = archivoEntrada; 
