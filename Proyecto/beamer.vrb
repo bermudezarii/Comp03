@@ -1,14 +1,11 @@
-\frametitle{C\'odigo Preprocesado (Sin Pretty Print)}
+\frametitle{C\'odigo Pretty Print GNU}
 \begin{lstlisting}[style=CStyle]
-! not * ! ! me + ( char ) lotte ] ) ;
-not ; for ( ; ! 'a' ; ) ; } while (
- ( char * ) lie -  ( char * ) lie ) ; {
-register this ; switch ( ( char ) lie
-[ ( char ) lotte ] - 1 * ! out ) {
-char * les , get = 0xFF , my ; case ' ' :
-* ( ( char * ) & lotte ) += 15 ; ! not + ( char ) * lie * 's' ;
-this + 1 + not ; default : 0xF + ( char * ) lie ; } } }
-get - ! out ;
-if ( not -- )
-goto hell ;
-exit ( ( char ) lotte ) ; } \end{lstlisting}
+      }
+    printf ("Rays: %LF\n", rays);
+    saveFile ();
+    free (Objects);
+    free (Lights);
+    free (Framebuffer);
+    printf ("\nDONE.\n");
+  }
+\end{lstlisting}

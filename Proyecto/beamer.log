@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.27)  24 MAY 2017 01:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.11)  26 MAY 2017 07:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **beamer.tex
 (./beamer.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 3 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasercs.sty
 Package: beamerbasercs 2015/03/08 (rcs-revision 368aa9ba9d38)
@@ -484,12 +484,6 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-Package: sansmathaccent 2013/03/28
-
-(/usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
-Package: filehook 2011/10/12 v0.5d Hooks for input files
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 Package: beamerbasetranslator 2010/06/11  (rcs-revision 85fd1cc7fc42)
@@ -1088,16 +1082,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 42.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 42.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 4
-2.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-42.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 42.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1137,7 +1121,7 @@ You are using the progressbar beamer theme (Sylvain B.)
 Version: 0.32. Jun. 2007.
 ..................................................................
 (./beamer.nav)
-Overfull \hbox (2973.51147pt too wide) in paragraph at lines 42--42
+Overfull \hbox (2913.76062pt too wide) in paragraph at lines 42--42
 [][]  
  []
 
@@ -1152,7 +1136,7 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 
 [1
 
-{/home/coco/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [][]  
  []
@@ -1175,30 +1159,6 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 3.
-LaTeX Font Info:    No file OMScmss.fd. on input line 3.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 3.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 8.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 8.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 8.
-
-(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
 ))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [][]  
@@ -1209,7 +1169,17 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 ]
 \openout4 = `beamer.vrb'.
 
- (./beamer.vrb)
+ (./beamer.vrb
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 10.
+
+LaTeX Font Info:    No file OMScmss.fd. on input line 10.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 10.
+
+)
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [][]  
  []
@@ -1220,10 +1190,6 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 \openout4 = `beamer.vrb'.
 
  (./beamer.vrb)
-Overfull \vbox (6.22934pt too high) detected at line 103
- []
-
-
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [][]  
  []
@@ -1241,6 +1207,5235 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [7
 
 ]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[8
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[9
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[10
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[11
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[12
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[13
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+LaTeX Font Info:    Try loading font information for OML+cmss on input line 11.
+
+LaTeX Font Info:    No file OMLcmss.fd. on input line 11.
+
+
+LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textless' on input line 11.
+
+)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[14
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[15
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[16
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+LaTeX Font Info:    Try loading font information for U+msa on input line 8.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 8.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[17
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[18
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[19
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[20
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[21
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 391
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[22
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[23
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 427
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[24
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 445
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[25
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 463
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[26
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[27
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[28
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 517
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[29
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[30
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[31
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[32
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[33
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 607
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[34
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[35
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (39.22934pt too high) detected at line 643
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[36
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[37
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[38
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[39
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[40
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[41
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[42
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[43
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[44
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[45
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[46
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[47
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[48
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[49
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[50
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (50.22934pt too high) detected at line 913
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[51
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[52
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 949
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[53
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[54
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[55
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[56
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[57
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[58
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[59
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[60
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[61
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[62
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[63
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[64
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 1165
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[65
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 1183
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[66
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 1201
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[67
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 1219
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[68
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[69
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[70
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (138.22934pt too high) detected at line 1273
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[71
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 1291
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[72
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 1309
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[73
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 1327
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[74
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 1345
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[75
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (72.22934pt too high) detected at line 1363
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[76
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[77
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[78
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[79
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 1435
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[80
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[81
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[82
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[83
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[84
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[85
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[86
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 1561
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[87
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[88
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 1597
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[89
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[90
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 1633
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[91
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[92
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[93
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 1687
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[94
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[95
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[96
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 1741
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[97
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[98
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[99
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no š in font cmss9!
+)
+Overfull \vbox (149.22934pt too high) detected at line 1795
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[100
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 1813
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[101
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no º in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+)
+Overfull \vbox (50.22934pt too high) detected at line 1831
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[102
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no š in font cmss9!
+)
+Overfull \vbox (72.22934pt too high) detected at line 1849
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[103
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+)
+Overfull \vbox (94.22934pt too high) detected at line 1867
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[104
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[105
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[106
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[107
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[108
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[109
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[110
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[111
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ­ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ­ in font cmss9!
+)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[112
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (39.22934pt too high) detected at line 2029
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[113
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[114
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[115
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[116
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[117
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 2119
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[118
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[119
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[120
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[121
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[122
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[123
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[124
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[125
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 2263
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[126
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[127
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[128
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[129
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[130
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (39.22934pt too high) detected at line 2353
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[131
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[132
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[133
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[134
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[135
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[136
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 2461
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[137
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[138
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[139
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[140
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[141
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[142
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ¡ in font cmss9!
+)
+Overfull \vbox (6.22934pt too high) detected at line 2569
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[143
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[144
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[145
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[146
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[147
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[148
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[149
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[150
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[151
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 2731
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[152
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[153
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[154
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[155
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[156
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[157
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[158
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[159
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ¡ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ¡ in font cmss9!
+)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[160
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 2893
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[161
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[162
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (39.22934pt too high) detected at line 2929
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[163
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (39.22934pt too high) detected at line 2947
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[164
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[165
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[166
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[167
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 3019
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[168
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (83.22934pt too high) detected at line 3037
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[169
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 3055
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[170
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[171
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[172
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[173
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[174
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[175
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[176
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[177
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[178
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[179
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[180
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[181
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[182
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[183
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[184
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[185
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[186
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[187
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[188
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[189
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[190
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 3433
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[191
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 3451
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[192
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[193
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (6.22934pt too high) detected at line 3487
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[194
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 3505
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[195
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[196
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 3541
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[197
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (17.22934pt too high) detected at line 3559
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[198
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[199
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[200
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[201
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[202
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[203
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[204
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[205
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[206
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[207
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[208
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (28.22934pt too high) detected at line 3757
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[209
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[210
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[211
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[212
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[213
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[214
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[215
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[216
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[217
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[218
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[219
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[220
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[221
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[222
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[223
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[224
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[225
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[226
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[227
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[228
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[229
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[230
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[231
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[232
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[233
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[234
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[235
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[236
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[237
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[238
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[239
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[240
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[241
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[242
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[243
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[244
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[245
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (27.42934pt too high) detected at line 4415
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[246
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[247
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[248
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (16.42934pt too high) detected at line 4470
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[249
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[250
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[251
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[252
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (38.42934pt too high) detected at line 4544
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[253
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[254
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[255
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[256
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[257
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[258
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[259
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[260
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[261
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (27.42934pt too high) detected at line 4707
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[262
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[263
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[264
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[265
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[266
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[267
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[268
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[269
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[270
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[271
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[272
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[273
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[274
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[275
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[276
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[277
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 4997
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[278
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[279
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[280
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[281
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[282
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[283
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 5106
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[284
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[285
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 5143
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[286
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[287
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[288
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[289
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[290
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[291
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[292
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (16.42934pt too high) detected at line 5270
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[293
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[294
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[295
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (49.42934pt too high) detected at line 5324
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[296
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[297
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 5360
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[298
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (82.42934pt too high) detected at line 5378
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[299
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[300
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (170.42934pt too high) detected at line 5415
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[301
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[302
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (38.42934pt too high) detected at line 5451
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[303
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[304
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[305
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[306
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (16.42934pt too high) detected at line 5523
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[307
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[308
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[309
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[310
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[311
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 5613
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[312
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[313
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[314
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[315
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 5686
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[316
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[317
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[318
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[319
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 5758
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[320
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[321
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[322
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 5814
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[323
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[324
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[325
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[326
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[327
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[328
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[329
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[330
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[331
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[332
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[333
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[334
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[335
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no š in font cmss9!
+)
+Overfull \vbox (93.42934pt too high) detected at line 6050
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[336
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (27.42934pt too high) detected at line 6068
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[337
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[338
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no º in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no š in font cmss9!
+)
+Overfull \vbox (148.42934pt too high) detected at line 6106
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[339
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (27.42934pt too high) detected at line 6125
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[340
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+)
+Overfull \vbox (38.42934pt too high) detected at line 6143
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[341
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[342
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[343
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[344
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[345
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[346
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[347
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[348
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ­ in font cmss9!
+)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[349
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ­ in font cmss9!
+)
+Overfull \vbox (93.42934pt too high) detected at line 6305
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[350
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[351
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[352
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[353
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[354
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[355
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[356
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[357
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[358
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[359
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[360
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[361
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[362
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (27.42934pt too high) detected at line 6540
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[363
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[364
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[365
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[366
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 6613
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[367
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[368
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[369
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[370
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[371
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 6703
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[372
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[373
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[374
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[375
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[376
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[377
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 6812
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[378
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[379
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[380
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[381
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[382
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[383
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[384
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ¡ in font cmss9!
+)
+Overfull \vbox (16.42934pt too high) detected at line 6938
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[385
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[386
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[387
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[388
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[389
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[390
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[391
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[392
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[393
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[394
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[395
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[396
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[397
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[398
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[399
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[400
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[401
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[402
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[403
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[404
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ³ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ¡ in font cmss9!
+Missing character: There is no Ã in font cmss9!
+Missing character: There is no ¡ in font cmss9!
+)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[405
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[406
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[407
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 7357
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[408
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 7375
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[409
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (38.42934pt too high) detected at line 7393
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[410
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[411
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[412
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[413
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[414
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (49.42934pt too high) detected at line 7484
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[415
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (38.42934pt too high) detected at line 7502
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[416
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[417
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[418
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[419
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[420
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[421
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[422
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[423
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[424
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[425
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[426
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[427
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[428
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[429
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[430
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[431
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[432
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 7809
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[433
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[434
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[435
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[436
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[437
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[438
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[439
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[440
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[441
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[442
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[443
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[444
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 8026
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[445
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[446
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[447
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[448
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[449
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[450
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 8137
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[451
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[452
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[453
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 8191
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[454
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (5.42934pt too high) detected at line 8210
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[455
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[456
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[457
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[458
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[459
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[460
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[461
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[462
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[463
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[464
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[465
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[466
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[467
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (16.42934pt too high) detected at line 8448
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[468
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \vbox (16.42934pt too high) detected at line 8466
+ []
+
+
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[469
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[470
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[471
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[472
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[473
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[474
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[475
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[476
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[477
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[478
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[479
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[480
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[481
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[482
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[483
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb)
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[484
+
+]
 \tf@nav=\write6
 \openout6 = `beamer.nav'.
 
@@ -1250,11 +6445,12 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `beamer.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8735.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 8735.
  (./beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8735.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8735.
+
 Package rerunfilecheck Info: File `beamer.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1265,25 +6461,26 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8735.
  ) 
 Here is how much of TeX's memory you used:
- 30284 strings out of 493029
- 723158 string characters out of 6136234
- 1162206 words of memory out of 5000000
- 33180 multiletter control sequences out of 15000+600000
- 10972 words of font info for 40 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 58i,18n,79p,721b,1358s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on beamer.pdf (7 pages, 71539 bytes).
+ 33371 strings out of 494953
+ 755323 string characters out of 6180977
+ 1294456 words of memory out of 5000000
+ 34116 multiletter control sequences out of 15000+600000
+ 10840 words of font info for 40 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 54i,18n,77p,721b,1281s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on beamer.pdf (484 pages, 1103822 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 2786 PDF objects out of 2984 (max. 8388607)
+ 2260 compressed objects within 23 object streams
+ 969 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

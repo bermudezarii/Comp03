@@ -215,13 +215,11 @@ declaration_specifiers
 	| type_specifier {/*printf("%d con %s  declaration_specifiers: type_specifier\n",linea, gramaticas);*/}
 	| type_name {}
 	| type_specifier declaration_specifiers {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
-	| type_specifier error {yyerror("missing declaration_specifiers");}
+	| type_specifier error {yyerror("missing declaration_specifiers or pointer");}
 	| type_name declaration_specifiers {}
-	| type_name error {yyerror("missing declaration_specifiers");}
+	| type_name error {yyerror("missing declaration_specifiers or missing pointer");}
 	| type_specifier pointer {/*printf("%d con %s  declaration_specifiers: type_specifier\n",linea, gramaticas);*/}
-	| type_specifier error  {yyerror("missing pointer");}
 	| type_name pointer
-	| type_name error {yyerror("missing pointer");}
 	| type_specifier pointer declaration_specifiers {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
 	| type_name pointer declaration_specifiers {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
 

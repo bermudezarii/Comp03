@@ -1,0 +1,16 @@
+
+#include<stdio.h>
+int main(){char line[(0x1a6+4167-0x1157)];int ReplacementFor_i,ReplacementFor_j;
+ReplacementFor_printf(
+"\x45\x6e\x74\x65\x72\x20\x61\x20\x73\x74\x72\x69\x6e\x67\x3a\x20");
+ReplacementFor_gets(line);for(ReplacementFor_i=(0xb7c+6500-0x24e0);line[
+ReplacementFor_i]!='\0';++ReplacementFor_i){while(!((line[ReplacementFor_i]>=
+((char)(0x1a9d+1387-0x1fa7))&&line[ReplacementFor_i]<=
+((char)(0xd8d+5536-0x22b3)))||(line[ReplacementFor_i]>=
+((char)(0x16a3+2333-0x1f7f))&&line[ReplacementFor_i]<=
+((char)(0x12b0+3502-0x2004)))||line[ReplacementFor_i]=='\0')){for(
+ReplacementFor_j=ReplacementFor_i;line[ReplacementFor_j]!='\0';++
+ReplacementFor_j){line[ReplacementFor_j]=line[ReplacementFor_j+
+(0x2022+1093-0x2466)];}line[ReplacementFor_j]='\0';}}ReplacementFor_printf(
+"\x4f\x75\x74\x70\x75\x74\x20\x53\x74\x72\x69\x6e\x67\x3a\x20");
+ReplacementFor_puts(line);return(0xaf8+6922-0x2602);}

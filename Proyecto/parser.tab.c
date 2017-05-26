@@ -466,7 +466,7 @@ union yyalloc
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  67
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  379
+#define YYNRULES  377
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  624
 
@@ -534,24 +534,24 @@ static const yytype_uint16 yyrline[] =
      172,   173,   177,   178,   182,   183,   184,   185,   186,   187,
      188,   189,   190,   191,   192,   196,   197,   201,   205,   206,
      207,   208,   212,   213,   214,   215,   216,   217,   218,   219,
-     220,   221,   222,   223,   224,   225,   226,   228,   229,   234,
-     235,   239,   240,   241,   246,   247,   248,   249,   250,   254,
-     255,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     269,   270,   271,   275,   276,   280,   281,   282,   286,   287,
-     291,   292,   294,   295,   300,   301,   305,   306,   307,   311,
-     312,   313,   317,   318,   322,   323,   327,   328,   332,   333,
-     334,   335,   341,   342,   343,   344,   345,   346,   347,   348,
-     349,   350,   352,   353,   355,   360,   361,   362,   363,   367,
-     368,   369,   370,   371,   372,   376,   377,   382,   383,   389,
-     390,   391,   392,   393,   394,   396,   397,   398,   399,   403,
-     404,   407,   408,   411,   412,   417,   418,   419,   423,   424,
-     425,   426,   427,   428,   429,   430,   431,   435,   436,   437,
-     441,   442,   446,   447,   448,   449,   450,   451,   455,   456,
-     457,   461,   462,   463,   464,   468,   470,   471,   475,   476,
-     477,   478,   479,   483,   484,   488,   489,   490,   494,   495,
-     496,   497,   498,   499,   500,   501,   502,   503,   504,   508,
-     509,   510,   511,   512,   513,   514,   518,   519,   520,   525,
-     526,   527,   528,   529,   530,   531,   532,   533,   537,   538,
+     220,   221,   222,   223,   224,   226,   227,   232,   233,   237,
+     238,   239,   244,   245,   246,   247,   248,   252,   253,   254,
+     255,   256,   257,   258,   259,   260,   261,   262,   267,   268,
+     269,   273,   274,   278,   279,   280,   284,   285,   289,   290,
+     292,   293,   298,   299,   303,   304,   305,   309,   310,   311,
+     315,   316,   320,   321,   325,   326,   330,   331,   332,   333,
+     339,   340,   341,   342,   343,   344,   345,   346,   347,   348,
+     350,   351,   353,   358,   359,   360,   361,   365,   366,   367,
+     368,   369,   370,   374,   375,   380,   381,   387,   388,   389,
+     390,   391,   392,   394,   395,   396,   397,   401,   402,   405,
+     406,   409,   410,   415,   416,   417,   421,   422,   423,   424,
+     425,   426,   427,   428,   429,   433,   434,   435,   439,   440,
+     444,   445,   446,   447,   448,   449,   453,   454,   455,   459,
+     460,   461,   462,   466,   468,   469,   473,   474,   475,   476,
+     477,   481,   482,   486,   487,   488,   492,   493,   494,   495,
+     496,   497,   498,   499,   500,   501,   502,   506,   507,   508,
+     509,   510,   511,   512,   516,   517,   518,   523,   524,   525,
+     526,   527,   528,   529,   530,   531,   535,   536,   542,   543,
      544,   545,   546,   547,   548,   549,   550,   551,   552,   553,
      554,   555,   556,   557,   558,   559,   560,   561,   562,   563,
      564,   565,   566,   567,   568,   569,   570,   571,   572,   573,
@@ -560,7 +560,7 @@ static const yytype_uint16 yyrline[] =
      594,   595,   596,   597,   598,   599,   600,   601,   602,   603,
      604,   605,   606,   607,   608,   609,   610,   611,   612,   613,
      614,   615,   616,   617,   618,   619,   620,   621,   622,   623,
-     624,   625,   626,   629,   630,   631,   632,   633,   634,   635
+     624,   627,   628,   629,   630,   631,   632,   633
 };
 #endif
 
@@ -630,7 +630,7 @@ static const yytype_uint16 yytoknum[] =
 #define yypact_value_is_default(Yystate) \
   (!!((Yystate) == (-479)))
 
-#define YYTABLE_NINF -376
+#define YYTABLE_NINF -374
 
 #define yytable_value_is_error(Yytable_value) \
   0
@@ -709,69 +709,69 @@ static const yytype_int16 yypact[] =
      means the default is an error.  */
 static const yytype_uint16 yydefact[] =
 {
-     278,     0,     0,     0,     0,   286,   190,   189,   172,   124,
-     125,   126,   127,   128,   130,   131,   132,   133,   136,   137,
-     134,   135,   166,   167,   129,   143,   144,     0,   285,   280,
-       0,     0,   119,     0,     0,   138,     0,   213,   139,   117,
-     121,   169,     0,   185,     0,   287,     0,   276,   279,   282,
-       0,   290,   291,   292,   293,   294,   295,   296,   297,   298,
-     299,   300,   301,   302,   303,   304,   305,   306,   307,   308,
-     309,   310,   311,   312,   313,   314,   315,   316,   317,   318,
-     319,   320,   321,   322,   323,   324,   325,   326,   327,   328,
-     329,   330,   331,   332,   333,   334,   335,   336,   337,   338,
-     339,   340,   341,   342,   343,   344,   345,   346,   347,   348,
-     349,   350,   351,   352,   353,   354,   355,   356,   357,   358,
-     359,   360,   361,   362,   363,   364,   365,   366,   367,   368,
-     369,   370,   371,   372,   288,   281,     0,     4,     0,   241,
-       0,   253,    41,    40,    36,    38,    39,    37,     0,     2,
+     276,     0,     0,     0,     0,   284,   188,   187,   170,   122,
+     123,   124,   125,   126,   128,   129,   130,   131,   134,   135,
+     132,   133,   164,   165,   127,   141,   142,     0,   283,   278,
+       0,     0,   117,     0,     0,   136,     0,   211,   137,   115,
+     119,   167,     0,   183,     0,   285,     0,   274,   277,   280,
+       0,   288,   289,   290,   291,   292,   293,   294,   295,   296,
+     297,   298,   299,   300,   301,   302,   303,   304,   305,   306,
+     307,   308,   309,   310,   311,   312,   313,   314,   315,   316,
+     317,   318,   319,   320,   321,   322,   323,   324,   325,   326,
+     327,   328,   329,   330,   331,   332,   333,   334,   335,   336,
+     337,   338,   339,   340,   341,   342,   343,   344,   345,   346,
+     347,   348,   349,   350,   351,   352,   353,   354,   355,   356,
+     357,   358,   359,   360,   361,   362,   363,   364,   365,   366,
+     367,   368,   369,   370,   286,   279,     0,     4,     0,   239,
+       0,   251,    41,    40,    36,    38,    39,    37,     0,     2,
        3,     0,     6,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,    10,    28,    42,     0,
       51,    52,    59,    62,    67,    70,    72,    74,    76,    78,
-      80,    82,    95,     0,   245,     0,   121,     0,   248,   232,
-     233,     0,     0,   234,   235,   236,   237,     0,     0,     0,
-       0,     0,   194,   191,   192,   193,     0,   161,    98,     0,
-     121,   169,     0,   101,   104,   103,   108,   107,   150,   111,
-       0,   142,     0,     0,   215,   214,   216,   118,   152,     0,
-       2,    42,   123,   376,     0,     0,     0,     0,     0,     0,
-     173,   174,   170,   168,   195,   187,   186,   110,   109,   113,
-       1,   277,     0,   289,   249,     0,     2,     0,     0,   121,
+      80,    82,    95,     0,   243,     0,   119,     0,   246,   230,
+     231,     0,     0,   232,   233,   234,   235,     0,     0,     0,
+       0,     0,   192,   189,   190,   191,     0,   159,    98,     0,
+     119,   167,     0,   101,   104,   103,   108,   107,   148,   111,
+       0,   140,     0,     0,   213,   212,   214,   116,   150,     0,
+       2,    42,   121,   374,     0,     0,     0,     0,     0,     0,
+     171,   172,   168,   166,   193,   185,   184,   110,   109,   112,
+       1,   275,     0,   287,   247,     0,     2,     0,     0,   119,
        0,     0,     2,    29,     0,     0,     0,    33,    30,    31,
        0,    97,     0,     0,     0,     0,     0,     2,     0,     0,
-       0,   270,   271,   273,   272,     0,     7,     0,     0,     0,
+       0,   268,   269,   271,   270,     0,     7,     0,     0,     0,
        0,     0,     0,    21,    22,    84,    85,    86,    87,    88,
       89,    90,    91,    92,    93,    94,     0,    32,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,   254,     0,    11,   243,   246,     0,     0,   242,
-     251,   252,   151,   153,     0,     0,   178,   177,   179,   164,
-       0,   162,     0,    99,   374,     0,     0,   120,   115,     0,
-     151,     0,   145,     0,     0,     0,   223,     2,     0,   208,
-     201,   202,   215,     0,   211,   197,     0,   219,     0,   217,
-       0,     0,     0,    28,   227,   122,   233,   247,   184,   172,
-     202,     0,     0,   181,     0,   175,   171,   176,     0,   196,
-     188,   116,     0,     0,     0,     0,     0,     5,     0,   179,
-       2,     0,   238,     2,     0,     0,     0,   240,     0,     0,
-       0,     0,     0,     0,   269,   275,   274,     9,     0,     0,
+       0,     0,   252,     0,    11,   241,   244,     0,     0,   240,
+     249,   250,   149,   151,     0,     0,   176,   175,   177,   162,
+       0,   160,     0,    99,   372,     0,     0,   118,   113,     0,
+     149,     0,   143,     0,     0,     0,   221,     2,     0,   206,
+     199,   200,   213,     0,   209,   195,     0,   217,     0,   215,
+       0,     0,     0,    28,   225,   120,   231,   245,   182,   170,
+     200,     0,     0,   179,     0,   173,   169,   174,     0,   194,
+     186,   114,     0,     0,     0,     0,     0,     5,     0,   177,
+       2,     0,   236,     2,     0,     0,     0,   238,     0,     0,
+       0,     0,     0,     0,   267,   273,   272,     9,     0,     0,
        0,    12,    17,     0,    26,     0,    19,    20,    83,    53,
       49,    50,    48,    55,    56,    54,    57,    58,    60,    61,
       63,    64,    65,    66,    68,    69,    71,    73,    75,    77,
-       0,    79,    96,   244,   250,   150,   152,     0,     0,   159,
-       0,     0,   233,   379,     0,     0,   154,   156,   141,   172,
-     146,   213,   147,     0,     0,     0,     0,    10,   215,   203,
-       0,     0,   199,   200,   224,     0,   218,   220,   225,     0,
-     221,     0,   230,     0,     0,     0,   377,     0,   182,   183,
-     180,     0,     0,     0,     0,    52,     0,     8,    44,    43,
-       0,    34,     0,   239,     0,     0,     0,     0,     0,   234,
+       0,    79,    96,   242,   248,   148,   150,     0,     0,   157,
+       0,     0,   231,   377,     0,     0,   152,   154,   139,   170,
+     144,   211,   145,     0,     0,     0,     0,    10,   213,   201,
+       0,     0,   197,   198,   222,     0,   216,   218,   223,     0,
+     219,     0,   228,     0,     0,     0,   375,     0,   180,   181,
+     178,     0,     0,     0,     0,    52,     0,     8,    44,    43,
+       0,    34,     0,   237,     0,     0,     0,     0,     0,   232,
        0,    14,    13,     0,    23,     0,    18,    15,     0,   100,
-     165,   163,   160,   378,   157,     0,   149,     0,   148,   140,
-       2,   121,     0,   204,     0,     0,   198,   212,   226,   222,
-     228,     0,     0,   209,   210,   283,     0,     0,    45,    46,
-      47,    35,   255,   257,   264,   258,     0,     0,     0,     0,
-       0,     2,     0,    27,    81,   155,   158,   215,     2,     0,
-     207,     0,   205,   229,   231,     0,     0,     0,     0,     0,
-     268,   263,     0,   265,   260,     0,     0,    24,     0,     0,
-      34,   206,   284,    16,   256,   259,   267,   262,   266,   261,
-      25,   121,     0,    35
+     163,   161,   158,   376,   155,     0,   147,     0,   146,   138,
+       2,   119,     0,   202,     0,     0,   196,   210,   224,   220,
+     226,     0,     0,   207,   208,   281,     0,     0,    45,    46,
+      47,    35,   253,   255,   262,   256,     0,     0,     0,     0,
+       0,     2,     0,    27,    81,   153,   156,   213,     2,     0,
+     205,     0,   203,   227,   229,     0,     0,     0,     0,     0,
+     266,   261,     0,   263,   258,     0,     0,    24,     0,     0,
+      34,   204,   282,    16,   254,   257,   265,   260,   264,   259,
+      25,   119,     0,    35
 };
 
   /* YYPGOTO[NTERM-NUM].  */
@@ -805,18 +805,18 @@ static const yytype_int16 yytable[] =
 {
       42,   192,   391,   187,    42,   232,   423,   480,   218,   396,
      379,   483,   209,   228,   443,   444,   191,   557,   384,   448,
-     449,   263,  -373,   253,   225,   254,  -373,   384,    30,    40,
+     449,   263,  -371,   253,   225,   254,  -371,   384,    30,    40,
       42,   202,   198,   200,   219,   329,   439,   224,   252,    49,
      187,    42,     6,   245,   249,   378,    42,   197,    45,     7,
-    -190,   274,  -190,   234,   457,   212,   202,   206,   394,   210,
+    -188,   274,  -188,   234,   457,   212,   202,   206,   394,   210,
      213,   215,   217,   330,   211,   271,    50,   227,   286,     8,
-     242,   287,   248,   220,    30,    40,   243,    29,   434,  -189,
-     203,  -189,   207,   315,   316,   203,     6,   590,   233,   137,
+     242,   287,   248,   220,    30,    40,   243,    29,   434,  -187,
+     203,  -187,   207,   315,   316,   203,     6,   590,   233,   137,
      307,    22,    23,     7,    45,   438,   333,     6,   221,   569,
-     204,   205,   383,   280,     7,   204,   205,   308,   516,  -190,
-    -190,  -373,   273,   201,   309,   310,   311,   557,   230,   150,
+     204,   205,   383,   280,     7,   204,   205,   308,   516,  -188,
+    -188,  -371,   273,   201,   309,   310,   311,   557,   230,   150,
      462,   152,   258,    29,   331,   445,   407,   312,   313,   483,
-     480,   402,   491,   271,   314,   223,   308,   403,  -189,  -189,
+     480,   402,   491,   271,   314,   223,   308,   403,  -187,  -187,
      187,   461,   275,   309,   310,   311,   271,   499,   137,   529,
      530,   232,   137,   502,     8,   411,   312,   313,   379,   365,
      281,   428,   223,   314,   276,   391,   288,   209,   198,   259,
@@ -833,9 +833,9 @@ static const yytype_int16 yytable[] =
      187,   395,     7,   397,   379,   380,   261,   401,   381,   187,
      446,   447,   386,   286,   259,   340,   287,     6,   248,   516,
      540,   271,   422,   212,     7,   408,   544,   222,   262,   150,
-     223,   152,     6,  -172,  -172,   345,   344,   331,     6,     7,
+     223,   152,     6,  -170,  -170,   345,   344,   331,     6,     7,
      537,   336,   331,   405,   524,     7,   465,   466,   347,   405,
-    -172,  -172,  -172,   331,   583,   349,   613,   467,   416,   518,
+    -170,  -170,  -170,   331,   583,   349,   613,   467,   416,   518,
      519,   197,   594,   187,   465,   481,   474,   187,   363,   469,
      470,   187,     6,   352,   201,    42,   331,   199,   525,     7,
      384,   364,   421,     8,   489,   187,    42,   493,   412,    42,
@@ -848,7 +848,7 @@ static const yytype_int16 yytable[] =
      528,   494,   187,   292,   293,   294,   370,   371,   222,   197,
      340,   223,   336,   473,   235,   568,   331,   236,   599,     6,
        6,   495,   344,   519,   237,     6,     7,     7,   584,   496,
-    -172,     8,     7,   238,   497,   231,     8,   271,   481,   508,
+    -170,     8,     7,   238,   497,   231,     8,   271,   481,   508,
      239,   240,   241,   331,   509,   602,   244,   258,   225,   450,
      451,   452,   453,   331,   201,   605,   560,   561,   510,    42,
      340,   372,   187,   199,    42,   488,   409,   288,   511,   512,
@@ -856,8 +856,8 @@ static const yytype_int16 yytable[] =
      547,   553,   559,   558,    42,    42,   567,    42,   477,   523,
      477,   565,   571,   370,   551,   566,   232,   592,   234,   370,
      390,   543,   243,   370,   371,   595,   187,   598,   187,   398,
-    -172,  -172,   236,   562,   596,   370,   371,   489,   211,   237,
-     342,   607,   610,   611,   612,    42,  -172,  -172,  -172,  -172,
+    -170,  -170,   236,   562,   596,   370,   371,   489,   211,   237,
+     342,   607,   610,   611,   612,    42,  -170,  -170,  -170,  -170,
      587,   615,   515,   233,   591,   239,   240,   241,   620,   336,
      623,   456,    42,   360,   458,   484,   267,   459,   268,   269,
      231,   357,   585,   471,   477,   355,   541,   187,   199,   187,
@@ -879,16 +879,16 @@ static const yytype_int16 yytable[] =
      231,   231,   231,   231,   231,   231,   231,   231,   231,   231,
      231,   231,   231,   231,     0,   231,     0,     0,     0,   334,
        0,     0,     0,     0,     0,     0,   343,     0,     0,     0,
-     265,  -172,  -172,     0,     0,   343,   343,     0,     0,     0,
-     257,     0,     0,     0,     0,     0,   257,  -172,  -172,  -172,
-    -172,   257,     0,   343,   369,   257,     0,   343,     0,   418,
+     265,  -170,  -170,     0,     0,   343,   343,     0,     0,     0,
+     257,     0,     0,     0,     0,     0,   257,  -170,  -170,  -170,
+    -170,   257,     0,   343,   369,   257,     0,   343,     0,   418,
      419,   420,     0,     0,     0,     0,   231,   369,     0,   250,
        0,     0,     0,     1,     2,   435,     3,     0,     0,     4,
        0,     0,     0,     5,     0,     0,     0,     0,     0,     0,
        6,   231,     0,   231,   231,     0,   334,     7,   199,     0,
-       0,     8,     0,   360,   199,  -172,  -172,     0,     0,     0,
+       0,     8,     0,   360,   199,  -170,  -170,     0,     0,     0,
        6,     0,     0,     0,   460,   534,     0,     7,   257,   427,
-     431,   405,  -172,  -172,  -172,     0,     9,    10,    11,    12,
+     431,   405,  -170,  -170,  -170,     0,     9,    10,    11,    12,
       13,    14,    15,    16,    17,    18,    19,    20,    21,    22,
       23,    24,    25,    26,    27,     0,   360,     0,     0,     0,
      257,     0,     0,   231,   283,     0,   137,     0,    28,   231,
@@ -898,7 +898,7 @@ static const yytype_int16 yytable[] =
      153,   154,     0,     0,     0,     0,   257,   487,     0,   231,
        0,     0,     0,     0,     0,     0,     0,   231,     0,     0,
        0,     0,   369,     0,     0,     0,     0,     0,     0,     0,
-       0,  -375,     0,   231,     0,  -375,   343,     0,     0,     0,
+       0,  -373,     0,   231,     0,  -373,   343,     0,     0,     0,
      369,   197,   231,   137,     0,     0,   231,   382,   593,   517,
      270,     0,     6,     0,     0,   343,   142,   143,     0,     7,
        0,   144,     0,     8,   145,   146,     0,     0,   147,   148,
@@ -907,7 +907,7 @@ static const yytype_int16 yytable[] =
       11,    12,    13,    14,    15,    16,    17,    18,    19,    20,
       21,    22,    23,    24,    25,    26,    27,     0,     0,     0,
        0,     0,     0,     0,     0,     0,   231,     0,     0,     0,
-    -375,     0,   576,     0,   578,   580,     0,   487,   257,     0,
+    -373,     0,   576,     0,   578,   580,     0,   487,   257,     0,
      334,     0,     0,   369,     0,   346,     0,   369,     0,     0,
        0,     0,     0,     0,     0,     0,     0,   257,     0,   369,
      137,     0,   138,     0,     3,   139,     0,   140,     0,     0,
@@ -999,7 +999,7 @@ static const yytype_int16 yytable[] =
        0,     0,     0,     0,     0,     0,     0,     0,     0,   155,
      156,   157,    28,   158,   159,   160,   161,   162,   163,   164,
      165,   216,     0,     0,     0,     0,     0,     0,     0,  -105,
-    -105,  -105,     0,  -105,  -105,  -151,     0,     0,     0,     0,
+    -105,  -105,     0,  -105,  -105,  -149,     0,     0,     0,     0,
        0,     6,     0,     0,     0,   214,     0,     0,     7,     0,
        0,     0,  -105,  -102,  -102,  -102,     0,  -102,  -102,     0,
        0,     0,     0,     0,     0,  -102,     0,     0,     0,     0,
@@ -1029,9 +1029,9 @@ static const yytype_int16 yytable[] =
       10,    11,    12,    13,    14,    15,    16,    17,    18,    19,
       20,    21,    22,    23,    24,    25,    26,    27,   247,     0,
        0,     0,     0,     0,     0,     0,  -106,  -106,   522,     0,
-    -106,     0,     0,     0,   137,     0,     0,  -153,     6,     0,
+    -106,     0,     0,     0,   137,     0,     0,  -151,     6,     0,
        0,   608,   514,     0,   223,     7,     0,   142,   143,  -106,
-       0,  -153,   144,     0,     0,   145,   146,     0,     0,   147,
+       0,  -151,   144,     0,     0,   145,   146,     0,     0,   147,
      148,     0,     0,   262,   150,   151,   152,     0,   153,   154,
        0,     0,     0,     0,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
@@ -1734,24 +1734,24 @@ static const yytype_uint8 yyr1[] =
      107,   107,   108,   108,   109,   109,   109,   109,   109,   109,
      109,   109,   109,   109,   109,   110,   110,   111,   112,   112,
      112,   112,   113,   113,   113,   113,   113,   113,   113,   113,
-     113,   113,   113,   113,   113,   113,   113,   113,   113,   114,
-     114,   115,   115,   115,   116,   116,   116,   116,   116,   117,
-     117,   117,   117,   117,   117,   117,   117,   117,   117,   117,
-     118,   118,   118,   119,   119,   120,   120,   120,   121,   121,
-     122,   122,   122,   122,   123,   123,   124,   124,   124,   125,
-     125,   125,   126,   126,   127,   127,   128,   128,   129,   129,
-     129,   129,   130,   130,   130,   130,   130,   130,   130,   130,
-     130,   130,   130,   130,   130,   131,   131,   131,   131,   132,
-     132,   132,   132,   132,   132,   133,   133,   134,   134,   135,
-     135,   135,   135,   135,   135,   135,   135,   135,   135,   136,
-     136,   137,   137,   138,   138,   139,   139,   139,   140,   140,
-     140,   140,   140,   140,   140,   140,   140,   141,   141,   141,
-     142,   142,   143,   143,   143,   143,   143,   143,   144,   144,
-     144,   145,   145,   145,   145,   146,   146,   146,   147,   147,
-     147,   147,   147,   148,   148,   149,   149,   149,   150,   150,
-     150,   150,   150,   150,   150,   150,   150,   150,   150,   151,
-     151,   151,   151,   151,   151,   151,   152,   152,   152,   153,
-     153,   153,   153,   153,   153,   153,   153,   153,   154,   154,
+     113,   113,   113,   113,   113,   113,   113,   114,   114,   115,
+     115,   115,   116,   116,   116,   116,   116,   117,   117,   117,
+     117,   117,   117,   117,   117,   117,   117,   117,   118,   118,
+     118,   119,   119,   120,   120,   120,   121,   121,   122,   122,
+     122,   122,   123,   123,   124,   124,   124,   125,   125,   125,
+     126,   126,   127,   127,   128,   128,   129,   129,   129,   129,
+     130,   130,   130,   130,   130,   130,   130,   130,   130,   130,
+     130,   130,   130,   131,   131,   131,   131,   132,   132,   132,
+     132,   132,   132,   133,   133,   134,   134,   135,   135,   135,
+     135,   135,   135,   135,   135,   135,   135,   136,   136,   137,
+     137,   138,   138,   139,   139,   139,   140,   140,   140,   140,
+     140,   140,   140,   140,   140,   141,   141,   141,   142,   142,
+     143,   143,   143,   143,   143,   143,   144,   144,   144,   145,
+     145,   145,   145,   146,   146,   146,   147,   147,   147,   147,
+     147,   148,   148,   149,   149,   149,   150,   150,   150,   150,
+     150,   150,   150,   150,   150,   150,   150,   151,   151,   151,
+     151,   151,   151,   151,   152,   152,   152,   153,   153,   153,
+     153,   153,   153,   153,   153,   153,   154,   154,   155,   155,
      155,   155,   155,   155,   155,   155,   155,   155,   155,   155,
      155,   155,   155,   155,   155,   155,   155,   155,   155,   155,
      155,   155,   155,   155,   155,   155,   155,   155,   155,   155,
@@ -1760,7 +1760,7 @@ static const yytype_uint8 yyr1[] =
      155,   155,   155,   155,   155,   155,   155,   155,   155,   155,
      155,   155,   155,   155,   155,   155,   155,   155,   155,   155,
      155,   155,   155,   155,   155,   155,   155,   155,   155,   155,
-     155,   155,   155,   156,   156,   156,   156,   156,   156,   156
+     155,   156,   156,   156,   156,   156,   156,   156
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
@@ -1777,33 +1777,33 @@ static const yytype_uint8 yyr2[] =
        1,     5,     1,     3,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     3,     1,     2,     3,
        5,     2,     1,     2,     2,     1,     1,     2,     2,     2,
-       2,     2,     2,     2,     2,     3,     3,     1,     2,     1,
-       3,     1,     3,     2,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       5,     4,     2,     1,     1,     1,     2,     2,     3,     3,
-       2,     1,     2,     1,     1,     3,     1,     2,     3,     4,
-       5,     2,     1,     3,     1,     3,     1,     1,     2,     1,
-       2,     3,     1,     2,     2,     3,     3,     3,     3,     3,
-       4,     3,     4,     4,     3,     1,     2,     2,     3,     1,
-       1,     2,     2,     2,     2,     1,     2,     1,     3,     2,
-       2,     1,     1,     2,     3,     4,     5,     4,     1,     3,
-       3,     1,     3,     1,     2,     1,     1,     2,     3,     2,
-       3,     3,     4,     2,     3,     3,     4,     1,     3,     4,
-       1,     3,     1,     1,     1,     1,     1,     1,     3,     4,
-       3,     2,     3,     3,     4,     1,     2,     2,     1,     2,
-       3,     2,     2,     1,     2,     5,     7,     5,     5,     7,
-       6,     7,     7,     6,     5,     6,     7,     7,     6,     3,
-       2,     2,     2,     2,     3,     3,     1,     2,     0,     1,
-       1,     2,     2,     6,     8,     1,     1,     1,     1,     2,
-       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
+       2,     2,     2,     3,     3,     1,     2,     1,     3,     1,
+       3,     2,     1,     1,     1,     1,     1,     1,     1,     1,
+       1,     1,     1,     1,     1,     1,     1,     1,     5,     4,
+       2,     1,     1,     1,     2,     2,     3,     3,     2,     1,
+       2,     1,     1,     3,     1,     2,     3,     4,     5,     2,
+       1,     3,     1,     3,     1,     1,     2,     1,     2,     3,
+       1,     2,     2,     3,     3,     3,     3,     3,     4,     3,
+       4,     4,     3,     1,     2,     2,     3,     1,     1,     2,
+       2,     2,     2,     1,     2,     1,     3,     2,     2,     1,
+       1,     2,     3,     4,     5,     4,     1,     3,     3,     1,
+       3,     1,     2,     1,     1,     2,     3,     2,     3,     3,
+       4,     2,     3,     3,     4,     1,     3,     4,     1,     3,
+       1,     1,     1,     1,     1,     1,     3,     4,     3,     2,
+       3,     3,     4,     1,     2,     2,     1,     2,     3,     2,
+       2,     1,     2,     5,     7,     5,     5,     7,     6,     7,
+       7,     6,     5,     6,     7,     7,     6,     3,     2,     2,
+       2,     2,     3,     3,     1,     2,     0,     1,     1,     2,
+       2,     6,     8,     1,     1,     1,     1,     2,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     4,     3,     3,     2,     4,     5,     4
+       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
+       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
+       1,     4,     3,     3,     2,     4,     5,     4
 };
 
 
@@ -3112,7 +3112,7 @@ yyreduce:
 
   case 108:
 #line 218 "parser.y" /* yacc.c:1646  */
-    {yyerror("missing declaration_specifiers");}
+    {yyerror("missing declaration_specifiers or pointer");}
 #line 3117 "parser.tab.c" /* yacc.c:1646  */
     break;
 
@@ -3124,7 +3124,7 @@ yyreduce:
 
   case 110:
 #line 220 "parser.y" /* yacc.c:1646  */
-    {yyerror("missing declaration_specifiers");}
+    {yyerror("missing declaration_specifiers or missing pointer");}
 #line 3129 "parser.tab.c" /* yacc.c:1646  */
     break;
 
@@ -3134,459 +3134,459 @@ yyreduce:
 #line 3135 "parser.tab.c" /* yacc.c:1646  */
     break;
 
-  case 112:
-#line 222 "parser.y" /* yacc.c:1646  */
-    {yyerror("missing pointer");}
+  case 113:
+#line 223 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
 #line 3141 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 114:
 #line 224 "parser.y" /* yacc.c:1646  */
-    {yyerror("missing pointer");}
+    {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
 #line 3147 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 115:
-#line 225 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
+#line 226 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declaration_specifiers: type_qualifier\n",linea, gramaticas );*/}
 #line 3153 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 116:
-#line 226 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declaration_specifiers: type_specifier declaration_specifiers {\n",linea, gramaticas);*/}
+#line 227 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declaration_specifiers: type_qualifier declaration_specifiers\n",linea, gramaticas );*/}
 #line 3159 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 117:
-#line 228 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declaration_specifiers: type_qualifier\n",linea, gramaticas );*/}
+#line 232 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  init_declarator_list: init_declarator\n",linea, gramaticas );*/}
 #line 3165 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 118:
-#line 229 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declaration_specifiers: type_qualifier declaration_specifiers\n",linea, gramaticas );*/}
+#line 233 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  init_declarator_list: init_declarator_list COMMA init_declarator\n",linea,gramaticas);*/}
 #line 3171 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 119:
-#line 234 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  init_declarator_list: init_declarator\n",linea, gramaticas );*/}
+#line 237 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  init_declarator: declarator\n",linea, gramaticas );*/}
 #line 3177 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 120:
-#line 235 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  init_declarator_list: init_declarator_list COMMA init_declarator\n",linea,gramaticas);*/}
+#line 238 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  init_declarator: declarator EQU initializer\n",linea, gramaticas );*/}
 #line 3183 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 121:
 #line 239 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  init_declarator: declarator\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  init_declarator: multiplicative_expression\n",linea, gramaticas );*/}
 #line 3189 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 122:
-#line 240 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  init_declarator: declarator EQU initializer\n",linea, gramaticas );*/}
+#line 244 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  storage_class_specifier: TYPEDEF\n",linea, gramaticas);*/}
 #line 3195 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 123:
-#line 241 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  init_declarator: multiplicative_expression\n",linea, gramaticas );*/}
+#line 245 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  storage_class_specifier: EXTERN\n",linea, gramaticas);*/}
 #line 3201 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 124:
 #line 246 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  storage_class_specifier: TYPEDEF\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  storage_class_specifier: STATIC\n",linea,gramaticas);*/}
 #line 3207 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 125:
 #line 247 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  storage_class_specifier: EXTERN\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  storage_class_specifier: AUTO\n",linea, gramaticas);*/}
 #line 3213 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 126:
 #line 248 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  storage_class_specifier: STATIC\n",linea,gramaticas);*/}
+    {/*printf("%d con %s  storage_class_specifier: REGISTER\n",linea, gramaticas);*/}
 #line 3219 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 127:
-#line 249 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  storage_class_specifier: AUTO\n",linea, gramaticas);*/}
+#line 252 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_specifier: VOID\n",linea, gramaticas);*/}
 #line 3225 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 128:
-#line 250 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  storage_class_specifier: REGISTER\n",linea, gramaticas);*/}
+#line 253 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_specifier: CHAR\n",linea, gramaticas);*/}
 #line 3231 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 129:
 #line 254 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: VOID\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: SHORT\n",linea, gramaticas);*/}
 #line 3237 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 130:
 #line 255 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: CHAR\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: INT\n",linea, gramaticas);*/}
 #line 3243 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 131:
 #line 256 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: SHORT\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: LONG\n",linea, gramaticas);*/}
 #line 3249 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 132:
 #line 257 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: INT\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: FLOAT\n",linea, gramaticas);*/}
 #line 3255 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 133:
 #line 258 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: LONG\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: DOUBLE\n",linea, gramaticas);*/}
 #line 3261 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 134:
 #line 259 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: FLOAT\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: SIGNED\n",linea, gramaticas);*/}
 #line 3267 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 135:
 #line 260 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: DOUBLE\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: UNSIGNED\n",linea, gramaticas);*/}
 #line 3273 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 136:
 #line 261 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: SIGNED\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: struct_or_union_specifier\n",linea, gramaticas );*/}
 #line 3279 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 137:
 #line 262 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: UNSIGNED\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  type_specifier: enum_specifier\n",linea, gramaticas );*/}
 #line 3285 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 138:
-#line 263 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: struct_or_union_specifier\n",linea, gramaticas );*/}
+#line 267 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_or_union_specifier: struct_or_union IDENTIFIER LEFT_BRACKET struct_declaration_list RIGHT_BRACKET \n",linea, gramaticas );*/}
 #line 3291 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 139:
-#line 264 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: enum_specifier\n",linea, gramaticas );*/}
+#line 268 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_or_union_specifier: struct_or_union LEFT_BRACKET struct_declaration_list RIGHT_BRACKET\n",linea,gramaticas );*/}
 #line 3297 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 140:
 #line 269 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_or_union_specifier: struct_or_union IDENTIFIER LEFT_BRACKET struct_declaration_list RIGHT_BRACKET \n",linea, gramaticas );*/}
+    {/*printf("%d con %s  struct_or_union_specifier: struct_or_union IDENTIFIER\n",linea, gramaticas);*/}
 #line 3303 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 141:
-#line 270 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_or_union_specifier: struct_or_union LEFT_BRACKET struct_declaration_list RIGHT_BRACKET\n",linea,gramaticas );*/}
+#line 273 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_or_union: STRUCT\n",linea, gramaticas);*/}
 #line 3309 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 142:
-#line 271 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_or_union_specifier: struct_or_union IDENTIFIER\n",linea, gramaticas);*/}
+#line 274 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_or_union: UNION\n",linea, gramaticas);*/}
 #line 3315 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 143:
-#line 275 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_or_union: STRUCT\n",linea, gramaticas);*/}
+#line 278 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declaration_list: struct_declaration\n",linea, gramaticas );*/}
 #line 3321 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 144:
-#line 276 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_or_union: UNION\n",linea, gramaticas);*/}
+#line 279 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declaration_list: struct_declaration_list struct_declaration\n",linea, gramaticas );*/}
 #line 3327 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 145:
 #line 280 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declaration_list: struct_declaration\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  struct_declaration_list:  struct_declaration_list declaration_list\n",linea, gramaticas );*/}
 #line 3333 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 146:
-#line 281 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declaration_list: struct_declaration_list struct_declaration\n",linea, gramaticas );*/}
+#line 284 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declaration: specifier_qualifier_list struct_declarator_list SEMICOLON\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 3339 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 147:
-#line 282 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declaration_list:  struct_declaration_list declaration_list\n",linea, gramaticas );*/}
+#line 285 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declaration: IDENTIFIER struct_declarator_list SEMICOLON \n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 3345 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 148:
-#line 286 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declaration: specifier_qualifier_list struct_declarator_list SEMICOLON\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
+#line 289 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  specifier_qualifier_list: type_specifier specifier_qualifier_list\n",linea, gramaticas );*/}
 #line 3351 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 149:
-#line 287 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declaration: IDENTIFIER struct_declarator_list SEMICOLON \n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
+#line 290 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  specifier_qualifier_list: type_specifier\n",linea, gramaticas );*/}
 #line 3357 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 150:
-#line 291 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  specifier_qualifier_list: type_specifier specifier_qualifier_list\n",linea, gramaticas );*/}
+#line 292 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  specifier_qualifier_list: type_qualifier specifier_qualifier_list\n",linea,gramaticas);*/}
 #line 3363 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 151:
-#line 292 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  specifier_qualifier_list: type_specifier\n",linea, gramaticas );*/}
+#line 293 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  specifier_qualifier_list: type_qualifier\n",linea, gramaticas );*/}
 #line 3369 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 152:
-#line 294 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  specifier_qualifier_list: type_qualifier specifier_qualifier_list\n",linea,gramaticas);*/}
+#line 298 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declarator_list: struct_declarator\n",linea, gramaticas );*/}
 #line 3375 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 153:
-#line 295 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  specifier_qualifier_list: type_qualifier\n",linea, gramaticas );*/}
+#line 299 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declarator_list: struct_declarator_list COMMA struct_declarator\n",linea, gramaticas );*/}
 #line 3381 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 154:
-#line 300 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declarator_list: struct_declarator\n",linea, gramaticas );*/}
+#line 303 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declarator: declarator\n",linea, gramaticas );*/}
 #line 3387 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 155:
-#line 301 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declarator_list: struct_declarator_list COMMA struct_declarator\n",linea, gramaticas );*/}
+#line 304 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  struct_declarator: COLON constant_expression \n",linea, gramaticas );*/}
 #line 3393 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 156:
 #line 305 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declarator: declarator\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  struct_declarator: declarator COLON constant_expression \n",linea, gramaticas);*/}
 #line 3399 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 157:
-#line 306 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declarator: COLON constant_expression \n",linea, gramaticas );*/}
+#line 309 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  enum_specifier: ENUM LEFT_BRACKET enumerator_list RIGHT_BRACKET\n",linea, gramaticas);*/}
 #line 3405 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 158:
-#line 307 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  struct_declarator: declarator COLON constant_expression \n",linea, gramaticas);*/}
+#line 310 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  enum_specifier: ENUM IDENTIFIER LEFT_BRACKET enumerator_list RIGHT_BRACKET \n",linea,gramaticas);*/}
 #line 3411 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 159:
 #line 311 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  enum_specifier: ENUM LEFT_BRACKET enumerator_list RIGHT_BRACKET\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  enum_specifier: ENUM IDENTIFIER\n",linea, gramaticas );*/}
 #line 3417 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 160:
-#line 312 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  enum_specifier: ENUM IDENTIFIER LEFT_BRACKET enumerator_list RIGHT_BRACKET \n",linea,gramaticas);*/}
+#line 315 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  enumerator_list: enumerator\n",linea, gramaticas);*/}
 #line 3423 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 161:
-#line 313 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  enum_specifier: ENUM IDENTIFIER\n",linea, gramaticas );*/}
+#line 316 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  enumerator_list: enumerator_list COMMA enumerator\n",linea, gramaticas );*/}
 #line 3429 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 162:
-#line 317 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  enumerator_list: enumerator\n",linea, gramaticas);*/}
+#line 320 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  enumerator: IDENTIFIER\n",linea, gramaticas);*/}
 #line 3435 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 163:
-#line 318 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  enumerator_list: enumerator_list COMMA enumerator\n",linea, gramaticas );*/}
+#line 321 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  enumerator: IDENTIFIER EQU constant_expression\n",linea,gramaticas);*/}
 #line 3441 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 164:
-#line 322 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  enumerator: IDENTIFIER\n",linea, gramaticas);*/}
+#line 325 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_qualifier: CONST\n",linea,gramaticas);*/}
 #line 3447 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 165:
-#line 323 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  enumerator: IDENTIFIER EQU constant_expression\n",linea,gramaticas);*/}
+#line 326 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_qualifier: VOLATILE\n",linea, gramaticas);*/}
 #line 3453 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 166:
-#line 327 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_qualifier: CONST\n",linea,gramaticas);*/}
+#line 330 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declarator: pointer direct_declarator \n",linea, gramaticas );*/}
 #line 3459 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 167:
-#line 328 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_qualifier: VOLATILE\n",linea, gramaticas);*/}
+#line 331 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declarator: direct_declarator\n",linea, gramaticas );*/}
 #line 3465 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 168:
 #line 332 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declarator: pointer direct_declarator \n",linea, gramaticas );*/}
+    {/*printf("%d con %s  declarator: declarator direct_declarator\n",linea, gramaticas );*/}
 #line 3471 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 169:
 #line 333 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declarator: direct_declarator\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  declarator: direct_declarator EQU initializer \n",linea, gramaticas );*/}
 #line 3477 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 170:
-#line 334 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declarator: declarator direct_declarator\n",linea, gramaticas );*/}
+#line 339 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  direct_declarator: IDENTIFIER\n",linea, gramaticas);*/}
 #line 3483 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 171:
-#line 335 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declarator: direct_declarator EQU initializer \n",linea, gramaticas );*/}
+#line 340 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  direct_declarator: direct_declarator INC_OP\n",linea, gramaticas);*/}
 #line 3489 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 172:
 #line 341 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: IDENTIFIER\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  direct_declarator: direct_declarator DEC_OP\n",linea, gramaticas);*/}
 #line 3495 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 173:
 #line 342 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator INC_OP\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  direct_declarator: direct_declarator DOT direct_declarator\n",linea, gramaticas);*/}
 #line 3501 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 174:
 #line 343 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator DEC_OP\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  direct_declarator: direct_declarator PTR_OP direct_declarator\n",linea, gramaticas);*/}
 #line 3507 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 175:
 #line 344 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator DOT direct_declarator\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  direct_declarator: LEFT_PARENTHESIS declarator RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
 #line 3513 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 176:
 #line 345 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator PTR_OP direct_declarator\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  direct_declarator: LEFT_PARENTHESIS declarator RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
 #line 3519 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 177:
 #line 346 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: LEFT_PARENTHESIS declarator RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  type_specifier: TYPE_NAME\n",linea,gramaticas);*/}
 #line 3525 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 178:
 #line 347 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: LEFT_PARENTHESIS declarator RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_SBRACKET constant_expression RIGHT_SBRACKET\n",linea,gramaticas);*/}
 #line 3531 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 179:
 #line 348 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_specifier: TYPE_NAME\n",linea,gramaticas);*/}
+    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_SBRACKET RIGHT_SBRACKET\n",linea, gramaticas );*/}
 #line 3537 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 180:
-#line 349 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_SBRACKET constant_expression RIGHT_SBRACKET\n",linea,gramaticas);*/}
+#line 350 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
 #line 3543 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 181:
-#line 350 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_SBRACKET RIGHT_SBRACKET\n",linea, gramaticas );*/}
+#line 351 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS identifier_list RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
 #line 3549 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 182:
-#line 352 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+#line 353 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS RIGHT_PARENTHESIS\n",linea,gramaticas);*/}
 #line 3555 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 183:
-#line 353 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS identifier_list RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+#line 358 "parser.y" /* yacc.c:1646  */
+    { /*printf("%d con %s  pointer: pointer_type\n",linea, gramaticas);*/}
 #line 3561 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 184:
-#line 355 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS RIGHT_PARENTHESIS\n",linea,gramaticas);*/}
+#line 359 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  pointer: pointer_type type_qualifier_list\n",linea, gramaticas );*/}
 #line 3567 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 185:
 #line 360 "parser.y" /* yacc.c:1646  */
-    { /*printf("%d con %s  pointer: pointer_type\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  pointer: pointer_type pointer\n",linea, gramaticas );*/}
 #line 3573 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 186:
 #line 361 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  pointer: pointer_type type_qualifier_list\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  pointer: pointer_type type_qualifier_list pointer\n",linea,gramaticas);*/}
 #line 3579 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 187:
-#line 362 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  pointer: pointer_type pointer\n",linea, gramaticas );*/}
+#line 365 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  pointer_type: MUL\n",linea,gramaticas);*/}
 #line 3585 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 188:
-#line 363 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  pointer: pointer_type type_qualifier_list pointer\n",linea,gramaticas);*/}
+#line 366 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  pointer_type: BIT_AND\n",linea,gramaticas);*/}
 #line 3591 "parser.tab.c" /* yacc.c:1646  */
     break;
 
@@ -3598,410 +3598,410 @@ yyreduce:
 
   case 190:
 #line 368 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  pointer_type: BIT_AND\n",linea,gramaticas);*/}
-#line 3603 "parser.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 191:
-#line 369 "parser.y" /* yacc.c:1646  */
     {/*printf("%d con %s  pointer_type: MUL\n",linea,gramaticas);*/}
-#line 3609 "parser.tab.c" /* yacc.c:1646  */
+#line 3603 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 192:
 #line 370 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  pointer_type: MUL\n",linea,gramaticas);*/}
+    {/*printf("%d con %s  pointer_type: BIT_AND\n",linea,gramaticas);*/}
+#line 3609 "parser.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 193:
+#line 374 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_qualifier_list: type_qualifier\n",linea,gramaticas );*/}
 #line 3615 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 194:
-#line 372 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  pointer_type: BIT_AND\n",linea,gramaticas);*/}
+#line 375 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_qualifier_list: type_qualifier_list type_qualifier\n",linea, gramaticas );*/}
 #line 3621 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 195:
-#line 376 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_qualifier_list: type_qualifier\n",linea,gramaticas );*/}
+#line 380 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  parameter_type_list: parameter_list\n",linea, gramaticas );*/}
 #line 3627 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 196:
-#line 377 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_qualifier_list: type_qualifier_list type_qualifier\n",linea, gramaticas );*/}
+#line 381 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  parameter_type_list: parameter_list COMMA ELLIPSIS\n",linea, gramaticas);*/}
 #line 3633 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 197:
-#line 382 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_type_list: parameter_list\n",linea, gramaticas );*/}
+#line 387 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  parameter_declaration: declaration_specifiers declarator\n",linea, gramaticas );*/}
 #line 3639 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 198:
-#line 383 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_type_list: parameter_list COMMA ELLIPSIS\n",linea, gramaticas);*/}
+#line 388 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  parameter_declaration: declaration_specifiers abstract_declarator\n",linea, gramaticas );*/}
 #line 3645 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 199:
 #line 389 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_declaration: declaration_specifiers declarator\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  parameter_declaration: declaration_specifiers\n",linea, gramaticas );*/}
 #line 3651 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 200:
 #line 390 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_declaration: declaration_specifiers abstract_declarator\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  parameter_declaration: declarator\n",linea, gramaticas );*/}
 #line 3657 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 201:
 #line 391 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_declaration: declaration_specifiers\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas );*/}
 #line 3663 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 202:
 #line 392 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_declaration: declarator\n",linea, gramaticas );*/}
-#line 3669 "parser.tab.c" /* yacc.c:1646  */
+    {/*printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas
+	 );*/}
+#line 3670 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 203:
-#line 393 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas );*/}
-#line 3675 "parser.tab.c" /* yacc.c:1646  */
+#line 394 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS type_name RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+#line 3676 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 204:
-#line 394 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas
-	 );*/}
+#line 395 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS IDENTIFIER pointer RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
 #line 3682 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 205:
 #line 396 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS type_name RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS IDENTIFIER RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
 #line 3688 "parser.tab.c" /* yacc.c:1646  */
     break;
 
-  case 206:
-#line 397 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS IDENTIFIER pointer RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+  case 207:
+#line 401 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  identifier_list: IDENTIFIER COMMA identifier_list\n",linea, gramaticas);*/}
 #line 3694 "parser.tab.c" /* yacc.c:1646  */
     break;
 
-  case 207:
-#line 398 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS IDENTIFIER RIGHT_PARENTHESIS\n",linea, gramaticas );*/}
+  case 208:
+#line 402 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  identifier_list: IDENTIFIER COMMA parameter_list\n",linea, gramaticas);*/}
 #line 3700 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 209:
-#line 403 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  identifier_list: IDENTIFIER COMMA identifier_list\n",linea, gramaticas);*/}
+#line 405 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  parameter_list: parameter_declaration\n",linea, gramaticas);*/}
 #line 3706 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 210:
-#line 404 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  identifier_list: IDENTIFIER COMMA parameter_list\n",linea, gramaticas);*/}
+#line 406 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  parameter_list: parameter_list COMMA parameter_declaration\n",linea, gramaticas);*/}
 #line 3712 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 211:
-#line 407 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_list: parameter_declaration\n",linea, gramaticas);*/}
+#line 409 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_name: specifier_qualifier_list\n",linea, gramaticas);*/}
 #line 3718 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 212:
-#line 408 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  parameter_list: parameter_list COMMA parameter_declaration\n",linea, gramaticas);*/}
+#line 410 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  type_name: specifier_qualifier_list abstract_declarator\n",linea, gramaticas);*/}
 #line 3724 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 213:
-#line 411 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_name: specifier_qualifier_list\n",linea, gramaticas);*/}
+#line 415 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  abstract_declarator: pointer\n",linea, gramaticas);*/}
 #line 3730 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 214:
-#line 412 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  type_name: specifier_qualifier_list abstract_declarator\n",linea, gramaticas);*/}
+#line 416 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  abstract_declarator: direct_abstract_declarator\n",linea, gramaticas );*/}
 #line 3736 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 215:
 #line 417 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  abstract_declarator: pointer\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  abstract_declarator: pointer direct_abstract_declarator\n",linea, gramaticas);*/}
 #line 3742 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 216:
-#line 418 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  abstract_declarator: direct_abstract_declarator\n",linea, gramaticas );*/}
+#line 421 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  direct_abstract_declarator: LEFT_PARENTHESIS abstract_declarator RIGHT_PARENTHESIS \n",linea, gramaticas );*/}
 #line 3748 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 217:
-#line 419 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  abstract_declarator: pointer direct_abstract_declarator\n",linea, gramaticas);*/}
+#line 422 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  direct_abstract_declarator:  LEFT_SBRACKET RIGHT_SBRACKET \n",linea, gramaticas);*/}
 #line 3754 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 218:
 #line 423 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: LEFT_PARENTHESIS abstract_declarator RIGHT_PARENTHESIS \n",linea, gramaticas );*/}
+    {/*printf("%d con %s  direct_abstract_declarator: LEFT_SBRACKET constant_expression RIGHT_SBRACKET \n",linea, gramaticas );*/}
 #line 3760 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 219:
 #line 424 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator:  LEFT_SBRACKET RIGHT_SBRACKET \n",linea, gramaticas);*/}
+    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_SBRACKET RIGHT_SBRACKET\n",linea, gramaticas );*/}
 #line 3766 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 220:
 #line 425 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: LEFT_SBRACKET constant_expression RIGHT_SBRACKET \n",linea, gramaticas );*/}
+    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_SBRACKET constant_expression RIGHT_SBRACKET \n",linea, gramaticas );*/}
 #line 3772 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 221:
 #line 426 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_SBRACKET RIGHT_SBRACKET\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  direct_abstract_declarator: LEFT_PARENTHESIS RIGHT_PARENTHESIS\n",linea, gramaticas);*/}
 #line 3778 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 222:
 #line 427 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_SBRACKET constant_expression RIGHT_SBRACKET \n",linea, gramaticas );*/}
+    {/*printf("%d con %s  direct_abstract_declarator: LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS \n",linea, gramaticas );*/}
 #line 3784 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 223:
 #line 428 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: LEFT_PARENTHESIS RIGHT_PARENTHESIS\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_PARENTHESIS RIGHT_PARENTHESIS\n",linea,gramaticas );*/}
 #line 3790 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 224:
 #line 429 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS \n",linea, gramaticas );*/}
+    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS\n",linea,  gramaticas  );*/}
 #line 3796 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 225:
-#line 430 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_PARENTHESIS RIGHT_PARENTHESIS\n",linea,gramaticas );*/}
+#line 433 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  initializer: assignment_expression\n",linea, gramaticas );*/}
 #line 3802 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 226:
-#line 431 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  direct_abstract_declarator: direct_abstract_declarator LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS\n",linea,  gramaticas  );*/}
+#line 434 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  initializer: LEFT_BRACKET initializer_list RIGHT_BRACKET\n",linea,  gramaticas );*/}
 #line 3808 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 227:
 #line 435 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  initializer: assignment_expression\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  initializer: LEFT_BRACKET initializer_list COMMA RIGHT_BRACKET\n",linea, gramaticas );*/}
 #line 3814 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 228:
-#line 436 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  initializer: LEFT_BRACKET initializer_list RIGHT_BRACKET\n",linea,  gramaticas );*/}
+#line 439 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  initializer_list: initializer\n",linea, gramaticas);*/}
 #line 3820 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 229:
-#line 437 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  initializer: LEFT_BRACKET initializer_list COMMA RIGHT_BRACKET\n",linea, gramaticas );*/}
+#line 440 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  initializer_list: initializer_list COMMA initializer \n",linea, gramaticas);*/}
 #line 3826 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 230:
-#line 441 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  initializer_list: initializer\n",linea, gramaticas);*/}
+#line 444 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  statement: labeled_statement\n",linea, gramaticas );*/}
 #line 3832 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 231:
-#line 442 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  initializer_list: initializer_list COMMA initializer \n",linea, gramaticas);*/}
+#line 445 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  statement: compound_statement\n",linea, gramaticas);*/}
 #line 3838 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 232:
 #line 446 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement: labeled_statement\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  statement: expression_statement\n",linea,gramaticas );*/}
 #line 3844 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 233:
 #line 447 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement: compound_statement\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  statement: selection_statement\n",linea, gramaticas);*/}
 #line 3850 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 234:
 #line 448 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement: expression_statement\n",linea,gramaticas );*/}
+    {/*printf("%d con %s  statement: iteration_statement\n",linea, gramaticas );*/}
 #line 3856 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 235:
 #line 449 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement: selection_statement\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  statement: jump_statement\n",linea, gramaticas );*/}
 #line 3862 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 236:
-#line 450 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement: iteration_statement\n",linea, gramaticas );*/}
+#line 453 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  labeled_statement: IDENTIFIER COLON statement \n",linea, gramaticas );*/}
 #line 3868 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 237:
-#line 451 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement: jump_statement\n",linea, gramaticas );*/}
+#line 454 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  labeled_statement: CASE constant_expression COLON statement\n",linea, gramaticas );*/}
 #line 3874 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 238:
 #line 455 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  labeled_statement: IDENTIFIER COLON statement \n",linea, gramaticas );*/}
+    {/*printf("%d con %s  labeled_statement: DEFAULT COLON statement\n",linea, gramaticas );*/}
 #line 3880 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 239:
-#line 456 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  labeled_statement: CASE constant_expression COLON statement\n",linea, gramaticas );*/}
+#line 459 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  compound_statement: LEFT_BRACKET RIGHT_BRACKET\n",linea, gramaticas);*/}
 #line 3886 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 240:
-#line 457 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  labeled_statement: DEFAULT COLON statement\n",linea, gramaticas );*/}
+#line 460 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  compound_statement: LEFT_BRACKET statement_list RIGHT_BRACKET\n",linea, gramaticas );*/}
 #line 3892 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 241:
 #line 461 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  compound_statement: LEFT_BRACKET RIGHT_BRACKET\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  compound_statement: LEFT_BRACKET declaration_list RIGHT_BRACKET\n",linea, gramaticas);*/}
 #line 3898 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 242:
 #line 462 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  compound_statement: LEFT_BRACKET statement_list RIGHT_BRACKET\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  compound_statement: LEFT_BRACKET declaration_list statement_list RIGHT_BRACKET\n",linea, gramaticas);*/}
 #line 3904 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 243:
-#line 463 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  compound_statement: LEFT_BRACKET declaration_list RIGHT_BRACKET\n",linea, gramaticas);*/}
+#line 466 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declaration_list: declaration\n",linea, gramaticas );*/}
 #line 3910 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 244:
-#line 464 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  compound_statement: LEFT_BRACKET declaration_list statement_list RIGHT_BRACKET\n",linea, gramaticas);*/}
+#line 468 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declaration_list: declaration_list declaration\n",linea, gramaticas);*/}
 #line 3916 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 245:
-#line 468 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declaration_list: declaration\n",linea, gramaticas );*/}
+#line 469 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  declaration_list: declaration_list statement_list\n",linea, gramaticas);*/}
 #line 3922 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 246:
-#line 470 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declaration_list: declaration_list declaration\n",linea, gramaticas);*/}
+#line 473 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  statement_list: statement\n",linea, gramaticas );*/}
 #line 3928 "parser.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 247:
-#line 471 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  declaration_list: declaration_list statement_list\n",linea, gramaticas);*/}
-#line 3934 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 248:
 #line 475 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement_list: statement\n",linea, gramaticas );*/}
+    {memset(gramaticas,0,sizeof(gramaticas)); /*printf("%d con %s  external_declaration: DEFINE define\n",linea, gramaticas);*/}
+#line 3934 "parser.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 249:
+#line 476 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  statement_list: statement_list statement\n",linea, gramaticas);*/}
 #line 3940 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 250:
 #line 477 "parser.y" /* yacc.c:1646  */
-    {memset(gramaticas,0,sizeof(gramaticas)); /*printf("%d con %s  external_declaration: DEFINE define\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  statement_list: statement_list declaration_list\n",linea, gramaticas);*/}
 #line 3946 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 251:
-#line 478 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement_list: statement_list statement\n",linea, gramaticas);*/}
+#line 481 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  expression_statement: SEMICOLON\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 3952 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 252:
-#line 479 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  statement_list: statement_list declaration_list\n",linea, gramaticas);*/}
+#line 482 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  expression_statement: expression SEMICOLON \n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 3958 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 253:
-#line 483 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  expression_statement: SEMICOLON\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
+#line 486 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  selection_statement: IF LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea,gramaticas);*/}
 #line 3964 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 254:
-#line 484 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  expression_statement: expression SEMICOLON \n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
+#line 487 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  selection_statement: IF LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement ELSE statement\n",linea, gramaticas);*/}
 #line 3970 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 255:
 #line 488 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  selection_statement: IF LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea,gramaticas);*/}
+    {/*printf("%d con %s  selection_statement: SWITCH LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea, gramaticas );*/}
 #line 3976 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 256:
-#line 489 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  selection_statement: IF LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement ELSE statement\n",linea, gramaticas);*/}
+#line 492 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  iteration_statement: WHILE LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
 #line 3982 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 257:
-#line 490 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  selection_statement: SWITCH LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea, gramaticas );*/}
+#line 493 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  iteration_statement: DO statement WHILE LEFT_PARENTHESIS expression RIGHT_PARENTHESIS SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 3988 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 258:
 #line 494 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: WHILE LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement RIGHT_PARENTHESIS statement\n",linea, gramaticas );*/}
 #line 3994 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 259:
 #line 495 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: DO statement WHILE LEFT_PARENTHESIS expression RIGHT_PARENTHESIS SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
 #line 4000 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 260:
 #line 496 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement RIGHT_PARENTHESIS statement\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
 #line 4006 "parser.tab.c" /* yacc.c:1646  */
     break;
 
@@ -4013,25 +4013,25 @@ yyreduce:
 
   case 262:
 #line 498 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  iteration_statement: WHILE LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
 #line 4018 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 263:
 #line 499 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement RIGHT_PARENTHESIS statement\n",linea, gramaticas );*/}
 #line 4024 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 264:
 #line 500 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: WHILE LEFT_PARENTHESIS expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
 #line 4030 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 265:
 #line 501 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement RIGHT_PARENTHESIS statement\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
 #line 4036 "parser.tab.c" /* yacc.c:1646  */
     break;
 
@@ -4042,92 +4042,92 @@ yyreduce:
     break;
 
   case 267:
-#line 503 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
+#line 506 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  jump_statement: GOTO IDENTIFIER SEMICOLON\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4048 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 268:
-#line 504 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  iteration_statement: FOR LEFT_PARENTHESIS expression_statement expression_statement expression RIGHT_PARENTHESIS statement\n",linea, gramaticas);*/}
+#line 507 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  jump_statement: CONTINUE SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4054 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 269:
 #line 508 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  jump_statement: GOTO IDENTIFIER SEMICOLON\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
+    {/*printf("%d con %s  jump_statement: BREAK SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4060 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 270:
 #line 509 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  jump_statement: CONTINUE SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+    {/*printf("%d con %s  jump_statement: RETURN SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4066 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 271:
 #line 510 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  jump_statement: BREAK SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+    {yyerror(" missing ; ");}
 #line 4072 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 272:
 #line 511 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  jump_statement: RETURN SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+    {/*printf("%d con %s  jump_statement: RETURN expression SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4078 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 273:
 #line 512 "parser.y" /* yacc.c:1646  */
-    {yyerror(" missing ; ");}
+    {yyerror("missing ;");}
 #line 4084 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 274:
-#line 513 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  jump_statement: RETURN expression SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+#line 516 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  translation_unit: Entre a external_declaration\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4090 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 275:
-#line 514 "parser.y" /* yacc.c:1646  */
-    {yyerror("missing ;");}
+#line 517 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  translation_unit: Entre a ciclo translation_unit\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4096 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 276:
 #line 518 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  translation_unit: Entre a external_declaration\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));*/}
+    {/*printf("%d  translation_unit: Archivo Vacío\n",linea );memset(gramaticas,0,sizeof(gramaticas));*/}
 #line 4102 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 277:
-#line 519 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  translation_unit: Entre a ciclo translation_unit\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));*/}
+#line 523 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  external_declaration: function_definition\n",linea, gramaticas);*/}
 #line 4108 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 278:
-#line 520 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d  translation_unit: Archivo Vacío\n",linea );memset(gramaticas,0,sizeof(gramaticas));*/}
+#line 524 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  external_declaration: declaration\n",linea, gramaticas);*/}
 #line 4114 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 279:
 #line 525 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  external_declaration: function_definition\n",linea, gramaticas);*/}
+    {memset(gramaticas,0,sizeof(gramaticas)); /*printf("%d con %s  external_declaration: DEFINE define\n",linea, gramaticas);*/}
 #line 4120 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 280:
 #line 526 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  external_declaration: declaration\n",linea, gramaticas);*/}
+    {memset(gramaticas,0,sizeof(gramaticas));/*printf("%d con %s  external_declaration: INCLUDE LITERALn\n",linea, gramaticas);*/}
 #line 4126 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 281:
 #line 527 "parser.y" /* yacc.c:1646  */
-    {memset(gramaticas,0,sizeof(gramaticas)); /*printf("%d con %s  external_declaration: DEFINE define\n",linea, gramaticas);*/}
+    {memset(gramaticas,0,sizeof(gramaticas));/*printf("%d con %s  external_declaration: INCLUDE LITERALn\n",linea, gramaticas);*/}
 #line 4132 "parser.tab.c" /* yacc.c:1646  */
     break;
 
@@ -4139,72 +4139,60 @@ yyreduce:
 
   case 283:
 #line 529 "parser.y" /* yacc.c:1646  */
-    {memset(gramaticas,0,sizeof(gramaticas));/*printf("%d con %s  external_declaration: INCLUDE LITERALn\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  external_declaration: \\n \n",linea, gramaticas);*/}
 #line 4144 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 284:
 #line 530 "parser.y" /* yacc.c:1646  */
-    {memset(gramaticas,0,sizeof(gramaticas));/*printf("%d con %s  external_declaration: INCLUDE LITERALn\n",linea, gramaticas);*/}
+    {/*printf("%d con %s  external_declaration: SEMICOLON\n",linea, gramaticas);*/}
 #line 4150 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 285:
 #line 531 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  external_declaration: \\n \n",linea, gramaticas);*/}
+    {/*printf("%d con %s  external_declaration: compound_statement\n",linea, gramaticas);*/}
 #line 4156 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 286:
-#line 532 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  external_declaration: SEMICOLON\n",linea, gramaticas);*/}
+#line 535 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  define: define_enter\n",linea, gramaticas);*/}
 #line 4162 "parser.tab.c" /* yacc.c:1646  */
     break;
 
-  case 287:
-#line 533 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  external_declaration: compound_statement\n",linea, gramaticas);*/}
+  case 371:
+#line 627 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  function_definition: declaration_specifiers declarator declaration_list compound_statement\n",linea,gramaticas);*/}
 #line 4168 "parser.tab.c" /* yacc.c:1646  */
     break;
 
-  case 288:
-#line 537 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  define: define_enter\n",linea, gramaticas);*/}
+  case 372:
+#line 628 "parser.y" /* yacc.c:1646  */
+    {/*printf("%d con %s  function_definition: declaration_specifiers declarator compound_statement \n",linea, gramaticas);*/}
 #line 4174 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 373:
 #line 629 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  function_definition: declaration_specifiers declarator declaration_list compound_statement\n",linea,gramaticas);*/}
+    {/*printf("%d con %s  function_definition: declarator declaration_list compound_statement\n",linea, gramaticas );*/}
 #line 4180 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 374:
 #line 630 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  function_definition: declaration_specifiers declarator compound_statement \n",linea, gramaticas);*/}
+    {/*printf("%d con %s  function_definition: declarator compound_statement\n",linea,gramaticas);*/}
 #line 4186 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 375:
 #line 631 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  function_definition: declarator declaration_list compound_statement\n",linea, gramaticas );*/}
+    {/*printf("%d con %s  function_definition: declarator declaration_list compound_statement function_definition\n",linea,gramaticas);*/}
 #line 4192 "parser.tab.c" /* yacc.c:1646  */
     break;
 
-  case 376:
-#line 632 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  function_definition: declarator compound_statement\n",linea,gramaticas);*/}
-#line 4198 "parser.tab.c" /* yacc.c:1646  */
-    break;
 
-  case 377:
-#line 633 "parser.y" /* yacc.c:1646  */
-    {/*printf("%d con %s  function_definition: declarator declaration_list compound_statement function_definition\n",linea,gramaticas);*/}
-#line 4204 "parser.tab.c" /* yacc.c:1646  */
-    break;
-
-
-#line 4208 "parser.tab.c" /* yacc.c:1646  */
+#line 4196 "parser.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -4432,7 +4420,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 638 "parser.y" /* yacc.c:1906  */
+#line 636 "parser.y" /* yacc.c:1906  */
 
 
 #include<stdio.h>

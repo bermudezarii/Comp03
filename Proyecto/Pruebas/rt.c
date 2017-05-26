@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include "malloc.h"
-#include <time.h>
-#include <pthread.h>
-#include <unistd.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <math.h>
+//#include "malloc.h"
+//#include <time.h>
+//#include <pthread.h>
+//#include <unistd.h>
 #define PI 3.14159265
 
 // Constants and data types: =====================================

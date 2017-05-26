@@ -116,8 +116,7 @@ L?'(\\.|[^\\'])+'	             											{strcat(gramaticas,yytext);strcat(gram
 "#"(" "|\t)*"include"  	  													{strcat(gramaticas,yytext);strcat(gramaticas," ");return INCLUDE;}
 "#"(" "|\t)*"define"	  													{strcat(gramaticas,yytext);strcat(gramaticas," ");fdefine=0;return DEFINE;}
 [a-zA-Z][_a-zA-Z0-9]*|_[_a-zA-Z0-9]*|_    									{strcat(gramaticas,yytext);strcat(gramaticas," ");return IDENTIFIER;}
-["](\\[^"])*["]																{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
-["]([^"]|\\.)*["]	   	      	 											{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
+L?\"[^\"\\]*(?s:\\.[^\"\\]*)*\"	 											{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
 
 L?'(\\.|[^\\']|\n)*'          	  											{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
 \n|\z|\s|\r		 															{columna = 1; linea++;endline=0;/*ignore*/;if(fdefine==0){fdefine=1;return ('\n');}else{fdefine=1;}}
