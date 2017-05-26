@@ -51,6 +51,20 @@ bool existeInclude(char *include)
 void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
 			printf("Entro include\n");
 	        char *includeArreglado; //El valor del include sin los ""
+            char includeGCC[100]= "";
+            char contenidoArchivo[2];
+            FILE *libreria;
+            FILE *fp;
+            FILE *salida;
+            salida = fopen("salida.c", "w");
+                                
+
+            strcat(includeGCC, yytext);
+            strcat(includeGCC, " ");
+                    
+  
+
+
             ntoken = nextToken(); //Se obtiene el siguiente token para evaluar 
             /*
                 Debido a que los define son literales
@@ -96,5 +110,68 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                     printf("Inclusión duplicada de %s\n", includeArreglado); //Se notifica el error, revisar esta validación
                 }
             }
-           
+
+            else if(ntoken == LESS){
+                strcat(includeGCC, yytext);
+                ntoken = nextToken();
+
+                if(ntoken == IDENTIFIER){
+                    strcat(includeGCC, yytext);
+                    ntoken = nextToken();
+
+                    if(ntoken == DOT){
+                        strcat(includeGCC, yytext);
+                        ntoken = nextToken();
+
+                        if(ntoken == IDENTIFIER){
+                            strcat(includeGCC, yytext);
+                            ntoken = nextToken();
+
+                            if(ntoken == GREATER){
+                                
+                                strcat(includeGCC, yytext);
+                                
+                                printf("ENTRA CON INCLUDE \n");
+                                printf("%s \n", includeGCC);
+
+                                libreria = fopen("libreria.c", "w");
+                                fputs(includeGCC, libreria);
+                                fclose(libreria);
+
+                                fp = popen("cpp -MMD libreria.c", "r");
+                                
+                                if (fp == NULL) {
+                                     printf("Failed to run command\n" );
+                                      exit -1;
+                                }
+
+                                while (fgets(contenidoArchivo, 2, fp) != NULL) {
+                                    //printf("%s", contenidoArchivo);
+                                    if (strcmp(contenidoArchivo,"#")==0){
+                                        
+                                    
+                                        while (strcmp(contenidoArchivo,"\n")!=0){
+                                            fgets(contenidoArchivo, 2, fp);
+                                        }
+                                      
+                                    }
+                                    else
+                                        fputs(contenidoArchivo, salida);
+                                }
+
+                                pclose(fp);
+                                fclose(salida);
+                                
+                                
+
+                            }
+                        
+
+                        }
+
+
+                    }
+                }   
+
+            }
 }

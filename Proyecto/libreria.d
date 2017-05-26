@@ -1,0 +1,1 @@
+libreria.o: libreria.c
