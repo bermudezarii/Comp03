@@ -14,7 +14,7 @@ extern int tabs=0;
 
 
 
-int scanner(void)
+int scanner(FILE * nuevo)
 {
     int ntoken, vtoken;
     ntoken = nextToken();
@@ -23,6 +23,7 @@ int scanner(void)
     	printf("Tabs %d\n",tabs );
     	printf("Lineas %d\n",linea );
         ntoken = nextToken();
+        fputs(yytext, nuevo); 
 	   
     }
     return 0;

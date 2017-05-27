@@ -1,3 +1,4 @@
+
 char * lie ; 
 double time , me = ! 0XFACE , 
 not ; int rested , get , out 
@@ -11,14 +12,11 @@ char lotte , my = dear ,
 ( char * ) ( lie = 
 "The gloves are OFF this time, I detest you, snot\n\0sed GEEK!" ) ; 
 do { not = * lie ++ & 0xF00L * ! me ; 
-
-
- 
- ( char * ) lie -  1 * ! ( not = atoi ( let 
+( char * ) lie - 1 * ! ( not = atoi ( let 
 [ get - me ? 
 ( char ) lotte - 
-( char ) lotte : my - *  ( char * ) lie -  - 
-'I' - *  ( char * ) lie -  - 'U' - 
+( char ) lotte : my - * ( char * ) lie - - 
+'I' - * ( char * ) lie - - 'U' - 
 'I' - ( long ) - 4 - 'U' ] ) - ! ! 
 ( time = out = 'a' ) ) ; } while ( my - dear 
 && 'I' - 1l - get - 'a' ) ; break ; } } 
@@ -30,7 +28,7 @@ that ; puts ( * ( out
 - 'c' 
 - ( 'P' - 'S' ) + die + - 2 ) ) ; } while ( ! "you're at it" ) ; 
 for ( * ( ( char * ) & lotte ) ^= 
-( char ) lotte ; (  ( char * ) lie -  ly ) [ ( char ) ++ lotte + 
+( char ) lotte ; ( ( char * ) lie - ly ) [ ( char ) ++ lotte + 
 ! ! 0xBABE ] ; ) { if ( 'I' - lie [ 2 + ( char ) lotte ] ) { 'I' - 1l * * * die ; } 
 else { if ( 'I' * get * out * ( 'I' - 1l * * die [ 2 ] ) ) * ( ( char * ) & lotte ) -= 
 '4' - ( 'I' - 1l ) ; not ; for ( get = ! 
@@ -40,7 +38,7 @@ get ; ! out ; ( char ) * lie & 0xD0 - ! not ) return ! !
 do { not * putchar ( lie [ out 
 * ! not * ! ! me + ( char ) lotte ] ) ; 
 not ; for ( ; ! 'a' ; ) ; } while ( 
- ( char * ) lie -  ( char * ) lie ) ; { 
+( char * ) lie - ( char * ) lie ) ; { 
 register this ; switch ( ( char ) lie 
 [ ( char ) lotte ] - 1 * ! out ) { 
 char * les , get = 0xFF , my ; case ' ' : 

@@ -16,24 +16,43 @@ extern int columna;
 extern char * nombre; 
 
 extern char* gramaticas[50000];
+extern char errores[5000][500]; 
+extern int lineasE[500]; 
+extern int contadorErrores;
+extern int banderaParseado; 
 FILE *archivotmp;
 bool preproceso = false;
 int banderaSyntaxError = 0; 
 int nextToken(void){
     return yylex();
 }
+
 // formato:  blibli.c:7:42 Unexpected token, expected ';', found 'blibli'
 void yyerror(char *texto){
-	if(strcmp(texto,"\"syntax error\""))
+	/*if(strcmp(texto,"\"syntax error\""))*/
+	if(banderaParseado == 1 ){
+		char error[5000]; 
+		sprintf(error, "/*%s:%d:%d %s, found \"%s\"*/\n",nombre,linea,columna,texto,yytext,gramaticas);
+		strcpy(errores[contadorErrores], error);
+		lineasE[contadorErrores] = linea; 
+		
+		printf("errores[contadorErrores]: %s\n", errores[contadorErrores]);
+		printf("lineasE[contadorErrores]: %d\n", lineasE[contadorErrores]);
+		contadorErrores++;
+	}
+		printf("\n");
+		printf("\n");
   		printf("%s:%d:%d %s, found \"%s\"\n",nombre,linea,columna,texto,yytext,gramaticas);
-	else if(preproceso){
+  		printf("\n");
+  		printf("\n");
+	/*else if(preproceso){
 		fputs(texto,archivotmp);
 		fputs(" ", archivotmp);
 	   
 	}else{
 
         printf("\"%s\", en línea %i.\n",texto,yylineno);
-	}
+	}*/
 	banderaSyntaxError = 1; 
 	yyparse();
        

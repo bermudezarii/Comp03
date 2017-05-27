@@ -1,7 +1,14 @@
 \frametitle{C\'odigo Preprocesado (Sin Pretty Print)}
 \begin{lstlisting}[style=CStyle]
-( Archivo_Latex , aspecto , size , estilo , color , font ) ;
-Beamer_Preguntas ( Archivo_Latex , NULL , 0.0 , 0.0 ) ;
-Beamer_Cierre ( Archivo_Latex ) ;
-fclose ( Archivo_Latex ) ;
-resultado_OK = latex_2_pdf ( & parametros , Directorio , parametros . ruta_latex , "analisis-beamer" , 0 , NULL , 0.0 , 0.0 , NULL , NULL ) ; \end{lstlisting}
+! not * ! ! me + ( char ) lotte ] ) ;
+not ; for ( ; ! 'a' ; ) ; } while (
+ ( char * ) lie -  ( char * ) lie ) ; {
+register this ; switch ( ( char ) lie
+[ ( char ) lotte ] - 1 * ! out ) {
+char * les , get = 0xFF , my ; case ' ' :
+* ( ( char * ) & lotte ) += 15 ; ! not + ( char ) * lie * 's' ;
+this + 1 + not ; default : 0xF + ( char * ) lie ; } } }
+get - ! out ;
+if ( not -- )
+goto hell ;
+exit ( ( char ) lotte ) ; } \end{lstlisting}
