@@ -1,7 +1,3 @@
-\frametitle{C\'odigo Preprocesado (Sin Pretty Print)}
+\frametitle{C\'odigo con los Errores}
 \begin{lstlisting}[style=CStyle]
-( Archivo_Latex , aspecto , size , estilo , color , font ) ;
-Beamer_Preguntas ( Archivo_Latex , NULL , 0.0 , 0.0 ) ;
-Beamer_Cierre ( Archivo_Latex ) ;
-fclose ( Archivo_Latex ) ;
-resultado_OK = latex_2_pdf ( & parametros , Directorio , parametros . ruta_latex , "analisis-beamer" , 0 , NULL , 0.0 , 0.0 , NULL , NULL ) ; \end{lstlisting}
+exit ( ( char ) lotte ) ; } \end{lstlisting}

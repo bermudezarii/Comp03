@@ -17,6 +17,10 @@ extern banderaSyntaxError;
 
 char * nombre; 
 FILE * beamer; 
+char errores[5000][500]; 
+int lineasE[500]; 
+int contadorErrores;
+int banderaParseado; 
 
 
 int main(int argc, char *argv[])
@@ -42,6 +46,8 @@ int main(int argc, char *argv[])
         FILE *archivoEntrada;
         FILE *archivoEntradaTem;
         FILE *tmpfile = fopen("tmpfile.c", "w");
+        FILE * tmpfile2 = fopen("tmpfile2.c", "w"); // es el que use para la bandera de syntaxerror
+        
         nombre = argv[1];
         archivoEntrada  = fopen(argv[1], "r");
         archivotmp=tmpfile;
@@ -58,20 +64,37 @@ int main(int argc, char *argv[])
                 beamer = fopen("beamer.tex", "w"); 
                 startBeamer(beamer); 
                 addExplanation(beamer); 
-                startListing(beamer, "C\\'odigo Preprocesado (Sin Pretty Print)"); 
+                startListing(beamer, "C\\'odigo"); 
                 preprocesador1Beamer(archivoEntrada,tmpfile);
                 endListing(beamer); 
                 fclose(tmpfile);
                 preproceso=false;
                 tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
                 yyin = tmpfile;
-                linea=1;
+                linea=0;
                 memset(gramaticas,0,sizeof(gramaticas));
                 yyparse();
                 
-                if(banderaSyntaxError == 1){
-                    //falta de implementar
+                if(banderaSyntaxError == 1){ // si hay error, los indica 
+                    banderaParseado =1 ; 
+                    fclose(tmpfile);
+                    tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
+                    yyin = tmpfile; 
+                    linea = 0; 
+                    preprocesador1(tmpfile, tmpfile2); 
+                    fclose(tmpfile2);
+                    tmpfile2 = fopen("tmpfile2.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
+                    memset(gramaticas,0,sizeof(gramaticas));
+                    linea = 0; 
+                    yyin = tmpfile2; 
+                    yyparse();
+                    preproceso = false;
+                    fclose(tmpfile2);
+                    tmpfile2 = fopen("tmpfile2.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
+                    ponerErrores(tmpfile2, beamer);
                     printf("error :v\n");
+
+
                 }
                 else{ // banderaSyntaxError == 0
                     fclose(archivoEntrada);     
@@ -108,6 +131,7 @@ int main(int argc, char *argv[])
                 }
             }
             fclose(tmpfile);
+            fclose(tmpfile2); 
             fclose(archivoEntrada);
             //remove("tmpfile.c");  
         } // se acaba el if de archivoEntradaExiste
