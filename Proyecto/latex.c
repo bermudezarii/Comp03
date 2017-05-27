@@ -17,7 +17,7 @@ void startBeamer(FILE * archivoPretty){
     fputs("  stringstyle=\\color{mPurple},\n",archivoPretty); 
     fputs("  basicstyle=\\footnotesize,\n",archivoPretty); 
     fputs("  breakatwhitespace=false,\n", archivoPretty); 
-    fputs("  breaklines=true,\n  captionpos=b,\n  keepspaces=true,\n  numbers=left,\n", archivoPretty); 
+    fputs("  breaklines=true,\n  captionpos=b,\n  keepspaces=true,\n", archivoPretty); 
     fputs("  numbersep=5pt,\n  showspaces=false,\n  showstringspaces=false,\n  showtabs=false,\n  tabsize=2,\n  language=C \n}\n", archivoPretty); 
 
     fputs("\\usetheme{progressbar}\n \n \n", archivoPretty);

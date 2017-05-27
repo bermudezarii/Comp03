@@ -435,17 +435,30 @@ int prettyprintGNU(FILE * archivoPretty, char*name){
 void ponerErrores(FILE * viejo, FILE * nuevo){
     anterior = -1;
     ntoken = nextToken();
+    startListing(beamer, "C\\'odigo con los Errores"); 
     printf(" sdasd asd \n wqerqer \n qewqweq we nextToken = %s\n", yytext);
     while(ntoken) {
       printf("dfsfsd \n 234234 \n 23423 4\n");
       if (endline==0){
         putPretty("\n", nuevo); 
+        contadorBeamer++;
+
+      if(contadorBeamer >= 13){
+        endListing(beamer); 
+        startListing(beamer, "C\\'odigo con los Errores"); 
+        contadorBeamer = 0; 
+      }
         int n = 0; // contador para ver si esta el error
         while(n < contadorErrores){
           printf("lineaE[n] = %d, lineaNuevo = %d\n", lineasE[n], lineaNuevo);
             if(lineasE[n] == lineaNuevo){
-
                 putPretty(errores[n], nuevo); 
+                contadorBeamer++; 
+                if(contadorBeamer >= 13){
+                  endListing(beamer); 
+                  startListing(beamer, "C\\'odigo con los Errores"); 
+                  contadorBeamer = 0; 
+                }
             }
             n++; 
         }
@@ -458,7 +471,7 @@ void ponerErrores(FILE * viejo, FILE * nuevo){
         anterior = ntoken; /*guardo el anterior porque me ayuda a verificar ciertas cosas*/
         ntoken = nextToken(); /*como el i++ de nuestro ciclo*/
     }  
-    
+    endListing(beamer); 
     printf("**El código al que se le aplicó el Pretty Print estilo GNU, se encuentra en el archivo ");
     return 0;
 }

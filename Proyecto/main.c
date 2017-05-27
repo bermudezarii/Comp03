@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
         FILE *archivoEntradaTem;
         FILE *tmpfile = fopen("tmpfile.c", "w");
         FILE * tmpfile2 = fopen("tmpfile2.c", "w"); // es el que use para la bandera de syntaxerror
+        
         nombre = argv[1];
         archivoEntrada  = fopen(argv[1], "r");
         archivotmp=tmpfile;
@@ -61,12 +62,11 @@ int main(int argc, char *argv[])
             // si desea el beamer
             if(argc >= 3 &&( !strcmp(argv[2], "B") || !strcmp(argv[2], "P"))){ 
                 beamer = fopen("beamer.tex", "w"); 
-                //startBeamer(beamer); 
-                //addExplanation(beamer); 
-                //startListing(beamer, "C\\'odigo Preprocesado (Sin Pretty Print)"); 
-                preprocesador1(archivoEntrada,tmpfile);
-
-                //endListing(beamer); 
+                startBeamer(beamer); 
+                addExplanation(beamer); 
+                startListing(beamer, "C\\'odigo"); 
+                preprocesador1Beamer(archivoEntrada,tmpfile);
+                endListing(beamer); 
                 fclose(tmpfile);
                 preproceso=false;
                 tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
                 memset(gramaticas,0,sizeof(gramaticas));
                 yyparse();
                 
-                if(banderaSyntaxError == 1){
+                if(banderaSyntaxError == 1){ // si hay error, los indica 
                     banderaParseado =1 ; 
                     fclose(tmpfile);
                     tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
@@ -91,8 +91,9 @@ int main(int argc, char *argv[])
                     preproceso = false;
                     fclose(tmpfile2);
                     tmpfile2 = fopen("tmpfile2.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
-                    ponerErrores(tmpfile2, beamer);  
+                    ponerErrores(tmpfile2, beamer);
                     printf("error :v\n");
+
 
                 }
                 else{ // banderaSyntaxError == 0
@@ -103,15 +104,15 @@ int main(int argc, char *argv[])
                     yyin = tmpfile;
                     memset(gramaticas,0,sizeof(gramaticas));
                     if(!strcmp(argv[2], "P")){
-                        //startListing(beamer, "C\\'odigo Pretty Print GNU"); 
-                        //prettyprintSelect(0, beamer, "Beamer.tex");
-                        //endListing(beamer);    
+                        startListing(beamer, "C\\'odigo Pretty Print GNU"); 
+                        prettyprintSelect(0, beamer, "Beamer.tex");
+                        endListing(beamer);    
                     } 
                 }
-                //endBeamer(beamer); 
+                endBeamer(beamer); 
                 fclose(beamer);
-                //system("pdflatex beamer.tex");
-                //system("evince --presentation beamer.pdf");
+                system("pdflatex beamer.tex");
+                system("evince --presentation beamer.pdf");
             }// se acaba if de que si lo quiere con Beamer "B", "b"
             
             else{ // si no quiere beamer 
