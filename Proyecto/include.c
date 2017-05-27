@@ -56,8 +56,9 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
             FILE *libreria;
             FILE *fp;
             FILE *salida;
-            salida = fopen("salida.c", "w");
-                                
+            //salida = fopen("salida.c", "a");
+            int numeroTemporal;
+            numeroTemporal = 0;
 
             strcat(includeGCC, yytext);
             strcat(includeGCC, " ");
@@ -129,11 +130,13 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
 
                             if(ntoken == GREATER){
                                 
+                                FILE* siguienteArchivo; //Se creará un nuevo archivo
+                
                                 strcat(includeGCC, yytext);
                                 
                                 printf("ENTRA CON INCLUDE \n");
                                 printf("%s \n", includeGCC);
-
+                                salida = fopen(includeGCC, "w");
                                 libreria = fopen("libreria.c", "w");
                                 fputs(includeGCC, libreria);
                                 fclose(libreria);
@@ -161,6 +164,22 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
 
                                 pclose(fp);
                                 fclose(salida);
+
+                                siguienteArchivo = fopen(includeGCC, "r"); //Se pone en modo lectura, FALTA: función que quite los "" de un literal
+              
+
+                                yyin = siguienteArchivo;                   
+                                preprocesador1(siguienteArchivo, archivoTemporal); //Se llama de nuevo a la función, pero esta vez con el siguiente archivo incluído
+                                fclose(siguienteArchivo);
+                                remove(includeGCC);
+                                /*
+                                    Después de la llamada recursiva, se borra la inclusión
+                                */
+                                includes[numIncludes] = ""; 
+                                numIncludes--;
+                                yyin =archivoActual; //Se le dice a flex cuál archivo se estará leyendo
+
+                                //fclose(salida);
                                 
                                 
 

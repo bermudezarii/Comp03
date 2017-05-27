@@ -30,7 +30,12 @@ int preprocesador1(FILE* archivoActual,FILE* archivoTemporal){
 
    
     while(ntoken) {
-    
+        
+        //printf("HOLAA");
+        //printf("\n");
+        
+        //printf(yytext);
+        //printf("\n");
         if (endline==0){
             fputs("\n", archivoTemporal);
             contadorBeamerP++; 
