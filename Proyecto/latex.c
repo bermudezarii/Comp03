@@ -23,7 +23,7 @@ void startBeamer(FILE * archivoPretty){
     fputs("\\usetheme{progressbar}\n \n \n", archivoPretty);
     fputs("\\usecolortheme{crane}\n \n \n", archivoPretty); 
     fputs("\\setbeamercolor{frametitle}{fg=brown}\n \n \n", archivoPretty);
-    fputs("\\title{Analizador L\\'exico}\n", archivoPretty); 
+    fputs("\\title{Analizador Sint\\'actico}\n", archivoPretty); 
     fputs("\\subtitle{Proyecto 1}\n", archivoPretty); 
     fputs("\\author{Ariana Berm\\'udez,Ximena Bola\\~nos, Dylan Rodr\\'iguez}\n", archivoPretty); 
     fputs("\\institute{Instituto Tecnol\\'ogico de Costa Rica}\n", archivoPretty); 
@@ -35,8 +35,8 @@ void startBeamer(FILE * archivoPretty){
 
 
 void addExplanation(FILE * archivoPretty){
-    fputs("\\begin{frame}\n \\frametitle{An\\'alisis Sint\\'actico}\n  Se hizo un analizador sint\\'actico con la ayuda de la herramienta de Bison, para el lenguaje C y que corre en C, este analizador trabaja en conjunto con Flex, para tomar los tokens que este le otorga y revisar con las gram\\'aticas que les sean ingresadas.\\end{frame}",archivoPretty); 
-    fputs("\\begin{frame}\n \\frametitle{Bison}\n jaajaj\\end{frame}", archivoPretty);     
+    fputs("\\begin{frame}\n \\frametitle{An\\'alisis Sint\\'actico}\n  Se hizo un analizador sint\\'actico con la ayuda de la herramienta de Bison, para el lenguaje C y que corre en C, este analizador trabaja en conjunto con Flex, para tomar los tokens que este le otorga y revisar con las gram\\'aticas que les sean ingresadas. \\end{frame}",archivoPretty); 
+    fputs("\\begin{frame}\n \\frametitle{Bison}\n Bison convierte de una gram\\'atica libre de contexto a un analizador sint\\'actico que emplea las tablas de Parsing LALR(1), siendo: \\begin{itemize} \\item L: Left algo \\item A: ... \\item L: ... \\item R: rightmost \\item (1): donde este uno significa que tiene como lookahead solo un s\\'imbolo. \\end{itemize} Cabe destacar que Bison es compatible con Yacc. Sirve con C, C++ y Java. \\end{frame}", archivoPretty);     
     
 }
 

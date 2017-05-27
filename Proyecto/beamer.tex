@@ -33,7 +33,7 @@
 \setbeamercolor{frametitle}{fg=brown}
  
  
-\title{Analizador L\'exico}
+\title{Analizador Sint\'actico}
 \subtitle{Proyecto 1}
 \author{Ariana Berm\'udez,Ximena Bola\~nos, Dylan Rodr\'iguez}
 \institute{Instituto Tecnol\'ogico de Costa Rica}
@@ -43,9 +43,9 @@
  \titlepage 
  \end{frame}\begin{frame}
  \frametitle{An\'alisis Sint\'actico}
-  Se hizo un analizador sint\'actico con la ayuda de la herramienta de Bison, para el lenguaje C y que corre en C, este analizador trabaja en conjunto con Flex, para tomar los tokens que este le otorga y revisar con las gram\'aticas que les sean ingresadas.\end{frame}\begin{frame}
+  Se hizo un analizador sint\'actico con la ayuda de la herramienta de Bison, para el lenguaje C y que corre en C, este analizador trabaja en conjunto con Flex, para tomar los tokens que este le otorga y revisar con las gram\'aticas que les sean ingresadas. \end{frame}\begin{frame}
  \frametitle{Bison}
- jaajaj\end{frame}\begin{frame}[fragile]
+ Bison convierte de una gram\'atica libre de contexto a un analizador sint\'actico que emplea las tablas de Parsing LALR(1), siendo: \begin{itemize} \item L: Left algo \item A: ... \item L: ... \item R: rightmost \item (1): donde este uno significa que tiene como lookahead solo un s\'imbolo. \end{itemize} Cabe destacar que Bison es compatible con Yacc. Sirve con C, C++ y Java. \end{frame}\begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{lstlisting}[style=CStyle]
 char * lie ; 
