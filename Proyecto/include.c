@@ -150,7 +150,7 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
 
                                 while (fgets(contenidoArchivo, 2, fp) != NULL) {
                                     if (strcmp(contenidoArchivo,"#")==0){
-                                        
+                                        //Comparo hasta que haya espacio
                                     
                                         while (strcmp(contenidoArchivo,"\n")!=0){
                                             fgets(contenidoArchivo, 2, fp);
