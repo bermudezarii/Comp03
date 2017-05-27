@@ -149,7 +149,6 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                                 }
 
                                 while (fgets(contenidoArchivo, 2, fp) != NULL) {
-                                    //printf("%s", contenidoArchivo);
                                     if (strcmp(contenidoArchivo,"#")==0){
                                         
                                     
