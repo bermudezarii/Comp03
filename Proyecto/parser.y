@@ -207,6 +207,7 @@ declaration
 	| LEFT_PARENTHESIS declaration_specifiers RIGHT_PARENTHESIS init_declarator_list SEMICOLON {printf("%d con %s  declaration: LEFT_PARENTHESIS declaration_specifiers RIGHT_PARENTHESIS init_declarator_list SEMICOLON \n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
 	| init_declarator_list SEMICOLON{memset(gramaticas,0,sizeof(gramaticas));printf("%d con %s  declaration: init_declarator_list SEMICOLON \n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
 	| declaration_specifiers struct_declarator SEMICOLON{memset(gramaticas,0,sizeof(gramaticas));printf("%d con %s  declaration: declaration_specifiers struct_declarator SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
+	| init_declarator_list declaration_specifiers init_declarator_list SEMICOLON
 	;
 
 declaration_specifiers
@@ -390,8 +391,8 @@ parameter_declaration
 	| declaration_specifiers {printf("%d con %s  parameter_declaration: declaration_specifiers\n",linea, gramaticas );}
 	| declarator {printf("%d con %s  parameter_declaration: declarator\n",linea, gramaticas );}
 	| IDENTIFIER abstract_declarator {printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas );}
-	| IDENTIFIER abstract_declarator declarator{printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas
-	 );}
+	| IDENTIFIER abstract_declarator declarator{printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas);}
+	| declaration_specifiers IDENTIFIER pointer declarator {printf("%d con %s  parameter_declaration: declaration_specifiers declarator\n",linea, gramaticas );}
 
 	| SIZEOF LEFT_PARENTHESIS type_name RIGHT_PARENTHESIS {printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS type_name RIGHT_PARENTHESIS\n",linea, gramaticas );}
 	| SIZEOF LEFT_PARENTHESIS IDENTIFIER pointer RIGHT_PARENTHESIS {printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS IDENTIFIER pointer RIGHT_PARENTHESIS\n",linea, gramaticas );}
