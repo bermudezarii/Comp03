@@ -1,6 +1,3 @@
-#include <unistd.h>
+#include <gtk/gtk/hola-n.h>
 
-#include <string.h>
-#include <stdio.h>
 
-#include <stdlib.h>
