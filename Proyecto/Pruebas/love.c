@@ -2,7 +2,7 @@ char*lie;
 
   double time, me= !0XFACE,
 
-  not; int rested,   get, out
+  not; int rested,   get, out;
 
   main(ly, die) char ly, **die ;{
 
@@ -50,7 +50,7 @@ dear; (char)lotte--;
 
 (char)*lie++, (char)*lie++; hell:0, (char)*lie;
 
-  get *out* (short)ly   -0-'R'-  get- 'a'^rested
+  get *out* (short)ly   -0-'R'-  get- 'a'^rested;
 
   do {auto*eroticism,
 

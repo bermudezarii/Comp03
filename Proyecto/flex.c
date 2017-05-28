@@ -54,7 +54,7 @@ void yyerror(char *texto){
         printf("\"%s\", en línea %i.\n",texto,yylineno);
 	}*/
 	banderaSyntaxError = 1; 
-	yyparse();
+	//yyparse();
        
  
 

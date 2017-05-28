@@ -1,3 +1,14 @@
 \frametitle{C\'odigo con los Errores}
 \begin{lstlisting}[style=CStyle]
-exit ( ( char ) lotte ) ; } \end{lstlisting}
+extern int ferror_unlocked ( FILE * __stream ) __attribute__ ( ( __nothrow__ , __leaf__ ) ) ;
+extern void perror ( const char * __s ) ;
+extern int sys_nerr ;
+extern const char * const sys_errlist [ ] ;
+extern int fileno ( FILE * __stream ) __attribute__ ( ( __nothrow__ , __leaf__ ) ) ;
+extern int fileno_unlocked ( FILE * __stream ) __attribute__ ( ( __nothrow__ , __leaf__ ) ) ;
+extern FILE * popen ( const char * __command , const char * __modes ) ;
+extern int pclose ( FILE * __stream ) ;
+extern char * ctermid ( char * __s ) __attribute__ ( ( __nothrow__ , __leaf__ ) ) ;
+extern void flockfile ( FILE * __stream ) __attribute__ ( ( __nothrow__ , __leaf__ ) ) ;
+extern int ftrylockfile ( FILE * __stream ) __attribute__ ( ( __nothrow__ , __leaf__ ) ) ;
+extern void funlockfile ( FILE * __stream ) __attribute__ ( ( __nothrow__ , __leaf__ ) ) ; \end{lstlisting}

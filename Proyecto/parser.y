@@ -43,7 +43,7 @@ primary_expression
 	| INTEGER {printf("%d con %s  primary_expression: INTEGER FINAL\n",linea, gramaticas );}
 	| primary_expression LITERAL {printf("%d con %s  LITERAL FINAL\n",linea, gramaticas );}
 	| LEFT_PARENTHESIS expression RIGHT_PARENTHESIS primary_expression {printf("%d con %s  LITERAL FINAL\n",linea, gramaticas );}
-	| primary_expression SLASH primary_expression
+	| primary_expression SLASH primary_expression {printf("%d con %s  primary_expression SLASH primary_expression\n",linea, gramaticas );}
 
 	;
 
@@ -205,7 +205,8 @@ declaration
 	: declaration_specifiers SEMICOLON {printf("%d con %s  declaration: declaration_specifiers SEMICOLON \n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));}
 	| declaration_specifiers init_declarator_list SEMICOLON {printf("%d con %s  declaration: declaration_specifiers init_declarator_list SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
 	| LEFT_PARENTHESIS declaration_specifiers RIGHT_PARENTHESIS init_declarator_list SEMICOLON {printf("%d con %s  declaration: LEFT_PARENTHESIS declaration_specifiers RIGHT_PARENTHESIS init_declarator_list SEMICOLON \n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
-	| init_declarator_list SEMICOLON{memset(gramaticas,0,sizeof(gramaticas));printf("%d con %s  declaration: LEFT_PARENTHESIS declaration_specifiers RIGHT_PARENTHESIS init_declarator_list SEMICOLON \n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
+	| init_declarator_list SEMICOLON{memset(gramaticas,0,sizeof(gramaticas));printf("%d con %s  declaration: init_declarator_list SEMICOLON \n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
+	| declaration_specifiers struct_declarator SEMICOLON{memset(gramaticas,0,sizeof(gramaticas));printf("%d con %s  declaration: declaration_specifiers struct_declarator SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
 	;
 
 declaration_specifiers
@@ -233,6 +234,8 @@ init_declarator_list
 init_declarator
 	: declarator {printf("%d con %s  init_declarator: declarator\n",linea, gramaticas );}
 	| declarator EQU initializer {printf("%d con %s  init_declarator: declarator EQU initializer\n",linea, gramaticas );}
+	| declarator COLON initializer {printf("%d con %s  init_declarator: declarator COLON initializer\n",linea, gramaticas );}
+	
 	| declarator multiplicative_expression  {printf("%d con %s  init_declarator: multiplicative_expression\n",linea, gramaticas );}
 
 	;
@@ -326,7 +329,8 @@ type_qualifier
 declarator
 	: pointer direct_declarator {printf("%d con %s  declarator: pointer direct_declarator \n",linea, gramaticas );}
 	| direct_declarator {printf("%d con %s  declarator: direct_declarator\n",linea, gramaticas );}
-	| direct_declarator declarator {printf("%d con %s  declarator: declarator direct_declarator\n",linea, gramaticas );}
+	| direct_declarator declarator {printf("%d con %s  declarator: direct_declarator declarator\n",linea, gramaticas );}
+
 	| direct_declarator EQU initializer {printf("%d con %s  declarator: direct_declarator EQU initializer \n",linea, gramaticas );}
 
 
@@ -386,8 +390,9 @@ parameter_declaration
 	| declaration_specifiers {printf("%d con %s  parameter_declaration: declaration_specifiers\n",linea, gramaticas );}
 	| declarator {printf("%d con %s  parameter_declaration: declarator\n",linea, gramaticas );}
 	| IDENTIFIER abstract_declarator {printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas );}
-	| IDENTIFIER abstract_declarator IDENTIFIER{printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas
+	| IDENTIFIER abstract_declarator declarator{printf("%d con %s  parameter_declaration: IDENTIFIER abstract_declarator\n",linea, gramaticas
 	 );}
+
 	| SIZEOF LEFT_PARENTHESIS type_name RIGHT_PARENTHESIS {printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS type_name RIGHT_PARENTHESIS\n",linea, gramaticas );}
 	| SIZEOF LEFT_PARENTHESIS IDENTIFIER pointer RIGHT_PARENTHESIS {printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS IDENTIFIER pointer RIGHT_PARENTHESIS\n",linea, gramaticas );}
 	| SIZEOF LEFT_PARENTHESIS IDENTIFIER RIGHT_PARENTHESIS {printf("%d con %s  unary_expression: SIZEOF LEFT_PARENTHESIS IDENTIFIER RIGHT_PARENTHESIS\n",linea, gramaticas );}
@@ -529,7 +534,8 @@ external_declaration
 	;
 define
 	: '\n' {printf("%d con %s  define: define_enter\n",linea, gramaticas);}
-	| define_options define
+	| define_options define {printf("%d con %s  define: define_options define\n",linea, gramaticas);}
+
 	;
 
 
@@ -625,8 +631,10 @@ function_definition
 	| declarator declaration_list compound_statement {printf("%d con %s  function_definition: declarator declaration_list compound_statement\n",linea, gramaticas );}
 	| declarator compound_statement {printf("%d con %s  function_definition: declarator compound_statement\n",linea,gramaticas);}
 	| declarator declaration_list compound_statement function_definition  {printf("%d con %s  function_definition: declarator declaration_list compound_statement function_definition\n",linea,gramaticas);}
-	| declaration_specifiers direct_declarator declaration_specifiers declaration compound_statement
-	| declaration_specifiers direct_declarator declaration_specifiers declaration 
+	| declaration_specifiers direct_declarator declaration_specifiers declaration compound_statement   {printf("%d con %s  function_definition:declaration_specifiers direct_declarator declaration_specifiers declaration compound_statement\n",linea,gramaticas);}
+	| declaration_specifiers direct_declarator declaration_specifiers declaration   {printf("%d con %s  function_definition: declaration_specifiers direct_declarator declaration_specifiers declaration\n",linea,gramaticas);}
+	| declaration_specifiers direct_declarator declaration_specifiers declarator compound_statement  {printf("%d con %s  function_definition: declaration_specifiers direct_declarator declaration_specifiers declaration compound_statement  \n",linea,gramaticas);}
+    | direct_declarator declaration_specifiers  declaration   {printf("%d con %s  function_definition: direct_declarator declaration_specifiers direct_declarator declaration_specifiers declaration\n",linea,gramaticas);}
 	;
 
 %%
