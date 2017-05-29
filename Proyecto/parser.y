@@ -40,9 +40,12 @@ primary_expression
 	| CONSTANT {printf("%d con %s  primary_expression: CONSTANT FINAL\n",linea,  gramaticas );}
 	| LITERAL {printf("%d con %s  LITERAL FINAL\n",linea, gramaticas );}
 	| LEFT_PARENTHESIS expression RIGHT_PARENTHESIS {printf("%d con %s  primary_expression: LEFT_PARENTHESIS FINAL expression RIGHT_PARETHESIS\n",linea, gramaticas);}
+	| LEFT_PARENTHESIS expression error {printf("error\n"); yyerror("missing RIGHT_PARENTHESIS ')'");}
+	| error expression RIGHT_PARENTHESIS {printf("error\n"); yyerror("missing LEFT_PARENTHESIS '('");}
 	| INTEGER {printf("%d con %s  primary_expression: INTEGER FINAL\n",linea, gramaticas );}
 	| primary_expression LITERAL {printf("%d con %s  LITERAL FINAL\n",linea, gramaticas );}
 	| LEFT_PARENTHESIS expression RIGHT_PARENTHESIS primary_expression {printf("%d con %s  LITERAL FINAL\n",linea, gramaticas );}
+	| LEFT_PARENTHESIS expression RIGHT_PARENTHESIS error {printf("error\n"); yyerror("expected primary_expression");}
 	| primary_expression SLASH primary_expression {printf("%d con %s  primary_expression SLASH primary_expression\n",linea, gramaticas );}
 
 	;
@@ -204,11 +207,13 @@ constant_expression
 declaration
 	: declaration_specifiers SEMICOLON {printf("%d con %s  declaration: declaration_specifiers SEMICOLON \n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));}
 	| declaration_specifiers init_declarator_list SEMICOLON {printf("%d con %s  declaration: declaration_specifiers init_declarator_list SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
+	| declaration_specifiers init_declarator_list error {printf("error\n"); yyerror("missing semicolon ';'");}
 	| LEFT_PARENTHESIS declaration_specifiers RIGHT_PARENTHESIS init_declarator_list SEMICOLON {printf("%d con %s  declaration: LEFT_PARENTHESIS declaration_specifiers RIGHT_PARENTHESIS init_declarator_list SEMICOLON \n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
 	| init_declarator_list SEMICOLON{memset(gramaticas,0,sizeof(gramaticas));printf("%d con %s  declaration: init_declarator_list SEMICOLON \n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
 	| declaration_specifiers struct_declarator SEMICOLON{memset(gramaticas,0,sizeof(gramaticas));printf("%d con %s  declaration: declaration_specifiers struct_declarator SEMICOLON\n",linea, gramaticas);memset(gramaticas,0,sizeof(gramaticas));}
 	| init_declarator_list declaration_specifiers init_declarator_list SEMICOLON
 	;
+
 
 declaration_specifiers
 	: storage_class_specifier {printf("%d con %s  declaration_specifiers: storage_class_specifier \n",linea, gramaticas);}
@@ -351,6 +356,7 @@ direct_declarator
 
 	| direct_declarator LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS {printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS parameter_type_list RIGHT_PARENTHESIS\n",linea, gramaticas );}
 	| direct_declarator LEFT_PARENTHESIS identifier_list RIGHT_PARENTHESIS {printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS identifier_list RIGHT_PARENTHESIS\n",linea, gramaticas );}
+	| direct_declarator LEFT_PARENTHESIS identifier_list error {printf("error\n"); yyerror("missing left parenthesis ')'");}
 
 	| direct_declarator LEFT_PARENTHESIS RIGHT_PARENTHESIS {printf("%d con %s  direct_declarator: direct_declarator LEFT_PARENTHESIS RIGHT_PARENTHESIS\n",linea,gramaticas);}
 	
@@ -483,6 +489,7 @@ statement_list
 expression_statement
 	: SEMICOLON {printf("%d con %s  expression_statement: SEMICOLON\n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));}
 	| expression SEMICOLON {printf("%d con %s  expression_statement: expression SEMICOLON \n",linea, gramaticas );memset(gramaticas,0,sizeof(gramaticas));}
+	| expression error {printf("error\n"); yyerror("missing semicolon ';'"); }
 	;
 
 selection_statement
