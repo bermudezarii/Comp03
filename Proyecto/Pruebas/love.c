@@ -17,7 +17,7 @@ dear; (char)lotte--;
 
   char lotte, my= dear,
 
-  **let= !!me *!not+ ++die;
+  **let= !!me *!not+ ++die
 
       (char*)(lie=
 

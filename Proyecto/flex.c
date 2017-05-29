@@ -27,12 +27,11 @@ int nextToken(void){
     return yylex();
 }
 
-// formato:  blibli.c:7:42 Unexpected token, expected ';', found 'blibli'
 void yyerror(char *texto){
 	/*if(strcmp(texto,"\"syntax error\""))*/
 	if(banderaParseado == 1 ){
 		char error[5000]; 
-		sprintf(error, "/*%s:%d:%d %s, found \"%s\"*/\n",nombre,linea,columna,texto,yytext,gramaticas);
+		sprintf(error, "/*%s:%d:%d %s*/\n",nombre,linea,columna,texto);
 		strcpy(errores[contadorErrores], error);
 		lineasE[contadorErrores] = linea; 
 		
@@ -42,7 +41,7 @@ void yyerror(char *texto){
 	}
 		printf("\n");
 		printf("\n");
-  		printf("%s:%d:%d %s, found \"%s\"\n",nombre,linea,columna,texto,yytext,gramaticas);
+  		printf("%s:%d:%d %s\n",nombre,linea,columna,texto,yytext);
   		printf("\n");
   		printf("\n");
 	/*else if(preproceso){

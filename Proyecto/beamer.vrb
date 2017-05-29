@@ -1,11 +1,8 @@
-\frametitle{C\'odigo Pretty Print GNU}
+\frametitle{C\'odigo con los Errores}
 \begin{minted}{c}
-extern int fileno (FILE * __stream)__attribute__ ((__nothrow__, __leaf__));
-extern int fileno_unlocked (FILE * __stream)__attribute__ ((__nothrow__, __leaf__));
-extern FILE * popen (const char * __command, const char * __modes);
-extern int pclose (FILE * __stream);
-extern char * ctermid (char * __s)__attribute__ ((__nothrow__, __leaf__));
-extern void flockfile (FILE * __stream)__attribute__ ((__nothrow__, __leaf__));
-extern int ftrylockfile (FILE * __stream)__attribute__ ((__nothrow__, __leaf__));
-extern void funlockfile (FILE * __stream)__attribute__ ((__nothrow__, __leaf__));
-\end{minted}
+extern long int syscall ( long int __sysno ,
+... ) __attribute__ ( ( __nothrow__ , __leaf__
+) ) ;
+extern int lockf ( int __fd , int __cmd , __off_t
+__len ) ;
+extern int fdatasync ( int __fildes ) ; \end{minted}

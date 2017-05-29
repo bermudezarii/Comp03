@@ -80,7 +80,7 @@ int preprocesador1(FILE* archivoActual,FILE* archivoTemporal){
 }
 
 
-
+/*
 int preprocesador1Beamer(FILE* archivoActual,FILE* archivoTemporal){  
     
     char *concatenar;
@@ -141,4 +141,4 @@ int preprocesador1Beamer(FILE* archivoActual,FILE* archivoTemporal){
        
     }
     return 0;
-}
+}*/
