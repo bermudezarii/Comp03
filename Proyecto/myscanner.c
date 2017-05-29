@@ -19,12 +19,28 @@ int scanner(FILE * nuevo)
     int ntoken, vtoken;
     ntoken = nextToken();
     while(ntoken) {
-    	printf("Texto %s\n",yytext);
-    	printf("Tabs %d\n",tabs );
-    	printf("Lineas %d\n",linea );
-        ntoken = nextToken();
-        fputs(yytext, nuevo); 
-	   
+        if (endline==0){
+            fputs("\n", nuevo);
+            contadorBeamerP++; 
+            endline=1;
+        }
+
+        else if (ntoken==IDENTIFIER && existeDefine(yytext)!=-1){
+            fputs(defines[existeDefine(yytext)].vDefine, nuevo);
+            
+            ntoken = nextToken();
+            if(ntoken!=SLASH){
+                fputs(" ", nuevo);
+            }
+
+        }
+        else{
+            fputs(yytext, nuevo);
+            ntoken = nextToken();
+            if(ntoken!=SLASH){
+                fputs(" ", nuevo);
+            }
+        }  
     }
     return 0;
 }

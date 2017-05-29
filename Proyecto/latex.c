@@ -4,12 +4,12 @@ void startBeamer(FILE * archivoPretty){
     fputs("\\usepackage{pgfplots}\n", archivoPretty);
 
     fputs("\\usepackage{xcolor}\n", archivoPretty);
-    fputs("\\usepackage{listings}\n", archivoPretty);
+    fputs("\\usepackage{minted}\n", archivoPretty);
     fputs("\\definecolor{mGreen}{rgb}{0,0.6,0}\n", archivoPretty); 
     fputs("\\definecolor{mGray}{rgb}{0.5,0.5,0.5}\n", archivoPretty); 
     fputs("\\definecolor{mPurple}{rgb}{0.58,0,0.82}\n",archivoPretty);
     fputs("\\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}\n",archivoPretty);
-    fputs("\\lstdefinestyle{CStyle}{\n", archivoPretty);
+/*    fputs("\\lstdefinestyle{CStyle}{\n", archivoPretty);
     fputs("  backgroundcolor=\\color{backgroundColour},\n",archivoPretty);  
     fputs("  commentstyle=\\color{mGreen},\n",archivoPretty); 
     fputs("  keywordstyle=\\color{magenta},\n",archivoPretty); 
@@ -19,7 +19,7 @@ void startBeamer(FILE * archivoPretty){
     fputs("  breakatwhitespace=false,\n", archivoPretty); 
     fputs("  breaklines=true,\n  captionpos=b,\n  keepspaces=true,\n", archivoPretty); 
     fputs("  numbersep=5pt,\n  showspaces=false,\n  showstringspaces=false,\n  showtabs=false,\n  tabsize=2,\n  language=C \n}\n", archivoPretty); 
-
+*/
     fputs("\\usetheme{progressbar}\n \n \n", archivoPretty);
     fputs("\\usecolortheme{crane}\n \n \n", archivoPretty); 
     fputs("\\setbeamercolor{frametitle}{fg=brown}\n \n \n", archivoPretty);
@@ -45,11 +45,11 @@ void addExplanation(FILE * archivoPretty){
 void startListing(FILE * archivoPretty, char * titulo){
     fputs("\\begin{frame}[fragile]\n\\frametitle{", archivoPretty); 
     fputs(titulo, archivoPretty); 
-    fputs("}\n\\begin{lstlisting}[style=CStyle]\n", archivoPretty);
+    fputs("}\n\\begin{minted}{c}\n", archivoPretty);
 }
 
 void endListing(FILE * archivoPretty){
-    fputs("\\end{lstlisting}\n\\end{frame}\n", archivoPretty); 
+    fputs("\\end{minted}\n\\end{frame}\n", archivoPretty); 
 }
 
 void endBeamer(FILE * archivoPretty){

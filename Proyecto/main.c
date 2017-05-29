@@ -63,10 +63,16 @@ int main(int argc, char *argv[])
             if(argc >= 3 &&( !strcmp(argv[2], "B") || !strcmp(argv[2], "P"))){ 
                 beamer = fopen("beamer.tex", "w"); 
                 startBeamer(beamer); 
-                addExplanation(beamer); 
-                startListing(beamer, "C\\'odigo"); 
-                preprocesador1Beamer(archivoEntrada,tmpfile);
-                endListing(beamer); 
+                addExplanation(beamer);  
+                preprocesador1(archivoEntrada,tmpfile);
+                fclose(tmpfile);
+                preproceso=false;
+                tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
+                yyin = tmpfile;
+                linea=0;
+                printf("oli\n");
+                ponerCodigo(beamer); 
+                printf("oli1\n");
                 fclose(tmpfile);
                 preproceso=false;
                 tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
@@ -81,7 +87,7 @@ int main(int argc, char *argv[])
                     tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
                     yyin = tmpfile; 
                     linea = 0; 
-                    preprocesador1(tmpfile, tmpfile2); 
+                    scanner(tmpfile2); 
                     fclose(tmpfile2);
                     tmpfile2 = fopen("tmpfile2.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
                     memset(gramaticas,0,sizeof(gramaticas));
@@ -111,7 +117,7 @@ int main(int argc, char *argv[])
                 }
                 endBeamer(beamer); 
                 fclose(beamer);
-                system("pdflatex beamer.tex");
+                system("pdflatex --shell-escape beamer.tex");
                 system("evince --presentation beamer.pdf");
             }// se acaba if de que si lo quiere con Beamer "B", "b"
             

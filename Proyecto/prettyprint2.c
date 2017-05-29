@@ -39,6 +39,7 @@ int tramposos[20];
 int iActual = 0; /* esta variable ayuda a ver por donde va del array de tramposos :3 */
 //banderas para el beamer 
 int contadorBeamer = 0; 
+int contadorTokensBeamer = 0; 
 int banderaCuidadoEspacios = 0; 
 int lineaNuevo = 1; 
 
@@ -161,6 +162,7 @@ void tokenCondicionales(FILE * archivoPretty){
       putPretty(yytext, archivoPretty);
       anterior = ntoken; 
       ntoken = nextToken(); 
+
       if(token != DO && (token != ELSE || (token == ELSE && ntoken == IF))){
         int contadorLParen = 1; 
         int contadorRParen = 0; 
@@ -390,13 +392,14 @@ int prettyprintGNU(FILE * archivoPretty, char*name){
       
               putPretty("\n", archivoPretty);
               contadorBeamer++; 
-    
+              
             
             saltoInclude = 1;
             banderaIncludeDefine = 0; 
             if(banderaDefine == 1){
               anterior = ntoken; 
               ntoken = nextToken();  
+              
               banderaDefine =0 ;             
             }
           }
@@ -421,8 +424,9 @@ int prettyprintGNU(FILE * archivoPretty, char*name){
       if(banderaNOtoken == 0){
         anterior = ntoken; /*guardo el anterior porque me ayuda a verificar ciertas cosas*/
         ntoken = nextToken(); /*como el i++ de nuestro ciclo*/
-      }
         
+      }
+      
     }
     
     printf("**El código al que se le aplicó el Pretty Print estilo GNU, se encuentra en el archivo %s**\n",name);
@@ -436,12 +440,13 @@ void ponerErrores(FILE * viejo, FILE * nuevo){
     anterior = -1;
     ntoken = nextToken();
     startListing(beamer, "C\\'odigo con los Errores"); 
-    printf(" sdasd asd \n wqerqer \n qewqweq we nextToken = %s\n", yytext);
+    
     while(ntoken) {
-      printf("dfsfsd \n 234234 \n 23423 4\n");
-      if (endline==0){
+      
+      if (endline==0  || contadorTokensBeamer >= 45){
         putPretty("\n", nuevo); 
         contadorBeamer++;
+        contadorTokensBeamer = 0;
 
       if(contadorBeamer >= 13){
         endListing(beamer); 
@@ -450,7 +455,6 @@ void ponerErrores(FILE * viejo, FILE * nuevo){
       }
         int n = 0; // contador para ver si esta el error
         while(n < contadorErrores){
-          printf("lineaE[n] = %d, lineaNuevo = %d\n", lineasE[n], lineaNuevo);
             if(lineasE[n] == lineaNuevo){
                 putPretty(errores[n], nuevo); 
                 contadorBeamer++; 
@@ -469,11 +473,48 @@ void ponerErrores(FILE * viejo, FILE * nuevo){
         putPretty(yytext, nuevo); 
         putPretty(" ", nuevo);  
         anterior = ntoken; /*guardo el anterior porque me ayuda a verificar ciertas cosas*/
+        contadorTokensBeamer = contadorTokensBeamer + yyleng + 1 ; 
         ntoken = nextToken(); /*como el i++ de nuestro ciclo*/
     }  
     endListing(beamer); 
-    printf("**El código al que se le aplicó el Pretty Print estilo GNU, se encuentra en el archivo ");
+    contadorBeamer = 0 ; 
+    contadorTokensBeamer = 0;
+    printf("**poner Errores ");
     return 0;
 }
 
+
+void ponerCodigo(FILE * nuevo){
+    anterior = -1;
+    ntoken = nextToken();
+    startListing(beamer, "C\\'odigo"); 
+    
+    while(ntoken) {
+      
+      if (endline==0 || contadorTokensBeamer >= 45){
+        putPretty("\n", nuevo); 
+        contadorTokensBeamer = 0;
+        contadorBeamer++;
+
+      if(contadorBeamer >= 13){
+        endListing(beamer); 
+        startListing(beamer, "C\\'odigo"); 
+        contadorBeamer = 0; 
+      }
+
+        endline =1; 
+      }
+    
+        putPretty(yytext, nuevo); 
+        putPretty(" ", nuevo);  
+        contadorTokensBeamer = contadorTokensBeamer + yyleng + 1 ; 
+        anterior = ntoken; /*guardo el anterior porque me ayuda a verificar ciertas cosas*/
+        ntoken = nextToken(); /*como el i++ de nuestro ciclo*/
+    }  
+    endListing(beamer); 
+    contadorBeamer = 0 ; 
+    contadorTokensBeamer = 0; 
+    printf("**poner Codigo ");
+    return 0;
+}
 

@@ -2,7 +2,7 @@ char*lie;
 
   double time, me= !0XFACE,
 
-  not; int rested,   get, out;
+  not; int rested,   get, out
 
   main(ly, die) char ly, **die ;{
 

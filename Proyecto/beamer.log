@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.11)  28 MAY 2017 09:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.27)  28 MAY 2017 23:11
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **beamer.tex
 (./beamer.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasercs.sty
 Package: beamerbasercs 2015/03/08 (rcs-revision 368aa9ba9d38)
@@ -484,6 +484,12 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2013/03/28
+
+(/usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2011/10/12 v0.5d Hooks for input files
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 Package: beamerbasetranslator 2010/06/11  (rcs-revision 85fd1cc7fc42)
@@ -880,34 +886,107 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
 de.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
-))) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count170
-\lst@gtempboxa=\box59
-\lst@token=\toks49
-\lst@length=\count171
-\lst@currlwidth=\dimen269
-\lst@column=\count172
-\lst@pos=\count173
-\lst@lostspace=\dimen270
-\lst@width=\dimen271
-\lst@newlines=\count174
-\lst@lineno=\count175
-\lst@maxwidth=\dimen272
+))) (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2015/09/09 v2.1 Yet another Pygments shim for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count176
-\lst@skipnumbers=\count177
-\lst@framebox=\box60
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count170
+\FV@InFile=\read2
+\FV@TabBox=\box59
+\c@FancyVerbLine=\count171
+\FV@StepNumber=\count172
+\FV@OutFile=\write5
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count173
+\float@exts=\toks49
+\float@box=\box60
+\@float@everytoks=\toks50
+\@floatcapt=\box61
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
-))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count174
+\calc@Bcount=\count175
+\calc@Adimen=\dimen269
+\calc@Bdimen=\dimen270
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count176
+\calc@Cskip=\skip59
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
 
-(./beamerthemeprogressbar.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+)
+runsystem(uname -s > "beamer.w18")...executed.
+
+
+(./beamer.w18)
+runsystem(rm -- "beamer.w18")...executed.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count177
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write6
+\integerpart=\count178
+\decimalpart=\count179
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count180
+\output=\toks51
+\linenoprevgraf=\count181
+\linenumbersep=\dimen271
+\linenumberwidth=\dimen272
+\c@linenumber=\count182
+\c@pagewiselinenumber=\count183
+\c@LN@truepage=\count184
+\c@internallinenumber=\count185
+\c@internallinenumbers=\count186
+\quotelinenumbersep=\dimen273
+\bframerule=\dimen274
+\bframesep=\dimen275
+\bframebox=\box62
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\minted@appexistsfile=\read3
+\FV@BreakIndent=\dimen276
+\FV@BreakSymbolSepLeft=\dimen277
+\FV@BreakSymbolSepRight=\dimen278
+\FV@BreakSymbolIndentLeft=\dimen279
+\FV@BreakSymbolIndentRight=\dimen280
+\c@FancyVerbLineBreakLast=\count187
+\FV@LineBox=\box63
+\FV@LineIndentBox=\box64
+\minted@bgbox=\box65
+\minted@code=\write7
+\c@minted@FancyVerbLineTemp=\count188
+\@float@every@listing=\toks52
+\c@listing=\count189
+)
+runsystem(mkdir -p "_minted-beamer")...executed.
+
+
+(./_minted-beamer/default.pygstyle) (./beamerthemeprogressbar.sty
 Package: beamerthemeprogressbar 2007/06/21
- (./beamercolorthemeprogressbar.sty
+
+(./beamercolorthemeprogressbar.sty
 Package: beamercolorthemeprogressbar 2007/06/21
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemero
@@ -924,39 +1003,44 @@ Package: beamerfontthemeprogressbar 2007/06/21
 )
 (./beamerouterthemeprogressbar.sty
 Package: beamerouterthemeprogressbar 2007/06/21
-\progressbar@currentbarlength=\dimen273
-\progressbar@framenumberrectangle=\dimen274
-\progressbar@titlerectangle=\dimen275
-\progressbar@leftbar=\dimen276
-\progressbar@tmpresult=\count178
-\progressbar@numer=\count179
-\progressbar@denom=\count180
-\progressbar@barlength=\count181
-\progressbar@sectionboxwidth=\skip57
-\progressbar@sectionboxheight=\skip58
-\progressbar@sectionbox=\box61
-\progressbar@sectionboxbox=\box62
+\progressbar@currentbarlength=\dimen281
+\progressbar@framenumberrectangle=\dimen282
+\progressbar@titlerectangle=\dimen283
+\progressbar@leftbar=\dimen284
+\progressbar@tmpresult=\count190
+\progressbar@numer=\count191
+\progressbar@denom=\count192
+\progressbar@barlength=\count193
+\progressbar@sectionboxwidth=\skip60
+\progressbar@sectionboxheight=\skip61
+\progressbar@sectionbox=\box66
+\progressbar@sectionboxbox=\box67
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemecr
 ane.sty
 Package: beamercolorthemecrane 2010/06/17  (rcs-revision d02a7cf4d8ae)
-) (./beamer.aux)
+)
+runsystem(which "pygmentize" && touch "beamer.aex")...executed.
+
+runsystem(rm "beamer.aex")...executed.
+
+ (./beamer.aux)
 \openout1 = `beamer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -994,17 +1078,17 @@ LaTeX Font Info:    ... okay on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count182
-\scratchdimen=\dimen277
-\scratchbox=\box63
-\nofMPsegments=\count183
-\nofMParguments=\count184
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count185
-\MPscratchDim=\dimen278
-\MPnumerator=\count186
-\makeMPintoPDFobject=\count187
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count194
+\scratchdimen=\dimen285
+\scratchbox=\box68
+\nofMPsegments=\count195
+\nofMParguments=\count196
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count197
+\MPscratchDim=\dimen286
+\MPnumerator=\count198
+\makeMPintoPDFobject=\count199
+\everyMPtoPDFconversion=\toks54
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1021,8 +1105,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box64
-Package hyperref Info: Link coloring OFF on input line 41.
+\AtBeginShipoutBox=\box69
+Package hyperref Info: Link coloring OFF on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1030,58 +1114,68 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count188
+\c@section@level=\count266
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
 (./beamer.out) (./beamer.out)
-\@outlinefile=\write5
-\openout5 = `beamer.out'.
+\@outlinefile=\write8
+\openout8 = `beamer.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 41.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 41.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 41.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 41.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 41.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 41.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 41.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 41.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 41.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 41.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 41.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 41.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 41.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 41.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 41.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 41.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 41.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 41.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 41.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 41.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 41.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 23.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 23.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 2
+3.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
+23.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
+ut line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1107,27 +1201,27 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 41.
+LaTeX Info: Redefining \includegraphics on input line 23.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 41.
+ on input line 23.
 
-\c@lstlisting=\count189
+(./_minted-beamer/default-pyg-prefix.pygstyle)
 ..................................................................
 You are using the progressbar beamer theme (Sylvain B.)
 Version: 0.32. Jun. 2007.
 ..................................................................
 (./beamer.nav)
-Overfull \hbox (3016.19061pt too wide) in paragraph at lines 41--41
+Overfull \hbox (2913.76062pt too wide) in paragraph at lines 23--23
 [][]  
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 44.
+(Font)              size <5> substituted on input line 26.
 
 
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1136,7 +1230,7 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/home/coco/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [][]  
  []
@@ -1154,40 +1248,18 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 \openout4 = `beamer.vrb'.
 
  (./beamer.vrb
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 8.
-LaTeX Font Info:    No file OMScmss.fd. on input line 8.
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BDF6D517854793F3E20CD2B9078C445C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
 
 
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 8.
-
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 8.
-LaTeX Font Info:    No file OMLcmss.fd. on input line 8.
-
-LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
-(Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 8.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 9.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+(./_minted-beamer/BDF6D517854793F3E20CD2B9078C445C1FB97F08D1D422D521555D6741844
+1DB.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 ))
-Overfull \vbox (258.42934pt too high) detected at line 72
- []
-
-
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [][]  
  []
@@ -1195,20 +1267,4684 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [4
 
 ]
-\tf@nav=\write6
-\openout6 = `beamer.nav'.
+\openout4 = `beamer.vrb'.
 
-\tf@toc=\write7
-\openout7 = `beamer.toc'.
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
 
-\tf@snm=\write8
-\openout8 = `beamer.snm'.
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/20DE5EF34F737A8D247C04436C3AF1971FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
+
+(./_minted-beamer/20DE5EF34F737A8D247C04436C3AF1971FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[5
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/92E3CE9E61A25196443C040EC883C1671FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/92E3CE9E61A25196443C040EC883C1671FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[6
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/DC83A73830A3C2D9A7407A2D6849972C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/DC83A73830A3C2D9A7407A2D6849972C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[7
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F62459C86EAA48B6EEC8E6BAF0E274D51FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F62459C86EAA48B6EEC8E6BAF0E274D51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[8
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A180AC29CD30A1EBCD52966FA048D09B1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A180AC29CD30A1EBCD52966FA048D09B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[9
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/2DD6575C79ECF05D5DAB8FBAAF7CC7271FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/2DD6575C79ECF05D5DAB8FBAAF7CC7271FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[10
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/4478E6AD7321FE0739AB89547E2FAC7E1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/4478E6AD7321FE0739AB89547E2FAC7E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[11
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F82E3FDFC2584E0D679BB34A999B06811FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F82E3FDFC2584E0D679BB34A999B06811FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[12
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/CD9A57B9A63FF74DFA456D3C3E1867051FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/CD9A57B9A63FF74DFA456D3C3E1867051FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[13
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/89276D4D9A8378E6B75F52A760B804EB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/89276D4D9A8378E6B75F52A760B804EB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[14
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/635B55D461F697BF941E62E722F4A2B41FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/635B55D461F697BF941E62E722F4A2B41FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[15
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/4ADFA988626A71283D6E1674FF3E48DB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/4ADFA988626A71283D6E1674FF3E48DB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[16
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/91D6EE42DF73E79F58D18369589719D61FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/91D6EE42DF73E79F58D18369589719D61FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[17
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/20C88F52CDEBA9B0409033E5EA01BBB61FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/20C88F52CDEBA9B0409033E5EA01BBB61FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[18
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/7960591AF874B476EA6BA6B5B589C7291FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/7960591AF874B476EA6BA6B5B589C7291FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[19
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/FF7CAD0EF2547CA5B9B2F557E40ED4021FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/FF7CAD0EF2547CA5B9B2F557E40ED4021FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[20
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/8E3C58FF5D1569F10E4F836272ED6AF51FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/8E3C58FF5D1569F10E4F836272ED6AF51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[21
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/2A2B03496008DA0878C0096C1242A65C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/2A2B03496008DA0878C0096C1242A65C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[22
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B75A2395C0E092C025E2979D7DCA16A21FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B75A2395C0E092C025E2979D7DCA16A21FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[23
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/72B0FF92A98862AB4F2F49A1EACB37661FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/72B0FF92A98862AB4F2F49A1EACB37661FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[24
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B0E8B9C4FDC66ACE3746EA9AD18110E11FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B0E8B9C4FDC66ACE3746EA9AD18110E11FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[25
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A9A12E55B4AD3373908BAEC9FB918B691FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A9A12E55B4AD3373908BAEC9FB918B691FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[26
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BD6BD89124049E71D181B73FD42E92221FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/BD6BD89124049E71D181B73FD42E92221FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[27
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/C2BB679AAB26D596D4A4CAFF97439E281FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[28
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/0AAB31C7D0201A7D7F9C17DC2B2441471FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/0AAB31C7D0201A7D7F9C17DC2B2441471FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[29
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/DC2E19294BB697786B0542A3C9C060001FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/DC2E19294BB697786B0542A3C9C060001FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[30
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/DB5517D9FCF02BAEFAA8D7108B4A5BD81FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/DB5517D9FCF02BAEFAA8D7108B4A5BD81FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[31
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E973CC056E665CC9053AEA28B66FE2941FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E973CC056E665CC9053AEA28B66FE2941FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[32
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/0B811255B1890064A43DAACAC6FB00DF1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/0B811255B1890064A43DAACAC6FB00DF1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[33
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D43807A06012CC6102B9997EC84B27E41FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D43807A06012CC6102B9997EC84B27E41FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[34
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D2B68BE5D0E30C660014274F1DE153371FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D2B68BE5D0E30C660014274F1DE153371FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[35
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D7CFE538A501731CA373F657325D96F11FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D7CFE538A501731CA373F657325D96F11FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[36
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/9E3C208D3C042F73E9A0EDAB86FB3DA51FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/9E3C208D3C042F73E9A0EDAB86FB3DA51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[37
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/501AC20ACD2AB5892D2F82729F679FCB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/501AC20ACD2AB5892D2F82729F679FCB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[38
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/FD4A42C946CB032E28BA9F6AD7EA58DF1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/FD4A42C946CB032E28BA9F6AD7EA58DF1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[39
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/923616BBEB43C44C710BEABBB0579BC01FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/923616BBEB43C44C710BEABBB0579BC01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[40
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/8C6E4707CC0FA2D8138FDAA0AD15A3E31FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/8C6E4707CC0FA2D8138FDAA0AD15A3E31FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[41
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B9DC5A4FB1DFACD2CF4EDA01863615E21FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B9DC5A4FB1DFACD2CF4EDA01863615E21FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[42
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6F7B4EEDDD4C861D53239014A6B17C371FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6F7B4EEDDD4C861D53239014A6B17C371FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[43
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/14E5D539756AF0C7B354AEE3E3A6226D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/14E5D539756AF0C7B354AEE3E3A6226D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[44
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/515BDACA37A48E864693EF0AEF6CB9CC1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/515BDACA37A48E864693EF0AEF6CB9CC1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[45
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6FF54950196B3C62CB4906DBC76210D91FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6FF54950196B3C62CB4906DBC76210D91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[46
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A92220C0C054BBA9EC6AD0AFFCE63C531FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A92220C0C054BBA9EC6AD0AFFCE63C531FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[47
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/96F329CBB23506B89D04608BF0548A0C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/96F329CBB23506B89D04608BF0548A0C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[48
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/34C4DA29FADE3C509DFE9D5169DC57891FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/34C4DA29FADE3C509DFE9D5169DC57891FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[49
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/047000872B2A56ABCF880A2B26FABFE61FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/047000872B2A56ABCF880A2B26FABFE61FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[50
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/0F75D17A02C756C7CFE3D37C24B5C9DE1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/0F75D17A02C756C7CFE3D37C24B5C9DE1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[51
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C7292B3BA57060CA5E250A9DB07F9A7F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C7292B3BA57060CA5E250A9DB07F9A7F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[52
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/37C6E46E59FD28525A7C8F040E01F13A1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/37C6E46E59FD28525A7C8F040E01F13A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[53
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/64A296D25CFB7D70C6A9D16DA83158441FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/64A296D25CFB7D70C6A9D16DA83158441FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[54
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F96D7F14A8B9BCD0EF53691FD99ABF591FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F96D7F14A8B9BCD0EF53691FD99ABF591FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[55
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BFC52BC961E3D611F54E0042F62CFFA71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/BFC52BC961E3D611F54E0042F62CFFA71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[56
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/87D0B8EB98485956B75F2868CB97BDBE1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/87D0B8EB98485956B75F2868CB97BDBE1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[57
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/44AB7D312DFCB0536FB6AF969CFF2F0E1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/44AB7D312DFCB0536FB6AF969CFF2F0E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[58
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/CE728DD1FB2A2713EB201218E13297CD1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/CE728DD1FB2A2713EB201218E13297CD1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[59
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B7CA514612140F17D14C546E9F2B09351FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B7CA514612140F17D14C546E9F2B09351FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[60
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F407F7C3F5F4087783C51083CA3485C01FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F407F7C3F5F4087783C51083CA3485C01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[61
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/EF62610580DCB3D25C717B4E1F44DB911FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/EF62610580DCB3D25C717B4E1F44DB911FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[62
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/77737AAFBFDEFD9F96C2B1BFDD2B56111FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/77737AAFBFDEFD9F96C2B1BFDD2B56111FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[63
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/63F02D891DD53D5CB64250B627EA17211FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/63F02D891DD53D5CB64250B627EA17211FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[64
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/2EC6A715F24A3032B94CFD706FCF83191FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/2EC6A715F24A3032B94CFD706FCF83191FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[65
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C123227D64F925741A067CCB1FB2263C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C123227D64F925741A067CCB1FB2263C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[66
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/735F8175AA71885E9E7548B2D74CC74C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/735F8175AA71885E9E7548B2D74CC74C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[67
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BBFE53F2BB1A66CAB99D5DB5AE69D2A71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/BBFE53F2BB1A66CAB99D5DB5AE69D2A71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[68
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/593F9D7060F458B1A0CCF1569732D8081FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/593F9D7060F458B1A0CCF1569732D8081FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[69
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/2D4617003E4B1C1622291249503897011FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/2D4617003E4B1C1622291249503897011FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[70
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/172360EBF781E38D2C2F0E04D79DAACA1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/172360EBF781E38D2C2F0E04D79DAACA1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[71
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E1B0999A6E8AC5D7997ABB6D0975F54B1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E1B0999A6E8AC5D7997ABB6D0975F54B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[72
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/8B5A8E66AC3A327ADE2D62F78AE333311FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/8B5A8E66AC3A327ADE2D62F78AE333311FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[73
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/DADE5E2F3FB5002DBE34A0579FFADE2A1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/DADE5E2F3FB5002DBE34A0579FFADE2A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[74
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C444DD358E65FD53EE8350AF64CDEF801FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C444DD358E65FD53EE8350AF64CDEF801FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[75
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/701A9ED17F678B9441183C75E9B99A2F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/701A9ED17F678B9441183C75E9B99A2F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[76
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/0308C0A4BE59E95937B2C52D94AF39B81FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/0308C0A4BE59E95937B2C52D94AF39B81FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[77
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A1E18D7B1CE3456DE2F056FDEB876F5A1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A1E18D7B1CE3456DE2F056FDEB876F5A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[78
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/12B1073BE4AED3AF0565E26B1D5882D81FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/12B1073BE4AED3AF0565E26B1D5882D81FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[79
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/227692154BF52E521E230B338B6F3E541FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/227692154BF52E521E230B338B6F3E541FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[80
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/4B794879A1DF6904203BE2F8959566521FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/4B794879A1DF6904203BE2F8959566521FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[81
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/694696121893416C0E8807730CE7B41D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/694696121893416C0E8807730CE7B41D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[82
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/864B90D8A621FD55F1933B8A2D62ADD71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/864B90D8A621FD55F1933B8A2D62ADD71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[83
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/5BEAE232DB3817301D35039CA04C09F81FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/5BEAE232DB3817301D35039CA04C09F81FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[84
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A3B0849EC5A04F054A9EE38DD922C9EC1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A3B0849EC5A04F054A9EE38DD922C9EC1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[85
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C5964FE7E1E3C7D37B8ADE2810F3663A1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C5964FE7E1E3C7D37B8ADE2810F3663A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[86
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/FB7B9DA2EDC9DFC3B742A1DFD2F1AE551FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/FB7B9DA2EDC9DFC3B742A1DFD2F1AE551FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[87
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/425B53BFA9FC228092C2A7875BC4B9261FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/425B53BFA9FC228092C2A7875BC4B9261FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[88
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D76569F24A7B2824A18B2F74FC0533B11FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D76569F24A7B2824A18B2F74FC0533B11FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[89
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/972B69B449DCC17D3394D7E0942DE26B1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/972B69B449DCC17D3394D7E0942DE26B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[90
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F6B13267882DAC13F2F37B80F45B3C841FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F6B13267882DAC13F2F37B80F45B3C841FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[91
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/9523835F7A13F23DC1D200B6917414F71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/9523835F7A13F23DC1D200B6917414F71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[92
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A358B519BFF524475A623F457A153D131FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A358B519BFF524475A623F457A153D131FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[93
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6C5C70F9F6841D08D698FF743AD2FB161FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6C5C70F9F6841D08D698FF743AD2FB161FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[94
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/944DF90C6E4CD4A7C06DEA4B3401D42F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/944DF90C6E4CD4A7C06DEA4B3401D42F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[95
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C2FC361E8801B8342A7E64A4450C32C31FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C2FC361E8801B8342A7E64A4450C32C31FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[96
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/1044EBF5C3BD8EFD4A400A9E9B9011221FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/1044EBF5C3BD8EFD4A400A9E9B9011221FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[97
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/3F1217670DB15789B17D9BBA494A922C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/3F1217670DB15789B17D9BBA494A922C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[98
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/78242A41433ACF069A9A0E99610EE5D01FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/78242A41433ACF069A9A0E99610EE5D01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[99
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/AAC8DFA5403BE83DF58228C6069498601FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/AAC8DFA5403BE83DF58228C6069498601FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[100
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/990C39E00D3B89B1ECF7CFA8BFB6A2591FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/990C39E00D3B89B1ECF7CFA8BFB6A2591FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[101
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/793E1676A22996F805C72784CE78D3751FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/793E1676A22996F805C72784CE78D3751FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[102
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B44A88737D79381A7C9A79A4CE5D458E1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B44A88737D79381A7C9A79A4CE5D458E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[103
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/FD30CEABE6D71731035040F0F369759B1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/FD30CEABE6D71731035040F0F369759B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[104
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6A8A132E02FBA15968ED9F2259F49E1D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6A8A132E02FBA15968ED9F2259F49E1D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[105
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/50609E8CDFC0E3548507B154E3C8D5A71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/50609E8CDFC0E3548507B154E3C8D5A71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[106
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/70406078ACB1B52E317DF63E31D034481FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/70406078ACB1B52E317DF63E31D034481FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[107
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F66F95A131A4DD87F8043B6BAD6A09FE1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F66F95A131A4DD87F8043B6BAD6A09FE1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[108
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E99E1741E4174F08FB4FE3678AF91C231FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E99E1741E4174F08FB4FE3678AF91C231FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[109
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/8A76249C4231C9F1A02F46E344D545421FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/8A76249C4231C9F1A02F46E344D545421FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[110
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A895221BEA4F301B71266DBF73E889E91FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A895221BEA4F301B71266DBF73E889E91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[111
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B939D0D19E34FB05887E116125D4364A1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B939D0D19E34FB05887E116125D4364A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[112
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/8DD2CF1D0D049FEEC8890EBF8E1A26951FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/8DD2CF1D0D049FEEC8890EBF8E1A26951FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[113
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6740A4FFD29903B6021F9108E53AAB7A1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6740A4FFD29903B6021F9108E53AAB7A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[114
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/FBB1AE6F57779467E881CE38F255F0311FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/FBB1AE6F57779467E881CE38F255F0311FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[115
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D1C2F0205296E5FDBD937837DD5D8B5D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D1C2F0205296E5FDBD937837DD5D8B5D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[116
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/ADBBFAF8DA0400EC012220EE92CB44D71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/ADBBFAF8DA0400EC012220EE92CB44D71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[117
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C5D2EB9BFDEE61080F262D56EC0405FC1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C5D2EB9BFDEE61080F262D56EC0405FC1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[118
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/518248C48C8BAB3EA8B95DC782709E6C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/518248C48C8BAB3EA8B95DC782709E6C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[119
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A03149E05DD7798CD3013772F84B50FB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A03149E05DD7798CD3013772F84B50FB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[120
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/FDDC5668E7A0F1F4D0CA04D7BBB78BDA1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/FDDC5668E7A0F1F4D0CA04D7BBB78BDA1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[121
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/3BFEAB80A49A8C3DAC1BC6D0C81AFBD21FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/3BFEAB80A49A8C3DAC1BC6D0C81AFBD21FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[122
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/5F9D0F104615107F63B1444E723AA50D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/5F9D0F104615107F63B1444E723AA50D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[123
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C3D298BC609A19007FDF7CCC039913A91FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C3D298BC609A19007FDF7CCC039913A91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[124
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/3323EDA8685A3B6B4AD931B6B3E452111FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/3323EDA8685A3B6B4AD931B6B3E452111FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[125
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E6ABE31FC279C8D274898DC0D80EB8141FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E6ABE31FC279C8D274898DC0D80EB8141FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[126
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F51A3F060279AAE6F6BC598197E329561FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F51A3F060279AAE6F6BC598197E329561FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[127
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E955FF5BD1C1809633CB0C35F5E5DBDD1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E955FF5BD1C1809633CB0C35F5E5DBDD1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[128
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/9AE835C70200937922AD0B37B5E949E61FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/9AE835C70200937922AD0B37B5E949E61FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[129
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/06EDA11929F88448244C676E2DEC8C9B1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/06EDA11929F88448244C676E2DEC8C9B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[130
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/2F9F58D66612E773E82933E0ECAF8E3B1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/2F9F58D66612E773E82933E0ECAF8E3B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[131
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/4A43627654924DC3AF6806648819CA0E1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/4A43627654924DC3AF6806648819CA0E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[132
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6BED2904CF8F42189BEAE7C0EC6AF8EE1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6BED2904CF8F42189BEAE7C0EC6AF8EE1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[133
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BCDB3A3008F33B15ED40AAE1B2F8CBA21FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/BCDB3A3008F33B15ED40AAE1B2F8CBA21FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[134
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/56C228DFCFFF8D493752442B9A56DB601FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/56C228DFCFFF8D493752442B9A56DB601FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[135
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/EEF2ABB692D395AB935FA8A4CFC069BB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/EEF2ABB692D395AB935FA8A4CFC069BB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[136
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D99503E19D92FD61C182A0D80DB14E1C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D99503E19D92FD61C182A0D80DB14E1C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[137
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/53162A233B1A6598843387A2FF32C1C71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/53162A233B1A6598843387A2FF32C1C71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[138
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/0FC0141CC1E9A8A349265FF56B3B5B5B1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/0FC0141CC1E9A8A349265FF56B3B5B5B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[139
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C227970AC5DB084C546868E054E2AC501FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C227970AC5DB084C546868E054E2AC501FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[140
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/562647AD9E77EA51C4C40604B5442AC91FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/562647AD9E77EA51C4C40604B5442AC91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[141
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6F1D1FDC78D75D9392605354D9E37BD61FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6F1D1FDC78D75D9392605354D9E37BD61FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[142
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A7DB4EF50B46FCF615D3AB29ACECD9451FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A7DB4EF50B46FCF615D3AB29ACECD9451FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[143
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/9D63DEC61F3EF9C4C3FFF6D4A1495B5F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/9D63DEC61F3EF9C4C3FFF6D4A1495B5F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[144
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D7F82CB797724C605971060F89E3AEA21FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D7F82CB797724C605971060F89E3AEA21FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[145
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E8B7744767EE952BA58E57A90FB5B5D01FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E8B7744767EE952BA58E57A90FB5B5D01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[146
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/7EFF5573A6101C3FBCAC4C9A9E8CA9851FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/7EFF5573A6101C3FBCAC4C9A9E8CA9851FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[147
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/EC7BF0404D6FACA2FD4F7F265F21D11F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/EC7BF0404D6FACA2FD4F7F265F21D11F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[148
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BC1889AD7D75399BFE2B8B3492F6086E1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/BC1889AD7D75399BFE2B8B3492F6086E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[149
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/727C2617CB7BC4866B50777B47FDA8471FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/727C2617CB7BC4866B50777B47FDA8471FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[150
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/CCD621AD04D325E642C65B969291B5B51FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/CCD621AD04D325E642C65B969291B5B51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[151
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C3159A49B6656682AA78DCB196D4AF4F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C3159A49B6656682AA78DCB196D4AF4F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[152
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E606230C34852D71DDB726EBACF6FB461FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E606230C34852D71DDB726EBACF6FB461FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[153
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/04666606F3953BC4FCAB21840D48018F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/04666606F3953BC4FCAB21840D48018F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[154
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/42CDBB7F58C1D2AC1FFD18BA4B7B88A31FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/42CDBB7F58C1D2AC1FFD18BA4B7B88A31FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[155
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/65E5FC4470EDF1FC5941D6790BF546D31FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/65E5FC4470EDF1FC5941D6790BF546D31FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[156
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F9B73B06F01A3A93974FBD097F99B4C41FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F9B73B06F01A3A93974FBD097F99B4C41FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[157
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/AC05380818FE21BB438F12D847DC79AC1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/AC05380818FE21BB438F12D847DC79AC1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[158
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/1B031FEE6C62B79F35C1C97AD303409A1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/1B031FEE6C62B79F35C1C97AD303409A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[159
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B36B0E31518ACA2E13F1F2E61BE0E11C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B36B0E31518ACA2E13F1F2E61BE0E11C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[160
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/186CE89A5CA45F5C7A3EECD2D955FC951FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/186CE89A5CA45F5C7A3EECD2D955FC951FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[161
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/6CD2A5B1B46B672991014685CF1205221FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/6CD2A5B1B46B672991014685CF1205221FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[162
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/A1B4C4A62455E212A6B0B18E1E4E63A61FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/A1B4C4A62455E212A6B0B18E1E4E63A61FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[163
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/FB0E81E79A550E25EB2B4D063FE93F201FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/FB0E81E79A550E25EB2B4D063FE93F201FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[164
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/57EE745F3D1982172AEC5F8F3A1BD0421FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/57EE745F3D1982172AEC5F8F3A1BD0421FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[165
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BC7501E3D528C62DF887BED88CA5BB991FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/BC7501E3D528C62DF887BED88CA5BB991FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[166
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/3EEA766E0987043284E0A2914E325CAE1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[167
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/5092DD6CF634D39D7389F8CF848136BE1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[168
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/C22C64D24B45291ACFDB89D204BF36241FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[169
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/01BD10FCABB459C77DFA4470AAACFDD91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[170
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/D13E15DEC8B31565774798945435D7C21FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[171
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/29CD4A20C84E53A6C8E80D2A79E8DE571FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[172
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/04CEBD1CFE15AF8B403ECD044DD7CD001FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[173
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/A92AF21FE3B7391B5921A28EE3E4321A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[174
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/B3B16A50AFE47ACE5C85351D471BA3DB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[175
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/1E355C69324D508F55104AE84993835B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[176
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/66E6487DCAB54D0B26BD7883255C68D01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[177
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/87CE70DA1EE6428ACC2C21C9B7F687C91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[178
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/3E21B07636F0B6352BAF58EF538E02B71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[179
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/E715002626659D8534D250ADB14384371FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[180
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/48739386618BE4575E952609618444D51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[181
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/D814339A67D0BCA92C75C5A8CB1614711FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[182
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/9A26247B308510E1C1D1DBC4D4A2894E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[183
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/9CDF01F15DC2E9768921CE3B257E85E41FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[184
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/F174FC984DF824454A977D23779F79A51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[185
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/369CF8B68A11199E4AA9002B834C2FC51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[186
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/E00612CCB8818BBACF4041DB62593B5B1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[187
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/F74F461FA03DE3BCF594A77D503258F81FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[188
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/8EB190D232E1C968BD885496FBE17F031FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[189
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/BAAE3D2C7BB43B02BC5CE9B108A469541FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[190
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/51F7F59736928BC512F4C74B14C4E4541FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[191
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/98A09B024FB50E28C9477A3AF4FDC8781FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[192
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/51189126401EFE58139C1C840BDF6DD01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[193
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/9878BADAA110A6D5BE4BF0C10CD689831FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[194
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/82C0B2EA0277BE67CD73797F3112CFA11FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[195
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/2C94FF338DD50AAB341CEFFA047EEDA01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[196
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/DA7D3076BFFB79A3F62E95E3B69DC0271FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[197
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/144A5EDDFC02C74A24A5355C399D35421FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[198
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/5AE14B6DB60BE51AD3E07ECB0113236D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[199
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/40C23B316D2772A88C79ADD03FF844291FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[200
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/C84A29879AEAE2812CB682C87C0B1CEA1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[201
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/16024609514882D637F688A249B515101FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[202
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/F09EA52538D0EAD0B0BC8766DE83DE551FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[203
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/D211A4624AF91B260A054E8B82E541371FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[204
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/5D2064AA438B25E51F8CD9EB8E41E9301FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[205
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/C597773A8A4FF04C28009361176F94B91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[206
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/7EA6F6C04D980B441C748A20956919841FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[207
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/AEE4F1C791A09A05BD6DD78FCC4B373F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[208
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/EDF513B20BF10BC129BB6F80CE33AE181FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[209
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/F5A0CDD973689287D93B55B78F4AB76E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[210
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/D631FEECB664A8406C7CFE648A4517E01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[211
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/56B1331E6167B706F875BE74771DDD6A1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[212
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/554AEAC86DC6DC7CA743EB98EA88B40C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[213
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/736A5CFD9D1A9EB9D409295525400B641FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[214
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/CFEF366E94DFB696FF2DFF5D75AC110D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[215
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/BF3E07DFC707C18B37033791234061851FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[216
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/E639D8D905CE1CCCEB2A7EFAD4DA46E91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[217
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/088C127CC33FC64BEF3AEDD389CA2D081FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[218
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/9A815CC4CC4CD1F53DDA8077540F9A011FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[219
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/B7300A19291AEEF353C7F41BED8F25001FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[220
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/A593B0D39432B572B1221D49F30A98DB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[221
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/12355386D9395CF226C6BB22DACEE2FE1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[222
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/0A40C842DCCF388A800CC5421F438C4E1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[223
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/B21C78CD0BB4BC3EB5F0C4C1DD67B0791FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[224
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/4437DDF8098439315584EB84A65C98751FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[225
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/C0FB66354895ED8EE8AEE2C82AE4E72C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[226
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/D3F9CB5F35C757CFBFB5280F5B97CDD71FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[227
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/175D97176DB4FC8D3F50F489AF57ECF01FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[228
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/7D9DA17B1A99F521F61553CB2EF82E9C1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[229
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/58CE7F081030F662543AC174772BBC111FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[230
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/2BAAA23AC4AF6BFB083900B2D308EE901FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[231
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/073FC2B93D3A93DFA1083122962EBE861FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[232
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/9A86172D1850F3501B4251DF1677132F1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[233
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/B9F36DCF79855A75EF7EEFC33D219AE41FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[234
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/58535DCA6CD9FA38B054246F342834101FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[235
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/3DF6832DB7EE5E4FD6666E942C2C9CF31FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[236
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/56749FC20053D9A525992BDFC0D3B5091FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[237
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/E3F66DA00BBB16A12B7DF57B37E1D6741FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[238
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/ECF0D15E65791A09D9C2F59F41203FD31FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[239
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/A4B4CA7E9E4DCB0BDB32D29B2AB19BB51FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[240
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/CB4E72F5AB5408E2116E2E7B0D90B8431FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[241
+
+]
+\tf@nav=\write9
+\openout9 = `beamer.nav'.
+
+\tf@toc=\write10
+\openout10 = `beamer.toc'.
+
+\tf@snm=\write11
+\openout11 = `beamer.snm'.
+
+runsystem(rm "_minted-beamer/294F3B02B5F7D99416E49963C9EA75581FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/EBC19DE0C3053919475CEC91946A74241FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/249E78D8983F71DFAC143F64151648271FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/12FE89610B57DB420BBCD85062F51B9F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/ED05FCD6DB12AAB8DCCD3AC5686D20121FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A417EC0C202CB3060F24486E1807173F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/31E92E9A4F744300249E5F75478CB6291FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/9023A56DD04B98AD4CC2AD1AE8646FF51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/26798EF4B1F7AE68363A5BFFBA629B651FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8684E4005397ED25D9DB0466C1DDC24C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6D1801EE072CEEED1586DB76391A46E81FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F277B2C421AD2BB33E073B77B636B6921FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D809BB90DAD0E540B599F4A08BEF23171FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C0B40B70D38F17A4D6BD37D620017D391FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/56367C6F6C49A965E84E31F1DE260E641FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8710BD48A60A340FC5895FA4FFF8C5131FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B6FD43A19C88FB58A7FB36731311BF5C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6EBD5D9AB213CA6A92443D1C69286F1D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C49EDA368C3CADD84EF9AB6B1D255DB91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/9B11913E4CE617B3811865D62F7BBAE61FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D69A4AC6E155562B5381306B494864981FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3B7640171F061D8B2CF9A96DD7F4A7E91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DEDE3D9C440C4660D917A40F20ABCD871FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5D19CA38D65950A86E96CB535CD77A1B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DA5486149EAEFAB8FB89D34DA6D8E87A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/98B7839478B1004996BB34E43281A7FF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3079590F23ADBDEB2C5A62D2CF958BE81FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/420F70218BA3BB1D5DC96B6C40C63E261FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F66CD11DC36127CCBAA373D40CEADFA61FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E1F54118480179C8695BA8F48EF0558B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A284A2A94F10CF44CB6507D5D7D9DE301FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BF8FA564596AF0B86DCAC40568399B9B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/83FF0507B47DB38758D4F7893FFDA9211FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BF94BB7E67C6100E795BB4621E2A4AC71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2DE2CE6B0CA905858FE5D01A788E16C71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DA6471D91B6172267973E22D7C45FDDF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/404C43BF7C3E36C0B3AAED62107C265A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2D862899FECB3DCC2EA6EB5888F889171FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/11B59249A36A75A014E2BF019C97077C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0649095F4B9C667C57D0C5F910BD60201FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/37204BFF40B2760EEF78790E7717D3111FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/CAF21180ED2D9867E540E35A14F365971FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DC51B2A5E1813A07860EDFF26EF6C7D21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/AFF0BCCA2B32B75922C8F5E38214CF191FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DC686F4CF10B9DD13AA8246B90F8B23A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/9AEB59F3A3B996DEBD28E2CC9B3390691FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E1296D4EB1DE2EFF675FC095269912A51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BFB6AB3B8D13A1E082551A6E6692B6841FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8B988F98564046DDEE15D9E94EC6A3CB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1F46F506F78BB11EBAC10F8EEFCF98E21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2DD566FD76AD0003503E5601095E00BE1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/62154874E1F5A58436A33E6ECE8C4B741FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/67E108B5A91631F39D8A115CD6FB0B581FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/89B5AFD8E9F5E5FF21A3B746C3DFDBDD1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/EFD20FC56D60232DDA850EA85FD5EA661FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/20ABB0AE0FF265B8CFCE871022D0EC341FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5727786CCF5817C2496EC443E83F589E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/AFE20830C043CE0D4A5F8158841E10241FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4DC60BC98916188BE621AE12F332DA741FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/461A5C1C9631F045BF0345DE4584DCAC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7150C347D663ECD7B9440BF08812CCC41FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B286ABF3D1DC1D387BE2DA1F9F7962151FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E0AF22176C84702E10B36BA55B4DEE481FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1EE4B973E5DD6E7634178DC66426934A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0ACF5ECDA912B3987B70FF24CD40358B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/126E30033F30B1F6E98FD0DCD31044901FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0EBA64AD20E30645BEFD12DB4779E1A11FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/418FCAB71980C368C7211B3A18FB1CB21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E5C2661C5AF645BCC2F54CA5556471B01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/FAE062FD2FDE820C073419E1E35CB0D51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/048529590D3366C7187E51FB7C00FE7F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/985E59E7B93BF933580DCBFF8F367E281FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B79B6F73283D859756AE5ADCBC38AD621FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B1564D6733CEE1F2CED4EFAEC4D3288D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E76726CA87FFDA378C30CD4321535E351FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6449B1E49CC4E987B2F431507C6D8B7E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/49E76A89ECAF6BDEC4F53EFBB4CFB67B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/15EE9A27D86A504D4DC04648584926451FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3081A5A6323E381E4D370704ECF43C291FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6F9E0732260ACC8C869247BD60FC59231FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7ACE361017F4A7E8738C4B5D4410D4BC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/400E1ED75D35A6C63223336F87B4CAF51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C00B5BCE5E227A5F180F74CE670AD2751FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5AA13A1084889194E9FC0B44551F4E4E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B5AF603057BE0ECB065CC69D2E65FEEC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/ED871F5125DED2AFAC35BAE8821D84571FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A7176D151394D62D83E85D4DA8D6D8001FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/9DE0585033EE6DC98455EE301F58DD041FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6C09B3C87AE3E97C22FE1E915B84C71B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F8BA5D812026115859319E8647C19D081FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/33CAB1F971586D4DA5A42E789EC30AF01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/16019E99D3F9A4CAD7F1C3640697415F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/CB25F1C9830EE9DB19E190A50FCB11591FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D7C68417FC21CC931C5429028840B7661FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4F0AEFA37ECE7EDFFB75C78DC70B932A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E14175EB07E412B187194EC0692D4EA81FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/14C7312C0285BA2FDF8B12ACA32E1E891FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3D85377B06E960DFB145235F6C5CE1351FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A193E94692F5019AE85D63288CF53E331FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/71B48D744E88A2ABB5779394A492B4341FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/335313BA5F14088B95BDB5E3DF8A29651FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/70C4412DC98B91DDD36754DF227EE31C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4AAA1BA89FB9DF64AFDE3D30883B3CDB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/073C74721C5A77CDE809E0600809B1021FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/352FDCB5549E225FA72CBA191D00D0BB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2D07B3464CB23F16DE5B24C546C81EBA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BF70AA89A3C1D01F4E9C40B1F7E015BF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/FC0E8BA4868BC7560D4CB52FAC7E4FA31FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6F6EE5CB4B7FAD418ACDA606EDCEFD0D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/37EAB29F710CD97A1B36B92C90D7D8AD1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/06F57332FF6EF0396494E407D1ABFB5B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/86128CA047A0D6121188825BEAC020571FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E6C1325AFD34E128E53BD0EAA04B77B91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8179559051A9B8CEAAEB34B3D7CC28A31FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/514AFF81DD21B06937E4AAA9F534E0BE1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1123D527A76258A6DDB0A971C73AB90C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/23F44878690D6ABA96A12759EAC2FB8A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1DE4051F6AE6D98FC3A03535541554771FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7A2AF362C4526F647BA05E81227D137D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/825A293F933ABD3D3687F619D7A665161FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A15B9DCDB7EB73F569A921AAEA1632BE1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D6AC28753D77B2B1533C348BFFCB4C8A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5C327C826C1BB0CCB957360C042B092A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/50A7292E9FD15658659D27933748FBDA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/436A09491036A8CB5A35414E1A120EE51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/600ED51CF07973803E864D8BAFD490841FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/FFC64543A7B25351482CD29F785DE9931FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/665DEC5259EB80C432E6CBB9DBC446501FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A84897A559646601F538501E912835BA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4B512DA855D3B9D155B17271E609F6BB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/77508B7CE39BD376B7439092D2968A741FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/40D64D597E798D9C3072A81BEF5B88AC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/FFDDA3DF268328A9DE92BB4BE624D92D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DE34765EBBFA73EED8086F98E009D2F81FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/12B0E919A71C7342F6039870E838E35C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D4A083FAE386E9693C45C01D3C5DA69D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2BDFEDC469E18AD933353B594E8D16EA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D59FB614F958FB900D167910572C45931FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2FC27E3710D405341C9AC69E5A0133471FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BD18CB9C32404376AAE63993D5A2B3E91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/517A53D25B8B19C135B43ABB7FC084AE1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B878A674584003B8447AC8C2B6B11D1E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A4F7B349FE48403689BFD231D23A81AC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/FE2D753A006C6BF6C278AE0814F0424F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/94BA16059A229339D95456A8253C7D321FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/9DA82EF439BDF8B9BD959D9426C8A76B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4083C7BF9DB4EB911D93565CC6AD62921FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/358906B243B0F30A94B2264309088F2F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/482C395D5E94BE54F6ED7B92A4C9A6831FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/AB913AB2C644AB231F93B300941744031FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/10B0E8A6347AA9D49B8F4271A58E8BBB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F5239CCF1A8983CCECC49EC8BF9CA3951FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2B2B803B866A9F870309A0D5DE82AE061FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0F2718B8164CEB8BF564AB57BEA3719B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "beamer.pyg")...executed.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4317.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4317.
  (./beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4317.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4317.
+
 Package rerunfilecheck Info: File `beamer.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1216,29 +5952,25 @@ Package rerunfilecheck Info: File `beamer.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4317.
  ) 
 Here is how much of TeX's memory you used:
- 30132 strings out of 494953
- 720377 string characters out of 6180977
- 1390457 words of memory out of 5000000
- 32797 multiletter control sequences out of 15000+600000
- 11145 words of font info for 41 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 54i,18n,77p,721b,1403s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on beamer.pdf (4 pages, 76068 bytes).
+ 33787 strings out of 493029
+ 849042 string characters out of 6136234
+ 1020960 words of memory out of 5000000
+ 34868 multiletter control sequences out of 15000+600000
+ 7107 words of font info for 26 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 58i,18n,79p,13855b,926s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on beamer.pdf (241 pages, 411020 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
+ 1414 PDF objects out of 1440 (max. 8388607)
+ 1142 compressed objects within 12 object streams
+ 483 named destinations out of 1000 (max. 500000)
  79 words of extra memory for PDF output out of 10000 (max. 10000000)
 
