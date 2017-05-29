@@ -120,6 +120,16 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                     strcat(includeGCC, yytext);
                     ntoken = nextToken();
 
+                    while(ntoken == DIV || ntoken == MINUS){
+                    	strcat(includeGCC, yytext);
+                    	ntoken = nextToken();
+                    	strcat(includeGCC, yytext);
+                    	ntoken = nextToken();	
+                    }	
+
+                    //DIV
+                    //MINUS
+
                     if(ntoken == DOT){
                         strcat(includeGCC, yytext);
                         ntoken = nextToken();
