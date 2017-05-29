@@ -52,9 +52,11 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
 			printf("Entro include\n");
 	        char *includeArreglado; //El valor del include sin los ""
             char includeGCC[100]= "";
+            char nombreTemporal[100] = "";
             char contenidoArchivo[2];
             FILE *libreria;
             FILE *fp;
+            fp = NULL;
             FILE *salida;
             //salida = fopen("salida.c", "a");
             int numeroTemporal;
@@ -118,18 +120,21 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
 
                 if(ntoken == IDENTIFIER){
                     strcat(includeGCC, yytext);
+                    strcat(nombreTemporal, yytext);
                     ntoken = nextToken();
 
-                    while(ntoken == DIV || ntoken == MINUS){
+                    while(ntoken == DIV || ntoken == MINUS || ntoken == IDENTIFIER){
+                    	
+                    	if (ntoken == IDENTIFIER){
+                    		strcat(nombreTemporal, yytext);
+                    
+                    	}
                     	strcat(includeGCC, yytext);
                     	ntoken = nextToken();
-                    	strcat(includeGCC, yytext);
-                    	ntoken = nextToken();	
+                    		
                     }	
 
-                    //DIV
-                    //MINUS
-
+                    
                     if(ntoken == DOT){
                         strcat(includeGCC, yytext);
                         ntoken = nextToken();
@@ -141,55 +146,66 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                             if(ntoken == GREATER){
                                 
                                 FILE* siguienteArchivo; //Se creará un nuevo archivo
-                
+                			
                                 strcat(includeGCC, yytext);
                                 
                                 printf("ENTRA CON INCLUDE \n");
                                 printf("%s \n", includeGCC);
-                                salida = fopen(includeGCC, "w");
+                                salida = fopen(nombreTemporal, "w");
                                 libreria = fopen("libreria.c", "w");
                                 fputs(includeGCC, libreria);
                                 fclose(libreria);
 
-                                fp = popen("cpp -MMD libreria.c", "r");
                                 
+                                fp = popen("cpp -MMD libreria.c", "r");
+                                     
                                 if (fp == NULL) {
                                      printf("Failed to run command\n" );
-                                      exit -1;
+                                     exit -1;
                                 }
 
-                                while (fgets(contenidoArchivo, 2, fp) != NULL) {
-                                    if (strcmp(contenidoArchivo,"#")==0){
-                                        //Comparo hasta que haya espacio
-                                    
-                                        while (strcmp(contenidoArchivo,"\n")!=0){
-                                            fgets(contenidoArchivo, 2, fp);
-                                        }
-                                      
-                                    }
-                                    else
-                                        fputs(contenidoArchivo, salida);
-                                }
-
-                                pclose(fp);
-                                fclose(salida);
-
-                                siguienteArchivo = fopen(includeGCC, "r"); //Se pone en modo lectura, FALTA: función que quite los "" de un literal
-              
-
-                                yyin = siguienteArchivo;                   
-                                preprocesador1(siguienteArchivo, archivoTemporal); //Se llama de nuevo a la función, pero esta vez con el siguiente archivo incluído
-                                fclose(siguienteArchivo);
-                                remove(includeGCC);
-                                /*
-                                    Después de la llamada recursiva, se borra la inclusión
-                                */
-                                includes[numIncludes] = ""; 
-                                numIncludes--;
-                                yyin =archivoActual; //Se le dice a flex cuál archivo se estará leyendo
-
-                                //fclose(salida);
                                 
+                                
+                                else {
+                                	//printf("SALIDA EXITOSA");
+            
+                                	//printf("HIIIII\n" );
+                                    
+                                	while (fgets(contenidoArchivo, 2, fp) != NULL) {
+	                                    if (strcmp(contenidoArchivo,"#")==0){
+	                                        printf("%s", contenidoArchivo);
+	                                        //Comparo hasta que haya espacio
+	                                    
+	                                        while (strcmp(contenidoArchivo,"\n")!=0){
+	                                            fgets(contenidoArchivo, 2, fp);
+	                                        }
+	                                      
+	                                    }
+	                                    else
+	                                        fputs(contenidoArchivo, salida);
+	                                }
+
+	                                
+
+	                                pclose(fp);
+	                                fclose(salida);
+
+	                                siguienteArchivo = fopen(nombreTemporal, "r"); //Se pone en modo lectura, FALTA: función que quite los "" de un literal
+	              
+
+	                                yyin = siguienteArchivo;                   
+	                                preprocesador1(siguienteArchivo, archivoTemporal); //Se llama de nuevo a la función, pero esta vez con el siguiente archivo incluído
+	                                fclose(siguienteArchivo);
+	                                remove(nombreTemporal);
+	                                /*
+	                                    Después de la llamada recursiva, se borra la inclusión
+	                                */
+	                                includes[numIncludes] = ""; 
+	                                numIncludes--;
+	                                yyin =archivoActual; //Se le dice a flex cuál archivo se estará leyendo
+
+
+                                }
                                 
 
                             }
