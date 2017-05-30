@@ -1,7 +1,7 @@
 #define So long
 #define R rand()
 #include <math.h>
-//#include <X11/Xlib.h>
+#include <X11/Xlib.h>
 #define T(i,F) ((So long)(i)<<F)
 #define O(c,L,i) c*sin(i)+L*cos(i)
 #define y(n,L) for(n=0; n<L 3; n++)     

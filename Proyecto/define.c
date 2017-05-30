@@ -16,6 +16,7 @@ int numDefines = 0;       //Contador de los defines que se tendrán en el array 
 char* constantfolding(char* num, char* operator, char* num2){
 	int n =atoi(num);
     int n2 =atoi(num2);
+    printf("Num1: %d, Num2: %d y su operacion: %s\n", n, n2, operator);
     int result;
 	if(strcmp(operator,"+")==0){
 		result=n+n2;
@@ -61,17 +62,12 @@ int existeDefine(char *define) {
 
 
 int define(int ntoken){
-
 	char* identifiers[50000];
-	char* parametro[50000];
 	memset(identifiers,0,sizeof(identifiers));
-	memset(parametro,0,sizeof(parametro));
 	ntoken=nextToken();
 	int position=0;
 	char *variable="";
-	int lineaactual=linea; 
-	defines[numDefines].numparam=0;	
-	defines[numDefines].macro = false;
+	int lineaactual=linea; 	
 	while(lineaactual==linea){
 
 		if(ntoken==SLASH){
@@ -90,46 +86,6 @@ int define(int ntoken){
 		
 			variable=(char*)malloc(strlen(yytext));
 			strcpy(variable,yytext);
-			ntoken=nextToken();
-			if(ntoken==LEFT_PARENTHESIS){
-				ntoken=nextToken();
-				if(ntoken==IDENTIFIER){
-					while(ntoken!=RIGHT_PARENTHESIS && lineaactual==linea){
-						
-						
-						if(ntoken!=	COMMA){
-							
-							strcat(parametro,yytext);
-							strcat(parametro, " ");
-							
-
-						}else{
-				
-							strcpy(defines[numDefines].parametros[(defines[numDefines].numparam)],parametro);
-							memset(parametro,0,sizeof(parametro));
-
-							 (defines[numDefines].numparam)++;
-						}
-						ntoken=nextToken();
-						if(ntoken==RIGHT_PARENTHESIS){
-							strcpy(defines[numDefines].parametros[(defines[numDefines].numparam)],parametro);
-						}
-
-					}
-				
-				    
-					if (ntoken==RIGHT_PARENTHESIS){
-						defines[numDefines].macro = true;
-					}
-			}
-				ntoken=nextToken();
-
-				strcat(identifiers, yytext);
-			}else{
-				defines[numDefines].macro = false;
-			    strcat(identifiers, yytext);
-			}
-
 			
 
 		}
@@ -205,14 +161,10 @@ int define(int ntoken){
     
     defines[numDefines].palabra = (char*)malloc(strlen(variable));
     defines[numDefines].vDefine = (char*)malloc(strlen(identifiers));
-
     strcpy(defines[numDefines].palabra ,variable);
     strcpy(defines[numDefines].vDefine,identifiers);
-    
     numDefines++;
 
 	return ntoken;
 
 }
-
-

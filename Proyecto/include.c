@@ -10,7 +10,7 @@ extern char* yytext;
 
 char *includes[] = {};     //Tabla con las cadenas que representarán a los includes que se encuentren en el programa
 int numIncludes = -1;      //Contador de los includes que se tendrán en el array de cadenas includes
-bool include_especial=false;
+
 
 
 /*
@@ -144,7 +144,7 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                             ntoken = nextToken();
 
                             if(ntoken == GREATER){
-                                include_especial==true;
+                                
                                 FILE* siguienteArchivo; //Se creará un nuevo archivo
                 			
                                 strcat(includeGCC, yytext);
@@ -203,7 +203,7 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
 	                                includes[numIncludes] = ""; 
 	                                numIncludes--;
 	                                yyin =archivoActual; //Se le dice a flex cuál archivo se estará leyendo
-                                    include_especial=false;
+
 
                                 }
                                 
