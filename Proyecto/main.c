@@ -13,6 +13,7 @@
 extern int  yyparse();
 extern FILE* archivotmp;
 extern int linea;
+extern int columna; 
 extern banderaSyntaxError; 
 
 char * nombre; 

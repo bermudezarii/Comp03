@@ -674,7 +674,7 @@ char *yytext;
 #include "yyltype.h"
 void yyerror(char *);
 int linea = 1;
-int columna = 1; 
+int columna = 0; 
 YYLTYPE yylloc = {1,1,1,1}; 
 int endline;
 int fdefine=1;
@@ -966,167 +966,167 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 22 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return AUTO;}
+{strcat(gramaticas,yytext);return AUTO;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 23 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return BREAK;}
+{strcat(gramaticas,yytext);return BREAK;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 24 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CASE;}
+{strcat(gramaticas,yytext);return CASE;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 25 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CHAR;}
+{strcat(gramaticas,yytext);return CHAR;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 26 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONST;}
+{strcat(gramaticas,yytext);return CONST;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 27 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONTINUE;}
+{strcat(gramaticas,yytext);return CONTINUE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 28 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return DEFAULT;}
+{strcat(gramaticas,yytext);return DEFAULT;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 29 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return DO;}
+{strcat(gramaticas,yytext);return DO;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 30 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return DOUBLE;}
+{strcat(gramaticas,yytext);return DOUBLE;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 31 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return ELSE;}
+{strcat(gramaticas,yytext);return ELSE;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 32 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return ENUM;}
+{strcat(gramaticas,yytext);return ENUM;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 33 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return EXTERN;}
+{strcat(gramaticas,yytext);return EXTERN;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 34 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return FLOAT;}
+{strcat(gramaticas,yytext);return FLOAT;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 35 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return FOR;}
+{strcat(gramaticas,yytext);return FOR;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 36 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return GOTO;}
+{strcat(gramaticas,yytext);return GOTO;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 37 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return IF;}
+{strcat(gramaticas,yytext);return IF;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 38 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return INT;}
+{strcat(gramaticas,yytext);return INT;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 39 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LONG;}
+{strcat(gramaticas,yytext);return LONG;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 40 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return REGISTER;}
+{strcat(gramaticas,yytext);return REGISTER;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 41 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return RETURN;}
+{strcat(gramaticas,yytext);return RETURN;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 42 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return SHORT;}
+{strcat(gramaticas,yytext);return SHORT;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 43 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return SIGNED;}
+{strcat(gramaticas,yytext);return SIGNED;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 44 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return SIZEOF;}
+{strcat(gramaticas,yytext);return SIZEOF;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 45 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return STATIC;}
+{strcat(gramaticas,yytext);return STATIC;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 46 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return STRUCT;}
+{strcat(gramaticas,yytext);return STRUCT;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 47 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return SWITCH;}
+{strcat(gramaticas,yytext);return SWITCH;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 48 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return TYPEDEF;}
+{strcat(gramaticas,yytext);return TYPEDEF;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 49 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return UNION;}
+{strcat(gramaticas,yytext);return UNION;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 50 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return UNSIGNED;}
+{strcat(gramaticas,yytext);return UNSIGNED;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 51 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return VOID;}
+{strcat(gramaticas,yytext);return VOID;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 52 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return VOLATILE;}
+{strcat(gramaticas,yytext);return VOLATILE;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 53 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return WHILE;}
+{strcat(gramaticas,yytext);return WHILE;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 55 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return INTEGER;}
+{strcat(gramaticas,yytext);return INTEGER;}
 	YY_BREAK
 case 34:
 /* rule 34 can match eol */
@@ -1145,307 +1145,307 @@ YY_RULE_SETUP
 case 36:
 YY_RULE_SETUP
 #line 60 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONSTANT;}
+{strcat(gramaticas,yytext);return CONSTANT;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 61 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONSTANT;}
+{strcat(gramaticas,yytext);return CONSTANT;}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 62 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONSTANT;}
+{strcat(gramaticas,yytext);return CONSTANT;}
 	YY_BREAK
 case 39:
 /* rule 39 can match eol */
 YY_RULE_SETUP
 #line 63 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONSTANT;}
+{strcat(gramaticas,yytext);return CONSTANT;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 64 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONSTANT;}
+{strcat(gramaticas,yytext);return CONSTANT;}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 65 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONSTANT;}
+{strcat(gramaticas,yytext);return CONSTANT;}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 66 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return CONSTANT;}
+{strcat(gramaticas,yytext);return CONSTANT;}
 	YY_BREAK
 case 43:
 /* rule 43 can match eol */
 YY_RULE_SETUP
 #line 68 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return SLASH;}
+{strcat(gramaticas,yytext);return SLASH;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 69 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LEFT_BRACKET;}
+{strcat(gramaticas,yytext);return LEFT_BRACKET;}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
 #line 70 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return RIGHT_BRACKET;}
+{strcat(gramaticas,yytext);return RIGHT_BRACKET;}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
 #line 71 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return COMMA;}
+{strcat(gramaticas,yytext);return COMMA;}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 72 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LEFT_PARENTHESIS;}
+{strcat(gramaticas,yytext);return LEFT_PARENTHESIS;}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
 #line 73 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return RIGHT_PARENTHESIS;}
+{strcat(gramaticas,yytext);return RIGHT_PARENTHESIS;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
 #line 74 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return RIGHT_SBRACKET;}
+{strcat(gramaticas,yytext);return RIGHT_SBRACKET;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
 #line 75 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LEFT_SBRACKET;}
+{strcat(gramaticas,yytext);return LEFT_SBRACKET;}
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
 #line 76 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return SEMICOLON;}
+{strcat(gramaticas,yytext);return SEMICOLON;}
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
 #line 77 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return COLON;}
+{strcat(gramaticas,yytext);return COLON;}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
 #line 78 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return EXCLAMATION;}
+{strcat(gramaticas,yytext);return EXCLAMATION;}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
 #line 79 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return PRIME;}
+{strcat(gramaticas,yytext);return PRIME;}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
 #line 80 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return INTERROGATION;}
+{strcat(gramaticas,yytext);return INTERROGATION;}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
 #line 81 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return UP_ARROW;}
+{strcat(gramaticas,yytext);return UP_ARROW;}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
 #line 82 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return PLUS;}
+{strcat(gramaticas,yytext);return PLUS;}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
 #line 83 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return MINUS;}
+{strcat(gramaticas,yytext);return MINUS;}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
 #line 84 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return DIV;}
+{strcat(gramaticas,yytext);return DIV;}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
 #line 85 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return MOD;}
+{strcat(gramaticas,yytext);return MOD;}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
 #line 86 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return MUL;}
+{strcat(gramaticas,yytext);return MUL;}
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
 #line 87 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return INC_OP;}
+{strcat(gramaticas,yytext);return INC_OP;}
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
 #line 88 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return DEC_OP;}
+{strcat(gramaticas,yytext);return DEC_OP;}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
 #line 89 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return EQU;}
+{strcat(gramaticas,yytext);return EQU;}
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
 #line 90 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LESS;}
+{strcat(gramaticas,yytext);return LESS;}
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
 #line 91 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return GREATER;}
+{strcat(gramaticas,yytext);return GREATER;}
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
 #line 92 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LE_OP;}
+{strcat(gramaticas,yytext);return LE_OP;}
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
 #line 93 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return GE_OP;}
+{strcat(gramaticas,yytext);return GE_OP;}
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
 #line 94 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return EQ_OP;}
+{strcat(gramaticas,yytext);return EQ_OP;}
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
 #line 95 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return NE_OP;}
+{strcat(gramaticas,yytext);return NE_OP;}
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
 #line 96 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return ADD_ASSIGN;}
+{strcat(gramaticas,yytext);return ADD_ASSIGN;}
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
 #line 97 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return SUB_ASSIGN;}
+{strcat(gramaticas,yytext);return SUB_ASSIGN;}
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
 #line 98 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return MUL_ASSIGN;}
+{strcat(gramaticas,yytext);return MUL_ASSIGN;}
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
 #line 99 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return DIV_ASSIGN;}
+{strcat(gramaticas,yytext);return DIV_ASSIGN;}
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
 #line 100 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return MOD_ASSIGN;}
+{strcat(gramaticas,yytext);return MOD_ASSIGN;}
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
 #line 101 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return DOT;}
+{strcat(gramaticas,yytext);return DOT;}
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
 #line 102 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return BIT_AND;}
+{strcat(gramaticas,yytext);return BIT_AND;}
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
 #line 103 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return BIT_OR;}
+{strcat(gramaticas,yytext);return BIT_OR;}
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
 #line 104 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return PTR_OP;}
+{strcat(gramaticas,yytext);return PTR_OP;}
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
 #line 105 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return AND_OP;}
+{strcat(gramaticas,yytext);return AND_OP;}
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
 #line 106 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return OR_OP;}
+{strcat(gramaticas,yytext);return OR_OP;}
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
 #line 107 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return ELLIPSIS;}
+{strcat(gramaticas,yytext);return ELLIPSIS;}
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
 #line 108 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return RIGHT_ASSIGN;}
+{strcat(gramaticas,yytext);return RIGHT_ASSIGN;}
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
 #line 109 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LEFT_ASSIGN;}
+{strcat(gramaticas,yytext);return LEFT_ASSIGN;}
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
 #line 110 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return AND_ASSIGN;}
+{strcat(gramaticas,yytext);return AND_ASSIGN;}
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
 #line 111 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return XOR_ASSIGN;}
+{strcat(gramaticas,yytext);return XOR_ASSIGN;}
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
 #line 112 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return OR_ASSIGN;}
+{strcat(gramaticas,yytext);return OR_ASSIGN;}
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
 #line 113 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return RIGHT_OP;}
+{strcat(gramaticas,yytext);return RIGHT_OP;}
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
 #line 114 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LEFT_OP;}
+{strcat(gramaticas,yytext);return LEFT_OP;}
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
 #line 116 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return INCLUDE;}
+{strcat(gramaticas,yytext);return INCLUDE;}
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
 #line 117 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");fdefine=0;return DEFINE;}
+{strcat(gramaticas,yytext);fdefine=0;return DEFINE;}
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
 #line 118 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return IDENTIFIER;}
+{strcat(gramaticas,yytext);return IDENTIFIER;}
 	YY_BREAK
 case 93:
 /* rule 93 can match eol */
 YY_RULE_SETUP
 #line 119 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
+{strcat(gramaticas,yytext);return LITERAL;}
 	YY_BREAK
 case 94:
 /* rule 94 can match eol */
 YY_RULE_SETUP
 #line 121 "myscanner.l"
-{strcat(gramaticas,yytext);strcat(gramaticas," ");return LITERAL;}
+{strcat(gramaticas,yytext);return LITERAL;}
 	YY_BREAK
 case 95:
 /* rule 95 can match eol */
 YY_RULE_SETUP
 #line 122 "myscanner.l"
-{columna = 1; linea++;endline=0;/*ignore*/;if(fdefine==0){fdefine=1;return ('\n');}else{fdefine=1;}}
+{columna = 0; linea++;endline=0;/*ignore*/;if(fdefine==0){fdefine=1;return ('\n');}else{fdefine=1;}}
 	YY_BREAK
 case 96:
 /* rule 96 can match eol */

@@ -2,7 +2,7 @@ char*lie;
 
   double time, me= !0XFACE,
 
-  not; int rested,   get, out
+  not; int rested,   get, out;
 
   main(ly, die) char ly, **die ;{
 
@@ -41,7 +41,7 @@ dear; (char)lotte--;
 
   'I'  -  (long)  - 4 - 'U' ])- !!
   
-  (time  =out=  'a'));} while( my - dear
+  (time  =out=  'a'));} while (my - dear
 
   && 'I'-1l  -get-  'a'); break;}}
 

@@ -45,7 +45,7 @@ void addExplanation(FILE * archivoPretty){
 void startListing(FILE * archivoPretty, char * titulo){
     fputs("\\begin{frame}[fragile]\n\\frametitle{", archivoPretty); 
     fputs(titulo, archivoPretty); 
-    fputs("}\n\\begin{minted}{c}\n", archivoPretty);
+    fputs("}\n\\begin{minted}[fontsize=\\tiny]{c}\n", archivoPretty);
 }
 
 void endListing(FILE * archivoPretty){

@@ -1,8 +1,9 @@
 \frametitle{C\'odigo con los Errores}
-\begin{minted}{c}
-extern long int syscall ( long int __sysno ,
-... ) __attribute__ ( ( __nothrow__ , __leaf__
-) ) ;
-extern int lockf ( int __fd , int __cmd , __off_t
-__len ) ;
-extern int fdatasync ( int __fildes ) ; \end{minted}
+\begin{minted}[fontsize=\tiny]{c}
+get - ! out ;
+/*Pruebas/love.c:47:2 syntax error, unexpected IF*/
+if ( not -- )
+/*Pruebas/love.c:48:4 syntax error, unexpected GOTO*/
+goto hell ;
+/*Pruebas/love.c:49:27 syntax error, unexpected RIGHT_BRACKET*/
+exit ( ( char ) lotte ) ; } \end{minted}

@@ -9,6 +9,7 @@ extern int yylex();
 extern int yylineno;
 extern int yyleng;
 extern char* yytext;
+extern int columna; 
 
 extern char errores[5000][500]; 
 extern int lineasE[500]; 
@@ -435,7 +436,7 @@ int prettyprintGNU(FILE * archivoPretty, char*name){
 
 
 //*************************************************************************
-
+/*
 void ponerErrores(FILE * viejo, FILE * nuevo){
     anterior = -1;
     ntoken = nextToken();
@@ -472,8 +473,55 @@ void ponerErrores(FILE * viejo, FILE * nuevo){
     
         putPretty(yytext, nuevo); 
         putPretty(" ", nuevo);  
-        anterior = ntoken; /*guardo el anterior porque me ayuda a verificar ciertas cosas*/
+        anterior = ntoken; //guardo el anterior porque me ayuda a verificar ciertas cosas
         contadorTokensBeamer = contadorTokensBeamer + yyleng + 1 ; 
+        ntoken = nextToken(); //como el i++ de nuestro ciclo
+    }  
+    endListing(beamer); 
+    contadorBeamer = 0 ; 
+    contadorTokensBeamer = 0;
+    printf("**poner Errores ");
+    return 0;
+}
+
+*/
+
+void ponerErrores(FILE * viejo, FILE * nuevo){
+    anterior = -1;
+    ntoken = nextToken();
+    startListing(beamer, "C\\'odigo con los Errores"); 
+    
+    while(ntoken) {
+      
+      if (endline==0){
+        putPretty("\n", nuevo); 
+        contadorBeamer++; 
+
+      if(contadorBeamer >= 13){
+        endListing(beamer); 
+        startListing(beamer, "C\\'odigo con los Errores"); 
+        contadorBeamer = 0; 
+      }
+        int n = 0; // contador para ver si esta el error
+        while(n < contadorErrores){
+            if(lineasE[n] == lineaNuevo){
+                putPretty(errores[n], nuevo); 
+                contadorBeamer++; 
+                if(contadorBeamer >= 13){
+                  endListing(beamer); 
+                  startListing(beamer, "C\\'odigo con los Errores"); 
+                  contadorBeamer = 0; 
+                }
+            }
+            n++; 
+        }
+        lineaNuevo++;  
+        endline =1; 
+      }
+    
+        putPretty(yytext, nuevo);
+        putPretty(" ", nuevo);  
+        anterior = ntoken; /*guardo el anterior porque me ayuda a verificar ciertas cosas*/
         ntoken = nextToken(); /*como el i++ de nuestro ciclo*/
     }  
     endListing(beamer); 
@@ -483,6 +531,7 @@ void ponerErrores(FILE * viejo, FILE * nuevo){
     return 0;
 }
 
+/*
 
 void ponerCodigo(FILE * nuevo){
     anterior = -1;
@@ -508,6 +557,42 @@ void ponerCodigo(FILE * nuevo){
         putPretty(yytext, nuevo); 
         putPretty(" ", nuevo);  
         contadorTokensBeamer = contadorTokensBeamer + yyleng + 1 ; 
+        anterior = ntoken; 
+        ntoken = nextToken();
+    }  
+    endListing(beamer); 
+    contadorBeamer = 0 ; 
+    contadorTokensBeamer = 0; 
+    printf("**poner Codigo ");
+    return 0;
+}
+
+*/
+
+void ponerCodigo(FILE * nuevo){
+    anterior = -1;
+    ntoken = nextToken();
+    startListing(beamer, "C\\'odigo"); 
+    
+    while(ntoken) {
+      
+      if (endline==0){
+        putPretty("\n", nuevo); 
+        
+        contadorBeamer++;
+
+      if(contadorBeamer >= 13){
+        endListing(beamer); 
+        startListing(beamer, "C\\'odigo"); 
+        contadorBeamer = 0; 
+      }
+
+        endline =1; 
+      }
+    
+        putPretty(yytext, nuevo); 
+        putPretty(" ", nuevo);  
+        
         anterior = ntoken; /*guardo el anterior porque me ayuda a verificar ciertas cosas*/
         ntoken = nextToken(); /*como el i++ de nuestro ciclo*/
     }  
@@ -517,4 +602,3 @@ void ponerCodigo(FILE * nuevo){
     printf("**poner Codigo ");
     return 0;
 }
-
