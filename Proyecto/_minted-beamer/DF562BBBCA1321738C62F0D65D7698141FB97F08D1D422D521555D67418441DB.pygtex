@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Continuar\PYGZus{}banderas} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{n}{Descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Continuar\PYGZus{}banderas} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{Descripcion} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{[} \PYG{l+m+mi}{1000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{[} \PYG{l+m+mi}{1000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}end\PYGZob{}frame\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZob{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}frame\PYGZcb{}\PYGZob{}Análisis de Pregunta \PYGZpc{}d \PYGZhy{} cont. hfill \PYGZob{}small \PYGZpc{}s\PYGZcb{}\PYGZcb{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{n}{Descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

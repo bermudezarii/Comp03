@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set xrange [0.0:100.0]}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set xtics 10}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set yrange [0.0:\PYGZpc{}d]}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{maximo} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set style fill solid 1.0 border \PYGZhy{}1}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set boxwidth 8}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}plot }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{EX4010y.dat}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{ with boxes fill lw 3 lc 2 notitle\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s EX4010\PYGZhy{}h.gp\PYGZdq{}} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{gnuplot} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}mv EX4010\PYGZhy{}h.gp \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{ruta\PYGZus{}gnuplot} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s EX4010\PYGZhy{}h.eps\PYGZdq{}} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{epstopdf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

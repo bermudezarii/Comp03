@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{n}{tempIntersect} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{cilinderNormal} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Object} \PYG{n}{object} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{intersectionPoint} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{normalCilinder} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{x} \PYG{o}{=} \PYG{n}{intersectionPoint} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{y} \PYG{o}{=} \PYG{n}{intersectionPoint} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{z} \PYG{o}{=} \PYG{n}{intersectionPoint} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{xo} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Xc} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{yo} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Yc} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{zo} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Zc} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{xq} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{directionVector} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{yq} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{directionVector} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\end{Verbatim}

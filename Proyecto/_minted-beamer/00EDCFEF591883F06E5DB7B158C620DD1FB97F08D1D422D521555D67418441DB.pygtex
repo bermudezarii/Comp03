@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{case} \PYG{l+m+mi}{0} \PYG{o}{:} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{debug} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Insertando datos de escena }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Reflexiones: \PYGZpc{}LF, Transparencia: \PYGZpc{}LF, Anti\PYGZhy{}aliasing: \PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Iluminación ambiente: \PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Plano de proyección (Xmin, Ymin) (Xmax, Ymax) : (\PYGZpc{}LF, \PYGZpc{}LF) (\PYGZpc{}LF, \PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{6} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{7} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Resolución:  \PYGZpc{}LFx\PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{8} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{9} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Epsilon \PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Ojo: (\PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{11} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{12} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{13} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Color background: (\PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{14} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{15} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{16} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{maxAA} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{maxReflection} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

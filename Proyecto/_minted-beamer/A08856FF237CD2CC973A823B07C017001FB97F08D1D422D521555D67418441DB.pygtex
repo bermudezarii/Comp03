@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}materia} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}materia\PYGZus{}descripcion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}institucion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}escuela} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}programa} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}profesor} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}fecha} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}N\PYGZus{}preguntas} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}N\PYGZus{}versiones} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}N\PYGZus{}estudiantes} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EB\PYGZus{}prediccion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{FR\PYGZus{}prediccion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EB\PYGZus{}real} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}UPDATE ex\PYGZus{}examenes\PYGZus{}respuestas set correctas = \PYGZpc{}d, porcentaje = \PYGZpc{}Lf, nota\PYGZus{}ajustada = \PYGZpc{}Lf, nota\PYGZus{}final = \PYGZpc{}Lf where examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and estudiante = \PYGZpc{}d\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{N\PYGZus{}correctas} \PYG{p}{,} \PYG{n}{Porcentaje} \PYG{p}{,} \PYG{n}{Porcentaje\PYGZus{}ajustado} \PYG{p}{,} \PYG{n}{Porcentaje\PYGZus{}ajustado} \PYG{p}{,}
+\PYG{n}{examen} \PYG{p}{,} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res\PYGZus{}aux} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Carga\PYGZus{}preguntas\PYGZus{}examen} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{k} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}aux} \PYG{p}{;}
+\PYG{n}{gchar} \PYG{o}{*} \PYG{n}{materia} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{examen} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{t} \PYG{o}{=} \PYG{n}{numerator} \PYG{o}{/} \PYG{n}{denominator} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{distance} \PYG{o}{=} \PYG{n}{t} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{object} \PYG{o}{=} \PYG{n}{object} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Xi} \PYG{o}{=} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{x} \PYG{o}{+} \PYG{p}{(} \PYG{n}{t} \PYG{o}{*} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{x} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Yi} \PYG{o}{=} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{y} \PYG{o}{+} \PYG{p}{(} \PYG{n}{t} \PYG{o}{*} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{y} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Zi} \PYG{o}{=} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{z} \PYG{o}{+} \PYG{p}{(} \PYG{n}{t} \PYG{o}{*} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{maxA\PYGZus{}B} \PYG{o}{=} \PYG{n}{max} \PYG{p}{(} \PYG{n}{fabs} \PYG{p}{(} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Xc} \PYG{p}{)} \PYG{p}{,} \PYG{n}{fabs} \PYG{p}{(} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Yc} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{maxA\PYGZus{}B\PYGZus{}C} \PYG{o}{=} \PYG{n}{max} \PYG{p}{(} \PYG{n}{maxA\PYGZus{}B} \PYG{p}{,} \PYG{n}{fabs} \PYG{p}{(} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Zc} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{u} \PYG{p}{,} \PYG{n}{v} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{maxA\PYGZus{}B\PYGZus{}C} \PYG{o}{==} \PYG{n}{fabs} \PYG{p}{(} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Xc} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{u} \PYG{o}{=} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Zi} \PYG{p}{;}
+\PYG{n}{v} \PYG{o}{=} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Yi} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{maxA\PYGZus{}B\PYGZus{}C} \PYG{o}{==} \PYG{n}{fabs} \PYG{p}{(} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Yc} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

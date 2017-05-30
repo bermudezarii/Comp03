@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{N\PYGZus{}temas} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{N\PYGZus{}subtemas} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema} \PYG{p}{[} \PYG{n}{N\PYGZus{}temas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema} \PYG{p}{[} \PYG{n}{N\PYGZus{}temas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{subtema} \PYG{p}{,} \PYG{n}{CODIGO\PYGZus{}VACIO} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{resumen\PYGZus{}tema} \PYG{p}{[} \PYG{n}{N\PYGZus{}temas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{buenos} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{resumen\PYGZus{}tema} \PYG{p}{[} \PYG{n}{N\PYGZus{}temas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{malos} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema} \PYG{p}{[} \PYG{n}{N\PYGZus{}temas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema} \PYG{p}{[} \PYG{n}{N\PYGZus{}temas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{subtema} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{subtema} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{N\PYGZus{}subtemas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{N\PYGZus{}subtemas} \PYG{p}{]} \PYG{p}{.} \PYG{n}{subtema} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{subtema} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

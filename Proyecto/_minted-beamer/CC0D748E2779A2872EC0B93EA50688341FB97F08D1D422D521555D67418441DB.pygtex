@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{else}
+\PYG{n+nf}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}fcolorbox\PYGZob{}black\PYGZcb{}\PYGZob{}white\PYGZcb{}\PYGZob{}color\PYGZob{}black\PYGZcb{} \PYGZdl{}r\PYGZus{}\PYGZob{}pb\PYGZcb{}\PYGZdl{} = textbf\PYGZob{}\PYGZpc{}7.4Lf\PYGZcb{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{pregunta} \PYG{p}{]} \PYG{p}{.} \PYG{n}{Rpb\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{opcion} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}setlength\PYGZob{}fboxrule\PYGZcb{}\PYGZob{}2fboxrule\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{fcolorbox\PYGZob{}black\PYGZcb{}\PYGZob{}red\PYGZcb{}\PYGZob{}color\PYGZob{}white\PYGZcb{} \PYGZdl{}starstarstar\PYGZdl{} textbf\PYGZob{}CORRECTA\PYGZcb{} \PYGZdl{}starstarstar\PYGZdl{}\PYGZcb{}\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}setlength\PYGZob{}fboxrule\PYGZcb{}\PYGZob{}0.5fboxrule\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{pregunta} \PYG{p}{]} \PYG{p}{.} \PYG{n}{Rpb\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{opcion} \PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.3} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}fcolorbox\PYGZob{}black\PYGZcb{}\PYGZob{}red\PYGZcb{}\PYGZob{}color\PYGZob{}white\PYGZcb{} \PYGZdl{}r\PYGZus{}\PYGZob{}pb\PYGZcb{}\PYGZdl{} = textbf\PYGZob{}\PYGZpc{}7.4Lf\PYGZcb{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{pregunta} \PYG{p}{]} \PYG{p}{.} \PYG{n}{Rpb\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{opcion} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{pregunta} \PYG{p}{]} \PYG{p}{.} \PYG{n}{Rpb\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{opcion} \PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.0} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}fcolorbox}\PYG{p}{\PYGZob{}}\PYG{n}{black}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{orange}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{color}\PYG{p}{\PYGZob{}}\PYG{n}{white}\PYG{p}{\PYGZcb{}} \PYG{err}{\PYGZdl{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{pb}\PYG{p}{\PYGZcb{}}\PYG{err}{\PYGZdl{}} \PYG{o}{=} \PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{o}{\PYGZpc{}}\PYG{l+m+mf}{7.4}\PYG{n}{Lf}\PYG{p}{\PYGZcb{}\PYGZcb{}}\PYG{err}{\PYGZbs{}}\PYG{n}{n}\PYG{err}{\PYGZbs{}}\PYG{n}{n}\PYG{l+s}{\PYGZdq{} , preguntas [ pregunta ] . Rpb\PYGZus{}opcion [ opcion ] ) ;}
+\end{Verbatim}

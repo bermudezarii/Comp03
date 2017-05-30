@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set arrow from \PYGZpc{}Lf,0.0 to \PYGZpc{}Lf,graph(1, 1) linetype 2 lw 4 lc 1 nohead front}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{media} \PYG{p}{,} \PYG{n}{media} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set arrow from \PYGZpc{}Lf,0.0 to \PYGZpc{}Lf,graph(1, 1) linetype 2 lw 4 lc 1 nohead front}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{media\PYGZus{}pred} \PYG{p}{,} \PYG{n}{media\PYGZus{}pred} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}plot normal (x, \PYGZpc{}Lf, \PYGZpc{}Lf) with lines linetype 1 lw 7 lc 3 title }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{Predicción}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{, normal (x, \PYGZpc{}Lf, \PYGZpc{}Lf) with lines linetype 1 lw 7 lc 2 title }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{Real}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{media\PYGZus{}pred} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}pred} \PYG{p}{,} \PYG{n}{media} \PYG{p}{,} \PYG{n}{desviacion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}GNUPLOT} \PYG{p}{(} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s EX4010\PYGZhy{}n.gp\PYGZdq{}} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{gnuplot} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}mv EX4010\PYGZhy{}n.gp \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{ruta\PYGZus{}gnuplot} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s EX4010\PYGZhy{}n.eps\PYGZdq{}} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{epstopdf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{n}{comando} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Pruebas/intrp.c:12:120 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:12:128 syntax error, unexpected BREAK*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:12:135 syntax error, unexpected CASE*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:12:137 syntax error, unexpected INTEGER*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:12:139 syntax error, unexpected COLON*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:12:147 syntax error, unexpected DEFAULT*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:12:149 syntax error, unexpected COLON*/}
+\PYG{p}{)} \PYG{p}{;} \PYG{k}{break} \PYG{p}{;} \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}O\PYGZsq{}} \PYG{o}{:} \PYG{n}{f} \PYG{o}{=} \PYG{n}{fopen} \PYG{p}{(} \PYG{n}{B} \PYG{o}{+} \PYG{l+m+mi}{4} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}r\PYGZdq{}} \PYG{p}{)} \PYG{p}{;} \PYG{k}{while} \PYG{n}{fgets} \PYG{n}{B} \PYG{p}{;} \PYG{n}{fclos} \PYG{l+s+sc}{\PYGZsq{}O\PYGZsq{}} \PYG{p}{(} \PYG{n}{f} \PYG{p}{)} \PYG{p}{)} \PYG{p}{(} \PYG{o}{*} \PYG{n}{Q} \PYG{p}{(} \PYG{n}{B} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{G} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;} \PYG{k}{break} \PYG{p}{;} \PYG{k}{case} \PYG{l+m+mi}{0} \PYG{o}{:} \PYG{k}{default} \PYG{o}{:} \PYG{n}{G} \PYG{p}{(} \PYG{p}{)}
+\PYG{c+cm}{/*Pruebas/intrp.c:13:3 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:13:10 syntax error, unexpected RETURN*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:13:12 syntax error, unexpected INTEGER*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:13:16 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{n}{G} \PYG{p}{(} \PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{n}{l} \PYG{o}{=} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{B} \PYG{p}{)} \PYG{p}{;} \PYG{n}{m} \PYG{p}{[} \PYG{n}{l} \PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{free} \PYG{p}{(} \PYG{n}{m} \PYG{p}{[} \PYG{n}{l} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;} \PYG{p}{(} \PYG{n}{p} \PYG{o}{=} \PYG{n}{Q} \PYG{p}{(} \PYG{n}{B} \PYG{p}{,} \PYG{l+s}{\PYGZdq{} \PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{o}{?} \PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{m} \PYG{p}{[} \PYG{n}{l} \PYG{p}{]} \PYG{o}{=} \PYG{n}{malloc} \PYG{p}{(} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{p}
+\end{Verbatim}

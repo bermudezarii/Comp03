@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}char} \PYG{n}{u\PYGZus{}char} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}short} \PYG{n}{u\PYGZus{}short} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}int} \PYG{n}{u\PYGZus{}int} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}long} \PYG{n}{u\PYGZus{}long} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}quad\PYGZus{}t} \PYG{n}{quad\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}quad\PYGZus{}t} \PYG{n}{u\PYGZus{}quad\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}fsid\PYGZus{}t} \PYG{n}{fsid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}loff\PYGZus{}t} \PYG{n}{loff\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}ino\PYGZus{}t} \PYG{k+kt}{ino\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}dev\PYGZus{}t} \PYG{k+kt}{dev\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}gid\PYGZus{}t} \PYG{k+kt}{gid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}t} \PYG{k+kt}{mode\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}nlink\PYGZus{}t} \PYG{n}{nlink\PYGZus{}t} \PYG{p}{;}
+\end{Verbatim}

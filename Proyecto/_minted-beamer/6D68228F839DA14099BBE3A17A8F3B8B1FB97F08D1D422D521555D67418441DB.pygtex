@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{\PYGZus{}SC\PYGZus{}T\PYGZus{}IOV\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREADS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}SAFE\PYGZus{}FUNCTIONS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}GETGR\PYGZus{}R\PYGZus{}SIZE\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}GETPW\PYGZus{}R\PYGZus{}SIZE\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}LOGIN\PYGZus{}NAME\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}TTY\PYGZus{}NAME\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}DESTRUCTOR\PYGZus{}ITERATIONS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}KEYS\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}STACK\PYGZus{}MIN} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}THREADS\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}ATTR\PYGZus{}STACKADDR} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}ATTR\PYGZus{}STACKSIZE} \PYG{p}{,}
+\end{Verbatim}

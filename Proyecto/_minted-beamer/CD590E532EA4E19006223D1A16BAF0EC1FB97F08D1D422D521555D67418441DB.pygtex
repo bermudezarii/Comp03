@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{Continuar\PYGZus{}banderas} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{Descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Crea\PYGZus{}archivo\PYGZus{}datos\PYGZus{}pastel} \PYG{p}{(} \PYG{k+kt}{int} \PYG{o}{*} \PYG{n}{Empates} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Dificultad\PYGZus{}vs\PYGZus{}Discriminacion} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Establece\PYGZus{}Directorio} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{Directorio} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{materia} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{year} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{month} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{day} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Fin\PYGZus{}de\PYGZus{}Programa} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Fin\PYGZus{}Ventana} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Genera\PYGZus{}Beamer} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n+nf}{Genera\PYGZus{}Beamer\PYGZus{}reducido} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Graba\PYGZus{}Ajustes} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Imprime\PYGZus{}Opcion} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Porcentaje} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{pregunta} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{opcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Imprime\PYGZus{}Opcion\PYGZus{}Beamer} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Porcentaje} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{pregunta} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{opcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Imprime\PYGZus{}pregunta} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{prefijo} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Imprime\PYGZus{}pregunta\PYGZus{}Beamer} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{prefijo} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{tema\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

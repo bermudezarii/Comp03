@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{header\PYGZus{}encoger} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{header\PYGZus{}verbatim} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5} \PYG{p}{;} \PYG{n}{j} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{correctas\PYGZus{}nuevas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{slide} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT * from EX\PYGZus{}examenes\PYGZus{}ajustes where examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and codigo\PYGZus{}pregunta = \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{examen} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{4} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res\PYGZus{}aux} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

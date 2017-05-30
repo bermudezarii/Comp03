@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{suma\PYGZus{}malos} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{n}{inicio\PYGZus{}actual} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{grupo\PYGZus{}final} \PYG{o}{=} \PYG{n}{N\PYGZus{}preguntas} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Calcula\PYGZus{}estadisticas\PYGZus{}examen} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{k} \PYG{p}{,} \PYG{n}{N} \PYG{p}{,} \PYG{n}{version\PYGZus{}actual} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{buenas} \PYG{p}{,} \PYG{n}{malas} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}aux} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}aux\PYGZus{}2} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{examen} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{hilera} \PYG{p}{[} \PYG{l+m+mi}{100} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

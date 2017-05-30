@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}PRIORITY\PYGZus{}SCHEDULING} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}PRIO\PYGZus{}INHERIT} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}PRIO\PYGZus{}PROTECT} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}PROCESS\PYGZus{}SHARED} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}NPROCESSORS\PYGZus{}CONF} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}NPROCESSORS\PYGZus{}ONLN} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PHYS\PYGZus{}PAGES} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}AVPHYS\PYGZus{}PAGES} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}ATEXIT\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PASS\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}XOPEN\PYGZus{}VERSION} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}XOPEN\PYGZus{}XCU\PYGZus{}VERSION} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}XOPEN\PYGZus{}UNIX} \PYG{p}{,}
+\end{Verbatim}

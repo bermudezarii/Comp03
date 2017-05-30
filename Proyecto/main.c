@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
         En este caso, se llama a las funcionalidades del preprocesador
     */
     else{
+        printf("Hola");
         FILE *archivoEntrada;
         FILE *archivoEntradaTem;
         FILE *tmpfile = fopen("tmpfile.c", "w");
@@ -64,7 +65,8 @@ int main(int argc, char *argv[])
             if(argc >= 3 &&( !strcmp(argv[2], "B") || !strcmp(argv[2], "P"))){ 
                 beamer = fopen("beamer.tex", "w"); 
                 startBeamer(beamer); 
-                addExplanation(beamer);  
+                addExplanation(beamer);
+
                 preprocesador1(archivoEntrada,tmpfile);
                 fclose(tmpfile);
                 preproceso=false;
@@ -125,7 +127,11 @@ int main(int argc, char *argv[])
             else{ // si no quiere beamer 
                 preproceso=true;
                 memset(gramaticas,0,sizeof(gramaticas));
+                printf("Es aqui en el preproceso\n");  
+
                 preprocesador1(archivoEntrada,tmpfile);
+
+                printf("No Es aqui en el preproceso\n");  
                 fclose(tmpfile);
                 preproceso=false;
                 tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada

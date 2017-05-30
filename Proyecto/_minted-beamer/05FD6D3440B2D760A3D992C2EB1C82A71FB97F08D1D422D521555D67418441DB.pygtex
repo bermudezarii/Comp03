@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;} \PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}END\PYGZdq{}} \PYG{p}{)} \PYG{p}{;} \PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Calcula\PYGZus{}ajuste} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ajuste} \PYG{o}{=} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{revision\PYGZus{}especial} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{excluir} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{8} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{9} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{10} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{header\PYGZus{}encoger} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{11} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{header\PYGZus{}verbatim} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{12} \PYG{p}{)} \PYG{o}{+}
+\end{Verbatim}

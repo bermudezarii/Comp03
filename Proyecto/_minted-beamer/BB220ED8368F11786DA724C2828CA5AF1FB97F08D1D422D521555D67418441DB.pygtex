@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{FR\PYGZus{}ajustes} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{N\PYGZus{}estudiantes} \PYG{p}{)}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}grab\PYGZus{}focus} \PYG{p}{(} \PYG{n}{BN\PYGZus{}print} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{gtk\PYGZus{}widget\PYGZus{}grab\PYGZus{}focus} \PYG{p}{(} \PYG{n}{BN\PYGZus{}undo} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}grab\PYGZus{}focus} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{,} \PYG{n}{Descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Construye\PYGZus{}versiones} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{examen} \PYG{p}{)}
+\end{Verbatim}

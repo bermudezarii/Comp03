@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{beamer} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{N} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{N} \PYG{o}{\PYGZlt{}} \PYG{p}{(} \PYG{n}{N\PYGZus{}flags} \PYG{o}{+} \PYG{n}{Ajuste} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{Continuar\PYGZus{}banderas} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{n}{Descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{item} \PYG{p}{.} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{12} \PYG{p}{]} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{mensaje} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Hay al menos un textbf\PYGZob{}distractor\PYGZcb{} con un \PYGZdl{}r\PYGZus{}\PYGZob{}pb\PYGZcb{}\PYGZdl{} muy negativo, que atrajo a los estudiantes de bajo rendimiento y no fue considerado por los estudiantes de buen rendimiento. textbf\PYGZob{}Buen distractor\PYGZcb{}.\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Cajita\PYGZus{}con\PYGZus{}bandera} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{mensaje} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{,} \PYG{n}{beamer} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{N} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{beamer} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{N} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{N} \PYG{o}{\PYGZlt{}} \PYG{p}{(} \PYG{n}{N\PYGZus{}flags} \PYG{o}{+} \PYG{n}{Ajuste} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{Continuar\PYGZus{}banderas} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{n}{Descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{item} \PYG{p}{.} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{13} \PYG{p}{]} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

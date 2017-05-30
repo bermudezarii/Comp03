@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{norm} \PYG{o}{=} \PYG{n}{getNorm} \PYG{p}{(} \PYG{n}{vector} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{unitVector} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{norm} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{unitVector} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{x} \PYG{o}{/} \PYG{n}{norm} \PYG{p}{;}
+\PYG{n}{unitVector} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{y} \PYG{o}{/} \PYG{n}{norm} \PYG{p}{;}
+\PYG{n}{unitVector} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{z} \PYG{o}{/} \PYG{n}{norm} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{unitVector} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{n}{unitVector} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{n}{unitVector} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{unitVector} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

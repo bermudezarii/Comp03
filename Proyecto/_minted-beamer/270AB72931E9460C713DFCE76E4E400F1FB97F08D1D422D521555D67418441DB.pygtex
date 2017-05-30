@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{PQntuples} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{)} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ajuste} \PYG{o}{=} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{revision\PYGZus{}especial} \PYG{o}{=} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ajuste} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0xFF} \PYG{p}{;}
+\PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{=} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ajuste} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{excluir} \PYG{o}{=} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x01} \PYG{p}{;} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZgt{}\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger} \PYG{o}{=} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x01} \PYG{p}{;} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZgt{}\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim} \PYG{o}{=} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x01} \PYG{p}{;} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZgt{}\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{header\PYGZus{}encoger} \PYG{o}{=} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x01} \PYG{p}{;} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZgt{}\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{header\PYGZus{}verbatim} \PYG{o}{=} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x01} \PYG{p}{;} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZgt{}\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5} \PYG{p}{;} \PYG{n}{j} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{slide} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x01} \PYG{p}{;} \PYG{n}{ajustes\PYGZus{}Beamer} \PYG{o}{\PYGZgt{}\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\end{Verbatim}

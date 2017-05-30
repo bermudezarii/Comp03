@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{k} \PYG{p}{;}
+\PYG{n}{k} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}range\PYGZus{}get\PYGZus{}value} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}RANGE} \PYG{p}{(} \PYG{n}{SC\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{k} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}get\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{k} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{k} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{Color\PYGZus{}ajustes} \PYG{p}{(} \PYG{n}{k} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Cambio\PYGZus{}verbatim\PYGZus{}opcion} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{)}
+\end{Verbatim}

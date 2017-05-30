@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{nprime} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{inprime} \PYG{p}{.} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{center} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{n}{nprime} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{inprime} \PYG{p}{.} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{center} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{n}{nprime} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{inprime} \PYG{p}{.} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{center} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\PYG{n}{nprime} \PYG{o}{=} \PYG{n}{normalize} \PYG{p}{(} \PYG{n}{nprime} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{tempu} \PYG{o}{=} \PYG{n}{acos} \PYG{p}{(} \PYG{n}{pointProduct} \PYG{p}{(} \PYG{n}{nprime} \PYG{p}{,} \PYG{n}{greenwich} \PYG{p}{)} \PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{l+m+mf}{3.14159265} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{darkSide} \PYG{o}{=} \PYG{n}{crossProduct} \PYG{p}{(} \PYG{n}{north} \PYG{p}{,} \PYG{n}{greenwich} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{d} \PYG{o}{=} \PYG{n}{whatsTheDGeneral} \PYG{p}{(} \PYG{n}{darkSide} \PYG{p}{,} \PYG{n}{center} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{test} \PYG{o}{=} \PYG{n}{darkSide} \PYG{p}{.} \PYG{n}{x} \PYG{o}{*} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{x} \PYG{o}{+} \PYG{n}{darkSide} \PYG{p}{.} \PYG{n}{y} \PYG{o}{*} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{y} \PYG{o}{+} \PYG{n}{darkSide} \PYG{p}{.} \PYG{n}{z} \PYG{o}{*} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{z} \PYG{o}{+} \PYG{n}{d} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{test} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempu} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{tempu} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{tempu} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

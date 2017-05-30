@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{token} \PYG{o}{=} \PYG{n}{strtok} \PYG{p}{(} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{search} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sscanf} \PYG{p}{(} \PYG{n}{token} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}LF\PYGZdq{}} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{numericValue} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{numericValue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{o}{*} \PYG{n}{obtainPointFromString} \PYG{p}{(} \PYG{k+kt}{char} \PYG{n}{stringPoint} \PYG{p}{[} \PYG{p}{]} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{token} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{search} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}=\PYGZdq{}} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{numericValue} \PYG{p}{;}
+\PYG{n}{token} \PYG{o}{=} \PYG{n}{strtok} \PYG{p}{(} \PYG{n}{stringPoint} \PYG{p}{,} \PYG{n}{search} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{token} \PYG{o}{=} \PYG{n}{strtok} \PYG{p}{(} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{search} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{pch} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{o}{*} \PYG{n}{pointDimensions} \PYG{o}{=} \PYG{n}{malloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{o}{*} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{currentDimension} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\end{Verbatim}

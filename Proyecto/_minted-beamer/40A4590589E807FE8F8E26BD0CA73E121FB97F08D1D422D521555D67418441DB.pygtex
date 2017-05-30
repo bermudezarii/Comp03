@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gdk\PYGZus{}color\PYGZus{}parse} \PYG{p}{(} \PYG{n}{BUTTON\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}save} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}slides} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}undo} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}terminar} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}print} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}cancela\PYGZus{}revision} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}error\PYGZus{}encontrado\PYGZus{}Beamer} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}confirma\PYGZus{}revision} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}cancela\PYGZus{}revision} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{BN\PYGZus{}ok} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gdk\PYGZus{}color\PYGZus{}parse} \PYG{p}{(} \PYG{n}{BUTTON\PYGZus{}ACTIVE} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

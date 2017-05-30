@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{vertexPolygonIndex} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{polygon} \PYG{o}{=} \PYG{n}{getABCD} \PYG{p}{(} \PYG{n}{temp} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{debug} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}A del poligono \PYGZpc{}LF}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{polygon} \PYG{p}{.} \PYG{n}{Xc} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}B del poligono \PYGZpc{}LF}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{polygon} \PYG{p}{.} \PYG{n}{Yc} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}C del poligono \PYGZpc{}LF}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{polygon} \PYG{p}{.} \PYG{n}{Zc} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}D del poligono \PYGZpc{}LF}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{polygon} \PYG{p}{.} \PYG{n}{other} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{polygon} \PYG{p}{.} \PYG{n}{points3D} \PYG{o}{=} \PYG{n}{malloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Point3D} \PYG{p}{)} \PYG{o}{*} \PYG{n}{numVertexesPolygon} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{polygon} \PYG{p}{.} \PYG{n}{points2D} \PYG{o}{=} \PYG{n}{malloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Point2D} \PYG{p}{)} \PYG{o}{*} \PYG{n}{numVertexesPolygon} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Color} \PYG{n}{colorPolygon} \PYG{p}{;}
+\PYG{n}{colorPolygon} \PYG{p}{.} \PYG{n}{r} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{colorPolygon} \PYG{p}{.} \PYG{n}{g} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

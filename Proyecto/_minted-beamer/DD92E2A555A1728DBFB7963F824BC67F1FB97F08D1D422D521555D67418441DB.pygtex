@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}BEGIN\PYGZdq{}} \PYG{p}{)} \PYG{p}{;} \PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}DELETE from EX\PYGZus{}examenes\PYGZus{}ajustes where examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;} \PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{Calcula\PYGZus{}ajuste} \PYG{p}{(} \PYG{n}{i} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ajuste} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}INSERT into EX\PYGZus{}examenes\PYGZus{}ajustes values (}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s}{\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s}{, \PYGZpc{}d, }\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s}{\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s}{, \PYGZpc{}d, \PYGZpc{}d, \PYGZpc{}d, \PYGZpc{}d, \PYGZpc{}d, \PYGZpc{}d, \PYGZpc{}d)\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{examen} \PYG{p}{,} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{pregunta} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ajuste} \PYG{p}{,}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{correctas\PYGZus{}nuevas} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{correctas\PYGZus{}nuevas} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{correctas\PYGZus{}nuevas} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{,}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{correctas\PYGZus{}nuevas} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{correctas\PYGZus{}nuevas} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{,}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{actualizar} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

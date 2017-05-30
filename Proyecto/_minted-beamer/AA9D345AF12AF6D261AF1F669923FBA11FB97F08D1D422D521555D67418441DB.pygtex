@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{theD} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{normalNotNormalized} \PYG{p}{.} \PYG{n}{x} \PYG{o}{*} \PYG{n}{point} \PYG{p}{.} \PYG{n}{x} \PYG{p}{)} \PYG{o}{+} \PYG{p}{(} \PYG{n}{normalNotNormalized} \PYG{p}{.} \PYG{n}{y} \PYG{o}{*} \PYG{n}{point} \PYG{p}{.} \PYG{n}{y} \PYG{p}{)} \PYG{o}{+} \PYG{p}{(} \PYG{n}{normalNotNormalized} \PYG{p}{.} \PYG{n}{z} \PYG{o}{*} \PYG{n}{point} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{theD} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Object} \PYG{n}{getABCD} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Object} \PYG{n}{object} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{normal} \PYG{o}{=} \PYG{n}{polygonNormal} \PYG{p}{(} \PYG{n}{object} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{object} \PYG{p}{.} \PYG{n}{Xc} \PYG{o}{=} \PYG{n}{normal} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{n}{object} \PYG{p}{.} \PYG{n}{Yc} \PYG{o}{=} \PYG{n}{normal} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{n}{object} \PYG{p}{.} \PYG{n}{Zc} \PYG{o}{=} \PYG{n}{normal} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\PYG{n}{object} \PYG{p}{.} \PYG{n}{other} \PYG{o}{=} \PYG{n}{whatsTheD} \PYG{p}{(} \PYG{n}{object} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{L} \PYG{o}{=} \PYG{n}{getNorm} \PYG{p}{(} \PYG{n}{normal} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{object} \PYG{p}{.} \PYG{n}{Xc} \PYG{o}{/=} \PYG{n}{L} \PYG{p}{;}
+\PYG{n}{object} \PYG{p}{.} \PYG{n}{Yc} \PYG{o}{/=} \PYG{n}{L} \PYG{p}{;}
+\PYG{n}{object} \PYG{p}{.} \PYG{n}{Zc} \PYG{o}{/=} \PYG{n}{L} \PYG{p}{;}
+\end{Verbatim}

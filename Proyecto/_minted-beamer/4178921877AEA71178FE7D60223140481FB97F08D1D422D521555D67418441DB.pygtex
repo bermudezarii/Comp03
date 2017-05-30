@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{tempIntersect} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{discNormal} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Object} \PYG{n}{object} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{object} \PYG{p}{.} \PYG{n}{directionVector} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Intersection} \PYG{n}{elipseIntersection} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{anchor} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{direction} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Object} \PYG{n}{object} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{denominator} \PYG{o}{=} \PYG{p}{(} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{x} \PYG{o}{*} \PYG{n}{object} \PYG{p}{.} \PYG{n}{directionVector} \PYG{p}{.} \PYG{n}{x} \PYG{p}{)} \PYG{o}{+} \PYG{p}{(} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{y} \PYG{o}{*} \PYG{n}{object} \PYG{p}{.} \PYG{n}{directionVector} \PYG{p}{.} \PYG{n}{y} \PYG{p}{)} \PYG{o}{+} \PYG{p}{(} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{z} \PYG{o}{*} \PYG{n}{object} \PYG{p}{.} \PYG{n}{directionVector} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Intersection} \PYG{n}{tempIntersect} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{denominator} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

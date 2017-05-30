@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{getSceneObjects} \PYG{p}{(} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{c} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{state} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{counterValueSegment} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{temporalBuffer} \PYG{p}{[} \PYG{l+m+mi}{300} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{o}{*} \PYG{n}{valuesRead} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{indexValuesRead} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{currentTypeObjectReading} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\end{Verbatim}

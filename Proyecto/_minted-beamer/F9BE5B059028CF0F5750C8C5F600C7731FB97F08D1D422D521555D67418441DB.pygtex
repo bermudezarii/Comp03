@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{else}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}set\PYGZus{}range} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{,} \PYG{l+m+mf}{0.0} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{Last} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}set\PYGZus{}value} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{,} \PYG{n}{Last} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{)} \PYG{n}{free} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema} \PYG{p}{)} \PYG{n}{free} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{resumen\PYGZus{}tema} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{)} \PYG{n}{free} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{versiones} \PYG{p}{)}
+\end{Verbatim}

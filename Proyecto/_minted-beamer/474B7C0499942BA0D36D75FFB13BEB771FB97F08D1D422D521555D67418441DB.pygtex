@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}label\PYGZus{}set\PYGZus{}markup} \PYG{p}{(} \PYG{n}{LB\PYGZus{}error\PYGZus{}encontrado\PYGZus{}Beamer} \PYG{p}{,} \PYG{n}{mensaje\PYGZus{}error} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{excluir} \PYG{o}{=} \PYG{n}{Exclusiones\PYGZus{}previas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}hide} \PYG{p}{(} \PYG{n}{window6} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}show} \PYG{p}{(} \PYG{n}{window7} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{Genera\PYGZus{}Beamer\PYGZus{}reducido} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{k} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{codigo} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{resultado\PYGZus{}OK} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{;}
+\PYG{n}{gchar} \PYG{o}{*} \PYG{n}{size} \PYG{p}{,} \PYG{o}{*} \PYG{n}{font} \PYG{p}{,} \PYG{o}{*} \PYG{n}{color} \PYG{p}{,} \PYG{o}{*} \PYG{n}{estilo} \PYG{p}{,} \PYG{o}{*} \PYG{n}{materia} \PYG{p}{,} \PYG{o}{*} \PYG{n}{fecha} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{aspecto} \PYG{p}{;}
+\end{Verbatim}

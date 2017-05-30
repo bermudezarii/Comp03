@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{color} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}get\PYGZus{}active\PYGZus{}text} \PYG{p}{(} \PYG{n}{CB\PYGZus{}color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{font} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}get\PYGZus{}active\PYGZus{}text} \PYG{p}{(} \PYG{n}{CB\PYGZus{}font} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{size} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}get\PYGZus{}active\PYGZus{}text} \PYG{p}{(} \PYG{n}{CB\PYGZus{}size} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{aspecto} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}get\PYGZus{}active} \PYG{p}{(} \PYG{n}{CB\PYGZus{}aspecto} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Establece\PYGZus{}Directorio} \PYG{p}{(} \PYG{n}{Directorio} \PYG{p}{,} \PYG{n}{materia} \PYG{p}{,} \PYG{n}{fecha} \PYG{o}{+} \PYG{l+m+mi}{6} \PYG{p}{,} \PYG{n}{fecha} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{p}{,} \PYG{n}{fecha} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Update\PYGZus{}PB} \PYG{p}{(} \PYG{n}{PB\PYGZus{}beamer} \PYG{p}{,} \PYG{l+m+mf}{0.05} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Archivo\PYGZus{}Latex} \PYG{o}{=} \PYG{n}{fopen} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}analisis\PYGZhy{}beamer.tex\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}w\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Beamer\PYGZus{}Preamble} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{aspecto} \PYG{p}{,} \PYG{n}{size} \PYG{p}{,} \PYG{n}{estilo} \PYG{p}{,} \PYG{n}{color} \PYG{p}{,} \PYG{n}{font} \PYG{p}{,} \PYG{n}{materia\PYGZus{}descripcion} \PYG{p}{,} \PYG{n}{descripcion} \PYG{p}{,} \PYG{n}{profesor} \PYG{p}{,} \PYG{n}{programa} \PYG{p}{,} \PYG{n}{escuela} \PYG{p}{,} \PYG{n}{institucion} \PYG{p}{,} \PYG{n}{fecha} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Update\PYGZus{}PB} \PYG{p}{(} \PYG{n}{PB\PYGZus{}beamer} \PYG{p}{,} \PYG{l+m+mf}{0.08} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Beamer\PYGZus{}Cover} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Update\PYGZus{}PB} \PYG{p}{(} \PYG{n}{PB\PYGZus{}beamer} \PYG{p}{,} \PYG{l+m+mf}{0.09} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Beamer\PYGZus{}TOC} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Update\PYGZus{}PB} \PYG{p}{(} \PYG{n}{PB\PYGZus{}beamer} \PYG{p}{,} \PYG{l+m+mf}{0.10} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

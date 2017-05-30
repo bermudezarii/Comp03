@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set style fill solid border \PYGZhy{}1}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set boxwidth 0.8}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set xtics (\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}subtemas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT descripcion\PYGZus{}materia from BD\PYGZus{}materias where codigo\PYGZus{}materia = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and codigo\PYGZus{}tema = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and codigo\PYGZus{}subtema = \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{materia} \PYG{p}{,} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{,} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{subtema} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{\PYGZpc{}.44s (\PYGZpc{}3d)}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{ \PYGZpc{}d\PYGZdq{}} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{,} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{buenos} \PYG{o}{+} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{malos} \PYG{p}{)} \PYG{o}{/} \PYG{n}{N\PYGZus{}estudiantes} \PYG{p}{,} \PYG{n}{i} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}GNUPLOT} \PYG{p}{(} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{i} \PYG{o}{==} \PYG{p}{(} \PYG{n}{N\PYGZus{}subtemas} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{})}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Texturas:\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{o}{||} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Textures:\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Planos\PYGZus{}Calado:\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Sphere\PYGZus{}Object\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Polygon\PYGZus{}Object\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Cylinder\PYGZus{}Object\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{datosTexture} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{datosTexture} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{datosTexture} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{temp} \PYG{o}{=} \PYG{n}{normalize} \PYG{p}{(} \PYG{n}{temp} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{texturesFound} \PYG{p}{[} \PYG{n}{indexTexture} \PYG{p}{]} \PYG{p}{.} \PYG{n}{greenwich} \PYG{o}{=} \PYG{n}{temp} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{datosTexture} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{currentTypeReading} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{o}{||} \PYG{n}{currentTypeReading} \PYG{o}{==} \PYG{l+m+mi}{8} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Norte\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{o}{||} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}North\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{datosTexture} \PYG{o}{=} \PYG{n}{obtainPointFromString} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{temp} \PYG{p}{;}
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{datosTexture} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

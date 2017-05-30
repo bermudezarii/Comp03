@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}time\PYGZus{}t} \PYG{k+kt}{time\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}clockid\PYGZus{}t} \PYG{k+kt}{clockid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}timer\PYGZus{}t} \PYG{k+kt}{timer\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{timespec}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{\PYGZus{}\PYGZus{}time\PYGZus{}t} \PYG{n}{tv\PYGZus{}sec} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}syscall\PYGZus{}slong\PYGZus{}t} \PYG{n}{tv\PYGZus{}nsec} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{tm}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{tm\PYGZus{}sec} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{tm\PYGZus{}min} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{tm\PYGZus{}hour} \PYG{p}{;}
+\end{Verbatim}

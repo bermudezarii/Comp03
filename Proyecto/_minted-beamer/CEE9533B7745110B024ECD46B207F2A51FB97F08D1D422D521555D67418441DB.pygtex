@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{TG\PYGZus{}C} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{TG\PYGZus{}D} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{TG\PYGZus{}E} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CB\PYGZus{}ajuste} \PYG{p}{,} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}no\PYGZus{}actualiza} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}excluir} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}encoger} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}verbatim} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}header\PYGZus{}encoger} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}header\PYGZus{}verbatim} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}slide} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

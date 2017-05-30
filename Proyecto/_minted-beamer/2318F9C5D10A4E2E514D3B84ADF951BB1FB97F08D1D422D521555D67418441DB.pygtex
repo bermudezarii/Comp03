@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{resultado} \PYG{o}{=} \PYG{n}{Genera\PYGZus{}Beamer\PYGZus{}reducido} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Update\PYGZus{}PB} \PYG{p}{(} \PYG{n}{PB\PYGZus{}revisando\PYGZus{}beamer} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{p}{(} \PYG{n}{N\PYGZus{}preguntas} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{n}{high} \PYG{o}{\PYGZhy{}} \PYG{n}{mid} \PYG{p}{)} \PYG{p}{)} \PYG{o}{/} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{resultado} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{low} \PYG{o}{=} \PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{high} \PYG{o}{=} \PYG{n}{mid} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{mensaje\PYGZus{}error} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}La pregunta número \PYGZlt{}b\PYGZgt{}\PYGZpc{}2d\PYGZlt{}/b\PYGZgt{} de este examen tiene}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{algún conflicto con \PYGZlt{}b\PYGZgt{}\PYGZlt{}i\PYGZgt{}Beamer\PYGZlt{}/i\PYGZgt{}\PYGZlt{}/b\PYGZgt{}. Esta corresponde}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{a la pregunta \PYGZlt{}b\PYGZgt{}\PYGZpc{}s.\PYGZpc{}d\PYGZlt{}/b\PYGZgt{} de la Base de Datos.}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{Revise detalladamente la sintaxis de}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{esta pregunta. Considere marcar ya}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{sea la casilla }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{\PYGZlt{}b\PYGZgt{}verbatim\PYGZlt{}/b\PYGZgt{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{ o la casilla}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}\PYGZdq{}}\PYG{l+s}{\PYGZlt{}b\PYGZgt{}Excluir\PYGZlt{}/b\PYGZgt{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{ en la pregunta \PYGZlt{}b\PYGZgt{}\PYGZpc{}d\PYGZlt{}/b\PYGZgt{}.\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{low} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{low} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{low} \PYG{p}{]} \PYG{p}{.} \PYG{n}{secuencia} \PYG{p}{,} \PYG{n}{low} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}dev\PYGZus{}t} \PYG{k+kt}{dev\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}gid\PYGZus{}t} \PYG{k+kt}{gid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}t} \PYG{k+kt}{mode\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}nlink\PYGZus{}t} \PYG{n}{nlink\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}uid\PYGZus{}t} \PYG{k+kt}{uid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}off\PYGZus{}t} \PYG{k+kt}{off\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}pid\PYGZus{}t} \PYG{k+kt}{pid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}id\PYGZus{}t} \PYG{k+kt}{id\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}ssize\PYGZus{}t} \PYG{k+kt}{ssize\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}daddr\PYGZus{}t} \PYG{n}{daddr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}caddr\PYGZus{}t} \PYG{n}{caddr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}key\PYGZus{}t} \PYG{k+kt}{key\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}clock\PYGZus{}t} \PYG{k+kt}{clock\PYGZus{}t} \PYG{p}{;}
+\end{Verbatim}

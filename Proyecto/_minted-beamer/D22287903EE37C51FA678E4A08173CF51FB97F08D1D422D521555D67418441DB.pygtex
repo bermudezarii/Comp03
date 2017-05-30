@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{Colores} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}unset pm3d\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette gray\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette gray negative\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette rgb 21,22,23\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette rgb 34,35,36\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette rgb 7,5,15\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette rgb 3,11,6\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette rgb 23,28,3\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette rgb 33,13,10\PYGZdq{}} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}set palette rgb 30,31,32\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{n}{Color} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}get\PYGZus{}value\PYGZus{}as\PYGZus{}int} \PYG{p}{(} \PYG{n}{SP\PYGZus{}color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Rotacion} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}get\PYGZus{}value\PYGZus{}as\PYGZus{}int} \PYG{p}{(} \PYG{n}{SP\PYGZus{}rotacion} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

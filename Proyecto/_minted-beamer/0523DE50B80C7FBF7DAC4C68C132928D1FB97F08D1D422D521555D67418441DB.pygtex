@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{res\PYGZus{}aux} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}tema} \PYG{o}{=} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT orden from BD\PYGZus{}materias where codigo\PYGZus{}materia = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and codigo\PYGZus{}tema = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and codigo\PYGZus{}subtema = \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{materia} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res\PYGZus{}aux} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}subtema} \PYG{o}{=} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{)}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{p}{(} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;} \PYG{n}{j} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}tema} \PYG{o}{\PYGZgt{}} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}tema} \PYG{p}{)} \PYG{o}{||}
+\end{Verbatim}

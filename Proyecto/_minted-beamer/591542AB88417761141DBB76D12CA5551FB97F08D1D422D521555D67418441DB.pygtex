@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{PB\PYGZus{}revisando\PYGZus{}beamer} \PYG{p}{)} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}PRELIGHT} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gdk\PYGZus{}color\PYGZus{}parse} \PYG{p}{(} \PYG{n}{PROCESSING\PYGZus{}WINDOW} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{EB\PYGZus{}generando\PYGZus{}analisis} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{EB\PYGZus{}generando\PYGZus{}beamer} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{EB\PYGZus{}revisando\PYGZus{}beamer} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Init\PYGZus{}Fields} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{Examen} \PYG{p}{[} \PYG{l+m+mi}{6} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{hilera} \PYG{p}{[} \PYG{l+m+mi}{100} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{month} \PYG{p}{,} \PYG{n}{year} \PYG{p}{,} \PYG{n}{day} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{Last} \PYG{p}{;}
+\end{Verbatim}

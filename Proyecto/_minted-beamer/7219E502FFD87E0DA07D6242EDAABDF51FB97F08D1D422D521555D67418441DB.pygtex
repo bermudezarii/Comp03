@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT estudiante, version, respuestas from EX\PYGZus{}examenes\PYGZus{}respuestas where examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{} order by estudiante\PYGZdq{}} \PYG{p}{,} \PYG{n}{examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{N\PYGZus{}estudiantes} \PYG{o}{=} \PYG{n}{PQntuples} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}estudiantes} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{Calcula\PYGZus{}Notas} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{,}
+\PYG{o}{\PYGZam{}} \PYG{n}{N\PYGZus{}correctas} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{N\PYGZus{}ajustado} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{M\PYGZus{}ajustado} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Porcentaje} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{N\PYGZus{}correctas} \PYG{o}{/} \PYG{n}{N\PYGZus{}preguntas} \PYG{o}{*} \PYG{l+m+mf}{100.0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{M\PYGZus{}ajustado} \PYG{p}{)}
+\PYG{n}{Porcentaje\PYGZus{}ajustado} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{N\PYGZus{}ajustado} \PYG{o}{/} \PYG{n}{M\PYGZus{}ajustado} \PYG{o}{*} \PYG{l+m+mf}{100.0} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n}{Porcentaje\PYGZus{}ajustado} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\end{Verbatim}

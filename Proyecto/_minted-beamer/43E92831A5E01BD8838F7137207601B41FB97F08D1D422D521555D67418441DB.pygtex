@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CB\PYGZus{}font} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{Beamer\PYGZus{}Font} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CB\PYGZus{}size} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{Beamer\PYGZus{}Size} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CB\PYGZus{}aspecto} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{Beamer\PYGZus{}Aspecto} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}general} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}sin\PYGZus{}banderas} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Last} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{p}{)}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}grab\PYGZus{}focus} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{Cambio\PYGZus{}Examen} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Cambio\PYGZus{}Examen} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{examen} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

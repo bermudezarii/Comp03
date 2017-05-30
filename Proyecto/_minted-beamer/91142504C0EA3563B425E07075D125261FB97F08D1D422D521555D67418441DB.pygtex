@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{\PYGZus{}PC\PYGZus{}LINK\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}MAX\PYGZus{}CANON} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}MAX\PYGZus{}INPUT} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}NAME\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}PATH\PYGZus{}MAX} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}PIPE\PYGZus{}BUF} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}CHOWN\PYGZus{}RESTRICTED} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}NO\PYGZus{}TRUNC} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}VDISABLE} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}SYNC\PYGZus{}IO} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}ASYNC\PYGZus{}IO} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}PRIO\PYGZus{}IO} \PYG{p}{,}
+\PYG{n}{\PYGZus{}PC\PYGZus{}SOCK\PYGZus{}MAXBUF} \PYG{p}{,}
+\end{Verbatim}

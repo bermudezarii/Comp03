@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{k} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}aux} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{respuesta\PYGZus{}original} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{opcion\PYGZus{}1} \PYG{p}{,} \PYG{n}{opcion\PYGZus{}2} \PYG{p}{,} \PYG{n}{opcion\PYGZus{}3} \PYG{p}{,} \PYG{n}{opcion\PYGZus{}4} \PYG{p}{,} \PYG{n}{opcion\PYGZus{}5} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT DISTINCT version from EX\PYGZus{}examenes\PYGZus{}preguntas where examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{} order by version\PYGZdq{}} \PYG{p}{,} \PYG{n}{examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{N\PYGZus{}versiones} \PYG{o}{=} \PYG{n}{PQntuples} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{versiones} \PYG{o}{=} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{VERSION} \PYG{o}{*} \PYG{p}{)} \PYG{n}{malloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{VERSION} \PYG{p}{)} \PYG{o}{*} \PYG{n}{N\PYGZus{}versiones} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}versiones} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{versiones} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{codigo} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

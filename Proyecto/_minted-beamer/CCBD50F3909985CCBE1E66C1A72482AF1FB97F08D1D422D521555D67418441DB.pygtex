@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{n}{tempIntersect} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{tempIntersect} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{sphereNormal} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Object} \PYG{n}{object} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{vector} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{normal} \PYG{p}{;}
+\PYG{n}{normal} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Xc} \PYG{p}{;}
+\PYG{n}{normal} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Yc} \PYG{p}{;}
+\PYG{n}{normal} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{vector} \PYG{p}{.} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Zc} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{normal} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

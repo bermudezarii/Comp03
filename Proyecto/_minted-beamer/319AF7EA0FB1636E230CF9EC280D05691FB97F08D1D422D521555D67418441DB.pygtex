@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media} \PYG{p}{,} \PYG{n}{diferencia} \PYG{p}{,} \PYG{n}{varianza} \PYG{p}{,} \PYG{n}{desviacion} \PYG{p}{,} \PYG{n}{varianza\PYGZus{}pregunta} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}pregunta} \PYG{p}{,} \PYG{n}{suma\PYGZus{}varianzas} \PYG{p}{,} \PYG{n}{alfa} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media\PYGZus{}buenos} \PYG{p}{,} \PYG{n}{media\PYGZus{}malos} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media\PYGZus{}sin} \PYG{p}{,} \PYG{n}{varianza\PYGZus{}sin} \PYG{p}{,} \PYG{n}{alfa\PYGZus{}sin} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{nota} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{tema\PYGZus{}actual} \PYG{p}{[} \PYG{n}{CODIGO\PYGZus{}TEMA\PYGZus{}SIZE} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{tema\PYGZus{}subtema\PYGZus{}actual} \PYG{p}{[} \PYG{n}{CODIGO\PYGZus{}SUBTEMA\PYGZus{}SIZE} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{buenas\PYGZus{}tema} \PYG{p}{,} \PYG{n}{malas\PYGZus{}tema} \PYG{p}{,} \PYG{n}{buenas\PYGZus{}subtema} \PYG{p}{,} \PYG{n}{malas\PYGZus{}subtema} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{PREGUNTA} \PYG{n}{temporal} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{opcion\PYGZus{}original} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{k} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}get\PYGZus{}value\PYGZus{}as\PYGZus{}int} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{examen} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}05d\PYGZdq{}} \PYG{p}{,} \PYG{n}{k} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{10} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{n}{Frecuencias} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT porcentaje, version, respuestas, estudiante, nota\PYGZus{}ajustada from EX\PYGZus{}examenes\PYGZus{}respuestas where examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{} order by estudiante\PYGZdq{}} \PYG{p}{,} \PYG{n}{examen} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

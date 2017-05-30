@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{N\PYGZus{}otros} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{n}{N} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}temas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{n}{N\PYGZus{}otros} \PYG{o}{+=} \PYG{n}{tabla} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{cantidad} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{N\PYGZus{}otros} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{textbf\PYGZob{}Otros\PYGZcb{} (\PYGZpc{}d temas)}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{, \PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{N\PYGZus{}temas} \PYG{o}{\PYGZhy{}} \PYG{n}{N} \PYG{p}{,} \PYG{n}{N\PYGZus{}otros} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}temas} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{tabla} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{.} \PYG{n}{cantidad} \PYG{o}{==} \PYG{n}{tabla} \PYG{p}{[} \PYG{n}{i} \PYG{o}{++} \PYG{p}{]} \PYG{p}{.} \PYG{n}{cantidad} \PYG{p}{)} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{Empates} \PYG{o}{=} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{materia} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

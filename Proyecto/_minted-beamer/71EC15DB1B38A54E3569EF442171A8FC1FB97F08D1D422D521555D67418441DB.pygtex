@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}SOCKET} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}INTERNET} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}OSI} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}POLL} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}SELECT} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}UIO\PYGZus{}MAXIOV} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}IOV\PYGZus{}MAX} \PYG{o}{=} \PYG{n}{\PYGZus{}SC\PYGZus{}UIO\PYGZus{}MAXIOV} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}INTERNET\PYGZus{}STREAM} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}INTERNET\PYGZus{}DGRAM} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}OSI\PYGZus{}COTS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}OSI\PYGZus{}CLTS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}PII\PYGZus{}OSI\PYGZus{}M} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}T\PYGZus{}IOV\PYGZus{}MAX} \PYG{p}{,}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}size} \PYG{p}{[} \PYG{l+m+mi}{56} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}align} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{pthread\PYGZus{}rwlock\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{union}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}size} \PYG{p}{[} \PYG{l+m+mi}{8} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}align} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{pthread\PYGZus{}rwlockattr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{volatile} \PYG{k+kt}{int} \PYG{n}{pthread\PYGZus{}spinlock\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{union}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}size} \PYG{p}{[} \PYG{l+m+mi}{32} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}align} \PYG{p}{;}
+\end{Verbatim}

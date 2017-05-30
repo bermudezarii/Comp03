@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{quot} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{rem} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k+kt}{ldiv\PYGZus{}t} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}extension\PYGZus{}\PYGZus{}} \PYG{k}{typedef} \PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{quot} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{rem} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{lldiv\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{size\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}ctype\PYGZus{}get\PYGZus{}mb\PYGZus{}cur\PYGZus{}max} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{double} \PYG{n+nf}{atof} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}nptr} \PYG{p}{)}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}pure\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nonnull\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

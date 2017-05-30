@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{n}{malas} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{Actualice\PYGZus{}Estadisticas} \PYG{p}{(} \PYG{n}{versiones} \PYG{p}{[} \PYG{n}{version\PYGZus{}actual} \PYG{p}{]} \PYG{p}{.} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{respuesta} \PYG{o}{==} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{,}
+\PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{,} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{atof} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{,} \PYG{n}{opcion\PYGZus{}original} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{Rpb} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{n}{suma\PYGZus{}varianzas} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

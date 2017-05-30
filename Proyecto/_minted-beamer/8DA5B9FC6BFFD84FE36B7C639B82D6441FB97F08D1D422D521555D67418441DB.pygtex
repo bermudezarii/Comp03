@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{k} \PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{k} \PYG{p}{]} \PYG{p}{)}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{opciones\PYGZus{}frame} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}[fragile]\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Imprime\PYGZus{}pregunta\PYGZus{}Beamer} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{prefijo} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{tema\PYGZus{}descripcion} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{cota\PYGZus{}inferior} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{[} \PYG{l+m+mi}{10000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{[} \PYG{l+m+mi}{10000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}ejercicio} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Por\PYGZus{}A} \PYG{p}{,} \PYG{n}{Por\PYGZus{}B} \PYG{p}{,} \PYG{n}{Por\PYGZus{}C} \PYG{p}{,} \PYG{n}{Por\PYGZus{}D} \PYG{p}{,} \PYG{n}{Por\PYGZus{}E} \PYG{p}{,} \PYG{n}{Total} \PYG{p}{;}
+\PYG{n}{gchar} \PYG{o}{*} \PYG{n}{materia} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{opciones\PYGZus{}frame} \PYG{p}{[} \PYG{l+m+mi}{200} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

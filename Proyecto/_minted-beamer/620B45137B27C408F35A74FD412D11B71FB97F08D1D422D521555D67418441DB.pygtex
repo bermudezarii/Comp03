@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{vertex} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{o}{+} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{i} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{debug} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Vertice: (\PYGZpc{}LF,\PYGZpc{}LF,\PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{x} \PYG{p}{,} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{y} \PYG{p}{,} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{choice} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{n}{u} \PYG{o}{=} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;} \PYG{n}{v} \PYG{o}{=} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;} \PYG{p}{\PYGZcb{}}
+\PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{choice} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{n}{u} \PYG{o}{=} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;} \PYG{n}{v} \PYG{o}{=} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;} \PYG{p}{\PYGZcb{}}
+\PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{choice} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{n}{u} \PYG{o}{=} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;} \PYG{n}{v} \PYG{o}{=} \PYG{n}{vertex} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;} \PYG{p}{\PYGZcb{}}
+\PYG{n}{squashedVertex} \PYG{p}{.} \PYG{n}{u} \PYG{o}{=} \PYG{n}{u} \PYG{p}{;}
+\PYG{n}{squashedVertex} \PYG{p}{.} \PYG{n}{v} \PYG{o}{=} \PYG{n}{v} \PYG{p}{;}
+\PYG{n}{polygon} \PYG{p}{.} \PYG{n}{points3D} \PYG{p}{[} \PYG{n}{vertexPolygonIndex} \PYG{p}{]} \PYG{o}{=} \PYG{n}{vertex} \PYG{p}{;}
+\PYG{n}{polygon} \PYG{p}{.} \PYG{n}{points2D} \PYG{p}{[} \PYG{n}{vertexPolygonIndex} \PYG{p}{]} \PYG{o}{=} \PYG{n}{squashedVertex} \PYG{p}{;}
+\PYG{n}{vertexPolygonIndex} \PYG{o}{++} \PYG{p}{;}
+\end{Verbatim}

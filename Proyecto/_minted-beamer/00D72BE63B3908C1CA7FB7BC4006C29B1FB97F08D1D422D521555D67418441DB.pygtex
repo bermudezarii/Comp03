@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}versiones} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{n}{free} \PYG{p}{(} \PYG{n}{versiones} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{preguntas} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{versiones} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{versiones} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}fecha} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{N\PYGZus{}preguntas} \PYG{o}{=} \PYG{n}{N\PYGZus{}versiones} \PYG{o}{=} \PYG{n}{N\PYGZus{}estudiantes} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}7d\PYGZdq{}} \PYG{p}{,} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}N\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{,} \PYG{n}{hilera} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}N\PYGZus{}versiones} \PYG{p}{)} \PYG{p}{,} \PYG{n}{hilera} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}N\PYGZus{}estudiantes} \PYG{p}{)} \PYG{p}{,} \PYG{n}{hilera} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}pre\PYGZus{}examen} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

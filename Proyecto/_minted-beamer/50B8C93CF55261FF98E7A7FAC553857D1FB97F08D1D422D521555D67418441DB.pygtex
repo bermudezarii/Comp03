@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n+nf}{vCylinder} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{anchor} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{Q} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{xiyizi} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{den} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{i0} \PYG{p}{;}
+\PYG{n}{i0} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{n}{i0} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{n}{i0} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{pointProduct} \PYG{p}{(} \PYG{n}{Q} \PYG{p}{,} \PYG{n}{i0} \PYG{p}{)} \PYG{o}{/} \PYG{n}{den} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Color} \PYG{n+nf}{cylinderTexture} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Intersection} \PYG{n}{in} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{normal} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Object} \PYG{n}{object} \PYG{o}{=} \PYG{n}{in} \PYG{p}{.} \PYG{n}{object} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{gw} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{textures} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{.} \PYG{n}{greenwich} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{ipoint} \PYG{p}{;}
+\PYG{n}{ipoint} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{in} \PYG{p}{.} \PYG{n}{Xi} \PYG{p}{;}
+\PYG{n}{ipoint} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{in} \PYG{p}{.} \PYG{n}{Yi} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{x3y3z3} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{26} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{x3y3z3} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{27} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{x3y3z3} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{28} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{x0y0z0} \PYG{o}{=} \PYG{n}{x0y0z0} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{x1y1z1} \PYG{o}{=} \PYG{n}{x1y1z1} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{x2y2z2} \PYG{o}{=} \PYG{n}{x2y2z2} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{x3y3z3} \PYG{o}{=} \PYG{n}{x3y3z3} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{Xc} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{Yc} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{Zc} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{intersectionFuncion} \PYG{o}{=} \PYG{n}{discIntersection} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{normalVector} \PYG{o}{=} \PYG{n}{discNormal} \PYG{p}{;}
+\PYG{n}{disco} \PYG{p}{.} \PYG{n}{retrieveTextureColor} \PYG{o}{=} \PYG{n}{planeTexture} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media\PYGZus{}real} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}real} \PYG{p}{,} \PYG{n}{media\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{alfa} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{,} \PYG{n}{width} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{gchar} \PYG{o}{*} \PYG{n}{materia} \PYG{p}{,} \PYG{o}{*} \PYG{n}{materia\PYGZus{}descripcion} \PYG{p}{,} \PYG{o}{*} \PYG{n}{descripcion} \PYG{p}{,} \PYG{o}{*} \PYG{n}{version} \PYG{p}{,} \PYG{o}{*} \PYG{n}{institucion} \PYG{p}{,} \PYG{o}{*} \PYG{n}{escuela} \PYG{p}{,} \PYG{o}{*} \PYG{n}{programa} \PYG{p}{,} \PYG{o}{*} \PYG{n}{fecha} \PYG{p}{,} \PYG{o}{*} \PYG{n}{profesor} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{Directorio} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{comando} \PYG{p}{[} \PYG{l+m+mi}{200} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{codigo} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{DIR} \PYG{o}{*} \PYG{n}{pdir} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{window1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}show} \PYG{p}{(} \PYG{n}{window4} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.0} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Banderas} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{=} \PYG{n}{Banderas} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{=} \PYG{n}{Banderas} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{=} \PYG{n}{Banderas} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{o}{=} \PYG{n}{Banderas} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{o}{=} \PYG{n}{Banderas} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\end{Verbatim}

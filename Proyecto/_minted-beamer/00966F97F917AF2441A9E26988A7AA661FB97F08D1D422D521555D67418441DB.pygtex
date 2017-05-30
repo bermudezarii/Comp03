@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{accept} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{points2DArrayTemp} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{tempIntersect} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{polygonNormal} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Object} \PYG{n}{object} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Point3D} \PYG{n}{point0} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{points3D} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Point3D} \PYG{n}{point1} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{points3D} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Point3D} \PYG{n}{point2} \PYG{o}{=} \PYG{n}{object} \PYG{p}{.} \PYG{n}{points3D} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{vector1} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{n}{point1} \PYG{p}{.} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{point0} \PYG{p}{.} \PYG{n}{x} \PYG{p}{,} \PYG{n}{point1} \PYG{p}{.} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{point0} \PYG{p}{.} \PYG{n}{y} \PYG{p}{,} \PYG{n}{point1} \PYG{p}{.} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{point0} \PYG{p}{.} \PYG{n}{z} \PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{vector2} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{n}{point2} \PYG{p}{.} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{point1} \PYG{p}{.} \PYG{n}{x} \PYG{p}{,} \PYG{n}{point2} \PYG{p}{.} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{point1} \PYG{p}{.} \PYG{n}{y} \PYG{p}{,} \PYG{n}{point2} \PYG{p}{.} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{point1} \PYG{p}{.} \PYG{n}{z} \PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\end{Verbatim}

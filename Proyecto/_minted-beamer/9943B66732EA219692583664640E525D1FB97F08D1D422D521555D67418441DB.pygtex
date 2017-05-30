@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{numberDraftPlanes} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{PlaneCut} \PYG{o}{*} \PYG{n}{planeCuts} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Texture} \PYG{o}{*} \PYG{n}{textures} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{DraftPlane} \PYG{o}{*} \PYG{n}{draftPlanes} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{PlaneCut} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{normal} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{point} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{d} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Texture} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{filename} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Color} \PYG{o}{*} \PYG{o}{*} \PYG{n}{textureMap} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Zi} \PYG{o}{=} \PYG{n}{ze} \PYG{o}{+} \PYG{p}{(} \PYG{n}{t} \PYG{o}{*} \PYG{n}{zd} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{d2} \PYG{o}{\PYGZgt{}=} \PYG{p}{(} \PYG{p}{(} \PYG{n}{Xi} \PYG{o}{\PYGZhy{}} \PYG{n}{xo} \PYG{p}{)} \PYG{o}{*} \PYG{n}{xq} \PYG{o}{+} \PYG{p}{(} \PYG{n}{Yi} \PYG{o}{\PYGZhy{}} \PYG{n}{yo} \PYG{p}{)} \PYG{o}{*} \PYG{n}{yq} \PYG{o}{+} \PYG{p}{(} \PYG{n}{Zi} \PYG{o}{\PYGZhy{}} \PYG{n}{zo} \PYG{p}{)} \PYG{o}{*} \PYG{n}{zq} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{Xi} \PYG{o}{\PYGZhy{}} \PYG{n}{xo} \PYG{p}{)} \PYG{o}{*} \PYG{n}{xq} \PYG{o}{+} \PYG{p}{(} \PYG{n}{Yi} \PYG{o}{\PYGZhy{}} \PYG{n}{yo} \PYG{p}{)} \PYG{o}{*} \PYG{n}{yq} \PYG{o}{+} \PYG{p}{(} \PYG{n}{Zi} \PYG{o}{\PYGZhy{}} \PYG{n}{zo} \PYG{p}{)} \PYG{o}{*} \PYG{n}{zq} \PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{n}{d1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Xi} \PYG{o}{=} \PYG{n}{Xi} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Yi} \PYG{o}{=} \PYG{n}{Yi} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Zi} \PYG{o}{=} \PYG{n}{Zi} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{distance} \PYG{o}{=} \PYG{n}{t} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{object} \PYG{o}{=} \PYG{n}{object} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{accept} \PYG{o}{=} \PYG{n}{testIntersection} \PYG{p}{(} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Xi} \PYG{p}{,} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Yi} \PYG{p}{,} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Zi} \PYG{p}{,} \PYG{n}{object} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{accept} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\end{Verbatim}

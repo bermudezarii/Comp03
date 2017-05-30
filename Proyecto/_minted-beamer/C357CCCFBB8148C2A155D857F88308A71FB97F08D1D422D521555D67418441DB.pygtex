@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{main} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{argc} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{arcgv} \PYG{p}{[} \PYG{p}{]} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{howManyObjectsLights} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Lights: \PYGZpc{}i }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{numberLights} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Objects: \PYGZpc{}i }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{numberObjects} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{getSceneObjects} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{;}
+\PYG{n}{pthread\PYGZus{}t} \PYG{n}{threads} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{Xdif} \PYG{o}{=} \PYG{n}{Xmax} \PYG{o}{\PYGZhy{}} \PYG{n}{Xmin} \PYG{p}{;}
+\PYG{n}{Ydif} \PYG{o}{=} \PYG{n}{Ymax} \PYG{o}{\PYGZhy{}} \PYG{n}{Ymin} \PYG{p}{;}
+\PYG{n}{similar} \PYG{o}{=} \PYG{n}{sqrt} \PYG{p}{(} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{32} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Ray Tracing}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{...}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{...}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}
