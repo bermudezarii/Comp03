@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{rename\PYGZus{}cb} \PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{tmp\PYGZus{}renamed\PYGZus{}log} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{true\PYGZus{}errno} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{rename\PYGZus{}tmp\PYGZus{}log\PYGZus{}callback} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{cb\PYGZus{}data} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{rename\PYGZus{}cb} \PYG{o}{*} \PYG{n}{cb} \PYG{o}{=} \PYG{n}{cb\PYGZus{}data} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{rename} \PYG{p}{(} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{tmp\PYGZus{}renamed\PYGZus{}log} \PYG{p}{,} \PYG{n}{path} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{true\PYGZus{}errno} \PYG{o}{=} \PYG{n}{errno} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{==} \PYG{n}{ENOTDIR} \PYG{p}{)}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{EISDIR} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

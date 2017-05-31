@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs\PYGZus{}read\PYGZus{}ref\PYGZus{}full} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}READING} \PYG{p}{,} \PYG{n}{base} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{flag} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{flag} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISPACKED} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}entry} \PYG{o}{*} \PYG{n}{r} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{r} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{peel\PYGZus{}entry} \PYG{p}{(} \PYG{n}{r} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{hashcpy} \PYG{p}{(} \PYG{n}{sha1} \PYG{p}{,} \PYG{n}{r} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{u} \PYG{p}{.} \PYG{n}{value} \PYG{p}{.} \PYG{n}{peeled} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

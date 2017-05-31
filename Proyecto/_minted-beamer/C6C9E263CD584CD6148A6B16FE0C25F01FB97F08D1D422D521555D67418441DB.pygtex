@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator} \PYG{o}{*} \PYG{p}{)} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{dir\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{diter} \PYG{o}{=} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dir\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{ok} \PYG{o}{=} \PYG{n}{dir\PYGZus{}iterator\PYGZus{}advance} \PYG{p}{(} \PYG{n}{diter} \PYG{p}{)} \PYG{p}{)} \PYG{o}{==} \PYG{n}{ITER\PYGZus{}OK} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{S\PYGZus{}ISREG} \PYG{p}{(} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{st} \PYG{p}{.} \PYG{n}{st\PYGZus{}mode} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{basename} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}.\PYGZsq{}} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ends\PYGZus{}with} \PYG{p}{(} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{basename} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}.lock\PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs\PYGZus{}read\PYGZus{}ref\PYGZus{}full} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{relative\PYGZus{}path} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,}
+\end{Verbatim}

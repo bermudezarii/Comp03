@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{files\PYGZus{}log\PYGZus{}ref\PYGZus{}write} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}HEAD\PYGZdq{}} \PYG{p}{,}
+\PYG{o}{\PYGZam{}} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,} \PYG{n}{oid} \PYG{p}{,}
+\PYG{n}{logmsg} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{log\PYGZus{}err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{log\PYGZus{}err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{log\PYGZus{}err} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}couldn\PYGZsq{}t set \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

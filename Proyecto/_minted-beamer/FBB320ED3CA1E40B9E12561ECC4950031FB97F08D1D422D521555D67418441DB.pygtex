@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{sha1\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{old\PYGZus{}sha1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{EBUSY} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{remove\PYGZus{}empty\PYGZus{}directories} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{path} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{remove\PYGZus{}dir\PYGZus{}recursively} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{n}{REMOVE\PYGZus{}DIR\PYGZus{}EMPTY\PYGZus{}ONLY} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{create\PYGZus{}reflock} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{cb} \PYG{p}{)}
+\end{Verbatim}

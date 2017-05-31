@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}DELETED\PYGZus{}LOOSE} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{try\PYGZus{}remove\PYGZus{}empty\PYGZus{}parents} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REF} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{string\PYGZus{}list\PYGZus{}clear} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs\PYGZus{}to\PYGZus{}delete} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{head\PYGZus{}ref} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{string\PYGZus{}list\PYGZus{}clear} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:2008:6 syntax error, unexpected RETURN*/}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:2009:1 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{ref\PYGZus{}present} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,}
+\end{Verbatim}

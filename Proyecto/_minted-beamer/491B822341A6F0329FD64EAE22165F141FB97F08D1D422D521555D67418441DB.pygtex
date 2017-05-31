@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}DELETING} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}LOG\PYGZus{}ONLY} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISPACKED} \PYG{p}{)} \PYG{o}{||}
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{unlink\PYGZus{}or\PYGZus{}msg} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{TRANSACTION\PYGZus{}GENERIC\PYGZus{}ERROR} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{cleanup} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}DELETED\PYGZus{}LOOSE} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISPRUNING} \PYG{p}{)} \PYG{p}{)}
+\end{Verbatim}

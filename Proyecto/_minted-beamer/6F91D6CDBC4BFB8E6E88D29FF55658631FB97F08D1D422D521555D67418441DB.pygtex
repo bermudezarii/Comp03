@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}HEAD\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{head\PYGZus{}oid} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{head\PYGZus{}flag} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{head\PYGZus{}ref} \PYG{p}{;}
+\PYG{n}{head\PYGZus{}ref} \PYG{o}{=} \PYG{n}{refs\PYGZus{}resolve\PYGZus{}ref\PYGZus{}unsafe} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}HEAD\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}READING} \PYG{p}{,}
+\PYG{n}{head\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{head\PYGZus{}flag} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{head\PYGZus{}ref} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{n}{head\PYGZus{}flag} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{head\PYGZus{}ref} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{log\PYGZus{}err} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\end{Verbatim}

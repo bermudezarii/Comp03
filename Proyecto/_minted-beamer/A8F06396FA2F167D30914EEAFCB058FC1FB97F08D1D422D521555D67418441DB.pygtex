@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{open\PYGZus{}or\PYGZus{}create\PYGZus{}logfile} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{cb} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{o}{*} \PYG{n}{fd} \PYG{o}{=} \PYG{n}{cb} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{fd} \PYG{o}{=} \PYG{n}{open} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{n}{O\PYGZus{}APPEND} \PYG{o}{|} \PYG{n}{O\PYGZus{}WRONLY} \PYG{o}{|} \PYG{n}{O\PYGZus{}CREAT} \PYG{p}{,} \PYG{l+m+mo}{0666} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{p}{(} \PYG{o}{*} \PYG{n}{fd} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{o}{?} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o}{:} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{log\PYGZus{}ref\PYGZus{}setup} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{force\PYGZus{}create} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*} \PYG{n}{logfd} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

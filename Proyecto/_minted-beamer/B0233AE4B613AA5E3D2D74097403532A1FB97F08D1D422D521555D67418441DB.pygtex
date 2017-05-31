@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{o} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}trying to write ref \PYGZsq{}\PYGZpc{}s\PYGZsq{} with nonexistent object \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{,} \PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{o} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{!=} \PYG{n}{OBJ\PYGZus{}COMMIT} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{is\PYGZus{}branch} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}trying to write non\PYGZhy{}commit object \PYGZpc{}s to branch \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\end{Verbatim}

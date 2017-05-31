@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{*} \PYG{n}{logfd} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{n}{adjust\PYGZus{}shared\PYGZus{}perm} \PYG{p}{(} \PYG{n}{logfile} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{logfile} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n+nl}{error} \PYG{p}{:}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{logfile} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}create\PYGZus{}reflog} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{force\PYGZus{}create} \PYG{p}{,}
+\end{Verbatim}

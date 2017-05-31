@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=} \PYG{n}{xcalloc} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{o}{=} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{p}{)} \PYG{n}{refs} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{base\PYGZus{}ref\PYGZus{}store\PYGZus{}init} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{refs\PYGZus{}be\PYGZus{}files} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{store\PYGZus{}flags} \PYG{o}{=} \PYG{n}{flags} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{gitdir} \PYG{o}{=} \PYG{n}{xstrdup} \PYG{p}{(} \PYG{n}{gitdir} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{get\PYGZus{}common\PYGZus{}dir\PYGZus{}noenv} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{gitdir} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{gitcommondir} \PYG{o}{=} \PYG{n}{strbuf\PYGZus{}detach} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s/packed\PYGZhy{}refs\PYGZdq{}} \PYG{p}{,} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{gitcommondir} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed\PYGZus{}refs\PYGZus{}path} \PYG{o}{=} \PYG{n}{strbuf\PYGZus{}detach} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ref\PYGZus{}store} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\end{Verbatim}

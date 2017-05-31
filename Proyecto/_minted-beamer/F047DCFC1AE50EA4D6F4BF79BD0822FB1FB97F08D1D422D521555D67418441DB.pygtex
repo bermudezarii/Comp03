@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{committer} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{msg} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{msglen} \PYG{p}{,} \PYG{n}{written} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{maxlen} \PYG{p}{,} \PYG{n}{len} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{logrec} \PYG{p}{;}
+\PYG{n}{msglen} \PYG{o}{=} \PYG{n}{msg} \PYG{o}{?} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{msg} \PYG{p}{)} \PYG{o}{:} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{maxlen} \PYG{o}{=} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{committer} \PYG{p}{)} \PYG{o}{+} \PYG{n}{msglen} \PYG{o}{+} \PYG{l+m+mi}{100} \PYG{p}{;}
+\PYG{n}{logrec} \PYG{o}{=} \PYG{n}{xmalloc} \PYG{p}{(} \PYG{n}{maxlen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{len} \PYG{o}{=} \PYG{n}{xsnprintf} \PYG{p}{(} \PYG{n}{logrec} \PYG{p}{,} \PYG{n}{maxlen} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s \PYGZpc{}s \PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{new\PYGZus{}oid} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{committer} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{msglen} \PYG{p}{)}
+\end{Verbatim}

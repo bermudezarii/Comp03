@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Pruebas/error.c:2193:10 syntax error, unexpected INTEGER*/}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:2194:1 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}init\PYGZus{}db} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}WRITE} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}init\PYGZus{}db\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/heads\PYGZdq{}} \PYG{p}{)}
+\PYG{c+cm}{/*Pruebas/error.c:2201:15 syntax error, unexpected IDENTIFIER*/}
+\PYG{c+cm}{/*Pruebas/error.c:2201:28 syntax error, unexpected COMMA*/}
+\PYG{c+cm}{/*Pruebas/error.c:2201:30 syntax error, unexpected INTEGER*/}
+\end{Verbatim}

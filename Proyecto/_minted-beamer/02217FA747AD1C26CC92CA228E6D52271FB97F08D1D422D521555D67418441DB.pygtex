@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{orig\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{flag} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}refname \PYGZpc{}s not found\PYGZdq{}} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{flag} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}refname \PYGZpc{}s is a symbolic ref, renaming it is not supported\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{oldrefname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs\PYGZus{}rename\PYGZus{}ref\PYGZus{}available} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{,} \PYG{n}{newrefname} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

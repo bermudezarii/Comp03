@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{else}
+\PYG{n+nf}{error} \PYG{p}{(} \PYG{n}{\PYGZus{}} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}could not delete references: \PYGZpc{}s\PYGZdq{}} \PYG{p}{)} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nr} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{o}{=} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{items} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs\PYGZus{}delete\PYGZus{}ref} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{flags} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{result} \PYG{o}{|=} \PYG{n}{error} \PYG{p}{(} \PYG{n}{\PYGZus{}} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}could not remove reference \PYGZpc{}s\PYGZdq{}} \PYG{p}{)} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nl}{out} \PYG{p}{:}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{result} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

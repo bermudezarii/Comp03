@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{save\PYGZus{}errno} \PYG{o}{=} \PYG{n}{errno} \PYG{p}{;}
+\PYG{n}{error} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{release\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{save\PYGZus{}errno} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{error} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{rollback\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{=}
+\PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}rollback\PYGZus{}packed\PYGZus{}refs\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{packed\PYGZus{}entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flag} \PYG{o}{=} \PYG{n}{REF\PYGZus{}ISPACKED} \PYG{p}{;}
+\PYG{n}{oidcpy} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{packed\PYGZus{}entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{u} \PYG{p}{.} \PYG{n}{value} \PYG{p}{.} \PYG{n}{oid} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{packed\PYGZus{}entry} \PYG{o}{=} \PYG{n}{create\PYGZus{}ref\PYGZus{}entry} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{p}{,}
+\PYG{n}{REF\PYGZus{}ISPACKED} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{add\PYGZus{}ref\PYGZus{}entry} \PYG{p}{(} \PYG{n}{packed\PYGZus{}refs} \PYG{p}{,} \PYG{n}{packed\PYGZus{}entry} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{oidclr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{packed\PYGZus{}entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{u} \PYG{p}{.} \PYG{n}{value} \PYG{p}{.} \PYG{n}{peeled} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{PACK\PYGZus{}REFS\PYGZus{}PRUNE} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}to\PYGZus{}prune} \PYG{o}{*} \PYG{n}{n} \PYG{p}{;}
+\PYG{n}{FLEX\PYGZus{}ALLOC\PYGZus{}STR} \PYG{p}{(} \PYG{n}{n} \PYG{p}{,} \PYG{n}{name} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hashcpy} \PYG{p}{(} \PYG{n}{n} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{sha1} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{hash} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{n} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{next} \PYG{o}{=} \PYG{n}{refs\PYGZus{}to\PYGZus{}prune} \PYG{p}{;}
+\end{Verbatim}

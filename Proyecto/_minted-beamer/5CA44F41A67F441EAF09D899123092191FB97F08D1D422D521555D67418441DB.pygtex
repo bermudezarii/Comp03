@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{log\PYGZus{}all\PYGZus{}ref\PYGZus{}updates} \PYG{o}{==} \PYG{n}{LOG\PYGZus{}REFS\PYGZus{}UNSET} \PYG{p}{)}
+\PYG{n}{log\PYGZus{}all\PYGZus{}ref\PYGZus{}updates} \PYG{o}{=} \PYG{n}{is\PYGZus{}bare\PYGZus{}repository} \PYG{p}{(} \PYG{p}{)} \PYG{o}{?} \PYG{n+nl}{LOG\PYGZus{}REFS\PYGZus{}NONE} \PYG{p}{:} \PYG{n}{LOG\PYGZus{}REFS\PYGZus{}NORMAL} \PYG{p}{;}
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{log\PYGZus{}ref\PYGZus{}setup} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}FORCE\PYGZus{}CREATE\PYGZus{}REFLOG} \PYG{p}{,}
+\PYG{o}{\PYGZam{}} \PYG{n}{logfd} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{result} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{result} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{logfd} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{log\PYGZus{}ref\PYGZus{}write\PYGZus{}fd} \PYG{p}{(} \PYG{n}{logfd} \PYG{p}{,} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,} \PYG{n}{new\PYGZus{}oid} \PYG{p}{,}
+\PYG{n}{git\PYGZus{}committer\PYGZus{}info} \PYG{p}{(} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{,} \PYG{n}{msg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{result} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\end{Verbatim}

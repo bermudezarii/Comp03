@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{switch} \PYG{p}{(} \PYG{n}{ref\PYGZus{}type} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{case} \PYG{n+nl}{REF\PYGZus{}TYPE\PYGZus{}PER\PYGZus{}WORKTREE} \PYG{p}{:}
+\PYG{k}{case} \PYG{n+nl}{REF\PYGZus{}TYPE\PYGZus{}PSEUDOREF} \PYG{p}{:}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s/logs/\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{gitdir} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{REF\PYGZus{}TYPE\PYGZus{}NORMAL} \PYG{p}{:}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s/logs/\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{gitcommondir} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{default} \PYG{o}{:}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: unknown ref type \PYGZpc{}d of ref \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{ref\PYGZus{}type} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

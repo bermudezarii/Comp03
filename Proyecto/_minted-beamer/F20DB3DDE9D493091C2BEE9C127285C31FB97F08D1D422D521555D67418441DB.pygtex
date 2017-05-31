@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{log\PYGZus{}file} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{status} \PYG{p}{;}
+\PYG{n+nl}{failure} \PYG{p}{:}
+\PYG{n}{rollback\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{reflog\PYGZus{}lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{log\PYGZus{}file} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}init\PYGZus{}db} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

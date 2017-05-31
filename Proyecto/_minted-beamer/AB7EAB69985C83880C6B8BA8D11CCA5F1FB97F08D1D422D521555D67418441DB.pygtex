@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{lock\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{LOCK\PYGZus{}DIE\PYGZus{}ON\PYGZus{}ERROR} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{packed\PYGZus{}refs} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{=} \PYG{n}{cache\PYGZus{}ref\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{(} \PYG{n}{get\PYGZus{}loose\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{ok} \PYG{o}{=} \PYG{n}{ref\PYGZus{}iterator\PYGZus{}advance} \PYG{p}{(} \PYG{n}{iter} \PYG{p}{)} \PYG{p}{)} \PYG{o}{==} \PYG{n}{ITER\PYGZus{}OK} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}entry} \PYG{o}{*} \PYG{n}{packed\PYGZus{}entry} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{is\PYGZus{}tag\PYGZus{}ref} \PYG{o}{=} \PYG{n}{starts\PYGZus{}with} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/tags/\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ref\PYGZus{}type} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{)} \PYG{o}{!=} \PYG{n}{REF\PYGZus{}TYPE\PYGZus{}NORMAL} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{PACK\PYGZus{}REFS\PYGZus{}ALL} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{is\PYGZus{}tag\PYGZus{}ref} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{ref\PYGZus{}resolves\PYGZus{}to\PYGZus{}object} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{p}{)} \PYG{p}{)}
+\end{Verbatim}

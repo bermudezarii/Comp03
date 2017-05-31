@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}log\PYGZus{}ref\PYGZus{}write} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,} \PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{new\PYGZus{}oid} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{msg} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{logfd} \PYG{p}{,} \PYG{n}{result} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{log\PYGZus{}all\PYGZus{}ref\PYGZus{}updates} \PYG{o}{==} \PYG{n}{LOG\PYGZus{}REFS\PYGZus{}UNSET} \PYG{p}{)}
+\PYG{n}{log\PYGZus{}all\PYGZus{}ref\PYGZus{}updates} \PYG{o}{=} \PYG{n}{is\PYGZus{}bare\PYGZus{}repository} \PYG{p}{(} \PYG{p}{)} \PYG{o}{?} \PYG{n+nl}{LOG\PYGZus{}REFS\PYGZus{}NONE} \PYG{p}{:} \PYG{n}{LOG\PYGZus{}REFS\PYGZus{}NORMAL} \PYG{p}{;}
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{log\PYGZus{}ref\PYGZus{}setup} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}FORCE\PYGZus{}CREATE\PYGZus{}REFLOG} \PYG{p}{,}
+\end{Verbatim}

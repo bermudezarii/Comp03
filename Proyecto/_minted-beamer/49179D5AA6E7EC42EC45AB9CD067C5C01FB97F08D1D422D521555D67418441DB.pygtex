@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Pruebas/error.c:2201:32 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{n}{safe\PYGZus{}create\PYGZus{}dir} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/tags\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{safe\PYGZus{}create\PYGZus{}dir} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:2206:6 syntax error, unexpected RETURN*/}
+\PYG{c+cm}{/*Pruebas/error.c:2206:8 syntax error, unexpected INTEGER*/}
+\PYG{k}{return} \PYG{l+m+mi}{0}
+\PYG{c+cm}{/*Pruebas/error.c:2207:1 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}storage\PYGZus{}be} \PYG{n}{refs\PYGZus{}be\PYGZus{}files} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{n+nb}{NULL} \PYG{p}{,}
+\end{Verbatim}

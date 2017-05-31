@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs\PYGZus{}read\PYGZus{}ref\PYGZus{}full} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{newrefname} \PYG{p}{,}
+\PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}READING} \PYG{o}{|} \PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}NO\PYGZus{}RECURSE} \PYG{p}{,}
+\PYG{n}{oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{refs\PYGZus{}delete\PYGZus{}ref} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{newrefname} \PYG{p}{,}
+\PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{==} \PYG{n}{EISDIR} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{path} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{result} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{,} \PYG{n}{newrefname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{remove\PYGZus{}empty\PYGZus{}directories} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{result} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

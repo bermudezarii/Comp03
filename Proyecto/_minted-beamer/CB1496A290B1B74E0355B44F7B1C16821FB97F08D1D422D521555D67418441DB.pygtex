@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}lock\PYGZus{}raw\PYGZus{}ref\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{type} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{lock\PYGZus{}p} \PYG{o}{=} \PYG{n}{lock} \PYG{o}{=} \PYG{n}{xcalloc} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{o}{=} \PYG{n}{xstrdup} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{ref\PYGZus{}file} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n+nl}{retry} \PYG{p}{:}
+\PYG{k}{switch} \PYG{p}{(} \PYG{n}{safe\PYGZus{}create\PYGZus{}leading\PYGZus{}directories} \PYG{p}{(} \PYG{n}{ref\PYGZus{}file} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{case} \PYG{n+nl}{SCLD\PYGZus{}OK} \PYG{p}{:}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{SCLD\PYGZus{}EXISTS} \PYG{p}{:}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs\PYGZus{}verify\PYGZus{}refname\PYGZus{}available} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{extras} \PYG{p}{,} \PYG{n}{skip} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{mustexist} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

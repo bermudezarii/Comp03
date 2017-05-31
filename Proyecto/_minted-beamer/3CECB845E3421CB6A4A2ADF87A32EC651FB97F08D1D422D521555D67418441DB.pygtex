@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{prefer\PYGZus{}symlink\PYGZus{}refs} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{create\PYGZus{}ref\PYGZus{}symlink} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{,} \PYG{n}{target} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{update\PYGZus{}symref\PYGZus{}reflog} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{lock} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{target} \PYG{p}{,} \PYG{n}{logmsg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{fdopen\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}w\PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to fdopen \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{tempfile} \PYG{p}{.} \PYG{n}{filename} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{update\PYGZus{}symref\PYGZus{}reflog} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{lock} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{target} \PYG{p}{,} \PYG{n}{logmsg} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{tempfile} \PYG{p}{.} \PYG{n}{fp} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}ref: \PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{target} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to write symref for \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

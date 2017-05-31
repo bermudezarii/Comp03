@@ -2,7 +2,7 @@
 
 struct ref_lock {
 	char *ref_name;
-	struct lock_file *lk;
+	struct lock_file *lk
 	struct object_id old_oid;
 };
 
@@ -22,7 +22,7 @@ static int ref_resolves_to_object(const char *refname,
 		return 0;
 	}
 	return 1;
-}
+
 
 struct packed_ref_cache {
 	struct ref_cache *cache;
@@ -46,7 +46,7 @@ struct packed_ref_cache {
 
 	/* The metadata from when this packed-refs cache was read */
 	struct stat_validity validity;
-};
+
 
 /*
  * Future: need to be in "struct repository"
@@ -54,7 +54,7 @@ struct packed_ref_cache {
  */
 struct files_ref_store {
 	struct ref_store base;
-	unsigned int store_flags;
+	unsigned int store_flags
 
 	char *gitdir;
 	char *gitcommondir;
@@ -73,14 +73,14 @@ static struct lock_file packlock;
 static void acquire_packed_ref_cache(struct packed_ref_cache *packed_refs)
 {
 	packed_refs->referrers++;
-}
+
 
 /*
  * Decrease the reference count of *packed_refs.  If it goes to zero,
  * free *packed_refs and return true; otherwise return false.
  */
 static int release_packed_ref_cache(struct packed_ref_cache *packed_refs)
-{
+
 	if (!--packed_refs->referrers) {
 		free_ref_cache(packed_refs->cache);
 		stat_validity_clear(&packed_refs->validity);
@@ -3287,7 +3287,7 @@ static int files_init_db(struct ref_store *ref_store, struct strbuf *err)
 	safe_create_dir(sb.buf, 1);
 
 	strbuf_release(&sb);
-	return 0;
+	return 0
 }
 
 struct ref_storage_be refs_be_files = {
@@ -3313,5 +3313,4 @@ struct ref_storage_be refs_be_files = {
 	files_reflog_exists,
 	files_create_reflog,
 	files_delete_reflog,
-	files_reflog_expire
-};
+	files_reflog_expir

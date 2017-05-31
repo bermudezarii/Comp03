@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{f} \PYG{o}{=} \PYG{n}{fopen} \PYG{p}{(} \PYG{n}{packed\PYGZus{}refs\PYGZus{}file} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}r\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{f} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{stat\PYGZus{}validity\PYGZus{}update} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{validity} \PYG{p}{,} \PYG{n}{fileno} \PYG{p}{(} \PYG{n}{f} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{read\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{f} \PYG{p}{,} \PYG{n}{get\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{root} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{f} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}dir} \PYG{o}{*} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{get\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{root} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

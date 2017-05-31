@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{;}
+\PYG{n}{reflog\PYGZus{}expiry\PYGZus{}should\PYGZus{}prune\PYGZus{}fn} \PYG{o}{*} \PYG{n}{should\PYGZus{}prune\PYGZus{}fn} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{policy\PYGZus{}cb} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{newlog} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{last\PYGZus{}kept\PYGZus{}oid} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{expire\PYGZus{}reflog\PYGZus{}ent} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{ooid} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{noid} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{email} \PYG{p}{,} \PYG{n}{timestamp\PYGZus{}t} \PYG{n}{timestamp} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{tz} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{message} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{cb\PYGZus{}data} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{expire\PYGZus{}reflog\PYGZus{}cb} \PYG{o}{*} \PYG{n}{cb} \PYG{o}{=} \PYG{n}{cb\PYGZus{}data} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{expire\PYGZus{}reflog\PYGZus{}policy\PYGZus{}cb} \PYG{o}{*} \PYG{n}{policy\PYGZus{}cb} \PYG{o}{=} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{policy\PYGZus{}cb} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{EXPIRE\PYGZus{}REFLOGS\PYGZus{}REWRITE} \PYG{p}{)}
+\end{Verbatim}

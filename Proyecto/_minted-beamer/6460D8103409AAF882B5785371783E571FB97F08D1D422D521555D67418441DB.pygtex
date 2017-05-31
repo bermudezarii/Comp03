@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{lock} \PYG{o}{=} \PYG{n}{lock\PYGZus{}ref\PYGZus{}sha1\PYGZus{}basic} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{,}
+\PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{,}
+\PYG{o}{\PYGZam{}} \PYG{n}{type} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}cannot lock ref \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs\PYGZus{}reflog\PYGZus{}exists} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{log\PYGZus{}file\PYGZus{}sb} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

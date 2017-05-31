@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to create directory for \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{ref\PYGZus{}file} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{error\PYGZus{}return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{)}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{o}{=} \PYG{n}{xcalloc} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{lock\PYGZus{}file} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{hold\PYGZus{}lock\PYGZus{}file\PYGZus{}for\PYGZus{}update} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{,} \PYG{n}{ref\PYGZus{}file} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{LOCK\PYGZus{}NO\PYGZus{}DEREF} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{==} \PYG{n}{ENOENT} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{n}{attempts\PYGZus{}remaining} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{goto} \PYG{n}{retry} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{unable\PYGZus{}to\PYGZus{}lock\PYGZus{}message} \PYG{p}{(} \PYG{n}{ref\PYGZus{}file} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{errno} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{error\PYGZus{}return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

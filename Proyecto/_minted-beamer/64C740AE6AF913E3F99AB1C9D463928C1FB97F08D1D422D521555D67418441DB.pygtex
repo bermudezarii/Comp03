@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{refname} \PYG{p}{.} \PYG{n}{len} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs\PYGZus{}resolve\PYGZus{}ref\PYGZus{}unsafe} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,}
+\PYG{n}{refname} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,}
+\PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}READING} \PYG{p}{,}
+\PYG{n}{oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{flag} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{oidclr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{flag} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{is\PYGZus{}null\PYGZus{}oid} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{flag} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{check\PYGZus{}refname\PYGZus{}format} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,}
+\PYG{n}{REFNAME\PYGZus{}ALLOW\PYGZus{}ONELEVEL} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

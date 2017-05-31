@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{backend\PYGZus{}data} \PYG{o}{=} \PYG{n}{lock} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs\PYGZus{}read\PYGZus{}ref\PYGZus{}full} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,}
+\PYG{n}{referent} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}HAVE\PYGZus{}OLD} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cannot lock ref \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZdq{}}
+\PYG{l+s}{\PYGZdq{}error reading reference\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{original\PYGZus{}update\PYGZus{}refname} \PYG{p}{(} \PYG{n}{update} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

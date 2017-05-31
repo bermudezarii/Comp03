@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{rollback\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{commit\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:991:2 syntax error, unexpected IF*/}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ret} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to overwrite old ref\PYGZhy{}pack file: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:994:6 syntax error, unexpected RETURN*/}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:995:1 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}delete\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\end{Verbatim}

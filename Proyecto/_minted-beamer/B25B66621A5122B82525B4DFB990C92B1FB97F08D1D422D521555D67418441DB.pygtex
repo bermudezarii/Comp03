@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator\PYGZus{}peel} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{peeled} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: ref\PYGZus{}iterator\PYGZus{}peel() called for reflog\PYGZus{}iterator\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator\PYGZus{}abort} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{o}{=}
+\PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator} \PYG{o}{*} \PYG{p}{)} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{o}{=} \PYG{n}{ITER\PYGZus{}DONE} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dir\PYGZus{}iterator} \PYG{p}{)}
+\PYG{n}{ok} \PYG{o}{=} \PYG{n}{dir\PYGZus{}iterator\PYGZus{}abort} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dir\PYGZus{}iterator} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

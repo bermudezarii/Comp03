@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{get\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{root} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}dir} \PYG{o}{*} \PYG{n}{get\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{add\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,} \PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}internal error: packed refs not locked\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{REF\PYGZus{}ISPRUNING} \PYG{o}{|} \PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{o}{||}
+\PYG{n}{ref\PYGZus{}transaction\PYGZus{}commit} \PYG{p}{(} \PYG{n}{transaction} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ref\PYGZus{}transaction\PYGZus{}free} \PYG{p}{(} \PYG{n}{transaction} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{ref\PYGZus{}transaction\PYGZus{}free} \PYG{p}{(} \PYG{n}{transaction} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{prune\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}to\PYGZus{}prune} \PYG{o}{*} \PYG{n}{r} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{r} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

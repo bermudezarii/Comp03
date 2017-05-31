@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{len} \PYG{o}{=} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb\PYGZus{}path} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}attach} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}path} \PYG{p}{,} \PYG{n}{path} \PYG{p}{,} \PYG{n}{len} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{remove\PYGZus{}empty\PYGZus{}directories} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}path} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{open\PYGZus{}or\PYGZus{}create\PYGZus{}logfile} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{cb} \PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{flag} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}BAD\PYGZus{}NAME} \PYG{o}{|} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{add\PYGZus{}entry\PYGZus{}to\PYGZus{}dir} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{,}
+\PYG{n}{create\PYGZus{}ref\PYGZus{}entry} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{,} \PYG{n}{flag} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}setlen} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{dirnamelen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}setlen} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{,} \PYG{n}{path\PYGZus{}baselen} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{closedir} \PYG{p}{(} \PYG{n}{d} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{dirname} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{pos} \PYG{o}{=} \PYG{n}{search\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/bisect/\PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{12} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

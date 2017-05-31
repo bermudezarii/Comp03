@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s}{\PYGZdq{}files\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}store\PYGZus{}create} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}init\PYGZus{}db} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}transaction\PYGZus{}commit} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}initial\PYGZus{}transaction\PYGZus{}commit} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}pack\PYGZus{}refs} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}peel\PYGZus{}ref} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}create\PYGZus{}symref} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}delete\PYGZus{}refs} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}rename\PYGZus{}ref} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}read\PYGZus{}raw\PYGZus{}ref} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{,}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{closedir} \PYG{p}{(} \PYG{n}{d} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{dirname} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{pos} \PYG{o}{=} \PYG{n}{search\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/bisect/\PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{12} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{pos} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}entry} \PYG{o}{*} \PYG{n}{child\PYGZus{}entry} \PYG{o}{=} \PYG{n}{create\PYGZus{}dir\PYGZus{}entry} \PYG{p}{(}
+\PYG{n}{dir} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/bisect/\PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{12} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{add\PYGZus{}entry\PYGZus{}to\PYGZus{}dir} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{,} \PYG{n}{child\PYGZus{}entry} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{get\PYGZus{}loose\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{loose} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

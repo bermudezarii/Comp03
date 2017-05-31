@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{n}{base} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{dir\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{dir\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{oid} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{files\PYGZus{}reflog\PYGZus{}iterator\PYGZus{}advance} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{o}{=}
+\PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator} \PYG{o}{*} \PYG{p}{)} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{dir\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{diter} \PYG{o}{=} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dir\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{ok} \PYG{o}{=} \PYG{n}{dir\PYGZus{}iterator\PYGZus{}advance} \PYG{p}{(} \PYG{n}{diter} \PYG{p}{)} \PYG{p}{)} \PYG{o}{==} \PYG{n}{ITER\PYGZus{}OK} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

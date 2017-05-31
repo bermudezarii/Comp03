@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{prune\PYGZus{}ref} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{r} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{r} \PYG{o}{=} \PYG{n}{r} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{next} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}pack\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}WRITE} \PYG{o}{|} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}ODB} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}pack\PYGZus{}refs\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}dir} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}to\PYGZus{}prune} \PYG{o}{*} \PYG{n}{refs\PYGZus{}to\PYGZus{}prune} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\end{Verbatim}

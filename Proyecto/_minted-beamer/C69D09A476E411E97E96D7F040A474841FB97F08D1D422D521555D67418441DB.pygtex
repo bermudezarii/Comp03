@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs\PYGZus{}rename\PYGZus{}ref\PYGZus{}available} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{,} \PYG{n}{newrefname} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{log} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{rename} \PYG{p}{(} \PYG{n}{sb\PYGZus{}oldref} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{tmp\PYGZus{}renamed\PYGZus{}log} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to move logfile logs/\PYGZpc{}s to logs/\PYGZdq{}} \PYG{l+s}{\PYGZdq{}refs/.tmp\PYGZhy{}renamed\PYGZhy{}log\PYGZdq{}} \PYG{l+s}{\PYGZdq{}: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{oldrefname} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs\PYGZus{}delete\PYGZus{}ref} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{logmsg} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{,}
+\PYG{n}{orig\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to delete old \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{rollback} \PYG{p}{;}
+\end{Verbatim}

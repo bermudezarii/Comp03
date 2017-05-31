@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}WRITE} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}init\PYGZus{}db\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/heads\PYGZdq{}} \PYG{p}{)}
+\PYG{n}{safe\PYGZus{}create\PYGZus{}dir} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/tags\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{safe\PYGZus{}create\PYGZus{}dir} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}storage\PYGZus{}be} \PYG{n}{refs\PYGZus{}be\PYGZus{}files} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{n+nb}{NULL} \PYG{p}{,}
+\end{Verbatim}

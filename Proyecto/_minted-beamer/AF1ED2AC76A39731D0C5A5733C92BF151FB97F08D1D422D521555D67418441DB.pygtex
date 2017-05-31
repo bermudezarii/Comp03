@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{scanp} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{;}
+\PYG{n}{at\PYGZus{}tail} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{buf} \PYG{o}{\PYGZlt{}} \PYG{n}{scanp} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{bp} \PYG{p}{;}
+\PYG{n}{bp} \PYG{o}{=} \PYG{n}{find\PYGZus{}beginning\PYGZus{}of\PYGZus{}line} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{scanp} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{*} \PYG{n}{bp} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}splice} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{bp} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{endp} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{n}{bp} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{scanp} \PYG{o}{=} \PYG{n}{bp} \PYG{p}{;}
+\PYG{n}{endp} \PYG{o}{=} \PYG{n}{bp} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{show\PYGZus{}one\PYGZus{}reflog\PYGZus{}ent} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{fn} \PYG{p}{,} \PYG{n}{cb\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ret} \PYG{p}{)}
+\PYG{k}{break} \PYG{p}{;}
+\end{Verbatim}

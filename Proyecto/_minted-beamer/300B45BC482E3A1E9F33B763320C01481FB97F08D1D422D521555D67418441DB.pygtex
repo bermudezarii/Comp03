@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ref\PYGZus{}store} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{be} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{name} \PYG{p}{,} \PYG{n}{caller} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{=} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{p}{)} \PYG{n}{ref\PYGZus{}store} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{store\PYGZus{}flags} \PYG{o}{\PYGZam{}} \PYG{n}{required\PYGZus{}flags} \PYG{p}{)} \PYG{o}{!=} \PYG{n}{required\PYGZus{}flags} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: operation \PYGZpc{}s requires abilities 0x\PYGZpc{}x, but only have 0x\PYGZpc{}x\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{caller} \PYG{p}{,} \PYG{n}{required\PYGZus{}flags} \PYG{p}{,} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{store\PYGZus{}flags} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{refs} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{char} \PYG{n}{PACKED\PYGZus{}REFS\PYGZus{}HEADER} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=}
+\PYG{l+s}{\PYGZdq{}\PYGZsh{} pack\PYGZhy{}refs with: peeled fully\PYGZhy{}peeled }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{parse\PYGZus{}ref\PYGZus{}line} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{line} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{ref} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{parse\PYGZus{}oid\PYGZus{}hex} \PYG{p}{(} \PYG{n}{line} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{oid} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{ref} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}
+\end{Verbatim}

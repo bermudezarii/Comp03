@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nr} \PYG{p}{;}
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{items} \PYG{p}{[} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{,} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{items} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}multiple updates for ref \PYGZsq{}\PYGZpc{}s\PYGZsq{} not allowed.\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{items} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{split\PYGZus{}head\PYGZus{}update} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}update} \PYG{o}{*} \PYG{n}{update} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}transaction} \PYG{o}{*} \PYG{n}{transaction} \PYG{p}{,}
+\end{Verbatim}

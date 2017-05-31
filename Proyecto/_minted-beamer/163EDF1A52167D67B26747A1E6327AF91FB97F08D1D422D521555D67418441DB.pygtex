@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{get\PYGZus{}sha1\PYGZus{}hex} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{)} \PYG{o}{||}
+\PYG{p}{(} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{40} \PYG{p}{]} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}0\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{isspace} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{40} \PYG{p}{]} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{o}{*} \PYG{n}{type} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{;}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{EINVAL} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n+nl}{out} \PYG{p}{:}
+\PYG{n}{save\PYGZus{}errno} \PYG{o}{=} \PYG{n}{errno} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{save\PYGZus{}errno} \PYG{p}{;}
+\end{Verbatim}

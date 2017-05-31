@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{message} \PYG{o}{+=} \PYG{l+m+mi}{6} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n}{message} \PYG{o}{+=} \PYG{l+m+mi}{7} \PYG{p}{;}
+\PYG{k}{return} \PYG{n+nf}{fn} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{ooid} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{noid} \PYG{p}{,} \PYG{n}{p} \PYG{p}{,} \PYG{n}{timestamp} \PYG{p}{,} \PYG{n}{tz} \PYG{p}{,} \PYG{n}{message} \PYG{p}{,} \PYG{n}{cb\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{find\PYGZus{}beginning\PYGZus{}of\PYGZus{}line} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{bob} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{scan} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{bob} \PYG{o}{\PYGZlt{}} \PYG{n}{scan} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{*} \PYG{p}{(} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{n}{scan} \PYG{p}{)} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{)}
+\PYG{p}{;}
+\PYG{k}{return} \PYG{n}{scan} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}for\PYGZus{}each\PYGZus{}reflog\PYGZus{}ent\PYGZus{}reverse} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,}
+\end{Verbatim}

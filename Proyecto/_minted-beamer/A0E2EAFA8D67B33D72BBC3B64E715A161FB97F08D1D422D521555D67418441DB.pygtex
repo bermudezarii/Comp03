@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{clear\PYGZus{}loose\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}couldn\PYGZsq{}t set \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{backend\PYGZus{}data} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{TRANSACTION\PYGZus{}GENERIC\PYGZus{}ERROR} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{cleanup} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nr} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}update} \PYG{o}{*} \PYG{n}{update} \PYG{o}{=} \PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{updates} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{o}{=} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{backend\PYGZus{}data} \PYG{p}{;}
+\end{Verbatim}

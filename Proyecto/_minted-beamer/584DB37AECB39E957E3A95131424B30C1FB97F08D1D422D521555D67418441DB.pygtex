@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s}{\PYGZdq{}reference is missing but expected \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{original\PYGZus{}update\PYGZus{}refname} \PYG{p}{(} \PYG{n}{update} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cannot lock ref \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZdq{}}
+\PYG{l+s}{\PYGZdq{}is at \PYGZpc{}s but expected \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{original\PYGZus{}update\PYGZus{}refname} \PYG{p}{(} \PYG{n}{update} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{lock\PYGZus{}ref\PYGZus{}for\PYGZus{}update} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}update} \PYG{o}{*} \PYG{n}{update} \PYG{p}{,}
+\end{Verbatim}

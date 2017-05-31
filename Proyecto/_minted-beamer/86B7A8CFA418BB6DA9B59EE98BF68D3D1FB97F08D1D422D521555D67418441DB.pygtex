@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{fd} \PYG{o}{=} \PYG{n}{open} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{n}{O\PYGZus{}RDONLY} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{fd} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{==} \PYG{n}{ENOENT} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{S\PYGZus{}ISLNK} \PYG{p}{(} \PYG{n}{st} \PYG{p}{.} \PYG{n}{st\PYGZus{}mode} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{stat\PYGZus{}ref} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strbuf\PYGZus{}read} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{,} \PYG{n}{fd} \PYG{p}{,} \PYG{l+m+mi}{256} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{save\PYGZus{}errno} \PYG{o}{=} \PYG{n}{errno} \PYG{p}{;}
+\end{Verbatim}

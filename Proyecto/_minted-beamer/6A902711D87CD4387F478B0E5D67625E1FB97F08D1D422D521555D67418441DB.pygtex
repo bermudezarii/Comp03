@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{TRANSACTION\PYGZus{}GENERIC\PYGZus{}ERROR} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{cleanup} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nl}{cleanup} \PYG{p}{:}
+\PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{state} \PYG{o}{=} \PYG{n}{REF\PYGZus{}TRANSACTION\PYGZus{}CLOSED} \PYG{p}{;}
+\PYG{n}{string\PYGZus{}list\PYGZus{}clear} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{expire\PYGZus{}reflog\PYGZus{}cb} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{;}
+\PYG{n}{reflog\PYGZus{}expiry\PYGZus{}should\PYGZus{}prune\PYGZus{}fn} \PYG{o}{*} \PYG{n}{should\PYGZus{}prune\PYGZus{}fn} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{policy\PYGZus{}cb} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{newlog} \PYG{p}{;}
+\end{Verbatim}

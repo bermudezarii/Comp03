@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to resolve reference \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{TRANSACTION\PYGZus{}NAME\PYGZus{}CONFLICT} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to create lock file \PYGZpc{}s.lock; \PYGZdq{}}
+\PYG{l+s}{\PYGZdq{}non\PYGZhy{}directory in the way\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{ref\PYGZus{}file} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{goto} \PYG{n}{error\PYGZus{}return} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{SCLD\PYGZus{}VANISHED} \PYG{p}{:}
+\end{Verbatim}

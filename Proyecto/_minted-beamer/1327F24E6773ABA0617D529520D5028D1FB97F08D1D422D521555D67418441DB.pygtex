@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator\PYGZus{}abort} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{o}{=}
+\PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator} \PYG{o}{*} \PYG{p}{)} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{o}{=} \PYG{n}{ITER\PYGZus{}DONE} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{p}{)}
+\PYG{n}{ok} \PYG{o}{=} \PYG{n}{ref\PYGZus{}iterator\PYGZus{}abort} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{release\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{base\PYGZus{}ref\PYGZus{}iterator\PYGZus{}free} \PYG{p}{(} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ok} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator\PYGZus{}vtable} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator\PYGZus{}vtable} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

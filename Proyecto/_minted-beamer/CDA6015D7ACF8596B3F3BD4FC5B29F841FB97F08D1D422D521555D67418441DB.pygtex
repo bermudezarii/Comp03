@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{n}{TRANSACTION\PYGZus{}GENERIC\PYGZus{}ERROR} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{parent\PYGZus{}update} \PYG{o}{=} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{parent\PYGZus{}update} \PYG{p}{;}
+\PYG{n}{parent\PYGZus{}update} \PYG{p}{;}
+\PYG{n}{parent\PYGZus{}update} \PYG{o}{=} \PYG{n}{parent\PYGZus{}update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{parent\PYGZus{}update} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{parent\PYGZus{}lock} \PYG{o}{=} \PYG{n}{parent\PYGZus{}update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{backend\PYGZus{}data} \PYG{p}{;}
+\PYG{n}{oidcpy} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{parent\PYGZus{}lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}HAVE\PYGZus{}NEW} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}DELETING} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}LOG\PYGZus{}ONLY} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{n}{oidcmp} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{new\PYGZus{}oid} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

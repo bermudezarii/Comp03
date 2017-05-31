@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{repack\PYGZus{}without\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{string\PYGZus{}list} \PYG{o}{*} \PYG{n}{refnames} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}dir} \PYG{o}{*} \PYG{n}{packed} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{string\PYGZus{}list\PYGZus{}item} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ret} \PYG{p}{,} \PYG{n}{needs\PYGZus{}repacking} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{removed} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}repack\PYGZus{}without\PYGZus{}refs\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{for\PYGZus{}each\PYGZus{}string\PYGZus{}list\PYGZus{}item} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{refnames} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{needs\PYGZus{}repacking} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

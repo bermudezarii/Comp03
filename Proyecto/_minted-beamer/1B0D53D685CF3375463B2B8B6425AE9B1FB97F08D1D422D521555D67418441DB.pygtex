@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dir\PYGZus{}iterator} \PYG{o}{=} \PYG{n}{dir\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}store} \PYG{o}{=} \PYG{n}{ref\PYGZus{}store} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{ref\PYGZus{}update\PYGZus{}reject\PYGZus{}duplicates} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{string\PYGZus{}list} \PYG{o}{*} \PYG{n}{refnames} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nr} \PYG{p}{;}
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{items} \PYG{p}{[} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{,} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{items} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

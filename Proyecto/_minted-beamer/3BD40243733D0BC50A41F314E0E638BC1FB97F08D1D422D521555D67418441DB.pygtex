@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ooid} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{last\PYGZus{}kept\PYGZus{}oid} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{o}{*} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{should\PYGZus{}prune\PYGZus{}fn} \PYG{p}{)} \PYG{p}{(} \PYG{n}{ooid} \PYG{p}{,} \PYG{n}{noid} \PYG{p}{,} \PYG{n}{email} \PYG{p}{,} \PYG{n}{timestamp} \PYG{p}{,} \PYG{n}{tz} \PYG{p}{,}
+\PYG{n}{message} \PYG{p}{,} \PYG{n}{policy\PYGZus{}cb} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{newlog} \PYG{p}{)}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}would prune \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{message} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{EXPIRE\PYGZus{}REFLOGS\PYGZus{}VERBOSE} \PYG{p}{)}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}prune \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{message} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{newlog} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+cm}{/*Pruebas/error.c:2098:45 syntax error, unexpected IDENTIFIER*/}
+\PYG{c+cm}{/*Pruebas/error.c:2098:58 syntax error, unexpected LITERAL*/}
+\PYG{c+cm}{/*Pruebas/error.c:2098:60 syntax error, unexpected COMMA*/}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{cb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{newlog} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s \PYGZpc{}s \PYGZpc{}s \PYGZpc{}\PYGZdq{}} \PYG{n}{PRItime} \PYG{l+s}{\PYGZdq{} \PYGZpc{}+05d}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\end{Verbatim}

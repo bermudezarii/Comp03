@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{loose} \PYG{o}{=} \PYG{n}{create\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{loose\PYGZus{}fill\PYGZus{}ref\PYGZus{}dir} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{loose} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{root} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flag} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}} \PYG{n}{REF\PYGZus{}INCOMPLETE} \PYG{p}{;}
+\PYG{n}{add\PYGZus{}entry\PYGZus{}to\PYGZus{}dir} \PYG{p}{(} \PYG{n}{get\PYGZus{}ref\PYGZus{}dir} \PYG{p}{(} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{loose} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{root} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{create\PYGZus{}dir\PYGZus{}entry} \PYG{p}{(} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{loose} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/\PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{5} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{loose} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}entry} \PYG{o}{*} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{find\PYGZus{}ref\PYGZus{}entry} \PYG{p}{(} \PYG{n}{get\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{resolve\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\end{Verbatim}

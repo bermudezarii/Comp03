@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{ref\PYGZus{}file} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{last\PYGZus{}errno} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{mustexist} \PYG{o}{=} \PYG{p}{(} \PYG{n}{old\PYGZus{}sha1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{is\PYGZus{}null\PYGZus{}sha1} \PYG{p}{(} \PYG{n}{old\PYGZus{}sha1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{resolve\PYGZus{}flags} \PYG{o}{=} \PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}NO\PYGZus{}RECURSE} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{resolved} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}lock\PYGZus{}ref\PYGZus{}sha1\PYGZus{}basic\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{lock} \PYG{o}{=} \PYG{n}{xcalloc} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{mustexist} \PYG{p}{)}
+\PYG{n}{resolve\PYGZus{}flags} \PYG{o}{|=} \PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}READING} \PYG{p}{;}
+\end{Verbatim}

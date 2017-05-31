@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refname\PYGZus{}is\PYGZus{}safe} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}loose refname is dangerous: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{oidclr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{flag} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}BAD\PYGZus{}NAME} \PYG{o}{|} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{add\PYGZus{}entry\PYGZus{}to\PYGZus{}dir} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{,}
+\PYG{n}{create\PYGZus{}ref\PYGZus{}entry} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{,} \PYG{n}{flag} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}setlen} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{dirnamelen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}setlen} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{,} \PYG{n}{path\PYGZus{}baselen} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

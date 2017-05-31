@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{item} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{util} \PYG{o}{=} \PYG{n}{update} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{string\PYGZus{}list\PYGZus{}sort} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ref\PYGZus{}update\PYGZus{}reject\PYGZus{}duplicates} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{TRANSACTION\PYGZus{}GENERIC\PYGZus{}ERROR} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{cleanup} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{head\PYGZus{}ref} \PYG{o}{=} \PYG{n}{refs\PYGZus{}resolve\PYGZus{}refdup} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}HEAD\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{RESOLVE\PYGZus{}REF\PYGZus{}NO\PYGZus{}RECURSE} \PYG{p}{,}
+\PYG{n}{head\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{head\PYGZus{}type} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{head\PYGZus{}ref} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{p}{(} \PYG{n}{head\PYGZus{}type} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{head\PYGZus{}ref} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{head\PYGZus{}ref} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to commit packed\PYGZhy{}refs file: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{TRANSACTION\PYGZus{}GENERIC\PYGZus{}ERROR} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{cleanup} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nl}{cleanup} \PYG{p}{:}
+\PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{state} \PYG{o}{=} \PYG{n}{REF\PYGZus{}TRANSACTION\PYGZus{}CLOSED} \PYG{p}{;}
+\PYG{n}{string\PYGZus{}list\PYGZus{}clear} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{expire\PYGZus{}reflog\PYGZus{}cb} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

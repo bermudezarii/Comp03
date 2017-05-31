@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{caller} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{store\PYGZus{}flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}MAIN} \PYG{p}{)}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: operation \PYGZpc{}s only allowed for main ref store\PYGZdq{}} \PYG{p}{,} \PYG{n}{caller} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{required\PYGZus{}flags} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{caller} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{be} \PYG{o}{!=} \PYG{o}{\PYGZam{}} \PYG{n}{refs\PYGZus{}be\PYGZus{}files} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: ref\PYGZus{}store is type }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{ not }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{files}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{ in \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\end{Verbatim}

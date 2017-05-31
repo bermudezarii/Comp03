@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{break} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}setlen} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{q} \PYG{o}{\PYGZhy{}} \PYG{n}{buf} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REF} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{rmdir} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{flags} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}} \PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REF} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REFLOG} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{rmdir} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{flags} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}} \PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REFLOG} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

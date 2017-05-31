@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}WRITE} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}create\PYGZus{}reflog\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{fd} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{log\PYGZus{}ref\PYGZus{}setup} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{force\PYGZus{}create} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{fd} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{fd} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{n}{close} \PYG{p}{(} \PYG{n}{fd} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{log\PYGZus{}ref\PYGZus{}write\PYGZus{}fd} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{fd} \PYG{p}{,} \PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{new\PYGZus{}oid} \PYG{p}{,}
+\end{Verbatim}

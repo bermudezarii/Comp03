@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{out} \PYG{p}{)}
+\PYG{n}{die\PYGZus{}errno} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to fdopen packed\PYGZhy{}refs descriptor\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf\PYGZus{}or\PYGZus{}die} \PYG{p}{(} \PYG{n}{out} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{PACKED\PYGZus{}REFS\PYGZus{}HEADER} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{=} \PYG{n}{cache\PYGZus{}ref\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{ok} \PYG{o}{=} \PYG{n}{ref\PYGZus{}iterator\PYGZus{}advance} \PYG{p}{(} \PYG{n}{iter} \PYG{p}{)} \PYG{p}{)} \PYG{o}{==} \PYG{n}{ITER\PYGZus{}OK} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{peeled} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{peel\PYGZus{}error} \PYG{o}{=} \PYG{n}{ref\PYGZus{}iterator\PYGZus{}peel} \PYG{p}{(} \PYG{n}{iter} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{peeled} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{write\PYGZus{}packed\PYGZus{}entry} \PYG{p}{(} \PYG{n}{out} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{hash} \PYG{p}{,}
+\PYG{n}{peel\PYGZus{}error} \PYG{o}{?} \PYG{n+nb}{NULL} \PYG{o}{:} \PYG{n}{peeled} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ok} \PYG{o}{!=} \PYG{n}{ITER\PYGZus{}DONE} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}error while iterating over references\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

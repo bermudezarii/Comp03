@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{remaining\PYGZus{}retries} \PYG{o}{=} \PYG{l+m+mi}{3} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{type} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}path} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{path} \PYG{o}{=} \PYG{n}{sb\PYGZus{}path} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{;}
+\PYG{n+nl}{stat\PYGZus{}ref} \PYG{p}{:}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{remaining\PYGZus{}retries} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{lstat} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{st} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{!=} \PYG{n}{ENOENT} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{resolve\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{,} \PYG{n}{type} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{ENOENT} \PYG{p}{;}
+\end{Verbatim}

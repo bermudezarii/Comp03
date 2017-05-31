@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{logmsg} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}commit\PYGZus{}ref\PYGZus{}update\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{clear\PYGZus{}loose\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{files\PYGZus{}log\PYGZus{}ref\PYGZus{}write} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{,}
+\PYG{o}{\PYGZam{}} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,} \PYG{n}{oid} \PYG{p}{,}
+\PYG{n}{logmsg} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{old\PYGZus{}msg} \PYG{o}{=} \PYG{n}{strbuf\PYGZus{}detach} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cannot update the ref \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{,} \PYG{n}{old\PYGZus{}msg} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{old\PYGZus{}msg} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

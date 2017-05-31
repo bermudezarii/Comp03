@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{store\PYGZus{}flags}
+\PYG{c+cm}{/*Pruebas/error.c:25:4 syntax error, unexpected CHAR*/}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{gitdir} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{gitcommondir} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs\PYGZus{}path} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{loose} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:30:1 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{lock\PYGZus{}file} \PYG{n}{packlock} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n+nf}{acquire\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{packed\PYGZus{}refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{referrers} \PYG{o}{++} \PYG{p}{;}
+\end{Verbatim}

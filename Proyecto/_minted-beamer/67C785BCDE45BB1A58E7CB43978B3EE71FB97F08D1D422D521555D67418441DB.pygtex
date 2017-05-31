@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nl}{out} \PYG{p}{:}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}newref} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}oldref} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{tmp\PYGZus{}renamed\PYGZus{}log} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{close\PYGZus{}ref} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{close\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{commit\PYGZus{}ref} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{)}
+\end{Verbatim}

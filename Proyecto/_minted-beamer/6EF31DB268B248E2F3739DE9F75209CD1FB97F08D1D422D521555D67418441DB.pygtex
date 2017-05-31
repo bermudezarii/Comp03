@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs\PYGZus{}file} \PYG{o}{=} \PYG{n}{files\PYGZus{}packed\PYGZus{}refs\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{n}{stat\PYGZus{}validity\PYGZus{}check} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{validity} \PYG{p}{,} \PYG{n}{packed\PYGZus{}refs\PYGZus{}file} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{clear\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{f} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{o}{=} \PYG{n}{xcalloc} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{acquire\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{o}{=} \PYG{n}{create\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{root} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flag} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}} \PYG{n}{REF\PYGZus{}INCOMPLETE} \PYG{p}{;}
+\end{Verbatim}

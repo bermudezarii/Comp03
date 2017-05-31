@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{save\PYGZus{}errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{write\PYGZus{}ref\PYGZus{}to\PYGZus{}lockfile} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{static} \PYG{k+kt}{char} \PYG{n}{term} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{object} \PYG{o}{*} \PYG{n}{o} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{fd} \PYG{p}{;}
+\PYG{n}{o} \PYG{o}{=} \PYG{n}{parse\PYGZus{}object} \PYG{p}{(} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

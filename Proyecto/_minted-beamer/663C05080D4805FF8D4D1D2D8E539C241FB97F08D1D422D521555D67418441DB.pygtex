@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{S\PYGZus{}ISREG} \PYG{p}{(} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{st} \PYG{p}{.} \PYG{n}{st\PYGZus{}mode} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{basename} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}.\PYGZsq{}} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ends\PYGZus{}with} \PYG{p}{(} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{basename} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}.lock\PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refs\PYGZus{}read\PYGZus{}ref\PYGZus{}full} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{relative\PYGZus{}path} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{flags} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}bad ref for \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{path} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

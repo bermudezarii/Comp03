@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{ref\PYGZus{}name} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{lock\PYGZus{}file} \PYG{o}{*} \PYG{n}{lk}
+\PYG{c+cm}{/*Pruebas/error.c:4:6 syntax error, unexpected STRUCT*/}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{old\PYGZus{}oid} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:5:1 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{ref\PYGZus{}resolves\PYGZus{}to\PYGZus{}object} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{)}
+\end{Verbatim}

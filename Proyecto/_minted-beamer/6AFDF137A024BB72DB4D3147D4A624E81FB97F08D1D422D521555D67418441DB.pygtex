@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{ref\PYGZus{}name} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{lock\PYGZus{}file} \PYG{o}{*} \PYG{n}{lk}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{old\PYGZus{}oid} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{ref\PYGZus{}resolves\PYGZus{}to\PYGZus{}object} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{has\PYGZus{}sha1\PYGZus{}file} \PYG{p}{(} \PYG{n}{oid} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{hash} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

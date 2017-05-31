@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{is\PYGZus{}null\PYGZus{}oid} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{refs\PYGZus{}verify\PYGZus{}refname\PYGZus{}available} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{extras} \PYG{p}{,} \PYG{n}{skip} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{last\PYGZus{}errno} \PYG{o}{=} \PYG{n}{ENOTDIR} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{error\PYGZus{}return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{o}{=} \PYG{n}{xcalloc} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{lock\PYGZus{}file} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{o}{=} \PYG{n}{xstrdup} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{raceproof\PYGZus{}create\PYGZus{}file} \PYG{p}{(} \PYG{n}{ref\PYGZus{}file} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{create\PYGZus{}reflock} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{last\PYGZus{}errno} \PYG{o}{=} \PYG{n}{errno} \PYG{p}{;}
+\PYG{n}{unable\PYGZus{}to\PYGZus{}lock\PYGZus{}message} \PYG{p}{(} \PYG{n}{ref\PYGZus{}file} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{errno} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{error\PYGZus{}return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

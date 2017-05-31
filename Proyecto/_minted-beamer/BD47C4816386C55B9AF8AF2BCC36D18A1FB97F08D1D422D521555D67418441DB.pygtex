@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{len} \PYG{o}{+=} \PYG{n}{copy\PYGZus{}reflog\PYGZus{}msg} \PYG{p}{(} \PYG{n}{logrec} \PYG{o}{+} \PYG{n}{len} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{msg} \PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{written} \PYG{o}{=} \PYG{n}{len} \PYG{o}{\PYGZlt{}=} \PYG{n}{maxlen} \PYG{o}{?} \PYG{n}{write\PYGZus{}in\PYGZus{}full} \PYG{p}{(} \PYG{n}{fd} \PYG{p}{,} \PYG{n}{logrec} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{o}{:} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{logrec} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{written} \PYG{o}{!=} \PYG{n}{len} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}log\PYGZus{}ref\PYGZus{}write} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,} \PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{new\PYGZus{}oid} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{msg} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{logfd} \PYG{p}{,} \PYG{n}{result} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{force\PYGZus{}create} \PYG{o}{||} \PYG{n}{should\PYGZus{}autocreate\PYGZus{}reflog} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{raceproof\PYGZus{}create\PYGZus{}file} \PYG{p}{(} \PYG{n}{logfile} \PYG{p}{,} \PYG{n}{open\PYGZus{}or\PYGZus{}create\PYGZus{}logfile} \PYG{p}{,} \PYG{n}{logfd} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{==} \PYG{n}{ENOENT} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to create directory for \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZdq{}}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{logfile} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{==} \PYG{n}{EISDIR} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}there are still logs under \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{logfile} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to append to \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{logfile} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{error} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

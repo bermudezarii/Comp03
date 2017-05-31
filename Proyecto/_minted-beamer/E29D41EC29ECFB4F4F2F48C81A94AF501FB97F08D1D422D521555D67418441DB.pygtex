@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{packed} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{for\PYGZus{}each\PYGZus{}string\PYGZus{}list\PYGZus{}item} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{refnames} \PYG{p}{)}
+\PYG{c+cm}{/*Pruebas/error.c:984:2 syntax error, unexpected IF*/}
+\PYG{c+cm}{/*Pruebas/error.c:984:60 syntax error, unexpected NE\PYGZus{}OP*/}
+\PYG{c+cm}{/*Pruebas/error.c:984:62 syntax error, unexpected MINUS*/}
+\PYG{c+cm}{/*Pruebas/error.c:984:64 syntax error, unexpected INTEGER*/}
+\PYG{c+cm}{/*Pruebas/error.c:984:66 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{remove\PYGZus{}entry\PYGZus{}from\PYGZus{}dir} \PYG{p}{(} \PYG{n}{packed} \PYG{p}{,} \PYG{n}{refname} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{string} \PYG{p}{)} \PYG{o}{!=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)}
+\PYG{n}{removed} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:986:2 syntax error, unexpected IF*/}
+\PYG{c+cm}{/*Pruebas/error.c:986:6 syntax error, unexpected EXCLAMATION*/}
+\PYG{c+cm}{/*Pruebas/error.c:986:16 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{removed} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

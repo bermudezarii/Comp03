@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{add\PYGZus{}ref\PYGZus{}entry} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{,} \PYG{n}{last} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{last} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{line} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZca{}\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{line} \PYG{p}{.} \PYG{n}{len} \PYG{o}{==} \PYG{l+m+mi}{42} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{line} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{42} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{n}{get\PYGZus{}oid\PYGZus{}hex} \PYG{p}{(} \PYG{n}{line} \PYG{p}{.} \PYG{n}{buf} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{oidcpy} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{last} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{u} \PYG{p}{.} \PYG{n}{value} \PYG{p}{.} \PYG{n}{peeled} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{last} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flag} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}KNOWS\PYGZus{}PEELED} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{line} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

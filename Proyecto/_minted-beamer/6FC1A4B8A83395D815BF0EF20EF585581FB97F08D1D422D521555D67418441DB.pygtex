@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{stat} \PYG{n}{loginfo} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb\PYGZus{}oldref} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb\PYGZus{}newref} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{tmp\PYGZus{}renamed\PYGZus{}log} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{log} \PYG{p}{,} \PYG{n}{ret} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{err} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}oldref} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}newref} \PYG{p}{,} \PYG{n}{newrefname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{tmp\PYGZus{}renamed\PYGZus{}log} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/.tmp\PYGZhy{}renamed\PYGZhy{}log\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{log} \PYG{o}{=} \PYG{o}{!} \PYG{n}{lstat} \PYG{p}{(} \PYG{n}{sb\PYGZus{}oldref} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{loginfo} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{log} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{S\PYGZus{}ISLNK} \PYG{p}{(} \PYG{n}{loginfo} \PYG{p}{.} \PYG{n}{st\PYGZus{}mode} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}reflog for \PYGZpc{}s is a symlink\PYGZdq{}} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

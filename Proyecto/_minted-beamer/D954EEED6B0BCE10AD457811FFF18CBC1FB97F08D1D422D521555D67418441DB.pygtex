@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{resolved} \PYG{o}{=} \PYG{o}{!} \PYG{o}{!} \PYG{n}{refs\PYGZus{}resolve\PYGZus{}ref\PYGZus{}unsafe} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,}
+\PYG{n}{refname} \PYG{p}{,} \PYG{n}{resolve\PYGZus{}flags} \PYG{p}{,}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{n}{type} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{resolved} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{last\PYGZus{}errno} \PYG{o}{=} \PYG{n}{errno} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{last\PYGZus{}errno} \PYG{o}{!=} \PYG{n}{ENOTDIR} \PYG{o}{||}
+\PYG{o}{!} \PYG{n}{refs\PYGZus{}verify\PYGZus{}refname\PYGZus{}available} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{extras} \PYG{p}{,} \PYG{n}{skip} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to resolve reference \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{refname} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{last\PYGZus{}errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{error\PYGZus{}return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

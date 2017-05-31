@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{err} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{result} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nr} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{repack\PYGZus{}without\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refnames} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{result} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nr} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)}
+\PYG{n}{error} \PYG{p}{(} \PYG{n}{\PYGZus{}} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}could not delete reference \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{refnames} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{items} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{error} \PYG{p}{(} \PYG{n}{\PYGZus{}} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}could not delete references: \PYGZpc{}s\PYGZdq{}} \PYG{p}{)} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

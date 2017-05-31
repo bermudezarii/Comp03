@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}initial\PYGZus{}transaction\PYGZus{}commit} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}transaction} \PYG{o}{*} \PYG{n}{transaction} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}WRITE} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}initial\PYGZus{}ref\PYGZus{}transaction\PYGZus{}commit\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{i} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{string\PYGZus{}list} \PYG{n}{affected\PYGZus{}refnames} \PYG{o}{=} \PYG{n}{STRING\PYGZus{}LIST\PYGZus{}INIT\PYGZus{}NODUP} \PYG{p}{;}
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{state} \PYG{o}{!=} \PYG{n}{REF\PYGZus{}TRANSACTION\PYGZus{}OPEN} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: commit called for transaction that is not open\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

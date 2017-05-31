@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{prune\PYGZus{}ref} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}to\PYGZus{}prune} \PYG{o}{*} \PYG{n}{r} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}transaction} \PYG{o}{*} \PYG{n}{transaction} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{err} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{check\PYGZus{}refname\PYGZus{}format} \PYG{p}{(} \PYG{n}{r} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{name} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{n}{transaction} \PYG{o}{=} \PYG{n}{ref\PYGZus{}store\PYGZus{}transaction\PYGZus{}begin} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{transaction} \PYG{o}{||}
+\PYG{n}{ref\PYGZus{}transaction\PYGZus{}delete} \PYG{p}{(} \PYG{n}{transaction} \PYG{p}{,} \PYG{n}{r} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{name} \PYG{p}{,} \PYG{n}{r} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{sha1} \PYG{p}{,}
+\PYG{n}{REF\PYGZus{}ISPRUNING} \PYG{o}{|} \PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{o}{||}
+\PYG{n}{ref\PYGZus{}transaction\PYGZus{}commit} \PYG{p}{(} \PYG{n}{transaction} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ref\PYGZus{}transaction\PYGZus{}free} \PYG{p}{(} \PYG{n}{transaction} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

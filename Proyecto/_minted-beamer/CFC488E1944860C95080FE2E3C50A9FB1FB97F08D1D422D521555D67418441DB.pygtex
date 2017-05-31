@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{peel\PYGZus{}object} \PYG{p}{(} \PYG{n}{base} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{n}{base} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter0} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{files\PYGZus{}ref\PYGZus{}iterator\PYGZus{}advance} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{o}{=}
+\PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator} \PYG{o}{*} \PYG{p}{)} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\end{Verbatim}

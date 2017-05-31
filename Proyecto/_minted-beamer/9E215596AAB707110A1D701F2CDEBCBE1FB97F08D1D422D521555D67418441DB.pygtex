@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{head\PYGZus{}ref} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{string\PYGZus{}list} \PYG{o}{*} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{string\PYGZus{}list\PYGZus{}item} \PYG{o}{*} \PYG{n}{item} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}update} \PYG{o}{*} \PYG{n}{new\PYGZus{}update} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}LOG\PYGZus{}ONLY} \PYG{p}{)} \PYG{o}{||}
+\PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISPRUNING} \PYG{p}{)} \PYG{o}{||}
+\PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}UPDATE\PYGZus{}VIA\PYGZus{}HEAD} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{head\PYGZus{}ref} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{item} \PYG{o}{=} \PYG{n}{string\PYGZus{}list\PYGZus{}insert} \PYG{p}{(} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}HEAD\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s/logs/\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{gitdir} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{REF\PYGZus{}TYPE\PYGZus{}NORMAL} \PYG{p}{:}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s/logs/\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{gitcommondir} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{default} \PYG{o}{:}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: unknown ref type \PYGZpc{}d of ref \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{ref\PYGZus{}type} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{files\PYGZus{}ref\PYGZus{}path} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{)}
+\end{Verbatim}

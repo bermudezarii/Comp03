@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to write current sha1 into \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{log\PYGZus{}all\PYGZus{}ref\PYGZus{}updates} \PYG{o}{=} \PYG{n}{flag} \PYG{p}{;}
+\PYG{n+nl}{rollbacklog} \PYG{p}{:}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{logmoved} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{rename} \PYG{p}{(} \PYG{n}{sb\PYGZus{}newref} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{sb\PYGZus{}oldref} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to restore logfile \PYGZpc{}s from \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{oldrefname} \PYG{p}{,} \PYG{n}{newrefname} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{logmoved} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{log} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{rename} \PYG{p}{(} \PYG{n}{tmp\PYGZus{}renamed\PYGZus{}log} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{sb\PYGZus{}oldref} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to restore logfile \PYGZpc{}s from logs/\PYGZdq{}} \PYG{l+s}{\PYGZdq{}refs/.tmp\PYGZhy{}renamed\PYGZhy{}log\PYGZdq{}} \PYG{l+s}{\PYGZdq{}: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{oldrefname} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\end{Verbatim}

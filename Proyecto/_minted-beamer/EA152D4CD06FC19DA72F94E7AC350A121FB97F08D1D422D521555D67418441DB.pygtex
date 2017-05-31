@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{.} \PYG{n}{refname} \PYG{o}{=} \PYG{n}{diter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{relative\PYGZus{}path} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{.} \PYG{n}{oid} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{.} \PYG{n}{flags} \PYG{o}{=} \PYG{n}{flags} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ITER\PYGZus{}OK} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dir\PYGZus{}iterator} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ref\PYGZus{}iterator\PYGZus{}abort} \PYG{p}{(} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{)} \PYG{o}{==} \PYG{n}{ITER\PYGZus{}ERROR} \PYG{p}{)}
+\PYG{n}{ok} \PYG{o}{=} \PYG{n}{ITER\PYGZus{}ERROR} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ok} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}reflog\PYGZus{}iterator\PYGZus{}peel} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{peeled} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZam{}} \PYG{n}{logfd} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{result} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{result} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{logfd} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{log\PYGZus{}ref\PYGZus{}write\PYGZus{}fd} \PYG{p}{(} \PYG{n}{logfd} \PYG{p}{,} \PYG{n}{old\PYGZus{}oid} \PYG{p}{,} \PYG{n}{new\PYGZus{}oid} \PYG{p}{,}
+\PYG{n}{git\PYGZus{}committer\PYGZus{}info} \PYG{p}{(} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{,} \PYG{n}{msg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{result} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{save\PYGZus{}errno} \PYG{o}{=} \PYG{n}{errno} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}unable to append to \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{save\PYGZus{}errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

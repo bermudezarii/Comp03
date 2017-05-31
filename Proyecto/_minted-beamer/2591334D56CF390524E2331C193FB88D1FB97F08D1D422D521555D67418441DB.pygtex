@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{refname} \PYG{o}{=} \PYG{n}{parse\PYGZus{}ref\PYGZus{}line} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{line} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{flag} \PYG{o}{=} \PYG{n}{REF\PYGZus{}ISPACKED} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{check\PYGZus{}refname\PYGZus{}format} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{REFNAME\PYGZus{}ALLOW\PYGZus{}ONELEVEL} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refname\PYGZus{}is\PYGZus{}safe} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}packed refname is dangerous: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{oidclr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{flag} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}BAD\PYGZus{}NAME} \PYG{o}{|} \PYG{n}{REF\PYGZus{}ISBROKEN} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{last} \PYG{o}{=} \PYG{n}{create\PYGZus{}ref\PYGZus{}entry} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{,} \PYG{n}{flag} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{peeled} \PYG{o}{==} \PYG{n}{PEELED\PYGZus{}FULLY} \PYG{o}{||}
+\PYG{p}{(} \PYG{n}{peeled} \PYG{o}{==} \PYG{n}{PEELED\PYGZus{}TAGS} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{starts\PYGZus{}with} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/tags/\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{last} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flag} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}KNOWS\PYGZus{}PEELED} \PYG{p}{;}
+\end{Verbatim}

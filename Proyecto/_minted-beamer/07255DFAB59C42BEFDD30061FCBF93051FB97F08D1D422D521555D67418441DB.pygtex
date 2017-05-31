@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{gitcommondir} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs\PYGZus{}path} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{loose} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{lock\PYGZus{}file} \PYG{n}{packlock} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n+nf}{acquire\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{packed\PYGZus{}refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{referrers} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{release\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs} \PYG{p}{)}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{n}{packed\PYGZus{}refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{referrers} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{free\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{packed\PYGZus{}refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{stat\PYGZus{}validity\PYGZus{}clear} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{packed\PYGZus{}refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{validity} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

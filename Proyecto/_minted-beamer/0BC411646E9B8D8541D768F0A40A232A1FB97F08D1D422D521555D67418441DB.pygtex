@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{expire\PYGZus{}reflog\PYGZus{}cb} \PYG{n}{cb} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{log\PYGZus{}file\PYGZus{}sb} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{log\PYGZus{}file} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{status} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{err} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{oid} \PYG{p}{;}
+\PYG{n}{memset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{cb} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{n}{cb} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{cb} \PYG{p}{.} \PYG{n}{flags} \PYG{o}{=} \PYG{n}{flags} \PYG{p}{;}
+\PYG{n}{cb} \PYG{p}{.} \PYG{n}{policy\PYGZus{}cb} \PYG{o}{=} \PYG{n}{policy\PYGZus{}cb\PYGZus{}data} \PYG{p}{;}
+\PYG{n}{cb} \PYG{p}{.} \PYG{n}{should\PYGZus{}prune\PYGZus{}fn} \PYG{o}{=} \PYG{n}{should\PYGZus{}prune\PYGZus{}fn} \PYG{p}{;}
+\PYG{n}{lock} \PYG{o}{=} \PYG{n}{lock\PYGZus{}ref\PYGZus{}sha1\PYGZus{}basic} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{,}
+\end{Verbatim}

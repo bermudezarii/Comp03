@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}lock\PYGZus{}packed\PYGZus{}refs\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{timeout\PYGZus{}configured} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{git\PYGZus{}config\PYGZus{}get\PYGZus{}int} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}core.packedrefstimeout\PYGZdq{}} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{timeout\PYGZus{}value} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{timeout\PYGZus{}configured} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{hold\PYGZus{}lock\PYGZus{}file\PYGZus{}for\PYGZus{}update\PYGZus{}timeout} \PYG{p}{(}
+\PYG{o}{\PYGZam{}} \PYG{n}{packlock} \PYG{p}{,} \PYG{n}{files\PYGZus{}packed\PYGZus{}refs\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{flags} \PYG{p}{,} \PYG{n}{timeout\PYGZus{}value} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{packlock} \PYG{p}{;}
+\PYG{n}{acquire\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\end{Verbatim}

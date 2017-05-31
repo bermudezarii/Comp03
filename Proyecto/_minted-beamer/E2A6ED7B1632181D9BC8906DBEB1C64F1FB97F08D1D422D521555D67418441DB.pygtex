@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{check\PYGZus{}old\PYGZus{}oid} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}update} \PYG{o}{*} \PYG{n}{update} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}HAVE\PYGZus{}OLD} \PYG{p}{)} \PYG{o}{||}
+\PYG{o}{!} \PYG{n}{oidcmp} \PYG{p}{(} \PYG{n}{oid} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{is\PYGZus{}null\PYGZus{}oid} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cannot lock ref \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZdq{}}
+\PYG{l+s}{\PYGZdq{}reference already exists\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{original\PYGZus{}update\PYGZus{}refname} \PYG{p}{(} \PYG{n}{update} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{is\PYGZus{}null\PYGZus{}oid} \PYG{p}{(} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cannot lock ref \PYGZsq{}\PYGZpc{}s\PYGZsq{}: \PYGZdq{}}
+\end{Verbatim}

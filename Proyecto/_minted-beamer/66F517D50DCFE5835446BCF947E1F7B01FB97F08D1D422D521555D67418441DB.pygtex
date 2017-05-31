@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{ref\PYGZus{}file} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}peel\PYGZus{}ref} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{sha1} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}READ} \PYG{o}{|} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}ODB} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}peel\PYGZus{}ref\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{flag} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{base} \PYG{p}{[} \PYG{l+m+mi}{20} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{current\PYGZus{}ref\PYGZus{}iter} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{current\PYGZus{}ref\PYGZus{}iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{o}{==} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{peeled} \PYG{p}{;}
+\end{Verbatim}

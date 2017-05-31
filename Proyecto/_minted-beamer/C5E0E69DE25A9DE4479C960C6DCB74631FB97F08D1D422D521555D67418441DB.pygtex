@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{files\PYGZus{}for\PYGZus{}each\PYGZus{}reflog\PYGZus{}ent} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}for\PYGZus{}each\PYGZus{}reflog\PYGZus{}ent\PYGZus{}reverse} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}exists} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}create\PYGZus{}reflog} \PYG{p}{,}
+\PYG{n}{files\PYGZus{}delete\PYGZus{}reflog} \PYG{p}{,}
+\PYG{c+cm}{/*Pruebas/error.c:2228:19 syntax error, unexpected \PYGZdl{}end*/}
+\end{Verbatim}

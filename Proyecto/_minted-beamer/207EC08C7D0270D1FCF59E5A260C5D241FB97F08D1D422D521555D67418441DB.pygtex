@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{o}{=}
+\PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}iterator} \PYG{o}{*} \PYG{p}{)} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{ok} \PYG{o}{=} \PYG{n}{ref\PYGZus{}iterator\PYGZus{}advance} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{p}{)} \PYG{p}{)} \PYG{o}{==} \PYG{n}{ITER\PYGZus{}OK} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{DO\PYGZus{}FOR\PYGZus{}EACH\PYGZus{}PER\PYGZus{}WORKTREE\PYGZus{}ONLY} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{ref\PYGZus{}type} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{)} \PYG{o}{!=} \PYG{n}{REF\PYGZus{}TYPE\PYGZus{}PER\PYGZus{}WORKTREE} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{DO\PYGZus{}FOR\PYGZus{}EACH\PYGZus{}INCLUDE\PYGZus{}BROKEN} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{n}{ref\PYGZus{}resolves\PYGZus{}to\PYGZus{}object} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{p}{,}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\end{Verbatim}

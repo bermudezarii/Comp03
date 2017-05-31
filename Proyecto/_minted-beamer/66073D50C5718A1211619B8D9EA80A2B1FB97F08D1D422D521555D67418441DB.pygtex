@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}internal error: packed\PYGZhy{}refs not locked\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{rollback\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{release\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{clear\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}to\PYGZus{}prune} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}to\PYGZus{}prune} \PYG{o}{*} \PYG{n}{next} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{sha1} \PYG{p}{[} \PYG{l+m+mi}{20} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{name} \PYG{p}{[} \PYG{n}{FLEX\PYGZus{}ARRAY} \PYG{p}{]} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{enum} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

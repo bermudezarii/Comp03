@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{d} \PYG{o}{=} \PYG{n}{opendir} \PYG{p}{(} \PYG{n}{path} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{d} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}init} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{dirnamelen} \PYG{o}{+} \PYG{l+m+mi}{257} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}add} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{dirname} \PYG{p}{,} \PYG{n}{dirnamelen} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{p}{(} \PYG{n}{de} \PYG{o}{=} \PYG{n}{readdir} \PYG{p}{(} \PYG{n}{d} \PYG{p}{)} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{oid} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{stat} \PYG{n}{st} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{flag} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{de} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{d\PYGZus{}name} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}.\PYGZsq{}} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\end{Verbatim}

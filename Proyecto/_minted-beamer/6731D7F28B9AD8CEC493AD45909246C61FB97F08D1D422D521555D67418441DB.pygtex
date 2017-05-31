@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}READ} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}read\PYGZus{}raw\PYGZus{}ref\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb\PYGZus{}contents} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb\PYGZus{}path} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{stat} \PYG{n}{st} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{fd} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ret} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{save\PYGZus{}errno} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{remaining\PYGZus{}retries} \PYG{o}{=} \PYG{l+m+mi}{3} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{type} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}path} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

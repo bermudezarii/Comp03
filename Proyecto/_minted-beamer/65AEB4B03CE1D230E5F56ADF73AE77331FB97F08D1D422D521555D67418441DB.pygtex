@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lock} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{packlock} \PYG{p}{;}
+\PYG{n}{acquire\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{commit\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{=}
+\PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{p}{,} \PYG{n}{error} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{save\PYGZus{}errno} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{out} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{p}{;}
+\PYG{n}{files\PYGZus{}assert\PYGZus{}main\PYGZus{}repository} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}commit\PYGZus{}packed\PYGZus{}refs\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

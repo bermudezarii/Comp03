@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{p}{(} \PYG{n}{write\PYGZus{}in\PYGZus{}full} \PYG{p}{(} \PYG{n}{get\PYGZus{}lock\PYGZus{}file\PYGZus{}fd} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{cb} \PYG{p}{.} \PYG{n}{last\PYGZus{}kept\PYGZus{}oid} \PYG{p}{)} \PYG{p}{,} \PYG{n}{GIT\PYGZus{}SHA1\PYGZus{}HEXSZ} \PYG{p}{)} \PYG{o}{!=} \PYG{n}{GIT\PYGZus{}SHA1\PYGZus{}HEXSZ} \PYG{o}{||}
+\PYG{n}{write\PYGZus{}str\PYGZus{}in\PYGZus{}full} \PYG{p}{(} \PYG{n}{get\PYGZus{}lock\PYGZus{}file\PYGZus{}fd} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{1} \PYG{o}{||}
+\PYG{n}{close\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{status} \PYG{o}{|=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}couldn\PYGZsq{}t write \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{get\PYGZus{}lock\PYGZus{}file\PYGZus{}path} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lk} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{rollback\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{reflog\PYGZus{}lock} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{reflog\PYGZus{}lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{status} \PYG{o}{|=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to write reflog \PYGZsq{}\PYGZpc{}s\PYGZsq{} (\PYGZpc{}s)\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{log\PYGZus{}file} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{commit\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{status} \PYG{o}{|=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}couldn\PYGZsq{}t set \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

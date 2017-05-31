@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ends\PYGZus{}with} \PYG{p}{(} \PYG{n}{de} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{d\PYGZus{}name} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}.lock\PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addstr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{de} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{d\PYGZus{}name} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addstr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{,} \PYG{n}{de} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{d\PYGZus{}name} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{stat} \PYG{p}{(} \PYG{n}{path} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{st} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{S\PYGZus{}ISDIR} \PYG{p}{(} \PYG{n}{st} \PYG{p}{.} \PYG{n}{st\PYGZus{}mode} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addch} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refname} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{add\PYGZus{}entry\PYGZus{}to\PYGZus{}dir} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{,}
+\PYG{n}{create\PYGZus{}dir\PYGZus{}entry} \PYG{p}{(} \PYG{n}{dir} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,}
+\PYG{n}{refname} \PYG{p}{.} \PYG{n}{len} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{refs\PYGZus{}resolve\PYGZus{}ref\PYGZus{}unsafe} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{refs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{base} \PYG{p}{,}
+\end{Verbatim}

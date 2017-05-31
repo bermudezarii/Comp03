@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{o}{*} \PYG{n}{oid} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{cb\PYGZus{}data} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{string\PYGZus{}list} \PYG{o}{*} \PYG{n}{affected\PYGZus{}refnames} \PYG{o}{=} \PYG{n}{cb\PYGZus{}data} \PYG{p}{;}
+\PYG{k}{return} \PYG{n+nf}{string\PYGZus{}list\PYGZus{}has\PYGZus{}string} \PYG{p}{(} \PYG{n}{affected\PYGZus{}refnames} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}initial\PYGZus{}transaction\PYGZus{}commit} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}transaction} \PYG{o}{*} \PYG{n}{transaction} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}WRITE} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}initial\PYGZus{}ref\PYGZus{}transaction\PYGZus{}commit\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{i} \PYG{p}{;}
+\end{Verbatim}

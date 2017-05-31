@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
             fclose(tmpfile);
             fclose(tmpfile2); 
             fclose(archivoEntrada);
-            //remove("tmpfile.c");  
+            remove("tmpfile.c");  
         } // se acaba el if de archivoEntradaExiste
 
         

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{close} \PYG{p}{(} \PYG{n}{fd} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{save\PYGZus{}errno} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{close} \PYG{p}{(} \PYG{n}{fd} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}rtrim} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{buf} \PYG{o}{=} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{starts\PYGZus{}with} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}ref:\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{buf} \PYG{o}{+=} \PYG{l+m+mi}{4} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{isspace} \PYG{p}{(} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{buf} \PYG{o}{++} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{n}{referent} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addstr} \PYG{p}{(} \PYG{n}{referent} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

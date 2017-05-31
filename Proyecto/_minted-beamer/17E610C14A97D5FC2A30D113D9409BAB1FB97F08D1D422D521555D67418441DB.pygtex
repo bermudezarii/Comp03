@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{clear\PYGZus{}loose\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n+nl}{cleanup} \PYG{p}{:}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{state} \PYG{o}{=} \PYG{n}{REF\PYGZus{}TRANSACTION\PYGZus{}CLOSED} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:1995:3 syntax error, unexpected FOR*/}
+\PYG{c+cm}{/*Pruebas/error.c:1995:13 syntax error, unexpected SEMICOLON*/}
+\PYG{c+cm}{/*Pruebas/error.c:1995:17 syntax error, unexpected LESS*/}
+\PYG{c+cm}{/*Pruebas/error.c:1995:44 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nr} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}update} \PYG{o}{*} \PYG{n}{update} \PYG{o}{=} \PYG{n}{transaction} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{updates} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{o}{=} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{backend\PYGZus{}data} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)}
+\PYG{n}{unlock\PYGZus{}ref} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

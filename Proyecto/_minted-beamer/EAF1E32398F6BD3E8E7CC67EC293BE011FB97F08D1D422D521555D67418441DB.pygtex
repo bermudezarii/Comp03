@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{FLEX\PYGZus{}ALLOC\PYGZus{}STR} \PYG{p}{(} \PYG{n}{n} \PYG{p}{,} \PYG{n}{name} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hashcpy} \PYG{p}{(} \PYG{n}{n} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{sha1} \PYG{p}{,} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{oid} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{hash} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{n} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{next} \PYG{o}{=} \PYG{n}{refs\PYGZus{}to\PYGZus{}prune} \PYG{p}{;}
+\PYG{n}{refs\PYGZus{}to\PYGZus{}prune} \PYG{o}{=} \PYG{n}{n} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ok} \PYG{o}{!=} \PYG{n}{ITER\PYGZus{}DONE} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}error while iterating over references\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{commit\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{die\PYGZus{}errno} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to overwrite old ref\PYGZhy{}pack file\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{prune\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refs\PYGZus{}to\PYGZus{}prune} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REF} \PYG{o}{=} \PYG{l+m+mh}{0x01} \PYG{p}{,}
+\PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REFLOG} \PYG{o}{=} \PYG{l+m+mh}{0x02}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n+nf}{try\PYGZus{}remove\PYGZus{}empty\PYGZus{}parents} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{buf} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{sb} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{p} \PYG{p}{,} \PYG{o}{*} \PYG{n}{q} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addstr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{p} \PYG{o}{=} \PYG{n}{buf} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{prefix} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{acquire\PYGZus{}packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{packed\PYGZus{}iter} \PYG{o}{=} \PYG{n}{cache\PYGZus{}ref\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{(} \PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cache} \PYG{p}{,}
+\PYG{n}{prefix} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{iter0} \PYG{o}{=} \PYG{n}{overlay\PYGZus{}ref\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{(} \PYG{n}{loose\PYGZus{}iter} \PYG{p}{,} \PYG{n}{packed\PYGZus{}iter} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{=} \PYG{n}{flags} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ref\PYGZus{}iterator} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{verify\PYGZus{}lock} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{old\PYGZus{}sha1} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{mustexist} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{err} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

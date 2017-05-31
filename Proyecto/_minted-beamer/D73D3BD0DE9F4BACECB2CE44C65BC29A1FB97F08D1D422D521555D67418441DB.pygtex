@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{old\PYGZus{}sha1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{hashcmp} \PYG{p}{(} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{n}{old\PYGZus{}sha1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{err} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}ref \PYGZsq{}\PYGZpc{}s\PYGZsq{} is at \PYGZpc{}s but expected \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ref\PYGZus{}name} \PYG{p}{,}
+\PYG{n}{oid\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{lock} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{sha1\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{old\PYGZus{}sha1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{EBUSY} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{remove\PYGZus{}empty\PYGZus{}directories} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{path} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

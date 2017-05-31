@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{BUFSIZ} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{endp} \PYG{p}{,} \PYG{o}{*} \PYG{n}{scanp} \PYG{p}{;}
+\PYG{n}{cnt} \PYG{o}{=} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{n}{pos} \PYG{p}{)} \PYG{o}{?} \PYG{k}{sizeof} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{)} \PYG{o}{:} \PYG{n}{pos} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{fseek} \PYG{p}{(} \PYG{n}{logfp} \PYG{p}{,} \PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{n}{cnt} \PYG{p}{,} \PYG{n}{SEEK\PYGZus{}SET} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}cannot seek back reflog for \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{refname} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{nread} \PYG{o}{=} \PYG{n}{fread} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{cnt} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{logfp} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{nread} \PYG{o}{!=} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ret} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}cannot read \PYGZpc{}d bytes from reflog for \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{cnt} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\end{Verbatim}

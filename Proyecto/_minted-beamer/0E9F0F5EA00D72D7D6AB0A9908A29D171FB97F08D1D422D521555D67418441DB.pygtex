@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{log\PYGZus{}file} \PYG{o}{=} \PYG{n}{strbuf\PYGZus{}detach} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{log\PYGZus{}file\PYGZus{}sb} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{EXPIRE\PYGZus{}REFLOGS\PYGZus{}DRY\PYGZus{}RUN} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{hold\PYGZus{}lock\PYGZus{}file\PYGZus{}for\PYGZus{}update} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{reflog\PYGZus{}lock} \PYG{p}{,} \PYG{n}{log\PYGZus{}file} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{err} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{unable\PYGZus{}to\PYGZus{}lock\PYGZus{}message} \PYG{p}{(} \PYG{n}{log\PYGZus{}file} \PYG{p}{,} \PYG{n}{errno} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{failure} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{cb} \PYG{p}{.} \PYG{n}{newlog} \PYG{o}{=} \PYG{n}{fdopen\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{reflog\PYGZus{}lock} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}w\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{cb} \PYG{p}{.} \PYG{n}{newlog} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}cannot fdopen \PYGZpc{}s (\PYGZpc{}s)\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{get\PYGZus{}lock\PYGZus{}file\PYGZus{}path} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{reflog\PYGZus{}lock} \PYG{p}{)} \PYG{p}{,} \PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

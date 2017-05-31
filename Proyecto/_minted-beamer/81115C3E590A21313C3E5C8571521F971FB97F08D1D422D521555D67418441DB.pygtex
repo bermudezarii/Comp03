@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{for\PYGZus{}each\PYGZus{}string\PYGZus{}list\PYGZus{}item} \PYG{p}{(} \PYG{n}{ref\PYGZus{}to\PYGZus{}delete} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{refs\PYGZus{}to\PYGZus{}delete} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:1986:50 syntax error, unexpected PTR\PYGZus{}OP*/}
+\PYG{c+cm}{/*Pruebas/error.c:1986:59 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{n}{files\PYGZus{}reflog\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{ref\PYGZus{}to\PYGZus{}delete} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{string} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:1987:2 syntax error, unexpected IF*/}
+\PYG{c+cm}{/*Pruebas/error.c:1987:6 syntax error, unexpected EXCLAMATION*/}
+\PYG{c+cm}{/*Pruebas/error.c:1987:36 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{unlink\PYGZus{}or\PYGZus{}warn} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{try\PYGZus{}remove\PYGZus{}empty\PYGZus{}parents} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{ref\PYGZus{}to\PYGZus{}delete} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{string} \PYG{p}{,}
+\PYG{n}{REMOVE\PYGZus{}EMPTY\PYGZus{}PARENTS\PYGZus{}REFLOG} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:1990:1 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

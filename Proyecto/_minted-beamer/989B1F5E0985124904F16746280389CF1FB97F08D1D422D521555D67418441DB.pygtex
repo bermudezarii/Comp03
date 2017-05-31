@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{new\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{old\PYGZus{}oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,}
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{msg} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{new\PYGZus{}update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{parent\PYGZus{}update} \PYG{o}{=} \PYG{n}{update} \PYG{p}{;}
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}LOG\PYGZus{}ONLY} \PYG{o}{|} \PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{;}
+\PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}} \PYG{n}{REF\PYGZus{}HAVE\PYGZus{}OLD} \PYG{p}{;}
+\PYG{n}{item} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{util} \PYG{o}{=} \PYG{n}{new\PYGZus{}update} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{original\PYGZus{}update\PYGZus{}refname} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}update} \PYG{o}{*} \PYG{n}{update} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{parent\PYGZus{}update} \PYG{p}{)}
+\PYG{n}{update} \PYG{o}{=} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{parent\PYGZus{}update} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{update} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{refname} \PYG{p}{;}
+\end{Verbatim}

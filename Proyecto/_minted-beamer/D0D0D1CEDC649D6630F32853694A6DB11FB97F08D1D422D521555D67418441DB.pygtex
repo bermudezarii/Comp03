@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{needs\PYGZus{}repacking} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{lock\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{unable\PYGZus{}to\PYGZus{}lock\PYGZus{}message} \PYG{p}{(} \PYG{n}{files\PYGZus{}packed\PYGZus{}refs\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{,} \PYG{n}{errno} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{packed} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{for\PYGZus{}each\PYGZus{}string\PYGZus{}list\PYGZus{}item} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{refnames} \PYG{p}{)}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{remove\PYGZus{}entry\PYGZus{}from\PYGZus{}dir} \PYG{p}{(} \PYG{n}{packed} \PYG{p}{,} \PYG{n}{refname} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{string} \PYG{p}{)} \PYG{o}{!=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)}
+\PYG{n}{removed} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{removed} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{rollback\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

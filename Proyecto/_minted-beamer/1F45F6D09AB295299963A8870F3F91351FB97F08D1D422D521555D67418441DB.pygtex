@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}pack\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{o}{=}
+\PYG{n}{files\PYGZus{}downcast} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}WRITE} \PYG{o}{|} \PYG{n}{REF\PYGZus{}STORE\PYGZus{}ODB} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}pack\PYGZus{}refs\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}iterator} \PYG{o}{*} \PYG{n}{iter} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}dir} \PYG{o}{*} \PYG{n}{packed\PYGZus{}refs} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ok} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{ref\PYGZus{}to\PYGZus{}prune} \PYG{o}{*} \PYG{n}{refs\PYGZus{}to\PYGZus{}prune} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{lock\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{LOCK\PYGZus{}DIE\PYGZus{}ON\PYGZus{}ERROR} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{packed\PYGZus{}refs} \PYG{o}{=} \PYG{n}{get\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{iter} \PYG{o}{=} \PYG{n}{cache\PYGZus{}ref\PYGZus{}iterator\PYGZus{}begin} \PYG{p}{(} \PYG{n}{get\PYGZus{}loose\PYGZus{}ref\PYGZus{}cache} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{hashcpy} \PYG{p}{(} \PYG{n}{oid} \PYG{p}{.} \PYG{n}{hash} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{(} \PYG{o}{*} \PYG{n}{prepare\PYGZus{}fn} \PYG{p}{)} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{,} \PYG{n}{cb} \PYG{p}{.} \PYG{n}{policy\PYGZus{}cb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{refs\PYGZus{}for\PYGZus{}each\PYGZus{}reflog\PYGZus{}ent} \PYG{p}{(} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{expire\PYGZus{}reflog\PYGZus{}ent} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{cb} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{(} \PYG{o}{*} \PYG{n}{cleanup\PYGZus{}fn} \PYG{p}{)} \PYG{p}{(} \PYG{n}{cb} \PYG{p}{.} \PYG{n}{policy\PYGZus{}cb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{EXPIRE\PYGZus{}REFLOGS\PYGZus{}DRY\PYGZus{}RUN} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{update} \PYG{o}{=} \PYG{p}{(} \PYG{n}{flags} \PYG{o}{\PYGZam{}} \PYG{n}{EXPIRE\PYGZus{}REFLOGS\PYGZus{}UPDATE\PYGZus{}REF} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{p}{(} \PYG{n}{type} \PYG{o}{\PYGZam{}} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{n}{is\PYGZus{}null\PYGZus{}oid} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{cb} \PYG{p}{.} \PYG{n}{last\PYGZus{}kept\PYGZus{}oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{close\PYGZus{}lock\PYGZus{}file} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{reflog\PYGZus{}lock} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{status} \PYG{o}{|=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}couldn\PYGZsq{}t write \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{log\PYGZus{}file} \PYG{p}{,}
+\PYG{n}{strerror} \PYG{p}{(} \PYG{n}{errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

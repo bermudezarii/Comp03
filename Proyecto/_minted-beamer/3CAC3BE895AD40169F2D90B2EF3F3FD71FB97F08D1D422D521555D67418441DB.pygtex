@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{n+nl}{rollback} \PYG{p}{:}
+\PYG{n}{lock} \PYG{o}{=} \PYG{n}{lock\PYGZus{}ref\PYGZus{}sha1\PYGZus{}basic} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,}
+\PYG{n}{REF\PYGZus{}NODEREF} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{lock} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to lock \PYGZpc{}s for rollback: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{oldrefname} \PYG{p}{,} \PYG{n}{err} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{rollbacklog} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{flag} \PYG{o}{=} \PYG{n}{log\PYGZus{}all\PYGZus{}ref\PYGZus{}updates} \PYG{p}{;}
+\PYG{n}{log\PYGZus{}all\PYGZus{}ref\PYGZus{}updates} \PYG{o}{=} \PYG{n}{LOG\PYGZus{}REFS\PYGZus{}NONE} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{write\PYGZus{}ref\PYGZus{}to\PYGZus{}lockfile} \PYG{p}{(} \PYG{n}{lock} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{orig\PYGZus{}oid} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{o}{||}
+\PYG{n}{commit\PYGZus{}ref\PYGZus{}update} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{lock} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{orig\PYGZus{}oid} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{err} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{starts\PYGZus{}with} \PYG{p}{(} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/\PYGZdq{}} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{o}{!} \PYG{n}{check\PYGZus{}refname\PYGZus{}format} \PYG{p}{(} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}swap} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb\PYGZus{}contents} \PYG{p}{,} \PYG{n}{referent} \PYG{p}{)} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{type} \PYG{o}{|=} \PYG{n}{REF\PYGZus{}ISSYMREF} \PYG{p}{;}
+\PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{S\PYGZus{}ISDIR} \PYG{p}{(} \PYG{n}{st} \PYG{p}{.} \PYG{n}{st\PYGZus{}mode} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{resolve\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{,} \PYG{n}{type} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{errno} \PYG{o}{=} \PYG{n}{EISDIR} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{out} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

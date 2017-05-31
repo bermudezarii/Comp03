@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{ret} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{sb} \PYG{p}{.} \PYG{n}{len} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}BUG: reverse reflog parser had leftover data\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{logfp} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{files\PYGZus{}for\PYGZus{}each\PYGZus{}reflog\PYGZus{}ent} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{ref\PYGZus{}store} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,}
+\PYG{n}{each\PYGZus{}reflog\PYGZus{}ent\PYGZus{}fn} \PYG{n}{fn} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{cb\PYGZus{}data} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

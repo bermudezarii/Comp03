@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ret} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{errno} \PYG{o}{==} \PYG{n}{EISDIR} \PYG{p}{)}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}directory not empty: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{path} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unable to move logfile \PYGZpc{}s to \PYGZpc{}s: \PYGZpc{}s\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{tmp} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{path} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,}
+\PYG{n}{strerror} \PYG{p}{(} \PYG{n}{cb} \PYG{p}{.} \PYG{n}{true\PYGZus{}errno} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{tmp} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ret} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{write\PYGZus{}ref\PYGZus{}to\PYGZus{}lockfile} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ref\PYGZus{}lock} \PYG{o}{*} \PYG{n}{lock} \PYG{p}{,}
+\end{Verbatim}

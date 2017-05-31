@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*Pruebas/error.c:976:2 syntax error, unexpected IF*/}
+\PYG{c+cm}{/*Pruebas/error.c:976:6 syntax error, unexpected EXCLAMATION*/}
+\PYG{c+cm}{/*Pruebas/error.c:976:24 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{needs\PYGZus{}repacking} \PYG{p}{)}
+\PYG{c+cm}{/*Pruebas/error.c:977:6 syntax error, unexpected RETURN*/}
+\PYG{c+cm}{/*Pruebas/error.c:977:8 syntax error, unexpected INTEGER*/}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/error.c:978:2 syntax error, unexpected IF*/}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{lock\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{unable\PYGZus{}to\PYGZus{}lock\PYGZus{}message} \PYG{p}{(} \PYG{n}{files\PYGZus{}packed\PYGZus{}refs\PYGZus{}path} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{)} \PYG{p}{,} \PYG{n}{errno} \PYG{p}{,} \PYG{n}{err} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

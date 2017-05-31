@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{object\PYGZus{}id} \PYG{n}{oid} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{traits} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{skip\PYGZus{}prefix} \PYG{p}{(} \PYG{n}{line} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZsh{} pack\PYGZhy{}refs with:\PYGZdq{}} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{traits} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{traits} \PYG{p}{,} \PYG{l+s}{\PYGZdq{} fully\PYGZhy{}peeled \PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{peeled} \PYG{o}{=} \PYG{n}{PEELED\PYGZus{}FULLY} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{traits} \PYG{p}{,} \PYG{l+s}{\PYGZdq{} peeled \PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{peeled} \PYG{o}{=} \PYG{n}{PEELED\PYGZus{}TAGS} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{refname} \PYG{o}{=} \PYG{n}{parse\PYGZus{}ref\PYGZus{}line} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{line} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{oid} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{flag} \PYG{o}{=} \PYG{n}{REF\PYGZus{}ISPACKED} \PYG{p}{;}
+\end{Verbatim}

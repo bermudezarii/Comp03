@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n+nf}{write\PYGZus{}packed\PYGZus{}entry} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{fh} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{refname} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{sha1} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{peeled} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{fprintf\PYGZus{}or\PYGZus{}die} \PYG{p}{(} \PYG{n}{fh} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s \PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{sha1\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{sha1} \PYG{p}{)} \PYG{p}{,} \PYG{n}{refname} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{peeled} \PYG{p}{)}
+\PYG{n}{fprintf\PYGZus{}or\PYGZus{}die} \PYG{p}{(} \PYG{n}{fh} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZca{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{sha1\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{peeled} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{lock\PYGZus{}packed\PYGZus{}refs} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{files\PYGZus{}ref\PYGZus{}store} \PYG{o}{*} \PYG{n}{refs} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{timeout\PYGZus{}configured} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{timeout\PYGZus{}value} \PYG{o}{=} \PYG{l+m+mi}{1000} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{o}{*} \PYG{n}{packed\PYGZus{}ref\PYGZus{}cache} \PYG{p}{;}
+\end{Verbatim}
