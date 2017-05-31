@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{core\PYGZus{}eol} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}CRLF} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{core\PYGZus{}eol} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}UNSET} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{EOL\PYGZus{}NATIVE} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}CRLF} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{enum} \PYG{n}{eol} \PYG{n}{output\PYGZus{}eol} \PYG{p}{(} \PYG{k}{enum} \PYG{n}{crlf\PYGZus{}action} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{switch} \PYG{p}{(} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{case} \PYG{n+nl}{CRLF\PYGZus{}BINARY} \PYG{p}{:}
+\PYG{k}{return} \PYG{n}{EOL\PYGZus{}UNSET} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{CRLF\PYGZus{}TEXT\PYGZus{}CRLF} \PYG{p}{:}
+\PYG{k}{return} \PYG{n}{EOL\PYGZus{}CRLF} \PYG{p}{;}
+\end{Verbatim}

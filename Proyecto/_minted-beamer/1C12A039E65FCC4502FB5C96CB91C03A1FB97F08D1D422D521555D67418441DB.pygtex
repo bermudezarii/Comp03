@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{filter\PYGZus{}type} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{n}{LARGE\PYGZus{}PACKET\PYGZus{}DATA\PYGZus{}MAX} \PYG{o}{\PYGZhy{}} \PYG{n}{strlen} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}command=}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{packet\PYGZus{}write\PYGZus{}fmt\PYGZus{}gently} \PYG{p}{(} \PYG{n}{process} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{in} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}command=\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{filter\PYGZus{}type} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{done} \PYG{p}{;}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{path} \PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{LARGE\PYGZus{}PACKET\PYGZus{}DATA\PYGZus{}MAX} \PYG{o}{\PYGZhy{}} \PYG{n}{strlen} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}pathname=}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}path name too long for external filter\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{goto} \PYG{n}{done} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{packet\PYGZus{}write\PYGZus{}fmt\PYGZus{}gently} \PYG{p}{(} \PYG{n}{process} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{in} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}pathname=\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{done} \PYG{p}{;}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{packet\PYGZus{}flush\PYGZus{}gently} \PYG{p}{(} \PYG{n}{process} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{in} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{new\PYGZus{}stats} \PYG{p}{.} \PYG{n}{lonelf} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{check\PYGZus{}safe\PYGZus{}crlf} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{stats} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{new\PYGZus{}stats} \PYG{p}{,} \PYG{n}{checksafe} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{convert\PYGZus{}crlf\PYGZus{}into\PYGZus{}lf} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{buf} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strbuf\PYGZus{}avail} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{)} \PYG{o}{+} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{len} \PYG{o}{\PYGZlt{}} \PYG{n}{len} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}grow} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{len} \PYG{o}{\PYGZhy{}} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{len} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{dst} \PYG{o}{=} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO} \PYG{o}{||} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO\PYGZus{}INPUT} \PYG{o}{||} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO\PYGZus{}CRLF} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{do} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

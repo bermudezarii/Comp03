@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{filter} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter\PYGZus{}vtbl} \PYG{n}{ident\PYGZus{}vtbl} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{n}{ident\PYGZus{}filter\PYGZus{}fn} \PYG{p}{,}
+\PYG{n}{ident\PYGZus{}free\PYGZus{}fn} \PYG{p}{,}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n+nf}{ident\PYGZus{}filter} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{sha1} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{ident\PYGZus{}filter} \PYG{o}{*} \PYG{n}{ident} \PYG{o}{=} \PYG{n}{xmalloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{o}{*} \PYG{n}{ident} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{xsnprintf} \PYG{p}{(} \PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ident} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ident} \PYG{p}{)} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}: \PYGZpc{}s \PYGZdl{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{sha1\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{sha1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}init} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{left} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{filter} \PYG{p}{.} \PYG{n}{vtbl} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{ident\PYGZus{}vtbl} \PYG{p}{;}
+\end{Verbatim}

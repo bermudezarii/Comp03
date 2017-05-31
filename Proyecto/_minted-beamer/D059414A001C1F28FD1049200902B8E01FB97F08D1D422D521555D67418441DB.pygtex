@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{len} \PYG{o}{\PYGZhy{}=} \PYG{n}{dollar} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{src} \PYG{p}{;}
+\PYG{n}{src} \PYG{o}{=} \PYG{n}{dollar} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{len} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{3} \PYG{o}{||} \PYG{n}{memcmp} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Id\PYGZdq{}} \PYG{p}{,} \PYG{n}{src} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{src} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZdl{}\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{src} \PYG{o}{+=} \PYG{l+m+mi}{3} \PYG{p}{;}
+\PYG{n}{len} \PYG{o}{\PYGZhy{}=} \PYG{l+m+mi}{3} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{src} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}:\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{dollar} \PYG{o}{=} \PYG{n}{memchr} \PYG{p}{(} \PYG{n}{src} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}\PYGZdl{}\PYGZsq{}} \PYG{p}{,} \PYG{n}{len} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{dollar} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{memchr} \PYG{p}{(} \PYG{n}{src} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{,} \PYG{n}{dollar} \PYG{o}{\PYGZhy{}} \PYG{n}{src} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

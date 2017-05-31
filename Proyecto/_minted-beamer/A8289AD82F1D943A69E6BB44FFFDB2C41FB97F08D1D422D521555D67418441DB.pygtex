@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{checksafe} \PYG{o}{==} \PYG{n}{SAFE\PYGZus{}CRLF\PYGZus{}WARN} \PYG{p}{)}
+\PYG{n}{warning} \PYG{p}{(} \PYG{n}{\PYGZus{}} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}LF will be replaced by CRLF in \PYGZpc{}s.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}
+\PYG{l+s}{\PYGZdq{}The file will have its original line\PYGZdq{}}
+\PYG{l+s}{\PYGZdq{} endings in your working directory.\PYGZdq{}} \PYG{p}{)} \PYG{p}{,} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{die} \PYG{p}{(} \PYG{n}{\PYGZus{}} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}LF would be replaced by CRLF in \PYGZpc{}s\PYGZdq{}} \PYG{p}{)} \PYG{p}{,} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{has\PYGZus{}cr\PYGZus{}in\PYGZus{}index} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{sz} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{data} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{has\PYGZus{}cr} \PYG{p}{;}
+\end{Verbatim}

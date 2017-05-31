@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{filter} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter\PYGZus{}vtbl} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}vtbl} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}filter\PYGZus{}fn} \PYG{p}{,}
+\PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}free\PYGZus{}fn} \PYG{p}{,}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n+nf}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}filter} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}filter} \PYG{o}{*} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{=} \PYG{n}{xcalloc} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{o}{*} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{filter} \PYG{p}{.} \PYG{n}{vtbl} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}vtbl} \PYG{p}{;}
+\PYG{k}{return} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{subprocess\PYGZus{}map\PYGZus{}initialized} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{subprocess\PYGZus{}map\PYGZus{}initialized} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{hashmap\PYGZus{}init} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{subprocess\PYGZus{}map} \PYG{p}{,} \PYG{p}{(} \PYG{n}{hashmap\PYGZus{}cmp\PYGZus{}fn} \PYG{p}{)} \PYG{n}{cmd2process\PYGZus{}cmp} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{entry} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{entry} \PYG{o}{=} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{cmd2process} \PYG{o}{*} \PYG{p}{)} \PYG{n}{subprocess\PYGZus{}find\PYGZus{}entry} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{subprocess\PYGZus{}map} \PYG{p}{,} \PYG{n}{cmd} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{fflush} \PYG{p}{(} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{entry} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{entry} \PYG{o}{=} \PYG{n}{xmalloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{o}{*} \PYG{n}{entry} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{supported\PYGZus{}capabilities} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{subprocess\PYGZus{}start} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{subprocess\PYGZus{}map} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{subprocess} \PYG{p}{,} \PYG{n}{cmd} \PYG{p}{,} \PYG{n}{start\PYGZus{}multi\PYGZus{}file\PYGZus{}filter\PYGZus{}fn} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{entry} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

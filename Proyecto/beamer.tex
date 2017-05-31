@@ -31,1315 +31,1682 @@
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
 
-static int get_st_mode_bits ( const char * path , int * mode ) 
-{ 
-struct stat st ; 
-if ( lstat ( path , & st ) < 0 ) 
-return - 1 ; 
-* mode = st . st_mode ; 
-return 0 ; 
-} 
-static char bad_path [ ] = "/bad-path/" ; 
-static struct strbuf * get_pathname ( void ) 
-{ 
-static struct strbuf pathname_array [ 4 ] = { 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-STRBUF_INIT , STRBUF_INIT , STRBUF_INIT , STRBUF_INIT 
+enum crlf_action { 
+CRLF_UNDEFINED , 
+CRLF_BINARY , 
+CRLF_TEXT , 
+CRLF_TEXT_INPUT , 
+CRLF_TEXT_CRLF , 
+CRLF_AUTO , 
+CRLF_AUTO_INPUT , 
+CRLF_AUTO_CRLF 
 } ; 
-static int index ; 
-struct strbuf * sb = & pathname_array [ index ] ; 
-index = ( index + 1 ) % ARRAY_SIZE ( pathname_array ) ; 
-strbuf_reset ( sb ) ; 
-return sb ; 
-} 
-static char * cleanup_path ( char * path ) 
-{ 
-if ( ! memcmp ( path , "./" , 2 ) ) { 
-path += 2 ; 
-while ( * path == '/' ) 
+struct text_stat { 
+unsigned nul , lonecr , lonelf , crlf ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-path ++ ; 
-} 
-return path ; 
-} 
-static void strbuf_cleanup_path ( struct strbuf * sb ) 
-{ 
-char * path = cleanup_path ( sb -> buf ) ; 
-if ( path > sb -> buf ) 
-strbuf_remove ( sb , 0 , path - sb -> buf ) ; 
-} 
-char * mksnpath ( char * buf , size_t n , const char * fmt , ... ) 
-{ 
-va_list args ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-unsigned len ; 
-va_start ( args , fmt ) ; 
-len = vsnprintf ( buf , n , fmt , args ) ; 
-va_end ( args ) ; 
-if ( len >= n ) { 
-strlcpy ( buf , bad_path , n ) ; 
-return buf ; 
-} 
-return cleanup_path ( buf ) ; 
-} 
-static int dir_prefix ( const char * buf , const char * dir ) 
-{ 
-int len = strlen ( dir ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-return ! strncmp ( buf , dir , len ) && 
-( is_dir_sep ( buf [ len ] ) || buf [ len ] == '\0' ) ; 
-} 
-static int is_dir_file ( const char * buf , const char * dir , const char * file ) 
-{ 
-int len = strlen ( dir ) ; 
-if ( strncmp ( buf , dir , len ) || ! is_dir_sep ( buf [ len ] ) ) 
-return 0 ; 
-while ( is_dir_sep ( buf [ len ] ) ) 
-len ++ ; 
-return ! strcmp ( buf + len , file ) ; 
-} 
-static void replace_dir ( struct strbuf * buf , int len , const char * newdir ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-{ 
-int newlen = strlen ( newdir ) ; 
-int need_sep = ( buf -> buf [ len ] && ! is_dir_sep ( buf -> buf [ len ] ) ) && 
-! is_dir_sep ( newdir [ newlen - 1 ] ) ; 
-if ( need_sep ) 
-len -- ; 
-strbuf_splice ( buf , 0 , len , newdir , newlen ) ; 
-if ( need_sep ) 
-buf -> buf [ newlen ] = '/' ; 
-} 
-struct common_dir { 
-unsigned ignore_garbage : 1 ; 
-unsigned is_dir : 1 ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-unsigned exclude : 1 ; 
-const char * dirname ; 
+unsigned printable , nonprintable ; 
 } ; 
-static struct common_dir common_list [ ] = { 
-{ 0 , 1 , 0 , "branches" } , 
-{ 0 , 1 , 0 , "hooks" } , 
-{ 0 , 1 , 0 , "info" } , 
-{ 0 , 0 , 1 , "info/sparse-checkout" } , 
-{ 1 , 1 , 0 , "logs" } , 
-{ 1 , 1 , 1 , "logs/HEAD" } , 
-{ 0 , 1 , 1 , "logs/refs/bisect" } , 
-{ 0 , 1 , 0 , "lost-found" } , 
-{ 0 , 1 , 0 , "objects" } , 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-{ 0 , 1 , 0 , "refs" } , 
-{ 0 , 1 , 1 , "refs/bisect" } , 
-{ 0 , 1 , 0 , "remotes" } , 
-{ 0 , 1 , 0 , "worktrees" } , 
-{ 0 , 1 , 0 , "rr-cache" } , 
-{ 0 , 1 , 0 , "svn" } , 
-{ 0 , 0 , 0 , "config" } , 
-{ 1 , 0 , 0 , "gc.pid" } , 
-{ 0 , 0 , 0 , "packed-refs" } , 
-{ 0 , 0 , 0 , "shallow" } , 
-{ 0 , 0 , 0 , NULL } 
-} ; 
-struct trie { 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-struct trie * children [ 256 ] ; 
-int len ; 
-char * contents ; 
-void * value ; 
-} ; 
-static struct trie * make_trie_node ( const char * key , void * value ) 
+static void gather_stats ( const char * buf , unsigned long size , struct text_stat * stats ) 
 { 
-struct trie * new_node = xcalloc ( 1 , sizeof ( * new_node ) ) ; 
-new_node -> len = strlen ( key ) ; 
-if ( new_node -> len ) { 
-new_node -> contents = xmalloc ( new_node -> len ) ; 
-memcpy ( new_node -> contents , key , new_node -> len ) ; 
-} 
+unsigned long i ; 
+memset ( stats , 0 , sizeof ( * stats ) ) ; 
+for ( i = 0 ; i < size ; i ++ ) { 
+unsigned char c = buf [ i ] ; 
+if ( c == '\r' ) { 
+if ( i + 1 < size && buf [ i + 1 ] == '\n' ) { 
+stats -> crlf ++ ; 
+i ++ ; 
+} else 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-new_node -> value = value ; 
-return new_node ; 
-} 
-static void * add_to_trie ( struct trie * root , const char * key , void * value ) 
-{ 
-struct trie * child ; 
-void * old ; 
-int i ; 
-if ( ! * key ) { 
-old = root -> value ; 
-root -> value = value ; 
-return old ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-for ( i = 0 ; i < root -> len ; i ++ ) { 
-if ( root -> contents [ i ] == key [ i ] ) 
-continue ; 
-child = malloc ( sizeof ( * child ) ) ; 
-memcpy ( child -> children , root -> children , sizeof ( root -> children ) ) ; 
-child -> len = root -> len - i - 1 ; 
-if ( child -> len ) { 
-child -> contents = xstrndup ( root -> contents + i + 1 , 
-child -> len ) ; 
-} 
-child -> value = root -> value ; 
-root -> value = NULL ; 
-root -> len = i ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-memset ( root -> children , 0 , sizeof ( root -> children ) ) ; 
-root -> children [ ( unsigned char ) root -> contents [ i ] ] = child ; 
-root -> children [ ( unsigned char ) key [ i ] ] = 
-make_trie_node ( key + i + 1 , value ) ; 
-return NULL ; 
-} 
-if ( key [ i ] ) { 
-child = root -> children [ ( unsigned char ) key [ root -> len ] ] ; 
-if ( child ) { 
-return add_to_trie ( child , key + root -> len + 1 , value ) ; 
-} else { 
-child = make_trie_node ( key + root -> len + 1 , value ) ; 
-root -> children [ ( unsigned char ) key [ root -> len ] ] = child ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-return NULL ; 
-} 
-} 
-old = root -> value ; 
-root -> value = value ; 
-return old ; 
-} 
-typedef int ( * match_fn ) ( const char * unmatched , void * data , void * baton ) ; 
-static int trie_find ( struct trie * root , const char * key , match_fn fn , 
-void * baton ) 
-{ 
-int i ; 
-int result ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-struct trie * child ; 
-if ( ! * key ) { 
-if ( root -> value && ! root -> len ) 
-return fn ( key , root -> value , baton ) ; 
-else 
-return - 1 ; 
-} 
-for ( i = 0 ; i < root -> len ; i ++ ) { 
-if ( key [ i ] == '/' && key [ i + 1 ] == '/' ) { 
-key ++ ; 
+stats -> lonecr ++ ; 
 continue ; 
 } 
-if ( root -> contents [ i ] != key [ i ] ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-return - 1 ; 
-} 
-key += i ; 
-if ( ! * key ) 
-return fn ( key , root -> value , baton ) ; 
-while ( key [ 0 ] == '/' && key [ 1 ] == '/' ) 
-key ++ ; 
-child = root -> children [ ( unsigned char ) * key ] ; 
-if ( child ) 
-result = trie_find ( child , key + 1 , fn , baton ) ; 
-else 
-result = - 1 ; 
-if ( result >= 0 || ( * key != '/' && * key != 0 ) ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-return result ; 
-if ( root -> value ) 
-return fn ( key , root -> value , baton ) ; 
-else 
-return - 1 ; 
-} 
-static struct trie common_trie ; 
-static int common_trie_done_setup ; 
-static void init_common_trie ( void ) 
-{ 
-struct common_dir * p ; 
-if ( common_trie_done_setup ) 
-return ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-for ( p = common_list ; p -> dirname ; p ++ ) 
-add_to_trie ( & common_trie , p -> dirname , p ) ; 
-common_trie_done_setup = 1 ; 
-} 
-static int check_common ( const char * unmatched , void * value , void * baton ) 
-{ 
-struct common_dir * dir = value ; 
-if ( ! dir ) 
-return 0 ; 
-if ( dir -> is_dir && ( unmatched [ 0 ] == 0 || unmatched [ 0 ] == '/' ) ) 
-return ! dir -> exclude ; 
-if ( ! dir -> is_dir && unmatched [ 0 ] == 0 ) 
-return ! dir -> exclude ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-return 0 ; 
-} 
-static void update_common_dir ( struct strbuf * buf , int git_dir_len , 
-const char * common_dir ) 
-{ 
-char * base = buf -> buf + git_dir_len ; 
-init_common_trie ( ) ; 
-if ( ! common_dir ) 
-common_dir = get_git_common_dir ( ) ; 
-if ( trie_find ( & common_trie , base , check_common , NULL ) > 0 ) 
-replace_dir ( buf , git_dir_len , common_dir ) ; 
-} 
-void report_linked_checkout_garbage ( void ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-{ 
-struct strbuf sb = STRBUF_INIT ; 
-const struct common_dir * p ; 
-int len ; 
-if ( ! git_common_dir_env ) 
-return ; 
-strbuf_addf ( & sb , "%s/" , get_git_dir ( ) ) ; 
-len = sb . len ; 
-for ( p = common_list ; p -> dirname ; p ++ ) { 
-const char * path = p -> dirname ; 
-if ( p -> ignore_garbage ) 
+if ( c == '\n' ) { 
+stats -> lonelf ++ ; 
 continue ; 
-strbuf_setlen ( & sb , len ) ; 
+} 
+if ( c == 127 ) 
+stats -> nonprintable ++ ; 
+else if ( c < 32 ) { 
+switch ( c ) { 
+case '\b' : case '\t' : case '\033' : case '\014' : 
+stats -> printable ++ ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-strbuf_addstr ( & sb , path ) ; 
-if ( file_exists ( sb . buf ) ) 
-report_garbage ( PACKDIR_FILE_GARBAGE , sb . buf ) ; 
+break ; 
+case 0 : 
+stats -> nul ++ ; 
+default : 
+stats -> nonprintable ++ ; 
 } 
-strbuf_release ( & sb ) ; 
 } 
-static void adjust_git_path ( struct strbuf * buf , int git_dir_len ) 
-{ 
-const char * base = buf -> buf + git_dir_len ; 
-if ( git_graft_env && is_dir_file ( base , "info" , "grafts" ) ) 
-strbuf_splice ( buf , 0 , buf -> len , 
-get_graft_file ( ) , strlen ( get_graft_file ( ) ) ) ; 
-else if ( git_index_env && ! strcmp ( base , "index" ) ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_splice ( buf , 0 , buf -> len , 
-get_index_file ( ) , strlen ( get_index_file ( ) ) ) ; 
-else if ( git_db_env && dir_prefix ( base , "objects" ) ) 
-replace_dir ( buf , git_dir_len + 7 , get_object_directory ( ) ) ; 
-else if ( git_hooks_path && dir_prefix ( base , "hooks" ) ) 
-replace_dir ( buf , git_dir_len + 5 , git_hooks_path ) ; 
-else if ( git_common_dir_env ) 
-update_common_dir ( buf , git_dir_len , NULL ) ; 
+else 
+stats -> printable ++ ; 
 } 
-static void do_git_path ( const struct worktree * wt , struct strbuf * buf , 
-const char * fmt , va_list args ) 
-{ 
-int gitdir_len ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_addstr ( buf , get_worktree_git_dir ( wt ) ) ; 
-if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
-strbuf_addch ( buf , '/' ) ; 
-gitdir_len = buf -> len ; 
-strbuf_vaddf ( buf , fmt , args ) ; 
-adjust_git_path ( buf , gitdir_len ) ; 
-strbuf_cleanup_path ( buf ) ; 
-} 
-char * git_path_buf ( struct strbuf * buf , const char * fmt , ... ) 
-{ 
-va_list args ; 
-strbuf_reset ( buf ) ; 
-va_start ( args , fmt ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-do_git_path ( NULL , buf , fmt , args ) ; 
-va_end ( args ) ; 
-return buf -> buf ; 
-} 
-void strbuf_git_path ( struct strbuf * sb , const char * fmt , ... ) 
-{ 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_path ( NULL , sb , fmt , args ) ; 
-va_end ( args ) ; 
-} 
-const char * git_path ( const char * fmt , ... ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-struct strbuf * pathname = get_pathname ( ) ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_path ( NULL , pathname , fmt , args ) ; 
-va_end ( args ) ; 
-return pathname -> buf ; 
-} 
-char * git_pathdup ( const char * fmt , ... ) 
-{ 
-struct strbuf path = STRBUF_INIT ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_path ( NULL , & path , fmt , args ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-va_end ( args ) ; 
-return strbuf_detach ( & path , NULL ) ; 
-} 
-char * mkpathdup ( const char * fmt , ... ) 
-{ 
-struct strbuf sb = STRBUF_INIT ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-strbuf_vaddf ( & sb , fmt , args ) ; 
-va_end ( args ) ; 
-strbuf_cleanup_path ( & sb ) ; 
-return strbuf_detach ( & sb , NULL ) ; 
+if ( size >= 1 && buf [ size - 1 ] == '\032' ) 
+stats -> nonprintable -- ; 
 } 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-const char * mkpath ( const char * fmt , ... ) 
+static int convert_is_binary ( unsigned long size , const struct text_stat * stats ) 
 { 
-va_list args ; 
-struct strbuf * pathname = get_pathname ( ) ; 
-va_start ( args , fmt ) ; 
-strbuf_vaddf ( pathname , fmt , args ) ; 
-va_end ( args ) ; 
-return cleanup_path ( pathname -> buf ) ; 
+if ( stats -> lonecr ) 
+return 1 ; 
+if ( stats -> nul ) 
+return 1 ; 
+if ( ( stats -> printable >> 7 ) < stats -> nonprintable ) 
+return 1 ; 
+return 0 ; 
 } 
-const char * worktree_git_path ( const struct worktree * wt , const char * fmt , ... ) 
+static unsigned int gather_convert_stats ( const char * data , unsigned long size ) 
 { 
-struct strbuf * pathname = get_pathname ( ) ; 
-va_list args ; 
+struct text_stat stats ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-va_start ( args , fmt ) ; 
-do_git_path ( wt , pathname , fmt , args ) ; 
-va_end ( args ) ; 
-return pathname -> buf ; 
-} 
-static int do_submodule_path ( struct strbuf * buf , const char * path , 
-const char * fmt , va_list args ) 
-{ 
-struct strbuf git_submodule_common_dir = STRBUF_INIT ; 
-struct strbuf git_submodule_dir = STRBUF_INIT ; 
-int ret ; 
-ret = submodule_to_gitdir ( & git_submodule_dir , path ) ; 
-if ( ret ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-goto cleanup ; 
-strbuf_complete ( & git_submodule_dir , '/' ) ; 
-strbuf_addbuf ( buf , & git_submodule_dir ) ; 
-strbuf_vaddf ( buf , fmt , args ) ; 
-if ( get_common_dir_noenv ( & git_submodule_common_dir , git_submodule_dir . buf ) ) 
-update_common_dir ( buf , git_submodule_dir . len , git_submodule_common_dir . buf ) ; 
-strbuf_cleanup_path ( buf ) ; 
-cleanup : 
-strbuf_release ( & git_submodule_dir ) ; 
-strbuf_release ( & git_submodule_common_dir ) ; 
+int ret = 0 ; 
+if ( ! data || ! size ) 
+return 0 ; 
+gather_stats ( data , size , & stats ) ; 
+if ( convert_is_binary ( size , & stats ) ) 
+ret |= 0x4 ; 
+if ( stats . crlf ) 
+ret |= 0x2 ; 
+if ( stats . lonelf ) 
+ret |= CONVERT_STAT_BITS_TXT_LF ; 
 return ret ; 
 } 
-char * git_pathdup_submodule ( const char * path , const char * fmt , ... ) 
+static const char * gather_convert_stats_ascii ( const char * data , unsigned long size ) 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
 { 
-int err ; 
-va_list args ; 
-struct strbuf buf = STRBUF_INIT ; 
-va_start ( args , fmt ) ; 
-err = do_submodule_path ( & buf , path , fmt , args ) ; 
-va_end ( args ) ; 
-if ( err ) { 
-strbuf_release ( & buf ) ; 
-return NULL ; 
-} 
-return strbuf_detach ( & buf , NULL ) ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-int strbuf_git_path_submodule ( struct strbuf * buf , const char * path , 
-const char * fmt , ... ) 
-{ 
-int err ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-err = do_submodule_path ( buf , path , fmt , args ) ; 
-va_end ( args ) ; 
-return err ; 
-} 
-static void do_git_common_path ( struct strbuf * buf , 
-const char * fmt , 
-va_list args ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-{ 
-strbuf_addstr ( buf , get_git_common_dir ( ) ) ; 
-if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
-strbuf_addch ( buf , '/' ) ; 
-strbuf_vaddf ( buf , fmt , args ) ; 
-strbuf_cleanup_path ( buf ) ; 
-} 
-const char * git_common_path ( const char * fmt , ... ) 
-{ 
-struct strbuf * pathname = get_pathname ( ) ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_common_path ( pathname , fmt , args ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-va_end ( args ) ; 
-return pathname -> buf ; 
-} 
-void strbuf_git_common_path ( struct strbuf * sb , const char * fmt , ... ) 
-{ 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_common_path ( sb , fmt , args ) ; 
-va_end ( args ) ; 
-} 
-int validate_headref ( const char * path ) 
-{ 
-struct stat st ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-char * buf , buffer [ 256 ] ; 
-unsigned char sha1 [ 20 ] ; 
-int fd ; 
-ssize_t len ; 
-if ( lstat ( path , & st ) < 0 ) 
-return - 1 ; 
-if ( S_ISLNK ( st . st_mode ) ) { 
-len = readlink ( path , buffer , sizeof ( buffer ) - 1 ) ; 
-if ( len >= 5 && ! memcmp ( "refs/" , buffer , 5 ) ) 
-return 0 ; 
-return - 1 ; 
-} 
-fd = open ( path , O_RDONLY ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-if ( fd < 0 ) 
-return - 1 ; 
-len = read_in_full ( fd , buffer , sizeof ( buffer ) - 1 ) ; 
-close ( fd ) ; 
-if ( len < 4 ) 
-return - 1 ; 
-if ( ! memcmp ( "ref:" , buffer , 4 ) ) { 
-buf = buffer + 4 ; 
-len -= 4 ; 
-while ( len && isspace ( * buf ) ) 
-buf ++ , len -- ; 
-if ( len >= 5 && ! memcmp ( "refs/" , buf , 5 ) ) 
-return 0 ; 
+unsigned int convert_stats = gather_convert_stats ( data , size ) ; 
+if ( convert_stats & 0x4 ) 
+return "-text" ; 
+switch ( convert_stats ) { 
+case CONVERT_STAT_BITS_TXT_LF : 
+return "lf" ; 
+case 0x2 : 
+return "crlf" ; 
+case CONVERT_STAT_BITS_TXT_LF | 0x2 : 
+return "mixed" ; 
+default : 
+return "none" ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
 } 
-if ( ! get_sha1_hex ( buffer , sha1 ) ) 
-return 0 ; 
-return - 1 ; 
 } 
-static struct passwd * getpw_str ( const char * username , size_t len ) 
+const char * get_cached_convert_stats_ascii ( const char * path ) 
 { 
-struct passwd * pw ; 
-char * username_z = xmemdupz ( username , len ) ; 
-pw = getpwnam ( username_z ) ; 
-free ( username_z ) ; 
-return pw ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-char * expand_user_path ( const char * path , int real_home ) 
-{ 
-struct strbuf user_path = STRBUF_INIT ; 
-const char * to_copy = path ; 
-if ( path == NULL ) 
-goto return_null ; 
-if ( path [ 0 ] == '~' ) { 
-const char * first_slash = strchrnul ( path , '/' ) ; 
-const char * username = path + 1 ; 
-size_t username_len = first_slash - username ; 
-if ( username_len == 0 ) { 
-const char * home = getenv ( "HOME" ) ; 
-if ( ! home ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-goto return_null ; 
-if ( real_home ) 
-strbuf_addstr ( & user_path , real_path ( home ) ) ; 
-else 
-strbuf_addstr ( & user_path , home ) ; \end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-
-static int get_st_mode_bits ( const char * path , int * mode ) 
-{ 
-struct stat st ; 
-if ( lstat ( path , & st ) < 0 ) 
-return - 1 ; 
-* mode = st . st_mode ; 
-return 0 ; 
-} 
-static char bad_path [ ] = "/bad-path/" ; 
-static struct strbuf * get_pathname ( void ) 
-{ 
-static struct strbuf pathname_array [ 4 ] = { 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-STRBUF_INIT , STRBUF_INIT , STRBUF_INIT , STRBUF_INIT 
-} ; 
-static int index ; 
-struct strbuf * sb = & pathname_array [ index ] ; 
-index = ( index + 1 ) % ARRAY_SIZE ( pathname_array ) ; 
-strbuf_reset ( sb ) ; 
-return sb ; 
-} 
-static char * cleanup_path ( char * path ) 
-{ 
-if ( ! memcmp ( path , "./" , 2 ) ) { 
-path += 2 ; 
-while ( * path == '/' ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-path ++ ; 
-} 
-return path ; 
-} 
-static void strbuf_cleanup_path ( struct strbuf * sb ) 
-{ 
-char * path = cleanup_path ( sb -> buf ) ; 
-if ( path > sb -> buf ) 
-strbuf_remove ( sb , 0 , path - sb -> buf ) ; 
-} 
-char * mksnpath ( char * buf , size_t n , const char * fmt , ... ) 
-{ 
-va_list args ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-unsigned len ; 
-va_start ( args , fmt ) ; 
-len = vsnprintf ( buf , n , fmt , args ) ; 
-va_end ( args ) ; 
-if ( len >= n ) { 
-strlcpy ( buf , bad_path , n ) ; 
-return buf ; 
-} 
-return cleanup_path ( buf ) ; 
-} 
-static int dir_prefix ( const char * buf , const char * dir ) 
-{ 
-int len = strlen ( dir ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-return ! strncmp ( buf , dir , len ) && 
-( is_dir_sep ( buf [ len ] ) || buf [ len ] == '\0' ) ; 
-} 
-static int is_dir_file ( const char * buf , const char * dir , const char * file ) 
-{ 
-int len = strlen ( dir ) ; 
-if ( strncmp ( buf , dir , len ) || ! is_dir_sep ( buf [ len ] ) ) 
-return 0 ; 
-while ( is_dir_sep ( buf [ len ] ) ) 
-len ++ ; 
-return ! strcmp ( buf + len , file ) ; 
-} 
-static void replace_dir ( struct strbuf * buf , int len , const char * newdir ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-{ 
-int newlen = strlen ( newdir ) ; 
-int need_sep = ( buf -> buf [ len ] && ! is_dir_sep ( buf -> buf [ len ] ) ) && 
-! is_dir_sep ( newdir [ newlen - 1 ] ) ; 
-if ( need_sep ) 
-len -- ; 
-strbuf_splice ( buf , 0 , len , newdir , newlen ) ; 
-if ( need_sep ) 
-buf -> buf [ newlen ] = '/' ; 
-} 
-struct common_dir { 
-unsigned ignore_garbage : 1 ; 
-unsigned is_dir : 1 ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-unsigned exclude : 1 ; 
-const char * dirname ; 
-} ; 
-static struct common_dir common_list [ ] = { 
-{ 0 , 1 , 0 , "branches" } , 
-{ 0 , 1 , 0 , "hooks" } , 
-{ 0 , 1 , 0 , "info" } , 
-{ 0 , 0 , 1 , "info/sparse-checkout" } , 
-{ 1 , 1 , 0 , "logs" } , 
-{ 1 , 1 , 1 , "logs/HEAD" } , 
-{ 0 , 1 , 1 , "logs/refs/bisect" } , 
-{ 0 , 1 , 0 , "lost-found" } , 
-{ 0 , 1 , 0 , "objects" } , 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-{ 0 , 1 , 0 , "refs" } , 
-{ 0 , 1 , 1 , "refs/bisect" } , 
-{ 0 , 1 , 0 , "remotes" } , 
-{ 0 , 1 , 0 , "worktrees" } , 
-{ 0 , 1 , 0 , "rr-cache" } , 
-{ 0 , 1 , 0 , "svn" } , 
-{ 0 , 0 , 0 , "config" } , 
-{ 1 , 0 , 0 , "gc.pid" } , 
-{ 0 , 0 , 0 , "packed-refs" } , 
-{ 0 , 0 , 0 , "shallow" } , 
-{ 0 , 0 , 0 , NULL } 
-} ; 
-struct trie { 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-struct trie * children [ 256 ] ; 
-int len ; 
-char * contents ; 
-void * value ; 
-} ; 
-static struct trie * make_trie_node ( const char * key , void * value ) 
-{ 
-struct trie * new_node = xcalloc ( 1 , sizeof ( * new_node ) ) ; 
-new_node -> len = strlen ( key ) ; 
-if ( new_node -> len ) { 
-new_node -> contents = xmalloc ( new_node -> len ) ; 
-memcpy ( new_node -> contents , key , new_node -> len ) ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-new_node -> value = value ; 
-return new_node ; 
-} 
-static void * add_to_trie ( struct trie * root , const char * key , void * value ) 
-{ 
-struct trie * child ; 
-void * old ; 
-int i ; 
-if ( ! * key ) { 
-old = root -> value ; 
-root -> value = value ; 
-return old ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-for ( i = 0 ; i < root -> len ; i ++ ) { 
-if ( root -> contents [ i ] == key [ i ] ) 
-continue ; 
-child = malloc ( sizeof ( * child ) ) ; 
-memcpy ( child -> children , root -> children , sizeof ( root -> children ) ) ; 
-child -> len = root -> len - i - 1 ; 
-if ( child -> len ) { 
-child -> contents = xstrndup ( root -> contents + i + 1 , 
-child -> len ) ; 
-} 
-child -> value = root -> value ; 
-root -> value = NULL ; 
-root -> len = i ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-memset ( root -> children , 0 , sizeof ( root -> children ) ) ; 
-root -> children [ ( unsigned char ) root -> contents [ i ] ] = child ; 
-root -> children [ ( unsigned char ) key [ i ] ] = 
-make_trie_node ( key + i + 1 , value ) ; 
-return NULL ; 
-} 
-if ( key [ i ] ) { 
-child = root -> children [ ( unsigned char ) key [ root -> len ] ] ; 
-if ( child ) { 
-return add_to_trie ( child , key + root -> len + 1 , value ) ; 
-} else { 
-child = make_trie_node ( key + root -> len + 1 , value ) ; 
-root -> children [ ( unsigned char ) key [ root -> len ] ] = child ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-return NULL ; 
-} 
-} 
-old = root -> value ; 
-root -> value = value ; 
-return old ; 
-} 
-typedef int ( * match_fn ) ( const char * unmatched , void * data , void * baton ) ; 
-static int trie_find ( struct trie * root , const char * key , match_fn fn , 
-void * baton ) 
-{ 
-int i ; 
-int result ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-struct trie * child ; 
-if ( ! * key ) { 
-if ( root -> value && ! root -> len ) 
-return fn ( key , root -> value , baton ) ; 
-else 
-return - 1 ; 
-} 
-for ( i = 0 ; i < root -> len ; i ++ ) { 
-if ( key [ i ] == '/' && key [ i + 1 ] == '/' ) { 
-key ++ ; 
-continue ; 
-} 
-if ( root -> contents [ i ] != key [ i ] ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-return - 1 ; 
-} 
-key += i ; 
-if ( ! * key ) 
-return fn ( key , root -> value , baton ) ; 
-while ( key [ 0 ] == '/' && key [ 1 ] == '/' ) 
-key ++ ; 
-child = root -> children [ ( unsigned char ) * key ] ; 
-if ( child ) 
-result = trie_find ( child , key + 1 , fn , baton ) ; 
-else 
-result = - 1 ; 
-if ( result >= 0 || ( * key != '/' && * key != 0 ) ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-return result ; 
-if ( root -> value ) 
-return fn ( key , root -> value , baton ) ; 
-else 
-return - 1 ; 
-} 
-static struct trie common_trie ; 
-static int common_trie_done_setup ; 
-static void init_common_trie ( void ) 
-{ 
-struct common_dir * p ; 
-if ( common_trie_done_setup ) 
-return ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-for ( p = common_list ; p -> dirname ; p ++ ) 
-add_to_trie ( & common_trie , p -> dirname , p ) ; 
-common_trie_done_setup = 1 ; 
-} 
-static int check_common ( const char * unmatched , void * value , void * baton ) 
-{ 
-struct common_dir * dir = value ; 
-if ( ! dir ) 
-return 0 ; 
-if ( dir -> is_dir && ( unmatched [ 0 ] == 0 || unmatched [ 0 ] == '/' ) ) 
-return ! dir -> exclude ; 
-if ( ! dir -> is_dir && unmatched [ 0 ] == 0 ) 
-return ! dir -> exclude ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-return 0 ; 
-} 
-static void update_common_dir ( struct strbuf * buf , int git_dir_len , 
-const char * common_dir ) 
-{ 
-char * base = buf -> buf + git_dir_len ; 
-init_common_trie ( ) ; 
-if ( ! common_dir ) 
-common_dir = get_git_common_dir ( ) ; 
-if ( trie_find ( & common_trie , base , check_common , NULL ) > 0 ) 
-replace_dir ( buf , git_dir_len , common_dir ) ; 
-} 
-void report_linked_checkout_garbage ( void ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-{ 
-struct strbuf sb = STRBUF_INIT ; 
-const struct common_dir * p ; 
-int len ; 
-if ( ! git_common_dir_env ) 
-return ; 
-strbuf_addf ( & sb , "%s/" , get_git_dir ( ) ) ; 
-len = sb . len ; 
-for ( p = common_list ; p -> dirname ; p ++ ) { 
-const char * path = p -> dirname ; 
-if ( p -> ignore_garbage ) 
-continue ; 
-strbuf_setlen ( & sb , len ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_addstr ( & sb , path ) ; 
-if ( file_exists ( sb . buf ) ) 
-report_garbage ( PACKDIR_FILE_GARBAGE , sb . buf ) ; 
-} 
-strbuf_release ( & sb ) ; 
-} 
-static void adjust_git_path ( struct strbuf * buf , int git_dir_len ) 
-{ 
-const char * base = buf -> buf + git_dir_len ; 
-if ( git_graft_env && is_dir_file ( base , "info" , "grafts" ) ) 
-strbuf_splice ( buf , 0 , buf -> len , 
-get_graft_file ( ) , strlen ( get_graft_file ( ) ) ) ; 
-else if ( git_index_env && ! strcmp ( base , "index" ) ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_splice ( buf , 0 , buf -> len , 
-get_index_file ( ) , strlen ( get_index_file ( ) ) ) ; 
-else if ( git_db_env && dir_prefix ( base , "objects" ) ) 
-replace_dir ( buf , git_dir_len + 7 , get_object_directory ( ) ) ; 
-else if ( git_hooks_path && dir_prefix ( base , "hooks" ) ) 
-replace_dir ( buf , git_dir_len + 5 , git_hooks_path ) ; 
-else if ( git_common_dir_env ) 
-update_common_dir ( buf , git_dir_len , NULL ) ; 
-} 
-static void do_git_path ( const struct worktree * wt , struct strbuf * buf , 
-const char * fmt , va_list args ) 
-{ 
-int gitdir_len ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_addstr ( buf , get_worktree_git_dir ( wt ) ) ; 
-if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
-strbuf_addch ( buf , '/' ) ; 
-gitdir_len = buf -> len ; 
-strbuf_vaddf ( buf , fmt , args ) ; 
-adjust_git_path ( buf , gitdir_len ) ; 
-strbuf_cleanup_path ( buf ) ; 
-} 
-char * git_path_buf ( struct strbuf * buf , const char * fmt , ... ) 
-{ 
-va_list args ; 
-strbuf_reset ( buf ) ; 
-va_start ( args , fmt ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-do_git_path ( NULL , buf , fmt , args ) ; 
-va_end ( args ) ; 
-return buf -> buf ; 
-} 
-void strbuf_git_path ( struct strbuf * sb , const char * fmt , ... ) 
-{ 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_path ( NULL , sb , fmt , args ) ; 
-va_end ( args ) ; 
-} 
-const char * git_path ( const char * fmt , ... ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-struct strbuf * pathname = get_pathname ( ) ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_path ( NULL , pathname , fmt , args ) ; 
-va_end ( args ) ; 
-return pathname -> buf ; 
-} 
-char * git_pathdup ( const char * fmt , ... ) 
-{ 
-struct strbuf path = STRBUF_INIT ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_path ( NULL , & path , fmt , args ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-va_end ( args ) ; 
-return strbuf_detach ( & path , NULL ) ; 
-} 
-char * mkpathdup ( const char * fmt , ... ) 
-{ 
-struct strbuf sb = STRBUF_INIT ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-strbuf_vaddf ( & sb , fmt , args ) ; 
-va_end ( args ) ; 
-strbuf_cleanup_path ( & sb ) ; 
-return strbuf_detach ( & sb , NULL ) ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-const char * mkpath ( const char * fmt , ... ) 
-{ 
-va_list args ; 
-struct strbuf * pathname = get_pathname ( ) ; 
-va_start ( args , fmt ) ; 
-strbuf_vaddf ( pathname , fmt , args ) ; 
-va_end ( args ) ; 
-return cleanup_path ( pathname -> buf ) ; 
-} 
-const char * worktree_git_path ( const struct worktree * wt , const char * fmt , ... ) 
-{ 
-struct strbuf * pathname = get_pathname ( ) ; 
-va_list args ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-va_start ( args , fmt ) ; 
-do_git_path ( wt , pathname , fmt , args ) ; 
-va_end ( args ) ; 
-return pathname -> buf ; 
-} 
-static int do_submodule_path ( struct strbuf * buf , const char * path , 
-const char * fmt , va_list args ) 
-{ 
-struct strbuf git_submodule_common_dir = STRBUF_INIT ; 
-struct strbuf git_submodule_dir = STRBUF_INIT ; 
-int ret ; 
-ret = submodule_to_gitdir ( & git_submodule_dir , path ) ; 
-if ( ret ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-goto cleanup ; 
-strbuf_complete ( & git_submodule_dir , '/' ) ; 
-strbuf_addbuf ( buf , & git_submodule_dir ) ; 
-strbuf_vaddf ( buf , fmt , args ) ; 
-if ( get_common_dir_noenv ( & git_submodule_common_dir , git_submodule_dir . buf ) ) 
-update_common_dir ( buf , git_submodule_dir . len , git_submodule_common_dir . buf ) ; 
-strbuf_cleanup_path ( buf ) ; 
-cleanup : 
-strbuf_release ( & git_submodule_dir ) ; 
-strbuf_release ( & git_submodule_common_dir ) ; 
+const char * ret ; 
+unsigned long sz ; 
+void * data = read_blob_data_from_cache ( path , & sz ) ; 
+ret = gather_convert_stats_ascii ( data , sz ) ; 
+free ( data ) ; 
 return ret ; 
 } 
-char * git_pathdup_submodule ( const char * path , const char * fmt , ... ) 
+const char * get_wt_convert_stats_ascii ( const char * path ) 
+{ 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+const char * ret = "" ; 
+struct strbuf sb = STRBUF_INIT ; 
+if ( strbuf_read_file ( & sb , path , 0 ) >= 0 ) 
+ret = gather_convert_stats_ascii ( sb . buf , sb . len ) ; 
+strbuf_release ( & sb ) ; 
+return ret ; 
+} 
+static int text_eol_is_crlf ( void ) 
+{ 
+if ( auto_crlf == AUTO_CRLF_TRUE ) 
+return 1 ; 
+else if ( auto_crlf == AUTO_CRLF_INPUT ) 
+return 0 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( core_eol == EOL_CRLF ) 
+return 1 ; 
+if ( core_eol == EOL_UNSET && EOL_NATIVE == EOL_CRLF ) 
+return 1 ; 
+return 0 ; 
+} 
+static enum eol output_eol ( enum crlf_action crlf_action ) 
+{ 
+switch ( crlf_action ) { 
+case CRLF_BINARY : 
+return EOL_UNSET ; 
+case CRLF_TEXT_CRLF : 
+return EOL_CRLF ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+case CRLF_TEXT_INPUT : 
+return EOL_LF ; 
+case CRLF_UNDEFINED : 
+case CRLF_AUTO_CRLF : 
+return EOL_CRLF ; 
+case CRLF_AUTO_INPUT : 
+return EOL_LF ; 
+case CRLF_TEXT : 
+case CRLF_AUTO : 
+return text_eol_is_crlf ( ) ? EOL_CRLF : EOL_LF ; 
+} 
+warning ( "Illegal crlf_action %d\n" , ( int ) crlf_action ) ; 
+return core_eol ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static void check_safe_crlf ( const char * path , enum crlf_action crlf_action , 
+struct text_stat * old_stats , struct text_stat * new_stats , 
+enum safe_crlf checksafe ) 
+{ 
+if ( old_stats -> crlf && ! new_stats -> crlf ) { 
+if ( checksafe == SAFE_CRLF_WARN ) 
+warning ( _ ( "CRLF will be replaced by LF in %s.\n" 
+"The file will have its original line" 
+" endings in your working directory." ) , path ) ; 
+else 
+die ( _ ( "CRLF would be replaced by LF in %s." ) , path ) ; 
+} else if ( old_stats -> lonelf && ! new_stats -> lonelf ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( checksafe == SAFE_CRLF_WARN ) 
+warning ( _ ( "LF will be replaced by CRLF in %s.\n" 
+"The file will have its original line" 
+" endings in your working directory." ) , path ) ; 
+else 
+die ( _ ( "LF would be replaced by CRLF in %s" ) , path ) ; 
+} 
+} 
+static int has_cr_in_index ( const char * path ) 
+{ 
+unsigned long sz ; 
+void * data ; 
+int has_cr ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+data = read_blob_data_from_cache ( path , & sz ) ; 
+if ( ! data ) 
+return 0 ; 
+has_cr = memchr ( data , '\r' , sz ) != NULL ; 
+free ( data ) ; 
+return has_cr ; 
+} 
+static int will_convert_lf_to_crlf ( size_t len , struct text_stat * stats , 
+enum crlf_action crlf_action ) 
+{ 
+if ( output_eol ( crlf_action ) != EOL_CRLF ) 
+return 0 ; 
+if ( ! stats -> lonelf ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return 0 ; 
+if ( crlf_action == CRLF_AUTO || crlf_action == CRLF_AUTO_INPUT || crlf_action == CRLF_AUTO_CRLF ) { 
+if ( stats -> lonecr || stats -> crlf ) 
+return 0 ; 
+if ( convert_is_binary ( len , stats ) ) 
+return 0 ; 
+} 
+return 1 ; 
+} 
+static int crlf_to_git ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , 
+enum crlf_action crlf_action , enum safe_crlf checksafe ) 
+{ 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+struct text_stat stats ; 
+char * dst ; 
+int convert_crlf_into_lf ; 
+if ( crlf_action == CRLF_BINARY || 
+( src && ! len ) ) 
+return 0 ; 
+if ( ! buf && ! src ) 
+return 1 ; 
+gather_stats ( src , len , & stats ) ; 
+convert_crlf_into_lf = ! ! stats . crlf ; 
+if ( crlf_action == CRLF_AUTO || crlf_action == CRLF_AUTO_INPUT || crlf_action == CRLF_AUTO_CRLF ) { 
+if ( convert_is_binary ( len , & stats ) ) 
+return 0 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( ( checksafe != SAFE_CRLF_RENORMALIZE ) && has_cr_in_index ( path ) ) 
+convert_crlf_into_lf = 0 ; 
+} 
+if ( ( checksafe == SAFE_CRLF_WARN || 
+( checksafe == SAFE_CRLF_FAIL ) ) && len ) { 
+struct text_stat new_stats ; 
+memcpy ( & new_stats , & stats , sizeof ( new_stats ) ) ; 
+if ( convert_crlf_into_lf ) { 
+new_stats . lonelf += new_stats . crlf ; 
+new_stats . crlf = 0 ; 
+} 
+if ( will_convert_lf_to_crlf ( len , & new_stats , crlf_action ) ) { 
+new_stats . crlf += new_stats . lonelf ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+new_stats . lonelf = 0 ; 
+} 
+check_safe_crlf ( path , crlf_action , & stats , & new_stats , checksafe ) ; 
+} 
+if ( ! convert_crlf_into_lf ) 
+return 0 ; 
+if ( ! buf ) 
+return 1 ; 
+if ( strbuf_avail ( buf ) + buf -> len < len ) 
+strbuf_grow ( buf , len - buf -> len ) ; 
+dst = buf -> buf ; 
+if ( crlf_action == CRLF_AUTO || crlf_action == CRLF_AUTO_INPUT || crlf_action == CRLF_AUTO_CRLF ) { 
+do { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+unsigned char c = * src ++ ; 
+if ( c != '\r' ) 
+* dst ++ = c ; 
+} while ( -- len ) ; 
+} else { 
+do { 
+unsigned char c = * src ++ ; 
+if ( ! ( c == '\r' && ( 1 < len && * src == '\n' ) ) ) 
+* dst ++ = c ; 
+} while ( -- len ) ; 
+} 
+strbuf_setlen ( buf , dst - buf -> buf ) ; 
+return 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static int crlf_to_worktree ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , enum crlf_action crlf_action ) 
+{ 
+char * to_free = NULL ; 
+struct text_stat stats ; 
+if ( ! len || output_eol ( crlf_action ) != EOL_CRLF ) 
+return 0 ; 
+gather_stats ( src , len , & stats ) ; 
+if ( ! will_convert_lf_to_crlf ( len , & stats , crlf_action ) ) 
+return 0 ; 
+if ( src == buf -> buf ) 
+to_free = strbuf_detach ( buf , NULL ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_grow ( buf , len + stats . lonelf ) ; 
+for ( ; ; ) { 
+const char * nl = memchr ( src , '\n' , len ) ; 
+if ( ! nl ) 
+break ; 
+if ( nl > src && nl [ - 1 ] == '\r' ) { 
+strbuf_add ( buf , src , nl + 1 - src ) ; 
+} else { 
+strbuf_add ( buf , src , nl - src ) ; 
+strbuf_addstr ( buf , "\r\n" ) ; 
+} 
+len -= nl + 1 - src ; 
+src = nl + 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+strbuf_add ( buf , src , len ) ; 
+free ( to_free ) ; 
+return 1 ; 
+} 
+struct filter_params { 
+const char * src ; 
+unsigned long size ; 
+int fd ; 
+const char * cmd ; 
+const char * path ; 
+} ; 
+static int filter_buffer_or_fd ( int in , int out , void * data ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
 { 
+struct child_process child_process = CHILD_PROCESS_INIT ; 
+struct filter_params * params = ( struct filter_params * ) data ; 
+int write_err , status ; 
+const char * argv [ ] = { NULL , NULL } ; 
+struct strbuf cmd = STRBUF_INIT ; 
+struct strbuf path = STRBUF_INIT ; 
+struct strbuf_expand_dict_entry dict [ ] = { 
+{ "f" , NULL , } , 
+{ NULL , NULL , } , 
+} ; 
+sq_quote_buf ( & path , params -> path ) ; 
+dict [ 0 ] . value = path . buf ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_expand ( & cmd , params -> cmd , strbuf_expand_dict_cb , & dict ) ; 
+strbuf_release ( & path ) ; 
+argv [ 0 ] = cmd . buf ; 
+child_process . argv = argv ; 
+child_process . use_shell = 1 ; 
+child_process . in = - 1 ; 
+child_process . out = out ; 
+if ( start_command ( & child_process ) ) 
+return error ( "cannot fork to run external filter '%s'" , params -> cmd ) ; 
+sigchain_push ( SIGPIPE , SIG_IGN ) ; 
+if ( params -> src ) { 
+write_err = ( write_in_full ( child_process . in , 
+params -> src , params -> size ) < 0 ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( errno == EPIPE ) 
+write_err = 0 ; 
+} else { 
+write_err = copy_fd ( params -> fd , child_process . in ) ; 
+if ( write_err == COPY_WRITE_ERROR && errno == EPIPE ) 
+write_err = 0 ; 
+} 
+if ( close ( child_process . in ) ) 
+write_err = 1 ; 
+if ( write_err ) 
+error ( "cannot feed the input to external filter '%s'" , params -> cmd ) ; 
+sigchain_pop ( SIGPIPE ) ; 
+status = finish_command ( & child_process ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( status ) 
+error ( "external filter '%s' failed %d" , params -> cmd , status ) ; 
+strbuf_release ( & cmd ) ; 
+return ( write_err || status ) ; 
+} 
+static int apply_single_file_filter ( const char * path , const char * src , size_t len , int fd , 
+struct strbuf * dst , const char * cmd ) 
+{ 
+int err = 0 ; 
+struct strbuf nbuf = STRBUF_INIT ; 
+struct async async ; 
+struct filter_params params ; 
+memset ( & async , 0 , sizeof ( async ) ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+async . proc = filter_buffer_or_fd ; 
+async . data = & params ; 
+async . out = - 1 ; 
+params . src = src ; 
+params . size = len ; 
+params . fd = fd ; 
+params . cmd = cmd ; 
+params . path = path ; 
+fflush ( NULL ) ; 
+if ( start_async ( & async ) ) 
+return 0 ; 
+if ( strbuf_read ( & nbuf , async . out , len ) < 0 ) { 
+err = error ( "read from external filter '%s' failed" , cmd ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+if ( close ( async . out ) ) { 
+err = error ( "read from external filter '%s' failed" , cmd ) ; 
+} 
+if ( finish_async ( & async ) ) { 
+err = error ( "external filter '%s' failed" , cmd ) ; 
+} 
+if ( ! err ) { 
+strbuf_swap ( dst , & nbuf ) ; 
+} 
+strbuf_release ( & nbuf ) ; 
+return ! err ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+struct cmd2process { 
+struct subprocess_entry subprocess ; 
+unsigned int supported_capabilities ; 
+} ; 
+static int subprocess_map_initialized ; 
+static struct hashmap subprocess_map ; 
+static int start_multi_file_filter_fn ( struct subprocess_entry * subprocess ) 
+{ 
 int err ; 
-va_list args ; 
-struct strbuf buf = STRBUF_INIT ; 
-va_start ( args , fmt ) ; 
-err = do_submodule_path ( & buf , path , fmt , args ) ; 
-va_end ( args ) ; 
+struct cmd2process * entry = ( struct cmd2process * ) subprocess ; 
+struct string_list cap_list = STRING_LIST_INIT_NODUP ; 
+char * cap_buf ; 
+const char * cap_name ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+struct child_process * process = & subprocess -> process ; 
+const char * cmd = subprocess -> cmd ; 
+sigchain_push ( SIGPIPE , SIG_IGN ) ; 
+err = packet_writel ( process -> in , "git-filter-client" , "version=2" , NULL ) ; 
+if ( err ) 
+goto done ; 
+err = strcmp ( packet_read_line ( process -> out , NULL ) , "git-filter-server" ) ; 
 if ( err ) { 
-strbuf_release ( & buf ) ; 
-return NULL ; 
+error ( "external filter '%s' does not support filter protocol version 2" , cmd ) ; 
+goto done ; 
 } 
-return strbuf_detach ( & buf , NULL ) ; 
-} 
+err = strcmp ( packet_read_line ( process -> out , NULL ) , "version=2" ) ; 
+if ( err ) 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
+\frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-int strbuf_git_path_submodule ( struct strbuf * buf , const char * path , 
-const char * fmt , ... ) 
-{ 
-int err ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-err = do_submodule_path ( buf , path , fmt , args ) ; 
-va_end ( args ) ; 
+goto done ; 
+err = packet_read_line ( process -> out , NULL ) != NULL ; 
+if ( err ) 
+goto done ; 
+err = packet_writel ( process -> in , "capability=clean" , "capability=smudge" , NULL ) ; 
+for ( ; ; ) { 
+cap_buf = packet_read_line ( process -> out , NULL ) ; 
+if ( ! cap_buf ) 
+break ; 
+string_list_split_in_place ( & cap_list , cap_buf , '=' , 1 ) ; 
+if ( cap_list . nr != 2 || strcmp ( cap_list . items [ 0 ] . string , "capability" ) ) 
+continue ; 
+cap_name = cap_list . items [ 1 ] . string ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( ! strcmp ( cap_name , "clean" ) ) { 
+entry -> supported_capabilities |= ( 1u << 0 ) ; 
+} else if ( ! strcmp ( cap_name , "smudge" ) ) { 
+entry -> supported_capabilities |= ( 1u << 1 ) ; 
+} else { 
+warning ( 
+"external filter '%s' requested unsupported filter capability '%s'" , 
+cmd , cap_name 
+) ; 
+} 
+string_list_clear ( & cap_list , 0 ) ; 
+} 
+done : 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+sigchain_pop ( SIGPIPE ) ; 
 return err ; 
 } 
-static void do_git_common_path ( struct strbuf * buf , 
-const char * fmt , 
-va_list args ) 
+static int apply_multi_file_filter ( const char * path , const char * src , size_t len , 
+int fd , struct strbuf * dst , const char * cmd , 
+const unsigned int wanted_capability ) 
+{ 
+int err ; 
+struct cmd2process * entry ; 
+struct child_process * process ; 
+struct strbuf nbuf = STRBUF_INIT ; 
+struct strbuf filter_status = STRBUF_INIT ; 
+const char * filter_type ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
+\frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-{ 
-strbuf_addstr ( buf , get_git_common_dir ( ) ) ; 
-if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
-strbuf_addch ( buf , '/' ) ; 
-strbuf_vaddf ( buf , fmt , args ) ; 
-strbuf_cleanup_path ( buf ) ; 
+if ( ! subprocess_map_initialized ) { 
+subprocess_map_initialized = 1 ; 
+hashmap_init ( & subprocess_map , ( hashmap_cmp_fn ) cmd2process_cmp , 0 ) ; 
+entry = NULL ; 
+} else { 
+entry = ( struct cmd2process * ) subprocess_find_entry ( & subprocess_map , cmd ) ; 
 } 
-const char * git_common_path ( const char * fmt , ... ) 
-{ 
-struct strbuf * pathname = get_pathname ( ) ; 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_common_path ( pathname , fmt , args ) ; 
+fflush ( NULL ) ; 
+if ( ! entry ) { 
+entry = xmalloc ( sizeof ( * entry ) ) ; 
+entry -> supported_capabilities = 0 ; 
+if ( subprocess_start ( & subprocess_map , & entry -> subprocess , cmd , start_multi_file_filter_fn ) ) { 
+free ( entry ) ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
+\frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-va_end ( args ) ; 
-return pathname -> buf ; 
-} 
-void strbuf_git_common_path ( struct strbuf * sb , const char * fmt , ... ) 
-{ 
-va_list args ; 
-va_start ( args , fmt ) ; 
-do_git_common_path ( sb , fmt , args ) ; 
-va_end ( args ) ; 
-} 
-int validate_headref ( const char * path ) 
-{ 
-struct stat st ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-char * buf , buffer [ 256 ] ; 
-unsigned char sha1 [ 20 ] ; 
-int fd ; 
-ssize_t len ; 
-if ( lstat ( path , & st ) < 0 ) 
-return - 1 ; 
-if ( S_ISLNK ( st . st_mode ) ) { 
-len = readlink ( path , buffer , sizeof ( buffer ) - 1 ) ; 
-if ( len >= 5 && ! memcmp ( "refs/" , buffer , 5 ) ) 
 return 0 ; 
-return - 1 ; 
 } 
-fd = open ( path , O_RDONLY ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-if ( fd < 0 ) 
-return - 1 ; 
-len = read_in_full ( fd , buffer , sizeof ( buffer ) - 1 ) ; 
-close ( fd ) ; 
-if ( len < 4 ) 
-return - 1 ; 
-if ( ! memcmp ( "ref:" , buffer , 4 ) ) { 
-buf = buffer + 4 ; 
-len -= 4 ; 
-while ( len && isspace ( * buf ) ) 
-buf ++ , len -- ; 
-if ( len >= 5 && ! memcmp ( "refs/" , buf , 5 ) ) 
+} 
+process = & entry -> subprocess . process ; 
+if ( ! ( wanted_capability & entry -> supported_capabilities ) ) 
 return 0 ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-} 
-if ( ! get_sha1_hex ( buffer , sha1 ) ) 
-return 0 ; 
-return - 1 ; 
-} 
-static struct passwd * getpw_str ( const char * username , size_t len ) 
-{ 
-struct passwd * pw ; 
-char * username_z = xmemdupz ( username , len ) ; 
-pw = getpwnam ( username_z ) ; 
-free ( username_z ) ; 
-return pw ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-char * expand_user_path ( const char * path , int real_home ) 
-{ 
-struct strbuf user_path = STRBUF_INIT ; 
-const char * to_copy = path ; 
-if ( path == NULL ) 
-goto return_null ; 
-if ( path [ 0 ] == '~' ) { 
-const char * first_slash = strchrnul ( path , '/' ) ; 
-const char * username = path + 1 ; 
-size_t username_len = first_slash - username ; 
-if ( username_len == 0 ) { 
-const char * home = getenv ( "HOME" ) ; 
-if ( ! home ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo con los Errores}
-\begin{minted}[fontsize=\tiny]{c}
-goto return_null ; 
-if ( real_home ) 
-strbuf_addstr ( & user_path , real_path ( home ) ) ; 
+if ( ( 1u << 0 ) & wanted_capability ) 
+filter_type = "clean" ; 
+else if ( ( 1u << 1 ) & wanted_capability ) 
+filter_type = "smudge" ; 
 else 
-/*Pruebas/test01.c:472:39 syntax error, unexpected $end*/
-strbuf_addstr ( & user_path , home ) ; \end{minted}
+die ( "unexpected filter type" ) ; 
+sigchain_push ( SIGPIPE , SIG_IGN ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+assert ( strlen ( filter_type ) < LARGE_PACKET_DATA_MAX - strlen ( "command=\n" ) ) ; 
+err = packet_write_fmt_gently ( process -> in , "command=%s\n" , filter_type ) ; 
+if ( err ) 
+goto done ; 
+err = strlen ( path ) > LARGE_PACKET_DATA_MAX - strlen ( "pathname=\n" ) ; 
+if ( err ) { 
+error ( "path name too long for external filter" ) ; 
+goto done ; 
+} 
+err = packet_write_fmt_gently ( process -> in , "pathname=%s\n" , path ) ; 
+if ( err ) 
+goto done ; 
+err = packet_flush_gently ( process -> in ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( err ) 
+goto done ; 
+if ( fd >= 0 ) 
+err = write_packetized_from_fd ( fd , process -> in ) ; 
+else 
+err = write_packetized_from_buf ( src , len , process -> in ) ; 
+if ( err ) 
+goto done ; 
+err = subprocess_read_status ( process -> out , & filter_status ) ; 
+if ( err ) 
+goto done ; 
+err = strcmp ( filter_status . buf , "success" ) ; 
+if ( err ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+goto done ; 
+err = read_packetized_to_strbuf ( process -> out , & nbuf ) < 0 ; 
+if ( err ) 
+goto done ; 
+err = subprocess_read_status ( process -> out , & filter_status ) ; 
+if ( err ) 
+goto done ; 
+err = strcmp ( filter_status . buf , "success" ) ; 
+done : 
+sigchain_pop ( SIGPIPE ) ; 
+if ( err ) { 
+if ( ! strcmp ( filter_status . buf , "error" ) ) { 
+} else if ( ! strcmp ( filter_status . buf , "abort" ) ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+entry -> supported_capabilities &= ~ wanted_capability ; 
+} else { 
+error ( "external filter '%s' failed" , cmd ) ; 
+subprocess_stop ( & subprocess_map , & entry -> subprocess ) ; 
+free ( entry ) ; 
+} 
+} else { 
+strbuf_swap ( dst , & nbuf ) ; 
+} 
+strbuf_release ( & nbuf ) ; 
+return ! err ; 
+} 
+static struct convert_driver { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+const char * name ; 
+struct convert_driver * next ; 
+const char * smudge ; 
+const char * clean ; 
+const char * process ; 
+int required ; 
+} * user_convert , * * user_convert_tail ; 
+static int apply_filter ( const char * path , const char * src , size_t len , 
+int fd , struct strbuf * dst , struct convert_driver * drv , 
+const unsigned int wanted_capability ) 
+{ 
+const char * cmd = NULL ; 
+if ( ! drv ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return 0 ; 
+if ( ! dst ) 
+return 1 ; 
+if ( ( ( 1u << 0 ) & wanted_capability ) && ! drv -> process && drv -> clean ) 
+cmd = drv -> clean ; 
+else if ( ( ( 1u << 1 ) & wanted_capability ) && ! drv -> process && drv -> smudge ) 
+cmd = drv -> smudge ; 
+if ( cmd && * cmd ) 
+return apply_single_file_filter ( path , src , len , fd , dst , cmd ) ; 
+else if ( drv -> process && * drv -> process ) 
+return apply_multi_file_filter ( path , src , len , fd , dst , drv -> process , wanted_capability ) ; 
+return 0 ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+static int read_convert_config ( const char * var , const char * value , void * cb ) 
+{ 
+const char * key , * name ; 
+int namelen ; 
+struct convert_driver * drv ; 
+if ( parse_config_key ( var , "filter" , & name , & namelen , & key ) < 0 || ! name ) 
+return 0 ; 
+for ( drv = user_convert ; drv ; drv = drv -> next ) 
+if ( ! strncmp ( drv -> name , name , namelen ) && ! drv -> name [ namelen ] ) 
+break ; 
+if ( ! drv ) { 
+drv = xcalloc ( 1 , sizeof ( struct convert_driver ) ) ; 
+drv -> name = xmemdupz ( name , namelen ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+* user_convert_tail = drv ; 
+user_convert_tail = & ( drv -> next ) ; 
+} 
+if ( ! strcmp ( "smudge" , key ) ) 
+return git_config_string ( & drv -> smudge , var , value ) ; 
+if ( ! strcmp ( "clean" , key ) ) 
+return git_config_string ( & drv -> clean , var , value ) ; 
+if ( ! strcmp ( "process" , key ) ) 
+return git_config_string ( & drv -> process , var , value ) ; 
+if ( ! strcmp ( "required" , key ) ) { 
+drv -> required = git_config_bool ( var , value ) ; 
+return 0 ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return 0 ; 
+} 
+static int count_ident ( const char * cp , unsigned long size ) 
+{ 
+int cnt = 0 ; 
+char ch ; 
+while ( size ) { 
+ch = * cp ++ ; 
+size -- ; 
+if ( ch != '$' ) 
+continue ; 
+if ( size < 3 ) 
+break ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( memcmp ( "Id" , cp , 2 ) ) 
+continue ; 
+ch = cp [ 2 ] ; 
+cp += 3 ; 
+size -= 3 ; 
+if ( ch == '$' ) 
+cnt ++ ; 
+if ( ch != ':' ) 
+continue ; 
+while ( size ) { 
+ch = * cp ++ ; 
+size -- ; 
+if ( ch == '$' ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+cnt ++ ; 
+break ; 
+} 
+if ( ch == '\n' ) 
+break ; 
+} 
+} 
+return cnt ; 
+} 
+static int ident_to_git ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , int ident ) 
+{ 
+char * dst , * dollar ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( ! ident || ( src && ! count_ident ( src , len ) ) ) 
+return 0 ; 
+if ( ! buf ) 
+return 1 ; 
+if ( strbuf_avail ( buf ) + buf -> len < len ) 
+strbuf_grow ( buf , len - buf -> len ) ; 
+dst = buf -> buf ; 
+for ( ; ; ) { 
+dollar = memchr ( src , '$' , len ) ; 
+if ( ! dollar ) 
+break ; 
+memmove ( dst , src , dollar + 1 - src ) ; 
+dst += dollar + 1 - src ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
+if ( len > 3 && ! memcmp ( src , "Id:" , 3 ) ) { 
+dollar = memchr ( src + 3 , '$' , len - 3 ) ; 
+if ( ! dollar ) 
+break ; 
+if ( memchr ( src + 3 , '\n' , dollar - src - 3 ) ) { 
+continue ; 
+} 
+memcpy ( dst , "Id$" , 3 ) ; 
+dst += 3 ; 
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+} 
+memmove ( dst , src , len ) ; 
+strbuf_setlen ( buf , dst + len - buf -> buf ) ; 
+return 1 ; 
+} 
+static int ident_to_worktree ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , int ident ) 
+{ 
+unsigned char sha1 [ 20 ] ; 
+char * to_free = NULL , * dollar , * spc ; 
+int cnt ; 
+if ( ! ident ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return 0 ; 
+cnt = count_ident ( src , len ) ; 
+if ( ! cnt ) 
+return 0 ; 
+if ( src == buf -> buf ) 
+to_free = strbuf_detach ( buf , NULL ) ; 
+hash_sha1_file ( src , len , "blob" , sha1 ) ; 
+strbuf_grow ( buf , len + cnt * 43 ) ; 
+for ( ; ; ) { 
+dollar = memchr ( src , '$' , len ) ; 
+if ( ! dollar ) 
+break ; 
+strbuf_add ( buf , src , dollar + 1 - src ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
+if ( len < 3 || memcmp ( "Id" , src , 2 ) ) 
+continue ; 
+if ( src [ 2 ] == '$' ) { 
+src += 3 ; 
+len -= 3 ; 
+} else if ( src [ 2 ] == ':' ) { 
+dollar = memchr ( src + 3 , '$' , len - 3 ) ; 
+if ( ! dollar ) { 
+break ; 
+} 
+if ( memchr ( src + 3 , '\n' , dollar - src - 3 ) ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+continue ; 
+} 
+spc = memchr ( src + 4 , ' ' , dollar - src - 4 ) ; 
+if ( spc && spc < dollar - 1 ) { 
+continue ; 
+} 
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
+} else { 
+continue ; 
+} 
+strbuf_addstr ( buf , "Id: " ) ; 
+strbuf_add ( buf , sha1_to_hex ( sha1 ) , 40 ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_addstr ( buf , " $" ) ; 
+} 
+strbuf_add ( buf , src , len ) ; 
+free ( to_free ) ; 
+return 1 ; 
+} 
+static enum crlf_action git_path_check_crlf ( struct attr_check_item * check ) 
+{ 
+const char * value = check -> value ; 
+if ( ATTR_TRUE ( value ) ) 
+return CRLF_TEXT ; 
+else if ( ATTR_FALSE ( value ) ) 
+return CRLF_BINARY ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+else if ( ATTR_UNSET ( value ) ) 
+; 
+else if ( ! strcmp ( value , "input" ) ) 
+return CRLF_TEXT_INPUT ; 
+else if ( ! strcmp ( value , "auto" ) ) 
+return CRLF_AUTO ; 
+return CRLF_UNDEFINED ; 
+} 
+static enum eol git_path_check_eol ( struct attr_check_item * check ) 
+{ 
+const char * value = check -> value ; 
+if ( ATTR_UNSET ( value ) ) 
+; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+else if ( ! strcmp ( value , "lf" ) ) 
+return EOL_LF ; 
+else if ( ! strcmp ( value , "crlf" ) ) 
+return EOL_CRLF ; 
+return EOL_UNSET ; 
+} 
+static struct convert_driver * git_path_check_convert ( struct attr_check_item * check ) 
+{ 
+const char * value = check -> value ; 
+struct convert_driver * drv ; 
+if ( ATTR_TRUE ( value ) || ATTR_FALSE ( value ) || ATTR_UNSET ( value ) ) 
+return NULL ; 
+for ( drv = user_convert ; drv ; drv = drv -> next ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( ! strcmp ( value , drv -> name ) ) 
+return drv ; 
+return NULL ; 
+} 
+static int git_path_check_ident ( struct attr_check_item * check ) 
+{ 
+const char * value = check -> value ; 
+return ! ! ATTR_TRUE ( value ) ; 
+} 
+struct conv_attrs { 
+struct convert_driver * drv ; 
+enum crlf_action attr_action ; 
+enum crlf_action crlf_action ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+int ident ; 
+} ; 
+static void convert_attrs ( struct conv_attrs * ca , const char * path ) 
+{ 
+static struct attr_check * check ; 
+if ( ! check ) { 
+check = attr_check_initl ( "crlf" , "ident" , "filter" , 
+"eol" , "text" , NULL ) ; 
+user_convert_tail = & user_convert ; 
+git_config ( read_convert_config , NULL ) ; 
+} 
+if ( ! git_check_attr ( path , check ) ) { 
+struct attr_check_item * ccheck = check -> items ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+ca -> crlf_action = git_path_check_crlf ( ccheck + 4 ) ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED ) 
+ca -> crlf_action = git_path_check_crlf ( ccheck + 0 ) ; 
+ca -> attr_action = ca -> crlf_action ; 
+ca -> ident = git_path_check_ident ( ccheck + 1 ) ; 
+ca -> drv = git_path_check_convert ( ccheck + 2 ) ; 
+if ( ca -> crlf_action != CRLF_BINARY ) { 
+enum eol eol_attr = git_path_check_eol ( ccheck + 3 ) ; 
+if ( ca -> crlf_action == CRLF_AUTO && eol_attr == EOL_LF ) 
+ca -> crlf_action = CRLF_AUTO_INPUT ; 
+else if ( ca -> crlf_action == CRLF_AUTO && eol_attr == EOL_CRLF ) 
+ca -> crlf_action = CRLF_AUTO_CRLF ; 
+else if ( eol_attr == EOL_LF ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+ca -> crlf_action = CRLF_TEXT_INPUT ; 
+else if ( eol_attr == EOL_CRLF ) 
+ca -> crlf_action = CRLF_TEXT_CRLF ; 
+} 
+ca -> attr_action = ca -> crlf_action ; 
+} else { 
+ca -> drv = NULL ; 
+ca -> crlf_action = CRLF_UNDEFINED ; 
+ca -> ident = 0 ; 
+} 
+if ( ca -> crlf_action == CRLF_TEXT ) 
+ca -> crlf_action = text_eol_is_crlf ( ) ? CRLF_TEXT_CRLF : CRLF_TEXT_INPUT ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED && auto_crlf == AUTO_CRLF_FALSE ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+ca -> crlf_action = CRLF_BINARY ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED && auto_crlf == AUTO_CRLF_TRUE ) 
+ca -> crlf_action = CRLF_AUTO_CRLF ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED && auto_crlf == AUTO_CRLF_INPUT ) 
+ca -> crlf_action = CRLF_AUTO_INPUT ; 
+} 
+int would_convert_to_git_filter_fd ( const char * path ) 
+{ 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+if ( ! ca . drv ) 
+return 0 ; 
+if ( ! ca . drv -> required ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return 0 ; 
+return apply_filter ( path , NULL , 0 , - 1 , NULL , ca . drv , ( 1u << 0 ) ) ; 
+} 
+const char * get_convert_attr_ascii ( const char * path ) 
+{ 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+switch ( ca . attr_action ) { 
+case CRLF_UNDEFINED : 
+return "" ; 
+case CRLF_BINARY : 
+return "-text" ; 
+case CRLF_TEXT : 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return "text" ; 
+case CRLF_TEXT_INPUT : 
+return "text eol=lf" ; 
+case CRLF_TEXT_CRLF : 
+return "text eol=crlf" ; 
+case CRLF_AUTO : 
+return "text=auto" ; 
+case CRLF_AUTO_CRLF : 
+return "text=auto eol=crlf" ; 
+case CRLF_AUTO_INPUT : 
+return "text=auto eol=lf" ; 
+} 
+return "" ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+int convert_to_git ( const char * path , const char * src , size_t len , 
+struct strbuf * dst , enum safe_crlf checksafe ) 
+{ 
+int ret = 0 ; 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+ret |= apply_filter ( path , src , len , - 1 , dst , ca . drv , ( 1u << 0 ) ) ; 
+if ( ! ret && ca . drv && ca . drv -> required ) 
+die ( "%s: clean filter '%s' failed" , path , ca . drv -> name ) ; 
+if ( ret && dst ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+ret |= crlf_to_git ( path , src , len , dst , ca . crlf_action , checksafe ) ; 
+if ( ret && dst ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
+} 
+return ret | ident_to_git ( path , src , len , dst , ca . ident ) ; 
+} 
+void convert_to_git_filter_fd ( const char * path , int fd , struct strbuf * dst , 
+enum safe_crlf checksafe ) 
+{ 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+assert ( ca . drv ) ; 
+assert ( ca . drv -> clean || ca . drv -> process ) ; 
+if ( ! apply_filter ( path , NULL , 0 , fd , dst , ca . drv , ( 1u << 0 ) ) ) 
+die ( "%s: clean filter '%s' failed" , path , ca . drv -> name ) ; 
+crlf_to_git ( path , dst -> buf , dst -> len , dst , ca . crlf_action , checksafe ) ; 
+ident_to_git ( path , dst -> buf , dst -> len , dst , ca . ident ) ; 
+} 
+static int convert_to_working_tree_internal ( const char * path , const char * src , 
+size_t len , struct strbuf * dst , 
+int normalizing ) 
+{ 
+int ret = 0 , ret_filter = 0 ; 
+struct conv_attrs ca ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+convert_attrs ( & ca , path ) ; 
+ret |= ident_to_worktree ( path , src , len , dst , ca . ident ) ; 
+if ( ret ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
+} 
+if ( ( ca . drv && ( ca . drv -> smudge || ca . drv -> process ) ) || ! normalizing ) { 
+ret |= crlf_to_worktree ( path , src , len , dst , ca . crlf_action ) ; 
+if ( ret ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
+} 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+ret_filter = apply_filter ( path , src , len , - 1 , dst , ca . drv , ( 1u << 1 ) ) ; 
+if ( ! ret_filter && ca . drv && ca . drv -> required ) 
+die ( "%s: smudge filter %s failed" , path , ca . drv -> name ) ; 
+return ret | ret_filter ; 
+} 
+int convert_to_working_tree ( const char * path , const char * src , size_t len , struct strbuf * dst ) 
+{ 
+return convert_to_working_tree_internal ( path , src , len , dst , 0 ) ; 
+} 
+int renormalize_buffer ( const char * path , const char * src , size_t len , struct strbuf * dst ) 
+{ 
+int ret = convert_to_working_tree_internal ( path , src , len , dst , 1 ) ; 
+if ( ret ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+src = dst -> buf ; 
+len = dst -> len ; 
+} 
+return ret | convert_to_git ( path , src , len , dst , SAFE_CRLF_RENORMALIZE ) ; 
+} 
+typedef int ( * filter_fn ) ( struct stream_filter * , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) ; 
+typedef void ( * free_fn ) ( struct stream_filter * ) ; 
+struct stream_filter_vtbl { 
+filter_fn filter ; 
+free_fn free ; 
+} ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+struct stream_filter { 
+struct stream_filter_vtbl * vtbl ; 
+} ; 
+static int null_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
+{ 
+size_t count ; 
+if ( ! input ) 
+return 0 ; 
+count = * isize_p ; 
+if ( * osize_p < count ) 
+count = * osize_p ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( count ) { 
+memmove ( output , input , count ) ; 
+* isize_p -= count ; 
+* osize_p -= count ; 
+} 
+return 0 ; 
+} 
+static void null_free_fn ( struct stream_filter * filter ) 
+{ 
+; 
+} 
+static struct stream_filter_vtbl null_vtbl = { 
+null_filter_fn , 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+null_free_fn , 
+} ; 
+static struct stream_filter null_filter_singleton = { 
+& null_vtbl , 
+} ; 
+int is_null_stream_filter ( struct stream_filter * filter ) 
+{ 
+return filter == & null_filter_singleton ; 
+} 
+struct lf_to_crlf_filter { 
+struct stream_filter filter ; 
+unsigned has_held : 1 ; 
+char held ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} ; 
+static int lf_to_crlf_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
+{ 
+size_t count , o = 0 ; 
+struct lf_to_crlf_filter * lf_to_crlf = ( struct lf_to_crlf_filter * ) filter ; 
+if ( lf_to_crlf -> has_held && ( lf_to_crlf -> held != '\r' || ! input ) ) { 
+output [ o ++ ] = lf_to_crlf -> held ; 
+lf_to_crlf -> has_held = 0 ; 
+} 
+if ( ! input ) { 
+* osize_p -= o ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return 0 ; 
+} 
+count = * isize_p ; 
+if ( count || lf_to_crlf -> has_held ) { 
+size_t i ; 
+int was_cr = 0 ; 
+if ( lf_to_crlf -> has_held ) { 
+was_cr = 1 ; 
+lf_to_crlf -> has_held = 0 ; 
+} 
+for ( i = 0 ; o < * osize_p && i < count ; i ++ ) { 
+char ch = input [ i ] ; 
+if ( ch == '\n' ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+output [ o ++ ] = '\r' ; 
+} else if ( was_cr ) { 
+output [ o ++ ] = '\r' ; 
+} 
+if ( * osize_p <= o ) { 
+lf_to_crlf -> has_held = 1 ; 
+lf_to_crlf -> held = ch ; 
+continue ; 
+} 
+if ( ch == '\r' ) { 
+was_cr = 1 ; 
+continue ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+was_cr = 0 ; 
+output [ o ++ ] = ch ; 
+} 
+* osize_p -= o ; 
+* isize_p -= i ; 
+if ( ! lf_to_crlf -> has_held && was_cr ) { 
+lf_to_crlf -> has_held = 1 ; 
+lf_to_crlf -> held = '\r' ; 
+} 
+} 
+return 0 ; 
+} 
+static void lf_to_crlf_free_fn ( struct stream_filter * filter ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+free ( filter ) ; 
+} 
+static struct stream_filter_vtbl lf_to_crlf_vtbl = { 
+lf_to_crlf_filter_fn , 
+lf_to_crlf_free_fn , 
+} ; 
+static struct stream_filter * lf_to_crlf_filter ( void ) 
+{ 
+struct lf_to_crlf_filter * lf_to_crlf = xcalloc ( 1 , sizeof ( * lf_to_crlf ) ) ; 
+lf_to_crlf -> filter . vtbl = & lf_to_crlf_vtbl ; 
+return ( struct stream_filter * ) lf_to_crlf ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+struct cascade_filter { 
+struct stream_filter filter ; 
+struct stream_filter * one ; 
+struct stream_filter * two ; 
+char buf [ 1024 ] ; 
+int end , ptr ; 
+} ; 
+static int cascade_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
+{ 
+struct cascade_filter * cas = ( struct cascade_filter * ) filter ; 
+size_t filled = 0 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+size_t sz = * osize_p ; 
+size_t to_feed , remaining ; 
+while ( filled < sz ) { 
+remaining = sz - filled ; 
+if ( cas -> ptr < cas -> end ) { 
+to_feed = cas -> end - cas -> ptr ; 
+if ( stream_filter ( cas -> two , 
+cas -> buf + cas -> ptr , & to_feed , 
+output + filled , & remaining ) ) 
+return - 1 ; 
+cas -> ptr += ( cas -> end - cas -> ptr ) - to_feed ; 
+filled = sz - remaining ; 
+continue ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+to_feed = input ? * isize_p : 0 ; 
+if ( input && ! to_feed ) 
+break ; 
+remaining = sizeof ( cas -> buf ) ; 
+if ( stream_filter ( cas -> one , 
+input , & to_feed , 
+cas -> buf , & remaining ) ) 
+return - 1 ; 
+cas -> end = sizeof ( cas -> buf ) - remaining ; 
+cas -> ptr = 0 ; 
+if ( input ) { 
+size_t fed = * isize_p - to_feed ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+* isize_p -= fed ; 
+input += fed ; 
+} 
+if ( input || cas -> end ) 
+continue ; 
+to_feed = 0 ; 
+remaining = sz - filled ; 
+if ( stream_filter ( cas -> two , 
+NULL , & to_feed , 
+output + filled , & remaining ) ) 
+return - 1 ; 
+if ( remaining == ( sz - filled ) ) 
+break ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+filled = sz - remaining ; 
+} 
+* osize_p -= filled ; 
+return 0 ; 
+} 
+static void cascade_free_fn ( struct stream_filter * filter ) 
+{ 
+struct cascade_filter * cas = ( struct cascade_filter * ) filter ; 
+free_stream_filter ( cas -> one ) ; 
+free_stream_filter ( cas -> two ) ; 
+free ( filter ) ; 
+} 
+static struct stream_filter_vtbl cascade_vtbl = { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+cascade_filter_fn , 
+cascade_free_fn , 
+} ; 
+static struct stream_filter * cascade_filter ( struct stream_filter * one , 
+struct stream_filter * two ) 
+{ 
+struct cascade_filter * cascade ; 
+if ( ! one || is_null_stream_filter ( one ) ) 
+return two ; 
+if ( ! two || is_null_stream_filter ( two ) ) 
+return one ; 
+cascade = xmalloc ( sizeof ( * cascade ) ) ; 
+cascade -> one = one ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+cascade -> two = two ; 
+cascade -> end = cascade -> ptr = 0 ; 
+cascade -> filter . vtbl = & cascade_vtbl ; 
+return ( struct stream_filter * ) cascade ; 
+} 
+struct ident_filter { 
+struct stream_filter filter ; 
+struct strbuf left ; 
+int state ; 
+char ident [ 45 ] ; 
+} ; 
+static int is_foreign_ident ( const char * str ) 
+{ 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+int i ; 
+if ( ! skip_prefix ( str , "$Id: " , & str ) ) 
+return 0 ; 
+for ( i = 0 ; str [ i ] ; i ++ ) { 
+if ( isspace ( str [ i ] ) && str [ i + 1 ] != '$' ) 
+return 1 ; 
+} 
+return 0 ; 
+} 
+static void ident_drain ( struct ident_filter * ident , char * * output_p , size_t * osize_p ) 
+{ 
+size_t to_drain = ident -> left . len ; 
+if ( * osize_p < to_drain ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+to_drain = * osize_p ; 
+if ( to_drain ) { 
+memcpy ( * output_p , ident -> left . buf , to_drain ) ; 
+strbuf_remove ( & ident -> left , 0 , to_drain ) ; 
+* output_p += to_drain ; 
+* osize_p -= to_drain ; 
+} 
+if ( ! ident -> left . len ) 
+ident -> state = 0 ; 
+} 
+static int ident_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+struct ident_filter * ident = ( struct ident_filter * ) filter ; 
+static const char head [ ] = "$Id" ; 
+if ( ! input ) { 
+switch ( ident -> state ) { 
+default : 
+strbuf_add ( & ident -> left , head , ident -> state ) ; 
+case ( - 2 ) : 
+case ( - 1 ) : 
+ident_drain ( ident , & output , osize_p ) ; 
+} 
+return 0 ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+while ( * isize_p || ( ident -> state == ( - 1 ) ) ) { 
+int ch ; 
+if ( ident -> state == ( - 1 ) ) { 
+ident_drain ( ident , & output , osize_p ) ; 
+if ( ! * osize_p ) 
+break ; 
+continue ; 
+} 
+ch = * ( input ++ ) ; 
+( * isize_p ) -- ; 
+if ( ident -> state == ( - 2 ) ) { 
+strbuf_addch ( & ident -> left , ch ) ; 
+if ( ch != '\n' && ch != '$' ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+continue ; 
+if ( ch == '$' && ! is_foreign_ident ( ident -> left . buf ) ) { 
+strbuf_setlen ( & ident -> left , sizeof ( head ) - 1 ) ; 
+strbuf_addstr ( & ident -> left , ident -> ident ) ; 
+} 
+ident -> state = ( - 1 ) ; 
+continue ; 
+} 
+if ( ident -> state < sizeof ( head ) && 
+head [ ident -> state ] == ch ) { 
+ident -> state ++ ; 
+continue ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( ident -> state ) 
+strbuf_add ( & ident -> left , head , ident -> state ) ; 
+if ( ident -> state == sizeof ( head ) - 1 ) { 
+if ( ch != ':' && ch != '$' ) { 
+strbuf_addch ( & ident -> left , ch ) ; 
+ident -> state = 0 ; 
+continue ; 
+} 
+if ( ch == ':' ) { 
+strbuf_addch ( & ident -> left , ch ) ; 
+ident -> state = ( - 2 ) ; 
+} else { 
+strbuf_addstr ( & ident -> left , ident -> ident ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+ident -> state = ( - 1 ) ; 
+} 
+continue ; 
+} 
+strbuf_addch ( & ident -> left , ch ) ; 
+ident -> state = ( - 1 ) ; 
+} 
+return 0 ; 
+} 
+static void ident_free_fn ( struct stream_filter * filter ) 
+{ 
+struct ident_filter * ident = ( struct ident_filter * ) filter ; 
+strbuf_release ( & ident -> left ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+free ( filter ) ; 
+} 
+static struct stream_filter_vtbl ident_vtbl = { 
+ident_filter_fn , 
+ident_free_fn , 
+} ; 
+static struct stream_filter * ident_filter ( const unsigned char * sha1 ) 
+{ 
+struct ident_filter * ident = xmalloc ( sizeof ( * ident ) ) ; 
+xsnprintf ( ident -> ident , sizeof ( ident -> ident ) , 
+": %s $" , sha1_to_hex ( sha1 ) ) ; 
+strbuf_init ( & ident -> left , 0 ) ; 
+ident -> filter . vtbl = & ident_vtbl ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+ident -> state = 0 ; 
+return ( struct stream_filter * ) ident ; 
+} 
+struct stream_filter * get_stream_filter ( const char * path , const unsigned char * sha1 ) 
+{ 
+struct conv_attrs ca ; 
+struct stream_filter * filter = NULL ; 
+convert_attrs ( & ca , path ) ; 
+if ( ca . drv && ( ca . drv -> process || ca . drv -> smudge || ca . drv -> clean ) ) 
+return NULL ; 
+if ( ca . crlf_action == CRLF_AUTO || ca . crlf_action == CRLF_AUTO_CRLF ) 
+return NULL ; 
+if ( ca . ident ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+filter = ident_filter ( sha1 ) ; 
+if ( output_eol ( ca . crlf_action ) == EOL_CRLF ) 
+filter = cascade_filter ( filter , lf_to_crlf_filter ( ) ) ; 
+else 
+filter = cascade_filter ( filter , & null_filter_singleton ) ; 
+return filter ; 
+} 
+void free_stream_filter ( struct stream_filter * filter ) 
+{ 
+filter -> vtbl -> free ( filter ) ; 
+} 
+int stream_filter ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+char * output , size_t * osize_p ) 
+{ 
+return filter -> vtbl -> filter ( filter , input , isize_p , output , osize_p ) ; 
+} \end{minted}
 \end{frame}
 \end{document}

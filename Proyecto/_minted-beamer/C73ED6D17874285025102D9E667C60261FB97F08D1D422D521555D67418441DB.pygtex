@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{close} \PYG{p}{(} \PYG{n}{async} \PYG{p}{.} \PYG{n}{out} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}read from external filter \PYGZsq{}\PYGZpc{}s\PYGZsq{} failed\PYGZdq{}} \PYG{p}{,} \PYG{n}{cmd} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{finish\PYGZus{}async} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{async} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}external filter \PYGZsq{}\PYGZpc{}s\PYGZsq{} failed\PYGZdq{}} \PYG{p}{,} \PYG{n}{cmd} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{err} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}swap} \PYG{p}{(} \PYG{n}{dst} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{nbuf} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{nbuf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{!} \PYG{n}{err} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{spc} \PYG{o}{=} \PYG{n}{memchr} \PYG{p}{(} \PYG{n}{src} \PYG{o}{+} \PYG{l+m+mi}{4} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}} \PYG{p}{,} \PYG{n}{dollar} \PYG{o}{\PYGZhy{}} \PYG{n}{src} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{spc} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{spc} \PYG{o}{\PYGZlt{}} \PYG{n}{dollar} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{len} \PYG{o}{\PYGZhy{}=} \PYG{n}{dollar} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{src} \PYG{p}{;}
+\PYG{n}{src} \PYG{o}{=} \PYG{n}{dollar} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}addstr} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Id: \PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}add} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{sha1\PYGZus{}to\PYGZus{}hex} \PYG{p}{(} \PYG{n}{sha1} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{40} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

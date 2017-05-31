@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lonecr} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{c} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lonelf} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{c} \PYG{o}{==} \PYG{l+m+mi}{127} \PYG{p}{)}
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nonprintable} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{c} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{32} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{switch} \PYG{p}{(} \PYG{n}{c} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}b\PYGZsq{}} \PYG{o}{:} \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}t\PYGZsq{}} \PYG{o}{:} \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}033\PYGZsq{}} \PYG{o}{:} \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}014\PYGZsq{}} \PYG{o}{:}
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{printable} \PYG{o}{++} \PYG{p}{;}
+\end{Verbatim}

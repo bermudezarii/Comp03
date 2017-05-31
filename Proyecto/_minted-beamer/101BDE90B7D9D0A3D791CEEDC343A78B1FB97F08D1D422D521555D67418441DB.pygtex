@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}text\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{CRLF\PYGZus{}TEXT\PYGZus{}INPUT} \PYG{p}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}text eol=lf\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{CRLF\PYGZus{}TEXT\PYGZus{}CRLF} \PYG{p}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}text eol=crlf\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{CRLF\PYGZus{}AUTO} \PYG{p}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}text=auto\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{CRLF\PYGZus{}AUTO\PYGZus{}CRLF} \PYG{p}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}text=auto eol=crlf\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{CRLF\PYGZus{}AUTO\PYGZus{}INPUT} \PYG{p}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}text=auto eol=lf\PYGZdq{}} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}\PYGZdq{}} \PYG{p}{;}
+\end{Verbatim}

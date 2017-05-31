@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{skip\PYGZus{}prefix} \PYG{p}{(} \PYG{n}{str} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdl{}Id: \PYGZdq{}} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{str} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{str} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{isspace} \PYG{p}{(} \PYG{n}{str} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{str} \PYG{p}{[} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}\PYGZdl{}\PYGZsq{}} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{ident\PYGZus{}drain} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{ident\PYGZus{}filter} \PYG{o}{*} \PYG{n}{ident} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{output\PYGZus{}p} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{to\PYGZus{}drain} \PYG{o}{=} \PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{left} \PYG{p}{.} \PYG{n}{len} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{o}{\PYGZlt{}} \PYG{n}{to\PYGZus{}drain} \PYG{p}{)}
+\end{Verbatim}

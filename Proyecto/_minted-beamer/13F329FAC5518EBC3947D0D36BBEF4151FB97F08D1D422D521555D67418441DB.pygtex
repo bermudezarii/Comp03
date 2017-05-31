@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}addstr} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{l+s}{\PYGZdq{} \PYGZdl{}\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}add} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{to\PYGZus{}free} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{enum} \PYG{n}{crlf\PYGZus{}action} \PYG{n}{git\PYGZus{}path\PYGZus{}check\PYGZus{}crlf} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{attr\PYGZus{}check\PYGZus{}item} \PYG{o}{*} \PYG{n}{check} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{value} \PYG{o}{=} \PYG{n}{check} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{value} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ATTR\PYGZus{}TRUE} \PYG{p}{(} \PYG{n}{value} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{CRLF\PYGZus{}TEXT} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{ATTR\PYGZus{}FALSE} \PYG{p}{(} \PYG{n}{value} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{CRLF\PYGZus{}BINARY} \PYG{p}{;}
+\end{Verbatim}

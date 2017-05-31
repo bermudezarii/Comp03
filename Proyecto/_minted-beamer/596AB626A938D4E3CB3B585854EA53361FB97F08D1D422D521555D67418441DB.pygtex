@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{process} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{subprocess} \PYG{p}{.} \PYG{n}{process} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{wanted\PYGZus{}capability} \PYG{o}{\PYGZam{}} \PYG{n}{entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{supported\PYGZus{}capabilities} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{l+m+mi}{1u} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{n}{wanted\PYGZus{}capability} \PYG{p}{)}
+\PYG{n}{filter\PYGZus{}type} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}clean\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{p}{(} \PYG{l+m+mi}{1u} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{n}{wanted\PYGZus{}capability} \PYG{p}{)}
+\PYG{n}{filter\PYGZus{}type} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}smudge\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}unexpected filter type\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sigchain\PYGZus{}push} \PYG{p}{(} \PYG{n}{SIGPIPE} \PYG{p}{,} \PYG{n}{SIG\PYGZus{}IGN} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

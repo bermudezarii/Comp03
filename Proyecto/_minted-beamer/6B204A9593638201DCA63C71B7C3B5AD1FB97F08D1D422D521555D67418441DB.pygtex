@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{to\PYGZus{}drain} \PYG{o}{=} \PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{to\PYGZus{}drain} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{memcpy} \PYG{p}{(} \PYG{o}{*} \PYG{n}{output\PYGZus{}p} \PYG{p}{,} \PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{left} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{to\PYGZus{}drain} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}remove} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{left} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{to\PYGZus{}drain} \PYG{p}{)} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{output\PYGZus{}p} \PYG{o}{+=} \PYG{n}{to\PYGZus{}drain} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{o}{\PYGZhy{}=} \PYG{n}{to\PYGZus{}drain} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{left} \PYG{p}{.} \PYG{n}{len} \PYG{p}{)}
+\PYG{n}{ident} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{state} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{ident\PYGZus{}filter\PYGZus{}fn} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{filter} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{input} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{p}{,}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{output} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{p}{)}
+\end{Verbatim}

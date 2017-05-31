@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{cap\PYGZus{}name} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}clean\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{supported\PYGZus{}capabilities} \PYG{o}{|=} \PYG{p}{(} \PYG{l+m+mi}{1u} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{cap\PYGZus{}name} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}smudge\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{entry} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{supported\PYGZus{}capabilities} \PYG{o}{|=} \PYG{p}{(} \PYG{l+m+mi}{1u} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{warning} \PYG{p}{(}
+\PYG{l+s}{\PYGZdq{}external filter \PYGZsq{}\PYGZpc{}s\PYGZsq{} requested unsupported filter capability \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{cmd} \PYG{p}{,} \PYG{n}{cap\PYGZus{}name}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{string\PYGZus{}list\PYGZus{}clear} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{cap\PYGZus{}list} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nl}{done} \PYG{p}{:}
+\end{Verbatim}

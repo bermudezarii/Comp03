@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{CRLF\PYGZus{}TEXT\PYGZus{}INPUT} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{eol\PYGZus{}attr} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}CRLF} \PYG{p}{)}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{CRLF\PYGZus{}TEXT\PYGZus{}CRLF} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{attr\PYGZus{}action} \PYG{o}{=} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{drv} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{CRLF\PYGZus{}UNDEFINED} \PYG{p}{;}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ident} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}TEXT} \PYG{p}{)}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{text\PYGZus{}eol\PYGZus{}is\PYGZus{}crlf} \PYG{p}{(} \PYG{p}{)} \PYG{o}{?} \PYG{n+nl}{CRLF\PYGZus{}TEXT\PYGZus{}CRLF} \PYG{p}{:} \PYG{n}{CRLF\PYGZus{}TEXT\PYGZus{}INPUT} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}UNDEFINED} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{auto\PYGZus{}crlf} \PYG{o}{==} \PYG{n}{AUTO\PYGZus{}CRLF\PYGZus{}FALSE} \PYG{p}{)}
+\end{Verbatim}

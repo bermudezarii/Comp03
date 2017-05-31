@@ -1,8 +1,6 @@
-\frametitle{C\'odigo con los Errores}
+\frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-goto return_null ;
-if ( real_home )
-strbuf_addstr ( & user_path , real_path ( home ) ) ;
-else
-/*Pruebas/test01.c:472:39 syntax error, unexpected $end*/
-strbuf_addstr ( & user_path , home ) ; \end{minted}
+char * output , size_t * osize_p )
+{
+return filter -> vtbl -> filter ( filter , input , isize_p , output , osize_p ) ;
+} \end{minted}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{async} \PYG{p}{.} \PYG{n}{proc} \PYG{o}{=} \PYG{n}{filter\PYGZus{}buffer\PYGZus{}or\PYGZus{}fd} \PYG{p}{;}
+\PYG{n}{async} \PYG{p}{.} \PYG{n}{data} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{params} \PYG{p}{;}
+\PYG{n}{async} \PYG{p}{.} \PYG{n}{out} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{params} \PYG{p}{.} \PYG{n}{src} \PYG{o}{=} \PYG{n}{src} \PYG{p}{;}
+\PYG{n}{params} \PYG{p}{.} \PYG{n}{size} \PYG{o}{=} \PYG{n}{len} \PYG{p}{;}
+\PYG{n}{params} \PYG{p}{.} \PYG{n}{fd} \PYG{o}{=} \PYG{n}{fd} \PYG{p}{;}
+\PYG{n}{params} \PYG{p}{.} \PYG{n}{cmd} \PYG{o}{=} \PYG{n}{cmd} \PYG{p}{;}
+\PYG{n}{params} \PYG{p}{.} \PYG{n}{path} \PYG{o}{=} \PYG{n}{path} \PYG{p}{;}
+\PYG{n}{fflush} \PYG{p}{(} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{start\PYGZus{}async} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{async} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strbuf\PYGZus{}read} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{nbuf} \PYG{p}{,} \PYG{n}{async} \PYG{p}{.} \PYG{n}{out} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}read from external filter \PYGZsq{}\PYGZpc{}s\PYGZsq{} failed\PYGZdq{}} \PYG{p}{,} \PYG{n}{cmd} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

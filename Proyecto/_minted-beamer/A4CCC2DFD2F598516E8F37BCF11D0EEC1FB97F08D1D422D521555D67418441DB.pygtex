@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{cnt} \PYG{o}{=} \PYG{n}{count\PYGZus{}ident} \PYG{p}{(} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{cnt} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{src} \PYG{o}{==} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)}
+\PYG{n}{to\PYGZus{}free} \PYG{o}{=} \PYG{n}{strbuf\PYGZus{}detach} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hash\PYGZus{}sha1\PYGZus{}file} \PYG{p}{(} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}blob\PYGZdq{}} \PYG{p}{,} \PYG{n}{sha1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}grow} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{len} \PYG{o}{+} \PYG{n}{cnt} \PYG{o}{*} \PYG{l+m+mi}{43} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{p}{;} \PYG{p}{;} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{dollar} \PYG{o}{=} \PYG{n}{memchr} \PYG{p}{(} \PYG{n}{src} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}\PYGZdl{}\PYGZsq{}} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{dollar} \PYG{p}{)}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}add} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{src} \PYG{p}{,} \PYG{n}{dollar} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{src} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

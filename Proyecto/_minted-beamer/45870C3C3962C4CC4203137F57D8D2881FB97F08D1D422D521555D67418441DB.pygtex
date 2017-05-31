@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ret\PYGZus{}filter} \PYG{o}{=} \PYG{n}{apply\PYGZus{}filter} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{,} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{dst} \PYG{p}{,} \PYG{n}{ca} \PYG{p}{.} \PYG{n}{drv} \PYG{p}{,} \PYG{p}{(} \PYG{l+m+mi}{1u} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{ret\PYGZus{}filter} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{ca} \PYG{p}{.} \PYG{n}{drv} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{ca} \PYG{p}{.} \PYG{n}{drv} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{required} \PYG{p}{)}
+\PYG{n}{die} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s: smudge filter \PYGZpc{}s failed\PYGZdq{}} \PYG{p}{,} \PYG{n}{path} \PYG{p}{,} \PYG{n}{ca} \PYG{p}{.} \PYG{n}{drv} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{name} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{ret} \PYG{o}{|} \PYG{n}{ret\PYGZus{}filter} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{convert\PYGZus{}to\PYGZus{}working\PYGZus{}tree} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{src} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{len} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{dst} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{convert\PYGZus{}to\PYGZus{}working\PYGZus{}tree\PYGZus{}internal} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{,} \PYG{n}{dst} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{renormalize\PYGZus{}buffer} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{src} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{len} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{dst} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{ret} \PYG{o}{=} \PYG{n}{convert\PYGZus{}to\PYGZus{}working\PYGZus{}tree\PYGZus{}internal} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{,} \PYG{n}{dst} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ret} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

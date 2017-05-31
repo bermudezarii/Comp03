@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{count} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{memmove} \PYG{p}{(} \PYG{n}{output} \PYG{p}{,} \PYG{n}{input} \PYG{p}{,} \PYG{n}{count} \PYG{p}{)} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{o}{\PYGZhy{}=} \PYG{n}{count} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{o}{\PYGZhy{}=} \PYG{n}{count} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{null\PYGZus{}free\PYGZus{}fn} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{filter} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter\PYGZus{}vtbl} \PYG{n}{null\PYGZus{}vtbl} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{n}{null\PYGZus{}filter\PYGZus{}fn} \PYG{p}{,}
+\end{Verbatim}

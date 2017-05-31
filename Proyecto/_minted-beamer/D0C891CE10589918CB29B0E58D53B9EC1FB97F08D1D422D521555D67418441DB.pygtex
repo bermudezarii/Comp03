@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}filter\PYGZus{}fn} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{filter} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{input} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{p}{,}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{output} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{count} \PYG{p}{,} \PYG{n}{o} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}filter} \PYG{o}{*} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{=} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}filter} \PYG{o}{*} \PYG{p}{)} \PYG{n}{filter} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{has\PYGZus{}held} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{held} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}r\PYGZsq{}} \PYG{o}{||} \PYG{o}{!} \PYG{n}{input} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{output} \PYG{p}{[} \PYG{n}{o} \PYG{o}{++} \PYG{p}{]} \PYG{o}{=} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{held} \PYG{p}{;}
+\PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{has\PYGZus{}held} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{input} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{o}{\PYGZhy{}=} \PYG{n}{o} \PYG{p}{;}
+\end{Verbatim}

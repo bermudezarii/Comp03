@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO} \PYG{o}{||} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO\PYGZus{}INPUT} \PYG{o}{||} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO\PYGZus{}CRLF} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{lonecr} \PYG{o}{||} \PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{convert\PYGZus{}is\PYGZus{}binary} \PYG{p}{(} \PYG{n}{len} \PYG{p}{,} \PYG{n}{stats} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{crlf\PYGZus{}to\PYGZus{}git} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{src} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{len} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,}
+\PYG{k}{enum} \PYG{n}{crlf\PYGZus{}action} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{,} \PYG{k}{enum} \PYG{n}{safe\PYGZus{}crlf} \PYG{n}{checksafe} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

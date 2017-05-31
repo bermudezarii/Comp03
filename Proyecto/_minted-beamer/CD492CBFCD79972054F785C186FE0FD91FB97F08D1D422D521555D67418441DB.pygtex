@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{l+m+mi}{0} \PYG{o}{:}
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nul} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{default} \PYG{o}{:}
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nonprintable} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{printable} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{size} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{size} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}032\PYGZsq{}} \PYG{p}{)}
+\PYG{n}{stats} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{nonprintable} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

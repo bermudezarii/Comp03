@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{child\PYGZus{}process} \PYG{n}{child\PYGZus{}process} \PYG{o}{=} \PYG{n}{CHILD\PYGZus{}PROCESS\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{filter\PYGZus{}params} \PYG{o}{*} \PYG{n}{params} \PYG{o}{=} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{filter\PYGZus{}params} \PYG{o}{*} \PYG{p}{)} \PYG{n}{data} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{write\PYGZus{}err} \PYG{p}{,} \PYG{n}{status} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{argv} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{cmd} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{path} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf\PYGZus{}expand\PYGZus{}dict\PYGZus{}entry} \PYG{n}{dict} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}f\PYGZdq{}} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{n}{sq\PYGZus{}quote\PYGZus{}buf} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{,} \PYG{n}{params} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{dict} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{.} \PYG{n}{value} \PYG{o}{=} \PYG{n}{path} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{;}
+\end{Verbatim}

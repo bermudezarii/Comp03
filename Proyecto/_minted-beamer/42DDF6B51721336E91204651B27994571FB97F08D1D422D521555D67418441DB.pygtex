@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{convert\PYGZus{}stats} \PYG{o}{=} \PYG{n}{gather\PYGZus{}convert\PYGZus{}stats} \PYG{p}{(} \PYG{n}{data} \PYG{p}{,} \PYG{n}{size} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{convert\PYGZus{}stats} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x4} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}\PYGZhy{}text\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{switch} \PYG{p}{(} \PYG{n}{convert\PYGZus{}stats} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{case} \PYG{n+nl}{CONVERT\PYGZus{}STAT\PYGZus{}BITS\PYGZus{}TXT\PYGZus{}LF} \PYG{p}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}lf\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{case} \PYG{l+m+mh}{0x2} \PYG{o}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}crlf\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{case} \PYG{n}{CONVERT\PYGZus{}STAT\PYGZus{}BITS\PYGZus{}TXT\PYGZus{}LF} \PYG{o}{|} \PYG{l+m+mh}{0x2} \PYG{o}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}mixed\PYGZdq{}} \PYG{p}{;}
+\PYG{k}{default} \PYG{o}{:}
+\PYG{k}{return} \PYG{l+s}{\PYGZdq{}none\PYGZdq{}} \PYG{p}{;}
+\end{Verbatim}

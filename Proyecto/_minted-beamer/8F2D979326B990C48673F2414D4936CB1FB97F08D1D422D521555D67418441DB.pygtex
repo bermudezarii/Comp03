@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{crlf\PYGZus{}to\PYGZus{}worktree} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{src} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{len} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k}{enum} \PYG{n}{crlf\PYGZus{}action} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{to\PYGZus{}free} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{text\PYGZus{}stat} \PYG{n}{stats} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{len} \PYG{o}{||} \PYG{n}{output\PYGZus{}eol} \PYG{p}{(} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{)} \PYG{o}{!=} \PYG{n}{EOL\PYGZus{}CRLF} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{gather\PYGZus{}stats} \PYG{p}{(} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{stats} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{will\PYGZus{}convert\PYGZus{}lf\PYGZus{}to\PYGZus{}crlf} \PYG{p}{(} \PYG{n}{len} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{stats} \PYG{p}{,} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{src} \PYG{o}{==} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)}
+\PYG{n}{to\PYGZus{}free} \PYG{o}{=} \PYG{n}{strbuf\PYGZus{}detach} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

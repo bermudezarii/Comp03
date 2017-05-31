@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{to\PYGZus{}feed} \PYG{o}{=} \PYG{n}{input} \PYG{o}{?} \PYG{o}{*} \PYG{n+nl}{isize\PYGZus{}p} \PYG{p}{:} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{input} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{to\PYGZus{}feed} \PYG{p}{)}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{n}{remaining} \PYG{o}{=} \PYG{k}{sizeof} \PYG{p}{(} \PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{stream\PYGZus{}filter} \PYG{p}{(} \PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{one} \PYG{p}{,}
+\PYG{n}{input} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{to\PYGZus{}feed} \PYG{p}{,}
+\PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{remaining} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{end} \PYG{o}{=} \PYG{k}{sizeof} \PYG{p}{(} \PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{remaining} \PYG{p}{;}
+\PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ptr} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{input} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{fed} \PYG{o}{=} \PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{o}{\PYGZhy{}} \PYG{n}{to\PYGZus{}feed} \PYG{p}{;}
+\end{Verbatim}

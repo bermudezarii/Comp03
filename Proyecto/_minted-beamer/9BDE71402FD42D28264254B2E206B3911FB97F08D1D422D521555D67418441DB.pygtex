@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{filter} \PYG{o}{=} \PYG{n}{ident\PYGZus{}filter} \PYG{p}{(} \PYG{n}{sha1} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{output\PYGZus{}eol} \PYG{p}{(} \PYG{n}{ca} \PYG{p}{.} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{)} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}CRLF} \PYG{p}{)}
+\PYG{n}{filter} \PYG{o}{=} \PYG{n}{cascade\PYGZus{}filter} \PYG{p}{(} \PYG{n}{filter} \PYG{p}{,} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}filter} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n}{filter} \PYG{o}{=} \PYG{n}{cascade\PYGZus{}filter} \PYG{p}{(} \PYG{n}{filter} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{null\PYGZus{}filter\PYGZus{}singleton} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{filter} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{free\PYGZus{}stream\PYGZus{}filter} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{filter} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{filter} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{vtbl} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{free} \PYG{p}{(} \PYG{n}{filter} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{stream\PYGZus{}filter} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{filter} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{input} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{p}{,}
+\end{Verbatim}

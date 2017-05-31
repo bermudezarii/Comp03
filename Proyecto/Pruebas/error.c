@@ -3260,7 +3260,7 @@ static int files_reflog_expire(struct ref_store *ref_store,
 		}
 	}
 	free(log_file);
-	unlock_ref(lock);
+	unlock_ref(lock)
 	return status;
 
  failure:
@@ -3279,7 +3279,7 @@ static int files_init_db(struct ref_store *ref_store, struct strbuf *err)
 	/*
 	 * Create .git/refs/{heads,tags}
 	 */
-	files_ref_path(refs, &sb, "refs/heads");
+	files_ref_path(refs, &sb, "refs/heads")
 	safe_create_dir(sb.buf, 1);
 
 	strbuf_reset(&sb);

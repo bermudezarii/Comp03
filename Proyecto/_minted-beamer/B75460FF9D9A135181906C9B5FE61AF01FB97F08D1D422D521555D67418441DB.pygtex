@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}expand} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{cmd} \PYG{p}{,} \PYG{n}{params} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cmd} \PYG{p}{,} \PYG{n}{strbuf\PYGZus{}expand\PYGZus{}dict\PYGZus{}cb} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{dict} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{path} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{argv} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{=} \PYG{n}{cmd} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{;}
+\PYG{n}{child\PYGZus{}process} \PYG{p}{.} \PYG{n}{argv} \PYG{o}{=} \PYG{n}{argv} \PYG{p}{;}
+\PYG{n}{child\PYGZus{}process} \PYG{p}{.} \PYG{n}{use\PYGZus{}shell} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{child\PYGZus{}process} \PYG{p}{.} \PYG{n}{in} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{child\PYGZus{}process} \PYG{p}{.} \PYG{n}{out} \PYG{o}{=} \PYG{n}{out} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{start\PYGZus{}command} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{child\PYGZus{}process} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{error} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}cannot fork to run external filter \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{params} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cmd} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sigchain\PYGZus{}push} \PYG{p}{(} \PYG{n}{SIGPIPE} \PYG{p}{,} \PYG{n}{SIG\PYGZus{}IGN} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{params} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{src} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{write\PYGZus{}err} \PYG{o}{=} \PYG{p}{(} \PYG{n}{write\PYGZus{}in\PYGZus{}full} \PYG{p}{(} \PYG{n}{child\PYGZus{}process} \PYG{p}{.} \PYG{n}{in} \PYG{p}{,}
+\PYG{n}{params} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{src} \PYG{p}{,} \PYG{n}{params} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{size} \PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

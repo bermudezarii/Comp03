@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{*} \PYG{n}{user\PYGZus{}convert\PYGZus{}tail} \PYG{o}{=} \PYG{n}{drv} \PYG{p}{;}
+\PYG{n}{user\PYGZus{}convert\PYGZus{}tail} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{p}{(} \PYG{n}{drv} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{next} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}smudge\PYGZdq{}} \PYG{p}{,} \PYG{n}{key} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{git\PYGZus{}config\PYGZus{}string} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{drv} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{smudge} \PYG{p}{,} \PYG{n}{var} \PYG{p}{,} \PYG{n}{value} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}clean\PYGZdq{}} \PYG{p}{,} \PYG{n}{key} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{git\PYGZus{}config\PYGZus{}string} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{drv} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{clean} \PYG{p}{,} \PYG{n}{var} \PYG{p}{,} \PYG{n}{value} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}process\PYGZdq{}} \PYG{p}{,} \PYG{n}{key} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{git\PYGZus{}config\PYGZus{}string} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{drv} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{process} \PYG{p}{,} \PYG{n}{var} \PYG{p}{,} \PYG{n}{value} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}required\PYGZdq{}} \PYG{p}{,} \PYG{n}{key} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{drv} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{required} \PYG{o}{=} \PYG{n}{git\PYGZus{}config\PYGZus{}bool} \PYG{p}{(} \PYG{n}{var} \PYG{p}{,} \PYG{n}{value} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

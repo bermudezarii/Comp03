@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{cascade\PYGZus{}filter\PYGZus{}fn} \PYG{p}{,}
+\PYG{n}{cascade\PYGZus{}free\PYGZus{}fn} \PYG{p}{,}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n+nf}{cascade\PYGZus{}filter} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{one} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{two} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{cascade\PYGZus{}filter} \PYG{o}{*} \PYG{n}{cascade} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{one} \PYG{o}{||} \PYG{n}{is\PYGZus{}null\PYGZus{}stream\PYGZus{}filter} \PYG{p}{(} \PYG{n}{one} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{two} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{two} \PYG{o}{||} \PYG{n}{is\PYGZus{}null\PYGZus{}stream\PYGZus{}filter} \PYG{p}{(} \PYG{n}{two} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{one} \PYG{p}{;}
+\PYG{n}{cascade} \PYG{o}{=} \PYG{n}{xmalloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{o}{*} \PYG{n}{cascade} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{cascade} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{one} \PYG{o}{=} \PYG{n}{one} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{memmove} \PYG{p}{(} \PYG{n}{dst} \PYG{p}{,} \PYG{n}{src} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}setlen} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{dst} \PYG{o}{+} \PYG{n}{len} \PYG{o}{\PYGZhy{}} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{ident\PYGZus{}to\PYGZus{}worktree} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{src} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{len} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{ident} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{sha1} \PYG{p}{[} \PYG{l+m+mi}{20} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{to\PYGZus{}free} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{o}{*} \PYG{n}{dollar} \PYG{p}{,} \PYG{o}{*} \PYG{n}{spc} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{cnt} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{ident} \PYG{p}{)}
+\end{Verbatim}

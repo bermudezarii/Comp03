@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{git\PYGZus{}path\PYGZus{}check\PYGZus{}crlf} \PYG{p}{(} \PYG{n}{ccheck} \PYG{o}{+} \PYG{l+m+mi}{4} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}UNDEFINED} \PYG{p}{)}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{git\PYGZus{}path\PYGZus{}check\PYGZus{}crlf} \PYG{p}{(} \PYG{n}{ccheck} \PYG{o}{+} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{attr\PYGZus{}action} \PYG{o}{=} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{p}{;}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{ident} \PYG{o}{=} \PYG{n}{git\PYGZus{}path\PYGZus{}check\PYGZus{}ident} \PYG{p}{(} \PYG{n}{ccheck} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{drv} \PYG{o}{=} \PYG{n}{git\PYGZus{}path\PYGZus{}check\PYGZus{}convert} \PYG{p}{(} \PYG{n}{ccheck} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{!=} \PYG{n}{CRLF\PYGZus{}BINARY} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{enum} \PYG{n}{eol} \PYG{n}{eol\PYGZus{}attr} \PYG{o}{=} \PYG{n}{git\PYGZus{}path\PYGZus{}check\PYGZus{}eol} \PYG{p}{(} \PYG{n}{ccheck} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{eol\PYGZus{}attr} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}LF} \PYG{p}{)}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{CRLF\PYGZus{}AUTO\PYGZus{}INPUT} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{==} \PYG{n}{CRLF\PYGZus{}AUTO} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{eol\PYGZus{}attr} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}CRLF} \PYG{p}{)}
+\PYG{n}{ca} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{crlf\PYGZus{}action} \PYG{o}{=} \PYG{n}{CRLF\PYGZus{}AUTO\PYGZus{}CRLF} \PYG{p}{;}
+\PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{eol\PYGZus{}attr} \PYG{o}{==} \PYG{n}{EOL\PYGZus{}LF} \PYG{p}{)}
+\end{Verbatim}

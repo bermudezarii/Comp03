@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{goto} \PYG{n}{return\PYGZus{}null} \PYG{p}{;}
-\PYG{k}{if} \PYG{p}{(} \PYG{n}{real\PYGZus{}home} \PYG{p}{)}
-\PYG{n}{strbuf\PYGZus{}addstr} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{user\PYGZus{}path} \PYG{p}{,} \PYG{n}{real\PYGZus{}path} \PYG{p}{(} \PYG{n}{home} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
-\PYG{k}{else}
-\PYG{c+cm}{/*Pruebas/test01.c:472:39 syntax error, unexpected \PYGZdl{}end*/}
-\end{Verbatim}

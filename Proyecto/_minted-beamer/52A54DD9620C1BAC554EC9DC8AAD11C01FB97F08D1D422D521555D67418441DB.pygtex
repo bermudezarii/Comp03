@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{o}{\PYGZhy{}=} \PYG{n}{fed} \PYG{p}{;}
+\PYG{n}{input} \PYG{o}{+=} \PYG{n}{fed} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{input} \PYG{o}{||} \PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{end} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{n}{to\PYGZus{}feed} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{remaining} \PYG{o}{=} \PYG{n}{sz} \PYG{o}{\PYGZhy{}} \PYG{n}{filled} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{stream\PYGZus{}filter} \PYG{p}{(} \PYG{n}{cas} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{two} \PYG{p}{,}
+\PYG{n+nb}{NULL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{to\PYGZus{}feed} \PYG{p}{,}
+\PYG{n}{output} \PYG{o}{+} \PYG{n}{filled} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{remaining} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{remaining} \PYG{o}{==} \PYG{p}{(} \PYG{n}{sz} \PYG{o}{\PYGZhy{}} \PYG{n}{filled} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{break} \PYG{p}{;}
+\end{Verbatim}

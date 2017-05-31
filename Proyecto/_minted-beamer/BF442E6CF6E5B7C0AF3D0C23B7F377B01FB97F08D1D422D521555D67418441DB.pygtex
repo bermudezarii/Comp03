@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{goto} \PYG{n}{done} \PYG{p}{;}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{packet\PYGZus{}read\PYGZus{}line} \PYG{p}{(} \PYG{n}{process} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{out} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{done} \PYG{p}{;}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{packet\PYGZus{}writel} \PYG{p}{(} \PYG{n}{process} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{in} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}capability=clean\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}capability=smudge\PYGZdq{}} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{p}{;} \PYG{p}{;} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{cap\PYGZus{}buf} \PYG{o}{=} \PYG{n}{packet\PYGZus{}read\PYGZus{}line} \PYG{p}{(} \PYG{n}{process} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{out} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{cap\PYGZus{}buf} \PYG{p}{)}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{n}{string\PYGZus{}list\PYGZus{}split\PYGZus{}in\PYGZus{}place} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{cap\PYGZus{}list} \PYG{p}{,} \PYG{n}{cap\PYGZus{}buf} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}=\PYGZsq{}} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{cap\PYGZus{}list} \PYG{p}{.} \PYG{n}{nr} \PYG{o}{!=} \PYG{l+m+mi}{2} \PYG{o}{||} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{cap\PYGZus{}list} \PYG{p}{.} \PYG{n}{items} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}capability\PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{n}{cap\PYGZus{}name} \PYG{o}{=} \PYG{n}{cap\PYGZus{}list} \PYG{p}{.} \PYG{n}{items} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{string} \PYG{p}{;}
+\end{Verbatim}

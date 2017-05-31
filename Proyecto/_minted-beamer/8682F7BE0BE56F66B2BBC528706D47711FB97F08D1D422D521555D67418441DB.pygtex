@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{was\PYGZus{}cr} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{output} \PYG{p}{[} \PYG{n}{o} \PYG{o}{++} \PYG{p}{]} \PYG{o}{=} \PYG{n}{ch} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{o}{\PYGZhy{}=} \PYG{n}{o} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{o}{\PYGZhy{}=} \PYG{n}{i} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{has\PYGZus{}held} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{was\PYGZus{}cr} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{has\PYGZus{}held} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{lf\PYGZus{}to\PYGZus{}crlf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{held} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}r\PYGZsq{}} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{lf\PYGZus{}to\PYGZus{}crlf\PYGZus{}free\PYGZus{}fn} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{filter} \PYG{p}{)}
+\end{Verbatim}

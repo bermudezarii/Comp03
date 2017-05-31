@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{sigchain\PYGZus{}pop} \PYG{p}{(} \PYG{n}{SIGPIPE} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{err} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{apply\PYGZus{}multi\PYGZus{}file\PYGZus{}filter} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{src} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{len} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{n}{fd} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{dst} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{cmd} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{wanted\PYGZus{}capability} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{err} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{cmd2process} \PYG{o}{*} \PYG{n}{entry} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{child\PYGZus{}process} \PYG{o}{*} \PYG{n}{process} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{nbuf} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{filter\PYGZus{}status} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{filter\PYGZus{}type} \PYG{p}{;}
+\end{Verbatim}

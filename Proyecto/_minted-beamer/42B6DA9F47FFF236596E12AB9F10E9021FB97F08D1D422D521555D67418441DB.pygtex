@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{cascade\PYGZus{}filter} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{n}{filter} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{one} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{two} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{1024} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{end} \PYG{p}{,} \PYG{n}{ptr} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{cascade\PYGZus{}filter\PYGZus{}fn} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{stream\PYGZus{}filter} \PYG{o}{*} \PYG{n}{filter} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{input} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{isize\PYGZus{}p} \PYG{p}{,}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{output} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{osize\PYGZus{}p} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{cascade\PYGZus{}filter} \PYG{o}{*} \PYG{n}{cas} \PYG{o}{=} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{cascade\PYGZus{}filter} \PYG{o}{*} \PYG{p}{)} \PYG{n}{filter} \PYG{p}{;}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{filled} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\end{Verbatim}
