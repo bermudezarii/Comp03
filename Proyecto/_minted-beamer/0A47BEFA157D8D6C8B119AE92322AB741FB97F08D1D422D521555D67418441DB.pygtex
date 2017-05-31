@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Pruebas/love.c:21:2 syntax error, unexpected AND\PYGZus{}OP*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:6 syntax error, unexpected CONSTANT*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:8 syntax error, unexpected MINUS*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:11 syntax error, unexpected CONSTANT*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:13 syntax error, unexpected MINUS*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:25 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:33 syntax error, unexpected BREAK*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:37 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{c+cm}{/*Pruebas/love.c:21:39 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\PYG{o}{\PYGZam{}\PYGZam{}} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1l} \PYG{o}{\PYGZhy{}} \PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}} \PYG{p}{)} \PYG{p}{;} \PYG{k}{break} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZcb{}}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{p}{;} \PYG{n+nl}{hell} \PYG{p}{:} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/love.c:24:26 syntax error, unexpected MINUS*/}
+\end{Verbatim}

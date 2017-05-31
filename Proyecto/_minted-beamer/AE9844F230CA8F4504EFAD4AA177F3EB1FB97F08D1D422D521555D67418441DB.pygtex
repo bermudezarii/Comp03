@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o}{*} \PYG{o}{!} \PYG{p}{(} \PYG{n}{not} \PYG{o}{=} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{let}
+\PYG{p}{[} \PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{n}{me} \PYG{o}{?}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{o}{\PYGZhy{}}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n+nl}{lotte} \PYG{p}{:} \PYG{n}{my} \PYG{o}{\PYGZhy{}} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{o}{\PYGZhy{}}
+\PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}U\PYGZsq{}} \PYG{o}{\PYGZhy{}}
+\PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{k+kt}{long} \PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}U\PYGZsq{}} \PYG{p}{]} \PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{o}{!} \PYG{o}{!}
+\PYG{p}{(} \PYG{n}{time} \PYG{o}{=} \PYG{n}{out} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(} \PYG{n}{my} \PYG{o}{\PYGZhy{}} \PYG{n}{dear}
+\PYG{o}{\PYGZam{}\PYGZam{}} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1l} \PYG{o}{\PYGZhy{}} \PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}} \PYG{p}{)} \PYG{p}{;} \PYG{k}{break} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZcb{}}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{p}{;} \PYG{n+nl}{hell} \PYG{p}{:} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{p}{;}
+\PYG{n}{get} \PYG{o}{*} \PYG{n}{out} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{short} \PYG{p}{)} \PYG{n}{ly} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{0} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}R\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}} \PYG{o}{\PYGZca{}} \PYG{n}{rested} \PYG{p}{;}
+\PYG{k}{do} \PYG{p}{\PYGZob{}} \PYG{k}{auto} \PYG{o}{*} \PYG{n}{eroticism} \PYG{p}{,}
+\PYG{n}{that} \PYG{p}{;} \PYG{n}{puts} \PYG{p}{(} \PYG{o}{*} \PYG{p}{(} \PYG{n}{out}
+\end{Verbatim}

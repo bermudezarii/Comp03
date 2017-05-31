@@ -10,7 +10,7 @@ extern char* yytext;
 
 char *includes[] = {};     //Tabla con las cadenas que representarán a los includes que se encuentren en el programa
 int numIncludes = -1;      //Contador de los includes que se tendrán en el array de cadenas includes
-
+bool includenoexiste=false;
 
 
 /*
@@ -101,7 +101,8 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                         yyin =archivoActual; //Se le dice a flex cuál archivo se estará leyendo
                     }else 
                     {
-                        printf("No se encuentra el archivo: %s\n",includeArreglado);
+                        printf("fatal error: %s: No existe el archivo o el directorio\n",includeArreglado);
+                        includenoexiste=true;
                     }
 
                 }
@@ -149,8 +150,8 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                 			
                                 strcat(includeGCC, yytext);
                                 
-                                printf("ENTRA CON INCLUDE \n");
-                                printf("%s \n", includeGCC);
+                               
+                              
                                 salida = fopen(nombreTemporal, "w");
                                 libreria = fopen("libreria.c", "w");
                                 fputs(includeGCC, libreria);
@@ -161,6 +162,7 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                                      
                                 if (fp == NULL) {
                                      printf("Failed to run command\n" );
+                                     includenoexiste=true;
                                      exit -1;
                                 }
 
@@ -173,7 +175,7 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                                     
                                 	while (fgets(contenidoArchivo, 2, fp) != NULL) {
 	                                    if (strcmp(contenidoArchivo,"#")==0){
-	                                        printf("%s", contenidoArchivo);
+	                                        
 	                                        //Comparo hasta que haya espacio
 	                                    
 	                                        while (strcmp(contenidoArchivo,"\n")!=0){

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Pruebas/love.c:24:28 syntax error, unexpected INTEGER*/}
+\PYG{c+cm}{/*Pruebas/love.c:24:30 syntax error, unexpected MINUS*/}
+\PYG{c+cm}{/*Pruebas/love.c:24:34 syntax error, unexpected CONSTANT*/}
+\PYG{c+cm}{/*Pruebas/love.c:24:36 syntax error, unexpected MINUS*/}
+\PYG{c+cm}{/*Pruebas/love.c:24:48 syntax error, unexpected UP\PYGZus{}ARROW*/}
+\PYG{n}{get} \PYG{o}{*} \PYG{n}{out} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{short} \PYG{p}{)} \PYG{n}{ly} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{0} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}R\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}} \PYG{o}{\PYGZca{}} \PYG{n}{rested} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/love.c:25:2 syntax error, unexpected DO*/}
+\PYG{k}{do} \PYG{p}{\PYGZob{}} \PYG{k}{auto} \PYG{o}{*} \PYG{n}{eroticism} \PYG{p}{,}
+\PYG{n}{that} \PYG{p}{;} \PYG{n}{puts} \PYG{p}{(} \PYG{o}{*} \PYG{p}{(} \PYG{n}{out}
+\PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}c\PYGZsq{}}
+\PYG{c+cm}{/*Pruebas/love.c:28:41 syntax error, unexpected WHILE*/}
+\PYG{c+cm}{/*Pruebas/love.c:28:45 syntax error, unexpected EXCLAMATION*/}
+\PYG{c+cm}{/*Pruebas/love.c:28:60 syntax error, unexpected LITERAL*/}
+\end{Verbatim}

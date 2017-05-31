@@ -31,11 +31,12 @@ int main(int argc, char *argv[])
 	
     if(argc == 1){
         printf("\n                                          **INSTRUCCIONES**\n\n");
-        printf("Para el funcionamiento del programa, este va a funcionar con 2 parámetros en donde el segundo es opcional.\n");
+        printf(" Para el funcionamiento del programa, este va a funcionar con 2 parámetros en donde el segundo es opcional.\n");
         printf("    *En donde el primero será la dirección del programa.\n");
-        printf("    *En el segundo, si ingresa P significa que se hará una presentación Beamer con el código con pretty print GNU .\n\n");
-        printf("                    si ingresa B significa que desea una presentación Beamer sin el pretty print .\n\n");
-        printf("                    si ingresa algo diferente de esto, o no ingresa nada, no se hará la presentación Beamer .\n\n");
+        printf("    *En el segundo:\n                      *Si ingresa P significa que se hará una presentación Beamer con el código con pretty print GNU .\n");
+        printf("                      *Si ingresa B significa que desea una presentación Beamer sin el pretty print .\n");
+        printf("                      *Si ingresa algo diferente de esto, o no ingresa nada, no se hará la presentación Beamer por default .\n\n");
+         printf(" **IMPORTANTE**:Tome en cuenta que los archivos llamados en los includes, deben de estar en la misma carpeta del ejecutable.\n\n");
         
 
     }
@@ -61,26 +62,27 @@ int main(int argc, char *argv[])
             
 
             // si desea el beamer
-            if(argc >= 3 &&( !strcmp(argv[2], "B") || !strcmp(argv[2], "P"))){ 
+            if(argc >= 3 &&( !strcmp(argv[2], "-B") || !strcmp(argv[2], "-P"))){ 
                 beamer = fopen("beamer.tex", "w"); 
                 startBeamer(beamer); 
                 addExplanation(beamer);  
                 preprocesador1(archivoEntrada,tmpfile);
-                fclose(tmpfile);
-                preproceso=false;
-                tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
-                yyin = tmpfile;
-                linea=0;
-                printf("oli\n");
-                ponerCodigo(beamer); 
-                printf("oli1\n");
-                fclose(tmpfile);
-                preproceso=false;
-                tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
-                yyin = tmpfile;
-                linea=0;
-                memset(gramaticas,0,sizeof(gramaticas));
-                yyparse();
+
+               
+                if(includenoexiste=false){
+                    fclose(tmpfile);
+                    preproceso=false;
+                    tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
+                    yyin = tmpfile;
+                    linea=0;
+                    ponerCodigo(beamer); 
+                    fclose(tmpfile);
+                    preproceso=false;
+                    tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
+                    yyin = tmpfile;
+                    linea=0;
+                    memset(gramaticas,0,sizeof(gramaticas));
+                    yyparse();
                 
                 if(banderaSyntaxError == 1){ // si hay error, los indica 
                     banderaParseado =1 ; 
@@ -100,7 +102,7 @@ int main(int argc, char *argv[])
                     tmpfile2 = fopen("tmpfile2.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
                     ponerErrores(tmpfile2, beamer);
                     printf("error :v\n");
-
+                }
 
                 }
                 else{ // banderaSyntaxError == 0
@@ -126,13 +128,18 @@ int main(int argc, char *argv[])
                 preproceso=true;
                 memset(gramaticas,0,sizeof(gramaticas));
                 preprocesador1(archivoEntrada,tmpfile);
-                fclose(tmpfile);
-                preproceso=false;
-                tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
-                yyin = tmpfile; 
-                linea=1;
-                memset(gramaticas,0,sizeof(gramaticas));
-                yyparse();
+
+                
+
+                if(includenoexiste==false){
+                    fclose(tmpfile);
+                    preproceso=false;
+                    tmpfile = fopen("tmpfile.c", "r"); //Se llama a la función del preprocesador con el archivo de entrada
+                    yyin = tmpfile; 
+                    linea=1;
+                    memset(gramaticas,0,sizeof(gramaticas));
+                    yyparse();
+                }
                 if(banderaSyntaxError == 0){
                 }
             }

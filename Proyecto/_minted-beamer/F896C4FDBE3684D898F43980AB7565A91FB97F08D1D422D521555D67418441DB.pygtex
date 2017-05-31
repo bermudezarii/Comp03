@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}c\PYGZsq{}}
+\PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{l+s+sc}{\PYGZsq{}P\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}S\PYGZsq{}} \PYG{p}{)} \PYG{o}{+} \PYG{n}{die} \PYG{o}{+} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(} \PYG{o}{!} \PYG{l+s}{\PYGZdq{}you\PYGZsq{}re at it\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{o}{*} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{n}{lotte} \PYG{p}{)} \PYG{o}{\PYGZca{}=}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{p}{;} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{n}{ly} \PYG{p}{)} \PYG{p}{[} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{++} \PYG{n}{lotte} \PYG{o}{+}
+\PYG{o}{!} \PYG{o}{!} \PYG{l+m+mh}{0xBABE} \PYG{p}{]} \PYG{p}{;} \PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{k}{if} \PYG{p}{(} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{n}{lie} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{o}{+} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{p}{]} \PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1l} \PYG{o}{*} \PYG{o}{*} \PYG{o}{*} \PYG{n}{die} \PYG{p}{;} \PYG{p}{\PYGZcb{}}
+\PYG{k}{else} \PYG{p}{\PYGZob{}} \PYG{k}{if} \PYG{p}{(} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{*} \PYG{n}{get} \PYG{o}{*} \PYG{n}{out} \PYG{o}{*} \PYG{p}{(} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1l} \PYG{o}{*} \PYG{o}{*} \PYG{n}{die} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{)} \PYG{p}{)} \PYG{o}{*} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{n}{lotte} \PYG{p}{)} \PYG{o}{\PYGZhy{}=}
+\PYG{l+s+sc}{\PYGZsq{}4\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1l} \PYG{p}{)} \PYG{p}{;} \PYG{n}{not} \PYG{p}{;} \PYG{k}{for} \PYG{p}{(} \PYG{n}{get} \PYG{o}{=} \PYG{o}{!}
+\PYG{n}{get} \PYG{p}{;} \PYG{o}{!} \PYG{n}{out} \PYG{p}{;} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0xD0} \PYG{o}{\PYGZhy{}} \PYG{o}{!} \PYG{n}{not} \PYG{p}{)} \PYG{k}{return} \PYG{o}{!} \PYG{o}{!}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{p}{;} \PYG{p}{\PYGZcb{}}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{p}{;}
+\PYG{k}{do} \PYG{p}{\PYGZob{}} \PYG{n}{not} \PYG{o}{*} \PYG{n}{putchar} \PYG{p}{(} \PYG{n}{lie} \PYG{p}{[} \PYG{n}{out}
+\PYG{o}{*} \PYG{o}{!} \PYG{n}{not} \PYG{o}{*} \PYG{o}{!} \PYG{o}{!} \PYG{n}{me} \PYG{o}{+} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{not} \PYG{p}{;} \PYG{k}{for} \PYG{p}{(} \PYG{p}{;} \PYG{o}{!} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}} \PYG{p}{;} \PYG{p}{)} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(}
+\end{Verbatim}

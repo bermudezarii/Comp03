@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.11)  31 MAY 2017 00:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.11)  31 MAY 2017 01:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1199,7 +1199,7 @@ You are using the progressbar beamer theme (Sylvain B.)
 Version: 0.32. Jun. 2007.
 ..................................................................
 (./beamer.nav)
-Overfull \hbox (2913.76062pt too wide) in paragraph at lines 23--23
+Overfull \hbox (2962.13037pt too wide) in paragraph at lines 23--23
 [][]  
  []
 
@@ -1235,20 +1235,210 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 \openout5 = `beamer.pyg'.
 
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
-ed-beamer/9A5050FFAFE115B510170BF2B447CF9F1FB97F08D1D422D521555D67418441DB.pygt
+ed-beamer/7EFD54307A0EC9A9D94EDC9B8EB74BA81FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
 
 
-(./_minted-beamer/9A5050FFAFE115B510170BF2B447CF9F1FB97F08D1D422D521555D6741844
+(./_minted-beamer/7EFD54307A0EC9A9D94EDC9B8EB74BA81FB97F08D1D422D521555D6741844
 1DB.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <6> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 3.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 ))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 [][]  
  []
 
 [4
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/AE9844F230CA8F4504EFAD4AA177F3EB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/AE9844F230CA8F4504EFAD4AA177F3EB1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[5
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F896C4FDBE3684D898F43980AB7565A91FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F896C4FDBE3684D898F43980AB7565A91FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[6
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/3F36A442DC70ED28ECE190B8FF7B44281FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/3F36A442DC70ED28ECE190B8FF7B44281FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[7
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/BA1FA63D2A4D9A4F7C62D12AAE45761D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/BA1FA63D2A4D9A4F7C62D12AAE45761D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[8
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/1CCB562AE4B6AD941FA78FE349123E2D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/1CCB562AE4B6AD941FA78FE349123E2D1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[9
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/0A47BEFA157D8D6C8B119AE92322AB741FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/0A47BEFA157D8D6C8B119AE92322AB741FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[10
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F995A7ABFDFB78454BD8329EAF4106EA1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F995A7ABFDFB78454BD8329EAF4106EA1FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[11
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/DC26AF387DC1B7AAFFB06135F4980E381FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/DC26AF387DC1B7AAFFB06135F4980E381FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[12
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/AD9967C3C5914EDAD0333DB78D8B55361FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/AD9967C3C5914EDAD0333DB78D8B55361FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[13
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/EB9AF8B7FCAEDFEAD85ABCD247A0E1D11FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/EB9AF8B7FCAEDFEAD85ABCD247A0E1D11FB97F08D1D422D521555D6741844
+1DB.pygtex))
+Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
+[][]  
+ []
+
+[14
 
 ]
 \tf@nav=\write9
@@ -1260,13 +1450,25 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 \tf@snm=\write11
 \openout11 = `beamer.snm'.
 
+runsystem(rm "_minted-beamer/5BFEA27BE9FCAC49F6D09DB8DE543D491FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0957C3FDDAA73976D584CF0075A4DD811FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/776CE3921EA11C8EF4FEDAA1AEC156D01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8F0C255DDFEDC9802916D16EA08CC38F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
 runsystem(rm "beamer.pyg")...executed.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (./beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `beamer.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1274,25 +1476,26 @@ Package rerunfilecheck Info: File `beamer.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 31865 strings out of 494953
- 752345 string characters out of 6180977
- 932263 words of memory out of 5000000
- 34514 multiletter control sequences out of 15000+600000
- 7275 words of font info for 27 fonts, out of 8000000 for 9000
+ 31262 strings out of 494953
+ 750209 string characters out of 6180977
+ 930584 words of memory out of 5000000
+ 33836 multiletter control sequences out of 15000+600000
+ 7443 words of font info for 28 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,18n,77p,946b,925s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on beamer.pdf (4 pages, 57349 bytes).
+ 54i,18n,77p,946b,926s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on beamer.pdf (14 pages, 91932 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 132 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
+ 29 named destinations out of 1000 (max. 500000)
+ 79 words of extra memory for PDF output out of 10000 (max. 10000000)
 

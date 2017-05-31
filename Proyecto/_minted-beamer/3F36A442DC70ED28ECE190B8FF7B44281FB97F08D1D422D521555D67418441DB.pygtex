@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{p}{)} \PYG{p}{;} \PYG{p}{\PYGZob{}}
+\PYG{k}{register} \PYG{n}{this} \PYG{p}{;} \PYG{k}{switch} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lie}
+\PYG{p}{[} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o}{*} \PYG{o}{!} \PYG{n}{out} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{les} \PYG{p}{,} \PYG{n}{get} \PYG{o}{=} \PYG{l+m+mh}{0xFF} \PYG{p}{,} \PYG{n}{my} \PYG{p}{;} \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}} \PYG{o}{:}
+\PYG{o}{*} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{n}{lotte} \PYG{p}{)} \PYG{o}{+=} \PYG{l+m+mi}{15} \PYG{p}{;} \PYG{o}{!} \PYG{n}{not} \PYG{o}{+} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{*} \PYG{l+s+sc}{\PYGZsq{}s\PYGZsq{}} \PYG{p}{;}
+\PYG{n}{this} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{not} \PYG{p}{;} \PYG{k}{default} \PYG{o}{:} \PYG{l+m+mh}{0xF} \PYG{o}{+} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZcb{}}
+\PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{o}{!} \PYG{n}{out} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{not} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{hell} \PYG{p}{;}
+\end{Verbatim}

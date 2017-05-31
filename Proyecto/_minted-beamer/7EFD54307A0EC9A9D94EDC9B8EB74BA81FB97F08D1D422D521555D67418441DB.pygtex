@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{lie} \PYG{p}{;}
+\PYG{k+kt}{double} \PYG{n}{time} \PYG{p}{,} \PYG{n}{me} \PYG{o}{=} \PYG{o}{!} \PYG{l+m+mi}{0}\PYG{n}{XFACE} \PYG{p}{,}
+\PYG{n}{not} \PYG{p}{;} \PYG{k+kt}{int} \PYG{n}{rested} \PYG{p}{,} \PYG{n}{get} \PYG{p}{,} \PYG{n}{out} \PYG{p}{;}
+\PYG{n}{main} \PYG{p}{(} \PYG{n}{ly} \PYG{p}{,} \PYG{n}{die} \PYG{p}{)} \PYG{k+kt}{char} \PYG{n}{ly} \PYG{p}{,} \PYG{o}{*} \PYG{o}{*} \PYG{n}{die} \PYG{p}{;} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{signed} \PYG{k+kt}{char} \PYG{n}{lotte} \PYG{p}{,}
+\PYG{n}{dear} \PYG{p}{;} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{get} \PYG{o}{=} \PYG{o}{!} \PYG{n}{me} \PYG{p}{;} \PYG{p}{;} \PYG{n}{not} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{out} \PYG{o}{\PYGZam{}} \PYG{n}{out} \PYG{p}{;} \PYG{n}{lie} \PYG{p}{;} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{lotte} \PYG{p}{,} \PYG{n}{my} \PYG{o}{=} \PYG{n}{dear} \PYG{p}{,}
+\PYG{o}{*} \PYG{o}{*} \PYG{n}{let} \PYG{o}{=} \PYG{o}{!} \PYG{o}{!} \PYG{n}{me} \PYG{o}{*} \PYG{o}{!} \PYG{n}{not} \PYG{o}{+} \PYG{o}{++} \PYG{n}{die}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{p}{(} \PYG{n}{lie} \PYG{o}{=}
+\PYG{l+s}{\PYGZdq{}The gloves are OFF this time, I detest you, snot}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}0}\PYG{l+s}{sed GEEK!\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{do} \PYG{p}{\PYGZob{}} \PYG{n}{not} \PYG{o}{=} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0xF00L} \PYG{o}{*} \PYG{o}{!} \PYG{n}{me} \PYG{p}{;}
+\end{Verbatim}

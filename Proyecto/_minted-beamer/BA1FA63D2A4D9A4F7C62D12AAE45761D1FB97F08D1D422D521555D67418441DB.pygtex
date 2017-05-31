@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{lie} \PYG{p}{;}
+\PYG{k+kt}{double} \PYG{n}{time} \PYG{p}{,} \PYG{n}{me} \PYG{o}{=} \PYG{o}{!} \PYG{l+m+mi}{0}\PYG{n}{XFACE} \PYG{p}{,}
+\PYG{n}{not} \PYG{p}{;} \PYG{k+kt}{int} \PYG{n}{rested} \PYG{p}{,} \PYG{n}{get} \PYG{p}{,} \PYG{n}{out} \PYG{p}{;}
+\PYG{n}{main} \PYG{p}{(} \PYG{n}{ly} \PYG{p}{,} \PYG{n}{die} \PYG{p}{)} \PYG{k+kt}{char} \PYG{n}{ly} \PYG{p}{,} \PYG{o}{*} \PYG{o}{*} \PYG{n}{die} \PYG{p}{;} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{signed} \PYG{k+kt}{char} \PYG{n}{lotte} \PYG{p}{,}
+\PYG{n}{dear} \PYG{p}{;} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{get} \PYG{o}{=} \PYG{o}{!} \PYG{n}{me} \PYG{p}{;} \PYG{p}{;} \PYG{n}{not} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{out} \PYG{o}{\PYGZam{}} \PYG{n}{out} \PYG{p}{;} \PYG{n}{lie} \PYG{p}{;} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{lotte} \PYG{p}{,} \PYG{n}{my} \PYG{o}{=} \PYG{n}{dear} \PYG{p}{,}
+\PYG{o}{*} \PYG{o}{*} \PYG{n}{let} \PYG{o}{=} \PYG{o}{!} \PYG{o}{!} \PYG{n}{me} \PYG{o}{*} \PYG{o}{!} \PYG{n}{not} \PYG{o}{+} \PYG{o}{++} \PYG{n}{die}
+\PYG{c+cm}{/*Pruebas/love.c:11:6 syntax error, unexpected CHAR*/}
+\PYG{c+cm}{/*Pruebas/love.c:11:10 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\end{Verbatim}

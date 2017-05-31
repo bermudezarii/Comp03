@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{o}{!} \PYG{n}{out} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/love.c:47:2 syntax error, unexpected IF*/}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{not} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{)}
+\PYG{c+cm}{/*Pruebas/love.c:48:4 syntax error, unexpected GOTO*/}
+\PYG{k}{goto} \PYG{n}{hell} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/love.c:49:27 syntax error, unexpected RIGHT\PYGZus{}BRACKET*/}
+\end{Verbatim}

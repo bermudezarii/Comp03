@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{p}{(} \PYG{n}{lie} \PYG{o}{=}
+\PYG{l+s}{\PYGZdq{}The gloves are OFF this time, I detest you, snot}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}0}\PYG{l+s}{sed GEEK!\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{c+cm}{/*Pruebas/love.c:13:2 syntax error, unexpected DO*/}
+\PYG{k}{do} \PYG{p}{\PYGZob{}} \PYG{n}{not} \PYG{o}{=} \PYG{o}{*} \PYG{n}{lie} \PYG{o}{++} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0xF00L} \PYG{o}{*} \PYG{o}{!} \PYG{n}{me} \PYG{p}{;}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o}{*} \PYG{o}{!} \PYG{p}{(} \PYG{n}{not} \PYG{o}{=} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{let}
+\PYG{p}{[} \PYG{n}{get} \PYG{o}{\PYGZhy{}} \PYG{n}{me} \PYG{o}{?}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n}{lotte} \PYG{o}{\PYGZhy{}}
+\PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{n+nl}{lotte} \PYG{p}{:} \PYG{n}{my} \PYG{o}{\PYGZhy{}} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{o}{\PYGZhy{}}
+\PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{)} \PYG{n}{lie} \PYG{o}{\PYGZhy{}} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}U\PYGZsq{}} \PYG{o}{\PYGZhy{}}
+\PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}} \PYG{o}{\PYGZhy{}} \PYG{p}{(} \PYG{k+kt}{long} \PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}U\PYGZsq{}} \PYG{p}{]} \PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{o}{!} \PYG{o}{!}
+\PYG{c+cm}{/*Pruebas/love.c:20:32 syntax error, unexpected WHILE*/}
+\PYG{c+cm}{/*Pruebas/love.c:20:39 syntax error, unexpected MINUS*/}
+\PYG{p}{(} \PYG{n}{time} \PYG{o}{=} \PYG{n}{out} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(} \PYG{n}{my} \PYG{o}{\PYGZhy{}} \PYG{n}{dear}
+\end{Verbatim}

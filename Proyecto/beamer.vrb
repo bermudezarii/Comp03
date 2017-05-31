@@ -1,9 +1,9 @@
-\frametitle{C\'odigo}
+\frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
-
-for_each_string_list_item ( refname , refnames ) {
-if ( get_packed_ref ( refs , refname -> string ) ) {
-needs_repacking = 1 ;
-break ;
-}
-} \end{minted}
+get - ! out ;
+/*Pruebas/love.c:47:2 syntax error, unexpected IF*/
+if ( not -- )
+/*Pruebas/love.c:48:4 syntax error, unexpected GOTO*/
+goto hell ;
+/*Pruebas/love.c:49:27 syntax error, unexpected RIGHT_BRACKET*/
+exit ( ( char ) lotte ) ; } \end{minted}
