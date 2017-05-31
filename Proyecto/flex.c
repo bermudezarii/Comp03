@@ -27,11 +27,11 @@ int nextToken(void){
     return yylex();
 }
 
-void yyerror(char *texto){
-	/*if(strcmp(texto,"\"syntax error\""))*/
+void yyerror(char const*texto){
+	
 	if(banderaParseado == 1 ){
 		char error[5000]; 
-		sprintf(error, "/*%s:%d:%d %s*/\n",nombre,linea,columna,texto);
+		sprintf(error, "/*%s:%d:%d %s, found '%s'*/\n",nombre,linea,columna,texto, yytext);
 		strcpy(errores[contadorErrores], error);
 		lineasE[contadorErrores] = linea; 
 		
@@ -39,19 +39,9 @@ void yyerror(char *texto){
 		printf("lineasE[contadorErrores]: %d\n", lineasE[contadorErrores]);
 		contadorErrores++;
 	}
-		printf("\n");
-		printf("\n");
-  		printf("%s:%d:%d %s\n",nombre,linea,columna,texto,yytext);
-  		printf("\n");
-  		printf("\n");
-	/*else if(preproceso){
-		fputs(texto,archivotmp);
-		fputs(" ", archivotmp);
-	   
-	}else{
 
-        printf("\"%s\", en línea %i.\n",texto,yylineno);
-	}*/
+  		printf("%s:%d:%d %s, found '%s'\n",nombre,linea,columna,texto,yytext);
+
 	banderaSyntaxError = 1; 
 	yyparse();
        

@@ -1,10 +1,6 @@
-%defines
-// Give proper error messages when a syntax error is found.
-%define parse.error verbose
-// Enable LAC (lookahead correction) to improve syntax error handling.
-%define parse.lac full
-%{
 
+%{
+	
 	#include<stdio.h>
 	#include <stdbool.h>
 
@@ -14,9 +10,12 @@
 	extern char* gramaticas[50000];
 	extern char* yytext;
 	int lineaactual=0;
+	
 
 
 %}
+%define parse.error verbose
+%define api.value.type {char *}
 %token LITERAL INCLUDE DEFINE SLASH
 %token LEFT_BRACKET RIGHT_BRACKET COMMA LEFT_PARENTHESIS RIGHT_PARENTHESIS RIGHT_SBRACKET LEFT_SBRACKET SEMICOLON COLON EXCLAMATION PRIME INTERROGATION UP_ARROW DOT
 %token BIT_AND BIT_OR

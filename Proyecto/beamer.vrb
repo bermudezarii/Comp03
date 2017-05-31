@@ -1,5 +1,6 @@
 \frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 get - ! out ;
 /*Pruebas/love.c:47:2 syntax error, unexpected IF*/
 if ( not -- )
@@ -7,3 +8,12 @@ if ( not -- )
 goto hell ;
 /*Pruebas/love.c:49:27 syntax error, unexpected RIGHT_BRACKET*/
 exit ( ( char ) lotte ) ; } \end{minted}
+=======
+if ( ( i + 1 < len ) && ( ch == '=' && line [ i + 1 ] == '?' ) )
+return 1 ;
+}
+return 0 ;
+}
+/*Pruebas/oficiales/Prueba4/pretty.c:252:80 syntax error, unexpected $end, found ''*/
+static void add_rfc2047 ( struct strbuf * sb , const char * line , size_t len , \end{minted}
+>>>>>>> Stashed changes

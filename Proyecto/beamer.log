@@ -1,11 +1,15 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.11)  31 MAY 2017 01:02
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.27)  31 MAY 2017 01:25
+>>>>>>> Stashed changes
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **beamer.tex
 (./beamer.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasercs.sty
 Package: beamerbasercs 2015/03/08 (rcs-revision 368aa9ba9d38)
@@ -484,6 +488,12 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2013/03/28
+
+(/usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2011/10/12 v0.5d Hooks for input files
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 Package: beamerbasetranslator 2010/06/11  (rcs-revision 85fd1cc7fc42)
@@ -977,39 +987,7 @@ LaTeX Info: Redefining \\ on input line 3056.
 runsystem(mkdir -p "_minted-beamer")...executed.
 
 
-(./_minted-beamer/default.pygstyle) (./beamerthemeprogressbar.sty
-Package: beamerthemeprogressbar 2007/06/21
-
-(./beamercolorthemeprogressbar.sty
-Package: beamercolorthemeprogressbar 2007/06/21
-
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemero
-se.sty
-Package: beamercolorthemerose 2010/06/17  (rcs-revision d02a7cf4d8ae)
-)) (./beamerinnerthemeprogressbar.sty
-Package: beamerinnerthemeprogressbar 2007/06/21
-
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemero
-unded.sty
-Package: beamerinnerthemerounded 2010/06/17  (rcs-revision d02a7cf4d8ae)
-)) (./beamerfontthemeprogressbar.sty
-Package: beamerfontthemeprogressbar 2007/06/21
-)
-(./beamerouterthemeprogressbar.sty
-Package: beamerouterthemeprogressbar 2007/06/21
-\progressbar@currentbarlength=\dimen281
-\progressbar@framenumberrectangle=\dimen282
-\progressbar@titlerectangle=\dimen283
-\progressbar@leftbar=\dimen284
-\progressbar@tmpresult=\count190
-\progressbar@numer=\count191
-\progressbar@denom=\count192
-\progressbar@barlength=\count193
-\progressbar@sectionboxwidth=\skip60
-\progressbar@sectionboxheight=\skip61
-\progressbar@sectionbox=\box66
-\progressbar@sectionboxbox=\box67
-))
+(./_minted-beamer/default.pygstyle)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemecr
 ane.sty
 Package: beamercolorthemecrane 2010/06/17  (rcs-revision d02a7cf4d8ae)
@@ -1021,20 +999,20 @@ runsystem(rm "beamer.aex")...executed.
  (./beamer.aux)
 \openout1 = `beamer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1072,16 +1050,16 @@ LaTeX Font Info:    ... okay on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count194
-\scratchdimen=\dimen285
-\scratchbox=\box68
-\nofMPsegments=\count195
-\nofMParguments=\count196
+\scratchcounter=\count190
+\scratchdimen=\dimen281
+\scratchbox=\box66
+\nofMPsegments=\count191
+\nofMParguments=\count192
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count197
-\MPscratchDim=\dimen286
-\MPnumerator=\count198
-\makeMPintoPDFobject=\count199
+\MPscratchCnt=\count193
+\MPscratchDim=\dimen282
+\MPnumerator=\count194
+\makeMPintoPDFobject=\count195
 \everyMPtoPDFconversion=\toks54
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1099,8 +1077,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 23.
+\AtBeginShipoutBox=\box67
+Package hyperref Info: Link coloring OFF on input line 20.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1108,58 +1086,68 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count266
+\c@section@level=\count196
 )
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
 
 (./beamer.out) (./beamer.out)
 \@outlinefile=\write8
 \openout8 = `beamer.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 23.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 20.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 23.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 23.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 23.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 23.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 23.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 23.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 23.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 23.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 23.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 23.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 23.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 23.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 23.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 23.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 23.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 23.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 23.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 20.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 20.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 2
+0.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
+20.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
+ut line 20.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1185,12 +1173,13 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 23.
+LaTeX Info: Redefining \includegraphics on input line 20.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
+<<<<<<< Updated upstream
  on input line 23.
 
 (./_minted-beamer/default-pyg-prefix.pygstyle)
@@ -1202,31 +1191,38 @@ Version: 0.32. Jun. 2007.
 Overfull \hbox (2962.13037pt too wide) in paragraph at lines 23--23
 [][]  
  []
+=======
+ on input line 20.
+>>>>>>> Stashed changes
 
+(./_minted-beamer/default-pyg-prefix.pygstyle) (./beamer.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 26.
-
-
-Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
-[][]  
- []
+(Font)              size <5> substituted on input line 23.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
-[][]  
- []
+{/home/coco/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 25.
 
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 25.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 25.
+
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+)
 [2
 
-]
-Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
-[][]  
- []
-
-[3
+] [3
 
 ]
 \openout4 = `beamer.vrb'.
@@ -1235,6 +1231,7 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 \openout5 = `beamer.pyg'.
 
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+<<<<<<< Updated upstream
 ed-beamer/7EFD54307A0EC9A9D94EDC9B8EB74BA81FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
 
@@ -1249,6 +1246,16 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [4
+=======
+ed-beamer/7FFC54ABCC2E950C54DCCBABB11ED28F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/7FFC54ABCC2E950C54DCCBABB11ED28F1FB97F08D1D422D521555D6741844
+1DB.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <6> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+)) [4
 
 ]
 \openout4 = `beamer.vrb'.
@@ -1257,10 +1264,950 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
 \openout5 = `beamer.pyg'.
 
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
-ed-beamer/AE9844F230CA8F4504EFAD4AA177F3EB1FB97F08D1D422D521555D67418441DB.pygt
+ed-beamer/A55D5AB6E39F75AF3AB2240A9F95F2311FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
 
 
+(./_minted-beamer/A55D5AB6E39F75AF3AB2240A9F95F2311FB97F08D1D422D521555D6741844
+1DB.pygtex)) [5
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/930A7A701EA442AA11BC837F00EB57C81FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/930A7A701EA442AA11BC837F00EB57C81FB97F08D1D422D521555D6741844
+1DB.pygtex)) [6
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/23A3AB4D07E31B03C77FCC91411295B41FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/23A3AB4D07E31B03C77FCC91411295B41FB97F08D1D422D521555D6741844
+1DB.pygtex)) [7
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/66A285E0AB80D90B1C79374B37BBDA6D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/66A285E0AB80D90B1C79374B37BBDA6D1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [8
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F2CA01581C4162150FF1A4109605D59E1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F2CA01581C4162150FF1A4109605D59E1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [9
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/B7646359E44F5A9E818609DA8934D6381FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/B7646359E44F5A9E818609DA8934D6381FB97F08D1D422D521555D6741844
+1DB.pygtex)) [10
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/3CEF70C28B64915240987ED53EBEFF9C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/3CEF70C28B64915240987ED53EBEFF9C1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [11
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/EE9B0704BDA4FE8A757DB35298B476AB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/EE9B0704BDA4FE8A757DB35298B476AB1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [12
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/0F6E55BFA900659DFD6E5D42E9F9CA501FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/0F6E55BFA900659DFD6E5D42E9F9CA501FB97F08D1D422D521555D6741844
+1DB.pygtex)) [13
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/EDBC95D344DEFFAE5F3AD10C0E20A2DF1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/EDBC95D344DEFFAE5F3AD10C0E20A2DF1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [14
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/5E82C6DD1681D520858B7C7E7D290AC91FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/5E82C6DD1681D520858B7C7E7D290AC91FB97F08D1D422D521555D6741844
+1DB.pygtex)) [15
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/172F8E8BCA3C2725D45A7A04AFB127CF1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/172F8E8BCA3C2725D45A7A04AFB127CF1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [16
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/28A30C0602F06A2B4560F7AEAE86B6031FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/28A30C0602F06A2B4560F7AEAE86B6031FB97F08D1D422D521555D6741844
+1DB.pygtex)) [17
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/9B95342F45F4CEAA8D2D12A0EB1C36CE1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/9B95342F45F4CEAA8D2D12A0EB1C36CE1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [18
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D3DBFB31383ED2E0852ABCC39EAE27EB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D3DBFB31383ED2E0852ABCC39EAE27EB1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [19
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/D900965EF4E9E96704132EB51B68D9861FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/D900965EF4E9E96704132EB51B68D9861FB97F08D1D422D521555D6741844
+1DB.pygtex)) [20
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/CDF12B340AFD84578DFEC0E320E385641FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/CDF12B340AFD84578DFEC0E320E385641FB97F08D1D422D521555D6741844
+1DB.pygtex)) [21
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/F058C095051DDD073071012E005E1F0C1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/F058C095051DDD073071012E005E1F0C1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [22
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E12F4199B32C2A5EAC12F8FBF1B70F661FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E12F4199B32C2A5EAC12F8FBF1B70F661FB97F08D1D422D521555D6741844
+1DB.pygtex)) [23
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/7FFC54ABCC2E950C54DCCBABB11ED28F1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [24
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/A55D5AB6E39F75AF3AB2240A9F95F2311FB97F08D1D422D521555D6741844
+1DB.pygtex)) [25
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/1D5D7F50241C64AD50BE0542236BF5C71FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/1D5D7F50241C64AD50BE0542236BF5C71FB97F08D1D422D521555D6741844
+1DB.pygtex)) [26
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/8F36BDA0D960DFD37CD9C35AE649FC1F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/8F36BDA0D960DFD37CD9C35AE649FC1F1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [27
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/3417117BF734101A88B6E4D53890C2021FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/3417117BF734101A88B6E4D53890C2021FB97F08D1D422D521555D6741844
+1DB.pygtex)) [28
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/400E7656985D786EB6804178CA829CD91FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/400E7656985D786EB6804178CA829CD91FB97F08D1D422D521555D6741844
+1DB.pygtex)) [29
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E078D8B0D1A03FD0EC702378368818D81FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E078D8B0D1A03FD0EC702378368818D81FB97F08D1D422D521555D6741844
+1DB.pygtex)) [30
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/88EB41F98FF4C3F57685F1070D39597D1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/88EB41F98FF4C3F57685F1070D39597D1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [31
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/C31FC27E95AB97DDF3FFD67661FBF2A11FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/C31FC27E95AB97DDF3FFD67661FBF2A11FB97F08D1D422D521555D6741844
+1DB.pygtex)) [32
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/99813D62CAFCC768F0F36586952245F81FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/99813D62CAFCC768F0F36586952245F81FB97F08D1D422D521555D6741844
+1DB.pygtex)) [33
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/919A89CE7F0919AEBFF1C1D491E9E88F1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/919A89CE7F0919AEBFF1C1D491E9E88F1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [34
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/E5AD526706F2060E95B2F0DAE6FE0AF01FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/E5AD526706F2060E95B2F0DAE6FE0AF01FB97F08D1D422D521555D6741844
+1DB.pygtex)) [35
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/0F6E55BFA900659DFD6E5D42E9F9CA501FB97F08D1D422D521555D6741844
+1DB.pygtex)) [36
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/EDBC95D344DEFFAE5F3AD10C0E20A2DF1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [37
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/5E82C6DD1681D520858B7C7E7D290AC91FB97F08D1D422D521555D6741844
+1DB.pygtex)) [38
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/172F8E8BCA3C2725D45A7A04AFB127CF1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [39
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/28A30C0602F06A2B4560F7AEAE86B6031FB97F08D1D422D521555D6741844
+1DB.pygtex)) [40
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/9B95342F45F4CEAA8D2D12A0EB1C36CE1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [41
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/D3DBFB31383ED2E0852ABCC39EAE27EB1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [42
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/D900965EF4E9E96704132EB51B68D9861FB97F08D1D422D521555D6741844
+1DB.pygtex)) [43
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/CDF12B340AFD84578DFEC0E320E385641FB97F08D1D422D521555D6741844
+1DB.pygtex)) [44
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+
+(./_minted-beamer/F058C095051DDD073071012E005E1F0C1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [45
+
+]
+\openout4 = `beamer.vrb'.
+
+ (./beamer.vrb
+\openout5 = `beamer.pyg'.
+
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/DD381FBCC767F97CAA872FA349FE687E1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+
+
+(./_minted-beamer/DD381FBCC767F97CAA872FA349FE687E1FB97F08D1D422D521555D6741844
+1DB.pygtex)) [46
+
+]
+\tf@nav=\write9
+\openout9 = `beamer.nav'.
+
+\tf@toc=\write10
+\openout10 = `beamer.toc'.
+
+\tf@snm=\write11
+\openout11 = `beamer.snm'.
+
+runsystem(rm "_minted-beamer/CE8DB072F8B5634BFCE7F476494A2AF91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2B718D7ED5D681295A3968DB4277CE0B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1293C2A7A4D373388DB82FDE1450DB531FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7FD9EEEA60B40A04BBB68DED7B21F4D51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/09247E86D0DFDD1F44BFECA87A03F84C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/154F2F8E0A02F4A822D7807EF2220D981FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/81570834E86B2DEE4D057ED836326E4A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/041EB485F7C84C217C872B79074377611FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/84CE948114A1B8DA69B03AF8A73169D41FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/97B8C22678C43BBCF2E3862405166D161FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1B05FA05BFA4D4E7A0A10142B87949291FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/15CAB192D3B63D5BF362157FC3AAD7981FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/92FAB7488E29B22D3F8F60C3C6F62FF61FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/CEA2562C5B1FF050BA945D7CE95C3BF91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/199D5EFB0A87EF5B2459ABE1DAA9EF0B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/CD42BBE961284178451E9C222C0A56CD1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/64A0B944F2D03E5E764A0F0DE7EFD8CD1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F45356A63588C522899FAD43C19267DC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/EFFD604A5965B5C77EA1BFBA058039AB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BAF49528210426AA79DE199813C3A3C71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/90017FDD07CE4103646BF8D853D83AC91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/88F98D0068128480BCAA4EEBB85ED6F91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6986D29B61A335AF499A16D080E1AFC91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/92CCDE6BB77202AE4C713B09579AFD9F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6930B3CBF6CB1FE04CD4A1471ED7B4B51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/075E1F4B008D967D90CF143701C304EB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/10F5D22A4289C20A96C9BD683BB969B61FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/75D8EC81E3926E43A85710278F1B5ACE1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/51B3B15E0EA2FC33AF011D9BEED010F21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F1CB08DA4EAD6964D98FBD5D4FF28B621FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7EBA2B9263104CCA18673D9F8F7092931FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C3D6A7137BCEE0F9D0967B0D699624601FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/98039ACEE207C12D21CFF0FF4BB3A0A11FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/AD8B9B7A6F9CA98F4069FA41AB37905E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/945382F674B8B89E554713617DDCE52D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B4784D0AC16DAF0FEF30078CD0FEFE331FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/186479C658D64A7EF66368F5D50A57961FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F08515D9A4B5B9A21FC28169B2A501F11FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4022DACE8BB098C92E0525ECC997C24C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8A61F1EDA5492E064B549A665BA579841FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/376CFBA42742163DDAEEBCAAABB7E32B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/12500D89639AFDE66B7D3C684603958C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E2F5B77162AFD8848893B89819BFA2041FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7BD33FB705E9573CE77DE62B5499A0521FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D288DF011E688679ADBAC4DC66C6FD241FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F21FA257361F5FD524361A0DFE5AD09A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7F901ACC5779DC9A0710531F5DB868321FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2C6D85695E9C5F08613B679DB6F69C481FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2DE6B829C4BEC6CBD68BB39D06969A2B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2B2068D8582F6DB7CF65F86634208E2D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8CDD1F8F7D61FBE9D0D70961A97DD6A01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4547AA3C639EDCAF46FB83D77A227EE21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A7D359055BC415653B5E5A775763EB341FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/497C01E0295470207181AF1DF5676C591FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5C32D61AEE035AE5D608E23096A3BC9C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E206C4966EC9BF0F8539AC255768B6931FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3D82D0033CE21F64BB05C6EA1B9025111FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2DE9B97E41B7224EE6960B96C6358AA71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/489C58328328C53CE1CC4FEAC16E56FC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/AB89158C7C678FB67BD0C6BE860A7FAB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E5F275872751AA215395AACC82D8D0BC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/440B3755FB04D68AF6DB7050F8F7666F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/764F19B58B4C5616C1F62EC02680EE4E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F9D45B313626C8DD725CA350FA40A2441FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/64F963FE05D9935DB9B17EB9C300E4AA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5DDB79BAC3B8DFC560332B26635B38F41FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3F8D18372971950C24AA8735BD93E5EA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/FFDCE3CB3FAC37613E4B44C47200C0E01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C50A5CF824A326B8D9247C98A8F8434F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DA97241EFDEF9F1438F9D9E2D144A1821FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BB9A4F20BFE6D740864D65F756D1099A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1C4058292182835B279ABB06815ED3291FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/30C3C6CDA469C10D927D00424E9CDBF71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/675E4487998DDD6AFEA72C83F9434B2E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C7039DDB7674111B854D58F6FDFB34B21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4BF6C920DD859F96DE57C4E34DF9CD941FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/468D5B693E54DF9D89BE824B47CDDFE91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/49A0C2680CED4B942C96DFA405AF274F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/06E4AA03D68CA5035AC9B596607066631FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E26291601F859A968E40E77FE94B18681FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F03FD1782F02E3C72407AC6A1AA7865F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5D64BACDA8D3750ADC8A350CC134F2BF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/DDF38B5A1A129E18589315E12CE83DB11FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B866098DA45523D17A3C620E6B3A9F341FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2C6722364D516B242659DC38D788E37D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/007AEAE78021F240853E2CA14D46EB551FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5D57F1EA807F4C0D39CAC2B1FF541D1B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F21296700E4E9E7915C15496BC2B9D811FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1F81FBAB61E0B732BFE553EF9D08F1721FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B3A3EBE933312584A9DD251A7802E9941FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/96EF1603F5AD6A45202CE790720224031FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/54447D269E9D7BE26CF486FB8524E81B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A6CF299B340483109A3CE3A08228A54F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7EB86F4A6871797EB33AFAFDD97B2C711FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/FC2E7C1024558DE86B1918ED3A58E7491FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8AE0F30306963C44EBEE907B7ABBCA471FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/1455EBDAF832D07EDF9C22E311625D4C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/94C88E547B92E873A26572A767D5FD4B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5A09B52E24DF5BF32D3031A6C963343F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/2D95200C4C5CD479089407BEC1120AA21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/8FF55F533D50556750CE19DB856676001FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/AF6E7EB6D7BD1151FAA0E32AA306163D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A9ABD19DC371122795881DB35AC227DF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0E4041EF9257B224931844BAC46C14CC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5D2790B0C12F994BAE8A31CD13E8F3101FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/746E5FBDAE3A9B009D65ED4EABC1DEB31FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/384177470E763C4A7735966F2EB633F51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C21DB323DB6A6015111BF6C1E34E63131FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/980D999F76C9A25408EC439228C599561FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0F6EDACEB06B0283D365504C7C874BD01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C226195CE259FDEF958C803A81D7DB581FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/ED42E46977728119ECCBBCCC5E7B15E21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/45622F81AFE20F9EFC466BA0837FDD8C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/990D2C5B5AC1086E848B30414153857E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4238D5E65A0531F102C8EF73DB43AC2D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B3E3BCC073CD43DEF499DA002C3346061FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6DE59CD3471E400BD756F31F31E6915B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/92E7F2AD730BA7FBCBC0C9CA0E931C231FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/9BB2273C258CF24C298781EA916DDEAC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/12BD488EF2D5F0F535344AB6743846401FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0C65C245072B3D098585C98255162C3E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/389C95B09ADB9BA85ED01472B16E80281FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/7B4D7BCD446F6447FC8CD4A26191EE9B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/6EC40293DB360C1AFAE054C1A6B1628F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/F25FE724D87B3BD9FF4181B4D83225AF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
+runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
+ed-beamer/AE9844F230CA8F4504EFAD4AA177F3EB1FB97F08D1D422D521555D67418441DB.pygt
+ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/1D1F6A8B0FAE410C20D502ED21C85ACB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/574B54BDE55E7C044A32366A4BAF3A4F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/55BBBBA9A153A38FA585CA05577AB90B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/A8DE0CCDC0D481E5EE99EFE6CE25640D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/E354BB18A4CBB8C6FDC1A9C06D3105A71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/CE126A8CCC18C1CA018EA2B641A6F69A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/AE9844F230CA8F4504EFAD4AA177F3EB1FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1268,18 +2215,45 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [5
+=======
+runsystem(rm "_minted-beamer/D7C41CC7929038F14A6AA26F4F32B4011FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/341452F94068AB9E1A9392CCBBE018161FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/13FBBE3FE871D129C55158AFD869D03D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/36BF6DBA013017840DBE3DC15A123B941FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/F896C4FDBE3684D898F43980AB7565A91FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/81E1BAD1345725BC420A53344C1C816B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/82AAF54B881226D981AC5D318FB9EBAA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/84316F23860EC01A62E3A41984483DF51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/9610EDA5A56A39321FD5ADD7E1AF766C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/5C1A0040FBD5566BE37F5D267A982E4B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/099746D58395FDFC76D8BFE39E43E0E81FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/F896C4FDBE3684D898F43980AB7565A91FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1287,18 +2261,45 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [6
+=======
+runsystem(rm "_minted-beamer/3121D838F7D213195186469B45AE29381FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/B68DB4F688312D1C281B571960451B041FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/BAD79DC10F6C9E99F13708CFD45A4C961FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/111740F5708BA527B38B6971F9CE686B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/3F36A442DC70ED28ECE190B8FF7B44281FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/292210EAFBD6B7E13B0B372AE3370DA91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/B1E96B9D6AB685047D6F59510783543C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/7A167A8F1A96DE6552BC14FDAC0F5B921FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/27A305F52B85D119DA5E090C716B92521FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BEF190533AF1623F182FAB8273C67C0C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/BC957670F9FFA282F45F35E3A35962B01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/3F36A442DC70ED28ECE190B8FF7B44281FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1306,13 +2307,21 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [7
+=======
+runsystem(rm "_minted-beamer/F86554CE610B3475C17775CFE972AF451FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/19B2ABF791D9ADAE70B6C788BF15C31D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/94CA2D72C49202D6F77E43AB70B29D0C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/AD944A5FF805182BADEA2240DCD83BFF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/BA1FA63D2A4D9A4F7C62D12AAE45761D1FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
@@ -1325,18 +2334,63 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [8
+=======
+runsystem(rm "_minted-beamer/583E7ED3CE9D85A24992511F51B86B3A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/35A537215E90A2BAADCAA0F294D5704F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/28C6DC3880B3737BE7BAD0F4FE7F0BFF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/096E059DDC05D772CC28EB7DB2904FEB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/80C690FDE60ADDA144C755FA3380DD2B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/6B364F162C5683F3D77BE2D54CF0A4B21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3A611650D818EA9EC96FA2C6573474C41FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/0C96E2F889157F9A632241BC47A047BB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/0EC3C8313F3B53D748CBA7C8EC7114DC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/79120DC02034491C373113226CC65D511FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/1CCB562AE4B6AD941FA78FE349123E2D1FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/C1D9D98AC3B67EFF87463BF509D4E6AF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/F615ACABB3888D7DBD4462FFBF601DD21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/E4D4CB41F85BDF132E3B779F29AFF6211FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D9A994F9216622BFC167F68E5C3519BD1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/035E2EBD3017207482038F5277EABAB61FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/59B37BB5D9E360B06A7C53CC634651A31FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/1CCB562AE4B6AD941FA78FE349123E2D1FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1344,18 +2398,45 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [9
+=======
+runsystem(rm "_minted-beamer/671EA0103282D1DBB2B033D290C1CAA51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/3C668A5354B66340FD05412A6175C1691FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/82A6C20E6672A113F18913B3D543D09E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/FCABA31D594F9983820F09831CE7AFF51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/0A47BEFA157D8D6C8B119AE92322AB741FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/4A9588A856157545E1E2DB418BA00E701FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/F0EDB3F87D1485DB32AD7A99CE76BDF41FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/F270EED45BF6D87788C41E331EFF4D131FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3CD88752079ACE2A7F14D8077A1E73951FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/786611B696942E4B6509961CCE3F3D591FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/714096CFDD02C9FB4FA8BBB307655F111FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/0A47BEFA157D8D6C8B119AE92322AB741FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1363,18 +2444,45 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [10
+=======
+runsystem(rm "_minted-beamer/D0BC2C0D935C0A9AE0CC2507650FE5CF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/B6A461D11782153A09532E2A1C6B14AA1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/666DE5096E1E119199D7B850FA54D9FC1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/4ED4050E093FF195C03EAAAF7C1551501FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/F995A7ABFDFB78454BD8329EAF4106EA1FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/8EA130BE627D2AA8DBE3FB87E525E52E1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/92ACB590BEDE795E6B869C7E7CB282851FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/C3A3EFB5E8529257D04EAFE7576286E81FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/BF7172144274031CB663046F7FAF47F51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/C0E5F25993AEFB8EED6D09008F5234431FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/6DAF271609767DC91BDF0A5EBF5450601FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/F995A7ABFDFB78454BD8329EAF4106EA1FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1382,18 +2490,45 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [11
+=======
+runsystem(rm "_minted-beamer/FD4E45DD3A33D44EA283E384BD6080D21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/C52FD97217E50B65571DDB82E0D01BE71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/6C40B567E0B3AC9E9FC8AC2E1EDBF46F1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/96EFBB90C29E778E9CD686020A3C077A1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/DC26AF387DC1B7AAFFB06135F4980E381FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/775C181FCBA28C97365CB3BBB92531BB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/9EA5600724D603660A73809FE1E6B98D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/E01C7DA8FD6C868FE88B48E01DFC0DEF1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/589F70578F9130295B0FB7AEFAE475901FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/B472FB9EAFD44F2ED8F0A2A9CFCC696C1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/D2487FF0001D2CC8E91D2BF0A50EB81B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/DC26AF387DC1B7AAFFB06135F4980E381FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1401,18 +2536,45 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [12
+=======
+runsystem(rm "_minted-beamer/78ADC5F94BD5DF7A50EC5DFD81CEA44B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/AFAF752B4EA53A13FF798E067488EFC01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/768D28813F6DD556C3A5FE7800616AC01FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/0A0448FB2F8502AF52FF61693AD72C3D1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/AD9967C3C5914EDAD0333DB78D8B55361FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/6AB773A9D3C1962A439DF447480512791FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/D7AC78EDABAEE9B71E3834868C7FE0921FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/67C6DA261B529F514B70E4D811A4FBF41FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4B74EE7C144B0DF2420AABA1AF5D71031FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/4D139D9A6333027A59989AC2B7B753B11FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/6C2977275013496E3387B1CEA326C5341FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/AD9967C3C5914EDAD0333DB78D8B55361FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1420,18 +2582,45 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [13
+=======
+runsystem(rm "_minted-beamer/2EDD2D0D615B826D4228DBBEE2108BC11FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\openout4 = `beamer.vrb'.
+runsystem(rm "_minted-beamer/9D7F26CDB2A61D515606F8584C3F6C291FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
- (./beamer.vrb
-\openout5 = `beamer.pyg'.
+runsystem(rm "_minted-beamer/68164F155FFD80E579D922C44B4517C61FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/4A6E37E67F61FF99187DF7357538C5A71FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_mint
 ed-beamer/EB9AF8B7FCAEDFEAD85ABCD247A0E1D11FB97F08D1D422D521555D67418441DB.pygt
 ex" "beamer.pyg" )...executed.
+=======
+runsystem(rm "_minted-beamer/793017C36D77D46AE31D357AF0B1939B1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/7DBADAD2E3321CBD8E36936B6F600A291FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
+runsystem(rm "_minted-beamer/15F3D84014E6E2A38F03DBA56CAE9CF91FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/D1C29D74DD0FEE3238CCDA1E54254A841FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/300E30FA1EB6D39BB8A93CD482DFDCBB1FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
+
+runsystem(rm "_minted-beamer/4181E2448E23D135C755040BDB249F861FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+<<<<<<< Updated upstream
 (./_minted-beamer/EB9AF8B7FCAEDFEAD85ABCD247A0E1D11FB97F08D1D422D521555D6741844
 1DB.pygtex))
 Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
@@ -1439,16 +2628,22 @@ Overfull \hbox (2913.76062pt too wide) has occurred while \output is active
  []
 
 [14
+=======
+runsystem(rm "_minted-beamer/8F423F83DA66C1721E4E397543CC35421FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-]
-\tf@nav=\write9
-\openout9 = `beamer.nav'.
+runsystem(rm "_minted-beamer/11A6DCEB2E01A9F7178ADA20DCC197A51FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+>>>>>>> Stashed changes
 
-\tf@toc=\write10
-\openout10 = `beamer.toc'.
+runsystem(rm "_minted-beamer/47F82C56C0B94325220ACBED4E2C54D21FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
-\tf@snm=\write11
-\openout11 = `beamer.snm'.
+runsystem(rm "_minted-beamer/B525052599E371330847317CD2D9DD441FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
+
+runsystem(rm "_minted-beamer/3F06A91AE5A89594E8B27F3AA7ECF2831FB97F08D1D422D521
+555D67418441DB.pygtex")...executed.
 
 runsystem(rm "_minted-beamer/5BFEA27BE9FCAC49F6D09DB8DE543D491FB97F08D1D422D521
 555D67418441DB.pygtex")...executed.
@@ -1464,11 +2659,19 @@ runsystem(rm "_minted-beamer/8F0C255DDFEDC9802916D16EA08CC38F1FB97F08D1D422D521
 
 runsystem(rm "beamer.pyg")...executed.
 
+<<<<<<< Updated upstream
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (./beamer.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
+=======
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 786.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 786.
+ (./beamer.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 786.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 786.
+>>>>>>> Stashed changes
 Package rerunfilecheck Info: File `beamer.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1476,6 +2679,7 @@ Package rerunfilecheck Info: File `beamer.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+<<<<<<< Updated upstream
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
@@ -1498,4 +2702,34 @@ PDF statistics:
  97 compressed objects within 1 object stream
  29 named destinations out of 1000 (max. 500000)
  79 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 786.
+ ) 
+Here is how much of TeX's memory you used:
+ 32189 strings out of 493029
+ 776119 string characters out of 6136234
+ 994592 words of memory out of 5000000
+ 34572 multiletter control sequences out of 15000+600000
+ 10286 words of font info for 39 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 58i,14n,79p,962b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Navigation47} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation233} has been referenced but does not exi
+st, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on beamer.pdf (46 pages, 149973 bytes).
+PDF statistics:
+ 1234 PDF objects out of 1440 (max. 8388607)
+ 1162 compressed objects within 12 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
 

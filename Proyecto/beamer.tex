@@ -6,9 +6,6 @@
 \definecolor{mGray}{rgb}{0.5,0.5,0.5}
 \definecolor{mPurple}{rgb}{0.58,0,0.82}
 \definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
-\usetheme{progressbar}
- 
- 
 \usecolortheme{crane}
  
  
@@ -25,11 +22,12 @@
  \titlepage 
  \end{frame}\begin{frame}
  \frametitle{An\'alisis Sint\'actico}
-  Se hizo un analizador sint\'actico con la ayuda de la herramienta de Bison, para el lenguaje C y que corre en C, este analizador trabaja en conjunto con Flex, para tomar los tokens que este le otorga y revisar con las gram\'aticas que les sean ingresadas. \end{frame}\begin{frame}
+  Se hizo un analizador sint\'actico que es bottom-up con la ayuda de la herramienta de Bison, para el lenguaje C y que corre en C, este analizador trabaja en conjunto con Flex, para tomar los tokens que este le otorga y revisar con las gram\'aticas que les sean ingresadas. Bison fue escrito por Robert Corbett y Richard Stallman lo hizo compatible con Yacc. Wilfed Hansen de la Universidad de Carnegie Mellon le adicciono multicaractes de hileras. Bison convierte de una gram\'atica libre de contexto a un analizador sint\'actico que emplea las tablas de Parsing LALR(1), siendo: \begin{itemize} \item L: Look- \item A: Ahead \item L: Left to- \item R: Right \item (1): tiene como lookahead solo un s\'imbolo. \end{itemize} Cabe destacar que Bison es compatible con Yacc. Sirve con C, C++ y Java. \end{frame}\begin{frame}
  \frametitle{Bison}
- Bison convierte de una gram\'atica libre de contexto a un analizador sint\'actico que emplea las tablas de Parsing LALR(1), siendo: \begin{itemize} \item L: Left algo \item A: ... \item L: ... \item R: rightmost \item (1): donde este uno significa que tiene como lookahead solo un s\'imbolo. \end{itemize} Cabe destacar que Bison es compatible con Yacc. Sirve con C, C++ y Java. \end{frame}\begin{frame}[fragile]
+  Si usted quiere descargar bison se puede meter a cualquiera de los siguientes links, el software es completamente gratis: \begin{itemize} \item http://ftp.gnu.org/gnu/bison/ \item ftp://ftp.gnu.org/gnu/bison/ \end{itemize} Su documentacion es gratuita online  o en los direcctorios locales del sistema en el que haya instalado ya sea /usr/share/bison/, /usr/local/doc/bison/ o directorios similares. Tambien bison contiene listas de correos: \begin{itemize} \item bug-bison: que sirva para reportar errores en el programa \item help-bison: usado para ayuda en general. \item bison-patches: que es para arreglos del programa. \end{itemize} \end{frame} \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 char * lie ; 
 double time , me = ! 0XFACE , 
 not ; int rested , get , out ; 
@@ -43,11 +41,45 @@ char lotte , my = dear ,
 ( char * ) ( lie = 
 "The gloves are OFF this time, I detest you, snot\n\0sed GEEK!" ) ; 
 do { not = * lie ++ & 0xF00L * ! me ; 
+=======
+
+static char * user_format ; 
+static struct cmt_fmt_map { 
+const char * name ; 
+enum cmit_fmt format ; 
+int is_tformat ; 
+int expand_tabs_in_log ; 
+int is_alias ; 
+const char * user_format ; 
+} * commit_formats ; 
+static size_t builtin_formats_len ; 
+static size_t commit_formats_len ; 
+static size_t commit_formats_alloc ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
+static struct cmt_fmt_map * find_commit_format ( const char * sought ) ; 
+int commit_format_is_empty ( enum cmit_fmt fmt ) 
+{ 
+return fmt == CMIT_FMT_USERFORMAT && ! * user_format ; 
+} 
+static void save_user_format ( struct rev_info * rev , const char * cp , int is_tformat ) 
+{ 
+free ( user_format ) ; 
+user_format = xstrdup ( cp ) ; 
+if ( is_tformat ) 
+rev -> use_terminator = 1 ; 
+rev -> commit_format = CMIT_FMT_USERFORMAT ; 
+} 
+>>>>>>> Stashed changes
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 ( char * ) lie - 1 * ! ( not = atoi ( let 
 [ get - me ? 
 ( char ) lotte - 
@@ -61,11 +93,27 @@ do { not = * lie ++ & 0xF00L * ! me ;
 get * out * ( short ) ly - 0 - 'R' - get - 'a' ^ rested ; 
 do { auto * eroticism , 
 that ; puts ( * ( out 
+=======
+static int git_pretty_formats_config ( const char * var , const char * value , void * cb ) 
+{ 
+struct cmt_fmt_map * commit_format = NULL ; 
+const char * name ; 
+const char * fmt ; 
+int i ; 
+if ( ! skip_prefix ( var , "pretty." , & name ) ) 
+return 0 ; 
+for ( i = 0 ; i < builtin_formats_len i ++ ) { 
+if ( ! strcmp ( commit_formats [ i ] . name , name ) ) 
+return 0 ; 
+} 
+for ( i = builtin_formats_len ; i < commit_formats_len ; i ++ ) { 
+>>>>>>> Stashed changes
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 - 'c' 
 - ( 'P' - 'S' ) + die + - 2 ) ) ; } while ( ! "you're at it" ) ; 
 for ( * ( ( char * ) & lotte ) ^= 
@@ -79,11 +127,27 @@ get ; ! out ; ( char ) * lie & 0xD0 - ! not ) return ! !
 do { not * putchar ( lie [ out 
 * ! not * ! ! me + ( char ) lotte ] ) ; 
 not ; for ( ; ! 'a' ; ) ; } while ( 
+=======
+if ( ! strcmp ( commit_formats [ i ] . name , name ) ) { 
+commit_format = & commit_formats [ i ] ; 
+break ; 
+} 
+} 
+if ( ! commit_format ) { 
+ALLOC_GROW ( commit_formats , commit_formats_len + 1 , 
+commit_formats_alloc ) ; 
+commit_format = & commit_formats [ commit_formats_len ] ; 
+memset ( commit_format , 0 , sizeof ( * commit_format ) ) ; 
+commit_formats_len ++ ; 
+} 
+commit_format -> name = xstrdup ( name ) ; 
+>>>>>>> Stashed changes
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 ( char * ) lie - ( char * ) lie ) ; { 
 register this ; switch ( ( char ) lie 
 [ ( char ) lotte ] - 1 * ! out ) { 
@@ -111,11 +175,343 @@ char lotte , my = dear ,
 * * let = ! ! me * ! not + ++ die 
 /*Pruebas/love.c:11:6 syntax error, unexpected CHAR*/
 /*Pruebas/love.c:11:10 syntax error, unexpected RIGHT_PARENTHESIS*/
+=======
+commit_format -> format = CMIT_FMT_USERFORMAT ; 
+if ( git_config_string ( & fmt , var , value ) ) 
+return - 1 ; 
+if ( skip_prefix ( fmt , "format:" , & fmt ) ) 
+commit_format -> is_tformat = 0 ; 
+else if ( skip_prefix ( fmt , "tformat:" , & fmt ) || strchr ( fmt , '%' ) ) 
+commit_format -> is_tformat = 1 ; 
+else 
+commit_format -> is_alias = 1 ; 
+commit_format -> user_format = fmt ; 
+return 0 ; 
+} 
+static void setup_commit_formats ( void ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+struct cmt_fmt_map builtin_formats [ ] = { 
+{ "raw" , CMIT_FMT_RAW , 0 , 0 } , 
+{ "medium" , CMIT_FMT_MEDIUM , 0 , 8 } , 
+{ "short" , CMIT_FMT_SHORT , 0 , 0 } , 
+{ "email" , CMIT_FMT_EMAIL , 0 , 0 } , 
+{ "mboxrd" , CMIT_FMT_MBOXRD , 0 , 0 } , 
+{ "fuller" , CMIT_FMT_FULLER , 0 , 8 } , 
+{ "full" , CMIT_FMT_FULL , 0 , 8 } , 
+{ "oneline" , CMIT_FMT_ONELINE , 1 , 0 } 
+} ; 
+commit_formats_len = ARRAY_SIZE ( builtin_formats ) ; 
+builtin_formats_len = commit_formats_len ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+ALLOC_GROW ( commit_formats , commit_formats_len , commit_formats_alloc ) ; 
+memcpy ( commit_formats , builtin_formats , 
+sizeof ( * builtin_formats ) * ARRAY_SIZE ( builtin_formats ) ) ; 
+git_config ( git_pretty_formats_config , NULL ) ; 
+} 
+static struct cmt_fmt_map * find_commit_format_recursive ( const char * sought , 
+const char * original , 
+int num_redirections ) 
+{ 
+struct cmt_fmt_map * found = NULL ; 
+size_t found_match_len = 0 ; 
+int i ; 
+if ( num_redirections >= commit_formats_len ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+die ( "invalid --pretty format: " 
+"'%s' references an alias which points to itself" , 
+original ) ; 
+for ( i = 0 ; i < commit_formats_len ; i ++ ) { 
+size_t match_len ; 
+if ( ! starts_with ( commit_formats [ i ] name , sought ) ) 
+continue ; 
+match_len = strlen ( commit_formats [ i ] . name ) ; 
+if ( found == NULL || found_match_len > match_len ) { 
+found = & commit_formats [ i ] ; 
+found_match_len = match_len ; 
+} 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( found && found -> is_alias ) { 
+found = find_commit_format_recursive ( found -> user_format , 
+original , 
+num_redirections + 1 ) ; 
+} 
+return found ; 
+} 
+static struct cmt_fmt_map * find_commit_format ( const char * sought ) 
+{ 
+if ( ! commit_formats ) 
+setup_commit_formats ( ) ; 
+return find_commit_format_recursive ( sought , sought , 0 ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+void get_commit_format ( const char * arg , struct rev_info * rev ) 
+{ 
+struct cmt_fmt_map * commit_format ; 
+rev -> use_terminator = 0 ; 
+if ( ! arg ) { 
+rev -> commit_format = CMIT_FMT_DEFAULT ; 
+return ; 
+} 
+if ( skip_prefix ( arg "format:" , & arg ) ) { 
+save_user_format ( rev , arg , 0 ) ; 
+return ; 
+} 
+if ( ! * arg || skip_prefix ( arg , "tformat:" , & arg ) || strchr ( arg , '%' ) ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+save_user_format ( rev , arg , 1 ) ; 
+return ; 
+} 
+commit_format = find_commit_format ( arg ) ; 
+if ( ! commit_format ) 
+die ( "invalid --pretty format: %s" , arg ) ; 
+rev -> commit_format = commit_format -> format ; 
+rev -> use_terminator = commit_format -> is_tformat ; 
+rev -> expand_tabs_in_log_default = commit_format -> expand_tabs_in_log ; 
+if ( commit_format -> format == CMIT_FMT_USERFORMAT ) { 
+save_user_format ( rev , commit_format -> user_format , 
+commit_format -> is_tformat ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static int get_one_line ( const char * msg ) 
+{ 
+int ret = 0 ; 
+for ( ; ; ) { 
+char c = * msg ++ ; 
+if ( ! c ) 
+break ; 
+ret ++ ; 
+if ( c == '\n' ) 
+break ; 
+} 
+return ret ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static int non_ascii ( int ch ) 
+{ 
+return ! isascii ( ch ) || ch == '\033' ; 
+} 
+int has_non_ascii ( const char * s ) 
+{ 
+int ch ; 
+if ( ! s ) 
+return 0 ; 
+while ( ( ch = * s ++ ) != '\0' ) { 
+if ( non_ascii ( ch ) ) 
+return 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+return 0 ; 
+} 
+static int is_rfc822_special ( char ch ) 
+{ 
+switch ( ch ) { 
+case '(' : 
+case ')' : 
+case '<' : 
+case '>' : 
+case '[' : 
+case ']' : 
+case ':' : 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+case ';' : 
+case '@' : 
+case ',' : 
+case '.' : 
+case '"' : 
+case '\\' : 
+return 1 ; 
+default : 
+return 0 ; 
+} 
+} 
+static int needs_rfc822_quoting ( const char * s , int len ) 
+{ 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+int i ; 
+for ( i = 0 ; i < len ; i ++ ) 
+if ( is_rfc822_special ( s [ i ] ) ) 
+return 1 ; 
+return 0 ; 
+} 
+static int last_line_length ( struct strbuf * sb ) 
+{ 
+int i ; 
+for ( i = sb -> len - 1 ; i >= 0 ; i -- ) 
+if ( sb -> buf [ i ] == '\n' ) 
+break ; 
+return sb -> len - ( i + 1 ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static void add_rfc822_quoted ( struct strbuf * out , const char * s , int len ) 
+{ 
+int i ; 
+strbuf_grow ( out , len + 2 ) ; 
+strbuf_addch ( out , '"' ) ; 
+for ( i = 0 ; i < len ; i ++ ) { 
+switch ( s [ i ] ) { 
+case '"' : 
+case '\\' : 
+strbuf_addch ( out , '\\' ) ; 
+default : 
+strbuf_addch ( out , s [ i ] ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+} 
+strbuf_addch ( out , '"' ) ; 
+} 
+enum rfc2047_type { 
+RFC2047_SUBJECT , 
+RFC2047_ADDRESS 
+} ; 
+static int is_rfc2047_special ( char ch , enum rfc2047_type type ) 
+{ 
+if ( non_ascii ( ch ) || ! isprint ( ch ) ) 
+return 1 ; 
+if ( isspace ( ch ) || ch == '=' || ch == '?' || ch == '_' ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return 1 ; 
+if ( type != RFC2047_ADDRESS ) 
+return 0 ; 
+return ! ( isalnum ( ch ) || ch == '!' || ch == '*' || ch == '+' || ch == '-' || ch == '/' ) ; 
+} 
+static int needs_rfc2047_encoding ( const char * line , int len , 
+enum rfc2047_type type ) 
+{ 
+int i ; 
+for ( i = 0 ; i < len ; i ++ ) { 
+int ch = line [ i ] ; 
+if ( non_ascii ( ch ) || ch == '\n' ) 
+return 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( ( i + 1 < len ) && ( ch == '=' && line [ i + 1 ] == '?' ) ) 
+return 1 ; 
+} 
+return 0 ; 
+} 
+static void add_rfc2047 ( struct strbuf * sb , const char * line , size_t len , \end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+
+static char * user_format ; 
+static struct cmt_fmt_map { 
+const char * name ; 
+enum cmit_fmt format ; 
+int is_tformat ; 
+int expand_tabs_in_log ; 
+int is_alias ; 
+const char * user_format ; 
+} * commit_formats ; 
+static size_t builtin_formats_len ; 
+static size_t commit_formats_len ; 
+static size_t commit_formats_alloc ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+static struct cmt_fmt_map * find_commit_format ( const char * sought ) ; 
+int commit_format_is_empty ( enum cmit_fmt fmt ) 
+{ 
+return fmt == CMIT_FMT_USERFORMAT && ! * user_format ; 
+} 
+static void save_user_format ( struct rev_info * rev , const char * cp , int is_tformat ) 
+{ 
+free ( user_format ) ; 
+user_format = xstrdup ( cp ) ; 
+if ( is_tformat ) 
+rev -> use_terminator = 1 ; 
+rev -> commit_format = CMIT_FMT_USERFORMAT ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+static int git_pretty_formats_config ( const char * var , const char * value , void * cb ) 
+{ 
+struct cmt_fmt_map * commit_format = NULL ; 
+const char * name ; 
+const char * fmt ; 
+int i ; 
+if ( ! skip_prefix ( var , "pretty." , & name ) ) 
+return 0 ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:34:39 syntax error, unexpected IDENTIFIER, expecting COMMA or SEMICOLON, found 'i'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:34:42 syntax error, unexpected INC_OP, found '++'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:34:44 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+for ( i = 0 ; i < builtin_formats_len i ++ ) { 
+if ( ! strcmp ( commit_formats [ i ] . name , name ) ) 
+>>>>>>> Stashed changes
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 ( char * ) ( lie = 
 "The gloves are OFF this time, I detest you, snot\n\0sed GEEK!" ) ; 
 /*Pruebas/love.c:13:2 syntax error, unexpected DO*/
@@ -129,11 +525,27 @@ do { not = * lie ++ & 0xF00L * ! me ;
 /*Pruebas/love.c:20:32 syntax error, unexpected WHILE*/
 /*Pruebas/love.c:20:39 syntax error, unexpected MINUS*/
 ( time = out = 'a' ) ) ; } while ( my - dear 
+=======
+return 0 ; 
+} 
+/*Pruebas/oficiales/Prueba4/pretty.c:38:3 syntax error, unexpected FOR, found 'for'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:38:31 syntax error, unexpected SEMICOLON, expecting RIGHT_PARENTHESIS, found ';'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:38:35 syntax error, unexpected LESS, found '<'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:38:63 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+for ( i = builtin_formats_len ; i < commit_formats_len ; i ++ ) { 
+if ( ! strcmp ( commit_formats [ i ] . name , name ) ) { 
+commit_format = & commit_formats [ i ] ; 
+break ; 
+} 
+} 
+/*Pruebas/oficiales/Prueba4/pretty.c:44:2 syntax error, unexpected IF, found 'if'*/
+>>>>>>> Stashed changes
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 /*Pruebas/love.c:21:2 syntax error, unexpected AND_OP*/
 /*Pruebas/love.c:21:6 syntax error, unexpected CONSTANT*/
 /*Pruebas/love.c:21:8 syntax error, unexpected MINUS*/
@@ -147,11 +559,27 @@ do { not = * lie ++ & 0xF00L * ! me ;
 ( char ) * lie ++ ; 
 ( char ) * lie ++ , ( char ) * lie ++ ; hell : 0 , ( char ) * lie ; 
 /*Pruebas/love.c:24:26 syntax error, unexpected MINUS*/
+=======
+/*Pruebas/oficiales/Prueba4/pretty.c:44:6 syntax error, unexpected EXCLAMATION, found '!'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:44:22 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+if ( ! commit_format ) { 
+ALLOC_GROW ( commit_formats , commit_formats_len + 1 , 
+commit_formats_alloc ) ; 
+commit_format = & commit_formats [ commit_formats_len ] ; 
+memset ( commit_format , 0 , sizeof ( * commit_format ) ) ; 
+commit_formats_len ++ ; 
+} 
+commit_format -> name = xstrdup ( name ) ; 
+commit_format -> format = CMIT_FMT_USERFORMAT ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:53:2 syntax error, unexpected IF, found 'if'*/
+if ( git_config_string ( & fmt , var , value ) ) 
+>>>>>>> Stashed changes
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 /*Pruebas/love.c:24:28 syntax error, unexpected INTEGER*/
 /*Pruebas/love.c:24:30 syntax error, unexpected MINUS*/
 /*Pruebas/love.c:24:34 syntax error, unexpected CONSTANT*/
@@ -165,11 +593,27 @@ that ; puts ( * ( out
 /*Pruebas/love.c:28:41 syntax error, unexpected WHILE*/
 /*Pruebas/love.c:28:45 syntax error, unexpected EXCLAMATION*/
 /*Pruebas/love.c:28:60 syntax error, unexpected LITERAL*/
+=======
+/*Pruebas/oficiales/Prueba4/pretty.c:54:6 syntax error, unexpected RETURN, found 'return'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:54:8 syntax error, unexpected MINUS, found '-'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:54:10 syntax error, unexpected INTEGER, found '1'*/
+return - 1 ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:55:2 syntax error, unexpected IF, found 'if'*/
+if ( skip_prefix ( fmt , "format:" , & fmt ) ) 
+commit_format -> is_tformat = 0 ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:57:4 syntax error, unexpected ELSE, found 'else'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:57:7 syntax error, unexpected IF, found 'if'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:57:53 syntax error, unexpected OR_OP, expecting RIGHT_PARENTHESIS, found '||'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:57:76 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+else if ( skip_prefix ( fmt , "tformat:" , & fmt ) || strchr ( fmt , '%' ) ) 
+commit_format -> is_tformat = 1 ; 
+>>>>>>> Stashed changes
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 /*Pruebas/love.c:28:62 syntax error, unexpected RIGHT_PARENTHESIS*/
 - ( 'P' - 'S' ) + die + - 2 ) ) ; } while ( ! "you're at it" ) ; 
 /*Pruebas/love.c:29:3 syntax error, unexpected FOR*/
@@ -183,11 +627,27 @@ for ( * ( ( char * ) & lotte ) ^=
 /*Pruebas/love.c:31:16 syntax error, unexpected RIGHT_PARENTHESIS*/
 ! ! 0xBABE ] ; ) { if ( 'I' - lie [ 2 + ( char ) lotte ] ) { 'I' - 1l * * * die ; } 
 else { if ( 'I' * get * out * ( 'I' - 1l * * die [ 2 ] ) ) * ( ( char * ) & lotte ) -= 
+=======
+/*Pruebas/oficiales/Prueba4/pretty.c:59:4 syntax error, unexpected ELSE, found 'else'*/
+else 
+commit_format -> is_alias = 1 ; 
+commit_format -> user_format = fmt ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:62:6 syntax error, unexpected RETURN, found 'return'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:62:8 syntax error, unexpected INTEGER, found '0'*/
+return 0 ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:63:1 syntax error, unexpected RIGHT_BRACKET, found '}'*/
+} 
+static void setup_commit_formats ( void ) 
+{ 
+struct cmt_fmt_map builtin_formats [ ] = { 
+{ "raw" , CMIT_FMT_RAW , 0 , 0 } , 
+>>>>>>> Stashed changes
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 '4' - ( 'I' - 1l ) ; not ; for ( get = ! 
 get ; ! out ; ( char ) * lie & 0xD0 - ! not ) return ! ! 
 ( char ) lotte ; } 
@@ -201,11 +661,27 @@ register this ; switch ( ( char ) lie
 char * les , get = 0xFF , my ; case ' ' : 
 * ( ( char * ) & lotte ) += 15 ; ! not + ( char ) * lie * 's' ; 
 this + 1 + not ; default : 0xF + ( char * ) lie ; } } } 
+=======
+{ "medium" , CMIT_FMT_MEDIUM , 0 , 8 } , 
+{ "short" , CMIT_FMT_SHORT , 0 , 0 } , 
+{ "email" , CMIT_FMT_EMAIL , 0 , 0 } , 
+{ "mboxrd" , CMIT_FMT_MBOXRD , 0 , 0 } , 
+{ "fuller" , CMIT_FMT_FULLER , 0 , 8 } , 
+{ "full" , CMIT_FMT_FULL , 0 , 8 } , 
+{ "oneline" , CMIT_FMT_ONELINE , 1 , 0 } 
+} ; 
+commit_formats_len = ARRAY_SIZE ( builtin_formats ) ; 
+builtin_formats_len = commit_formats_len ; 
+ALLOC_GROW ( commit_formats , commit_formats_len , commit_formats_alloc ) ; 
+memcpy ( commit_formats , builtin_formats , 
+sizeof ( * builtin_formats ) * ARRAY_SIZE ( builtin_formats ) ) ; 
+>>>>>>> Stashed changes
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+<<<<<<< Updated upstream
 get - ! out ; 
 /*Pruebas/love.c:47:2 syntax error, unexpected IF*/
 if ( not -- ) 
@@ -213,5 +689,266 @@ if ( not -- )
 goto hell ; 
 /*Pruebas/love.c:49:27 syntax error, unexpected RIGHT_BRACKET*/
 exit ( ( char ) lotte ) ; } \end{minted}
+=======
+git_config ( git_pretty_formats_config , NULL ) ; 
+} 
+static struct cmt_fmt_map * find_commit_format_recursive ( const char * sought , 
+const char * original , 
+int num_redirections ) 
+{ 
+struct cmt_fmt_map * found = NULL ; 
+size_t found_match_len = 0 ; 
+int i ; 
+if ( num_redirections >= commit_formats_len ) 
+die ( "invalid --pretty format: " 
+"'%s' references an alias which points to itself" , 
+original ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+for ( i = 0 ; i < commit_formats_len ; i ++ ) { 
+size_t match_len ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:96:46 syntax error, unexpected IDENTIFIER, expecting COMMA or RIGHT_PARENTHESIS, found 'name'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:96:48 syntax error, unexpected COMMA, found ','*/
+/*Pruebas/oficiales/Prueba4/pretty.c:96:57 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:96:59 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+if ( ! starts_with ( commit_formats [ i ] name , sought ) ) 
+/*Pruebas/oficiales/Prueba4/pretty.c:97:8 syntax error, unexpected CONTINUE, found 'continue'*/
+continue ; 
+match_len = strlen ( commit_formats [ i ] . name ) ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:99:2 syntax error, unexpected IF, found 'if'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:99:13 syntax error, unexpected EQ_OP, expecting RIGHT_PARENTHESIS, found '=='*/
+/*Pruebas/oficiales/Prueba4/pretty.c:99:21 syntax error, unexpected OR_OP, found '||'*/
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+/*Pruebas/oficiales/Prueba4/pretty.c:99:39 syntax error, unexpected GREATER, found '>'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:99:51 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+if ( found == NULL || found_match_len > match_len ) { 
+found = & commit_formats [ i ] ; 
+found_match_len = match_len ; 
+} 
+/*Pruebas/oficiales/Prueba4/pretty.c:103:1 syntax error, unexpected RIGHT_BRACKET, found '}'*/
+} 
+/*Pruebas/oficiales/Prueba4/pretty.c:104:2 syntax error, unexpected IF, found 'if'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:104:13 syntax error, unexpected AND_OP, expecting RIGHT_PARENTHESIS, found '&&'*/
+/*Pruebas/oficiales/Prueba4/pretty.c:104:33 syntax error, unexpected RIGHT_PARENTHESIS, found ')'*/
+if ( found && found -> is_alias ) { 
+found = find_commit_format_recursive ( found -> user_format , 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+original , 
+num_redirections + 1 ) ; 
+} 
+/*Pruebas/oficiales/Prueba4/pretty.c:109:6 syntax error, unexpected RETURN, found 'return'*/
+return found ; 
+/*Pruebas/oficiales/Prueba4/pretty.c:110:1 syntax error, unexpected RIGHT_BRACKET, found '}'*/
+} 
+static struct cmt_fmt_map * find_commit_format ( const char * sought ) 
+{ 
+if ( ! commit_formats ) 
+setup_commit_formats ( ) ; 
+return find_commit_format_recursive ( sought , sought , 0 ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+void get_commit_format ( const char * arg , struct rev_info * rev ) 
+{ 
+struct cmt_fmt_map * commit_format ; 
+rev -> use_terminator = 0 ; 
+if ( ! arg ) { 
+rev -> commit_format = CMIT_FMT_DEFAULT ; 
+return ; 
+} 
+if ( skip_prefix ( arg "format:" , & arg ) ) { 
+save_user_format ( rev , arg , 0 ) ; 
+return ; 
+} 
+if ( ! * arg || skip_prefix ( arg , "tformat:" , & arg ) || strchr ( arg , '%' ) ) { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+save_user_format ( rev , arg , 1 ) ; 
+return ; 
+} 
+commit_format = find_commit_format ( arg ) ; 
+if ( ! commit_format ) 
+die ( "invalid --pretty format: %s" , arg ) ; 
+rev -> commit_format = commit_format -> format ; 
+rev -> use_terminator = commit_format -> is_tformat ; 
+rev -> expand_tabs_in_log_default = commit_format -> expand_tabs_in_log ; 
+if ( commit_format -> format == CMIT_FMT_USERFORMAT ) { 
+save_user_format ( rev , commit_format -> user_format , 
+commit_format -> is_tformat ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static int get_one_line ( const char * msg ) 
+{ 
+int ret = 0 ; 
+for ( ; ; ) { 
+char c = * msg ++ ; 
+if ( ! c ) 
+break ; 
+ret ++ ; 
+if ( c == '\n' ) 
+break ; 
+} 
+return ret ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static int non_ascii ( int ch ) 
+{ 
+return ! isascii ( ch ) || ch == '\033' ; 
+} 
+int has_non_ascii ( const char * s ) 
+{ 
+int ch ; 
+if ( ! s ) 
+return 0 ; 
+while ( ( ch = * s ++ ) != '\0' ) { 
+if ( non_ascii ( ch ) ) 
+return 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+return 0 ; 
+} 
+static int is_rfc822_special ( char ch ) 
+{ 
+switch ( ch ) { 
+case '(' : 
+case ')' : 
+case '<' : 
+case '>' : 
+case '[' : 
+case ']' : 
+case ':' : 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+case ';' : 
+case '@' : 
+case ',' : 
+case '.' : 
+case '"' : 
+case '\\' : 
+return 1 ; 
+default : 
+return 0 ; 
+} 
+} 
+static int needs_rfc822_quoting ( const char * s , int len ) 
+{ 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+int i ; 
+for ( i = 0 ; i < len ; i ++ ) 
+if ( is_rfc822_special ( s [ i ] ) ) 
+return 1 ; 
+return 0 ; 
+} 
+static int last_line_length ( struct strbuf * sb ) 
+{ 
+int i ; 
+for ( i = sb -> len - 1 ; i >= 0 ; i -- ) 
+if ( sb -> buf [ i ] == '\n' ) 
+break ; 
+return sb -> len - ( i + 1 ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+static void add_rfc822_quoted ( struct strbuf * out , const char * s , int len ) 
+{ 
+int i ; 
+strbuf_grow ( out , len + 2 ) ; 
+strbuf_addch ( out , '"' ) ; 
+for ( i = 0 ; i < len ; i ++ ) { 
+switch ( s [ i ] ) { 
+case '"' : 
+case '\\' : 
+strbuf_addch ( out , '\\' ) ; 
+default : 
+strbuf_addch ( out , s [ i ] ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+} 
+strbuf_addch ( out , '"' ) ; 
+} 
+enum rfc2047_type { 
+RFC2047_SUBJECT , 
+RFC2047_ADDRESS 
+} ; 
+static int is_rfc2047_special ( char ch , enum rfc2047_type type ) 
+{ 
+if ( non_ascii ( ch ) || ! isprint ( ch ) ) 
+return 1 ; 
+if ( isspace ( ch ) || ch == '=' || ch == '?' || ch == '_' ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+return 1 ; 
+if ( type != RFC2047_ADDRESS ) 
+return 0 ; 
+return ! ( isalnum ( ch ) || ch == '!' || ch == '*' || ch == '+' || ch == '-' || ch == '/' ) ; 
+} 
+static int needs_rfc2047_encoding ( const char * line , int len , 
+enum rfc2047_type type ) 
+{ 
+int i ; 
+for ( i = 0 ; i < len ; i ++ ) { 
+int ch = line [ i ] ; 
+if ( non_ascii ( ch ) || ch == '\n' ) 
+return 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+if ( ( i + 1 < len ) && ( ch == '=' && line [ i + 1 ] == '?' ) ) 
+return 1 ; 
+} 
+return 0 ; 
+} 
+/*Pruebas/oficiales/Prueba4/pretty.c:252:80 syntax error, unexpected $end, found ''*/
+static void add_rfc2047 ( struct strbuf * sb , const char * line , size_t len , \end{minted}
+>>>>>>> Stashed changes
 \end{frame}
 \end{document}
