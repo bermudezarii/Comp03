@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(} \PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{data} \PYG{p}{.} \PYG{n}{reg} \PYG{p}{.} \PYG{n}{type} \PYG{o}{\PYGZam{}} \PYG{n}{reg\PYGZus{}gen} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ia32\PYGZus{}handle\PYGZus{}register} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{p}{(} \PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{data} \PYG{p}{.} \PYG{n}{reg} \PYG{p}{)} \PYG{p}{,}
+\PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{data} \PYG{p}{.} \PYG{n}{reg} \PYG{p}{.} \PYG{n}{id} \PYG{o}{+} \PYG{l+m+mi}{8} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{handle\PYGZus{}insn\PYGZus{}metadata} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{ia32\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ia32\PYGZus{}handle\PYGZus{}mnemtype} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnem\PYGZus{}flag} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ia32\PYGZus{}handle\PYGZus{}notes} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{notes} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ia32\PYGZus{}handle\PYGZus{}eflags} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{flags\PYGZus{}effected} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ia32\PYGZus{}handle\PYGZus{}cpu} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cpu} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ia32\PYGZus{}stack\PYGZus{}mod} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{ia32\PYGZus{}decode\PYGZus{}insn} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{buf\PYGZus{}len} \PYG{p}{,}
+\end{Verbatim}

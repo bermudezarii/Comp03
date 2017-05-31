@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{ia32\PYGZus{}table\PYGZus{}lookup} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{buf\PYGZus{}len} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{table} \PYG{p}{,} \PYG{n}{ia32\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{o}{*} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{o}{*} \PYG{n}{prefixes} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{next} \PYG{p}{,} \PYG{n}{op} \PYG{o}{=} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{size} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{sub\PYGZus{}size} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{next\PYGZus{}len} \PYG{p}{;}
+\PYG{n}{ia32\PYGZus{}table\PYGZus{}desc\PYGZus{}t} \PYG{o}{*} \PYG{n}{table\PYGZus{}desc} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{subtable} \PYG{p}{,} \PYG{n}{prefix} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{recurse\PYGZus{}table} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{table\PYGZus{}desc} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{ia32\PYGZus{}tables} \PYG{p}{[} \PYG{n}{table} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{op} \PYG{o}{=} \PYG{n}{GET\PYGZus{}BYTE} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

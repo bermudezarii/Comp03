@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{insn\PYGZus{}set\PYGZus{}oflow} \PYG{o}{=} \PYG{l+m+mh}{0x9009} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}set\PYGZus{}dir} \PYG{o}{=} \PYG{l+m+mh}{0x900A} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}set\PYGZus{}sign} \PYG{o}{=} \PYG{l+m+mh}{0x900B} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}set\PYGZus{}parity} \PYG{o}{=} \PYG{l+m+mh}{0x900C} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}tog\PYGZus{}carry} \PYG{o}{=} \PYG{l+m+mh}{0x9010} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}tog\PYGZus{}zero} \PYG{o}{=} \PYG{l+m+mh}{0x9020} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}tog\PYGZus{}oflow} \PYG{o}{=} \PYG{l+m+mh}{0x9030} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}tog\PYGZus{}dir} \PYG{o}{=} \PYG{l+m+mh}{0x9040} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}tog\PYGZus{}sign} \PYG{o}{=} \PYG{l+m+mh}{0x9050} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}tog\PYGZus{}parity} \PYG{o}{=} \PYG{l+m+mh}{0x9060} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fmov} \PYG{o}{=} \PYG{l+m+mh}{0xA001} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fmovcc} \PYG{o}{=} \PYG{l+m+mh}{0xA002} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fneg} \PYG{o}{=} \PYG{l+m+mh}{0xA003} \PYG{p}{,}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n+nf}{x86\PYGZus{}operand\PYGZus{}2nd} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n+nf}{x86\PYGZus{}operand\PYGZus{}3rd} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}operand\PYGZus{}size} \PYG{p}{(} \PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n}{op} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{uint32\PYGZus{}t} \PYG{n+nf}{x86\PYGZus{}get\PYGZus{}address} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int32\PYGZus{}t} \PYG{n+nf}{x86\PYGZus{}get\PYGZus{}rel\PYGZus{}offset} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n+nf}{x86\PYGZus{}get\PYGZus{}branch\PYGZus{}target} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n+nf}{x86\PYGZus{}get\PYGZus{}imm} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{x86\PYGZus{}get\PYGZus{}raw\PYGZus{}imm} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}set\PYGZus{}insn\PYGZus{}addr} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{addr} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}set\PYGZus{}insn\PYGZus{}offset} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{offset} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}set\PYGZus{}insn\PYGZus{}function} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{func} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}set\PYGZus{}insn\PYGZus{}block} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{block} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}tag\PYGZus{}insn} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

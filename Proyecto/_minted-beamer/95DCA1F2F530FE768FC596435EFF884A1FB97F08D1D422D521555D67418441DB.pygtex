@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}output\PYGZus{}post\PYGZus{}merge\PYGZus{}line} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{seen\PYGZus{}this} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{chars\PYGZus{}written} \PYG{p}{;}
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}columns} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{column} \PYG{o}{*} \PYG{n}{col} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{columns} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{commit} \PYG{o}{*} \PYG{n}{col\PYGZus{}commit} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{i} \PYG{o}{==} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}columns} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{seen\PYGZus{}this} \PYG{p}{)}
+\PYG{k}{break} \PYG{p}{;}
+\end{Verbatim}

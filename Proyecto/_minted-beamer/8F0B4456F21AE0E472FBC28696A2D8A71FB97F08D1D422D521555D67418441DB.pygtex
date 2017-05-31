@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{default} \PYG{o}{:}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}enter\PYGZdq{}} \PYG{p}{,} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnemonic} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}leave\PYGZdq{}} \PYG{p}{,} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnemonic} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{ia32\PYGZus{}handle\PYGZus{}cpu} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{cpu} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{cpu} \PYG{o}{=} \PYG{p}{(} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}insn\PYGZus{}cpu} \PYG{p}{)} \PYG{n}{CPU\PYGZus{}MODEL} \PYG{p}{(} \PYG{n}{cpu} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{isa} \PYG{o}{=} \PYG{p}{(} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}insn\PYGZus{}isa} \PYG{p}{)} \PYG{p}{(} \PYG{n}{ISA\PYGZus{}SUBSET} \PYG{p}{(} \PYG{n}{cpu} \PYG{p}{)} \PYG{p}{)} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{16} \PYG{p}{;}
+\end{Verbatim}

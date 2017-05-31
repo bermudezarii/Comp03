@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{graph\PYGZus{}is\PYGZus{}mapping\PYGZus{}correct} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{graph\PYGZus{}update\PYGZus{}state} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{GRAPH\PYGZus{}PADDING} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{graph\PYGZus{}update\PYGZus{}state} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{GRAPH\PYGZus{}COLLAPSING} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{column} \PYG{o}{*} \PYG{n}{find\PYGZus{}new\PYGZus{}column\PYGZus{}by\PYGZus{}commit} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{commit} \PYG{o}{*} \PYG{n}{commit} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}new\PYGZus{}columns} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{new\PYGZus{}columns} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{commit} \PYG{o}{==} \PYG{n}{commit} \PYG{p}{)}
+\PYG{k}{return} \PYG{o}{\PYGZam{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{new\PYGZus{}columns} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{insn\PYGZus{}fabs} \PYG{o}{=} \PYG{l+m+mh}{0xA004} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fadd} \PYG{o}{=} \PYG{l+m+mh}{0xA005} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fsub} \PYG{o}{=} \PYG{l+m+mh}{0xA006} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fmul} \PYG{o}{=} \PYG{l+m+mh}{0xA007} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fdiv} \PYG{o}{=} \PYG{l+m+mh}{0xA008} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fsqrt} \PYG{o}{=} \PYG{l+m+mh}{0xA009} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fcmp} \PYG{o}{=} \PYG{l+m+mh}{0xA00A} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fcos} \PYG{o}{=} \PYG{l+m+mh}{0xA00C} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fldpi} \PYG{o}{=} \PYG{l+m+mh}{0xA00D} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fldz} \PYG{o}{=} \PYG{l+m+mh}{0xA00E} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}ftan} \PYG{o}{=} \PYG{l+m+mh}{0xA00F} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fsine} \PYG{o}{=} \PYG{l+m+mh}{0xA010} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}fsys} \PYG{o}{=} \PYG{l+m+mh}{0xA020} \PYG{p}{,}
+\end{Verbatim}

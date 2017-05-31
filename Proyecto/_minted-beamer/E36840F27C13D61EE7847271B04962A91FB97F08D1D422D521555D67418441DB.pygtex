@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}write\PYGZus{}column} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{col} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}|\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{strbuf\PYGZus{}addch} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{graph\PYGZus{}pad\PYGZus{}horizontally} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{chars\PYGZus{}written} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{expansion\PYGZus{}row} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{expansion\PYGZus{}row} \PYG{o}{\PYGZgt{}=} \PYG{n}{num\PYGZus{}expansion\PYGZus{}rows} \PYG{p}{)}
+\PYG{n}{graph\PYGZus{}update\PYGZus{}state} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{GRAPH\PYGZus{}COMMIT} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}output\PYGZus{}commit\PYGZus{}char} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

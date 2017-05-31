@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{sub\PYGZus{}size} \PYG{o}{==} \PYG{n}{INVALID\PYGZus{}INSN} \PYG{p}{)} \PYG{k}{return} \PYG{n}{INVALID\PYGZus{}INSN} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{prefix} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{recurse\PYGZus{}table} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{recurse\PYGZus{}table} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{sub\PYGZus{}size} \PYG{o}{=} \PYG{n}{ia32\PYGZus{}table\PYGZus{}lookup} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{table} \PYG{p}{,}
+\PYG{n}{raw\PYGZus{}insn} \PYG{p}{,} \PYG{n}{prefixes} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{sub\PYGZus{}size} \PYG{o}{==} \PYG{n}{INVALID\PYGZus{}INSN} \PYG{p}{)} \PYG{k}{return} \PYG{n}{INVALID\PYGZus{}INSN} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{prefix} \PYG{o}{\PYGZam{}} \PYG{n}{BRANCH\PYGZus{}HINT\PYGZus{}MASK} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{INS\PYGZus{}GROUP} \PYG{p}{(} \PYG{p}{(} \PYG{o}{*} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnem\PYGZus{}flag} \PYG{p}{)} \PYG{o}{==} \PYG{n}{INS\PYGZus{}EXEC} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{prefix} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}} \PYG{n}{PREFIX\PYGZus{}REG\PYGZus{}MASK} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

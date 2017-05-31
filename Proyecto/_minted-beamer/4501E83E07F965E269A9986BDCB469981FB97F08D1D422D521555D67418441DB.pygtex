@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{graph\PYGZus{}pad\PYGZus{}horizontally} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{chars\PYGZus{}written} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prev\PYGZus{}state} \PYG{o}{=} \PYG{n}{GRAPH\PYGZus{}PADDING} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{graph\PYGZus{}is\PYGZus{}commit\PYGZus{}finished} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{k}{const} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{state} \PYG{o}{==} \PYG{n}{GRAPH\PYGZus{}PADDING} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}show\PYGZus{}commit} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{msgbuf} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{shown\PYGZus{}commit\PYGZus{}line} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\end{Verbatim}

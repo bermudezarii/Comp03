@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph\PYGZus{}is\PYGZus{}interesting} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{parents} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{item} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{parents} \PYG{p}{;}
+\PYG{k}{return} \PYG{n+nf}{next\PYGZus{}interesting\PYGZus{}parent} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{parents} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{graph\PYGZus{}get\PYGZus{}current\PYGZus{}column\PYGZus{}color} \PYG{p}{(} \PYG{k}{const} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{want\PYGZus{}color} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{revs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{diffopt} \PYG{p}{.} \PYG{n}{use\PYGZus{}color} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{column\PYGZus{}colors\PYGZus{}max} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{default\PYGZus{}column\PYGZus{}color} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}increment\PYGZus{}column\PYGZus{}color} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

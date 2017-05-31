@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{width} \PYG{o}{=} \PYG{n}{max\PYGZus{}cols} \PYG{o}{*} \PYG{l+m+mi}{2} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}update\PYGZus{}columns} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{commit\PYGZus{}list} \PYG{o}{*} \PYG{n}{parent} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{max\PYGZus{}new\PYGZus{}columns} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{mapping\PYGZus{}idx} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{seen\PYGZus{}this} \PYG{p}{,} \PYG{n}{is\PYGZus{}commit\PYGZus{}in\PYGZus{}columns} \PYG{p}{;}
+\PYG{n}{SWAP} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{columns} \PYG{p}{,} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{new\PYGZus{}columns} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}columns} \PYG{o}{=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}new\PYGZus{}columns} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}new\PYGZus{}columns} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{max\PYGZus{}new\PYGZus{}columns} \PYG{o}{=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}columns} \PYG{o}{+} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}parents} \PYG{p}{;}
+\PYG{n}{graph\PYGZus{}ensure\PYGZus{}capacity} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{max\PYGZus{}new\PYGZus{}columns} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}fd\PYGZus{}mask} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{\PYGZus{}\PYGZus{}fd\PYGZus{}mask} \PYG{n}{\PYGZus{}\PYGZus{}fds\PYGZus{}bits} \PYG{p}{[} \PYG{l+m+mi}{1024} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{8} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{k}{sizeof} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}fd\PYGZus{}mask} \PYG{p}{)} \PYG{p}{)} \PYG{p}{]} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{fd\PYGZus{}set} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}fd\PYGZus{}mask} \PYG{n}{fd\PYGZus{}mask} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{select} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nfds} \PYG{p}{,} \PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}readfds} \PYG{p}{,}
+\PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}writefds} \PYG{p}{,}
+\PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}exceptfds} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{timeval} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}timeout} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{pselect} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nfds} \PYG{p}{,} \PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}readfds} \PYG{p}{,}
+\PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}writefds} \PYG{p}{,}
+\PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}exceptfds} \PYG{p}{,}
+\end{Verbatim}

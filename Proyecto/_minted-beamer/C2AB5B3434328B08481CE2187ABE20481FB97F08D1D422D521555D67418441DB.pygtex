@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{opt} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{line\PYGZus{}prefix\PYGZus{}length} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)}
+\PYG{n}{graph\PYGZus{}padding\PYGZus{}line} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{msgbuf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{\PYGZam{}} \PYG{n}{msgbuf} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{const} \PYG{k}{struct} \PYG{n}{diff\PYGZus{}options} \PYG{o}{*} \PYG{n}{default\PYGZus{}diffopt} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{graph\PYGZus{}setup\PYGZus{}line\PYGZus{}prefix} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{diff\PYGZus{}options} \PYG{o}{*} \PYG{n}{diffopt} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{default\PYGZus{}diffopt} \PYG{o}{=} \PYG{n}{diffopt} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{diffopt} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{diffopt} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{output\PYGZus{}prefix} \PYG{p}{)}
+\PYG{n}{diffopt} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{output\PYGZus{}prefix} \PYG{o}{=} \PYG{n}{diff\PYGZus{}output\PYGZus{}prefix\PYGZus{}callback} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph\PYGZus{}init} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{rev\PYGZus{}info} \PYG{o}{*} \PYG{n}{opt} \PYG{p}{)}
+\end{Verbatim}

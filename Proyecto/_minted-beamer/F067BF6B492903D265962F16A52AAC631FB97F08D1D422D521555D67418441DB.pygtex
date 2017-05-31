@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{raw\PYGZus{}insn} \PYG{p}{,} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{sfx\PYGZus{}size} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{MAKE\PYGZus{}INVALID} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{size} \PYG{o}{+=} \PYG{n}{sfx\PYGZus{}size} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{size} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{MAKE\PYGZus{}INVALID} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{size} \PYG{o}{=} \PYG{n}{size} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{size} \PYG{p}{;}
+\end{Verbatim}

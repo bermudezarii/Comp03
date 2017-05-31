@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{p}{(} \PYG{n}{op} \PYG{p}{)} \PYG{p}{(} \PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{==} \PYG{n}{op\PYGZus{}register} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{data} \PYG{p}{.} \PYG{n}{reg} \PYG{p}{.} \PYG{n}{id} \PYG{o}{==} \PYG{n}{REG\PYGZus{}ESP\PYGZus{}INDEX} \PYG{o}{||} \PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{data} \PYG{p}{.} \PYG{n}{reg} \PYG{p}{.} \PYG{n}{alias} \PYG{o}{==} \PYG{n}{REG\PYGZus{}ESP\PYGZus{}INDEX} \PYG{p}{)} \PYG{p}{)} \PYG{p}{(} \PYG{n}{dest} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}enter} \PYG{p}{:}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}leave} \PYG{p}{:}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}pushregs} \PYG{p}{:}
+\end{Verbatim}

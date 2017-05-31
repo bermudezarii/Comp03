@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}popregs} \PYG{p}{:}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}pushflags} \PYG{p}{:}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}popflags} \PYG{p}{:}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\end{Verbatim}

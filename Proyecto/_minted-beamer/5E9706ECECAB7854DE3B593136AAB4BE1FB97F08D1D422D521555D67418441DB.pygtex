@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{!} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{buf} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{MAKE\PYGZus{}INVALID} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{size} \PYG{o}{=} \PYG{n}{ia32\PYGZus{}table\PYGZus{}lookup} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{p}{,} \PYG{n}{idx\PYGZus{}Main} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{prefixes} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{size} \PYG{o}{==} \PYG{n}{INVALID\PYGZus{}INSN} \PYG{o}{||} \PYG{n}{size} \PYG{o}{\PYGZgt{}} \PYG{n}{buf\PYGZus{}len} \PYG{o}{||} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnem\PYGZus{}flag} \PYG{o}{==} \PYG{n}{INS\PYGZus{}INVALID} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{MAKE\PYGZus{}INVALID} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{size} \PYG{o}{+=} \PYG{n}{ia32\PYGZus{}decode\PYGZus{}insn} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{size} \PYG{p}{]} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{o}{\PYGZhy{}} \PYG{n}{size} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{,} \PYG{n}{insn} \PYG{p}{,}
+\PYG{n}{prefixes} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnem\PYGZus{}flag} \PYG{o}{\PYGZam{}} \PYG{n}{INS\PYGZus{}FLAG\PYGZus{}SUFFIX} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{sfx\PYGZus{}size} \PYG{o}{=} \PYG{n}{handle\PYGZus{}insn\PYGZus{}suffix} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{size} \PYG{p}{]} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{o}{\PYGZhy{}} \PYG{n}{size} \PYG{p}{,}
+\end{Verbatim}

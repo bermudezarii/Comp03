@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{reg\PYGZus{}dest} \PYG{o}{=} \PYG{l+m+mh}{0x20000} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}count} \PYG{o}{=} \PYG{l+m+mh}{0x40000}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{name} \PYG{p}{[} \PYG{l+m+mi}{8} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}reg\PYGZus{}type} \PYG{n}{type} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{size} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{id} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{alias} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{shift} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{x86\PYGZus{}reg\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{scale} \PYG{p}{;}
+\end{Verbatim}

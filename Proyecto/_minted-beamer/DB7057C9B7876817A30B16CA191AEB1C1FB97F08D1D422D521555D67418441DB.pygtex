@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strlen} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prefix\PYGZus{}string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prefix} \PYG{o}{\PYGZam{}} \PYG{n}{PREFIX\PYGZus{}REPNZ} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strncat} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prefix\PYGZus{}string} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}repnz \PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{32} \PYG{o}{\PYGZhy{}}
+\PYG{n}{strlen} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prefix\PYGZus{}string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prefix} \PYG{o}{\PYGZam{}} \PYG{n}{PREFIX\PYGZus{}REPZ} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strncat} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prefix\PYGZus{}string} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}repz \PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{32} \PYG{o}{\PYGZhy{}}
+\PYG{n}{strlen} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{prefix\PYGZus{}string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{reg\PYGZus{}32\PYGZus{}to\PYGZus{}16} \PYG{p}{(} \PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n}{op} \PYG{p}{,} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{arg} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{==} \PYG{n}{op\PYGZus{}register} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{op} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{data} \PYG{p}{.} \PYG{n}{reg} \PYG{p}{.} \PYG{n}{size} \PYG{o}{==} \PYG{l+m+mi}{4} \PYG{o}{\PYGZam{}\PYGZam{}}
+\end{Verbatim}

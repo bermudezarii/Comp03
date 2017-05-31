@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{sys\PYGZus{}nerr} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{k}{const} \PYG{n}{sys\PYGZus{}errlist} \PYG{p}{[} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{fileno} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{fileno\PYGZus{}unlocked} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n+nf}{popen} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}command} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}modes} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{pclose} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{ctermid} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}s} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{void} \PYG{n+nf}{flockfile} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{ftrylockfile} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{void} \PYG{n+nf}{funlockfile} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{eger} \PYG{o}{*} \PYG{o}{/}
+\PYG{n}{op\PYGZus{}dqword} \PYG{o}{=} \PYG{l+m+mi}{5} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}sreal} \PYG{o}{=} \PYG{l+m+mi}{6} \PYG{p}{,}
+\end{Verbatim}

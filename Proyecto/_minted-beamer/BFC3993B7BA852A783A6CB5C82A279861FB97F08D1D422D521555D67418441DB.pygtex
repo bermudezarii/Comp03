@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{insn\PYGZus{}int} \PYG{o}{=} \PYG{l+m+mh}{0xD001} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}intcc} \PYG{o}{=} \PYG{l+m+mh}{0xD002} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}iret} \PYG{o}{=} \PYG{l+m+mh}{0xD003} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}bound} \PYG{o}{=} \PYG{l+m+mh}{0xD004} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}debug} \PYG{o}{=} \PYG{l+m+mh}{0xD005} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}trace} \PYG{o}{=} \PYG{l+m+mh}{0xD006} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}invalid\PYGZus{}op} \PYG{o}{=} \PYG{l+m+mh}{0xD007} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}oflow} \PYG{o}{=} \PYG{l+m+mh}{0xD008} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}halt} \PYG{o}{=} \PYG{l+m+mh}{0xE001} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}in} \PYG{o}{=} \PYG{l+m+mh}{0xE002} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}out} \PYG{o}{=} \PYG{l+m+mh}{0xE003} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}cpuid} \PYG{o}{=} \PYG{l+m+mh}{0xE004} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}nop} \PYG{o}{=} \PYG{l+m+mh}{0xF001} \PYG{p}{,}
+\end{Verbatim}

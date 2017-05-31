@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{case} \PYG{n+nl}{GRAPH\PYGZus{}COLLAPSING} \PYG{p}{:}
+\PYG{n}{graph\PYGZus{}output\PYGZus{}collapsing\PYGZus{}line} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{assert} \PYG{p}{(} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}padding\PYGZus{}line} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{chars\PYGZus{}written} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{state} \PYG{o}{!=} \PYG{n}{GRAPH\PYGZus{}COMMIT} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{graph\PYGZus{}next\PYGZus{}line} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

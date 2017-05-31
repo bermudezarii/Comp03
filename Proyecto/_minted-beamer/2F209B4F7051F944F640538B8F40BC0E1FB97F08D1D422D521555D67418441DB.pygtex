@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{op\PYGZus{}src} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}ro} \PYG{o}{=} \PYG{l+m+mi}{3} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}wo} \PYG{o}{=} \PYG{l+m+mi}{4} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}xo} \PYG{o}{=} \PYG{l+m+mi}{5} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}rw} \PYG{o}{=} \PYG{l+m+mi}{6} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}implicit} \PYG{o}{=} \PYG{l+m+mh}{0x10} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}explicit} \PYG{o}{=} \PYG{l+m+mh}{0x20}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}oplist\PYGZus{}free} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}operand\PYGZus{}foreach} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{x86\PYGZus{}operand\PYGZus{}fn} \PYG{n}{func} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{arg} \PYG{p}{,}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}op\PYGZus{}foreach\PYGZus{}type} \PYG{n}{type} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n+nf}{x86\PYGZus{}operand\PYGZus{}count} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}op\PYGZus{}foreach\PYGZus{}type} \PYG{n}{type} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n+nf}{x86\PYGZus{}operand\PYGZus{}1st} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

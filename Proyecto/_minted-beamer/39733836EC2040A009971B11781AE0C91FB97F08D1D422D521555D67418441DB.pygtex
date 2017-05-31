@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{commit\PYGZus{}list} \PYG{o}{*} \PYG{n}{list} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{revs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{first\PYGZus{}parent\PYGZus{}only} \PYG{p}{)}
+\PYG{k}{return} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{list} \PYG{o}{=} \PYG{n}{orig} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{next} \PYG{p}{;} \PYG{n}{list} \PYG{p}{;} \PYG{n}{list} \PYG{o}{=} \PYG{n}{list} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{next} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph\PYGZus{}is\PYGZus{}interesting} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{list} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{item} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{list} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{commit\PYGZus{}list} \PYG{o}{*} \PYG{n}{first\PYGZus{}interesting\PYGZus{}parent} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{commit\PYGZus{}list} \PYG{o}{*} \PYG{n}{parents} \PYG{o}{=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{commit} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{parents} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{parents} \PYG{p}{)}
+\end{Verbatim}

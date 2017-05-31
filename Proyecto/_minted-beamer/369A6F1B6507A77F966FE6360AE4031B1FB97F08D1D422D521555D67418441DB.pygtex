@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping\PYGZus{}size} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{default\PYGZus{}column\PYGZus{}color} \PYG{o}{=} \PYG{n}{column\PYGZus{}colors\PYGZus{}max} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{column\PYGZus{}capacity} \PYG{o}{=} \PYG{l+m+mi}{30} \PYG{p}{;}
+\PYG{n}{ALLOC\PYGZus{}ARRAY} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{columns} \PYG{p}{,} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{column\PYGZus{}capacity} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ALLOC\PYGZus{}ARRAY} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{new\PYGZus{}columns} \PYG{p}{,} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{column\PYGZus{}capacity} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ALLOC\PYGZus{}ARRAY} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{column\PYGZus{}capacity} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{ALLOC\PYGZus{}ARRAY} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{new\PYGZus{}mapping} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{column\PYGZus{}capacity} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{opt} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{diffopt} \PYG{p}{.} \PYG{n}{output\PYGZus{}prefix} \PYG{o}{=} \PYG{n}{diff\PYGZus{}output\PYGZus{}prefix\PYGZus{}callback} \PYG{p}{;}
+\PYG{n}{opt} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{diffopt} \PYG{p}{.} \PYG{n}{output\PYGZus{}prefix\PYGZus{}data} \PYG{o}{=} \PYG{n}{graph} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{graph} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}update\PYGZus{}state} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,} \PYG{k}{enum} \PYG{n}{graph\PYGZus{}state} \PYG{n}{s} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

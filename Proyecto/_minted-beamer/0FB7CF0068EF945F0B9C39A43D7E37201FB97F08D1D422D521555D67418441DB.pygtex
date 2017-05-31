@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{op\PYGZus{}fpuenv16} \PYG{o}{=} \PYG{l+m+mi}{20} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}fpuenv32} \PYG{o}{=} \PYG{l+m+mi}{21} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}fpustate16} \PYG{o}{=} \PYG{l+m+mi}{22} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}fpustate32} \PYG{o}{=} \PYG{l+m+mi}{23} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}fpregset} \PYG{o}{=} \PYG{l+m+mi}{24} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}fpreg} \PYG{o}{=} \PYG{l+m+mi}{25} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}none} \PYG{o}{=} \PYG{l+m+mh}{0xFF} \PYG{p}{,}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}op\PYGZus{}access} \PYG{p}{\PYGZob{}}
+\PYG{n}{op\PYGZus{}read} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}write} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}execute} \PYG{o}{=} \PYG{l+m+mi}{4}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\end{Verbatim}

@@ -1,16 +1,13 @@
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-) ;
-extern int XQueryPointer (
-Display * ,
-Window ,
-Window * ,
-Window * ,
-int * ,
-int * ,
-int * ,
-int * ,
-unsigned int *
-) ;
-extern int XQueryTextExtents (
-\end{minted}
+if ( ! graph )
+return ;
+newline_terminated = ( sb -> len && sb -> buf [ sb -> len - 1 ] == '\n' ) ;
+if ( ! graph_is_commit_finished ( graph ) ) {
+if ( ! newline_terminated )
+putc ( '\n' , file ) ;
+graph_show_remainder ( graph ) ;
+if ( newline_terminated )
+putc ( '\n' , file ) ;
+}
+} \end{minted}

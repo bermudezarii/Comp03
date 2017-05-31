@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{buf\PYGZus{}len} \PYG{o}{\PYGZhy{}=} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\PYG{n}{size} \PYG{o}{=} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\PYG{n}{op\PYGZus{}size} \PYG{o}{=} \PYG{n}{ia32\PYGZus{}decode\PYGZus{}operand} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{p}{,} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{src} \PYG{p}{,}
+\PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{src\PYGZus{}flag} \PYG{p}{,} \PYG{n}{prefixes} \PYG{p}{,} \PYG{n}{modrm} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{buf} \PYG{o}{+=} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\PYG{n}{buf\PYGZus{}len} \PYG{o}{\PYGZhy{}=} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\PYG{n}{size} \PYG{o}{+=} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\PYG{n}{op\PYGZus{}size} \PYG{o}{=} \PYG{n}{ia32\PYGZus{}decode\PYGZus{}operand} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{p}{,} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{aux} \PYG{p}{,}
+\PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{aux\PYGZus{}flag} \PYG{p}{,} \PYG{n}{prefixes} \PYG{p}{,} \PYG{n}{modrm} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{size} \PYG{o}{+=} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\PYG{n}{ia32\PYGZus{}insn\PYGZus{}implicit\PYGZus{}ops} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{implicit\PYGZus{}ops} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{prefixes} \PYG{o}{\PYGZam{}} \PYG{n}{PREFIX\PYGZus{}REPZ} \PYG{p}{)} \PYG{o}{||} \PYG{p}{(} \PYG{n}{prefixes} \PYG{o}{\PYGZam{}} \PYG{n}{PREFIX\PYGZus{}REPNZ} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{ia32\PYGZus{}insn\PYGZus{}implicit\PYGZus{}ops} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{IDX\PYGZus{}IMPLICIT\PYGZus{}REP} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

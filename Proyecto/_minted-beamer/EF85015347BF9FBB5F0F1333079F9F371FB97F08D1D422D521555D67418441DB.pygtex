@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nl}{\PYGZus{}\PYGZus{}w\PYGZus{}stopsig} \PYG{p}{:} \PYG{l+m+mi}{8} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{o}{:} \PYG{l+m+mi}{16} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{\PYGZus{}\PYGZus{}wait\PYGZus{}stopped} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{union}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{union} \PYG{n}{wait} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}uptr} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}iptr} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{\PYGZus{}\PYGZus{}WAIT\PYGZus{}STATUS} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}transparent\PYGZus{}union\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{quot} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{rem} \PYG{p}{;}
+\end{Verbatim}

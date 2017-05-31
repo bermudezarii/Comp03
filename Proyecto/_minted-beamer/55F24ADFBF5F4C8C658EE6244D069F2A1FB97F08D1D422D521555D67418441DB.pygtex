@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}op\PYGZus{}flags} \PYG{p}{\PYGZob{}}
+\PYG{n}{op\PYGZus{}signed} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}string} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}constant} \PYG{o}{=} \PYG{l+m+mi}{4} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}pointer} \PYG{o}{=} \PYG{l+m+mi}{8} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}sysref} \PYG{o}{=} \PYG{l+m+mh}{0x010} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}implied} \PYG{o}{=} \PYG{l+m+mh}{0x020} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}hardcode} \PYG{o}{=} \PYG{l+m+mh}{0x40} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}es\PYGZus{}seg} \PYG{o}{=} \PYG{l+m+mh}{0x100} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}cs\PYGZus{}seg} \PYG{o}{=} \PYG{l+m+mh}{0x200} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}ss\PYGZus{}seg} \PYG{o}{=} \PYG{l+m+mh}{0x300} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}ds\PYGZus{}seg} \PYG{o}{=} \PYG{l+m+mh}{0x400} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}fs\PYGZus{}seg} \PYG{o}{=} \PYG{l+m+mh}{0x500} \PYG{p}{,}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}parents} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;} \PYG{n}{j} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{parents} \PYG{o}{=} \PYG{n}{next\PYGZus{}interesting\PYGZus{}parent} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{parents} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{parents} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{par\PYGZus{}column} \PYG{o}{=} \PYG{n}{find\PYGZus{}new\PYGZus{}column\PYGZus{}by\PYGZus{}commit} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{parents} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{item} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{assert} \PYG{p}{(} \PYG{n}{par\PYGZus{}column} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}write\PYGZus{}column} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{par\PYGZus{}column} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}\PYGZbs{}\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addch} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{+=} \PYG{n}{j} \PYG{o}{*} \PYG{l+m+mi}{2} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{seen\PYGZus{}this} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}write\PYGZus{}column} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{col} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}\PYGZbs{}\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addch} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

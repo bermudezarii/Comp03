@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{dest} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{operands} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{op} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{dest} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{src} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{operands} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{next} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{op} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{switch} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}call} \PYG{p}{:}
+\PYG{k}{case} \PYG{n+nl}{insn\PYGZus{}callcc} \PYG{p}{:}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{stack\PYGZus{}mod\PYGZus{}val} \PYG{o}{=} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{addr\PYGZus{}size} \PYG{o}{*} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\end{Verbatim}

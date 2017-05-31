@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}asm\PYGZus{}format} \PYG{n}{format} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}format\PYGZus{}insn} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{len} \PYG{p}{,} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}asm\PYGZus{}format} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}format\PYGZus{}header} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{len} \PYG{p}{,} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}asm\PYGZus{}format} \PYG{n}{format} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}endian} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}addr\PYGZus{}size} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}op\PYGZus{}size} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}word\PYGZus{}size} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}max\PYGZus{}insn\PYGZus{}size} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}sp\PYGZus{}reg} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}fp\PYGZus{}reg} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}ip\PYGZus{}reg} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}flag\PYGZus{}reg} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}reg\PYGZus{}from\PYGZus{}id} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{id} \PYG{p}{,} \PYG{n}{x86\PYGZus{}reg\PYGZus{}t} \PYG{o}{*} \PYG{n}{reg} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

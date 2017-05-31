@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}insn\PYGZus{}type} \PYG{p}{\PYGZob{}}
+\PYG{n}{insn\PYGZus{}invalid} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}jmp} \PYG{o}{=} \PYG{l+m+mh}{0x1001} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}jcc} \PYG{o}{=} \PYG{l+m+mh}{0x1002} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}call} \PYG{o}{=} \PYG{l+m+mh}{0x1003} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}callcc} \PYG{o}{=} \PYG{l+m+mh}{0x1004} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}return} \PYG{o}{=} \PYG{l+m+mh}{0x1005} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}add} \PYG{o}{=} \PYG{l+m+mh}{0x2001} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}sub} \PYG{o}{=} \PYG{l+m+mh}{0x2002} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}mul} \PYG{o}{=} \PYG{l+m+mh}{0x2003} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}div} \PYG{o}{=} \PYG{l+m+mh}{0x2004} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}inc} \PYG{o}{=} \PYG{l+m+mh}{0x2005} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}dec} \PYG{o}{=} \PYG{l+m+mh}{0x2006} \PYG{p}{,}
+\end{Verbatim}

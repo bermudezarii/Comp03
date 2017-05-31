@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{\PYGZus{}\PYGZus{}extension\PYGZus{}\PYGZus{}}
+\PYG{k}{extern} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n+nf}{strtoll} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}nptr} \PYG{p}{,}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}endptr} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}base} \PYG{p}{)}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nonnull\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}extension\PYGZus{}\PYGZus{}}
+\PYG{k}{extern} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n+nf}{strtoull} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}nptr} \PYG{p}{,}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}endptr} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}base} \PYG{p}{)}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nonnull\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{l64a} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}n} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n+nf}{a64l} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}s} \PYG{p}{)}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}pure\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nonnull\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}char} \PYG{n}{u\PYGZus{}char} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}short} \PYG{n}{u\PYGZus{}short} \PYG{p}{;}
+\end{Verbatim}

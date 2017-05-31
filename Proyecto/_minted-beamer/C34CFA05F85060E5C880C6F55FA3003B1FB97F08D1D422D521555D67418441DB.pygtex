@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping\PYGZus{}size} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{max\PYGZus{}new\PYGZus{}columns} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping\PYGZus{}size} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{seen\PYGZus{}this} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{mapping\PYGZus{}idx} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{is\PYGZus{}commit\PYGZus{}in\PYGZus{}columns} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}columns} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{commit} \PYG{o}{*} \PYG{n}{col\PYGZus{}commit} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{i} \PYG{o}{==} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}columns} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{seen\PYGZus{}this} \PYG{p}{)}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{n}{is\PYGZus{}commit\PYGZus{}in\PYGZus{}columns} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{col\PYGZus{}commit} \PYG{o}{=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{commit} \PYG{p}{;}
+\end{Verbatim}

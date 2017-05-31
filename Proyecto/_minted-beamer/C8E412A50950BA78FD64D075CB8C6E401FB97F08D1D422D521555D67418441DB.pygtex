@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{x86\PYGZus{}reg\PYGZus{}t} \PYG{n}{index} \PYG{p}{,} \PYG{n}{base} \PYG{p}{;}
+\PYG{k+kt}{int32\PYGZus{}t} \PYG{n}{disp} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{disp\PYGZus{}sign} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{disp\PYGZus{}size} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{x86\PYGZus{}ea\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{segment} \PYG{p}{;}
+\PYG{k}{union} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{off16} \PYG{p}{;}
+\PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{off32} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{offset} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{x86\PYGZus{}absolute\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}op\PYGZus{}type} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

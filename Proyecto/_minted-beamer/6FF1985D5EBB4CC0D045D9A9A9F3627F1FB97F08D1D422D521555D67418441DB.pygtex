@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{col\PYGZus{}commit} \PYG{o}{=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{columns} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{commit} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{col\PYGZus{}commit} \PYG{o}{==} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{commit} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{old\PYGZus{}mapping\PYGZus{}idx} \PYG{o}{=} \PYG{n}{mapping\PYGZus{}idx} \PYG{p}{;}
+\PYG{n}{seen\PYGZus{}this} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{commit\PYGZus{}index} \PYG{o}{=} \PYG{n}{i} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{parent} \PYG{o}{=} \PYG{n}{first\PYGZus{}interesting\PYGZus{}parent} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{parent} \PYG{p}{;}
+\PYG{n}{parent} \PYG{o}{=} \PYG{n}{next\PYGZus{}interesting\PYGZus{}parent} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{parent} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}parents} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{o}{||}
+\PYG{o}{!} \PYG{n}{is\PYGZus{}commit\PYGZus{}in\PYGZus{}columns} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{graph\PYGZus{}increment\PYGZus{}column\PYGZus{}color} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

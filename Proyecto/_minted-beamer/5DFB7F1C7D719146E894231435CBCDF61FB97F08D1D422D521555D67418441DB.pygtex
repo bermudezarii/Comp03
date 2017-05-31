@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k}{union}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}size} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}align} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{pthread\PYGZus{}condattr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{pthread\PYGZus{}key\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n}{pthread\PYGZus{}once\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{union}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}lock} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nr\PYGZus{}readers} \PYG{p}{;}
+\end{Verbatim}

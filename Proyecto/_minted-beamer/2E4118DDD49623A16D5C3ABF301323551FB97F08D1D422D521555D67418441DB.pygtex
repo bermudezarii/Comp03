@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}report\PYGZus{}codes} \PYG{p}{\PYGZob{}}
+\PYG{n}{report\PYGZus{}disasm\PYGZus{}bounds} \PYG{p}{,}
+\PYG{n}{report\PYGZus{}insn\PYGZus{}bounds} \PYG{p}{,}
+\PYG{n}{report\PYGZus{}invalid\PYGZus{}insn} \PYG{p}{,}
+\PYG{n}{report\PYGZus{}unknown}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n+nf}{void} \PYG{p}{(} \PYG{o}{*} \PYG{n}{DISASM\PYGZus{}REPORTER} \PYG{p}{)} \PYG{p}{(} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}report\PYGZus{}codes} \PYG{n}{code} \PYG{p}{,}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{data} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{arg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}report\PYGZus{}error} \PYG{p}{(} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}report\PYGZus{}codes} \PYG{n}{code} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}options} \PYG{p}{\PYGZob{}}
+\PYG{n}{opt\PYGZus{}none} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{,}
+\PYG{n}{opt\PYGZus{}ignore\PYGZus{}nulls} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{,}
+\end{Verbatim}

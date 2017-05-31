@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{putchar\PYGZus{}unlocked} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}c} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{getw} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{putw} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}w} \PYG{p}{,} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{fgets} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}s} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}n} \PYG{p}{,} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)}
+\PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{\PYGZus{}\PYGZus{}ssize\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}getdelim} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}lineptr} \PYG{p}{,}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}n} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}delimiter} \PYG{p}{,}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{\PYGZus{}\PYGZus{}ssize\PYGZus{}t} \PYG{n+nf}{getdelim} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}lineptr} \PYG{p}{,}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}n} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}delimiter} \PYG{p}{,}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{\PYGZus{}\PYGZus{}ssize\PYGZus{}t} \PYG{n}{getline} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}lineptr} \PYG{p}{,}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}n} \PYG{p}{,}
+\end{Verbatim}

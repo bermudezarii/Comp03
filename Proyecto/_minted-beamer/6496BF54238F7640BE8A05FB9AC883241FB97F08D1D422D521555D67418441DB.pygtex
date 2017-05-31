@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k}{struct} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE\PYGZus{}plus} \PYG{n}{\PYGZus{}IO\PYGZus{}2\PYGZus{}1\PYGZus{}stderr\PYGZus{}} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}ssize\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}io\PYGZus{}read\PYGZus{}fn} \PYG{p}{(} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}cookie} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}buf} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{\PYGZus{}\PYGZus{}nbytes} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}ssize\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}io\PYGZus{}write\PYGZus{}fn} \PYG{p}{(} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}cookie} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}buf} \PYG{p}{,}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{\PYGZus{}\PYGZus{}n} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}\PYGZus{}io\PYGZus{}seek\PYGZus{}fn} \PYG{p}{(} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}cookie} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}off64\PYGZus{}t} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}pos} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}w} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}\PYGZus{}io\PYGZus{}close\PYGZus{}fn} \PYG{p}{(} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}cookie} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}\PYGZus{}underflow} \PYG{p}{(} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE} \PYG{o}{*} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}\PYGZus{}uflow} \PYG{p}{(} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE} \PYG{o}{*} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}\PYGZus{}overflow} \PYG{p}{(} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE} \PYG{o}{*} \PYG{p}{,} \PYG{k+kt}{int} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}IO\PYGZus{}getc} \PYG{p}{(} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}fp} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}IO\PYGZus{}putc} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}c} \PYG{p}{,} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}fp} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}IO\PYGZus{}feof} \PYG{p}{(} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}fp} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{\PYGZus{}IO\PYGZus{}ferror} \PYG{p}{(} \PYG{n}{\PYGZus{}IO\PYGZus{}FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}fp} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

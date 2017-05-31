@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fwrite} \PYG{p}{(} \PYG{n}{msgbuf} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{p}{,} \PYG{n}{msgbuf} \PYG{p}{.} \PYG{n}{len} \PYG{p}{,} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{revs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{diffopt} \PYG{p}{.} \PYG{n}{file} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{msgbuf} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}show\PYGZus{}padding} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{msgbuf} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{graph\PYGZus{}show\PYGZus{}line\PYGZus{}prefix} \PYG{p}{(} \PYG{n}{default\PYGZus{}diffopt} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{graph} \PYG{p}{)}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{n}{graph\PYGZus{}padding\PYGZus{}line} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{msgbuf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fwrite} \PYG{p}{(} \PYG{n}{msgbuf} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{p}{,} \PYG{n}{msgbuf} \PYG{p}{.} \PYG{n}{len} \PYG{p}{,} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{revs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{diffopt} \PYG{p}{.} \PYG{n}{file} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{msgbuf} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

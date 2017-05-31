@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}columns} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{column} \PYG{o}{*} \PYG{n}{col} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{columns} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}write\PYGZus{}column} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{col} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}|\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{col} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{commit} \PYG{o}{==} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{commit} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}parents} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{len} \PYG{o}{=} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}parents} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{o}{*} \PYG{l+m+mi}{2} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addchars} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{+=} \PYG{n}{len} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}addch} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{chars\PYGZus{}written} \PYG{o}{++} \PYG{p}{;}
+\end{Verbatim}

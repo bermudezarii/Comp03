@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{graph\PYGZus{}show\PYGZus{}line\PYGZus{}prefix} \PYG{p}{(} \PYG{n}{default\PYGZus{}diffopt} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{graph} \PYG{p}{)}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{graph\PYGZus{}is\PYGZus{}commit\PYGZus{}finished} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{graph\PYGZus{}show\PYGZus{}padding} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{shown\PYGZus{}commit\PYGZus{}line} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{while} \PYG{p}{(} \PYG{o}{!} \PYG{n}{shown\PYGZus{}commit\PYGZus{}line} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{graph\PYGZus{}is\PYGZus{}commit\PYGZus{}finished} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{shown\PYGZus{}commit\PYGZus{}line} \PYG{o}{=} \PYG{n}{graph\PYGZus{}next\PYGZus{}line} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{msgbuf} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fwrite} \PYG{p}{(} \PYG{n}{msgbuf} \PYG{p}{.} \PYG{n}{buf} \PYG{p}{,} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k+kt}{char} \PYG{p}{)} \PYG{p}{,} \PYG{n}{msgbuf} \PYG{p}{.} \PYG{n}{len} \PYG{p}{,}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{revs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{diffopt} \PYG{p}{.} \PYG{n}{file} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{shown\PYGZus{}commit\PYGZus{}line} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{putc} \PYG{p}{(} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{,} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{revs} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{diffopt} \PYG{p}{.} \PYG{n}{file} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

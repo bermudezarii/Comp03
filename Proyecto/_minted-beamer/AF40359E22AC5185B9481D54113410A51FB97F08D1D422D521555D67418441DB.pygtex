@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{reg\PYGZus{}local} \PYG{o}{=} \PYG{l+m+mh}{0x00008} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}fpu} \PYG{o}{=} \PYG{l+m+mh}{0x00010} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}seg} \PYG{o}{=} \PYG{l+m+mh}{0x00020} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}simd} \PYG{o}{=} \PYG{l+m+mh}{0x00040} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}sys} \PYG{o}{=} \PYG{l+m+mh}{0x00080} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}sp} \PYG{o}{=} \PYG{l+m+mh}{0x00100} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}fp} \PYG{o}{=} \PYG{l+m+mh}{0x00200} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}pc} \PYG{o}{=} \PYG{l+m+mh}{0x00400} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}retaddr} \PYG{o}{=} \PYG{l+m+mh}{0x00800} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}cond} \PYG{o}{=} \PYG{l+m+mh}{0x01000} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}zero} \PYG{o}{=} \PYG{l+m+mh}{0x02000} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}ret} \PYG{o}{=} \PYG{l+m+mh}{0x04000} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}src} \PYG{o}{=} \PYG{l+m+mh}{0x10000} \PYG{p}{,}
+\end{Verbatim}

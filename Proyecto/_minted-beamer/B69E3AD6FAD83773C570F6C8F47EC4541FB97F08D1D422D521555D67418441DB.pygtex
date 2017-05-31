@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{op\PYGZus{}size} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{x86\PYGZus{}operand\PYGZus{}foreach} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{reg\PYGZus{}32\PYGZus{}to\PYGZus{}16} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{op\PYGZus{}any} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{size} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{uses\PYGZus{}modrm\PYGZus{}flag} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{flag} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{meth} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{flag} \PYG{o}{==} \PYG{n}{ARG\PYGZus{}NONE} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{meth} \PYG{o}{=} \PYG{p}{(} \PYG{n}{flag} \PYG{o}{\PYGZam{}} \PYG{n}{ADDRMETH\PYGZus{}MASK} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{flag} \PYG{p}{)} \PYG{p}{(} \PYG{n}{flag} \PYG{o}{==} \PYG{n}{ADDRMETH\PYGZus{}E} \PYG{o}{||} \PYG{n}{flag} \PYG{o}{==} \PYG{n}{ADDRMETH\PYGZus{}M} \PYG{o}{||} \PYG{n}{flag} \PYG{o}{==} \PYG{n}{ADDRMETH\PYGZus{}Q} \PYG{o}{||} \PYG{n}{flag} \PYG{o}{==} \PYG{n}{ADDRMETH\PYGZus{}W} \PYG{o}{||} \PYG{n}{flag} \PYG{o}{==} \PYG{n}{ADDRMETH\PYGZus{}R} \PYG{p}{)} \PYG{p}{(} \PYG{n}{meth} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{insn\PYGZus{}strstore} \PYG{o}{=} \PYG{l+m+mh}{0x7004} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}translate} \PYG{o}{=} \PYG{l+m+mh}{0x7005} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}bittest} \PYG{o}{=} \PYG{l+m+mh}{0x8001} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}bitset} \PYG{o}{=} \PYG{l+m+mh}{0x8002} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}bitclear} \PYG{o}{=} \PYG{l+m+mh}{0x8003} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}clear\PYGZus{}carry} \PYG{o}{=} \PYG{l+m+mh}{0x9001} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}clear\PYGZus{}zero} \PYG{o}{=} \PYG{l+m+mh}{0x9002} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}clear\PYGZus{}oflow} \PYG{o}{=} \PYG{l+m+mh}{0x9003} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}clear\PYGZus{}dir} \PYG{o}{=} \PYG{l+m+mh}{0x9004} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}clear\PYGZus{}sign} \PYG{o}{=} \PYG{l+m+mh}{0x9005} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}clear\PYGZus{}parity} \PYG{o}{=} \PYG{l+m+mh}{0x9006} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}set\PYGZus{}carry} \PYG{o}{=} \PYG{l+m+mh}{0x9007} \PYG{p}{,}
+\PYG{n}{insn\PYGZus{}set\PYGZus{}zero} \PYG{o}{=} \PYG{l+m+mh}{0x9008} \PYG{p}{,}
+\end{Verbatim}

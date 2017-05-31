@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{opt\PYGZus{}16\PYGZus{}bit} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{p}{,}
+\PYG{n}{opt\PYGZus{}att\PYGZus{}mnemonics} \PYG{o}{=} \PYG{l+m+mi}{4} \PYG{p}{,}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}init} \PYG{p}{(} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}options} \PYG{n}{options} \PYG{p}{,} \PYG{n}{DISASM\PYGZus{}REPORTER} \PYG{n}{reporter} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{arg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}set\PYGZus{}reporter} \PYG{p}{(} \PYG{n}{DISASM\PYGZus{}REPORTER} \PYG{n}{reporter} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{arg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{x86\PYGZus{}set\PYGZus{}options} \PYG{p}{(} \PYG{k}{enum} \PYG{n}{x86\PYGZus{}options} \PYG{n}{options} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}options} \PYG{n+nf}{x86\PYGZus{}get\PYGZus{}options} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}cleanup} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}reg\PYGZus{}type} \PYG{p}{\PYGZob{}}
+\PYG{n}{reg\PYGZus{}gen} \PYG{o}{=} \PYG{l+m+mh}{0x00001} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}in} \PYG{o}{=} \PYG{l+m+mh}{0x00002} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}out} \PYG{o}{=} \PYG{l+m+mh}{0x00004} \PYG{p}{,}
+\PYG{n}{reg\PYGZus{}local} \PYG{o}{=} \PYG{l+m+mh}{0x00008} \PYG{p}{,}
+\end{Verbatim}

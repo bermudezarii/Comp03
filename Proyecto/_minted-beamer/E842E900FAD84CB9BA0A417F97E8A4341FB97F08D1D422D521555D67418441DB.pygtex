@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{op\PYGZus{}dreal} \PYG{o}{=} \PYG{l+m+mi}{7} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}extreal} \PYG{o}{=} \PYG{l+m+mi}{8} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}bcd} \PYG{o}{=} \PYG{l+m+mi}{9} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}ssimd} \PYG{o}{=} \PYG{l+m+mi}{10} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}dsimd} \PYG{o}{=} \PYG{l+m+mi}{11} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}sssimd} \PYG{o}{=} \PYG{l+m+mi}{12} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}sdsimd} \PYG{o}{=} \PYG{l+m+mi}{13} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}descr32} \PYG{o}{=} \PYG{l+m+mi}{14} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}descr16} \PYG{o}{=} \PYG{l+m+mi}{15} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}pdescr32} \PYG{o}{=} \PYG{l+m+mi}{16} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}pdescr16} \PYG{o}{=} \PYG{l+m+mi}{17} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}bounds16} \PYG{o}{=} \PYG{l+m+mi}{18} \PYG{p}{,}
+\PYG{n}{op\PYGZus{}bounds32} \PYG{o}{=} \PYG{l+m+mi}{19} \PYG{p}{,}
+\end{Verbatim}

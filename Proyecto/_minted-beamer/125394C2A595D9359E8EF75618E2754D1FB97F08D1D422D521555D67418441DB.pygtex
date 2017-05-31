@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{word} \PYG{p}{;}
+\PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{dword} \PYG{p}{;}
+\PYG{n}{qword\PYGZus{}t} \PYG{n}{qword} \PYG{p}{;}
+\PYG{k+kt}{float} \PYG{n}{sreal} \PYG{p}{;}
+\PYG{k+kt}{double} \PYG{n}{dreal} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{extreal} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{bcd} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{qword\PYGZus{}t} \PYG{n}{dqword} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{simd} \PYG{p}{[} \PYG{l+m+mi}{16} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{fpuenv} \PYG{p}{[} \PYG{l+m+mi}{28} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{offset} \PYG{p}{;}
+\PYG{n}{x86\PYGZus{}reg\PYGZus{}t} \PYG{n}{reg} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{relative\PYGZus{}near} \PYG{p}{;}
+\end{Verbatim}

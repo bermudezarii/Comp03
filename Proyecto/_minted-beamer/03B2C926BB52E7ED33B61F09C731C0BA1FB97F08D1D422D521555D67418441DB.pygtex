@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{graph\PYGZus{}insert\PYGZus{}into\PYGZus{}new\PYGZus{}columns} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,}
+\PYG{n}{parent} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{item} \PYG{p}{,}
+\PYG{o}{\PYGZam{}} \PYG{n}{mapping\PYGZus{}idx} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{mapping\PYGZus{}idx} \PYG{o}{==} \PYG{n}{old\PYGZus{}mapping\PYGZus{}idx} \PYG{p}{)}
+\PYG{n}{mapping\PYGZus{}idx} \PYG{o}{+=} \PYG{l+m+mi}{2} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{graph\PYGZus{}insert\PYGZus{}into\PYGZus{}new\PYGZus{}columns} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{col\PYGZus{}commit} \PYG{p}{,}
+\PYG{o}{\PYGZam{}} \PYG{n}{mapping\PYGZus{}idx} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping\PYGZus{}size} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{column\PYGZus{}colors} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{column\PYGZus{}colors\PYGZus{}max} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n+nf}{parse\PYGZus{}graph\PYGZus{}colors\PYGZus{}config} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{argv\PYGZus{}array} \PYG{o}{*} \PYG{n}{colors} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{string} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{end} \PYG{p}{,} \PYG{o}{*} \PYG{n}{start} \PYG{p}{;}
+\PYG{n}{start} \PYG{o}{=} \PYG{n}{string} \PYG{p}{;}
+\PYG{n}{end} \PYG{o}{=} \PYG{n}{string} \PYG{o}{+} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{string} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{start} \PYG{o}{\PYGZlt{}} \PYG{n}{end} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{comma} \PYG{o}{=} \PYG{n}{strchrnul} \PYG{p}{(} \PYG{n}{start} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{},\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{color} \PYG{p}{[} \PYG{n}{COLOR\PYGZus{}MAXLEN} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{color\PYGZus{}parse\PYGZus{}mem} \PYG{p}{(} \PYG{n}{start} \PYG{p}{,} \PYG{n}{comma} \PYG{o}{\PYGZhy{}} \PYG{n}{start} \PYG{p}{,} \PYG{n}{color} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{argv\PYGZus{}array\PYGZus{}push} \PYG{p}{(} \PYG{n}{colors} \PYG{p}{,} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\end{Verbatim}

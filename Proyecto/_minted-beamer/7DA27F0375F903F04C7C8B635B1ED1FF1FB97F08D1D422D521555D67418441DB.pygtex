@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{cpu\PYGZus{}k6} \PYG{o}{=} \PYG{l+m+mi}{16} \PYG{p}{,}
+\PYG{n}{cpu\PYGZus{}k7} \PYG{o}{=} \PYG{l+m+mi}{32} \PYG{p}{,}
+\PYG{n}{cpu\PYGZus{}athlon} \PYG{o}{=} \PYG{l+m+mi}{48}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{enum} \PYG{n}{x86\PYGZus{}insn\PYGZus{}isa} \PYG{p}{\PYGZob{}}
+\PYG{n}{isa\PYGZus{}gp} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{,}
+\PYG{n}{isa\PYGZus{}fp} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{p}{,}
+\PYG{n}{isa\PYGZus{}fpumgt} \PYG{o}{=} \PYG{l+m+mi}{3} \PYG{p}{,}
+\PYG{n}{isa\PYGZus{}mmx} \PYG{o}{=} \PYG{l+m+mi}{4} \PYG{p}{,}
+\PYG{n}{isa\PYGZus{}sse1} \PYG{o}{=} \PYG{l+m+mi}{5} \PYG{p}{,}
+\PYG{n}{isa\PYGZus{}sse2} \PYG{o}{=} \PYG{l+m+mi}{6} \PYG{p}{,}
+\PYG{n}{isa\PYGZus{}sse3} \PYG{o}{=} \PYG{l+m+mi}{7} \PYG{p}{,}
+\PYG{n}{isa\PYGZus{}3dnow} \PYG{o}{=} \PYG{l+m+mi}{8} \PYG{p}{,}
+\end{Verbatim}

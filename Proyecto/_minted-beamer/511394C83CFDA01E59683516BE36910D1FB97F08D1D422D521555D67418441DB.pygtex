@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{prefix} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}} \PYG{n}{BRANCH\PYGZus{}HINT\PYGZus{}MASK} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{(} \PYG{o}{*} \PYG{n}{prefixes} \PYG{p}{)} \PYG{o}{|=} \PYG{n}{prefix} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{table\PYGZus{}desc} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{==} \PYG{n}{tbl\PYGZus{}ext\PYGZus{}ext} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{n}{size} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{table\PYGZus{}desc} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{==} \PYG{n}{tbl\PYGZus{}extension} \PYG{o}{||}
+\PYG{n}{table\PYGZus{}desc} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{==} \PYG{n}{tbl\PYGZus{}fpu} \PYG{o}{||}
+\PYG{n}{table\PYGZus{}desc} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{type} \PYG{o}{==} \PYG{n}{tbl\PYGZus{}fpu\PYGZus{}ext} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{p}{(} \PYG{n}{uses\PYGZus{}modrm\PYGZus{}flag} \PYG{p}{(} \PYG{p}{(} \PYG{o}{*} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dest\PYGZus{}flag} \PYG{p}{)} \PYG{o}{||}
+\PYG{n}{uses\PYGZus{}modrm\PYGZus{}flag} \PYG{p}{(} \PYG{p}{(} \PYG{o}{*} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{src\PYGZus{}flag} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{n}{size} \PYG{p}{;}
+\end{Verbatim}

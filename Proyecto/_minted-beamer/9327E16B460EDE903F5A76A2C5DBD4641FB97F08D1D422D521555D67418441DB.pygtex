@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{union} \PYG{n}{wait}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{w\PYGZus{}status} \PYG{p}{;}
+\PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nl}{\PYGZus{}\PYGZus{}w\PYGZus{}termsig} \PYG{p}{:} \PYG{l+m+mi}{7} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nl}{\PYGZus{}\PYGZus{}w\PYGZus{}coredump} \PYG{p}{:} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nl}{\PYGZus{}\PYGZus{}w\PYGZus{}retcode} \PYG{p}{:} \PYG{l+m+mi}{8} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{o}{:} \PYG{l+m+mi}{16} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{\PYGZus{}\PYGZus{}wait\PYGZus{}terminated} \PYG{p}{;}
+\PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nl}{\PYGZus{}\PYGZus{}w\PYGZus{}stopval} \PYG{p}{:} \PYG{l+m+mi}{8} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{tmpnam\PYGZus{}r} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}s} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{tempnam} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}dir} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}pfx} \PYG{p}{)}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}malloc\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{fclose} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{fflush} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{fflush\PYGZus{}unlocked} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n+nf}{fopen} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}filename} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}modes} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n+nf}{freopen} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}filename} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}modes} \PYG{p}{,}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}stream} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n+nf}{fdopen} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}fd} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}modes} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{fmemopen} \PYG{p}{(} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}s} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{\PYGZus{}\PYGZus{}len} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}modes} \PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n+nf}{graph\PYGZus{}pad\PYGZus{}horizontally} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{n}{chars\PYGZus{}written} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{extra} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{chars\PYGZus{}written} \PYG{o}{\PYGZgt{}=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{width} \PYG{p}{)}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{n}{extra} \PYG{o}{=} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{width} \PYG{o}{\PYGZhy{}} \PYG{n}{chars\PYGZus{}written} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}addf} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}*s\PYGZdq{}} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{extra} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n+nf}{graph\PYGZus{}output\PYGZus{}padding\PYGZus{}line} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{;}
+\end{Verbatim}

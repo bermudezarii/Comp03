@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{n}{mnemonic} \PYG{p}{[} \PYG{l+m+mi}{16} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{x86\PYGZus{}oplist\PYGZus{}t} \PYG{o}{*} \PYG{n}{operands} \PYG{p}{;}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{operand\PYGZus{}count} \PYG{p}{;}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{explicit\PYGZus{}count} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{block} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{function} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{tag} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n+nf}{x86\PYGZus{}insn\PYGZus{}is\PYGZus{}valid} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n+nf}{void} \PYG{p}{(} \PYG{o}{*} \PYG{n}{DISASM\PYGZus{}CALLBACK} \PYG{p}{)} \PYG{p}{(} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{insn} \PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{arg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n+nf}{int32\PYGZus{}t} \PYG{p}{(} \PYG{o}{*} \PYG{n}{DISASM\PYGZus{}RESOLVER} \PYG{p}{)} \PYG{p}{(} \PYG{n}{x86\PYGZus{}op\PYGZus{}t} \PYG{o}{*} \PYG{n}{op} \PYG{p}{,} \PYG{n}{x86\PYGZus{}insn\PYGZus{}t} \PYG{o}{*} \PYG{n}{current\PYGZus{}insn} \PYG{p}{,}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{arg} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{x86\PYGZus{}disasm} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{buf\PYGZus{}len} \PYG{p}{,}
+\end{Verbatim}

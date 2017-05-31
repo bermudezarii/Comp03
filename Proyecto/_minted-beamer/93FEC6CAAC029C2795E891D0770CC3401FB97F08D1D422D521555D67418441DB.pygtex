@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{ia32\PYGZus{}settings} \PYG{p}{.} \PYG{n}{options} \PYG{o}{\PYGZam{}} \PYG{n}{opt\PYGZus{}att\PYGZus{}mnemonics} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnemonic\PYGZus{}att} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strncpy} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnemonic} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnemonic\PYGZus{}att} \PYG{p}{,} \PYG{l+m+mi}{16} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{n}{strncpy} \PYG{p}{(} \PYG{n}{insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnemonic} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mnemonic} \PYG{p}{,} \PYG{l+m+mi}{16} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{ia32\PYGZus{}handle\PYGZus{}prefix} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{prefixes} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{handle\PYGZus{}insn\PYGZus{}metadata} \PYG{p}{(} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{modrm} \PYG{o}{=} \PYG{n}{GET\PYGZus{}BYTE} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{op\PYGZus{}size} \PYG{o}{=} \PYG{n}{ia32\PYGZus{}decode\PYGZus{}operand} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{buf\PYGZus{}len} \PYG{p}{,} \PYG{n}{insn} \PYG{p}{,} \PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dest} \PYG{p}{,}
+\PYG{n}{raw\PYGZus{}insn} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{dest\PYGZus{}flag} \PYG{p}{,} \PYG{n}{prefixes} \PYG{p}{,} \PYG{n}{modrm} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{buf} \PYG{o}{+=} \PYG{n}{op\PYGZus{}size} \PYG{p}{;}
+\end{Verbatim}

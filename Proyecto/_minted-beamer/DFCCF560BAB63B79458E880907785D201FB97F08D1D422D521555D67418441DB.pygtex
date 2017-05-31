@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping} \PYG{p}{[} \PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping\PYGZus{}size} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{mapping\PYGZus{}size} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{;}
+\PYG{n}{graph\PYGZus{}update\PYGZus{}width} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{is\PYGZus{}commit\PYGZus{}in\PYGZus{}columns} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{graph\PYGZus{}update} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{commit} \PYG{o}{*} \PYG{n}{commit} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{commit\PYGZus{}list} \PYG{o}{*} \PYG{n}{parent} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{commit} \PYG{o}{=} \PYG{n}{commit} \PYG{p}{;}
+\PYG{n}{graph} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{num\PYGZus{}parents} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{parent} \PYG{o}{=} \PYG{n}{first\PYGZus{}interesting\PYGZus{}parent} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{parent} \PYG{p}{;}
+\PYG{n}{parent} \PYG{o}{=} \PYG{n}{next\PYGZus{}interesting\PYGZus{}parent} \PYG{p}{(} \PYG{n}{graph} \PYG{p}{,} \PYG{n}{parent} \PYG{p}{)} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

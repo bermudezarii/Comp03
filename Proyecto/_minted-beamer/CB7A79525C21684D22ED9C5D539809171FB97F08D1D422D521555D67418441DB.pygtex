@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{o}{*} \PYG{n}{graph} \PYG{o}{=} \PYG{n}{xmalloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{git\PYGZus{}graph} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{column\PYGZus{}colors} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{string} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{git\PYGZus{}config\PYGZus{}get\PYGZus{}string} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}log.graphcolors\PYGZdq{}} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{graph\PYGZus{}set\PYGZus{}column\PYGZus{}colors} \PYG{p}{(} \PYG{n}{column\PYGZus{}colors\PYGZus{}ansi} \PYG{p}{,}
+\PYG{n}{column\PYGZus{}colors\PYGZus{}ansi\PYGZus{}max} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{argv\PYGZus{}array} \PYG{n}{custom\PYGZus{}colors} \PYG{o}{=} \PYG{n}{ARGV\PYGZus{}ARRAY\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{argv\PYGZus{}array\PYGZus{}clear} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{custom\PYGZus{}colors} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{parse\PYGZus{}graph\PYGZus{}colors\PYGZus{}config} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{custom\PYGZus{}colors} \PYG{p}{,} \PYG{n}{string} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{string} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{graph\PYGZus{}set\PYGZus{}column\PYGZus{}colors} \PYG{p}{(} \PYG{n}{custom\PYGZus{}colors} \PYG{p}{.} \PYG{n}{argv} \PYG{p}{,}
+\end{Verbatim}

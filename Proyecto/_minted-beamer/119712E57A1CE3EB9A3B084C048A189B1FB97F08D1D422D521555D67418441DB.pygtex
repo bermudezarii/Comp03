@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{P\PYGZus{}PID} \PYG{p}{,}
+\PYG{n}{P\PYGZus{}PGID}
+\PYG{p}{\PYGZcb{}} \PYG{n}{idtype\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}char} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}short} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}int} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}long} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{signed} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}int8\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}uint8\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{signed} \PYG{k+kt}{short} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}int16\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}uint16\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{signed} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}int32\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}uint32\PYGZus{}t} \PYG{p}{;}
+\end{Verbatim}
