@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{printTextures} \PYG{p}{(} \PYG{n}{Objects} \PYG{p}{[} \PYG{n}{objectIndex} \PYG{p}{]} \PYG{p}{,} \PYG{n}{whichObjectCreate} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}sup\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{objectIndex} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{return} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{obtainSingleValueFromLine} \PYG{p}{(} \PYG{k+kt}{char} \PYG{n}{line} \PYG{p}{[} \PYG{p}{]} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{token} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{search} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}=\PYGZdq{}} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{numericValue} \PYG{p}{;}
+\PYG{n}{token} \PYG{o}{=} \PYG{n}{strtok} \PYG{p}{(} \PYG{n}{line} \PYG{p}{,} \PYG{n}{search} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

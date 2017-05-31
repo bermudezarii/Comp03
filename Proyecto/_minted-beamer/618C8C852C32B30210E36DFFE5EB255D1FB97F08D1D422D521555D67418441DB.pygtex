@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{Beamer\PYGZus{}Datos\PYGZus{}Generales} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{institucion} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{escuela} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{programa} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{materia\PYGZus{}descripcion} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{profesor} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{descripcion} \PYG{p}{,} \PYG{n}{gchar} \PYG{o}{*} \PYG{n}{fecha} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{codigo} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media\PYGZus{}real} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{desviacion\PYGZus{}real} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{alfa} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Rpb} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}section\PYGZob{}Estad\PYGZsq{}isticas B\PYGZsq{}asicas\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}frame\PYGZcb{}\PYGZob{}Datos Generales\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Tabla\PYGZus{}Datos\PYGZus{}Generales} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{institucion} \PYG{p}{,} \PYG{n}{escuela} \PYG{p}{,} \PYG{n}{programa} \PYG{p}{,} \PYG{n}{materia\PYGZus{}descripcion} \PYG{p}{,} \PYG{n}{profesor} \PYG{p}{,} \PYG{n}{descripcion} \PYG{p}{,} \PYG{n}{fecha} \PYG{p}{,} \PYG{n}{codigo} \PYG{p}{,} \PYG{n}{media\PYGZus{}real} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}real} \PYG{p}{,} \PYG{n}{alfa} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}end\PYGZob{}frame\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}frame\PYGZcb{}\PYGZob{}An\PYGZsq{}alisis General\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Analisis\PYGZus{}General} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{alfa} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}end\PYGZob{}frame\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n+nf}{Beamer\PYGZus{}Grafico\PYGZus{}Pastel} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}frame\PYGZcb{}[shrink,fragile]\PYGZob{}Material Evaluado en el Examen\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

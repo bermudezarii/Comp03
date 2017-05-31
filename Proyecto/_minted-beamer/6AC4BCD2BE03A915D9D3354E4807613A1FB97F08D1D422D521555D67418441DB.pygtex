@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}c1: \PYGZpc{}LF, c2: \PYGZpc{}LF, c3 \PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Ip luz: \PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{6} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Object} \PYG{n}{polygon} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Color} \PYG{n}{colorPolygon} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Light} \PYG{n}{luz} \PYG{p}{;}
+\PYG{n}{luz} \PYG{p}{.} \PYG{n}{Xp} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{luz} \PYG{p}{.} \PYG{n}{Yp} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{luz} \PYG{p}{.} \PYG{n}{Zp} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{luz} \PYG{p}{.} \PYG{n}{c1} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{luz} \PYG{p}{.} \PYG{n}{c2} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{luz} \PYG{p}{.} \PYG{n}{c3} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{luz} \PYG{p}{.} \PYG{n}{Ip} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{l+m+mi}{6} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

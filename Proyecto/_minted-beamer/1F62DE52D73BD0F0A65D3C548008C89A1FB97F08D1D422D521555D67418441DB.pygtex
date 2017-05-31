@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n+nf}{vRectangle} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{x0y0z0} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{x3y3z3} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{xiyizi} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{V} \PYG{p}{;}
+\PYG{n}{V} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{x3y3z3} \PYG{p}{.} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{n}{V} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{x3y3z3} \PYG{p}{.} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{n}{V} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{x3y3z3} \PYG{p}{.} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{i0} \PYG{p}{;}
+\PYG{n}{i0} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{n}{i0} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{n}{i0} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{xiyizi} \PYG{p}{.} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{L} \PYG{o}{=} \PYG{n}{getNorm} \PYG{p}{(} \PYG{n}{V} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{V} \PYG{o}{=} \PYG{n}{normalize} \PYG{p}{(} \PYG{n}{V} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{pointProduct} \PYG{p}{(} \PYG{n}{i0} \PYG{p}{,} \PYG{n}{V} \PYG{p}{)} \PYG{o}{/} \PYG{n}{L} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

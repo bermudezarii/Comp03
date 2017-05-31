@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{XIMCaretDirection} \PYG{n}{direction} \PYG{p}{;}
+\PYG{n}{XIMCaretStyle} \PYG{n}{style} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XIMPreeditCaretCallbackStruct} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{enum} \PYG{p}{\PYGZob{}}
+\PYG{n}{XIMTextType} \PYG{p}{,}
+\PYG{n}{XIMBitmapType}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XIMStatusDataType} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XIMStatusDrawCallbackStruct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XIMStatusDataType} \PYG{n}{type} \PYG{p}{;}
+\PYG{k}{union} \PYG{p}{\PYGZob{}}
+\PYG{n}{XIMText} \PYG{o}{*} \PYG{n}{text} \PYG{p}{;}
+\PYG{n}{Pixmap} \PYG{n}{bitmap} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{data} \PYG{p}{;}
+\end{Verbatim}

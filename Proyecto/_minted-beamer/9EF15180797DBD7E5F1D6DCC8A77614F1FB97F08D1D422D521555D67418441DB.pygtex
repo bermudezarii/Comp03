@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{bell\PYGZus{}percent} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bell\PYGZus{}pitch} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bell\PYGZus{}duration} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{led} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{led\PYGZus{}mode} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{key} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{auto\PYGZus{}repeat\PYGZus{}mode} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XKeyboardControl} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{key\PYGZus{}click\PYGZus{}percent} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bell\PYGZus{}percent} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{bell\PYGZus{}pitch} \PYG{p}{,} \PYG{n}{bell\PYGZus{}duration} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{led\PYGZus{}mask} \PYG{p}{;}
+\end{Verbatim}

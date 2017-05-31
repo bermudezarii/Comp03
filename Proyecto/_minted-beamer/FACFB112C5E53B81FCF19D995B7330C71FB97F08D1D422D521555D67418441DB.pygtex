@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{XEvent} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XNoOp} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XParseColor} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Colormap} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{XColor} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XParseGeometry} \PYG{p}{(}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

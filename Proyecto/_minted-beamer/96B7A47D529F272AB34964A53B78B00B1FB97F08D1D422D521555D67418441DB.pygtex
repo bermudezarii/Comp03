@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010\PYGZhy{}n.eps\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Prepara\PYGZus{}Histograma\PYGZus{}Notas} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{maximo} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{comando} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{maximo} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{Archivo\PYGZus{}Datos} \PYG{o}{=} \PYG{n}{fopen} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}EX4010y.dat\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}w\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{10} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Frecuencias} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{)} \PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}Lf \PYGZpc{}Lf}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{i} \PYG{o}{*} \PYG{p}{(} \PYG{l+m+mf}{100.0} \PYG{o}{/} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{l+m+mi}{10} \PYG{p}{)} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{Frecuencias} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

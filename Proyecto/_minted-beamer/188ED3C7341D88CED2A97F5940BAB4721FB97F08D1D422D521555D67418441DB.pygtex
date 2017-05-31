@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Construye\PYGZus{}versiones} \PYG{p}{(} \PYG{n}{examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Carga\PYGZus{}preguntas\PYGZus{}examen} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Actualiza\PYGZus{}Porcentajes} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Inicializa\PYGZus{}Tabla\PYGZus{}estadisticas} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Calcula\PYGZus{}estadisticas\PYGZus{}examen} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{*} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{20} \PYG{p}{)} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}t\PYGZsq{}} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{FR\PYGZus{}ajustes} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{window1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}show} \PYG{p}{(} \PYG{n}{window2} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

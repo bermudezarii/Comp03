@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{GC} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k}{const} \PYG{n}{XChar2b} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XDrawText} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{n}{GC} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{n}{XTextItem} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{XServerVendor} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{XDisplayString} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Colormap} \PYG{n+nf}{XDefaultColormap} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Colormap} \PYG{n}{XDefaultColormapOfScreen} \PYG{p}{(}
+\end{Verbatim}

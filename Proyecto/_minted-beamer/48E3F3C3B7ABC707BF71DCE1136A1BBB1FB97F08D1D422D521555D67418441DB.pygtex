@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Window} \PYG{p}{,}
+\PYG{n}{Time} \PYG{p}{,}
+\PYG{n}{Time} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{XModifierKeymap} \PYG{o}{*} \PYG{n+nf}{XDeleteModifiermapEntry} \PYG{p}{(}
+\PYG{n}{XModifierKeymap} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{KeyCode} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{XModifierKeymap} \PYG{o}{*} \PYG{n+nf}{XGetModifierMapping} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

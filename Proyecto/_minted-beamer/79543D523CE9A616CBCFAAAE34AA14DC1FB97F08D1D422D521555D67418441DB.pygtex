@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{XPointer} \PYG{n}{private\PYGZus{}data} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XExtData} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{extension} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{major\PYGZus{}opcode} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{first\PYGZus{}event} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{first\PYGZus{}error} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XExtCodes} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{depth} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bits\PYGZus{}per\PYGZus{}pixel} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{scanline\PYGZus{}pad} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XPixmapFormatValues} \PYG{p}{;}
+\end{Verbatim}

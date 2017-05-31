@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{Inicializa\PYGZus{}Tabla\PYGZus{}estadisticas} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{inicio\PYGZus{}actual} \PYG{p}{;}
+\PYG{n}{inicio\PYGZus{}actual} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{n}{inicio\PYGZus{}actual} \PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{i} \PYG{p}{;} \PYG{n}{j} \PYG{o}{++} \PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Pixmap} \PYG{n+nf}{XCreatePixmap} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Pixmap} \PYG{n}{XCreateBitmapFromData} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\end{Verbatim}

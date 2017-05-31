@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{XColor} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XQueryExtension} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XQueryKeymap} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{char} \PYG{p}{[} \PYG{l+m+mi}{32} \PYG{p}{]}
+\end{Verbatim}

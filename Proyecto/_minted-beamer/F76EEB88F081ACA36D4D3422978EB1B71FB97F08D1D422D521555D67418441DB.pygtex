@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Lista\PYGZus{}de\PYGZus{}Preguntas\PYGZus{}Beamer} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{PB} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{base} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{limite} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{actual} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{[} \PYG{l+m+mi}{7} \PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00000\PYGZdq{}} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}tema} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{tema\PYGZus{}actual} \PYG{p}{[} \PYG{n}{CODIGO\PYGZus{}TEMA\PYGZus{}SIZE} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}          \PYGZdq{}} \PYG{p}{;}
+\PYG{n}{gchar} \PYG{o}{*} \PYG{n}{materia} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{tema\PYGZus{}descripcion} \PYG{p}{[} \PYG{l+m+mi}{201} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

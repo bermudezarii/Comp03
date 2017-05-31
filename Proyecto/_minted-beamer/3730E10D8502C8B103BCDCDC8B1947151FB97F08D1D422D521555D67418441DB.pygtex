@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Colormap} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{XColor} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{XColor} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XAllowEvents} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{n}{Time}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XAutoRepeatOff} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\end{Verbatim}

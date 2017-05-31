@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{Hres} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{Vres} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{maxAA} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{maxReflection} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{maxTransparency} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{rays} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{similar} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Xmax} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Ymax} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Xmin} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Ymin} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Xdif} \PYG{p}{;}
+\end{Verbatim}

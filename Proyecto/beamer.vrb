@@ -1,9 +1,16 @@
-\frametitle{C\'odigo con los Errores}
+\frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-get - ! out ;
-/*Pruebas/love.c:47:2 syntax error, unexpected IF*/
-if ( not -- )
-/*Pruebas/love.c:48:4 syntax error, unexpected GOTO*/
-goto hell ;
-/*Pruebas/love.c:49:27 syntax error, unexpected RIGHT_BRACKET*/
-exit ( ( char ) lotte ) ; } \end{minted}
+) ;
+extern int XQueryPointer (
+Display * ,
+Window ,
+Window * ,
+Window * ,
+int * ,
+int * ,
+int * ,
+int * ,
+unsigned int *
+) ;
+extern int XQueryTextExtents (
+\end{minted}

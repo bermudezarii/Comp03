@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{n}{XModifierKeymap} \PYG{o}{*} \PYG{n+nf}{XInsertModifiermapEntry} \PYG{p}{(}
+\PYG{n}{XModifierKeymap} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{KeyCode} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{XModifierKeymap} \PYG{o}{*} \PYG{n+nf}{XNewModifiermap} \PYG{p}{(}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{XImage} \PYG{o}{*} \PYG{n}{XCreateImage} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Visual} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\end{Verbatim}

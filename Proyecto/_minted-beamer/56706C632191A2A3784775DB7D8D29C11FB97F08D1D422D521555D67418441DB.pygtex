@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}materia} \PYG{p}{)} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{4} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}materia\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{11} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}institucion} \PYG{p}{)} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{5} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}escuela} \PYG{p}{)} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{6} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}programa} \PYG{p}{)} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{7} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}7d\PYGZdq{}} \PYG{p}{,} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}N\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{,} \PYG{n}{hilera} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}7d\PYGZdq{}} \PYG{p}{,} \PYG{n}{N\PYGZus{}versiones} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}N\PYGZus{}versiones} \PYG{p}{)} \PYG{p}{,} \PYG{n}{hilera} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{media\PYGZus{}prediccion} \PYG{o}{=} \PYG{n}{atof} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{13} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}8.3Lf\PYGZdq{}} \PYG{p}{,} \PYG{n}{media\PYGZus{}prediccion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}media\PYGZus{}prediccion} \PYG{p}{)} \PYG{p}{,} \PYG{n}{hilera} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{desviacion\PYGZus{}prediccion} \PYG{o}{=} \PYG{n}{atof} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{14} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

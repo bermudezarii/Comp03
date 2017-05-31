@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Window}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XDoesBackingStore} \PYG{p}{(}
+\PYG{n}{Screen} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XDoesSaveUnders} \PYG{p}{(}
+\PYG{n}{Screen} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XDisableAccessControl} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XDisplayCells} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

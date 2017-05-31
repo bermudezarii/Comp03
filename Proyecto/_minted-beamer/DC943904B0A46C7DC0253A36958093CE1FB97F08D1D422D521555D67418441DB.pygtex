@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{grupo\PYGZus{}final} \PYG{o}{=} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{inicio\PYGZus{}actual} \PYG{o}{=} \PYG{n}{i} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{grupo\PYGZus{}inicio} \PYG{o}{=} \PYG{n}{inicio\PYGZus{}actual} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{buenos} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{malos} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5} \PYG{p}{;} \PYG{n}{j} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{acumulado\PYGZus{}opciones} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{suma\PYGZus{}seleccion} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{Rpb\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{suma\PYGZus{}buenos} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\end{Verbatim}

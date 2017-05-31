@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{malos} \PYG{o}{++} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{suma\PYGZus{}malos} \PYG{o}{+=} \PYG{n}{Nota} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{respuesta} \PYG{o}{\PYGZgt{}=} \PYG{l+s+sc}{\PYGZsq{}A\PYGZsq{}} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{n}{respuesta} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}E\PYGZsq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{acumulado\PYGZus{}opciones} \PYG{p}{[} \PYG{n}{opcion\PYGZus{}original} \PYG{p}{[} \PYG{n}{respuesta} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}A\PYGZsq{}} \PYG{p}{]} \PYG{p}{]} \PYG{o}{++} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{suma\PYGZus{}seleccion} \PYG{p}{[} \PYG{n}{opcion\PYGZus{}original} \PYG{p}{[} \PYG{n}{respuesta} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}A\PYGZsq{}} \PYG{p}{]} \PYG{p}{]} \PYG{o}{+=} \PYG{n}{Nota} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Imprime\PYGZus{}Reporte} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{k} \PYG{p}{;}
+\end{Verbatim}

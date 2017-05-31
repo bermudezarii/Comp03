@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Window} \PYG{n}{window} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{root} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{subwindow} \PYG{p}{;}
+\PYG{n}{Time} \PYG{n}{time} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{x} \PYG{p}{,} \PYG{n}{y} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{x\PYGZus{}root} \PYG{p}{,} \PYG{n}{y\PYGZus{}root} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{state} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{is\PYGZus{}hint} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{same\PYGZus{}screen} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XMotionEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{XMotionEvent} \PYG{n}{XPointerMovedEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\end{Verbatim}

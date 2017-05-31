@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{n}{p\PYGZus{}cs\PYGZus{}precedes} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{p\PYGZus{}sep\PYGZus{}by\PYGZus{}space} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{n\PYGZus{}cs\PYGZus{}precedes} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{n\PYGZus{}sep\PYGZus{}by\PYGZus{}space} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{p\PYGZus{}sign\PYGZus{}posn} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{n\PYGZus{}sign\PYGZus{}posn} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{int\PYGZus{}p\PYGZus{}cs\PYGZus{}precedes} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{int\PYGZus{}p\PYGZus{}sep\PYGZus{}by\PYGZus{}space} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{int\PYGZus{}n\PYGZus{}cs\PYGZus{}precedes} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{int\PYGZus{}n\PYGZus{}sep\PYGZus{}by\PYGZus{}space} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{int\PYGZus{}p\PYGZus{}sign\PYGZus{}posn} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{int\PYGZus{}n\PYGZus{}sign\PYGZus{}posn} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\end{Verbatim}

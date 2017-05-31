@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{x} \PYG{p}{,} \PYG{n}{y} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{x\PYGZus{}root} \PYG{p}{,} \PYG{n}{y\PYGZus{}root} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{state} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{button} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{same\PYGZus{}screen} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XButtonEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{XButtonEvent} \PYG{n}{XButtonPressedEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{XButtonEvent} \PYG{n}{XButtonReleasedEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{serial} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{send\PYGZus{}event} \PYG{p}{;}
+\PYG{n}{Display} \PYG{o}{*} \PYG{n}{display} \PYG{p}{;}
+\end{Verbatim}

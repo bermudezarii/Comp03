@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{slide} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{13} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{14} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{15} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{slide} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{16} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{17} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{18} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{slide} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{19} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{20} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{21} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{slide} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{22} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{23} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{24} \PYG{p}{)} \PYG{o}{+}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{slide} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{25} \PYG{p}{)} \PYG{o}{+}
+\end{Verbatim}

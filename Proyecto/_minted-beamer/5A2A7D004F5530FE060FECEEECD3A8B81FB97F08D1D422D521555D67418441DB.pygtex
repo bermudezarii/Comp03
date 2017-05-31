@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{u\PYGZus{}int32\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}SI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{u\PYGZus{}int64\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}DI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n}{register\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}word\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kr}{\PYGZus{}\PYGZus{}inline} \PYG{k+kt}{unsigned} \PYG{k+kt}{int}
+\PYG{n+nf}{\PYGZus{}\PYGZus{}bswap\PYGZus{}32} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}bsx} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{\PYGZus{}\PYGZus{}builtin\PYGZus{}bswap32} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}bsx} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kr}{\PYGZus{}\PYGZus{}inline} \PYG{n}{\PYGZus{}\PYGZus{}uint64\PYGZus{}t}
+\PYG{n+nf}{\PYGZus{}\PYGZus{}bswap\PYGZus{}64} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}uint64\PYGZus{}t} \PYG{n}{\PYGZus{}\PYGZus{}bsx} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{return} \PYG{n}{\PYGZus{}\PYGZus{}builtin\PYGZus{}bswap64} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}bsx} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

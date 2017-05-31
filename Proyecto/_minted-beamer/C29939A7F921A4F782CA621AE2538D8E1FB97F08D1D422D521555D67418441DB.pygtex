@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}end\PYGZob{}tabular\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}caption*\PYGZob{}small \PYGZob{}textbf\PYGZob{}Material Evaluado en el Examen\PYGZcb{}\PYGZcb{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}end\PYGZob{}figure\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Prepara\PYGZus{}Grafico\PYGZus{}Pastel\PYGZus{}Beamer} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{Empates} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{aspecto} \PYG{p}{;}
+\PYG{n}{aspecto} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}get\PYGZus{}active} \PYG{p}{(} \PYG{n}{CB\PYGZus{}aspecto} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Crea\PYGZus{}archivo\PYGZus{}datos\PYGZus{}pastel} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{Empates} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}DTLloaddb\PYGZob{}datosesquema\PYGZcb{}\PYGZob{}EX4010.dat\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}columns\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}column\PYGZcb{}\PYGZob{}0.5textwidth\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

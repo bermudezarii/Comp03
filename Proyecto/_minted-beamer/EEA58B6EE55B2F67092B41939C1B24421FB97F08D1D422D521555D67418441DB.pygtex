@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{n}{hilera} \PYG{p}{[} \PYG{l+m+mi}{200} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{Descripcion} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{l+m+mi}{201} \PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}*** Examen no está registrado ***\PYGZdq{}} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{4000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{alfa\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{Rpb\PYGZus{}prediccion} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}aux} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}aux\PYGZus{}2} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{k} \PYG{p}{;}
+\PYG{n}{k} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}get\PYGZus{}value\PYGZus{}as\PYGZus{}int} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{examen} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}05d\PYGZdq{}} \PYG{p}{,} \PYG{n}{k} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT codigo\PYGZus{}examen, descripcion, pre\PYGZus{}examen, profesor, EX\PYGZus{}examenes.materia, institucion, escuela, programa, esquema, descripcion\PYGZus{}pre\PYGZus{}examen, descripcion\PYGZus{}esquema, descripcion\PYGZus{}materia, nombre, prediccion\PYGZus{}media, prediccion\PYGZus{}desviacion, prediccion\PYGZus{}alfa, prediccion\PYGZus{}Rpb, Year, month, day, ejecutado from EX\PYGZus{}examenes, EX\PYGZus{}pre\PYGZus{}examenes, EX\PYGZus{}esquemas, BD\PYGZus{}materias, BD\PYGZus{}personas where codigo\PYGZus{}examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and pre\PYGZus{}examen = codigo\PYGZus{}pre\PYGZus{}examen and esquema = codigo\PYGZus{}esquema and EX\PYGZus{}examenes.materia = codigo\PYGZus{}materia and codigo\PYGZus{}tema = \PYGZsq{}          \PYGZsq{} and codigo\PYGZus{}subtema = \PYGZsq{}          \PYGZsq{} and profesor = codigo\PYGZus{}persona\PYGZdq{}} \PYG{p}{,} \PYG{n}{examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{PQntuples} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XPointer} \PYG{n}{client\PYGZus{}data} \PYG{p}{;}
+\PYG{n}{XIMProc} \PYG{n}{callback} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XIMCallback} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XPointer} \PYG{n}{client\PYGZus{}data} \PYG{p}{;}
+\PYG{n}{XICProc} \PYG{n}{callback} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XICCallback} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{XIMFeedback} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XIMText} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{length} \PYG{p}{;}
+\PYG{n}{XIMFeedback} \PYG{o}{*} \PYG{n}{feedback} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{encoding\PYGZus{}is\PYGZus{}wchar} \PYG{p}{;}
+\end{Verbatim}

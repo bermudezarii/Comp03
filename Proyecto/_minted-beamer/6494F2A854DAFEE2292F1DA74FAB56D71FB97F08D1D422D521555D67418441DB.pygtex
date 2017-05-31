@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{rule\PYGZob{}8.1cm\PYGZcb{}\PYGZob{}5pt\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{actual} \PYG{o}{+=} \PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.5} \PYG{o}{+} \PYG{p}{(} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{actual} \PYG{o}{/} \PYG{n}{N\PYGZus{}preguntas} \PYG{o}{*} \PYG{l+m+mf}{0.3} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{actual} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{actual} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{n}{actual} \PYG{p}{;} \PYG{p}{(} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{rule\PYGZob{}8.1cm\PYGZcb{}\PYGZob{}5pt\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT usa\PYGZus{}header, texto\PYGZus{}header from bd\PYGZus{}texto\PYGZus{}ejercicios, bd\PYGZus{}ejercicios where codigo\PYGZus{}ejercicio = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and texto\PYGZus{}ejercicio = consecutivo\PYGZus{}texto\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

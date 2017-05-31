@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}pre\PYGZus{}examen\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}esquema} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}esquema\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}materia} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}materia\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}institucion} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}escuela} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}programa} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}profesor} \PYG{p}{)} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{EN\PYGZus{}pre\PYGZus{}examen} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{EN\PYGZus{}pre\PYGZus{}examen\PYGZus{}descripcion} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{EN\PYGZus{}esquema} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

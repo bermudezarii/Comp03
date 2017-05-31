@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}textbf\PYGZob{}Las preguntas \PYGZpc{}d y \PYGZpc{}d requieren la siguiente informaci\PYGZsq{}\PYGZob{}o\PYGZcb{}n:\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{ }\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{actual} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{actual} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}textbf\PYGZob{}Las preguntas \PYGZpc{}d a \PYGZpc{}d requieren la siguiente informaci\PYGZsq{}\PYGZob{}o\PYGZcb{}n:\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{ }\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{actual} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{actual} \PYG{o}{+} \PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}rule\PYGZob{}8.9cm\PYGZcb{}\PYGZob{}1pt\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}questions\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}questions\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Display} \PYG{o}{*} \PYG{n}{display} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{extension} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{evtype} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{cookie} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{data} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XGenericEventCookie} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{union} \PYG{n}{\PYGZus{}XEvent} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{n}{XAnyEvent} \PYG{n}{xany} \PYG{p}{;}
+\PYG{n}{XKeyEvent} \PYG{n}{xkey} \PYG{p}{;}
+\PYG{n}{XButtonEvent} \PYG{n}{xbutton} \PYG{p}{;}
+\PYG{n}{XMotionEvent} \PYG{n}{xmotion} \PYG{p}{;}
+\PYG{n}{XCrossingEvent} \PYG{n}{xcrossing} \PYG{p}{;}
+\end{Verbatim}

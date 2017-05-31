@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}uint32\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{signed} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}int64\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}uint64\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}quad\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}quad\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}dev\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}uid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}gid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}ino\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}ino64\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nlink\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}off\PYGZus{}t} \PYG{p}{;}
+\end{Verbatim}

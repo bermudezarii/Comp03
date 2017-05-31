@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}preguntas} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}beamer} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}botones} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}grafico} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}generando\PYGZus{}analisis} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}generando\PYGZus{}beamer} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}revisando\PYGZus{}beamer} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}ajustes} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}formato} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}real} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}modify\PYGZus{}bg} \PYG{p}{(} \PYG{n}{FR\PYGZus{}pregunta\PYGZus{}actual} \PYG{p}{,} \PYG{n}{GTK\PYGZus{}STATE\PYGZus{}NORMAL} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gdk\PYGZus{}color\PYGZus{}parse} \PYG{p}{(} \PYG{n}{STANDARD\PYGZus{}ENTRY} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{color} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

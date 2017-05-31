@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}slide\PYGZus{}A\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}slide\PYGZus{}B\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}slide\PYGZus{}C\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}slide\PYGZus{}D\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}slide\PYGZus{}E\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}verbatim\PYGZus{}A\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}verbatim\PYGZus{}B\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}verbatim\PYGZus{}C\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}verbatim\PYGZus{}D\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}verbatim\PYGZus{}E\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}CK\PYGZus{}verbatim\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}EN\PYGZus{}examen\PYGZus{}activate} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}SC\PYGZus{}preguntas\PYGZus{}value\PYGZus{}changed} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

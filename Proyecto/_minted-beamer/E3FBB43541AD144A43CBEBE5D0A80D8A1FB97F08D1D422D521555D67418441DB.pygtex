@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Atom} \PYG{o}{*} \PYG{n+nf}{XListProperties} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Window} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{XHostAddress} \PYG{o}{*} \PYG{n+nf}{XListHosts} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{deprecated} \PYG{p}{)} \PYG{p}{)}
+\end{Verbatim}

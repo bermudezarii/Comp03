@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{k} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{)}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{,} \PYG{n}{TRUE} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Cambio\PYGZus{}Ajuste} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{,} \PYG{n}{k} \PYG{p}{,} \PYG{n}{previo} \PYG{p}{;}
+\PYG{n}{GdkColor} \PYG{n}{color} \PYG{p}{;}
+\PYG{n}{k} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}range\PYGZus{}get\PYGZus{}value} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}RANGE} \PYG{p}{(} \PYG{n}{SC\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{j} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}combo\PYGZus{}box\PYGZus{}get\PYGZus{}active} \PYG{p}{(} \PYG{n}{CB\PYGZus{}ajuste} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

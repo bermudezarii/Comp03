@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{window3} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{window4} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{window5} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{window6} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{window7} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EB\PYGZus{}analisis} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{FR\PYGZus{}analisis} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkSpinButton} \PYG{o}{*} \PYG{n}{SP\PYGZus{}examen} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}descripcion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}pre\PYGZus{}examen} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}pre\PYGZus{}examen\PYGZus{}descripcion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}esquema} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EN\PYGZus{}esquema\PYGZus{}descripcion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\end{Verbatim}

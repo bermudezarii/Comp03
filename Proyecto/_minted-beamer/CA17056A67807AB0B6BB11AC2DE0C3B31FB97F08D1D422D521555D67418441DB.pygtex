@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{n}{XExtData} \PYG{o}{*} \PYG{n+nf}{XFindOnExtensionList} \PYG{p}{(}
+\PYG{n}{XExtData} \PYG{o}{*} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{XExtData} \PYG{o}{*} \PYG{o}{*} \PYG{n+nf}{XEHeadOfExtensionList} \PYG{p}{(}
+\PYG{n}{XEDataObject}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Window} \PYG{n+nf}{XRootWindow} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Window} \PYG{n}{XDefaultRootWindow} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Atom} \PYG{n}{target} \PYG{p}{;}
+\PYG{n}{Atom} \PYG{n}{property} \PYG{p}{;}
+\PYG{n}{Time} \PYG{n}{time} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XSelectionRequestEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{serial} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{send\PYGZus{}event} \PYG{p}{;}
+\PYG{n}{Display} \PYG{o}{*} \PYG{n}{display} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{requestor} \PYG{p}{;}
+\PYG{n}{Atom} \PYG{n}{selection} \PYG{p}{;}
+\PYG{n}{Atom} \PYG{n}{target} \PYG{p}{;}
+\PYG{n}{Atom} \PYG{n}{property} \PYG{p}{;}
+\end{Verbatim}

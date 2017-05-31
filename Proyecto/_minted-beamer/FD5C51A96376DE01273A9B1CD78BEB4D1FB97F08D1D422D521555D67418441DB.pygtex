@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{howManyObjectsLights} \PYG{p}{(} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{temporalBuffer} \PYG{p}{[} \PYG{l+m+mi}{100} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{file} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{file} \PYG{o}{=} \PYG{n}{fopen} \PYG{p}{(} \PYG{n}{escenaFile} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}r\PYGZdq{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{fgets} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+m+mi}{100} \PYG{p}{,} \PYG{n}{file} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Light\PYGZus{}Object\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

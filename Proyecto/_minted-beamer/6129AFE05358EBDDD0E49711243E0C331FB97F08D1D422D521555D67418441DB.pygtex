@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XImageByteOrder} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XInstallColormap} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Colormap}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{KeyCode} \PYG{n+nf}{XKeysymToKeycode} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{KeySym}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XKillClient} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

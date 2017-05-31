@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{FR\PYGZus{}real} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{FR\PYGZus{}grafico} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{FR\PYGZus{}preguntas} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{FR\PYGZus{}beamer} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}set\PYGZus{}value} \PYG{p}{(} \PYG{n}{SP\PYGZus{}resolucion} \PYG{p}{,} \PYG{l+m+mi}{10} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}set\PYGZus{}value} \PYG{p}{(} \PYG{n}{SP\PYGZus{}color} \PYG{p}{,} \PYG{l+m+mi}{7} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}set\PYGZus{}value} \PYG{p}{(} \PYG{n}{SP\PYGZus{}rotacion} \PYG{p}{,} \PYG{l+m+mi}{30} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}smooth} \PYG{p}{,} \PYG{n}{TRUE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}range\PYGZus{}set\PYGZus{}range} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}RANGE} \PYG{p}{(} \PYG{n}{SC\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{,} \PYG{p}{(} \PYG{n}{gdouble} \PYG{p}{)} \PYG{l+m+mf}{0.0} \PYG{p}{,} \PYG{p}{(} \PYG{n}{gdouble} \PYG{p}{)} \PYG{l+m+mf}{1.0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}range\PYGZus{}set\PYGZus{}value} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}RANGE} \PYG{p}{(} \PYG{n}{SC\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{,} \PYG{p}{(} \PYG{n}{gdouble} \PYG{p}{)} \PYG{l+m+mf}{0.0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}text\PYGZus{}buffer\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{buffer\PYGZus{}TV\PYGZus{}pregunta} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}0}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{TG\PYGZus{}A} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{TG\PYGZus{}B} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

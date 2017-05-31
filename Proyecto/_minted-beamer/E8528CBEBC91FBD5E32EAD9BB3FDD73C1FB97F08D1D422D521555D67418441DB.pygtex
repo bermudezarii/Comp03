@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n+nf}{XListFontsWithInfo} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{XFontStruct} \PYG{o}{*} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n+nf}{XGetFontPath} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{o}{*} \PYG{n}{XListExtensions} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

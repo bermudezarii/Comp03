@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{qlen} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{last\PYGZus{}request\PYGZus{}read} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{request} \PYG{p}{;}
+\PYG{n}{XPointer} \PYG{n}{private11} \PYG{p}{;}
+\PYG{n}{XPointer} \PYG{n}{private12} \PYG{p}{;}
+\PYG{n}{XPointer} \PYG{n}{private13} \PYG{p}{;}
+\PYG{n}{XPointer} \PYG{n}{private14} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{max\PYGZus{}request\PYGZus{}size} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}XrmHashBucketRec} \PYG{o}{*} \PYG{n}{db} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{p}{(} \PYG{o}{*} \PYG{n}{private15} \PYG{p}{)} \PYG{p}{(}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}XDisplay} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{display\PYGZus{}name} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{n}{\PYGZus{}\PYGZus{}locale\PYGZus{}t} \PYG{n+nf}{duplocale} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}locale\PYGZus{}t} \PYG{n}{\PYGZus{}\PYGZus{}dataset} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{void} \PYG{n+nf}{freelocale} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}locale\PYGZus{}t} \PYG{n}{\PYGZus{}\PYGZus{}dataset} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{\PYGZus{}\PYGZus{}locale\PYGZus{}t} \PYG{n+nf}{uselocale} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}locale\PYGZus{}t} \PYG{n}{\PYGZus{}\PYGZus{}dataset} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}char} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}short} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}int} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}u\PYGZus{}long} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{signed} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}int8\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}uint8\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{signed} \PYG{k+kt}{short} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}int16\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}uint16\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{signed} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}int32\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}uint32\PYGZus{}t} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{diferencia} \PYG{o}{=} \PYG{n}{media} \PYG{o}{\PYGZhy{}} \PYG{n}{atof} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{varianza} \PYG{o}{+=} \PYG{p}{(} \PYG{n}{diferencia} \PYG{o}{*} \PYG{n}{diferencia} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{varianza} \PYG{o}{/=} \PYG{n}{N\PYGZus{}estudiantes} \PYG{p}{;}
+\PYG{n}{desviacion} \PYG{o}{=} \PYG{n}{sqrt} \PYG{p}{(} \PYG{n}{varianza} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}8.3Lf\PYGZdq{}} \PYG{p}{,} \PYG{n}{desviacion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}entry\PYGZus{}set\PYGZus{}text} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}ENTRY} \PYG{p}{(} \PYG{n}{EN\PYGZus{}desviacion\PYGZus{}real} \PYG{p}{)} \PYG{p}{,} \PYG{n}{hilera} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}estudiantes} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT ejercicio, secuencia, opcion\PYGZus{}1, opcion\PYGZus{}2, opcion\PYGZus{}3, opcion\PYGZus{}4, opcion\PYGZus{}5 from EX\PYGZus{}examenes\PYGZus{}preguntas where examen = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and version = \PYGZsq{}\PYGZpc{}s\PYGZsq{} order by posicion\PYGZdq{}} \PYG{p}{,} \PYG{n}{examen} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res\PYGZus{}aux} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{N} \PYG{o}{=} \PYG{n}{PQntuples} \PYG{p}{(} \PYG{n}{res\PYGZus{}aux} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{version\PYGZus{}actual} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{p}{(} \PYG{n}{version\PYGZus{}actual} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}versiones} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{versiones} \PYG{p}{[} \PYG{n}{version\PYGZus{}actual} \PYG{p}{]} \PYG{p}{.} \PYG{n}{codigo} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{version\PYGZus{}actual} \PYG{o}{++} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{union} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{multi\PYGZus{}byte} \PYG{p}{;}
+\PYG{k+kt}{wchar\PYGZus{}t} \PYG{o}{*} \PYG{n}{wide\PYGZus{}char} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{string} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XIMText} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{XIMPreeditState} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XIMPreeditStateNotifyCallbackStruct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XIMPreeditState} \PYG{n}{state} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XIMPreeditStateNotifyCallbackStruct} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{XIMResetState} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{XIMStringConversionFeedback} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XIMStringConversionText} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{length} \PYG{p}{;}
+\end{Verbatim}

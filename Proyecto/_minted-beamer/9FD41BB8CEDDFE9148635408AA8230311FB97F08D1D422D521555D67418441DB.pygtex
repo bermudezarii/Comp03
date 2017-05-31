@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Intersection} \PYG{n}{getFirstIntersection} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{anchor} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{direction} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{rays} \PYG{o}{+=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{k} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{objectsAmount} \PYG{o}{=} \PYG{n}{numberObjects} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{tmin} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Intersection} \PYG{n}{intersection} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Intersection} \PYG{n}{tempIntersection} \PYG{p}{;}
+\PYG{n}{intersection} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{tmin} \PYG{o}{=} \PYG{l+m+mi}{10000000} \PYG{p}{;}
+\PYG{n}{tempIntersection} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{objectsAmount} \PYG{p}{;} \PYG{n}{k} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempIntersection} \PYG{o}{=} \PYG{n}{Objects} \PYG{p}{[} \PYG{n}{k} \PYG{p}{]} \PYG{p}{.} \PYG{n}{intersectionFuncion} \PYG{p}{(} \PYG{n}{anchor} \PYG{p}{,} \PYG{n}{direction} \PYG{p}{,} \PYG{n}{Objects} \PYG{p}{[} \PYG{n}{k} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

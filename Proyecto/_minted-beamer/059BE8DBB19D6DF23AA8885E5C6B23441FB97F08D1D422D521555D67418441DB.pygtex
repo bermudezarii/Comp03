@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XImage} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{width} \PYG{p}{,} \PYG{n}{height} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{xoffset} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{format} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{data} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{byte\PYGZus{}order} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bitmap\PYGZus{}unit} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bitmap\PYGZus{}bit\PYGZus{}order} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bitmap\PYGZus{}pad} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{depth} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bytes\PYGZus{}per\PYGZus{}line} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bits\PYGZus{}per\PYGZus{}pixel} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{red\PYGZus{}mask} \PYG{p}{;}
+\end{Verbatim}

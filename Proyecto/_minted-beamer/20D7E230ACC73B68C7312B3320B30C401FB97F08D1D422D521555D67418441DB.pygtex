@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}tema} \PYG{o}{==} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}tema} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}subtema} \PYG{o}{\PYGZgt{}} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}subtema} \PYG{p}{)} \PYG{p}{)} \PYG{o}{||}
+\PYG{p}{(} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}tema} \PYG{o}{==} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}tema} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}subtema} \PYG{o}{==} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{orden\PYGZus{}subtema} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{ejercicio} \PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{temporal} \PYG{o}{=} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{=} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{n}{temporal} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{materia} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

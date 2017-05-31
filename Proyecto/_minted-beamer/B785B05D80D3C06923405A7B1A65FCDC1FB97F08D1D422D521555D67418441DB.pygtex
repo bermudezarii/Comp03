@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Empates} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{18} \PYG{p}{)}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Empates} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cutaway=\PYGZob{}1\PYGZcb{},\PYGZpc{}\PYGZpc{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cutaway=\PYGZob{}1\PYGZhy{}\PYGZpc{}d\PYGZcb{},\PYGZpc{}\PYGZpc{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{Empates} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}innerlabel=\PYGZob{}\PYGZcb{},\PYGZpc{}\PYGZpc{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}outerlabel=\PYGZob{}DTLpievariable\PYGZcb{}\PYGZcb{}\PYGZob{}datosesquema\PYGZcb{}\PYGZob{}\PYGZpc{}\PYGZpc{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}name=Name,quantity=Quantity\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}tabular\PYGZcb{}[b]\PYGZob{}ll\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}DTLforeach\PYGZob{}datosesquema\PYGZcb{}\PYGZob{}name=Name,quantity=Quantity\PYGZcb{}\PYGZob{}DTLiffirstrow\PYGZob{}\PYGZcb{}\PYGZob{}\PYGZcb{}\PYGZpc{}\PYGZpc{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}DTLdocurrentpiesegmentcolorrule\PYGZob{}10pt\PYGZcb{}\PYGZob{}10pt\PYGZcb{}\PYGZam{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}textsf\PYGZob{}name\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

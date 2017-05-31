@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{GtkToggleButton} \PYG{o}{*} \PYG{n}{CK\PYGZus{}header\PYGZus{}encoger} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkToggleButton} \PYG{o}{*} \PYG{n}{CK\PYGZus{}header\PYGZus{}verbatim} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkToggleButton} \PYG{o}{*} \PYG{n}{CK\PYGZus{}slide} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{GtkToggleButton} \PYG{o}{*} \PYG{n}{CK\PYGZus{}encoger\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{GtkToggleButton} \PYG{o}{*} \PYG{n}{CK\PYGZus{}verbatim\PYGZus{}opcion} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{EB\PYGZus{}beamer} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{FR\PYGZus{}beamer} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkComboBox} \PYG{o}{*} \PYG{n}{CB\PYGZus{}estilo} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkComboBox} \PYG{o}{*} \PYG{n}{CB\PYGZus{}color} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkComboBox} \PYG{o}{*} \PYG{n}{CB\PYGZus{}font} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkComboBox} \PYG{o}{*} \PYG{n}{CB\PYGZus{}size} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkComboBox} \PYG{o}{*} \PYG{n}{CB\PYGZus{}aspecto} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkToggleButton} \PYG{o}{*} \PYG{n}{CK\PYGZus{}general} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{N\PYGZus{}validas} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{actual} \PYG{p}{]} \PYG{p}{.} \PYG{n}{excluir} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{prepara\PYGZus{}opciones} \PYG{p}{(} \PYG{n}{opciones\PYGZus{}frame} \PYG{p}{,} \PYG{n}{actual} \PYG{p}{,} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZob{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Marca\PYGZus{}agua\PYGZus{}ajuste} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{actual} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}frame\PYGZcb{}\PYGZpc{}s\PYGZob{}Pregunta \PYGZpc{}d hfill \PYGZob{}small \PYGZpc{}s\PYGZcb{}\PYGZcb{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{opciones\PYGZus{}frame} \PYG{p}{,} \PYG{n}{actual} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{tema\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Imprime\PYGZus{}pregunta\PYGZus{}Beamer} \PYG{p}{(} \PYG{n}{actual} \PYG{p}{,} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{,} \PYG{n}{tema\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}end\PYGZob{}frame\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

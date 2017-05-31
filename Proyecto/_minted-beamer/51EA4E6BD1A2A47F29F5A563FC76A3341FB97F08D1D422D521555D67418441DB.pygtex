@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{versiones} \PYG{p}{[} \PYG{n}{k\PYGZus{}version} \PYG{p}{]} \PYG{p}{.} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{respuesta} \PYG{o}{==} \PYG{n}{respuestas} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{)} \PYG{n}{N} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{N\PYGZus{}ajustes} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{K} \PYG{o}{=} \PYG{n}{N} \PYG{p}{;}
+\PYG{n}{M} \PYG{o}{=} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{n}{Calcula\PYGZus{}nota\PYGZus{}ajustada} \PYG{p}{(} \PYG{n}{k\PYGZus{}version} \PYG{p}{,} \PYG{n}{respuestas} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{K} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{M} \PYG{p}{)} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{n\PYGZus{}buenas} \PYG{o}{=} \PYG{n}{N} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{n\PYGZus{}ajustado} \PYG{o}{=} \PYG{n}{K} \PYG{p}{;}
+\PYG{o}{*} \PYG{n}{m\PYGZus{}ajustado} \PYG{o}{=} \PYG{n}{M} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

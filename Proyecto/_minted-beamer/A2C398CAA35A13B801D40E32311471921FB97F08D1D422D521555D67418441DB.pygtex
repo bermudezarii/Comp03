@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}subtemas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{porcentaje} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{buenos} \PYG{o}{/} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{buenos} \PYG{o}{+} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{malos} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{n}{N\PYGZus{}subtemas} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZhy{}\PYGZhy{}} \PYG{p}{)}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{p}{(} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;} \PYG{n}{j} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{.} \PYG{n}{porcentaje} \PYG{o}{\PYGZgt{}} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{porcentaje} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{temporal} \PYG{o}{=} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{=} \PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{resumen\PYGZus{}tema\PYGZus{}subtema} \PYG{p}{[} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{n}{temporal} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

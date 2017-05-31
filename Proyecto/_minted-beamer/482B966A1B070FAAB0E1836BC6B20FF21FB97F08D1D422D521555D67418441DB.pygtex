@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SetWatermarkText\PYGZob{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}title\PYGZob{}\PYGZpc{}s\PYGZcb{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{materia\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}subtitle\PYGZob{}Análisis de \PYGZpc{}s\PYGZcb{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}author[\PYGZpc{}s]\PYGZob{}Prof. \PYGZpc{}s\PYGZcb{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{profesor} \PYG{p}{,} \PYG{n}{profesor} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}institute\PYGZob{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{programa} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

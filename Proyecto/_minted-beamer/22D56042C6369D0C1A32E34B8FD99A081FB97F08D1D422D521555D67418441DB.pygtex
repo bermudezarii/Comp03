@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{sign} \PYG{o}{=} \PYG{n}{testPlaneCut} \PYG{p}{(} \PYG{n}{object} \PYG{p}{.} \PYG{n}{planeCuts} \PYG{p}{[} \PYG{n}{k} \PYG{p}{]} \PYG{p}{,} \PYG{n}{x} \PYG{p}{,} \PYG{n}{y} \PYG{p}{,} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{sign} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{accept} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{accept} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{pointProduct} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{a} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{b} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{pp} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{pp} \PYG{o}{+=} \PYG{p}{(} \PYG{n}{a} \PYG{p}{.} \PYG{n}{x} \PYG{o}{*} \PYG{n}{b} \PYG{p}{.} \PYG{n}{x} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{pp} \PYG{o}{+=} \PYG{p}{(} \PYG{n}{a} \PYG{p}{.} \PYG{n}{y} \PYG{o}{*} \PYG{n}{b} \PYG{p}{.} \PYG{n}{y} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{pp} \PYG{o}{+=} \PYG{p}{(} \PYG{n}{a} \PYG{p}{.} \PYG{n}{z} \PYG{o}{*} \PYG{n}{b} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{pp} \PYG{p}{;}
+\end{Verbatim}

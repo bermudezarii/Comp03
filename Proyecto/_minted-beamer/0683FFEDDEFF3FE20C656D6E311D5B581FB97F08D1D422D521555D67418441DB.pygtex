@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Color} \PYG{n}{getAAColor} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{x} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{y} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{aaLevel} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{areOK} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{level} \PYG{o}{=} \PYG{n}{aaLevel} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Color} \PYG{n}{color} \PYG{p}{,} \PYG{n}{color1} \PYG{p}{,} \PYG{n}{color2} \PYG{p}{,} \PYG{n}{color3} \PYG{p}{,} \PYG{n}{color4} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{direction} \PYG{p}{,} \PYG{n}{V} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{sum} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{n}{pow} \PYG{p}{(} \PYG{l+m+mi}{2} \PYG{p}{,} \PYG{n}{level} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{level} \PYG{o}{++} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{nextSum} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{n}{pow} \PYG{p}{(} \PYG{l+m+mi}{2} \PYG{p}{,} \PYG{n}{level} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{direction} \PYG{o}{=} \PYG{n}{throwRay} \PYG{p}{(} \PYG{n}{x} \PYG{p}{,} \PYG{n}{y} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{V} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{x} \PYG{p}{;}
+\PYG{n}{V} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{y} \PYG{p}{;}
+\PYG{n}{V} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{z} \PYG{p}{;}
+\end{Verbatim}

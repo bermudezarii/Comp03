@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{font} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{size} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{materia} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{materia\PYGZus{}descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{institucion} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{escuela} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{programa} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{g\PYGZus{}free} \PYG{p}{(} \PYG{n}{fecha} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Update\PYGZus{}PB} \PYG{p}{(} \PYG{n}{PB\PYGZus{}beamer} \PYG{p}{,} \PYG{l+m+mf}{1.0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}hide} \PYG{p}{(} \PYG{n}{window3} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{window1} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{resultado\PYGZus{}OK} \PYG{p}{)}
+\end{Verbatim}

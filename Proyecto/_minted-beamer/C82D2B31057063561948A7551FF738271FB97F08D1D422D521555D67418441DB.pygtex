@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{main} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{argc} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{argv} \PYG{p}{[} \PYG{p}{]} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{n} \PYG{p}{,} \PYG{n}{Flag} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;} \PYG{k+kt}{char} \PYG{n}{c} \PYG{p}{;}
+\PYG{n}{n} \PYG{o}{=} \PYG{n}{atoi} \PYG{p}{(} \PYG{n}{argv} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{;} \PYG{k}{for} \PYG{p}{(} \PYG{n}{F1ag} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{p}{;}
+\PYG{p}{(} \PYG{n}{c} \PYG{o}{=} \PYG{n}{getchar} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{o}{!=} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{o}{++} \PYG{n}{F1ag} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{F1ag} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{p}{;} \PYG{k}{for} \PYG{p}{(} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{p}{;}
+\PYG{n}{j} \PYG{o}{*} \PYG{p}{(} \PYG{n}{c} \PYG{o}{\PYGZam{}} \PYG{l+m+mi}{64} \PYG{p}{)} \PYG{o}{*} \PYG{n}{F1ag} \PYG{p}{;}
+\PYG{o}{++} \PYG{n}{j} \PYG{p}{)}
+\end{Verbatim}

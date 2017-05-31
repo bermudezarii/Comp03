@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{Colores} \PYG{p}{[} \PYG{n}{Color} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set size 1.55, 1.0}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set output }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{EX4010c.eps}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}GNUPLOT} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}set xlabel }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{Discriminación}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set ylabel }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{Dificultad}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set view map}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set contour}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Niveles\PYGZus{}Discriminacion} \PYG{o}{==} \PYG{l+m+mi}{18} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set xtics \PYGZhy{}1.0, \PYGZpc{}4.3Lf, 1.0}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{l+m+mf}{2.0} \PYG{o}{/} \PYG{p}{(} \PYG{n}{Niveles\PYGZus{}Discriminacion} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set xtics \PYGZhy{}1.0, \PYGZpc{}4.3Lf, 1.0}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{l+m+mf}{2.0} \PYG{o}{/} \PYG{p}{(} \PYG{n}{Niveles\PYGZus{}Discriminacion} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set ytics  0.0, \PYGZpc{}4.3Lf, 1.0}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{l+m+mf}{1.0} \PYG{o}{/} \PYG{p}{(} \PYG{n}{Niveles\PYGZus{}Dificultad} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

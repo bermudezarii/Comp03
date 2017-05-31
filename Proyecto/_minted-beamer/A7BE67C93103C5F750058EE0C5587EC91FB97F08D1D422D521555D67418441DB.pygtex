@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}sig\PYGZus{}atomic\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}val} \PYG{p}{[} \PYG{p}{(} \PYG{l+m+mi}{1024} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mi}{8} \PYG{o}{*} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{]} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{\PYGZus{}\PYGZus{}sigset\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}sigset\PYGZus{}t} \PYG{k+kt}{sigset\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{timespec}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{\PYGZus{}\PYGZus{}time\PYGZus{}t} \PYG{n}{tv\PYGZus{}sec} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}syscall\PYGZus{}slong\PYGZus{}t} \PYG{n}{tv\PYGZus{}nsec} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{timeval}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

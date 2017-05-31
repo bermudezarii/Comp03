@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Scene\PYGZus{}Data\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{state} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{counterValueSegment} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{indexValuesRead} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{n}{valuesRead} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{valuesRead} \PYG{o}{=} \PYG{n}{malloc} \PYG{p}{(} \PYG{k}{sizeof} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{p}{)} \PYG{o}{*} \PYG{l+m+mi}{22} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{currentTypeObjectReading} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Light\PYGZus{}Object\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{state} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{n}{counterValueSegment} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\end{Verbatim}

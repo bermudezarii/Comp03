@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Window} \PYG{n+nf}{XRootWindowOfScreen} \PYG{p}{(}
+\PYG{n}{Screen} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Visual} \PYG{o}{*} \PYG{n+nf}{XDefaultVisual} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{Visual} \PYG{o}{*} \PYG{n+nf}{XDefaultVisualOfScreen} \PYG{p}{(}
+\PYG{n}{Screen} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{GC} \PYG{n}{XDefaultGC} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

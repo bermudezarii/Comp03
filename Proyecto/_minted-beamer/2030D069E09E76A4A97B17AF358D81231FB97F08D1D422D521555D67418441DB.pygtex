@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Ydif} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Ia} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{e} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{debug} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{rec} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Color} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{r} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{g} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{b} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Point2D} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{u} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{v} \PYG{p}{;}
+\end{Verbatim}

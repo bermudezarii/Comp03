@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}quad\PYGZus{}t} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}qaddr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}caddr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}intptr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}socklen\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}ssize\PYGZus{}t} \PYG{k+kt}{ssize\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{k+kt}{size\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}gid\PYGZus{}t} \PYG{k+kt}{gid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}uid\PYGZus{}t} \PYG{k+kt}{uid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}off\PYGZus{}t} \PYG{k+kt}{off\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}useconds\PYGZus{}t} \PYG{n}{useconds\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}pid\PYGZus{}t} \PYG{k+kt}{pid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}intptr\PYGZus{}t} \PYG{k+kt}{intptr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}socklen\PYGZus{}t} \PYG{k+kt}{socklen\PYGZus{}t} \PYG{p}{;}
+\end{Verbatim}

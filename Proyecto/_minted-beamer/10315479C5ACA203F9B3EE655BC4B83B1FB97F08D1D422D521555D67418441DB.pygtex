@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}lock} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nr\PYGZus{}readers} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}readers\PYGZus{}wakeup} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}writer\PYGZus{}wakeup} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nr\PYGZus{}readers\PYGZus{}queued} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nr\PYGZus{}writers\PYGZus{}queued} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}writer} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}shared} \PYG{p}{;}
+\PYG{k+kt}{signed} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}rwelision} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}pad1} \PYG{p}{[} \PYG{l+m+mi}{7} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}pad2} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}flags} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{\PYGZus{}\PYGZus{}data} \PYG{p}{;}
+\end{Verbatim}

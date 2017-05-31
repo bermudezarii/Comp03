@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{GtkSpinButton} \PYG{o}{*} \PYG{n}{SP\PYGZus{}resolucion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkSpinButton} \PYG{o}{*} \PYG{n}{SP\PYGZus{}color} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkSpinButton} \PYG{o}{*} \PYG{n}{SP\PYGZus{}rotacion} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Actualice\PYGZus{}Estadisticas} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{buena} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{ejercicio} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{secuencia} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Nota} \PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{respuesta} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{opcion\PYGZus{}original} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Actualiza\PYGZus{}Porcentajes} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Analisis\PYGZus{}General} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{alfa} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Rpb} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{Beamer\PYGZus{}o\PYGZus{}reporte} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Analiza\PYGZus{}Ajuste} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{PREGUNTA} \PYG{n}{item} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{modo} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Analiza\PYGZus{}Banderas} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{PREGUNTA} \PYG{n}{item} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{beamer} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{N\PYGZus{}flags} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{Descripcion} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Asigna\PYGZus{}Banderas} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Beamer\PYGZus{}Cierre} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Beamer\PYGZus{}Cover} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Beamer\PYGZus{}Dificultad\PYGZus{}vs\PYGZus{}Discriminacion} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Beamer\PYGZus{}Failure} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

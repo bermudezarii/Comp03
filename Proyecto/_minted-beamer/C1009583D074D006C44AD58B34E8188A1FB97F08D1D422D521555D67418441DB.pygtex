@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{pch} \PYG{o}{=} \PYG{n}{strtok} \PYG{p}{(} \PYG{n}{token} \PYG{p}{,} \PYG{l+s}{\PYGZdq{},\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{pch} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{sscanf} \PYG{p}{(} \PYG{n}{pch} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}LF\PYGZdq{}} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{pointDimensions} \PYG{p}{[} \PYG{n}{currentDimension} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{pch} \PYG{o}{=} \PYG{n}{strtok} \PYG{p}{(} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{l+s}{\PYGZdq{},\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{currentDimension} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{pointDimensions} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{strip} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{s} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{p2} \PYG{o}{=} \PYG{n}{s} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{o}{*} \PYG{n}{s} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}0\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{*} \PYG{n}{s} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}t\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{*} \PYG{n}{s} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

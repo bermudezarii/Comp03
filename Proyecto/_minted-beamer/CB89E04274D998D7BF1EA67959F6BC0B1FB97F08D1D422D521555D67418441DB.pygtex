@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{global\PYGZus{}auto\PYGZus{}repeat} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{auto\PYGZus{}repeats} \PYG{p}{[} \PYG{l+m+mi}{32} \PYG{p}{]} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XKeyboardState} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{n}{Time} \PYG{n}{time} \PYG{p}{;}
+\PYG{k+kt}{short} \PYG{n}{x} \PYG{p}{,} \PYG{n}{y} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XTimeCoord} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{max\PYGZus{}keypermod} \PYG{p}{;}
+\PYG{n}{KeyCode} \PYG{o}{*} \PYG{n}{modifiermap} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XModifierKeymap} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XDisplay} \PYG{n}{Display} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}XPrivate} \PYG{p}{;}
+\end{Verbatim}

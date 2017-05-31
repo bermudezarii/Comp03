@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.85} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{latex\PYGZus{}2\PYGZus{}pdf} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{parametros} \PYG{p}{,} \PYG{n}{Directorio} \PYG{p}{,} \PYG{n}{parametros} \PYG{p}{.} \PYG{n}{ruta\PYGZus{}latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}analisis\PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{,} \PYG{l+m+mf}{0.85} \PYG{p}{,} \PYG{l+m+mf}{0.1} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.95} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010\PYGZhy{}h.pdf\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010\PYGZhy{}n.pdf\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010\PYGZhy{}t.pdf\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010\PYGZhy{}s.pdf\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010p.pdf\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010c.pdf\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010.dat\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

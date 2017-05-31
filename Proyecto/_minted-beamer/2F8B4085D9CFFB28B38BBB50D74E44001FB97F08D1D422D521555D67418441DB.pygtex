@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{private6} \PYG{p}{;}
+\PYG{n}{XID} \PYG{p}{(} \PYG{o}{*} \PYG{n}{resource\PYGZus{}alloc} \PYG{p}{)} \PYG{p}{(}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}XDisplay} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{byte\PYGZus{}order} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bitmap\PYGZus{}unit} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bitmap\PYGZus{}pad} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bitmap\PYGZus{}bit\PYGZus{}order} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{nformats} \PYG{p}{;}
+\PYG{n}{ScreenFormat} \PYG{o}{*} \PYG{n}{pixmap\PYGZus{}format} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{private8} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{release} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}XPrivate} \PYG{o}{*} \PYG{n}{private9} \PYG{p}{,} \PYG{o}{*} \PYG{n}{private10} \PYG{p}{;}
+\end{Verbatim}

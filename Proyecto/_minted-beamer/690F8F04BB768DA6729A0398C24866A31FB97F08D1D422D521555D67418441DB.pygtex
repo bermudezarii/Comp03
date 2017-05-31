@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{GC} \PYG{n+nf}{XCreateGC} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{p}{,}
+\PYG{n}{XGCValues} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{GContext} \PYG{n+nf}{XGContextFromGC} \PYG{p}{(}
+\PYG{n}{GC}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{void} \PYG{n}{XFlushGC} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{GC}
+\end{Verbatim}

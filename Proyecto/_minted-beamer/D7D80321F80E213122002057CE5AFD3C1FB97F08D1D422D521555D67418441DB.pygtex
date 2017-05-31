@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Pixmap} \PYG{n}{stipple} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ts\PYGZus{}x\PYGZus{}origin} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ts\PYGZus{}y\PYGZus{}origin} \PYG{p}{;}
+\PYG{n}{Font} \PYG{n}{font} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{subwindow\PYGZus{}mode} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{graphics\PYGZus{}exposures} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{clip\PYGZus{}x\PYGZus{}origin} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{clip\PYGZus{}y\PYGZus{}origin} \PYG{p}{;}
+\PYG{n}{Pixmap} \PYG{n}{clip\PYGZus{}mask} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{dash\PYGZus{}offset} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{dashes} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XGCValues} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XGC}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{XIMCaretUp} \PYG{p}{,} \PYG{n}{XIMCaretDown} \PYG{p}{,}
+\PYG{n}{XIMNextLine} \PYG{p}{,} \PYG{n}{XIMPreviousLine} \PYG{p}{,}
+\PYG{n}{XIMLineStart} \PYG{p}{,} \PYG{n}{XIMLineEnd} \PYG{p}{,}
+\PYG{n}{XIMAbsolutePosition} \PYG{p}{,}
+\PYG{n}{XIMDontChange}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XIMCaretDirection} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}XIMStringConversionCallbackStruct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XIMStringConversionPosition} \PYG{n}{position} \PYG{p}{;}
+\PYG{n}{XIMCaretDirection} \PYG{n}{direction} \PYG{p}{;}
+\PYG{n}{XIMStringConversionOperation} \PYG{n}{operation} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{n}{factor} \PYG{p}{;}
+\PYG{n}{XIMStringConversionText} \PYG{o}{*} \PYG{n}{text} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XIMStringConversionCallbackStruct} \PYG{p}{;}
+\end{Verbatim}

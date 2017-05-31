@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{n}{\PYGZus{}\PYGZus{}pthread\PYGZus{}internal\PYGZus{}list}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}\PYGZus{}pthread\PYGZus{}internal\PYGZus{}list} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}prev} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}\PYGZus{}pthread\PYGZus{}internal\PYGZus{}list} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}next} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{\PYGZus{}\PYGZus{}pthread\PYGZus{}list\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{union}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}\PYGZus{}pthread\PYGZus{}mutex\PYGZus{}s}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}lock} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}count} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}owner} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nusers} \PYG{p}{;}
+\end{Verbatim}

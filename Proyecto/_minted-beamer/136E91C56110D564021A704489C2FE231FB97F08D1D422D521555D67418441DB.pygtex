@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Cajita\PYGZus{}con\PYGZus{}bandera} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{mensaje} \PYG{p}{,} \PYG{l+m+mi}{4} \PYG{p}{,} \PYG{n}{Beamer\PYGZus{}o\PYGZus{}reporte} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Rpb} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.3} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{mensaje} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}La discriminaci\PYGZsq{}on promedio de los \PYGZsq{}itemes es bastante alta (textbf\PYGZob{}\PYGZpc{}Lf\PYGZcb{}). El examen es muy preciso en distinguir entre estudiantes de buen rendimiento y bajo rendimiento.\PYGZdq{}} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Cajita\PYGZus{}con\PYGZus{}bandera} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{mensaje} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{Beamer\PYGZus{}o\PYGZus{}reporte} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Rpb} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.15} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{mensaje} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}El examen muestra una buena discriminaci\PYGZsq{}on promedio (textbf\PYGZob{}\PYGZpc{}Lf\PYGZcb{}). Distingue aceptablemente entre estudiantes de alto rendimiento y bajo rendimiento.\PYGZdq{}} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Cajita\PYGZus{}con\PYGZus{}bandera} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{mensaje} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{n}{Beamer\PYGZus{}o\PYGZus{}reporte} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

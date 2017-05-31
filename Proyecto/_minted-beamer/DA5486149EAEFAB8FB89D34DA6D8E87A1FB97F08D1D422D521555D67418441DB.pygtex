@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}rlim64\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}id\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}time\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}useconds\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}suseconds\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}daddr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}key\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}clockid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{void} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}timer\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}blksize\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}blkcnt\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}blkcnt64\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}fsblkcnt\PYGZus{}t} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Pruebas/intrp.c:11:249 syntax error, unexpected CONSTANT*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:251 syntax error, unexpected COLON*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:258 syntax error, unexpected RETURN*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:260 syntax error, unexpected INTEGER*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:268 syntax error, unexpected BREAK*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:275 syntax error, unexpected CASE*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:280 syntax error, unexpected CONSTANT*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:282 syntax error, unexpected COLON*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:314 syntax error, unexpected FOR*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:323 syntax error, unexpected SEMICOLON*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:327 syntax error, unexpected LESS*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:330 syntax error, unexpected INTEGER*/}
+\PYG{c+cm}{/*Pruebas/intrp.c:11:342 syntax error, unexpected RIGHT\PYGZus{}PARENTHESIS*/}
+\end{Verbatim}

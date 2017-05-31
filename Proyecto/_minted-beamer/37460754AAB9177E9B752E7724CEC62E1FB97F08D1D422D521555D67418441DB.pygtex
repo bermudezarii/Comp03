@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{greenwich} \PYG{o}{=} \PYG{n}{objeto} \PYG{p}{.} \PYG{n}{textures} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{greenwich} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ Greenwich unitario: \PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{greenwich} \PYG{p}{.} \PYG{n}{x} \PYG{p}{,} \PYG{n}{greenwich} \PYG{p}{.} \PYG{n}{y} \PYG{p}{,} \PYG{n}{greenwich} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{currentTypeObjectReading} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{o}{||} \PYG{n}{currentTypeObjectReading} \PYG{o}{==} \PYG{l+m+mi}{8} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{norte} \PYG{o}{=} \PYG{n}{objeto} \PYG{p}{.} \PYG{n}{textures} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{.} \PYG{n}{north} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ Norte unitario: \PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{norte} \PYG{p}{.} \PYG{n}{x} \PYG{p}{,} \PYG{n}{norte} \PYG{p}{.} \PYG{n}{y} \PYG{p}{,} \PYG{n}{norte} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{printDraftPlanes} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{Object} \PYG{n}{objeto} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{currentTypeObjectReading} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{objeto} \PYG{p}{.} \PYG{n}{draftPlanes} \PYG{o}{==} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{ Este objeto no tiene planos de calado  asociados. }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

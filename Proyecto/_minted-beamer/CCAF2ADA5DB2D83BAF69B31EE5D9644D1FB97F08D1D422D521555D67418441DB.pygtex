@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XQueryBestSize} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

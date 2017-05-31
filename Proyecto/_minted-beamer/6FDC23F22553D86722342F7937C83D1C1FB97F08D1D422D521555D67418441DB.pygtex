@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{n\PYGZus{}properties} \PYG{p}{;}
+\PYG{n}{XFontProp} \PYG{o}{*} \PYG{n}{properties} \PYG{p}{;}
+\PYG{n}{XCharStruct} \PYG{n}{min\PYGZus{}bounds} \PYG{p}{;}
+\PYG{n}{XCharStruct} \PYG{n}{max\PYGZus{}bounds} \PYG{p}{;}
+\PYG{n}{XCharStruct} \PYG{o}{*} \PYG{n}{per\PYGZus{}char} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ascent} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{descent} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XFontStruct} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{chars} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{nchars} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{delta} \PYG{p}{;}
+\PYG{n}{Font} \PYG{n}{font} \PYG{p}{;}
+\end{Verbatim}

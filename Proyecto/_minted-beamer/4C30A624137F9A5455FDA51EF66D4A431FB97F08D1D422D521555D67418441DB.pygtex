@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{serial} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{send\PYGZus{}event} \PYG{p}{;}
+\PYG{n}{Display} \PYG{o}{*} \PYG{n}{display} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{window} \PYG{p}{;}
+\PYG{n}{Atom} \PYG{n}{message\PYGZus{}type} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{format} \PYG{p}{;}
+\PYG{k}{union} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{b} \PYG{p}{[} \PYG{l+m+mi}{20} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{short} \PYG{n}{s} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{n}{l} \PYG{p}{[} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{data} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XClientMessageEvent} \PYG{p}{;}
+\end{Verbatim}

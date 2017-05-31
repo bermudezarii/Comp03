@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{distance} \PYG{o}{=} \PYG{n}{t} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{object} \PYG{o}{=} \PYG{n}{object} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Xi} \PYG{o}{=} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{x} \PYG{o}{+} \PYG{p}{(} \PYG{n}{t} \PYG{o}{*} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{x} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Yi} \PYG{o}{=} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{y} \PYG{o}{+} \PYG{p}{(} \PYG{n}{t} \PYG{o}{*} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{y} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Zi} \PYG{o}{=} \PYG{n}{anchor} \PYG{p}{.} \PYG{n}{z} \PYG{o}{+} \PYG{p}{(} \PYG{n}{t} \PYG{o}{*} \PYG{n}{direction} \PYG{p}{.} \PYG{n}{z} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{distanceToCenter} \PYG{o}{=} \PYG{n}{sqrt} \PYG{p}{(} \PYG{n}{pow} \PYG{p}{(} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Xi} \PYG{o}{\PYGZhy{}} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Xc} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{o}{+}
+\PYG{n}{pow} \PYG{p}{(} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Yi} \PYG{o}{\PYGZhy{}} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Yc} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{o}{+}
+\PYG{n}{pow} \PYG{p}{(} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Zi} \PYG{o}{\PYGZhy{}} \PYG{n}{object} \PYG{p}{.} \PYG{n}{Zc} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{distanceToCenter} \PYG{o}{\PYGZlt{}} \PYG{n}{object} \PYG{p}{.} \PYG{n}{other} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{null} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{accept} \PYG{o}{=} \PYG{n}{testIntersection} \PYG{p}{(} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Xi} \PYG{p}{,} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Yi} \PYG{p}{,} \PYG{n}{tempIntersect} \PYG{p}{.} \PYG{n}{Zi} \PYG{p}{,} \PYG{n}{object} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{accept} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

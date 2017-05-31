@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{*} \PYG{n}{GC} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XExtData} \PYG{o}{*} \PYG{n}{ext\PYGZus{}data} \PYG{p}{;}
+\PYG{n}{VisualID} \PYG{n}{visualid} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{class} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{red\PYGZus{}mask} \PYG{p}{,} \PYG{n}{green\PYGZus{}mask} \PYG{p}{,} \PYG{n}{blue\PYGZus{}mask} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{bits\PYGZus{}per\PYGZus{}rgb} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{map\PYGZus{}entries} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{Visual} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{depth} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{nvisuals} \PYG{p}{;}
+\PYG{n}{Visual} \PYG{o}{*} \PYG{n}{visuals} \PYG{p}{;}
+\end{Verbatim}

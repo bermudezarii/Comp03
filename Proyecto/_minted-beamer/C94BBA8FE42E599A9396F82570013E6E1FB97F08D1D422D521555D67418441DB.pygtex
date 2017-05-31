@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{n}{do\PYGZus{}not\PYGZus{}propagate\PYGZus{}mask} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{override\PYGZus{}redirect} \PYG{p}{;}
+\PYG{n}{Colormap} \PYG{n}{colormap} \PYG{p}{;}
+\PYG{n}{Cursor} \PYG{n}{cursor} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XSetWindowAttributes} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{x} \PYG{p}{,} \PYG{n}{y} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{width} \PYG{p}{,} \PYG{n}{height} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{border\PYGZus{}width} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{depth} \PYG{p}{;}
+\PYG{n}{Visual} \PYG{o}{*} \PYG{n}{visual} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{root} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{class} \PYG{p}{;}
+\end{Verbatim}

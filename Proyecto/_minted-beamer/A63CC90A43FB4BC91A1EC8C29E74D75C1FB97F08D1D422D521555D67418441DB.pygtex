@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{X} \PYG{o}{+=} \PYG{p}{(} \PYG{n}{d} \PYG{o}{*} \PYG{n}{l} \PYG{o}{\PYGZhy{}} \PYG{n}{T} \PYG{o}{/} \PYG{n}{S}
+\PYG{o}{*} \PYG{p}{(} \PYG{l+m+mf}{.19} \PYG{o}{*} \PYG{n}{E} \PYG{o}{+} \PYG{n}{a}
+\PYG{o}{*} \PYG{l+m+mf}{.64} \PYG{o}{+} \PYG{n}{J} \PYG{o}{/} \PYG{l+m+mf}{1e3}
+\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{M} \PYG{o}{*} \PYG{n}{v} \PYG{o}{+} \PYG{n}{A} \PYG{o}{*}
+\PYG{n}{Z} \PYG{p}{)} \PYG{o}{*} \PYG{n}{\PYGZus{}} \PYG{p}{;} \PYG{n}{l} \PYG{o}{+=}
+\PYG{n}{K} \PYG{o}{*} \PYG{n}{\PYGZus{}} \PYG{p}{;} \PYG{n}{W} \PYG{o}{=} \PYG{n}{d} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{f} \PYG{p}{,}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}5d  \PYGZpc{}3d\PYGZdq{}}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}7d\PYGZdq{}} \PYG{p}{,} \PYG{n}{p} \PYG{o}{=} \PYG{n}{l}
+\PYG{o}{/} \PYG{l+m+mf}{1.7} \PYG{p}{,} \PYG{p}{(} \PYG{n}{C} \PYG{o}{=} \PYG{l+m+mf}{9E3} \PYG{o}{+}
+\PYG{n}{O} \PYG{o}{*} \PYG{l+m+mf}{57.3} \PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mo}{0550} \PYG{p}{,} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{i} \PYG{p}{)} \PYG{p}{;} \PYG{n}{d} \PYG{o}{+=} \PYG{n}{T} \PYG{o}{*} \PYG{p}{(} \PYG{l+m+mf}{.45} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{14} \PYG{o}{/} \PYG{n}{l} \PYG{o}{*}
+\PYG{n}{X} \PYG{o}{\PYGZhy{}} \PYG{n}{a} \PYG{o}{*} \PYG{l+m+mi}{130} \PYG{o}{\PYGZhy{}} \PYG{n}{J} \PYG{o}{*} \PYG{l+m+mf}{.14} \PYG{p}{)} \PYG{o}{*} \PYG{n}{\PYGZus{}} \PYG{o}{/} \PYG{l+m+mf}{125e2} \PYG{o}{+} \PYG{n}{F} \PYG{o}{*} \PYG{n}{\PYGZus{}} \PYG{o}{*} \PYG{n}{v} \PYG{p}{;} \PYG{n}{P} \PYG{o}{=} \PYG{p}{(} \PYG{n}{T} \PYG{o}{*} \PYG{p}{(} \PYG{l+m+mi}{47}
+\PYG{o}{*} \PYG{n}{I} \PYG{o}{\PYGZhy{}} \PYG{n}{m} \PYG{o}{*} \PYG{l+m+mi}{52} \PYG{o}{+} \PYG{n}{E} \PYG{o}{*} \PYG{l+m+mi}{94} \PYG{o}{*} \PYG{n}{D} \PYG{o}{\PYGZhy{}} \PYG{n}{t} \PYG{o}{*} \PYG{l+m+mf}{.38} \PYG{o}{+} \PYG{n}{u} \PYG{o}{*} \PYG{l+m+mf}{.21} \PYG{o}{*} \PYG{n}{E} \PYG{p}{)} \PYG{o}{/} \PYG{l+m+mf}{1e2} \PYG{o}{+} \PYG{n}{W} \PYG{o}{*}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{Frecuencias} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{maximo} \PYG{p}{)} \PYG{n}{maximo} \PYG{o}{=} \PYG{n}{Frecuencias} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{o}{=} \PYG{n}{fopen} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}EX4010\PYGZhy{}h.gp\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}w\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set term postscript eps enhanced color }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{Times}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{ 12}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set encoding iso\PYGZus{}8859\PYGZus{}1}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set size 0.9, 0.9}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set grid xtics}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}set output }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{EX4010\PYGZhy{}h.eps}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}GNUPLOT} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}set ylabel }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{Cantidad}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}GNUPLOT} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}set xlabel }\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s}{Nota}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

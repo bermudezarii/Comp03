@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}} \PYG{n}{Depth} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}XDisplay} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XExtData} \PYG{o}{*} \PYG{n}{ext\PYGZus{}data} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{\PYGZus{}XDisplay} \PYG{o}{*} \PYG{n}{display} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{root} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{width} \PYG{p}{,} \PYG{n}{height} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{mwidth} \PYG{p}{,} \PYG{n}{mheight} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ndepths} \PYG{p}{;}
+\PYG{n}{Depth} \PYG{o}{*} \PYG{n}{depths} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{root\PYGZus{}depth} \PYG{p}{;}
+\PYG{n}{Visual} \PYG{o}{*} \PYG{n}{root\PYGZus{}visual} \PYG{p}{;}
+\PYG{n}{GC} \PYG{n}{default\PYGZus{}gc} \PYG{p}{;}
+\end{Verbatim}

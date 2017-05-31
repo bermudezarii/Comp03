@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Punto\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{datosPlanos} \PYG{o}{=} \PYG{n}{obtainPointFromString} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{temp} \PYG{p}{;}
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{datosPlanos} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{datosPlanos} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{datosPlanos} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{planeCutsFound} \PYG{p}{[} \PYG{n}{indexPlaneCut} \PYG{p}{]} \PYG{p}{.} \PYG{n}{point} \PYG{o}{=} \PYG{n}{temp} \PYG{p}{;}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{datosPlanos} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(} \PYG{n}{strstr} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}Normal\PYGZdq{}} \PYG{p}{)} \PYG{o}{!=} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{datosPlanos} \PYG{o}{=} \PYG{n}{obtainPointFromString} \PYG{p}{(} \PYG{n}{temporalBuffer} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{temp} \PYG{p}{;}
+\PYG{n}{temp} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{datosPlanos} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{Fin\PYGZus{}Ventana} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{PQfinish} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}main\PYGZus{}quit} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{exit} \PYG{p}{(} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n+nf}{Prepara\PYGZus{}Grafico\PYGZus{}Normal} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{desviacion} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media\PYGZus{}pred} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{desviacion\PYGZus{}pred} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{width} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{comando} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{o}{=} \PYG{n}{fopen} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}EX4010\PYGZhy{}n.gp\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}w\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

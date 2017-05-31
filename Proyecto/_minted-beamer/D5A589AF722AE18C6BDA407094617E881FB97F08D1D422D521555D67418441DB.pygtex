@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}time\PYGZus{}t} \PYG{k+kt}{time\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}clockid\PYGZus{}t} \PYG{k+kt}{clockid\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{\PYGZus{}\PYGZus{}timer\PYGZus{}t} \PYG{k+kt}{timer\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{long} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{k+kt}{size\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{ulong} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{short} \PYG{k+kt}{int} \PYG{n}{ushort} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{uint} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{k+kt}{int8\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}QI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{k+kt}{int16\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}HI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{k+kt}{int32\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}SI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{int} \PYG{k+kt}{int64\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}DI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{u\PYGZus{}int8\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}QI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{u\PYGZus{}int16\PYGZus{}t} \PYG{n+nf}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}mode\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}HI\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

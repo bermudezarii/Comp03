@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Esquina inferior izquierda (\PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Esquina inferior derecha (\PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{5} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Esquina superior derecha (\PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{6} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{7} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{8} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{printf} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}Esquina superior izquierda (\PYGZpc{}LF, \PYGZpc{}LF, \PYGZpc{}LF) }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{9} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{,} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{11} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{Point3D} \PYG{n}{vertex} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Point2D} \PYG{n}{squashedVertex} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Object} \PYG{n}{temp} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{x0y0z0} \PYG{p}{;}
+\PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{x} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{y} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{x0y0z0} \PYG{p}{.} \PYG{n}{z} \PYG{o}{=} \PYG{n}{data} \PYG{p}{[} \PYG{n}{inicioPlano} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{n}{x1y1z1} \PYG{p}{;}
+\end{Verbatim}

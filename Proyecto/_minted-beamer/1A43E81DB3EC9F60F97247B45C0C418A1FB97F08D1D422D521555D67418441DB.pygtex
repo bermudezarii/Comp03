@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{n}{opciones\PYGZus{}frame} \PYG{p}{[} \PYG{l+m+mi}{200} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{N\PYGZus{}preguntas\PYGZus{}ejercicio} \PYG{p}{,} \PYG{n}{N\PYGZus{}validas} \PYG{p}{;}
+\PYG{n}{materia} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}editable\PYGZus{}get\PYGZus{}chars} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}EDITABLE} \PYG{p}{(} \PYG{n}{EN\PYGZus{}materia} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{actual} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{actual} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{tema\PYGZus{}actual} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{actual} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{tema\PYGZus{}actual} \PYG{p}{,} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{actual} \PYG{p}{]} \PYG{p}{.} \PYG{n}{tema} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{PG\PYGZus{}command} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}SELECT descripcion\PYGZus{}materia from bd\PYGZus{}materias where codigo\PYGZus{}materia = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and codigo\PYGZus{}tema = \PYGZsq{}\PYGZpc{}s\PYGZsq{} and codigo\PYGZus{}subtema = \PYGZsq{}\PYGZpc{}s\PYGZsq{}\PYGZdq{}} \PYG{p}{,}
+\PYG{n}{materia} \PYG{p}{,} \PYG{n}{tema\PYGZus{}actual} \PYG{p}{,} \PYG{n}{CODIGO\PYGZus{}VACIO} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{res\PYGZus{}tema} \PYG{o}{=} \PYG{n}{PQEXEC} \PYG{p}{(} \PYG{n}{DATABASE} \PYG{p}{,} \PYG{n}{PG\PYGZus{}command} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strcpy} \PYG{p}{(} \PYG{n}{tema\PYGZus{}descripcion} \PYG{p}{,} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res\PYGZus{}tema} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

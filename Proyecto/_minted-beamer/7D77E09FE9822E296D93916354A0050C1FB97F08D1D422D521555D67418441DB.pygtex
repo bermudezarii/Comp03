@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Atom} \PYG{n}{name} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{card32} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XFontProp} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{n}{XExtData} \PYG{o}{*} \PYG{n}{ext\PYGZus{}data} \PYG{p}{;}
+\PYG{n}{Font} \PYG{n}{fid} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{direction} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{min\PYGZus{}char\PYGZus{}or\PYGZus{}byte2} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{max\PYGZus{}char\PYGZus{}or\PYGZus{}byte2} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{min\PYGZus{}byte1} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{max\PYGZus{}byte1} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{all\PYGZus{}chars\PYGZus{}exist} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{n}{default\PYGZus{}char} \PYG{p}{;}
+\end{Verbatim}

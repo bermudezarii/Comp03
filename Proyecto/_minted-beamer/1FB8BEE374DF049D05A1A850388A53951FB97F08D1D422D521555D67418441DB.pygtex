@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}align} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{pthread\PYGZus{}barrier\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{union}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{\PYGZus{}\PYGZus{}size} \PYG{p}{[} \PYG{l+m+mi}{4} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}align} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{pthread\PYGZus{}barrierattr\PYGZus{}t} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{XID} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{Mask} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{Atom} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{VisualID} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{Time} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{n}{XID} \PYG{n}{Window} \PYG{p}{;}
+\end{Verbatim}

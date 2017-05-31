@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{\PYGZus{}SC\PYGZus{}SIGNALS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}SPAWN} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}SPORADIC\PYGZus{}SERVER} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}THREAD\PYGZus{}SPORADIC\PYGZus{}SERVER} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}SYSTEM\PYGZus{}DATABASE} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}SYSTEM\PYGZus{}DATABASE\PYGZus{}R} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}TIMEOUTS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}TYPED\PYGZus{}MEMORY\PYGZus{}OBJECTS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}USER\PYGZus{}GROUPS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}USER\PYGZus{}GROUPS\PYGZus{}R} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}2\PYGZus{}PBS} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}2\PYGZus{}PBS\PYGZus{}ACCOUNTING} \PYG{p}{,}
+\PYG{n}{\PYGZus{}SC\PYGZus{}2\PYGZus{}PBS\PYGZus{}LOCATE} \PYG{p}{,}
+\end{Verbatim}

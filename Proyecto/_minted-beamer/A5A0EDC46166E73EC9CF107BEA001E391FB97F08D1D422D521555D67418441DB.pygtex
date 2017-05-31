@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Dificultad\PYGZus{}vs\PYGZus{}Discriminacion} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.35} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}figure\PYGZcb{}[H]}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}centering}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}includegraphics[scale=1.0]\PYGZob{}EX4010p.pdf\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}caption*\PYGZob{}textbf\PYGZob{}Cruce entre Coeficiente de Discriminación (\PYGZdl{}r\PYGZus{}\PYGZob{}pb\PYGZcb{}\PYGZdl{}) y Dificultad (\PYGZdl{}p\PYGZdl{})\PYGZcb{}\PYGZcb{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}end\PYGZob{}figure\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}begin\PYGZob{}figure\PYGZcb{}[H]}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}centering}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}includegraphics[scale=1.0]\PYGZob{}EX4010c.pdf\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{hilera\PYGZus{}LATEX} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}caption*\PYGZob{}textbf\PYGZob{}Líneas de Contorno del Cruce entre Coeficiente de Discriminación (\PYGZdl{}r\PYGZus{}\PYGZob{}pb\PYGZcb{}\PYGZdl{}) y Dificultad (\PYGZdl{}p\PYGZdl{})\PYGZcb{}\PYGZcb{}\PYGZdq{}} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

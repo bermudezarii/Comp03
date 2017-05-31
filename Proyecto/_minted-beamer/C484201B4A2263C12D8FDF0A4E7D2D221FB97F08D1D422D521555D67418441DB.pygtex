@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{XResizeRequestEvent} \PYG{n}{xresizerequest} \PYG{p}{;}
+\PYG{n}{XConfigureRequestEvent} \PYG{n}{xconfigurerequest} \PYG{p}{;}
+\PYG{n}{XCirculateEvent} \PYG{n}{xcirculate} \PYG{p}{;}
+\PYG{n}{XCirculateRequestEvent} \PYG{n}{xcirculaterequest} \PYG{p}{;}
+\PYG{n}{XPropertyEvent} \PYG{n}{xproperty} \PYG{p}{;}
+\PYG{n}{XSelectionClearEvent} \PYG{n}{xselectionclear} \PYG{p}{;}
+\PYG{n}{XSelectionRequestEvent} \PYG{n}{xselectionrequest} \PYG{p}{;}
+\PYG{n}{XSelectionEvent} \PYG{n}{xselection} \PYG{p}{;}
+\PYG{n}{XColormapEvent} \PYG{n}{xcolormap} \PYG{p}{;}
+\PYG{n}{XClientMessageEvent} \PYG{n}{xclient} \PYG{p}{;}
+\PYG{n}{XMappingEvent} \PYG{n}{xmapping} \PYG{p}{;}
+\PYG{n}{XErrorEvent} \PYG{n}{xerror} \PYG{p}{;}
+\PYG{n}{XKeymapEvent} \PYG{n}{xkeymap} \PYG{p}{;}
+\end{Verbatim}

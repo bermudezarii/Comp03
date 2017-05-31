@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XDrawRectangles} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{n}{GC} \PYG{p}{,}
+\PYG{n}{XRectangle} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XDrawSegments} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Drawable} \PYG{p}{,}
+\PYG{n}{GC} \PYG{p}{,}
+\PYG{n}{XSegment} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\end{Verbatim}

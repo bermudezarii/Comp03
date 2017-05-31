@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n}{areThereDraftPlanes} \PYG{o}{=} \PYG{n}{draftPlanesFound} \PYG{p}{(} \PYG{n}{pos} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{areThereDraftPlanes} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{pos} \PYG{o}{=} \PYG{n}{ftell} \PYG{p}{(} \PYG{n}{file} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{arrayDraftPlanes} \PYG{o}{=} \PYG{n}{readDraftPlanes} \PYG{p}{(} \PYG{n}{currentTypeObjectReading} \PYG{p}{,} \PYG{n}{pos} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{numberDraftPlanes} \PYG{p}{,} \PYG{o}{\PYGZam{}} \PYG{n}{posAfterReading} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{fseek} \PYG{p}{(} \PYG{n}{file} \PYG{p}{,} \PYG{n}{posAfterReading} \PYG{p}{,} \PYG{n}{SEEK\PYGZus{}SET} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{createObjectFromData} \PYG{p}{(} \PYG{n}{valuesRead} \PYG{p}{,} \PYG{n}{currentTypeObjectReading} \PYG{p}{,} \PYG{n}{indexValuesRead} \PYG{p}{,} \PYG{n}{arrayPlaneCuts} \PYG{p}{,} \PYG{n}{arrayTextures} \PYG{p}{,} \PYG{n}{arrayDraftPlanes} \PYG{p}{,} \PYG{n}{numberPlaneCuts} \PYG{p}{,} \PYG{n}{numberTextures} \PYG{p}{,} \PYG{n}{numberDraftPlanes} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{free} \PYG{p}{(} \PYG{n}{valuesRead} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{fclose} \PYG{p}{(} \PYG{n}{file} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

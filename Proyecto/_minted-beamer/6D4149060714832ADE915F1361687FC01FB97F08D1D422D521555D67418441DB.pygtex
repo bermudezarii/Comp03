@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{XID} \PYG{n}{resourceid} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{serial} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{error\PYGZus{}code} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{request\PYGZus{}code} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{char} \PYG{n}{minor\PYGZus{}code} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XErrorEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{serial} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{send\PYGZus{}event} \PYG{p}{;}
+\PYG{n}{Display} \PYG{o}{*} \PYG{n}{display} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{window} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XAnyEvent} \PYG{p}{;}
+\end{Verbatim}

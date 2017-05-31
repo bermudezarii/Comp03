@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}SP\PYGZus{}examen\PYGZus{}activate} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}TG\PYGZus{}A\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}TG\PYGZus{}B\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}TG\PYGZus{}C\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}TG\PYGZus{}D\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}TG\PYGZus{}E\PYGZus{}toggled} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{on\PYGZus{}WN\PYGZus{}ex4010\PYGZus{}destroy} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Prepara\PYGZus{}Grafico\PYGZus{}Normal} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{desviacion} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{media\PYGZus{}pred} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{desviacion\PYGZus{}pred} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{width} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Prepara\PYGZus{}Grafico\PYGZus{}Pastel} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Prepara\PYGZus{}Histograma\PYGZus{}Notas} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Prepara\PYGZus{}Histograma\PYGZus{}Subtemas} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Prepara\PYGZus{}Histograma\PYGZus{}Temas} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{prepara\PYGZus{}opciones} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{opciones\PYGZus{}frame} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{k} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

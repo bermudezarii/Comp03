@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{timeval} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}timeout} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{pselect} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}nfds} \PYG{p}{,} \PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}readfds} \PYG{p}{,}
+\PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}writefds} \PYG{p}{,}
+\PYG{n}{fd\PYGZus{}set} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}exceptfds} \PYG{p}{,}
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{timespec} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}timeout} \PYG{p}{,}
+\PYG{k}{const} \PYG{n}{\PYGZus{}\PYGZus{}sigset\PYGZus{}t} \PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}restrict} \PYG{n}{\PYGZus{}\PYGZus{}sigmask} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}extension\PYGZus{}\PYGZus{}}
+\PYG{k}{extern} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{gnu\PYGZus{}dev\PYGZus{}major} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}dev} \PYG{p}{)}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}const\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}extension\PYGZus{}\PYGZus{}}
+\PYG{k}{extern} \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n+nf}{gnu\PYGZus{}dev\PYGZus{}minor} \PYG{p}{(} \PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}dev} \PYG{p}{)}
+\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}nothrow\PYGZus{}\PYGZus{}} \PYG{p}{,} \PYG{n}{\PYGZus{}\PYGZus{}leaf\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}} \PYG{p}{(} \PYG{p}{(} \PYG{n}{\PYGZus{}\PYGZus{}const\PYGZus{}\PYGZus{}} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{\PYGZus{}\PYGZus{}extension\PYGZus{}\PYGZus{}}
+\end{Verbatim}

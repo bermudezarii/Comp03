@@ -1,36 +1,88 @@
-    int m = 754974721, N, t[1 << 22], a, *p, i, e = 1 << 22, j, s, b, c, U;
-    f (d)
-    {
-      for (s = 1 << 23; s; s /= 2, d = d * 1LL * d % m)
-        if (s < N)
-          for (p = t; p < t + N; p += s)
-        for (i = s, c = 1; i; i--)
-          b = *p + p[s], p[s] = (m + *p - p[s]) *
-            1LL * c % m, *p++ = b % m, c = c * 1LL * d % m;
-      for (j = 0; i < N - 1;)
-        {
-          for (s = N / 2; !((j ^= s) & s); s /= 2);
-          if (++i < j)
-        a = t[i], t[i] = t[j], t[j] = a;
-        }
-    }
-    main ()
-    {
-      *t = 2;
-      U = N = 1;
-      while (e /= 2)
-        {
-          N *= 2;
-          U = U * 1LL * (m + 1) / 2 % m;
-          f (362);
-          for (p = t; p < t + N;)
-        *p++ = (*p * 1LL ** p % m) * U % m;
-          f (415027540);
-          for (a = 0, p = t; p < t + N;)
-        a += (6972593 & e ? 2 : 1) ** p, *p++ = a % 10, a /= 10;
-        }
-      while (!*--p);
-      t[0]--;
-      while (p >= t)
-        printf ("%d", *p--);
-    }
+#                    include <stdio.h>
+#            define     MAin   printf("%d\n"
+#            define     mAIN  return 0
+#            define     MaiN   {static
+#            define     mAlN    ) {if(
+#            define     MA1N     char*
+#            define     MAiN      (!!(
+#            define     mAiN      atoi
+#            define     mAln      &1<<
+#            define     MAlN      !=3)
+#            define     MAln       )&&
+#            define     MAIN       int
+#            define     maln       --,
+#            define     Maln        <<
+#            define     MaIn        ++
+#            define     MalN        |=
+#            define     MA1n        ||
+#            define     malN        -1
+#            define     maIN         *
+#            define     MaIN         =
+#            define     ma1N         )
+#            define     Ma1N         (
+#            define     Main         ;
+#            define     mA1n         !
+#            define     MAIn         }
+#            define     mA1N         ,
+                    MAIN      mAIn
+              Ma1N      MAIN
+              ma1N      mA1N
+              mAiN      Ma1N
+        MA1N ma1N mA1N maIn MaIN malN mA1N      ma1n
+        mA1N        maiN      Main 
+        MAIN      main Ma1N MAIN Ma1n mA1N MA1N maIN
+        mAin      mAlN      Ma1n      MAlN
+        mAIN      Main      maIn      MaIn
+         mA1N Ma1n maln mAin MaIn     Main      maIn
+         MaIN      mAiN     Ma1N      Ma1N
+         Ma1n      maln     maIN      mAin
+         MaIn      ma1N     ma1N      Main
+         ma1n      MaIN     mAiN      Ma1N
+         Ma1N      Ma1n     maln      maIN
+         mAin      MaIn     ma1N      ma1N
+         Main      mAIn     Ma1N      mAIn
+         Ma1N      mAIn     Ma1N      mAIn
+         Ma1N      mAIn      Ma1N mAIn      Ma1N mAIn
+    Ma1N      mAIn       Ma1N mAIn      Ma1N mAIn
+      Ma1N    mAIn       Ma1N   mAIn  Ma1N   mAIn
+        Ma1N mAIn Ma1N       mAIn      Ma1N  mAIn
+       Ma1N        Ma1n    ma1N
+       ma1N        ma1N    ma1N
+    ma1N ma1N ma1N ma1N        ma1N    ma1N
+    ma1N     ma1N        ma1N    ma1N
+    ma1N     ma1N        Main    MAin
+    mA1N maiN ma1N Main mAIN Main      MAIn    MAIN
+    mAIn  Ma1N      MAIN       mAin    ma1N
+    MaiN   MAIN    main        MaIN        malN
+    Main    main    MaIn     Main      mAIN
+    mA1N     maiN        MalN      Ma1N    MAiN
+    maIn      mAln      main           ma1N
+    MA1n       Ma1N    MAiN          ma1n
+    mAln        main  ma1N           MA1n
+    mAin     MAln            Ma1N
+    mA1n        MAiN  ma1n           mAln
+    main        MAln  mAin           ma1N
+    ma1N     ma1N    MAln Ma1N mA1n MAiN maIn
+    mAln     main    MAln
+    Ma1N     MAiN    ma1n
+    mAln      main ma1N MA1n mAin MAln
+    Ma1N      mA1n    MAiN
+    ma1n      mAln    main
+    MAln      mAin    ma1N
+    ma1N      ma1N    ma1N
+    ma1N      ma1N    Maln
+    main      mA1N    MAiN
+    ma1n      mAln    main
+    MAln      mAin    ma1N
+    MA1n      MAiN    maIn
+    mAln       main        MAln
+    Ma1N         MAiN      ma1n
+    mAln     main ma1N MA1n
+    mAin          MAln
+    Ma1N          mA1n
+    MAiN          ma1n
+    mAln          main
+    MAln          mAin
+    ma1N          ma1N
+    ma1N          ma1N
+    Main          MAIn

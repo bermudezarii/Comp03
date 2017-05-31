@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{Cambio\PYGZus{}header\PYGZus{}encoger} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Cambio\PYGZus{}header\PYGZus{}verbatim} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Cambio\PYGZus{}no\PYGZus{}actualizar} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Cambio\PYGZus{}slide} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Cambio\PYGZus{}verbatim} \PYG{p}{(} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{widget} \PYG{p}{,} \PYG{n}{gpointer} \PYG{n}{user\PYGZus{}data} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Cambio\PYGZus{}verbatim\PYGZus{}opcion} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Carga\PYGZus{}preguntas\PYGZus{}examen} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n+nf}{CDF} \PYG{p}{(} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{X} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Media} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Desv} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Color\PYGZus{}ajustes} \PYG{p}{(} \PYG{k+kt}{int} \PYG{n}{k} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Color\PYGZus{}Fila} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{16} \PYG{p}{]} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{colores\PYGZus{}pastel} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Connect\PYGZus{}Widgets} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{Construye\PYGZus{}versiones} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{examen} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010\PYGZhy{}h.eps\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{system} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}rm EX4010y.dat\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Prepara\PYGZus{}Histograma\PYGZus{}Temas} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{maximo} \PYG{p}{;}
+\PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}gnuplot} \PYG{p}{,} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Datos} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{Hilera\PYGZus{}Antes} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{Hilera\PYGZus{}Despues} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{1000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{gchar} \PYG{o}{*} \PYG{n}{materia} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{comando} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{materia} \PYG{o}{=} \PYG{n}{gtk\PYGZus{}editable\PYGZus{}get\PYGZus{}chars} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}EDITABLE} \PYG{p}{(} \PYG{n}{EN\PYGZus{}materia} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

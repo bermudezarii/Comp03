@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{n}{KeySym} \PYG{n+nf}{XStringToKeysym} \PYG{p}{(}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{long} \PYG{n+nf}{XMaxRequestSize} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{long} \PYG{n+nf}{XExtendedMaxRequestSize} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{XResourceManagerString} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*}
+\end{Verbatim}

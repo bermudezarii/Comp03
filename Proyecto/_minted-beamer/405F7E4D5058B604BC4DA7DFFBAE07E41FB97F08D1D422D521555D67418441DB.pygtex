@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{n}{gtk\PYGZus{}range\PYGZus{}set\PYGZus{}range} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}RANGE} \PYG{p}{(} \PYG{n}{SC\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{,} \PYG{p}{(} \PYG{n}{gdouble} \PYG{p}{)} \PYG{l+m+mf}{1.0} \PYG{p}{,} \PYG{p}{(} \PYG{n}{gdouble} \PYG{p}{)} \PYG{n}{N\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}range\PYGZus{}set\PYGZus{}value} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}RANGE} \PYG{p}{(} \PYG{n}{SC\PYGZus{}preguntas} \PYG{p}{)} \PYG{p}{,} \PYG{p}{(} \PYG{n}{gdouble} \PYG{p}{)} \PYG{l+m+mf}{1.0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{media} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{n}{Nota\PYGZus{}minima} \PYG{o}{=} \PYG{l+m+mf}{100.0} \PYG{p}{;}
+\PYG{n}{Nota\PYGZus{}maxima} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{n}{Nota\PYGZus{}minima\PYGZus{}ajustada} \PYG{o}{=} \PYG{l+m+mf}{100.0} \PYG{p}{;}
+\PYG{n}{Nota\PYGZus{}maxima\PYGZus{}ajustada} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{p}{;}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{N\PYGZus{}estudiantes} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{nota} \PYG{o}{=} \PYG{n}{atof} \PYG{p}{(} \PYG{n}{PQgetvalue} \PYG{p}{(} \PYG{n}{res} \PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{media} \PYG{o}{+=} \PYG{n}{nota} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{nota} \PYG{o}{\PYGZlt{}} \PYG{n}{Nota\PYGZus{}minima} \PYG{p}{)} \PYG{n}{Nota\PYGZus{}minima} \PYG{o}{=} \PYG{n}{nota} \PYG{p}{;}
+\end{Verbatim}

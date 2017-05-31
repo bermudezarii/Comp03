@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Tabla\PYGZus{}Datos\PYGZus{}Generales} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{institucion} \PYG{p}{,} \PYG{n}{escuela} \PYG{p}{,} \PYG{n}{programa} \PYG{p}{,} \PYG{n}{materia\PYGZus{}descripcion} \PYG{p}{,} \PYG{n}{profesor} \PYG{p}{,} \PYG{n}{descripcion} \PYG{p}{,} \PYG{n}{fecha} \PYG{p}{,} \PYG{n}{codigo} \PYG{p}{,} \PYG{n}{media\PYGZus{}real} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}real} \PYG{p}{,} \PYG{n}{alfa} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.15} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Analisis\PYGZus{}General} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{alfa} \PYG{p}{,} \PYG{n}{Rpb} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.175} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{width} \PYG{o}{=} \PYG{n}{media\PYGZus{}real} \PYG{o}{\PYGZhy{}} \PYG{n}{Nota\PYGZus{}minima} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{p}{(} \PYG{n}{Nota\PYGZus{}maxima} \PYG{o}{\PYGZhy{}} \PYG{n}{media\PYGZus{}real} \PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{width} \PYG{p}{)} \PYG{n}{width} \PYG{o}{=} \PYG{n}{Nota\PYGZus{}maxima} \PYG{o}{\PYGZhy{}} \PYG{n}{media\PYGZus{}real} \PYG{p}{;}
+\PYG{n}{Prepara\PYGZus{}Histograma\PYGZus{}Notas} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.22} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{gtk\PYGZus{}events\PYGZus{}pending} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}main\PYGZus{}iteration} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{Prepara\PYGZus{}Grafico\PYGZus{}Normal} \PYG{p}{(} \PYG{n}{media\PYGZus{}real} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}real} \PYG{p}{,} \PYG{n}{media\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{desviacion\PYGZus{}prediccion} \PYG{p}{,} \PYG{n}{width} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}progress\PYGZus{}bar\PYGZus{}set\PYGZus{}fraction} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}PROGRESS\PYGZus{}BAR} \PYG{p}{(} \PYG{n}{PB\PYGZus{}analisis} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mf}{0.25} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

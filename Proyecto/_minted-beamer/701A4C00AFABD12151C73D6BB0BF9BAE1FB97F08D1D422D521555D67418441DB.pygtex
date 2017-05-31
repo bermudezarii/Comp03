@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{closedir} \PYG{p}{(} \PYG{n}{pdir} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{pdir} \PYG{o}{=} \PYG{n}{opendir} \PYG{p}{(} \PYG{n}{Directorio} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{pdir} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{mkdir} \PYG{p}{(} \PYG{n}{Directorio} \PYG{p}{,} \PYG{n}{S\PYGZus{}IRWXU} \PYG{o}{|} \PYG{n}{S\PYGZus{}IRWXG} \PYG{o}{|} \PYG{n}{S\PYGZus{}IROTH} \PYG{o}{|} \PYG{n}{S\PYGZus{}IXOTH} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{n}{closedir} \PYG{p}{(} \PYG{n}{pdir} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Quita\PYGZus{}espacios} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{hilera} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{;}
+\PYG{n}{i} \PYG{o}{=} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;}
+\end{Verbatim}

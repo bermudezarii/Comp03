@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{serial} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{send\PYGZus{}event} \PYG{p}{;}
+\PYG{n}{Display} \PYG{o}{*} \PYG{n}{display} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{event} \PYG{p}{;}
+\PYG{n}{Window} \PYG{n}{window} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{override\PYGZus{}redirect} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{n}{XMapEvent} \PYG{p}{;}
+\PYG{k}{typedef} \PYG{k}{struct} \PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{type} \PYG{p}{;}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{n}{serial} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{send\PYGZus{}event} \PYG{p}{;}
+\end{Verbatim}

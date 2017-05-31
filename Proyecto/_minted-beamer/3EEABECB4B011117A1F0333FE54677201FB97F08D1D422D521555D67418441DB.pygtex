@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XGetErrorText} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int} \PYG{p}{,}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{p}{,}
+\PYG{k+kt}{int}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n+nf}{XGetFontProperty} \PYG{p}{(}
+\PYG{n}{XFontStruct} \PYG{o}{*} \PYG{p}{,}
+\PYG{n}{Atom} \PYG{p}{,}
+\PYG{k+kt}{unsigned} \PYG{k+kt}{long} \PYG{o}{*}
+\PYG{p}{)} \PYG{p}{;}
+\PYG{k}{extern} \PYG{k+kt}{int} \PYG{n}{XGetGCValues} \PYG{p}{(}
+\PYG{n}{Display} \PYG{o}{*} \PYG{p}{,}
+\end{Verbatim}

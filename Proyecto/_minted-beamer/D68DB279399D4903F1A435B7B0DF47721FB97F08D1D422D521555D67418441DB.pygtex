@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{PREGUNTA} \PYG{o}{*} \PYG{n}{resumen\PYGZus{}tema} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{Banderas} \PYG{p}{[} \PYG{l+m+mi}{6} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{colores} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}green\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}blue\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}cyan\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}yellow\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}violet\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{banderas} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}FL\PYGZhy{}verde.jpg\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}FL\PYGZhy{}azul.jpg\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}FL\PYGZhy{}cyan.jpg\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}FL\PYGZhy{}amarilla.jpg\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}FL\PYGZhy{}roja.jpg\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}fix.png\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{Niveles\PYGZus{}Discriminacion} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{Niveles\PYGZus{}Dificultad} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{Frecuencia\PYGZus{}total} \PYG{p}{[} \PYG{l+m+mi}{11} \PYG{p}{]} \PYG{p}{[} \PYG{l+m+mi}{21} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{Beamer\PYGZus{}aspectratio} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}43\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}169\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}1610\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}149\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}141\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}54\PYGZdq{}} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}32\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{n}{PGconn} \PYG{o}{*} \PYG{n}{DATABASE} \PYG{p}{;}
+\PYG{n}{GtkBuilder} \PYG{o}{*} \PYG{n}{builder} \PYG{p}{;}
+\PYG{n}{GError} \PYG{o}{*} \PYG{n}{error} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{window1} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{window2} \PYG{o}{=} \PYG{n+nb}{NULL} \PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{2} \PYG{p}{]} \PYG{o}{||} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{9} \PYG{p}{]} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}rowcolor\PYGZob{}yellow\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{||} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{6} \PYG{p}{]} \PYG{o}{||} \PYG{n}{flags} \PYG{p}{[} \PYG{l+m+mi}{3} \PYG{p}{]} \PYG{p}{)}
+\PYG{n}{fprintf} \PYG{p}{(} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}rowcolor}\PYG{p}{\PYGZob{}}\PYG{n}{blue}\PYG{p}{\PYGZcb{}}\PYG{err}{\PYGZbs{}}\PYG{n}{n}\PYG{l+s}{\PYGZdq{} ) ;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Lista\PYGZus{}de\PYGZus{}Preguntas} \PYG{p}{(} \PYG{k+kt}{FILE} \PYG{o}{*} \PYG{n}{Archivo\PYGZus{}Latex} \PYG{p}{,} \PYG{n}{GtkWidget} \PYG{o}{*} \PYG{n}{PB} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{base} \PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{limite} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{actual} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{ejercicio\PYGZus{}actual} \PYG{p}{[} \PYG{l+m+mi}{7} \PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00000\PYGZdq{}} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{hilera\PYGZus{}antes} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{,} \PYG{n}{hilera\PYGZus{}despues} \PYG{p}{[} \PYG{l+m+mi}{3000} \PYG{p}{]} \PYG{p}{;}
+\end{Verbatim}

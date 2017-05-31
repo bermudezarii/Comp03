@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{PQclear} \PYG{p}{(} \PYG{n}{res} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{Actualiza\PYGZus{}Porcentajes} \PYG{p}{(} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{n}{PG\PYGZus{}command} \PYG{p}{[} \PYG{l+m+mi}{2000} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{PGresult} \PYG{o}{*} \PYG{n}{res} \PYG{p}{,} \PYG{o}{*} \PYG{n}{res\PYGZus{}aux} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j} \PYG{p}{,} \PYG{n}{k} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{N\PYGZus{}estudiantes} \PYG{p}{;}
+\PYG{k+kt}{long} \PYG{k+kt}{double} \PYG{n}{Porcentaje} \PYG{p}{,} \PYG{n}{Porcentaje\PYGZus{}ajustado} \PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{examen} \PYG{p}{[} \PYG{l+m+mi}{10} \PYG{p}{]} \PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{N\PYGZus{}correctas} \PYG{p}{,} \PYG{n}{N\PYGZus{}ajustado} \PYG{p}{,} \PYG{n}{M\PYGZus{}ajustado} \PYG{p}{;}
+\PYG{n}{k} \PYG{o}{=} \PYG{p}{(} \PYG{k+kt}{int} \PYG{p}{)} \PYG{n}{gtk\PYGZus{}spin\PYGZus{}button\PYGZus{}get\PYGZus{}value\PYGZus{}as\PYGZus{}int} \PYG{p}{(} \PYG{n}{SP\PYGZus{}examen} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{sprintf} \PYG{p}{(} \PYG{n}{examen} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZpc{}05d\PYGZdq{}} \PYG{p}{,} \PYG{n}{k} \PYG{p}{)} \PYG{p}{;}
+\end{Verbatim}

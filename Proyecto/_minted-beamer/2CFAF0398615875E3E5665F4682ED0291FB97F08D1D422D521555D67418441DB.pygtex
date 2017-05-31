@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}no\PYGZus{}actualiza} \PYG{p}{,} \PYG{n}{FALSE} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{CK\PYGZus{}no\PYGZus{}actualiza} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{k} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{actualizar} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{else}
+\PYG{p}{\PYGZob{}}
+\PYG{n}{gtk\PYGZus{}widget\PYGZus{}set\PYGZus{}sensitive} \PYG{p}{(} \PYG{n}{GTK\PYGZus{}WIDGET} \PYG{p}{(} \PYG{n}{CK\PYGZus{}no\PYGZus{}actualiza} \PYG{p}{)} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{previo} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{n}{gtk\PYGZus{}toggle\PYGZus{}button\PYGZus{}set\PYGZus{}active} \PYG{p}{(} \PYG{n}{CK\PYGZus{}no\PYGZus{}actualiza} \PYG{p}{,} \PYG{n}{TRUE} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{preguntas} \PYG{p}{[} \PYG{n}{k} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{p}{.} \PYG{n}{actualizar} \PYG{p}{)}
+\end{Verbatim}
