@@ -1,1458 +1,1231 @@
 
-static char * user_format ; 
-static struct cmt_fmt_map { 
-const char * name ; 
-enum cmit_fmt format ; 
-int is_tformat ; 
-int expand_tabs_in_log ; 
-int is_alias ; 
-const char * user_format ; 
-} * commit_formats ; 
-static size_t builtin_formats_len ; 
-static size_t commit_formats_len ; 
-static size_t commit_formats_alloc ; 
-static struct cmt_fmt_map * find_commit_format ( const char * sought ) ; 
-int commit_format_is_empty ( enum cmit_fmt fmt ) 
+
+
+ 
+
+ 
+
+ 
+enum crlf_action { 
+CRLF_UNDEFINED , 
+CRLF_BINARY , 
+CRLF_TEXT , 
+CRLF_TEXT_INPUT , 
+CRLF_TEXT_CRLF , 
+CRLF_AUTO , 
+CRLF_AUTO_INPUT , 
+CRLF_AUTO_CRLF 
+} ; 
+struct text_stat { 
+unsigned nul , lonecr , lonelf , crlf ; 
+unsigned printable , nonprintable ; 
+} ; 
+static void gather_stats ( const char * buf , unsigned long size , struct text_stat * stats ) 
 { 
-return fmt == CMIT_FMT_USERFORMAT && ! * user_format ; 
+unsigned long i ; 
+memset ( stats , 0 , sizeof ( * stats ) ) ; 
+for ( i = 0 ; i < size ; i ++ ) { 
+unsigned char c = buf [ i ] ; 
+if ( c == '\r' ) { 
+if ( i + 1 < size && buf [ i + 1 ] == '\n' ) { 
+stats -> crlf ++ ; 
+i ++ ; 
+} else 
+stats -> lonecr ++ ; 
+continue ; 
 } 
-static void save_user_format ( struct rev_info * rev , const char * cp , int is_tformat ) 
-{ 
-free ( user_format ) ; 
-user_format = xstrdup ( cp ) ; 
-if ( is_tformat ) 
-rev -> use_terminator = 1 ; 
-rev -> commit_format = CMIT_FMT_USERFORMAT ; 
+if ( c == '\n' ) { 
+stats -> lonelf ++ ; 
+continue ; 
 } 
-static int git_pretty_formats_config ( const char * var , const char * value , void * cb ) 
+if ( c == 127 ) 
+stats -> nonprintable ++ ; 
+else if ( c < 32 ) { 
+switch ( c ) { 
+case '\b' : case '\t' : case '\033' : case '\014' : 
+stats -> printable ++ ; 
+break ; 
+case 0 : 
+stats -> nul ++ ; 
+default : 
+stats -> nonprintable ++ ; 
+} 
+} 
+else 
+stats -> printable ++ ; 
+} 
+if ( size >= 1 && buf [ size - 1 ] == '\032' ) 
+stats -> nonprintable -- ; 
+} 
+static int convert_is_binary ( unsigned long size , const struct text_stat * stats ) 
 { 
-struct cmt_fmt_map * commit_format = NULL ; 
-const char * name ; 
-const char * fmt ; 
-int i ; 
-if ( ! skip_prefix ( var , "pretty." , & name ) ) 
+if ( stats -> lonecr ) 
+return 1 ; 
+if ( stats -> nul ) 
+return 1 ; 
+if ( ( stats -> printable >> 7 ) < stats -> nonprintable ) 
+return 1 ; 
 return 0 ; 
-for ( i = 0 ; i < builtin_formats_len ; i ++ ) { 
-if ( ! strcmp ( commit_formats [ i ] . name , name ) ) 
+} 
+static unsigned int gather_convert_stats ( const char * data , unsigned long size ) 
+{ 
+struct text_stat stats ; 
+int ret = 0 ; 
+if ( ! data || ! size ) 
+return 0 ; 
+gather_stats ( data , size , & stats ) ; 
+if ( convert_is_binary ( size , & stats ) ) 
+ret |=  0x4  ; 
+if ( stats . crlf ) 
+ret |=  0x2  ; 
+if ( stats . lonelf ) 
+ret |= CONVERT_STAT_BITS_TXT_LF ; 
+return ret ; 
+} 
+static const char * gather_convert_stats_ascii ( const char * data , unsigned long size ) 
+{ 
+unsigned int convert_stats = gather_convert_stats ( data , size ) ; 
+if ( convert_stats &  0x4  ) 
+return "-text" ; 
+switch ( convert_stats ) { 
+case CONVERT_STAT_BITS_TXT_LF : 
+return "lf" ; 
+case  0x2  : 
+return "crlf" ; 
+case CONVERT_STAT_BITS_TXT_LF |  0x2  : 
+return "mixed" ; 
+default : 
+return "none" ; 
+} 
+} 
+const char * get_cached_convert_stats_ascii ( const char * path ) 
+{ 
+const char * ret ; 
+unsigned long sz ; 
+void * data = read_blob_data_from_cache ( path , & sz ) ; 
+ret = gather_convert_stats_ascii ( data , sz ) ; 
+free ( data ) ; 
+return ret ; 
+} 
+const char * get_wt_convert_stats_ascii ( const char * path ) 
+{ 
+const char * ret = "" ; 
+struct strbuf sb = STRBUF_INIT ; 
+if ( strbuf_read_file ( & sb , path , 0 ) >= 0 ) 
+ret = gather_convert_stats_ascii ( sb . buf , sb . len ) ; 
+strbuf_release ( & sb ) ; 
+return ret ; 
+} 
+static int text_eol_is_crlf ( void ) 
+{ 
+if ( auto_crlf == AUTO_CRLF_TRUE ) 
+return 1 ; 
+else if ( auto_crlf == AUTO_CRLF_INPUT ) 
+return 0 ; 
+if ( core_eol == EOL_CRLF ) 
+return 1 ; 
+if ( core_eol == EOL_UNSET && EOL_NATIVE == EOL_CRLF ) 
+return 1 ; 
 return 0 ; 
 } 
-for ( i = builtin_formats_len ; i < commit_formats_len ; i ++ ) { 
-if ( ! strcmp ( commit_formats [ i ] . name , name ) ) { 
-commit_format = & commit_formats [ i ] ; 
+static enum eol output_eol ( enum crlf_action crlf_action ) 
+{ 
+switch ( crlf_action ) { 
+case CRLF_BINARY : 
+return EOL_UNSET ; 
+case CRLF_TEXT_CRLF : 
+return EOL_CRLF ; 
+case CRLF_TEXT_INPUT : 
+return EOL_LF ; 
+case CRLF_UNDEFINED : 
+case CRLF_AUTO_CRLF : 
+return EOL_CRLF ; 
+case CRLF_AUTO_INPUT : 
+return EOL_LF ; 
+case CRLF_TEXT : 
+case CRLF_AUTO : 
+return text_eol_is_crlf ( ) ? EOL_CRLF : EOL_LF ; 
+} 
+warning ( "Illegal crlf_action %d\n" , ( int ) crlf_action ) ; 
+return core_eol ; 
+} 
+static void check_safe_crlf ( const char * path , enum crlf_action crlf_action , 
+struct text_stat * old_stats , struct text_stat * new_stats , 
+enum safe_crlf checksafe ) 
+{ 
+if ( old_stats -> crlf && ! new_stats -> crlf ) { 
+if ( checksafe == SAFE_CRLF_WARN ) 
+warning ( _ ( "CRLF will be replaced by LF in %s.\n" 
+"The file will have its original line" 
+" endings in your working directory." ) , path ) ; 
+else 
+die ( _ ( "CRLF would be replaced by LF in %s." ) , path ) ; 
+} else if ( old_stats -> lonelf && ! new_stats -> lonelf ) { 
+if ( checksafe == SAFE_CRLF_WARN ) 
+warning ( _ ( "LF will be replaced by CRLF in %s.\n" 
+"The file will have its original line" 
+" endings in your working directory." ) , path ) ; 
+else 
+die ( _ ( "LF would be replaced by CRLF in %s" ) , path ) ; 
+} 
+} 
+static int has_cr_in_index ( const char * path ) 
+{ 
+unsigned long sz ; 
+void * data ; 
+int has_cr ; 
+data = read_blob_data_from_cache ( path , & sz ) ; 
+if ( ! data ) 
+return 0 ; 
+has_cr = memchr ( data , '\r' , sz ) != NULL ; 
+free ( data ) ; 
+return has_cr ; 
+} 
+static int will_convert_lf_to_crlf ( size_t len , struct text_stat * stats , 
+enum crlf_action crlf_action ) 
+{ 
+if ( output_eol ( crlf_action ) != EOL_CRLF ) 
+return 0 ; 
+if ( ! stats -> lonelf ) 
+return 0 ; 
+if ( crlf_action == CRLF_AUTO || crlf_action == CRLF_AUTO_INPUT || crlf_action == CRLF_AUTO_CRLF ) { 
+if ( stats -> lonecr || stats -> crlf ) 
+return 0 ; 
+if ( convert_is_binary ( len , stats ) ) 
+return 0 ; 
+} 
+return 1 ; 
+} 
+static int crlf_to_git ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , 
+enum crlf_action crlf_action , enum safe_crlf checksafe ) 
+{ 
+struct text_stat stats ; 
+char * dst ; 
+int convert_crlf_into_lf ; 
+if ( crlf_action == CRLF_BINARY || 
+( src && ! len ) ) 
+return 0 ; 
+if ( ! buf && ! src ) 
+return 1 ; 
+gather_stats ( src , len , & stats ) ; 
+convert_crlf_into_lf = ! ! stats . crlf ; 
+if ( crlf_action == CRLF_AUTO || crlf_action == CRLF_AUTO_INPUT || crlf_action == CRLF_AUTO_CRLF ) { 
+if ( convert_is_binary ( len , & stats ) ) 
+return 0 ; 
+if ( ( checksafe != SAFE_CRLF_RENORMALIZE ) && has_cr_in_index ( path ) ) 
+convert_crlf_into_lf = 0 ; 
+} 
+if ( ( checksafe == SAFE_CRLF_WARN || 
+( checksafe == SAFE_CRLF_FAIL ) ) && len ) { 
+struct text_stat new_stats ; 
+memcpy ( & new_stats , & stats , sizeof ( new_stats ) ) ; 
+if ( convert_crlf_into_lf ) { 
+new_stats . lonelf += new_stats . crlf ; 
+new_stats . crlf = 0 ; 
+} 
+if ( will_convert_lf_to_crlf ( len , & new_stats , crlf_action ) ) { 
+new_stats . crlf += new_stats . lonelf ; 
+new_stats . lonelf = 0 ; 
+} 
+check_safe_crlf ( path , crlf_action , & stats , & new_stats , checksafe ) ; 
+} 
+if ( ! convert_crlf_into_lf ) 
+return 0 ; 
+if ( ! buf ) 
+return 1 ; 
+if ( strbuf_avail ( buf ) + buf -> len < len ) 
+strbuf_grow ( buf , len - buf -> len ) ; 
+dst = buf -> buf ; 
+if ( crlf_action == CRLF_AUTO || crlf_action == CRLF_AUTO_INPUT || crlf_action == CRLF_AUTO_CRLF ) { 
+do { 
+unsigned char c = * src ++ ; 
+if ( c != '\r' ) 
+* dst ++ = c ; 
+} while ( -- len ) ; 
+} else { 
+do { 
+unsigned char c = * src ++ ; 
+if ( ! ( c == '\r' && ( 1 < len && * src == '\n' ) ) ) 
+* dst ++ = c ; 
+} while ( -- len ) ; 
+} 
+strbuf_setlen ( buf , dst - buf -> buf ) ; 
+return 1 ; 
+} 
+static int crlf_to_worktree ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , enum crlf_action crlf_action ) 
+{ 
+char * to_free = NULL ; 
+struct text_stat stats ; 
+if ( ! len || output_eol ( crlf_action ) != EOL_CRLF ) 
+return 0 ; 
+gather_stats ( src , len , & stats ) ; 
+if ( ! will_convert_lf_to_crlf ( len , & stats , crlf_action ) ) 
+return 0 ; 
+if ( src == buf -> buf ) 
+to_free = strbuf_detach ( buf , NULL ) ; 
+strbuf_grow ( buf , len + stats . lonelf ) ; 
+for ( ; ; ) { 
+const char * nl = memchr ( src , '\n' , len ) ; 
+if ( ! nl ) 
+break ; 
+if ( nl > src && nl [ - 1 ] == '\r' ) { 
+strbuf_add ( buf , src , nl + 1 - src ) ; 
+} else { 
+strbuf_add ( buf , src , nl - src ) ; 
+strbuf_addstr ( buf , "\r\n" ) ; 
+} 
+len -= nl + 1 - src ; 
+src = nl + 1 ; 
+} 
+strbuf_add ( buf , src , len ) ; 
+free ( to_free ) ; 
+return 1 ; 
+} 
+struct filter_params { 
+const char * src ; 
+unsigned long size ; 
+int fd ; 
+const char * cmd ; 
+const char * path ; 
+} ; 
+static int filter_buffer_or_fd ( int in , int out , void * data ) 
+{ 
+struct child_process child_process = CHILD_PROCESS_INIT ; 
+struct filter_params * params = ( struct filter_params * ) data ; 
+int write_err , status ; 
+const char * argv [ ] = { NULL , NULL } ; 
+struct strbuf cmd = STRBUF_INIT ; 
+struct strbuf path = STRBUF_INIT ; 
+struct strbuf_expand_dict_entry dict [ ] = { 
+{ "f" , NULL , } , 
+{ NULL , NULL , } , 
+} ; 
+sq_quote_buf ( & path , params -> path ) ; 
+dict [ 0 ] . value = path . buf ; 
+strbuf_expand ( & cmd , params -> cmd , strbuf_expand_dict_cb , & dict ) ; 
+strbuf_release ( & path ) ; 
+argv [ 0 ] = cmd . buf ; 
+child_process . argv = argv ; 
+child_process . use_shell = 1 ; 
+child_process . in = - 1 ; 
+child_process . out = out ; 
+if ( start_command ( & child_process ) ) 
+return error ( "cannot fork to run external filter '%s'" , params -> cmd ) ; 
+sigchain_push ( SIGPIPE , SIG_IGN ) ; 
+if ( params -> src ) { 
+write_err = ( write_in_full ( child_process . in , 
+params -> src , params -> size ) < 0 ) ; 
+if ( errno == EPIPE ) 
+write_err = 0 ; 
+} else { 
+write_err = copy_fd ( params -> fd , child_process . in ) ; 
+if ( write_err == COPY_WRITE_ERROR && errno == EPIPE ) 
+write_err = 0 ; 
+} 
+if ( close ( child_process . in ) ) 
+write_err = 1 ; 
+if ( write_err ) 
+error ( "cannot feed the input to external filter '%s'" , params -> cmd ) ; 
+sigchain_pop ( SIGPIPE ) ; 
+status = finish_command ( & child_process ) ; 
+if ( status ) 
+error ( "external filter '%s' failed %d" , params -> cmd , status ) ; 
+strbuf_release ( & cmd ) ; 
+return ( write_err || status ) ; 
+} 
+static int apply_single_file_filter ( const char * path , const char * src , size_t len , int fd , 
+struct strbuf * dst , const char * cmd ) 
+{ 
+int err = 0 ; 
+struct strbuf nbuf = STRBUF_INIT ; 
+struct async async ; 
+struct filter_params params ; 
+memset ( & async , 0 , sizeof ( async ) ) ; 
+async . proc = filter_buffer_or_fd ; 
+async . data = & params ; 
+async . out = - 1 ; 
+params . src = src ; 
+params . size = len ; 
+params . fd = fd ; 
+params . cmd = cmd ; 
+params . path = path ; 
+fflush ( NULL ) ; 
+if ( start_async ( & async ) ) 
+return 0 ; 
+if ( strbuf_read ( & nbuf , async . out , len ) < 0 ) { 
+err = error ( "read from external filter '%s' failed" , cmd ) ; 
+} 
+if ( close ( async . out ) ) { 
+err = error ( "read from external filter '%s' failed" , cmd ) ; 
+} 
+if ( finish_async ( & async ) ) { 
+err = error ( "external filter '%s' failed" , cmd ) ; 
+} 
+if ( ! err ) { 
+strbuf_swap ( dst , & nbuf ) ; 
+} 
+strbuf_release ( & nbuf ) ; 
+return ! err ; 
+} 
+
+
+ 
+
+ 
+struct cmd2process { 
+struct subprocess_entry subprocess ; 
+unsigned int supported_capabilities ; 
+} ; 
+static int subprocess_map_initialized ; 
+static struct hashmap subprocess_map ; 
+static int start_multi_file_filter_fn ( struct subprocess_entry * subprocess ) 
+{ 
+int err ; 
+struct cmd2process * entry = ( struct cmd2process * ) subprocess ; 
+struct string_list cap_list = STRING_LIST_INIT_NODUP ; 
+char * cap_buf ; 
+const char * cap_name ; 
+struct child_process * process = & subprocess -> process ; 
+const char * cmd = subprocess -> cmd ; 
+sigchain_push ( SIGPIPE , SIG_IGN ) ; 
+err = packet_writel ( process -> in , "git-filter-client" , "version=2" , NULL ) ; 
+if ( err ) 
+goto done ; 
+err = strcmp ( packet_read_line ( process -> out , NULL ) , "git-filter-server" ) ; 
+if ( err ) { 
+error ( "external filter '%s' does not support filter protocol version 2" , cmd ) ; 
+goto done ; 
+} 
+err = strcmp ( packet_read_line ( process -> out , NULL ) , "version=2" ) ; 
+if ( err ) 
+goto done ; 
+err = packet_read_line ( process -> out , NULL ) != NULL ; 
+if ( err ) 
+goto done ; 
+err = packet_writel ( process -> in , "capability=clean" , "capability=smudge" , NULL ) ; 
+for ( ; ; ) { 
+cap_buf = packet_read_line ( process -> out , NULL ) ; 
+if ( ! cap_buf ) 
+break ; 
+string_list_split_in_place ( & cap_list , cap_buf , '=' , 1 ) ; 
+if ( cap_list . nr != 2 || strcmp ( cap_list . items [ 0 ] . string , "capability" ) ) 
+continue ; 
+cap_name = cap_list . items [ 1 ] . string ; 
+if ( ! strcmp ( cap_name , "clean" ) ) { 
+entry -> supported_capabilities |=  ( 1u << 0)  ; 
+} else if ( ! strcmp ( cap_name , "smudge" ) ) { 
+entry -> supported_capabilities |=  ( 1u << 1)  ; 
+} else { 
+warning ( 
+"external filter '%s' requested unsupported filter capability '%s'" , 
+cmd , cap_name 
+) ; 
+} 
+string_list_clear ( & cap_list , 0 ) ; 
+} 
+done : 
+sigchain_pop ( SIGPIPE ) ; 
+return err ; 
+} 
+static int apply_multi_file_filter ( const char * path , const char * src , size_t len , 
+int fd , struct strbuf * dst , const char * cmd , 
+const unsigned int wanted_capability ) 
+{ 
+int err ; 
+struct cmd2process * entry ; 
+struct child_process * process ; 
+struct strbuf nbuf = STRBUF_INIT ; 
+struct strbuf filter_status = STRBUF_INIT ; 
+const char * filter_type ; 
+if ( ! subprocess_map_initialized ) { 
+subprocess_map_initialized = 1 ; 
+hashmap_init ( & subprocess_map , ( hashmap_cmp_fn ) cmd2process_cmp , 0 ) ; 
+entry = NULL ; 
+} else { 
+entry = ( struct cmd2process * ) subprocess_find_entry ( & subprocess_map , cmd ) ; 
+} 
+fflush ( NULL ) ; 
+if ( ! entry ) { 
+entry = xmalloc ( sizeof ( * entry ) ) ; 
+entry -> supported_capabilities = 0 ; 
+if ( subprocess_start ( & subprocess_map , & entry -> subprocess , cmd , start_multi_file_filter_fn ) ) { 
+free ( entry ) ; 
+return 0 ; 
+} 
+} 
+process = & entry -> subprocess . process ; 
+if ( ! ( wanted_capability & entry -> supported_capabilities ) ) 
+return 0 ; 
+if (  ( 1u << 0)  & wanted_capability ) 
+filter_type = "clean" ; 
+else if (  ( 1u << 1)  & wanted_capability ) 
+filter_type = "smudge" ; 
+else 
+die ( "unexpected filter type" ) ; 
+sigchain_push ( SIGPIPE , SIG_IGN ) ; 
+assert ( strlen ( filter_type ) < LARGE_PACKET_DATA_MAX - strlen ( "command=\n" ) ) ; 
+err = packet_write_fmt_gently ( process -> in , "command=%s\n" , filter_type ) ; 
+if ( err ) 
+goto done ; 
+err = strlen ( path ) > LARGE_PACKET_DATA_MAX - strlen ( "pathname=\n" ) ; 
+if ( err ) { 
+error ( "path name too long for external filter" ) ; 
+goto done ; 
+} 
+err = packet_write_fmt_gently ( process -> in , "pathname=%s\n" , path ) ; 
+if ( err ) 
+goto done ; 
+err = packet_flush_gently ( process -> in ) ; 
+if ( err ) 
+goto done ; 
+if ( fd >= 0 ) 
+err = write_packetized_from_fd ( fd , process -> in ) ; 
+else 
+err = write_packetized_from_buf ( src , len , process -> in ) ; 
+if ( err ) 
+goto done ; 
+err = subprocess_read_status ( process -> out , & filter_status ) ; 
+if ( err ) 
+goto done ; 
+err = strcmp ( filter_status . buf , "success" ) ; 
+if ( err ) 
+goto done ; 
+err = read_packetized_to_strbuf ( process -> out , & nbuf ) < 0 ; 
+if ( err ) 
+goto done ; 
+err = subprocess_read_status ( process -> out , & filter_status ) ; 
+if ( err ) 
+goto done ; 
+err = strcmp ( filter_status . buf , "success" ) ; 
+done : 
+sigchain_pop ( SIGPIPE ) ; 
+if ( err ) { 
+if ( ! strcmp ( filter_status . buf , "error" ) ) { 
+} else if ( ! strcmp ( filter_status . buf , "abort" ) ) { 
+entry -> supported_capabilities &= ~ wanted_capability ; 
+} else { 
+error ( "external filter '%s' failed" , cmd ) ; 
+subprocess_stop ( & subprocess_map , & entry -> subprocess ) ; 
+free ( entry ) ; 
+} 
+} else { 
+strbuf_swap ( dst , & nbuf ) ; 
+} 
+strbuf_release ( & nbuf ) ; 
+return ! err ; 
+} 
+static struct convert_driver { 
+const char * name ; 
+struct convert_driver * next ; 
+const char * smudge ; 
+const char * clean ; 
+const char * process ; 
+int required ; 
+} * user_convert , * * user_convert_tail ; 
+static int apply_filter ( const char * path , const char * src , size_t len , 
+int fd , struct strbuf * dst , struct convert_driver * drv , 
+const unsigned int wanted_capability ) 
+{ 
+const char * cmd = NULL ; 
+if ( ! drv ) 
+return 0 ; 
+if ( ! dst ) 
+return 1 ; 
+if ( (  ( 1u << 0)  & wanted_capability ) && ! drv -> process && drv -> clean ) 
+cmd = drv -> clean ; 
+else if ( (  ( 1u << 1)  & wanted_capability ) && ! drv -> process && drv -> smudge ) 
+cmd = drv -> smudge ; 
+if ( cmd && * cmd ) 
+return apply_single_file_filter ( path , src , len , fd , dst , cmd ) ; 
+else if ( drv -> process && * drv -> process ) 
+return apply_multi_file_filter ( path , src , len , fd , dst , drv -> process , wanted_capability ) ; 
+return 0 ; 
+} 
+static int read_convert_config ( const char * var , const char * value , void * cb ) 
+{ 
+const char * key , * name ; 
+int namelen ; 
+struct convert_driver * drv ; 
+if ( parse_config_key ( var , "filter" , & name , & namelen , & key ) < 0 || ! name ) 
+return 0 ; 
+for ( drv = user_convert ; drv ; drv = drv -> next ) 
+if ( ! strncmp ( drv -> name , name , namelen ) && ! drv -> name [ namelen ] ) 
+break ; 
+if ( ! drv ) { 
+drv = xcalloc ( 1 , sizeof ( struct convert_driver ) ) ; 
+drv -> name = xmemdupz ( name , namelen ) ; 
+* user_convert_tail = drv ; 
+user_convert_tail = & ( drv -> next ) ; 
+} 
+if ( ! strcmp ( "smudge" , key ) ) 
+return git_config_string ( & drv -> smudge , var , value ) ; 
+if ( ! strcmp ( "clean" , key ) ) 
+return git_config_string ( & drv -> clean , var , value ) ; 
+if ( ! strcmp ( "process" , key ) ) 
+return git_config_string ( & drv -> process , var , value ) ; 
+if ( ! strcmp ( "required" , key ) ) { 
+drv -> required = git_config_bool ( var , value ) ; 
+return 0 ; 
+} 
+return 0 ; 
+} 
+static int count_ident ( const char * cp , unsigned long size ) 
+{ 
+int cnt = 0 ; 
+char ch ; 
+while ( size ) { 
+ch = * cp ++ ; 
+size -- ; 
+if ( ch != '$' ) 
+continue ; 
+if ( size < 3 ) 
+break ; 
+if ( memcmp ( "Id" , cp , 2 ) ) 
+continue ; 
+ch = cp [ 2 ] ; 
+cp += 3 ; 
+size -= 3 ; 
+if ( ch == '$' ) 
+cnt ++ ; 
+if ( ch != ':' ) 
+continue ; 
+while ( size ) { 
+ch = * cp ++ ; 
+size -- ; 
+if ( ch == '$' ) { 
+cnt ++ ; 
+break ; 
+} 
+if ( ch == '\n' ) 
 break ; 
 } 
 } 
-if ( ! commit_format ) { 
-ALLOC_GROW ( commit_formats , commit_formats_len + 1 , 
-commit_formats_alloc ) ; 
-commit_format = & commit_formats [ commit_formats_len ] ; 
-memset ( commit_format , 0 , sizeof ( * commit_format ) ) ; 
-commit_formats_len ++ ; 
+return cnt ; 
 } 
-commit_format -> name = xstrdup ( name ) ; 
-commit_format -> format = CMIT_FMT_USERFORMAT ; 
-if ( git_config_string ( & fmt , var , value ) ) 
-return - 1 ; 
-if ( skip_prefix ( fmt , "format:" , & fmt ) ) 
-commit_format -> is_tformat = 0 ; 
-else if ( skip_prefix ( fmt , "tformat:" , & fmt ) || strchr ( fmt , '%' ) ) 
-commit_format -> is_tformat = 1 ; 
-else 
-commit_format -> is_alias = 1 ; 
-commit_format -> user_format = fmt ; 
+static int ident_to_git ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , int ident ) 
+{ 
+char * dst , * dollar ; 
+if ( ! ident || ( src && ! count_ident ( src , len ) ) ) 
 return 0 ; 
-} 
-static void setup_commit_formats ( void ) 
-{ 
-struct cmt_fmt_map builtin_formats [ ] = { 
-{ "raw" , CMIT_FMT_RAW , 0 , 0 } , 
-{ "medium" , CMIT_FMT_MEDIUM , 0 , 8 } , 
-{ "short" , CMIT_FMT_SHORT , 0 , 0 } , 
-{ "email" , CMIT_FMT_EMAIL , 0 , 0 } , 
-{ "mboxrd" , CMIT_FMT_MBOXRD , 0 , 0 } , 
-{ "fuller" , CMIT_FMT_FULLER , 0 , 8 } , 
-{ "full" , CMIT_FMT_FULL , 0 , 8 } , 
-{ "oneline" , CMIT_FMT_ONELINE , 1 , 0 } 
-} ; 
-commit_formats_len = ARRAY_SIZE ( builtin_formats ) ; 
-builtin_formats_len = commit_formats_len ; 
-ALLOC_GROW ( commit_formats , commit_formats_len , commit_formats_alloc ) ; 
-memcpy ( commit_formats , builtin_formats , 
-sizeof ( * builtin_formats ) * ARRAY_SIZE ( builtin_formats ) ) ; 
-git_config ( git_pretty_formats_config , NULL ) ; 
-} 
-static struct cmt_fmt_map * find_commit_format_recursive ( const char * sought , 
-const char * original , 
-int num_redirections ) 
-{ 
-struct cmt_fmt_map * found = NULL ; 
-size_t found_match_len = 0 ; 
-int i ; 
-if ( num_redirections >= commit_formats_len ) 
-die ( "invalid --pretty format: " 
-"'%s' references an alias which points to itself" , 
-original ) ; 
-for ( i = 0 ; i < commit_formats_len ; i ++ ) { 
-size_t match_len ; 
-if ( ! starts_with ( commit_formats [ i ] . name , sought ) ) 
+if ( ! buf ) 
+return 1 ; 
+if ( strbuf_avail ( buf ) + buf -> len < len ) 
+strbuf_grow ( buf , len - buf -> len ) ; 
+dst = buf -> buf ; 
+for ( ; ; ) { 
+dollar = memchr ( src , '$' , len ) ; 
+if ( ! dollar ) 
+break ; 
+memmove ( dst , src , dollar + 1 - src ) ; 
+dst += dollar + 1 - src ; 
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
+if ( len > 3 && ! memcmp ( src , "Id:" , 3 ) ) { 
+dollar = memchr ( src + 3 , '$' , len - 3 ) ; 
+if ( ! dollar ) 
+break ; 
+if ( memchr ( src + 3 , '\n' , dollar - src - 3 ) ) { 
 continue ; 
-match_len = strlen ( commit_formats [ i ] . name ) ; 
-if ( found == NULL || found_match_len > match_len ) { 
-found = & commit_formats [ i ] ; 
-found_match_len = match_len ; 
+} 
+memcpy ( dst , "Id$" , 3 ) ; 
+dst += 3 ; 
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
 } 
 } 
-if ( found && found -> is_alias ) { 
-found = find_commit_format_recursive ( found -> user_format , 
-original , 
-num_redirections + 1 ) ; 
+memmove ( dst , src , len ) ; 
+strbuf_setlen ( buf , dst + len - buf -> buf ) ; 
+return 1 ; 
 } 
-return found ; 
-} 
-static struct cmt_fmt_map * find_commit_format ( const char * sought ) 
+static int ident_to_worktree ( const char * path , const char * src , size_t len , 
+struct strbuf * buf , int ident ) 
 { 
-if ( ! commit_formats ) 
-setup_commit_formats ( ) ; 
-return find_commit_format_recursive ( sought , sought , 0 ) ; 
+unsigned char sha1 [ 20 ] ; 
+char * to_free = NULL , * dollar , * spc ; 
+int cnt ; 
+if ( ! ident ) 
+return 0 ; 
+cnt = count_ident ( src , len ) ; 
+if ( ! cnt ) 
+return 0 ; 
+if ( src == buf -> buf ) 
+to_free = strbuf_detach ( buf , NULL ) ; 
+hash_sha1_file ( src , len , "blob" , sha1 ) ; 
+strbuf_grow ( buf , len + cnt * 43 ) ; 
+for ( ; ; ) { 
+dollar = memchr ( src , '$' , len ) ; 
+if ( ! dollar ) 
+break ; 
+strbuf_add ( buf , src , dollar + 1 - src ) ; 
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
+if ( len < 3 || memcmp ( "Id" , src , 2 ) ) 
+continue ; 
+if ( src [ 2 ] == '$' ) { 
+src += 3 ; 
+len -= 3 ; 
+} else if ( src [ 2 ] == ':' ) { 
+dollar = memchr ( src + 3 , '$' , len - 3 ) ; 
+if ( ! dollar ) { 
+break ; 
 } 
-void get_commit_format ( const char * arg , struct rev_info * rev ) 
+if ( memchr ( src + 3 , '\n' , dollar - src - 3 ) ) { 
+continue ; 
+} 
+spc = memchr ( src + 4 , ' ' , dollar - src - 4 ) ; 
+if ( spc && spc < dollar - 1 ) { 
+continue ; 
+} 
+len -= dollar + 1 - src ; 
+src = dollar + 1 ; 
+} else { 
+continue ; 
+} 
+strbuf_addstr ( buf , "Id: " ) ; 
+strbuf_add ( buf , sha1_to_hex ( sha1 ) , 40 ) ; 
+strbuf_addstr ( buf , " $" ) ; 
+} 
+strbuf_add ( buf , src , len ) ; 
+free ( to_free ) ; 
+return 1 ; 
+} 
+static enum crlf_action git_path_check_crlf ( struct attr_check_item * check ) 
 { 
-struct cmt_fmt_map * commit_format ; 
-rev -> use_terminator = 0 ; 
-if ( ! arg ) { 
-rev -> commit_format = CMIT_FMT_DEFAULT ; 
-return ; 
+const char * value = check -> value ; 
+if ( ATTR_TRUE ( value ) ) 
+return CRLF_TEXT ; 
+else if ( ATTR_FALSE ( value ) ) 
+return CRLF_BINARY ; 
+else if ( ATTR_UNSET ( value ) ) 
+; 
+else if ( ! strcmp ( value , "input" ) ) 
+return CRLF_TEXT_INPUT ; 
+else if ( ! strcmp ( value , "auto" ) ) 
+return CRLF_AUTO ; 
+return CRLF_UNDEFINED ; 
 } 
-if ( skip_prefix ( arg , "format:" , & arg ) ) { 
-save_user_format ( rev , arg , 0 ) ; 
-return ; 
+static enum eol git_path_check_eol ( struct attr_check_item * check ) 
+{ 
+const char * value = check -> value ; 
+if ( ATTR_UNSET ( value ) ) 
+; 
+else if ( ! strcmp ( value , "lf" ) ) 
+return EOL_LF ; 
+else if ( ! strcmp ( value , "crlf" ) ) 
+return EOL_CRLF ; 
+return EOL_UNSET ; 
 } 
-if ( ! * arg || skip_prefix ( arg , "tformat:" , & arg ) || strchr ( arg , '%' ) ) { 
-save_user_format ( rev , arg , 1 ) ; 
-return ; 
+static struct convert_driver * git_path_check_convert ( struct attr_check_item * check ) 
+{ 
+const char * value = check -> value ; 
+struct convert_driver * drv ; 
+if ( ATTR_TRUE ( value ) || ATTR_FALSE ( value ) || ATTR_UNSET ( value ) ) 
+return NULL ; 
+for ( drv = user_convert ; drv ; drv = drv -> next ) 
+if ( ! strcmp ( value , drv -> name ) ) 
+return drv ; 
+return NULL ; 
 } 
-commit_format = find_commit_format ( arg ) ; 
-if ( ! commit_format ) 
-die ( "invalid --pretty format: %s" , arg ) ; 
-rev -> commit_format = commit_format -> format ; 
-rev -> use_terminator = commit_format -> is_tformat ; 
-rev -> expand_tabs_in_log_default = commit_format -> expand_tabs_in_log ; 
-if ( commit_format -> format == CMIT_FMT_USERFORMAT ) { 
-save_user_format ( rev , commit_format -> user_format , 
-commit_format -> is_tformat ) ; 
+static int git_path_check_ident ( struct attr_check_item * check ) 
+{ 
+const char * value = check -> value ; 
+return ! ! ATTR_TRUE ( value ) ; 
 } 
+struct conv_attrs { 
+struct convert_driver * drv ; 
+enum crlf_action attr_action ; 
+enum crlf_action crlf_action ; 
+int ident ; 
+} ; 
+static void convert_attrs ( struct conv_attrs * ca , const char * path ) 
+{ 
+static struct attr_check * check ; 
+if ( ! check ) { 
+check = attr_check_initl ( "crlf" , "ident" , "filter" , 
+"eol" , "text" , NULL ) ; 
+user_convert_tail = & user_convert ; 
+git_config ( read_convert_config , NULL ) ; 
 } 
-static int get_one_line ( const char * msg ) 
+if ( ! git_check_attr ( path , check ) ) { 
+struct attr_check_item * ccheck = check -> items ; 
+ca -> crlf_action = git_path_check_crlf ( ccheck + 4 ) ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED ) 
+ca -> crlf_action = git_path_check_crlf ( ccheck + 0 ) ; 
+ca -> attr_action = ca -> crlf_action ; 
+ca -> ident = git_path_check_ident ( ccheck + 1 ) ; 
+ca -> drv = git_path_check_convert ( ccheck + 2 ) ; 
+if ( ca -> crlf_action != CRLF_BINARY ) { 
+enum eol eol_attr = git_path_check_eol ( ccheck + 3 ) ; 
+if ( ca -> crlf_action == CRLF_AUTO && eol_attr == EOL_LF ) 
+ca -> crlf_action = CRLF_AUTO_INPUT ; 
+else if ( ca -> crlf_action == CRLF_AUTO && eol_attr == EOL_CRLF ) 
+ca -> crlf_action = CRLF_AUTO_CRLF ; 
+else if ( eol_attr == EOL_LF ) 
+ca -> crlf_action = CRLF_TEXT_INPUT ; 
+else if ( eol_attr == EOL_CRLF ) 
+ca -> crlf_action = CRLF_TEXT_CRLF ; 
+} 
+ca -> attr_action = ca -> crlf_action ; 
+} else { 
+ca -> drv = NULL ; 
+ca -> crlf_action = CRLF_UNDEFINED ; 
+ca -> ident = 0 ; 
+} 
+if ( ca -> crlf_action == CRLF_TEXT ) 
+ca -> crlf_action = text_eol_is_crlf ( ) ? CRLF_TEXT_CRLF : CRLF_TEXT_INPUT ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED && auto_crlf == AUTO_CRLF_FALSE ) 
+ca -> crlf_action = CRLF_BINARY ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED && auto_crlf == AUTO_CRLF_TRUE ) 
+ca -> crlf_action = CRLF_AUTO_CRLF ; 
+if ( ca -> crlf_action == CRLF_UNDEFINED && auto_crlf == AUTO_CRLF_INPUT ) 
+ca -> crlf_action = CRLF_AUTO_INPUT ; 
+} 
+int would_convert_to_git_filter_fd ( const char * path ) 
+{ 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+if ( ! ca . drv ) 
+return 0 ; 
+if ( ! ca . drv -> required ) 
+return 0 ; 
+return apply_filter ( path , NULL , 0 , - 1 , NULL , ca . drv ,  ( 1u << 0)  ) ; 
+} 
+const char * get_convert_attr_ascii ( const char * path ) 
+{ 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+switch ( ca . attr_action ) { 
+case CRLF_UNDEFINED : 
+return "" ; 
+case CRLF_BINARY : 
+return "-text" ; 
+case CRLF_TEXT : 
+return "text" ; 
+case CRLF_TEXT_INPUT : 
+return "text eol=lf" ; 
+case CRLF_TEXT_CRLF : 
+return "text eol=crlf" ; 
+case CRLF_AUTO : 
+return "text=auto" ; 
+case CRLF_AUTO_CRLF : 
+return "text=auto eol=crlf" ; 
+case CRLF_AUTO_INPUT : 
+return "text=auto eol=lf" ; 
+} 
+return "" ; 
+} 
+int convert_to_git ( const char * path , const char * src , size_t len , 
+struct strbuf * dst , enum safe_crlf checksafe ) 
 { 
 int ret = 0 ; 
-for ( ; ; ) { 
-char c = * msg ++ ; 
-if ( ! c ) 
-break ; 
-ret ++ ; 
-if ( c == '\n' ) 
-break ; 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+ret |= apply_filter ( path , src , len , - 1 , dst , ca . drv ,  ( 1u << 0)  ) ; 
+if ( ! ret && ca . drv && ca . drv -> required ) 
+die ( "%s: clean filter '%s' failed" , path , ca . drv -> name ) ; 
+if ( ret && dst ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
 } 
-return ret ; 
+ret |= crlf_to_git ( path , src , len , dst , ca . crlf_action , checksafe ) ; 
+if ( ret && dst ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
 } 
-static int non_ascii ( int ch ) 
+return ret | ident_to_git ( path , src , len , dst , ca . ident ) ; 
+} 
+void convert_to_git_filter_fd ( const char * path , int fd , struct strbuf * dst , 
+enum safe_crlf checksafe ) 
 { 
-return ! isascii ( ch ) || ch == '\033' ; 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+assert ( ca . drv ) ; 
+assert ( ca . drv -> clean || ca . drv -> process ) ; 
+if ( ! apply_filter ( path , NULL , 0 , fd , dst , ca . drv ,  ( 1u << 0)  ) ) 
+die ( "%s: clean filter '%s' failed" , path , ca . drv -> name ) ; 
+crlf_to_git ( path , dst -> buf , dst -> len , dst , ca . crlf_action , checksafe ) ; 
+ident_to_git ( path , dst -> buf , dst -> len , dst , ca . ident ) ; 
 } 
-int has_non_ascii ( const char * s ) 
+static int convert_to_working_tree_internal ( const char * path , const char * src , 
+size_t len , struct strbuf * dst , 
+int normalizing ) 
 { 
-int ch ; 
-if ( ! s ) 
-return 0 ; 
-while ( ( ch = * s ++ ) != '\0' ) { 
-if ( non_ascii ( ch ) ) 
-return 1 ; 
+int ret = 0 , ret_filter = 0 ; 
+struct conv_attrs ca ; 
+convert_attrs ( & ca , path ) ; 
+ret |= ident_to_worktree ( path , src , len , dst , ca . ident ) ; 
+if ( ret ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
 } 
-return 0 ; 
+if ( ( ca . drv && ( ca . drv -> smudge || ca . drv -> process ) ) || ! normalizing ) { 
+ret |= crlf_to_worktree ( path , src , len , dst , ca . crlf_action ) ; 
+if ( ret ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
 } 
-static int is_rfc822_special ( char ch ) 
+} 
+ret_filter = apply_filter ( path , src , len , - 1 , dst , ca . drv ,  ( 1u << 1)  ) ; 
+if ( ! ret_filter && ca . drv && ca . drv -> required ) 
+die ( "%s: smudge filter %s failed" , path , ca . drv -> name ) ; 
+return ret | ret_filter ; 
+} 
+int convert_to_working_tree ( const char * path , const char * src , size_t len , struct strbuf * dst ) 
 { 
-switch ( ch ) { 
-case '(' : 
-case ')' : 
-case '<' : 
-case '>' : 
-case '[' : 
-case ']' : 
-case ':' : 
-case ';' : 
-case '@' : 
-case ',' : 
-case '.' : 
-case '"' : 
-case '\\' : 
-return 1 ; 
-default : 
-return 0 ; 
+return convert_to_working_tree_internal ( path , src , len , dst , 0 ) ; 
 } 
-} 
-static int needs_rfc822_quoting ( const char * s , int len ) 
+int renormalize_buffer ( const char * path , const char * src , size_t len , struct strbuf * dst ) 
 { 
-int i ; 
-for ( i = 0 ; i < len ; i ++ ) 
-if ( is_rfc822_special ( s [ i ] ) ) 
-return 1 ; 
-return 0 ; 
+int ret = convert_to_working_tree_internal ( path , src , len , dst , 1 ) ; 
+if ( ret ) { 
+src = dst -> buf ; 
+len = dst -> len ; 
 } 
-static int last_line_length ( struct strbuf * sb ) 
-{ 
-int i ; 
-for ( i = sb -> len - 1 ; i >= 0 ; i -- ) 
-if ( sb -> buf [ i ] == '\n' ) 
-break ; 
-return sb -> len - ( i + 1 ) ; 
+return ret | convert_to_git ( path , src , len , dst , SAFE_CRLF_RENORMALIZE ) ; 
 } 
-static void add_rfc822_quoted ( struct strbuf * out , const char * s , int len ) 
-{ 
-int i ; 
-strbuf_grow ( out , len + 2 ) ; 
-strbuf_addch ( out , '"' ) ; 
-for ( i = 0 ; i < len ; i ++ ) { 
-switch ( s [ i ] ) { 
-case '"' : 
-case '\\' : 
-strbuf_addch ( out , '\\' ) ; 
-default : 
-strbuf_addch ( out , s [ i ] ) ; 
-} 
-} 
-strbuf_addch ( out , '"' ) ; 
-} 
-enum rfc2047_type { 
-RFC2047_SUBJECT , 
-RFC2047_ADDRESS 
+typedef int ( * filter_fn ) ( struct stream_filter * , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) ; 
+typedef void ( * free_fn ) ( struct stream_filter * ) ; 
+struct stream_filter_vtbl { 
+filter_fn filter ; 
+free_fn free ; 
 } ; 
-static int is_rfc2047_special ( char ch , enum rfc2047_type type ) 
+struct stream_filter { 
+struct stream_filter_vtbl * vtbl ; 
+} ; 
+static int null_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
 { 
-if ( non_ascii ( ch ) || ! isprint ( ch ) ) 
-return 1 ; 
-if ( isspace ( ch ) || ch == '=' || ch == '?' || ch == '_' ) 
-return 1 ; 
-if ( type != RFC2047_ADDRESS ) 
+size_t count ; 
+if ( ! input ) 
 return 0 ; 
-return ! ( isalnum ( ch ) || ch == '!' || ch == '*' || ch == '+' || ch == '-' || ch == '/' ) ; 
-} 
-static int needs_rfc2047_encoding ( const char * line , int len , 
-enum rfc2047_type type ) 
-{ 
-int i ; 
-for ( i = 0 ; i < len ; i ++ ) { 
-int ch = line [ i ] ; 
-if ( non_ascii ( ch ) || ch == '\n' ) 
-return 1 ; 
-if ( ( i + 1 < len ) && ( ch == '=' && line [ i + 1 ] == '?' ) ) 
-return 1 ; 
+count = * isize_p ; 
+if ( * osize_p < count ) 
+count = * osize_p ; 
+if ( count ) { 
+memmove ( output , input , count ) ; 
+* isize_p -= count ; 
+* osize_p -= count ; 
 } 
 return 0 ; 
 } 
-static void add_rfc2047 ( struct strbuf * sb , const char * line , size_t len , 
-const char * encoding , enum rfc2047_type type ) 
+static void null_free_fn ( struct stream_filter * filter ) 
 { 
-static const int max_encoded_length = 76 ; 
-int i ; 
-int line_len = last_line_length ( sb ) ; 
-strbuf_grow ( sb , len * 3 + strlen ( encoding ) + 100 ) ; 
-strbuf_addf ( sb , "=?%s?q?" , encoding ) ; 
-line_len += strlen ( encoding ) + 5 ; 
-while ( len ) { 
-const unsigned char * p = ( const unsigned char * ) line ; 
-int chrlen = mbs_chrlen ( & line , & len , encoding ) ; 
-int is_special = ( chrlen > 1 ) || is_rfc2047_special ( * p , type ) ; 
-const char * encoded_fmt = is_special ? "=%02X" : "%c" ; 
-int encoded_len = is_special ? 3 * chrlen : 1 ; 
-if ( line_len + encoded_len + 2 > max_encoded_length ) { 
-strbuf_addf ( sb , "?=\n =?%s?q?" , encoding ) ; 
-line_len = strlen ( encoding ) + 5 + 1 ; 
-} 
-for ( i = 0 ; i < chrlen ; i ++ ) 
-strbuf_addf ( sb , encoded_fmt , p [ i ] ) ; 
-line_len += encoded_len ; 
-} 
-strbuf_addstr ( sb , "?=" ) ; 
-} 
-const char * show_ident_date ( const struct ident_split * ident , 
-const struct date_mode * mode ) 
-{ 
-timestamp_t date = 0 ; 
-long tz = 0 ; 
-if ( ident -> date_begin && ident -> date_end ) 
-date = parse_timestamp ( ident -> date_begin , NULL , 10 ) ; 
-if ( date_overflows ( date ) ) 
-date = 0 ; 
-else { 
-if ( ident -> tz_begin && ident -> tz_end ) 
-tz = strtol ( ident -> tz_begin , NULL , 10 ) ; 
-if ( tz >= INT_MAX || tz <= INT_MIN ) 
-tz = 0 ; 
-} 
-return show_date ( date , tz , mode ) ; 
-} 
-void pp_user_info ( struct pretty_print_context * pp , 
-const char * what , struct strbuf * sb , 
-const char * line , const char * encoding ) 
-{ 
-struct ident_split ident ; 
-char * line_end ; 
-const char * mailbuf , * namebuf ; 
-size_t namelen , maillen ; 
-int max_length = 78 ; 
-if ( pp -> fmt == CMIT_FMT_ONELINE ) 
-return ; 
-line_end = strchrnul ( line , '\n' ) ; 
-if ( split_ident_line ( & ident , line , line_end - line ) ) 
-return ; 
-mailbuf = ident . mail_begin ; 
-maillen = ident . mail_end - ident . mail_begin ; 
-namebuf = ident . name_begin ; 
-namelen = ident . name_end - ident . name_begin ; 
-if ( pp -> mailmap ) 
-map_user ( pp -> mailmap , & mailbuf , & maillen , & namebuf , & namelen ) ; 
-if ( cmit_fmt_is_mail ( pp -> fmt ) ) { 
-if ( pp -> from_ident && ident_cmp ( pp -> from_ident , & ident ) ) { 
-struct strbuf buf = STRBUF_INIT ; 
-strbuf_addstr ( & buf , "From: " ) ; 
-strbuf_add ( & buf , namebuf , namelen ) ; 
-strbuf_addstr ( & buf , " <" ) ; 
-strbuf_add ( & buf , mailbuf , maillen ) ; 
-strbuf_addstr ( & buf , ">\n" ) ; 
-string_list_append ( & pp -> in_body_headers , 
-strbuf_detach ( & buf , NULL ) ) ; 
-mailbuf = pp -> from_ident -> mail_begin ; 
-maillen = pp -> from_ident -> mail_end - mailbuf ; 
-namebuf = pp -> from_ident -> name_begin ; 
-namelen = pp -> from_ident -> name_end - namebuf ; 
-} 
-strbuf_addstr ( sb , "From: " ) ; 
-if ( needs_rfc2047_encoding ( namebuf , namelen , RFC2047_ADDRESS ) ) { 
-add_rfc2047 ( sb , namebuf , namelen , 
-encoding , RFC2047_ADDRESS ) ; 
-max_length = 76 ; 
-} else if ( needs_rfc822_quoting ( namebuf , namelen ) ) { 
-struct strbuf quoted = STRBUF_INIT ; 
-add_rfc822_quoted ( & quoted , namebuf , namelen ) ; 
-strbuf_add_wrapped_bytes ( sb , quoted . buf , quoted . len , 
-- 6 , 1 , max_length ) ; 
-strbuf_release ( & quoted ) ; 
-} else { 
-strbuf_add_wrapped_bytes ( sb , namebuf , namelen , 
-- 6 , 1 , max_length ) ; 
-} 
-if ( max_length < 
-last_line_length ( sb ) + strlen ( " <" ) + maillen + strlen ( ">" ) ) 
-strbuf_addch ( sb , '\n' ) ; 
-strbuf_addf ( sb , " <%.*s>\n" , ( int ) maillen , mailbuf ) ; 
-} else { 
-strbuf_addf ( sb , "%s: %.*s%.*s <%.*s>\n" , what , 
-( pp -> fmt == CMIT_FMT_FULLER ) ? 4 : 0 , "    " , 
-( int ) namelen , namebuf , ( int ) maillen , mailbuf ) ; 
-} 
-switch ( pp -> fmt ) { 
-case CMIT_FMT_MEDIUM : 
-strbuf_addf ( sb , "Date:   %s\n" , 
-show_ident_date ( & ident , & pp -> date_mode ) ) ; 
-break ; 
-case CMIT_FMT_EMAIL : 
-case CMIT_FMT_MBOXRD : 
-strbuf_addf ( sb , "Date: %s\n" , 
-show_ident_date ( & ident , DATE_MODE ( RFC2822 ) ) ) ; 
-break ; 
-case CMIT_FMT_FULLER : 
-strbuf_addf ( sb , "%sDate: %s\n" , what , 
-show_ident_date ( & ident , & pp -> date_mode ) ) ; 
-break ; 
-default : 
-break ; 
-} 
-} 
-static int is_blank_line ( const char * line , int * len_p ) 
-{ 
-int len = * len_p ; 
-while ( len && isspace ( line [ len - 1 ] ) ) 
-len -- ; 
-* len_p = len ; 
-return ! len ; 
-} 
-const char * skip_blank_lines ( const char * msg ) 
-{ 
-for ( ; ; ) { 
-int linelen = get_one_line ( msg ) ; 
-int ll = linelen ; 
-if ( ! linelen ) 
-break ; 
-if ( ! is_blank_line ( msg , & ll ) ) 
-break ; 
-msg += linelen ; 
-} 
-return msg ; 
-} 
-static void add_merge_info ( const struct pretty_print_context * pp , 
-struct strbuf * sb , const struct commit * commit ) 
-{ 
-struct commit_list * parent = commit -> parents ; 
-if ( ( pp -> fmt == CMIT_FMT_ONELINE ) || ( cmit_fmt_is_mail ( pp -> fmt ) ) || 
-! parent || ! parent -> next ) 
-return ; 
-strbuf_addstr ( sb , "Merge:" ) ; 
-while ( parent ) { 
-struct object_id * oidp = & parent -> item -> object . oid ; 
-strbuf_addch ( sb , ' ' ) ; 
-if ( pp -> abbrev ) 
-strbuf_add_unique_abbrev ( sb , oidp -> hash , pp -> abbrev ) ; 
-else 
-strbuf_addstr ( sb , oid_to_hex ( oidp ) ) ; 
-parent = parent -> next ; 
-} 
-strbuf_addch ( sb , '\n' ) ; 
-} 
-static char * get_header ( const char * msg , const char * key ) 
-{ 
-size_t len ; 
-const char * v = find_commit_header ( msg , key , & len ) ; 
-return v ? xmemdupz ( v , len ) : NULL ; 
-} 
-static char * replace_encoding_header ( char * buf , const char * encoding ) 
-{ 
-struct strbuf tmp = STRBUF_INIT ; 
-size_t start , len ; 
-char * cp = buf ; 
-while ( ! starts_with ( cp , "encoding " ) ) { 
-cp = strchr ( cp , '\n' ) ; 
-if ( ! cp || * ++ cp == '\n' ) 
-return buf ; 
-} 
-start = cp - buf ; 
-cp = strchr ( cp , '\n' ) ; 
-if ( ! cp ) 
-return buf ; 
-len = cp + 1 - ( buf + start ) ; 
-strbuf_attach ( & tmp , buf , strlen ( buf ) , strlen ( buf ) + 1 ) ; 
-if ( is_encoding_utf8 ( encoding ) ) { 
-strbuf_remove ( & tmp , start , len ) ; 
-} else { 
-strbuf_splice ( & tmp , start + strlen ( "encoding " ) , 
-len - strlen ( "encoding \n" ) , 
-encoding , strlen ( encoding ) ) ; 
-} 
-return strbuf_detach ( & tmp , NULL ) ; 
-} 
-const char * logmsg_reencode ( const struct commit * commit , 
-char * * commit_encoding , 
-const char * output_encoding ) 
-{ 
-static const char * utf8 = "UTF-8" ; 
-const char * use_encoding ; 
-char * encoding ; 
-const char * msg = get_commit_buffer ( commit , NULL ) ; 
-char * out ; 
-if ( ! output_encoding || ! * output_encoding ) { 
-if ( commit_encoding ) 
-* commit_encoding = get_header ( msg , "encoding" ) ; 
-return msg ; 
-} 
-encoding = get_header ( msg , "encoding" ) ; 
-if ( commit_encoding ) 
-* commit_encoding = encoding ; 
-use_encoding = encoding ? encoding : utf8 ; 
-if ( same_encoding ( use_encoding , output_encoding ) ) { 
-if ( ! encoding ) 
-return msg ; 
-if ( msg == get_cached_commit_buffer ( commit , NULL ) ) 
-out = xstrdup ( msg ) ; 
-else 
-out = ( char * ) msg ; 
-} 
-else { 
-out = reencode_string ( msg , output_encoding , use_encoding ) ; 
-if ( out ) 
-unuse_commit_buffer ( commit , msg ) ; 
-} 
-if ( out ) 
-out = replace_encoding_header ( out , output_encoding ) ; 
-if ( ! commit_encoding ) 
-free ( encoding ) ; 
-return out ? out : msg ; 
-} 
-static int mailmap_name ( const char * * email , size_t * email_len , 
-const char * * name , size_t * name_len ) 
-{ 
-static struct string_list * mail_map ; 
-if ( ! mail_map ) { 
-mail_map = xcalloc ( 1 , sizeof ( * mail_map ) ) ; 
-read_mailmap ( mail_map , NULL ) ; 
-} 
-return mail_map -> nr && map_user ( mail_map , email , email_len , name , name_len ) ; 
-} 
-static size_t format_person_part ( struct strbuf * sb , char part , 
-const char * msg , int len , 
-const struct date_mode * dmode ) 
-{ 
-const int placeholder_len = 2 ; 
-struct ident_split s ; 
-const char * name , * mail ; 
-size_t maillen , namelen ; 
-if ( split_ident_line ( & s , msg , len ) < 0 ) 
-goto skip ; 
-name = s . name_begin ; 
-namelen = s . name_end - s . name_begin ; 
-mail = s . mail_begin ; 
-maillen = s . mail_end - s . mail_begin ; 
-if ( part == 'N' || part == 'E' ) 
-mailmap_name ( & mail , & maillen , & name , & namelen ) ; 
-if ( part == 'n' || part == 'N' ) { 
-strbuf_add ( sb , name , namelen ) ; 
-return placeholder_len ; 
-} 
-if ( part == 'e' || part == 'E' ) { 
-strbuf_add ( sb , mail , maillen ) ; 
-return placeholder_len ; 
-} 
-if ( ! s . date_begin ) 
-goto skip ; 
-if ( part == 't' ) { 
-strbuf_add ( sb , s . date_begin , s . date_end - s . date_begin ) ; 
-return placeholder_len ; 
-} 
-switch ( part ) { 
-case 'd' : 
-strbuf_addstr ( sb , show_ident_date ( & s , dmode ) ) ; 
-return placeholder_len ; 
-case 'D' : 
-strbuf_addstr ( sb , show_ident_date ( & s , DATE_MODE ( RFC2822 ) ) ) ; 
-return placeholder_len ; 
-case 'r' : 
-strbuf_addstr ( sb , show_ident_date ( & s , DATE_MODE ( RELATIVE ) ) ) ; 
-return placeholder_len ; 
-case 'i' : 
-strbuf_addstr ( sb , show_ident_date ( & s , DATE_MODE ( ISO8601 ) ) ) ; 
-return placeholder_len ; 
-case 'I' : 
-strbuf_addstr ( sb , show_ident_date ( & s , DATE_MODE ( ISO8601_STRICT ) ) ) ; 
-return placeholder_len ; 
-} 
-skip : 
-if ( part == 'n' || part == 'e' || part == 't' || part == 'd' 
-|| part == 'D' || part == 'r' || part == 'i' ) 
-return placeholder_len ; 
-return 0 ; 
-} 
-struct chunk { 
-size_t off ; 
-size_t len ; 
-} ; 
-enum flush_type { 
-no_flush , 
-flush_right , 
-flush_left , 
-flush_left_and_steal , 
-flush_both 
-} ; 
-enum trunc_type { 
-trunc_none , 
-trunc_left , 
-trunc_middle , 
-trunc_right 
-} ; 
-struct format_commit_context { 
-const struct commit * commit ; 
-const struct pretty_print_context * pretty_ctx ; 
-unsigned commit_header_parsed : 1 ; 
-unsigned commit_message_parsed : 1 ; 
-struct signature_check signature_check ; 
-enum flush_type flush_type ; 
-enum trunc_type truncate ; 
-const char * message ; 
-char * commit_encoding ; 
-size_t width , indent1 , indent2 ; 
-int auto_color ; 
-int padding ; 
-struct chunk author ; 
-struct chunk committer ; 
-size_t message_off ; 
-size_t subject_off ; 
-size_t body_off ; 
-struct chunk abbrev_commit_hash ; 
-struct chunk abbrev_tree_hash ; 
-struct chunk abbrev_parent_hashes ; 
-size_t wrap_start ; 
-} ; 
-static int add_again ( struct strbuf * sb , struct chunk * chunk ) 
-{ 
-if ( chunk -> len ) { 
-strbuf_adddup ( sb , chunk -> off , chunk -> len ) ; 
-return 1 ; 
-} 
-chunk -> off = sb -> len ; 
-return 0 ; 
-} 
-static void parse_commit_header ( struct format_commit_context * context ) 
-{ 
-const char * msg = context -> message ; 
-int i ; 
-for ( i = 0 ; msg [ i ] ; i ++ ) { 
-const char * name ; 
-int eol ; 
-for ( eol = i ; msg [ eol ] && msg [ eol ] != '\n' ; eol ++ ) 
 ; 
-if ( i == eol ) { 
-break ; 
-} else if ( skip_prefix ( msg + i , "author " , & name ) ) { 
-context -> author . off = name - msg ; 
-context -> author . len = msg + eol - name ; 
-} else if ( skip_prefix ( msg + i , "committer " , & name ) ) { 
-context -> committer . off = name - msg ; 
-context -> committer . len = msg + eol - name ; 
 } 
-i = eol ; 
-} 
-context -> message_off = i ; 
-context -> commit_header_parsed = 1 ; 
-} 
-static int istitlechar ( char c ) 
+static struct stream_filter_vtbl null_vtbl = { 
+null_filter_fn , 
+null_free_fn , 
+} ; 
+static struct stream_filter null_filter_singleton = { 
+& null_vtbl , 
+} ; 
+int is_null_stream_filter ( struct stream_filter * filter ) 
 { 
-return ( c >= 'a' && c <= 'z' ) || ( c >= 'A' && c <= 'Z' ) || 
-( c >= '0' && c <= '9' ) || c == '.' || c == '_' ; 
+return filter == & null_filter_singleton ; 
 } 
-static void format_sanitized_subject ( struct strbuf * sb , const char * msg ) 
+struct lf_to_crlf_filter { 
+struct stream_filter filter ; 
+unsigned has_held : 1 ; 
+char held ; 
+} ; 
+static int lf_to_crlf_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
 { 
-size_t trimlen ; 
-size_t start_len = sb -> len ; 
-int space = 2 ; 
-for ( ; * msg && * msg != '\n' ; msg ++ ) { 
-if ( istitlechar ( * msg ) ) { 
-if ( space == 1 ) 
-strbuf_addch ( sb , '-' ) ; 
-space = 0 ; 
-strbuf_addch ( sb , * msg ) ; 
-if ( * msg == '.' ) 
-while ( * ( msg + 1 ) == '.' ) 
-msg ++ ; 
-} else 
-space |= 1 ; 
+size_t count , o = 0 ; 
+struct lf_to_crlf_filter * lf_to_crlf = ( struct lf_to_crlf_filter * ) filter ; 
+if ( lf_to_crlf -> has_held && ( lf_to_crlf -> held != '\r' || ! input ) ) { 
+output [ o ++ ] = lf_to_crlf -> held ; 
+lf_to_crlf -> has_held = 0 ; 
 } 
-trimlen = 0 ; 
-while ( sb -> len - trimlen > start_len && 
-( sb -> buf [ sb -> len - 1 - trimlen ] == '.' 
-|| sb -> buf [ sb -> len - 1 - trimlen ] == '-' ) ) 
-trimlen ++ ; 
-strbuf_remove ( sb , sb -> len - trimlen , trimlen ) ; 
-} 
-const char * format_subject ( struct strbuf * sb , const char * msg , 
-const char * line_separator ) 
-{ 
-int first = 1 ; 
-for ( ; ; ) { 
-const char * line = msg ; 
-int linelen = get_one_line ( line ) ; 
-msg += linelen ; 
-if ( ! linelen || is_blank_line ( line , & linelen ) ) 
-break ; 
-if ( ! sb ) 
-continue ; 
-strbuf_grow ( sb , linelen + 2 ) ; 
-if ( ! first ) 
-strbuf_addstr ( sb , line_separator ) ; 
-strbuf_add ( sb , line , linelen ) ; 
-first = 0 ; 
-} 
-return msg ; 
-} 
-static void format_trailers ( struct strbuf * sb , const char * msg ) 
-{ 
-struct trailer_info info ; 
-trailer_info_get ( & info , msg ) ; 
-strbuf_add ( sb , info . trailer_start , 
-info . trailer_end - info . trailer_start ) ; 
-trailer_info_release ( & info ) ; 
-} 
-static void parse_commit_message ( struct format_commit_context * c ) 
-{ 
-const char * msg = c -> message + c -> message_off ; 
-const char * start = c -> message ; 
-msg = skip_blank_lines ( msg ) ; 
-c -> subject_off = msg - start ; 
-msg = format_subject ( NULL , msg , NULL ) ; 
-msg = skip_blank_lines ( msg ) ; 
-c -> body_off = msg - start ; 
-c -> commit_message_parsed = 1 ; 
-} 
-static void strbuf_wrap ( struct strbuf * sb , size_t pos , 
-size_t width , size_t indent1 , size_t indent2 ) 
-{ 
-struct strbuf tmp = STRBUF_INIT ; 
-if ( pos ) 
-strbuf_add ( & tmp , sb -> buf , pos ) ; 
-strbuf_add_wrapped_text ( & tmp , sb -> buf + pos , 
-( int ) indent1 , ( int ) indent2 , ( int ) width ) ; 
-strbuf_swap ( & tmp , sb ) ; 
-strbuf_release ( & tmp ) ; 
-} 
-static void rewrap_message_tail ( struct strbuf * sb , 
-struct format_commit_context * c , 
-size_t new_width , size_t new_indent1 , 
-size_t new_indent2 ) 
-{ 
-if ( c -> width == new_width && c -> indent1 == new_indent1 && 
-c -> indent2 == new_indent2 ) 
-return ; 
-if ( c -> wrap_start < sb -> len ) 
-strbuf_wrap ( sb , c -> wrap_start , c -> width , c -> indent1 , c -> indent2 ) ; 
-c -> wrap_start = sb -> len ; 
-c -> width = new_width ; 
-c -> indent1 = new_indent1 ; 
-c -> indent2 = new_indent2 ; 
-} 
-static int format_reflog_person ( struct strbuf * sb , 
-char part , 
-struct reflog_walk_info * log , 
-const struct date_mode * dmode ) 
-{ 
-const char * ident ; 
-if ( ! log ) 
-return 2 ; 
-ident = get_reflog_ident ( log ) ; 
-if ( ! ident ) 
-return 2 ; 
-return format_person_part ( sb , part , ident , strlen ( ident ) , dmode ) ; 
-} 
-static size_t parse_color ( struct strbuf * sb , 
-const char * placeholder , 
-struct format_commit_context * c ) 
-{ 
-const char * rest = placeholder ; 
-if ( placeholder [ 1 ] == '(' ) { 
-const char * begin = placeholder + 2 ; 
-const char * end = strchr ( begin , ')' ) ; 
-char color [ COLOR_MAXLEN ] ; 
-if ( ! end ) 
-return 0 ; 
-if ( skip_prefix ( begin , "auto," , & begin ) ) { 
-if ( ! want_color ( c -> pretty_ctx -> color ) ) 
-return end - placeholder + 1 ; 
-} 
-if ( color_parse_mem ( begin , end - begin , color ) < 0 ) 
-die ( _ ( "unable to parse --pretty format" ) ) ; 
-strbuf_addstr ( sb , color ) ; 
-return end - placeholder + 1 ; 
-} 
-if ( skip_prefix ( placeholder + 1 , "red" , & rest ) ) 
-strbuf_addstr ( sb , GIT_COLOR_RED ) ; 
-else if ( skip_prefix ( placeholder + 1 , "green" , & rest ) ) 
-strbuf_addstr ( sb , GIT_COLOR_GREEN ) ; 
-else if ( skip_prefix ( placeholder + 1 , "blue" , & rest ) ) 
-strbuf_addstr ( sb , GIT_COLOR_BLUE ) ; 
-else if ( skip_prefix ( placeholder + 1 , "reset" , & rest ) ) 
-strbuf_addstr ( sb , GIT_COLOR_RESET ) ; 
-return rest - placeholder ; 
-} 
-static size_t parse_padding_placeholder ( struct strbuf * sb , 
-const char * placeholder , 
-struct format_commit_context * c ) 
-{ 
-const char * ch = placeholder ; 
-enum flush_type flush_type ; 
-int to_column = 0 ; 
-switch ( * ch ++ ) { 
-case '<' : 
-flush_type = flush_right ; 
-break ; 
-case '>' : 
-if ( * ch == '<' ) { 
-flush_type = flush_both ; 
-ch ++ ; 
-} else if ( * ch == '>' ) { 
-flush_type = flush_left_and_steal ; 
-ch ++ ; 
-} else 
-flush_type = flush_left ; 
-break ; 
-default : 
+if ( ! input ) { 
+* osize_p -= o ; 
 return 0 ; 
 } 
-if ( * ch == '|' ) { 
-to_column = 1 ; 
-ch ++ ; 
+count = * isize_p ; 
+if ( count || lf_to_crlf -> has_held ) { 
+size_t i ; 
+int was_cr = 0 ; 
+if ( lf_to_crlf -> has_held ) { 
+was_cr = 1 ; 
+lf_to_crlf -> has_held = 0 ; 
 } 
-if ( * ch == '(' ) { 
-const char * start = ch + 1 ; 
-const char * end = start + strcspn ( start , ",)" ) ; 
-char * next ; 
-int width ; 
-if ( ! end || end == start ) 
-return 0 ; 
-width = strtol ( start , & next , 10 ) ; 
-if ( next == start || width == 0 ) 
-return 0 ; 
-if ( width < 0 ) { 
-if ( to_column ) 
-width += term_columns ( ) ; 
-if ( width < 0 ) 
-return 0 ; 
+for ( i = 0 ; o < * osize_p && i < count ; i ++ ) { 
+char ch = input [ i ] ; 
+if ( ch == '\n' ) { 
+output [ o ++ ] = '\r' ; 
+} else if ( was_cr ) { 
+output [ o ++ ] = '\r' ; 
 } 
-c -> padding = to_column ? - width : width ; 
-c -> flush_type = flush_type ; 
-if ( * end == ',' ) { 
-start = end + 1 ; 
-end = strchr ( start , ')' ) ; 
-if ( ! end || end == start ) 
-return 0 ; 
-if ( starts_with ( start , "trunc)" ) ) 
-c -> truncate = trunc_right ; 
-else if ( starts_with ( start , "ltrunc)" ) ) 
-c -> truncate = trunc_left ; 
-else if ( starts_with ( start , "mtrunc)" ) ) 
-c -> truncate = trunc_middle ; 
-else 
-return 0 ; 
-} else 
-c -> truncate = trunc_none ; 
-return end - placeholder + 1 ; 
-} 
-return 0 ; 
-} 
-static size_t format_commit_one ( struct strbuf * sb , 
-const char * placeholder , 
-void * context ) 
-{ 
-struct format_commit_context * c = context ; 
-const struct commit * commit = c -> commit ; 
-const char * msg = c -> message ; 
-struct commit_list * p ; 
-int ch ; 
-switch ( placeholder [ 0 ] ) { 
-case 'C' : 
-if ( starts_with ( placeholder + 1 , "(auto)" ) ) { 
-c -> auto_color = want_color ( c -> pretty_ctx -> color ) ; 
-if ( c -> auto_color && sb -> len ) 
-strbuf_addstr ( sb , GIT_COLOR_RESET ) ; 
-return 7 ; 
-} else { 
-int ret = parse_color ( sb , placeholder , c ) ; 
-if ( ret ) 
-c -> auto_color = 0 ; 
-return ret ; 
-} 
-case 'n' : 
-strbuf_addch ( sb , '\n' ) ; 
-return 1 ; 
-case 'x' : 
-ch = hex2chr ( placeholder + 1 ) ; 
-if ( ch < 0 ) 
-return 0 ; 
-strbuf_addch ( sb , ch ) ; 
-return 3 ; 
-case 'w' : 
-if ( placeholder [ 1 ] == '(' ) { 
-unsigned long width = 0 , indent1 = 0 , indent2 = 0 ; 
-char * next ; 
-const char * start = placeholder + 2 ; 
-const char * end = strchr ( start , ')' ) ; 
-if ( ! end ) 
-return 0 ; 
-if ( end > start ) { 
-width = strtoul ( start , & next , 10 ) ; 
-if ( * next == ',' ) { 
-indent1 = strtoul ( next + 1 , & next , 10 ) ; 
-if ( * next == ',' ) { 
-indent2 = strtoul ( next + 1 , 
-& next , 10 ) ; 
-} 
-} 
-if ( * next != ')' ) 
-return 0 ; 
-} 
-rewrap_message_tail ( sb , c , width , indent1 , indent2 ) ; 
-return end - placeholder + 1 ; 
-} else 
-return 0 ; 
-case '<' : 
-case '>' : 
-return parse_padding_placeholder ( sb , placeholder , c ) ; 
-} 
-if ( ! commit -> object . parsed ) 
-parse_object ( & commit -> object . oid ) ; 
-switch ( placeholder [ 0 ] ) { 
-case 'H' : 
-strbuf_addstr ( sb , diff_get_color ( c -> auto_color , DIFF_COMMIT ) ) ; 
-strbuf_addstr ( sb , oid_to_hex ( & commit -> object . oid ) ) ; 
-strbuf_addstr ( sb , diff_get_color ( c -> auto_color , DIFF_RESET ) ) ; 
-return 1 ; 
-case 'h' : 
-strbuf_addstr ( sb , diff_get_color ( c -> auto_color , DIFF_COMMIT ) ) ; 
-if ( add_again ( sb , & c -> abbrev_commit_hash ) ) { 
-strbuf_addstr ( sb , diff_get_color ( c -> auto_color , DIFF_RESET ) ) ; 
-return 1 ; 
-} 
-strbuf_add_unique_abbrev ( sb , commit -> object . oid . hash , 
-c -> pretty_ctx -> abbrev ) ; 
-strbuf_addstr ( sb , diff_get_color ( c -> auto_color , DIFF_RESET ) ) ; 
-c -> abbrev_commit_hash . len = sb -> len - c -> abbrev_commit_hash . off ; 
-return 1 ; 
-case 'T' : 
-strbuf_addstr ( sb , oid_to_hex ( & commit -> tree -> object . oid ) ) ; 
-return 1 ; 
-case 't' : 
-if ( add_again ( sb , & c -> abbrev_tree_hash ) ) 
-return 1 ; 
-strbuf_add_unique_abbrev ( sb , commit -> tree -> object . oid . hash , 
-c -> pretty_ctx -> abbrev ) ; 
-c -> abbrev_tree_hash . len = sb -> len - c -> abbrev_tree_hash . off ; 
-return 1 ; 
-case 'P' : 
-for ( p = commit -> parents ; p ; p = p -> next ) { 
-if ( p != commit -> parents ) 
-strbuf_addch ( sb , ' ' ) ; 
-strbuf_addstr ( sb , oid_to_hex ( & p -> item -> object . oid ) ) ; 
-} 
-return 1 ; 
-case 'p' : 
-if ( add_again ( sb , & c -> abbrev_parent_hashes ) ) 
-return 1 ; 
-for ( p = commit -> parents ; p ; p = p -> next ) { 
-if ( p != commit -> parents ) 
-strbuf_addch ( sb , ' ' ) ; 
-strbuf_add_unique_abbrev ( sb , p -> item -> object . oid . hash , 
-c -> pretty_ctx -> abbrev ) ; 
-} 
-c -> abbrev_parent_hashes . len = sb -> len - 
-c -> abbrev_parent_hashes . off ; 
-return 1 ; 
-case 'm' : 
-strbuf_addstr ( sb , get_revision_mark ( NULL , commit ) ) ; 
-return 1 ; 
-case 'd' : 
-load_ref_decorations ( DECORATE_SHORT_REFS ) ; 
-format_decorations ( sb , commit , c -> auto_color ) ; 
-return 1 ; 
-case 'D' : 
-load_ref_decorations ( DECORATE_SHORT_REFS ) ; 
-format_decorations_extended ( sb , commit , c -> auto_color , "" , ", " , "" ) ; 
-return 1 ; 
-case 'g' : 
-switch ( placeholder [ 1 ] ) { 
-case 'd' : 
-case 'D' : 
-if ( c -> pretty_ctx -> reflog_info ) 
-get_reflog_selector ( sb , 
-c -> pretty_ctx -> reflog_info , 
-& c -> pretty_ctx -> date_mode , 
-c -> pretty_ctx -> date_mode_explicit , 
-( placeholder [ 1 ] == 'd' ) ) ; 
-return 2 ; 
-case 's' : 
-if ( c -> pretty_ctx -> reflog_info ) 
-get_reflog_message ( sb , c -> pretty_ctx -> reflog_info ) ; 
-return 2 ; 
-case 'n' : 
-case 'N' : 
-case 'e' : 
-case 'E' : 
-return format_reflog_person ( sb , 
-placeholder [ 1 ] , 
-c -> pretty_ctx -> reflog_info , 
-& c -> pretty_ctx -> date_mode ) ; 
-} 
-return 0 ; 
-case 'N' : 
-if ( c -> pretty_ctx -> notes_message ) { 
-strbuf_addstr ( sb , c -> pretty_ctx -> notes_message ) ; 
-return 1 ; 
-} 
-return 0 ; 
-} 
-if ( placeholder [ 0 ] == 'G' ) { 
-if ( ! c -> signature_check . result ) 
-check_commit_signature ( c -> commit , & ( c -> signature_check ) ) ; 
-switch ( placeholder [ 1 ] ) { 
-case 'G' : 
-if ( c -> signature_check . gpg_output ) 
-strbuf_addstr ( sb , c -> signature_check . gpg_output ) ; 
-break ; 
-case '?' : 
-switch ( c -> signature_check . result ) { 
-case 'G' : 
-case 'B' : 
-case 'E' : 
-case 'U' : 
-case 'N' : 
-case 'X' : 
-case 'Y' : 
-case 'R' : 
-strbuf_addch ( sb , c -> signature_check . result ) ; 
-} 
-break ; 
-case 'S' : 
-if ( c -> signature_check . signer ) 
-strbuf_addstr ( sb , c -> signature_check . signer ) ; 
-break ; 
-case 'K' : 
-if ( c -> signature_check . key ) 
-strbuf_addstr ( sb , c -> signature_check . key ) ; 
-break ; 
-default : 
-return 0 ; 
-} 
-return 2 ; 
-} 
-if ( ! c -> commit_header_parsed ) 
-parse_commit_header ( c ) ; 
-switch ( placeholder [ 0 ] ) { 
-case 'a' : 
-return format_person_part ( sb , placeholder [ 1 ] , 
-msg + c -> author . off , c -> author . len , 
-& c -> pretty_ctx -> date_mode ) ; 
-case 'c' : 
-return format_person_part ( sb , placeholder [ 1 ] , 
-msg + c -> committer . off , c -> committer . len , 
-& c -> pretty_ctx -> date_mode ) ; 
-case 'e' : 
-if ( c -> commit_encoding ) 
-strbuf_addstr ( sb , c -> commit_encoding ) ; 
-return 1 ; 
-case 'B' : 
-strbuf_addstr ( sb , msg + c -> message_off + 1 ) ; 
-return 1 ; 
-} 
-if ( ! c -> commit_message_parsed ) 
-parse_commit_message ( c ) ; 
-switch ( placeholder [ 0 ] ) { 
-case 's' : 
-format_subject ( sb , msg + c -> subject_off , " " ) ; 
-return 1 ; 
-case 'f' : 
-format_sanitized_subject ( sb , msg + c -> subject_off ) ; 
-return 1 ; 
-case 'b' : 
-strbuf_addstr ( sb , msg + c -> body_off ) ; 
-return 1 ; 
-} 
-if ( starts_with ( placeholder , "(trailers)" ) ) { 
-format_trailers ( sb , msg + c -> subject_off ) ; 
-return strlen ( "(trailers)" ) ; 
-} 
-return 0 ; 
-} 
-static size_t format_and_pad_commit ( struct strbuf * sb , 
-const char * placeholder , 
-struct format_commit_context * c ) 
-{ 
-struct strbuf local_sb = STRBUF_INIT ; 
-int total_consumed = 0 , len , padding = c -> padding ; 
-if ( padding < 0 ) { 
-const char * start = strrchr ( sb -> buf , '\n' ) ; 
-int occupied ; 
-if ( ! start ) 
-start = sb -> buf ; 
-occupied = utf8_strnwidth ( start , - 1 , 1 ) ; 
-occupied += c -> pretty_ctx -> graph_width ; 
-padding = ( - padding ) - occupied ; 
-} 
-while ( 1 ) { 
-int modifier = * placeholder == 'C' ; 
-int consumed = format_commit_one ( & local_sb , placeholder , c ) ; 
-total_consumed += consumed ; 
-if ( ! modifier ) 
-break ; 
-placeholder += consumed ; 
-if ( * placeholder != '%' ) 
-break ; 
-placeholder ++ ; 
-total_consumed ++ ; 
-} 
-len = utf8_strnwidth ( local_sb . buf , - 1 , 1 ) ; 
-if ( c -> flush_type == flush_left_and_steal ) { 
-const char * ch = sb -> buf + sb -> len - 1 ; 
-while ( len > padding && ch > sb -> buf ) { 
-const char * p ; 
-if ( * ch == ' ' ) { 
-ch -- ; 
-padding ++ ; 
+if ( * osize_p <= o ) { 
+lf_to_crlf -> has_held = 1 ; 
+lf_to_crlf -> held = ch ; 
 continue ; 
 } 
-if ( * ch != 'm' ) 
-break ; 
-p = ch - 1 ; 
-while ( ch - p < 10 && * p != '\033' ) 
-p -- ; 
-if ( * p != '\033' || 
-ch + 1 - p != display_mode_esc_sequence_len ( p ) ) 
-break ; 
-strbuf_insert ( & local_sb , 0 , p , ch + 1 - p ) ; 
-ch = p - 1 ; 
+if ( ch == '\r' ) { 
+was_cr = 1 ; 
+continue ; 
 } 
-strbuf_setlen ( sb , ch + 1 - sb -> buf ) ; 
-c -> flush_type = flush_left ; 
+was_cr = 0 ; 
+output [ o ++ ] = ch ; 
 } 
-if ( len > padding ) { 
-switch ( c -> truncate ) { 
-case trunc_left : 
-strbuf_utf8_replace ( & local_sb , 
-0 , len - ( padding - 2 ) , 
-".." ) ; 
-break ; 
-case trunc_middle : 
-strbuf_utf8_replace ( & local_sb , 
-padding / 2 - 1 , 
-len - ( padding - 2 ) , 
-".." ) ; 
-break ; 
-case trunc_right : 
-strbuf_utf8_replace ( & local_sb , 
-padding - 2 , len - ( padding - 2 ) , 
-".." ) ; 
-break ; 
-case trunc_none : 
-break ; 
+* osize_p -= o ; 
+* isize_p -= i ; 
+if ( ! lf_to_crlf -> has_held && was_cr ) { 
+lf_to_crlf -> has_held = 1 ; 
+lf_to_crlf -> held = '\r' ; 
 } 
-strbuf_addbuf ( sb , & local_sb ) ; 
-} else { 
-int sb_len = sb -> len , offset = 0 ; 
-if ( c -> flush_type == flush_left ) 
-offset = padding - len ; 
-else if ( c -> flush_type == flush_both ) 
-offset = ( padding - len ) / 2 ; 
-padding = padding - len + local_sb . len ; 
-strbuf_addchars ( sb , ' ' , padding ) ; 
-memcpy ( sb -> buf + sb_len + offset , local_sb . buf , 
-local_sb . len ) ; 
-} 
-strbuf_release ( & local_sb ) ; 
-c -> flush_type = no_flush ; 
-return total_consumed ; 
-} 
-static size_t format_commit_item ( struct strbuf * sb , 
-const char * placeholder , 
-void * context ) 
-{ 
-int consumed ; 
-size_t orig_len ; 
-enum { 
-NO_MAGIC , 
-ADD_LF_BEFORE_NON_EMPTY , 
-DEL_LF_BEFORE_EMPTY , 
-ADD_SP_BEFORE_NON_EMPTY 
-} magic = NO_MAGIC ; 
-switch ( placeholder [ 0 ] ) { 
-case '-' : 
-magic = DEL_LF_BEFORE_EMPTY ; 
-break ; 
-case '+' : 
-magic = ADD_LF_BEFORE_NON_EMPTY ; 
-break ; 
-case ' ' : 
-magic = ADD_SP_BEFORE_NON_EMPTY ; 
-break ; 
-default : 
-break ; 
-} 
-if ( magic != NO_MAGIC ) 
-placeholder ++ ; 
-orig_len = sb -> len ; 
-if ( ( ( struct format_commit_context * ) context ) -> flush_type != no_flush ) 
-consumed = format_and_pad_commit ( sb , placeholder , context ) ; 
-else 
-consumed = format_commit_one ( sb , placeholder , context ) ; 
-if ( magic == NO_MAGIC ) 
-return consumed ; 
-if ( ( orig_len == sb -> len ) && magic == DEL_LF_BEFORE_EMPTY ) { 
-while ( sb -> len && sb -> buf [ sb -> len - 1 ] == '\n' ) 
-strbuf_setlen ( sb , sb -> len - 1 ) ; 
-} else if ( orig_len != sb -> len ) { 
-if ( magic == ADD_LF_BEFORE_NON_EMPTY ) 
-strbuf_insert ( sb , orig_len , "\n" , 1 ) ; 
-else if ( magic == ADD_SP_BEFORE_NON_EMPTY ) 
-strbuf_insert ( sb , orig_len , " " , 1 ) ; 
-} 
-return consumed + 1 ; 
-} 
-static size_t userformat_want_item ( struct strbuf * sb , const char * placeholder , 
-void * context ) 
-{ 
-struct userformat_want * w = context ; 
-if ( * placeholder == '+' || * placeholder == '-' || * placeholder == ' ' ) 
-placeholder ++ ; 
-switch ( * placeholder ) { 
-case 'N' : 
-w -> notes = 1 ; 
-break ; 
 } 
 return 0 ; 
 } 
-void userformat_find_requirements ( const char * fmt , struct userformat_want * w ) 
+static void lf_to_crlf_free_fn ( struct stream_filter * filter ) 
 { 
-struct strbuf dummy = STRBUF_INIT ; 
-if ( ! fmt ) { 
-if ( ! user_format ) 
-return ; 
-fmt = user_format ; 
+free ( filter ) ; 
 } 
-strbuf_expand ( & dummy , fmt , userformat_want_item , w ) ; 
-strbuf_release ( & dummy ) ; 
-} 
-void format_commit_message ( const struct commit * commit , 
-const char * format , struct strbuf * sb , 
-const struct pretty_print_context * pretty_ctx ) 
+static struct stream_filter_vtbl lf_to_crlf_vtbl = { 
+lf_to_crlf_filter_fn , 
+lf_to_crlf_free_fn , 
+} ; 
+static struct stream_filter * lf_to_crlf_filter ( void ) 
 { 
-struct format_commit_context context ; 
-const char * output_enc = pretty_ctx -> output_encoding ; 
-const char * utf8 = "UTF-8" ; 
-memset ( & context , 0 , sizeof ( context ) ) ; 
-context . commit = commit ; 
-context . pretty_ctx = pretty_ctx ; 
-context . wrap_start = sb -> len ; 
-context . message = logmsg_reencode ( commit , 
-& context . commit_encoding , 
-utf8 ) ; 
-strbuf_expand ( sb , format , format_commit_item , & context ) ; 
-rewrap_message_tail ( sb , & context , 0 , 0 , 0 ) ; 
-if ( output_enc ) { 
-if ( same_encoding ( utf8 , output_enc ) ) 
-output_enc = NULL ; 
-} else { 
-if ( context . commit_encoding && 
-! same_encoding ( context . commit_encoding , utf8 ) ) 
-output_enc = context . commit_encoding ; 
+struct lf_to_crlf_filter * lf_to_crlf = xcalloc ( 1 , sizeof ( * lf_to_crlf ) ) ; 
+lf_to_crlf -> filter . vtbl = & lf_to_crlf_vtbl ; 
+return ( struct stream_filter * ) lf_to_crlf ; 
 } 
-if ( output_enc ) { 
-int outsz ; 
-char * out = reencode_string_len ( sb -> buf , sb -> len , 
-output_enc , utf8 , & outsz ) ; 
-if ( out ) 
-strbuf_attach ( sb , out , outsz , outsz + 1 ) ; 
-} 
-free ( context . commit_encoding ) ; 
-unuse_commit_buffer ( commit , context . message ) ; 
-} 
-static void pp_header ( struct pretty_print_context * pp , 
-const char * encoding , 
-const struct commit * commit , 
-const char * * msg_p , 
-struct strbuf * sb ) 
+
+
+ struct cascade_filter { 
+struct stream_filter filter ; 
+struct stream_filter * one ; 
+struct stream_filter * two ; 
+char buf [  1024 ] ; 
+int end , ptr ; 
+} ; 
+static int cascade_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
 { 
-int parents_shown = 0 ; 
-for ( ; ; ) { 
-const char * name , * line = * msg_p ; 
-int linelen = get_one_line ( * msg_p ) ; 
-if ( ! linelen ) 
-return ; 
-* msg_p += linelen ; 
-if ( linelen == 1 ) 
-return ; 
-if ( pp -> fmt == CMIT_FMT_RAW ) { 
-strbuf_add ( sb , line , linelen ) ; 
-continue ; 
-} 
-if ( starts_with ( line , "parent " ) ) { 
-if ( linelen != 48 ) 
-die ( "bad parent line in commit" ) ; 
-continue ; 
-} 
-if ( ! parents_shown ) { 
-unsigned num = commit_list_count ( commit -> parents ) ; 
-strbuf_grow ( sb , num * 50 + 20 ) ; 
-add_merge_info ( pp , sb , commit ) ; 
-parents_shown = 1 ; 
-} 
-if ( skip_prefix ( line , "author " , & name ) ) { 
-strbuf_grow ( sb , linelen + 80 ) ; 
-pp_user_info ( pp , "Author" , sb , name , encoding ) ; 
-} 
-if ( skip_prefix ( line , "committer " , & name ) && 
-( pp -> fmt == CMIT_FMT_FULL || pp -> fmt == CMIT_FMT_FULLER ) ) { 
-strbuf_grow ( sb , linelen + 80 ) ; 
-pp_user_info ( pp , "Commit" , sb , name , encoding ) ; 
-} 
-} 
-} 
-void pp_title_line ( struct pretty_print_context * pp , 
-const char * * msg_p , 
-struct strbuf * sb , 
-const char * encoding , 
-int need_8bit_cte ) 
-{ 
-static const int max_length = 78 ; 
-struct strbuf title ; 
-strbuf_init ( & title , 80 ) ; 
-* msg_p = format_subject ( & title , * msg_p , 
-pp -> preserve_subject ? "\n" : " " ) ; 
-strbuf_grow ( sb , title . len + 1024 ) ; 
-if ( pp -> print_email_subject ) { 
-if ( pp -> rev ) 
-fmt_output_email_subject ( sb , pp -> rev ) ; 
-if ( needs_rfc2047_encoding ( title . buf , title . len , RFC2047_SUBJECT ) ) 
-add_rfc2047 ( sb , title . buf , title . len , 
-encoding , RFC2047_SUBJECT ) ; 
-else 
-strbuf_add_wrapped_bytes ( sb , title . buf , title . len , 
-- last_line_length ( sb ) , 1 , max_length ) ; 
-} else { 
-strbuf_addbuf ( sb , & title ) ; 
-} 
-strbuf_addch ( sb , '\n' ) ; 
-if ( need_8bit_cte == 0 ) { 
-int i ; 
-for ( i = 0 ; i < pp -> in_body_headers . nr ; i ++ ) { 
-if ( has_non_ascii ( pp -> in_body_headers . items [ i ] . string ) ) { 
-need_8bit_cte = 1 ; 
-break ; 
-} 
-} 
-} 
-if ( need_8bit_cte > 0 ) { 
-const char * header_fmt = 
-"MIME-Version: 1.0\n" 
-"Content-Type: text/plain; charset=%s\n" 
-"Content-Transfer-Encoding: 8bit\n" ; 
-strbuf_addf ( sb , header_fmt , encoding ) ; 
-} 
-if ( pp -> after_subject ) { 
-strbuf_addstr ( sb , pp -> after_subject ) ; 
-} 
-if ( cmit_fmt_is_mail ( pp -> fmt ) ) { 
-strbuf_addch ( sb , '\n' ) ; 
-} 
-if ( pp -> in_body_headers . nr ) { 
-int i ; 
-for ( i = 0 ; i < pp -> in_body_headers . nr ; i ++ ) { 
-strbuf_addstr ( sb , pp -> in_body_headers . items [ i ] . string ) ; 
-free ( pp -> in_body_headers . items [ i ] . string ) ; 
-} 
-string_list_clear ( & pp -> in_body_headers , 0 ) ; 
-strbuf_addch ( sb , '\n' ) ; 
-} 
-strbuf_release ( & title ) ; 
-} 
-static int pp_utf8_width ( const char * start , const char * end ) 
-{ 
-int width = 0 ; 
-size_t remain = end - start ; 
-while ( remain ) { 
-int n = utf8_width ( & start , & remain ) ; 
-if ( n < 0 || ! start ) 
+struct cascade_filter * cas = ( struct cascade_filter * ) filter ; 
+size_t filled = 0 ; 
+size_t sz = * osize_p ; 
+size_t to_feed , remaining ; 
+while ( filled < sz ) { 
+remaining = sz - filled ; 
+if ( cas -> ptr < cas -> end ) { 
+to_feed = cas -> end - cas -> ptr ; 
+if ( stream_filter ( cas -> two , 
+cas -> buf + cas -> ptr , & to_feed , 
+output + filled , & remaining ) ) 
 return - 1 ; 
-width += n ; 
-} 
-return width ; 
-} 
-static void strbuf_add_tabexpand ( struct strbuf * sb , int tabwidth , 
-const char * line , int linelen ) 
-{ 
-const char * tab ; 
-while ( ( tab = memchr ( line , '\t' , linelen ) ) != NULL ) { 
-int width = pp_utf8_width ( line , tab ) ; 
-if ( width < 0 ) 
-break ; 
-strbuf_add ( sb , line , tab - line ) ; 
-strbuf_addchars ( sb , ' ' , tabwidth - ( width % tabwidth ) ) ; 
-linelen -= tab + 1 - line ; 
-line = tab + 1 ; 
-} 
-strbuf_add ( sb , line , linelen ) ; 
-} 
-static void pp_handle_indent ( struct pretty_print_context * pp , 
-struct strbuf * sb , int indent , 
-const char * line , int linelen ) 
-{ 
-strbuf_addchars ( sb , ' ' , indent ) ; 
-if ( pp -> expand_tabs_in_log ) 
-strbuf_add_tabexpand ( sb , pp -> expand_tabs_in_log , line , linelen ) ; 
-else 
-strbuf_add ( sb , line , linelen ) ; 
-} 
-static int is_mboxrd_from ( const char * line , int len ) 
-{ 
-return len > 4 && starts_with ( line + strspn ( line , ">" ) , "From " ) ; 
-} 
-void pp_remainder ( struct pretty_print_context * pp , 
-const char * * msg_p , 
-struct strbuf * sb , 
-int indent ) 
-{ 
-int first = 1 ; 
-for ( ; ; ) { 
-const char * line = * msg_p ; 
-int linelen = get_one_line ( line ) ; 
-* msg_p += linelen ; 
-if ( ! linelen ) 
-break ; 
-if ( is_blank_line ( line , & linelen ) ) { 
-if ( first ) 
+cas -> ptr += ( cas -> end - cas -> ptr ) - to_feed ; 
+filled = sz - remaining ; 
 continue ; 
-if ( pp -> fmt == CMIT_FMT_SHORT ) 
+} 
+to_feed = input ? * isize_p : 0 ; 
+if ( input && ! to_feed ) 
 break ; 
+remaining = sizeof ( cas -> buf ) ; 
+if ( stream_filter ( cas -> one , 
+input , & to_feed , 
+cas -> buf , & remaining ) ) 
+return - 1 ; 
+cas -> end = sizeof ( cas -> buf ) - remaining ; 
+cas -> ptr = 0 ; 
+if ( input ) { 
+size_t fed = * isize_p - to_feed ; 
+* isize_p -= fed ; 
+input += fed ; 
 } 
-first = 0 ; 
-strbuf_grow ( sb , linelen + indent + 20 ) ; 
-if ( indent ) 
-pp_handle_indent ( pp , sb , indent , line , linelen ) ; 
-else if ( pp -> expand_tabs_in_log ) 
-strbuf_add_tabexpand ( sb , pp -> expand_tabs_in_log , 
-line , linelen ) ; 
-else { 
-if ( pp -> fmt == CMIT_FMT_MBOXRD && 
-is_mboxrd_from ( line , linelen ) ) 
-strbuf_addch ( sb , '>' ) ; 
-strbuf_add ( sb , line , linelen ) ; 
-} 
-strbuf_addch ( sb , '\n' ) ; 
-} 
-} 
-void pretty_print_commit ( struct pretty_print_context * pp , 
-const struct commit * commit , 
-struct strbuf * sb ) 
-{ 
-unsigned long beginning_of_body ; 
-int indent = 4 ; 
-const char * msg ; 
-const char * reencoded ; 
-const char * encoding ; 
-int need_8bit_cte = pp -> need_8bit_cte ; 
-if ( pp -> fmt == CMIT_FMT_USERFORMAT ) { 
-format_commit_message ( commit , user_format , sb , pp ) ; 
-return ; 
-} 
-encoding = get_log_output_encoding ( ) ; 
-msg = reencoded = logmsg_reencode ( commit , NULL , encoding ) ; 
-if ( pp -> fmt == CMIT_FMT_ONELINE || cmit_fmt_is_mail ( pp -> fmt ) ) 
-indent = 0 ; 
-if ( cmit_fmt_is_mail ( pp -> fmt ) && need_8bit_cte == 0 ) { 
-int i , ch , in_body ; 
-for ( in_body = i = 0 ; ( ch = msg [ i ] ) ; i ++ ) { 
-if ( ! in_body ) { 
-if ( ch == '\n' && msg [ i + 1 ] == '\n' ) 
-in_body = 1 ; 
-} 
-else if ( non_ascii ( ch ) ) { 
-need_8bit_cte = 1 ; 
+if ( input || cas -> end ) 
+continue ; 
+to_feed = 0 ; 
+remaining = sz - filled ; 
+if ( stream_filter ( cas -> two , 
+NULL , & to_feed , 
+output + filled , & remaining ) ) 
+return - 1 ; 
+if ( remaining == ( sz - filled ) ) 
 break ; 
+filled = sz - remaining ; 
 } 
+* osize_p -= filled ; 
+return 0 ; 
 } 
-} 
-pp_header ( pp , encoding , commit , & msg , sb ) ; 
-if ( pp -> fmt != CMIT_FMT_ONELINE && ! pp -> print_email_subject ) { 
-strbuf_addch ( sb , '\n' ) ; 
-} 
-msg = skip_blank_lines ( msg ) ; 
-if ( pp -> fmt == CMIT_FMT_ONELINE || cmit_fmt_is_mail ( pp -> fmt ) ) 
-pp_title_line ( pp , & msg , sb , encoding , need_8bit_cte ) ; 
-beginning_of_body = sb -> len ; 
-if ( pp -> fmt != CMIT_FMT_ONELINE ) 
-pp_remainder ( pp , & msg , sb , indent ) ; 
-strbuf_rtrim ( sb ) ; 
-if ( pp -> fmt != CMIT_FMT_ONELINE ) 
-strbuf_addch ( sb , '\n' ) ; 
-if ( cmit_fmt_is_mail ( pp -> fmt ) && sb -> len <= beginning_of_body ) 
-strbuf_addch ( sb , '\n' ) ; 
-unuse_commit_buffer ( commit , reencoded ) ; 
-} 
-void pp_commit_easy ( enum cmit_fmt fmt , const struct commit * commit , 
-struct strbuf * sb ) 
+static void cascade_free_fn ( struct stream_filter * filter ) 
 { 
-struct pretty_print_context pp = { 0 } ; 
-pp . fmt = fmt ; 
-pretty_print_commit ( & pp , commit , sb ) ; 
+struct cascade_filter * cas = ( struct cascade_filter * ) filter ; 
+free_stream_filter ( cas -> one ) ; 
+free_stream_filter ( cas -> two ) ; 
+free ( filter ) ; 
+} 
+static struct stream_filter_vtbl cascade_vtbl = { 
+cascade_filter_fn , 
+cascade_free_fn , 
+} ; 
+static struct stream_filter * cascade_filter ( struct stream_filter * one , 
+struct stream_filter * two ) 
+{ 
+struct cascade_filter * cascade ; 
+if ( ! one || is_null_stream_filter ( one ) ) 
+return two ; 
+if ( ! two || is_null_stream_filter ( two ) ) 
+return one ; 
+cascade = xmalloc ( sizeof ( * cascade ) ) ; 
+cascade -> one = one ; 
+cascade -> two = two ; 
+cascade -> end = cascade -> ptr = 0 ; 
+cascade -> filter . vtbl = & cascade_vtbl ; 
+return ( struct stream_filter * ) cascade ; 
+} 
+
+
+ 
+
+ struct ident_filter { 
+struct stream_filter filter ; 
+struct strbuf left ; 
+int state ; 
+char ident [ 45 ] ; 
+} ; 
+static int is_foreign_ident ( const char * str ) 
+{ 
+int i ; 
+if ( ! skip_prefix ( str , "$Id: " , & str ) ) 
+return 0 ; 
+for ( i = 0 ; str [ i ] ; i ++ ) { 
+if ( isspace ( str [ i ] ) && str [ i + 1 ] != '$' ) 
+return 1 ; 
+} 
+return 0 ; 
+} 
+static void ident_drain ( struct ident_filter * ident , char * * output_p , size_t * osize_p ) 
+{ 
+size_t to_drain = ident -> left . len ; 
+if ( * osize_p < to_drain ) 
+to_drain = * osize_p ; 
+if ( to_drain ) { 
+memcpy ( * output_p , ident -> left . buf , to_drain ) ; 
+strbuf_remove ( & ident -> left , 0 , to_drain ) ; 
+* output_p += to_drain ; 
+* osize_p -= to_drain ; 
+} 
+if ( ! ident -> left . len ) 
+ident -> state = 0 ; 
+} 
+static int ident_filter_fn ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
+{ 
+struct ident_filter * ident = ( struct ident_filter * ) filter ; 
+static const char head [ ] = "$Id" ; 
+if ( ! input ) { 
+switch ( ident -> state ) { 
+default : 
+strbuf_add ( & ident -> left , head , ident -> state ) ; 
+case  ( - 2)  : 
+case  ( - 1)  : 
+ident_drain ( ident , & output , osize_p ) ; 
+} 
+return 0 ; 
+} 
+while ( * isize_p || ( ident -> state ==  ( - 1)  ) ) { 
+int ch ; 
+if ( ident -> state ==  ( - 1)  ) { 
+ident_drain ( ident , & output , osize_p ) ; 
+if ( ! * osize_p ) 
+break ; 
+continue ; 
+} 
+ch = * ( input ++ ) ; 
+( * isize_p ) -- ; 
+if ( ident -> state ==  ( - 2)  ) { 
+strbuf_addch ( & ident -> left , ch ) ; 
+if ( ch != '\n' && ch != '$' ) 
+continue ; 
+if ( ch == '$' && ! is_foreign_ident ( ident -> left . buf ) ) { 
+strbuf_setlen ( & ident -> left , sizeof ( head ) - 1 ) ; 
+strbuf_addstr ( & ident -> left , ident -> ident ) ; 
+} 
+ident -> state =  ( - 1)  ; 
+continue ; 
+} 
+if ( ident -> state < sizeof ( head ) && 
+head [ ident -> state ] == ch ) { 
+ident -> state ++ ; 
+continue ; 
+} 
+if ( ident -> state ) 
+strbuf_add ( & ident -> left , head , ident -> state ) ; 
+if ( ident -> state == sizeof ( head ) - 1 ) { 
+if ( ch != ':' && ch != '$' ) { 
+strbuf_addch ( & ident -> left , ch ) ; 
+ident -> state = 0 ; 
+continue ; 
+} 
+if ( ch == ':' ) { 
+strbuf_addch ( & ident -> left , ch ) ; 
+ident -> state =  ( - 2)  ; 
+} else { 
+strbuf_addstr ( & ident -> left , ident -> ident ) ; 
+ident -> state =  ( - 1)  ; 
+} 
+continue ; 
+} 
+strbuf_addch ( & ident -> left , ch ) ; 
+ident -> state =  ( - 1)  ; 
+} 
+return 0 ; 
+} 
+static void ident_free_fn ( struct stream_filter * filter ) 
+{ 
+struct ident_filter * ident = ( struct ident_filter * ) filter ; 
+strbuf_release ( & ident -> left ) ; 
+free ( filter ) ; 
+} 
+static struct stream_filter_vtbl ident_vtbl = { 
+ident_filter_fn , 
+ident_free_fn , 
+} ; 
+static struct stream_filter * ident_filter ( const unsigned char * sha1 ) 
+{ 
+struct ident_filter * ident = xmalloc ( sizeof ( * ident ) ) ; 
+xsnprintf ( ident -> ident , sizeof ( ident -> ident ) , 
+": %s $" , sha1_to_hex ( sha1 ) ) ; 
+strbuf_init ( & ident -> left , 0 ) ; 
+ident -> filter . vtbl = & ident_vtbl ; 
+ident -> state = 0 ; 
+return ( struct stream_filter * ) ident ; 
+} 
+struct stream_filter * get_stream_filter ( const char * path , const unsigned char * sha1 ) 
+{ 
+struct conv_attrs ca ; 
+struct stream_filter * filter = NULL ; 
+convert_attrs ( & ca , path ) ; 
+if ( ca . drv && ( ca . drv -> process || ca . drv -> smudge || ca . drv -> clean ) ) 
+return NULL ; 
+if ( ca . crlf_action == CRLF_AUTO || ca . crlf_action == CRLF_AUTO_CRLF ) 
+return NULL ; 
+if ( ca . ident ) 
+filter = ident_filter ( sha1 ) ; 
+if ( output_eol ( ca . crlf_action ) == EOL_CRLF ) 
+filter = cascade_filter ( filter , lf_to_crlf_filter ( ) ) ; 
+else 
+filter = cascade_filter ( filter , & null_filter_singleton ) ; 
+return filter ; 
+} 
+void free_stream_filter ( struct stream_filter * filter ) 
+{ 
+filter -> vtbl -> free ( filter ) ; 
+} 
+int stream_filter ( struct stream_filter * filter , 
+const char * input , size_t * isize_p , 
+char * output , size_t * osize_p ) 
+{ 
+return filter -> vtbl -> filter ( filter , input , isize_p , output , osize_p ) ; 
 } 

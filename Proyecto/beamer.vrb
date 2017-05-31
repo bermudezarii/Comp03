@@ -1,13 +1,8 @@
-\frametitle{C\'odigo}
+\frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
-if ( ! graph )
-return ;
-newline_terminated = ( sb -> len && sb -> buf [ sb -> len - 1 ] == '\n' ) ;
-if ( ! graph_is_commit_finished ( graph ) ) {
-if ( ! newline_terminated )
-putc ( '\n' , file ) ;
-graph_show_remainder ( graph ) ;
-if ( newline_terminated )
-putc ( '\n' , file ) ;
-}
-} \end{minted}
+goto return_null ;
+if ( real_home )
+strbuf_addstr ( & user_path , real_path ( home ) ) ;
+else
+/*Pruebas/test01.c:472:39 syntax error, unexpected $end*/
+strbuf_addstr ( & user_path , home ) ; \end{minted}

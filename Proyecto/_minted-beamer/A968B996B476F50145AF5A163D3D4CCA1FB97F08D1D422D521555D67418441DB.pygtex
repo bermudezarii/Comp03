@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{err} \PYG{p}{;}
+\PYG{k+kt}{va\PYGZus{}list} \PYG{n}{args} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{buf} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{n}{va\PYGZus{}start} \PYG{p}{(} \PYG{n}{args} \PYG{p}{,} \PYG{n}{fmt} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{err} \PYG{o}{=} \PYG{n}{do\PYGZus{}submodule\PYGZus{}path} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{path} \PYG{p}{,} \PYG{n}{fmt} \PYG{p}{,} \PYG{n}{args} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{va\PYGZus{}end} \PYG{p}{(} \PYG{n}{args} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{err} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{strbuf\PYGZus{}release} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n+nb}{NULL} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{strbuf\PYGZus{}detach} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{buf} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

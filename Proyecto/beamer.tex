@@ -31,666 +31,216 @@
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
 
-static void graph_padding_line ( struct git_graph * graph , struct strbuf * sb ) ; 
-static void graph_show_strbuf ( struct git_graph * graph , 
-FILE * file , 
-struct strbuf const * sb ) ; 
-struct column { 
-struct commit * commit ; 
-unsigned short color ; 
+static int get_st_mode_bits ( const char * path , int * mode ) 
+{ 
+struct stat st ; 
+if ( lstat ( path , & st ) < 0 ) 
+return - 1 ; 
+* mode = st . st_mode ; 
+return 0 ; 
+} 
+static char bad_path [ ] = "/bad-path/" ; 
+static struct strbuf * get_pathname ( void ) 
+{ 
+static struct strbuf pathname_array [ 4 ] = { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+STRBUF_INIT , STRBUF_INIT , STRBUF_INIT , STRBUF_INIT 
 } ; 
-enum graph_state { 
-GRAPH_PADDING , 
-GRAPH_SKIP , 
-GRAPH_PRE_COMMIT , 
+static int index ; 
+struct strbuf * sb = & pathname_array [ index ] ; 
+index = ( index + 1 ) % ARRAY_SIZE ( pathname_array ) ; 
+strbuf_reset ( sb ) ; 
+return sb ; 
+} 
+static char * cleanup_path ( char * path ) 
+{ 
+if ( ! memcmp ( path , "./" , 2 ) ) { 
+path += 2 ; 
+while ( * path == '/' ) 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-GRAPH_COMMIT , 
-GRAPH_POST_MERGE , 
-GRAPH_COLLAPSING 
+path ++ ; 
+} 
+return path ; 
+} 
+static void strbuf_cleanup_path ( struct strbuf * sb ) 
+{ 
+char * path = cleanup_path ( sb -> buf ) ; 
+if ( path > sb -> buf ) 
+strbuf_remove ( sb , 0 , path - sb -> buf ) ; 
+} 
+char * mksnpath ( char * buf , size_t n , const char * fmt , ... ) 
+{ 
+va_list args ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+unsigned len ; 
+va_start ( args , fmt ) ; 
+len = vsnprintf ( buf , n , fmt , args ) ; 
+va_end ( args ) ; 
+if ( len >= n ) { 
+strlcpy ( buf , bad_path , n ) ; 
+return buf ; 
+} 
+return cleanup_path ( buf ) ; 
+} 
+static int dir_prefix ( const char * buf , const char * dir ) 
+{ 
+int len = strlen ( dir ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+return ! strncmp ( buf , dir , len ) && 
+( is_dir_sep ( buf [ len ] ) || buf [ len ] == '\0' ) ; 
+} 
+static int is_dir_file ( const char * buf , const char * dir , const char * file ) 
+{ 
+int len = strlen ( dir ) ; 
+if ( strncmp ( buf , dir , len ) || ! is_dir_sep ( buf [ len ] ) ) 
+return 0 ; 
+while ( is_dir_sep ( buf [ len ] ) ) 
+len ++ ; 
+return ! strcmp ( buf + len , file ) ; 
+} 
+static void replace_dir ( struct strbuf * buf , int len , const char * newdir ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+int newlen = strlen ( newdir ) ; 
+int need_sep = ( buf -> buf [ len ] && ! is_dir_sep ( buf -> buf [ len ] ) ) && 
+! is_dir_sep ( newdir [ newlen - 1 ] ) ; 
+if ( need_sep ) 
+len -- ; 
+strbuf_splice ( buf , 0 , len , newdir , newlen ) ; 
+if ( need_sep ) 
+buf -> buf [ newlen ] = '/' ; 
+} 
+struct common_dir { 
+unsigned ignore_garbage : 1 ; 
+unsigned is_dir : 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+unsigned exclude : 1 ; 
+const char * dirname ; 
 } ; 
-static void graph_show_line_prefix ( const struct diff_options * diffopt ) 
-{ 
-if ( ! diffopt || ! diffopt -> line_prefix ) 
-return ; 
-fwrite ( diffopt -> line_prefix , 
-sizeof ( char ) , 
-diffopt -> line_prefix_length , 
-diffopt -> file ) ; 
-} 
+static struct common_dir common_list [ ] = { 
+{ 0 , 1 , 0 , "branches" } , 
+{ 0 , 1 , 0 , "hooks" } , 
+{ 0 , 1 , 0 , "info" } , 
+{ 0 , 0 , 1 , "info/sparse-checkout" } , 
+{ 1 , 1 , 0 , "logs" } , 
+{ 1 , 1 , 1 , "logs/HEAD" } , 
+{ 0 , 1 , 1 , "logs/refs/bisect" } , 
+{ 0 , 1 , 0 , "lost-found" } , 
+{ 0 , 1 , 0 , "objects" } , 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-static const char * * column_colors ; 
-static unsigned short column_colors_max ; 
-static void parse_graph_colors_config ( struct argv_array * colors , const char * string ) 
-{ 
-const char * end , * start ; 
-start = string ; 
-end = string + strlen ( string ) ; 
-while ( start < end ) { 
-const char * comma = strchrnul ( start , ',' ) ; 
-char color [ COLOR_MAXLEN ] ; 
-if ( ! color_parse_mem ( start , comma - start , color ) ) 
-argv_array_push ( colors , color ) ; 
-else 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-warning ( _ ( "ignore invalid color '%.*s' in log.graphColors" ) , 
-( int ) ( comma - start ) , start ) ; 
-start = comma + 1 ; 
-} 
-argv_array_push ( colors , GIT_COLOR_RESET ) ; 
-} 
-void graph_set_column_colors ( const char * * colors , unsigned short colors_max ) 
-{ 
-column_colors = colors ; 
-column_colors_max = colors_max ; 
-} 
-static const char * column_get_color_code ( unsigned short color ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-return column_colors [ color ] ; 
-} 
-static void strbuf_write_column ( struct strbuf * sb , const struct column * c , 
-char col_char ) 
-{ 
-if ( c -> color < column_colors_max ) 
-strbuf_addstr ( sb , column_get_color_code ( c -> color ) ) ; 
-strbuf_addch ( sb , col_char ) ; 
-if ( c -> color < column_colors_max ) 
-strbuf_addstr ( sb , column_get_color_code ( column_colors_max ) ) ; 
-} 
-struct git_graph { 
-struct commit * commit ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-struct rev_info * revs ; 
-int num_parents ; 
-int width ; 
-int expansion_row ; 
-enum graph_state state ; 
-enum graph_state prev_state ; 
-int commit_index ; 
-int prev_commit_index ; 
-int column_capacity ; 
-int num_columns ; 
-int num_new_columns ; 
-int mapping_size ; 
-struct column * columns ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-struct column * new_columns ; 
-int * mapping ; 
-int * new_mapping ; 
-unsigned short default_column_color ; 
+{ 0 , 1 , 0 , "refs" } , 
+{ 0 , 1 , 1 , "refs/bisect" } , 
+{ 0 , 1 , 0 , "remotes" } , 
+{ 0 , 1 , 0 , "worktrees" } , 
+{ 0 , 1 , 0 , "rr-cache" } , 
+{ 0 , 1 , 0 , "svn" } , 
+{ 0 , 0 , 0 , "config" } , 
+{ 1 , 0 , 0 , "gc.pid" } , 
+{ 0 , 0 , 0 , "packed-refs" } , 
+{ 0 , 0 , 0 , "shallow" } , 
+{ 0 , 0 , 0 , NULL } 
 } ; 
-static struct strbuf * diff_output_prefix_callback ( struct diff_options * opt , void * data ) 
-{ 
-struct git_graph * graph = data ; 
-static struct strbuf msgbuf = STRBUF_INIT ; 
-assert ( opt ) ; 
-strbuf_reset ( & msgbuf ) ; 
-if ( opt -> line_prefix ) 
-strbuf_add ( & msgbuf , opt -> line_prefix , 
+struct trie { 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-opt -> line_prefix_length ) ; 
-if ( graph ) 
-graph_padding_line ( graph , & msgbuf ) ; 
-return & msgbuf ; 
-} 
-static const struct diff_options * default_diffopt ; 
-void graph_setup_line_prefix ( struct diff_options * diffopt ) 
+struct trie * children [ 256 ] ; 
+int len ; 
+char * contents ; 
+void * value ; 
+} ; 
+static struct trie * make_trie_node ( const char * key , void * value ) 
 { 
-default_diffopt = diffopt ; 
-if ( diffopt && ! diffopt -> output_prefix ) 
-diffopt -> output_prefix = diff_output_prefix_callback ; 
+struct trie * new_node = xcalloc ( 1 , sizeof ( * new_node ) ) ; 
+new_node -> len = strlen ( key ) ; 
+if ( new_node -> len ) { 
+new_node -> contents = xmalloc ( new_node -> len ) ; 
+memcpy ( new_node -> contents , key , new_node -> len ) ; 
 } 
-struct git_graph * graph_init ( struct rev_info * opt ) 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
+new_node -> value = value ; 
+return new_node ; 
+} 
+static void * add_to_trie ( struct trie * root , const char * key , void * value ) 
 { 
-struct git_graph * graph = xmalloc ( sizeof ( struct git_graph ) ) ; 
-if ( ! column_colors ) { 
-char * string ; 
-if ( git_config_get_string ( "log.graphcolors" , & string ) ) { 
-graph_set_column_colors ( column_colors_ansi , 
-column_colors_ansi_max ) ; 
-} else { 
-static struct argv_array custom_colors = ARGV_ARRAY_INIT ; 
-argv_array_clear ( & custom_colors ) ; 
-parse_graph_colors_config ( & custom_colors , string ) ; 
-free ( string ) ; 
-graph_set_column_colors ( custom_colors . argv , 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-custom_colors . argc - 1 ) ; 
-} 
-} 
-graph -> commit = NULL ; 
-graph -> revs = opt ; 
-graph -> num_parents = 0 ; 
-graph -> expansion_row = 0 ; 
-graph -> state = GRAPH_PADDING ; 
-graph -> prev_state = GRAPH_PADDING ; 
-graph -> commit_index = 0 ; 
-graph -> prev_commit_index = 0 ; 
-graph -> num_columns = 0 ; 
-graph -> num_new_columns = 0 ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> mapping_size = 0 ; 
-graph -> default_column_color = column_colors_max - 1 ; 
-graph -> column_capacity = 30 ; 
-ALLOC_ARRAY ( graph -> columns , graph -> column_capacity ) ; 
-ALLOC_ARRAY ( graph -> new_columns , graph -> column_capacity ) ; 
-ALLOC_ARRAY ( graph -> mapping , 2 * graph -> column_capacity ) ; 
-ALLOC_ARRAY ( graph -> new_mapping , 2 * graph -> column_capacity ) ; 
-opt -> diffopt . output_prefix = diff_output_prefix_callback ; 
-opt -> diffopt . output_prefix_data = graph ; 
-return graph ; 
-} 
-static void graph_update_state ( struct git_graph * graph , enum graph_state s ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> prev_state = graph -> state ; 
-graph -> state = s ; 
-} 
-static void graph_ensure_capacity ( struct git_graph * graph , int num_columns ) 
-{ 
-if ( graph -> column_capacity >= num_columns ) 
-return ; 
-do { 
-graph -> column_capacity *= 2 ; 
-} while ( graph -> column_capacity < num_columns ) ; 
-REALLOC_ARRAY ( graph -> columns , graph -> column_capacity ) ; 
-REALLOC_ARRAY ( graph -> new_columns , graph -> column_capacity ) ; 
-REALLOC_ARRAY ( graph -> mapping , graph -> column_capacity * 2 ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-REALLOC_ARRAY ( graph -> new_mapping , graph -> column_capacity * 2 ) ; 
-} 
-static int graph_is_interesting ( struct git_graph * graph , struct commit * commit ) 
-{ 
-if ( graph -> revs && graph -> revs -> boundary ) { 
-if ( commit -> object . flags & CHILD_SHOWN ) 
-return 1 ; 
-} 
-return get_commit_action ( graph -> revs , commit ) == commit_show ; 
-} 
-static struct commit_list * next_interesting_parent ( struct git_graph * graph , 
-struct commit_list * orig ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-struct commit_list * list ; 
-if ( graph -> revs -> first_parent_only ) 
-return NULL ; 
-for ( list = orig -> next ; list ; list = list -> next ) { 
-if ( graph_is_interesting ( graph , list -> item ) ) 
-return list ; 
-} 
-return NULL ; 
-} 
-static struct commit_list * first_interesting_parent ( struct git_graph * graph ) 
-{ 
-struct commit_list * parents = graph -> commit -> parents ; 
-if ( ! parents ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-return NULL ; 
-if ( graph_is_interesting ( graph , parents -> item ) ) 
-return parents ; 
-return next_interesting_parent ( graph , parents ) ; 
-} 
-static unsigned short graph_get_current_column_color ( const struct git_graph * graph ) 
-{ 
-if ( ! want_color ( graph -> revs -> diffopt . use_color ) ) 
-return column_colors_max ; 
-return graph -> default_column_color ; 
-} 
-static void graph_increment_column_color ( struct git_graph * graph ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> default_column_color = ( graph -> default_column_color + 1 ) % 
-column_colors_max ; 
-} 
-static unsigned short graph_find_commit_color ( const struct git_graph * graph , 
-const struct commit * commit ) 
-{ 
+struct trie * child ; 
+void * old ; 
 int i ; 
-for ( i = 0 ; i < graph -> num_columns ; i ++ ) { 
-if ( graph -> columns [ i ] . commit == commit ) 
-return graph -> columns [ i ] . color ; 
-} 
-return graph_get_current_column_color ( graph ) ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-static void graph_insert_into_new_columns ( struct git_graph * graph , 
-struct commit * commit , 
-int * mapping_index ) 
-{ 
-int i ; 
-for ( i = 0 ; i < graph -> num_new_columns ; i ++ ) { 
-if ( graph -> new_columns [ i ] . commit == commit ) { 
-graph -> mapping [ * mapping_index ] = i ; 
-* mapping_index += 2 ; 
-return ; 
-} 
-} 
-graph -> new_columns [ graph -> num_new_columns ] . commit = commit ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> new_columns [ graph -> num_new_columns ] . color = graph_find_commit_color ( graph , commit ) ; 
-graph -> mapping [ * mapping_index ] = graph -> num_new_columns ; 
-* mapping_index += 2 ; 
-graph -> num_new_columns ++ ; 
-} 
-static void graph_update_width ( struct git_graph * graph , 
-int is_commit_in_existing_columns ) 
-{ 
-int max_cols = graph -> num_columns + graph -> num_parents ; 
-if ( graph -> num_parents < 1 ) 
-max_cols ++ ; 
-if ( is_commit_in_existing_columns ) 
-max_cols -- ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> width = max_cols * 2 ; 
-} 
-static void graph_update_columns ( struct git_graph * graph ) 
-{ 
-struct commit_list * parent ; 
-int max_new_columns ; 
-int mapping_idx ; 
-int i , seen_this , is_commit_in_columns ; 
-SWAP ( graph -> columns , graph -> new_columns ) ; 
-graph -> num_columns = graph -> num_new_columns ; 
-graph -> num_new_columns = 0 ; 
-max_new_columns = graph -> num_columns + graph -> num_parents ; 
-graph_ensure_capacity ( graph , max_new_columns ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> mapping_size = 2 * max_new_columns ; 
-for ( i = 0 ; i < graph -> mapping_size ; i ++ ) 
-graph -> mapping [ i ] = - 1 ; 
-seen_this = 0 ; 
-mapping_idx = 0 ; 
-is_commit_in_columns = 1 ; 
-for ( i = 0 ; i <= graph -> num_columns ; i ++ ) { 
-struct commit * col_commit ; 
-if ( i == graph -> num_columns ) { 
-if ( seen_this ) 
-break ; 
-is_commit_in_columns = 0 ; 
-col_commit = graph -> commit ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-} else { 
-col_commit = graph -> columns [ i ] . commit ; 
-} 
-if ( col_commit == graph -> commit ) { 
-int old_mapping_idx = mapping_idx ; 
-seen_this = 1 ; 
-graph -> commit_index = i ; 
-for ( parent = first_interesting_parent ( graph ) ; 
-parent ; 
-parent = next_interesting_parent ( graph , parent ) ) { 
-if ( graph -> num_parents > 1 || 
-! is_commit_in_columns ) { 
-graph_increment_column_color ( graph ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-} 
-graph_insert_into_new_columns ( graph , 
-parent -> item , 
-& mapping_idx ) ; 
-} 
-if ( mapping_idx == old_mapping_idx ) 
-mapping_idx += 2 ; 
-} else { 
-graph_insert_into_new_columns ( graph , col_commit , 
-& mapping_idx ) ; 
-} 
-} 
-while ( graph -> mapping_size > 1 && 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> mapping [ graph -> mapping_size - 1 ] < 0 ) 
-graph -> mapping_size -- ; 
-graph_update_width ( graph , is_commit_in_columns ) ; 
-} 
-void graph_update ( struct git_graph * graph , struct commit * commit ) 
-{ 
-struct commit_list * parent ; 
-graph -> commit = commit ; 
-graph -> num_parents = 0 ; 
-for ( parent = first_interesting_parent ( graph ) ; 
-parent ; 
-parent = next_interesting_parent ( graph , parent ) ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph -> num_parents ++ ; 
-} 
-graph -> prev_commit_index = graph -> commit_index ; 
-graph_update_columns ( graph ) ; 
-graph -> expansion_row = 0 ; 
-if ( graph -> state != GRAPH_PADDING ) 
-graph -> state = GRAPH_SKIP ; 
-else if ( graph -> num_parents >= 3 && 
-graph -> commit_index < ( graph -> num_columns - 1 ) ) 
-graph -> state = GRAPH_PRE_COMMIT ; 
-else 
-graph -> state = GRAPH_COMMIT ; 
+if ( ! * key ) { 
+old = root -> value ; 
+root -> value = value ; 
+return old ; 
 } 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-static int graph_is_mapping_correct ( struct git_graph * graph ) 
-{ 
-int i ; 
-for ( i = 0 ; i < graph -> mapping_size ; i ++ ) { 
-int target = graph -> mapping [ i ] ; 
-if ( target < 0 ) 
+for ( i = 0 ; i < root -> len ; i ++ ) { 
+if ( root -> contents [ i ] == key [ i ] ) 
 continue ; 
-if ( target == ( i / 2 ) ) 
-continue ; 
-return 0 ; 
+child = malloc ( sizeof ( * child ) ) ; 
+memcpy ( child -> children , root -> children , sizeof ( root -> children ) ) ; 
+child -> len = root -> len - i - 1 ; 
+if ( child -> len ) { 
+child -> contents = xstrndup ( root -> contents + i + 1 , 
+child -> len ) ; 
 } 
-return 1 ; 
-} 
+child -> value = root -> value ; 
+root -> value = NULL ; 
+root -> len = i ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-static void graph_pad_horizontally ( struct git_graph * graph , struct strbuf * sb , 
-int chars_written ) 
-{ 
-int extra ; 
-if ( chars_written >= graph -> width ) 
-return ; 
-extra = graph -> width - chars_written ; 
-strbuf_addf ( sb , "%*s" , ( int ) extra , "" ) ; 
+memset ( root -> children , 0 , sizeof ( root -> children ) ) ; 
+root -> children [ ( unsigned char ) root -> contents [ i ] ] = child ; 
+root -> children [ ( unsigned char ) key [ i ] ] = 
+make_trie_node ( key + i + 1 , value ) ; 
+return NULL ; 
 } 
-static void graph_output_padding_line ( struct git_graph * graph , 
-struct strbuf * sb ) 
-{ 
-int i ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-if ( ! graph -> commit ) 
-return ; 
-for ( i = 0 ; i < graph -> num_new_columns ; i ++ ) { 
-strbuf_write_column ( sb , & graph -> new_columns [ i ] , '|' ) ; 
-strbuf_addch ( sb , ' ' ) ; 
-} 
-graph_pad_horizontally ( graph , sb , graph -> num_new_columns * 2 ) ; 
-} 
-int graph_width ( struct git_graph * graph ) 
-{ 
-return graph -> width ; 
-} 
-static void graph_output_skip_line ( struct git_graph * graph , struct strbuf * sb ) 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-{ 
-strbuf_addstr ( sb , "..." ) ; 
-graph_pad_horizontally ( graph , sb , 3 ) ; 
-if ( graph -> num_parents >= 3 && 
-graph -> commit_index < ( graph -> num_columns - 1 ) ) 
-graph_update_state ( graph , GRAPH_PRE_COMMIT ) ; 
-else 
-graph_update_state ( graph , GRAPH_COMMIT ) ; 
-} 
-static void graph_output_pre_commit_line ( struct git_graph * graph , 
-struct strbuf * sb ) 
-{ 
-int num_expansion_rows ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-int i , seen_this ; 
-int chars_written ; 
-assert ( graph -> num_parents >= 3 ) ; 
-num_expansion_rows = ( graph -> num_parents - 2 ) * 2 ; 
-assert ( 0 <= graph -> expansion_row && 
-graph -> expansion_row < num_expansion_rows ) ; 
-seen_this = 0 ; 
-chars_written = 0 ; 
-for ( i = 0 ; i < graph -> num_columns ; i ++ ) { 
-struct column * col = & graph -> columns [ i ] ; 
-if ( col -> commit == graph -> commit ) { 
-seen_this = 1 ; 
-strbuf_write_column ( sb , col , '|' ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_addf ( sb , "%*s" , graph -> expansion_row , "" ) ; 
-chars_written += 1 + graph -> expansion_row ; 
-} else if ( seen_this && ( graph -> expansion_row == 0 ) ) { 
-if ( graph -> prev_state == GRAPH_POST_MERGE && 
-graph -> prev_commit_index < i ) 
-strbuf_write_column ( sb , col , '\\' ) ; 
-else 
-strbuf_write_column ( sb , col , '|' ) ; 
-chars_written ++ ; 
-} else if ( seen_this && ( graph -> expansion_row > 0 ) ) { 
-strbuf_write_column ( sb , col , '\\' ) ; 
-chars_written ++ ; 
+if ( key [ i ] ) { 
+child = root -> children [ ( unsigned char ) key [ root -> len ] ] ; 
+if ( child ) { 
+return add_to_trie ( child , key + root -> len + 1 , value ) ; 
 } else { 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_write_column ( sb , col , '|' ) ; 
-chars_written ++ ; 
-} 
-strbuf_addch ( sb , ' ' ) ; 
-chars_written ++ ; 
-} 
-graph_pad_horizontally ( graph , sb , chars_written ) ; 
-graph -> expansion_row ++ ; 
-if ( graph -> expansion_row >= num_expansion_rows ) 
-graph_update_state ( graph , GRAPH_COMMIT ) ; 
-} 
-static void graph_output_commit_char ( struct git_graph * graph , struct strbuf * sb ) 
-{ 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-if ( graph -> commit -> object . flags & BOUNDARY ) { 
-assert ( graph -> revs -> boundary ) ; 
-strbuf_addch ( sb , 'o' ) ; 
-return ; 
-} 
-strbuf_addstr ( sb , get_revision_mark ( graph -> revs , graph -> commit ) ) ; 
-} 
-static int graph_draw_octopus_merge ( struct git_graph * graph , 
-struct strbuf * sb ) 
-{ 
-const int dashless_commits = 2 ; 
-int col_num , i ; 
-int num_dashes = 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-( ( graph -> num_parents - dashless_commits ) * 2 ) - 1 ; 
-for ( i = 0 ; i < num_dashes ; i ++ ) { 
-col_num = ( i / 2 ) + dashless_commits + graph -> commit_index ; 
-strbuf_write_column ( sb , & graph -> new_columns [ col_num ] , '-' ) ; 
-} 
-col_num = ( i / 2 ) + dashless_commits + graph -> commit_index ; 
-strbuf_write_column ( sb , & graph -> new_columns [ col_num ] , '.' ) ; 
-return num_dashes + 1 ; 
-} 
-static void graph_output_commit_line ( struct git_graph * graph , struct strbuf * sb ) 
-{ 
-int seen_this = 0 ; 
-int i , chars_written ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-seen_this = 0 ; 
-chars_written = 0 ; 
-for ( i = 0 ; i <= graph -> num_columns ; i ++ ) { 
-struct column * col = & graph -> columns [ i ] ; 
-struct commit * col_commit ; 
-if ( i == graph -> num_columns ) { 
-if ( seen_this ) 
-break ; 
-col_commit = graph -> commit ; 
-} else { 
-col_commit = graph -> columns [ i ] . commit ; 
-} 
-if ( col_commit == graph -> commit ) { 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-seen_this = 1 ; 
-graph_output_commit_char ( graph , sb ) ; 
-chars_written ++ ; 
-if ( graph -> num_parents > 2 ) 
-chars_written += graph_draw_octopus_merge ( graph , 
-sb ) ; 
-} else if ( seen_this && ( graph -> num_parents > 2 ) ) { 
-strbuf_write_column ( sb , col , '\\' ) ; 
-chars_written ++ ; 
-} else if ( seen_this && ( graph -> num_parents == 2 ) ) { 
-if ( graph -> prev_state == GRAPH_POST_MERGE && 
-graph -> prev_commit_index < i ) 
-strbuf_write_column ( sb , col , '\\' ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-else 
-strbuf_write_column ( sb , col , '|' ) ; 
-chars_written ++ ; 
-} else { 
-strbuf_write_column ( sb , col , '|' ) ; 
-chars_written ++ ; 
-} 
-strbuf_addch ( sb , ' ' ) ; 
-chars_written ++ ; 
-} 
-graph_pad_horizontally ( graph , sb , chars_written ) ; 
-if ( graph -> num_parents > 1 ) 
-graph_update_state ( graph , GRAPH_POST_MERGE ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-else if ( graph_is_mapping_correct ( graph ) ) 
-graph_update_state ( graph , GRAPH_PADDING ) ; 
-else 
-graph_update_state ( graph , GRAPH_COLLAPSING ) ; 
-} 
-static struct column * find_new_column_by_commit ( struct git_graph * graph , 
-struct commit * commit ) 
-{ 
-int i ; 
-for ( i = 0 ; i < graph -> num_new_columns ; i ++ ) { 
-if ( graph -> new_columns [ i ] . commit == commit ) 
-return & graph -> new_columns [ i ] ; 
-} 
+child = make_trie_node ( key + root -> len + 1 , value ) ; 
+root -> children [ ( unsigned char ) key [ root -> len ] ] = child ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
@@ -698,374 +248,1098 @@ return & graph -> new_columns [ i ] ;
 \begin{minted}[fontsize=\tiny]{c}
 return NULL ; 
 } 
-static void graph_output_post_merge_line ( struct git_graph * graph , struct strbuf * sb ) 
+} 
+old = root -> value ; 
+root -> value = value ; 
+return old ; 
+} 
+typedef int ( * match_fn ) ( const char * unmatched , void * data , void * baton ) ; 
+static int trie_find ( struct trie * root , const char * key , match_fn fn , 
+void * baton ) 
 { 
-int seen_this = 0 ; 
-int i , j , chars_written ; 
-chars_written = 0 ; 
-for ( i = 0 ; i <= graph -> num_columns ; i ++ ) { 
-struct column * col = & graph -> columns [ i ] ; 
-struct commit * col_commit ; 
-if ( i == graph -> num_columns ) { 
-if ( seen_this ) 
-break ; 
+int i ; 
+int result ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-col_commit = graph -> commit ; 
-} else { 
-col_commit = col -> commit ; 
-} 
-if ( col_commit == graph -> commit ) { 
-struct commit_list * parents = NULL ; 
-struct column * par_column ; 
-seen_this = 1 ; 
-parents = first_interesting_parent ( graph ) ; 
-assert ( parents ) ; 
-par_column = find_new_column_by_commit ( graph , parents -> item ) ; 
-assert ( par_column ) ; 
-strbuf_write_column ( sb , par_column , '|' ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-chars_written ++ ; 
-for ( j = 0 ; j < graph -> num_parents - 1 ; j ++ ) { 
-parents = next_interesting_parent ( graph , parents ) ; 
-assert ( parents ) ; 
-par_column = find_new_column_by_commit ( graph , parents -> item ) ; 
-assert ( par_column ) ; 
-strbuf_write_column ( sb , par_column , '\\' ) ; 
-strbuf_addch ( sb , ' ' ) ; 
-} 
-chars_written += j * 2 ; 
-} else if ( seen_this ) { 
-strbuf_write_column ( sb , col , '\\' ) ; 
-strbuf_addch ( sb , ' ' ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-chars_written += 2 ; 
-} else { 
-strbuf_write_column ( sb , col , '|' ) ; 
-strbuf_addch ( sb , ' ' ) ; 
-chars_written += 2 ; 
-} 
-} 
-graph_pad_horizontally ( graph , sb , chars_written ) ; 
-if ( graph_is_mapping_correct ( graph ) ) 
-graph_update_state ( graph , GRAPH_PADDING ) ; 
+struct trie * child ; 
+if ( ! * key ) { 
+if ( root -> value && ! root -> len ) 
+return fn ( key , root -> value , baton ) ; 
 else 
-graph_update_state ( graph , GRAPH_COLLAPSING ) ; 
+return - 1 ; 
 } 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-static void graph_output_collapsing_line ( struct git_graph * graph , struct strbuf * sb ) 
-{ 
-int i ; 
-short used_horizontal = 0 ; 
-int horizontal_edge = - 1 ; 
-int horizontal_edge_target = - 1 ; 
-for ( i = 0 ; i < graph -> mapping_size ; i ++ ) 
-graph -> new_mapping [ i ] = - 1 ; 
-for ( i = 0 ; i < graph -> mapping_size ; i ++ ) { 
-int target = graph -> mapping [ i ] ; 
-if ( target < 0 ) 
+for ( i = 0 ; i < root -> len ; i ++ ) { 
+if ( key [ i ] == '/' && key [ i + 1 ] == '/' ) { 
+key ++ ; 
 continue ; 
-assert ( target * 2 <= i ) ; 
+} 
+if ( root -> contents [ i ] != key [ i ] ) 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-if ( target * 2 == i ) { 
-assert ( graph -> new_mapping [ i ] == - 1 ) ; 
-graph -> new_mapping [ i ] = target ; 
-} else if ( graph -> new_mapping [ i - 1 ] < 0 ) { 
-graph -> new_mapping [ i - 1 ] = target ; 
-if ( horizontal_edge == - 1 ) { 
-int j ; 
-horizontal_edge = i ; 
-horizontal_edge_target = target ; 
-for ( j = ( target * 2 ) + 3 ; j < ( i - 2 ) ; j += 2 ) 
-graph -> new_mapping [ j ] = target ; 
+return - 1 ; 
 } 
-} else if ( graph -> new_mapping [ i - 1 ] == target ) { 
+key += i ; 
+if ( ! * key ) 
+return fn ( key , root -> value , baton ) ; 
+while ( key [ 0 ] == '/' && key [ 1 ] == '/' ) 
+key ++ ; 
+child = root -> children [ ( unsigned char ) * key ] ; 
+if ( child ) 
+result = trie_find ( child , key + 1 , fn , baton ) ; 
+else 
+result = - 1 ; 
+if ( result >= 0 || ( * key != '/' && * key != 0 ) ) 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-} else { 
-assert ( graph -> new_mapping [ i - 1 ] > target ) ; 
-assert ( graph -> new_mapping [ i - 2 ] < 0 ) ; 
-assert ( graph -> new_mapping [ i - 3 ] == target ) ; 
-graph -> new_mapping [ i - 2 ] = target ; 
-if ( horizontal_edge == - 1 ) 
-horizontal_edge = i ; 
+return result ; 
+if ( root -> value ) 
+return fn ( key , root -> value , baton ) ; 
+else 
+return - 1 ; 
 } 
-} 
-if ( graph -> new_mapping [ graph -> mapping_size - 1 ] < 0 ) 
-graph -> mapping_size -- ; 
-for ( i = 0 ; i < graph -> mapping_size ; i ++ ) { 
-int target = graph -> new_mapping [ i ] ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-if ( target < 0 ) 
-strbuf_addch ( sb , ' ' ) ; 
-else if ( target * 2 == i ) 
-strbuf_write_column ( sb , & graph -> new_columns [ target ] , '|' ) ; 
-else if ( target == horizontal_edge_target && 
-i != horizontal_edge - 1 ) { 
-if ( i != ( target * 2 ) + 3 ) 
-graph -> new_mapping [ i ] = - 1 ; 
-used_horizontal = 1 ; 
-strbuf_write_column ( sb , & graph -> new_columns [ target ] , '_' ) ; 
-} else { 
-if ( used_horizontal && i < horizontal_edge ) 
-graph -> new_mapping [ i ] = - 1 ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_write_column ( sb , & graph -> new_columns [ target ] , '/' ) ; 
-} 
-} 
-graph_pad_horizontally ( graph , sb , graph -> mapping_size ) ; 
-SWAP ( graph -> mapping , graph -> new_mapping ) ; 
-if ( graph_is_mapping_correct ( graph ) ) 
-graph_update_state ( graph , GRAPH_PADDING ) ; 
-} 
-int graph_next_line ( struct git_graph * graph , struct strbuf * sb ) 
+static struct trie common_trie ; 
+static int common_trie_done_setup ; 
+static void init_common_trie ( void ) 
 { 
-switch ( graph -> state ) { 
-case GRAPH_PADDING : 
-graph_output_padding_line ( graph , sb ) ; 
+struct common_dir * p ; 
+if ( common_trie_done_setup ) 
+return ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+for ( p = common_list ; p -> dirname ; p ++ ) 
+add_to_trie ( & common_trie , p -> dirname , p ) ; 
+common_trie_done_setup = 1 ; 
+} 
+static int check_common ( const char * unmatched , void * value , void * baton ) 
+{ 
+struct common_dir * dir = value ; 
+if ( ! dir ) 
+return 0 ; 
+if ( dir -> is_dir && ( unmatched [ 0 ] == 0 || unmatched [ 0 ] == '/' ) ) 
+return ! dir -> exclude ; 
+if ( ! dir -> is_dir && unmatched [ 0 ] == 0 ) 
+return ! dir -> exclude ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
 return 0 ; 
-case GRAPH_SKIP : 
-graph_output_skip_line ( graph , sb ) ; 
+} 
+static void update_common_dir ( struct strbuf * buf , int git_dir_len , 
+const char * common_dir ) 
+{ 
+char * base = buf -> buf + git_dir_len ; 
+init_common_trie ( ) ; 
+if ( ! common_dir ) 
+common_dir = get_git_common_dir ( ) ; 
+if ( trie_find ( & common_trie , base , check_common , NULL ) > 0 ) 
+replace_dir ( buf , git_dir_len , common_dir ) ; 
+} 
+void report_linked_checkout_garbage ( void ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+struct strbuf sb = STRBUF_INIT ; 
+const struct common_dir * p ; 
+int len ; 
+if ( ! git_common_dir_env ) 
+return ; 
+strbuf_addf ( & sb , "%s/" , get_git_dir ( ) ) ; 
+len = sb . len ; 
+for ( p = common_list ; p -> dirname ; p ++ ) { 
+const char * path = p -> dirname ; 
+if ( p -> ignore_garbage ) 
+continue ; 
+strbuf_setlen ( & sb , len ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_addstr ( & sb , path ) ; 
+if ( file_exists ( sb . buf ) ) 
+report_garbage ( PACKDIR_FILE_GARBAGE , sb . buf ) ; 
+} 
+strbuf_release ( & sb ) ; 
+} 
+static void adjust_git_path ( struct strbuf * buf , int git_dir_len ) 
+{ 
+const char * base = buf -> buf + git_dir_len ; 
+if ( git_graft_env && is_dir_file ( base , "info" , "grafts" ) ) 
+strbuf_splice ( buf , 0 , buf -> len , 
+get_graft_file ( ) , strlen ( get_graft_file ( ) ) ) ; 
+else if ( git_index_env && ! strcmp ( base , "index" ) ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_splice ( buf , 0 , buf -> len , 
+get_index_file ( ) , strlen ( get_index_file ( ) ) ) ; 
+else if ( git_db_env && dir_prefix ( base , "objects" ) ) 
+replace_dir ( buf , git_dir_len + 7 , get_object_directory ( ) ) ; 
+else if ( git_hooks_path && dir_prefix ( base , "hooks" ) ) 
+replace_dir ( buf , git_dir_len + 5 , git_hooks_path ) ; 
+else if ( git_common_dir_env ) 
+update_common_dir ( buf , git_dir_len , NULL ) ; 
+} 
+static void do_git_path ( const struct worktree * wt , struct strbuf * buf , 
+const char * fmt , va_list args ) 
+{ 
+int gitdir_len ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_addstr ( buf , get_worktree_git_dir ( wt ) ) ; 
+if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
+strbuf_addch ( buf , '/' ) ; 
+gitdir_len = buf -> len ; 
+strbuf_vaddf ( buf , fmt , args ) ; 
+adjust_git_path ( buf , gitdir_len ) ; 
+strbuf_cleanup_path ( buf ) ; 
+} 
+char * git_path_buf ( struct strbuf * buf , const char * fmt , ... ) 
+{ 
+va_list args ; 
+strbuf_reset ( buf ) ; 
+va_start ( args , fmt ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+do_git_path ( NULL , buf , fmt , args ) ; 
+va_end ( args ) ; 
+return buf -> buf ; 
+} 
+void strbuf_git_path ( struct strbuf * sb , const char * fmt , ... ) 
+{ 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_path ( NULL , sb , fmt , args ) ; 
+va_end ( args ) ; 
+} 
+const char * git_path ( const char * fmt , ... ) 
+{ 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+struct strbuf * pathname = get_pathname ( ) ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_path ( NULL , pathname , fmt , args ) ; 
+va_end ( args ) ; 
+return pathname -> buf ; 
+} 
+char * git_pathdup ( const char * fmt , ... ) 
+{ 
+struct strbuf path = STRBUF_INIT ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_path ( NULL , & path , fmt , args ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+va_end ( args ) ; 
+return strbuf_detach ( & path , NULL ) ; 
+} 
+char * mkpathdup ( const char * fmt , ... ) 
+{ 
+struct strbuf sb = STRBUF_INIT ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+strbuf_vaddf ( & sb , fmt , args ) ; 
+va_end ( args ) ; 
+strbuf_cleanup_path ( & sb ) ; 
+return strbuf_detach ( & sb , NULL ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+const char * mkpath ( const char * fmt , ... ) 
+{ 
+va_list args ; 
+struct strbuf * pathname = get_pathname ( ) ; 
+va_start ( args , fmt ) ; 
+strbuf_vaddf ( pathname , fmt , args ) ; 
+va_end ( args ) ; 
+return cleanup_path ( pathname -> buf ) ; 
+} 
+const char * worktree_git_path ( const struct worktree * wt , const char * fmt , ... ) 
+{ 
+struct strbuf * pathname = get_pathname ( ) ; 
+va_list args ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+va_start ( args , fmt ) ; 
+do_git_path ( wt , pathname , fmt , args ) ; 
+va_end ( args ) ; 
+return pathname -> buf ; 
+} 
+static int do_submodule_path ( struct strbuf * buf , const char * path , 
+const char * fmt , va_list args ) 
+{ 
+struct strbuf git_submodule_common_dir = STRBUF_INIT ; 
+struct strbuf git_submodule_dir = STRBUF_INIT ; 
+int ret ; 
+ret = submodule_to_gitdir ( & git_submodule_dir , path ) ; 
+if ( ret ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+goto cleanup ; 
+strbuf_complete ( & git_submodule_dir , '/' ) ; 
+strbuf_addbuf ( buf , & git_submodule_dir ) ; 
+strbuf_vaddf ( buf , fmt , args ) ; 
+if ( get_common_dir_noenv ( & git_submodule_common_dir , git_submodule_dir . buf ) ) 
+update_common_dir ( buf , git_submodule_dir . len , git_submodule_common_dir . buf ) ; 
+strbuf_cleanup_path ( buf ) ; 
+cleanup : 
+strbuf_release ( & git_submodule_dir ) ; 
+strbuf_release ( & git_submodule_common_dir ) ; 
+return ret ; 
+} 
+char * git_pathdup_submodule ( const char * path , const char * fmt , ... ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+int err ; 
+va_list args ; 
+struct strbuf buf = STRBUF_INIT ; 
+va_start ( args , fmt ) ; 
+err = do_submodule_path ( & buf , path , fmt , args ) ; 
+va_end ( args ) ; 
+if ( err ) { 
+strbuf_release ( & buf ) ; 
+return NULL ; 
+} 
+return strbuf_detach ( & buf , NULL ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+int strbuf_git_path_submodule ( struct strbuf * buf , const char * path , 
+const char * fmt , ... ) 
+{ 
+int err ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+err = do_submodule_path ( buf , path , fmt , args ) ; 
+va_end ( args ) ; 
+return err ; 
+} 
+static void do_git_common_path ( struct strbuf * buf , 
+const char * fmt , 
+va_list args ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+strbuf_addstr ( buf , get_git_common_dir ( ) ) ; 
+if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
+strbuf_addch ( buf , '/' ) ; 
+strbuf_vaddf ( buf , fmt , args ) ; 
+strbuf_cleanup_path ( buf ) ; 
+} 
+const char * git_common_path ( const char * fmt , ... ) 
+{ 
+struct strbuf * pathname = get_pathname ( ) ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_common_path ( pathname , fmt , args ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+va_end ( args ) ; 
+return pathname -> buf ; 
+} 
+void strbuf_git_common_path ( struct strbuf * sb , const char * fmt , ... ) 
+{ 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_common_path ( sb , fmt , args ) ; 
+va_end ( args ) ; 
+} 
+int validate_headref ( const char * path ) 
+{ 
+struct stat st ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+char * buf , buffer [ 256 ] ; 
+unsigned char sha1 [ 20 ] ; 
+int fd ; 
+ssize_t len ; 
+if ( lstat ( path , & st ) < 0 ) 
+return - 1 ; 
+if ( S_ISLNK ( st . st_mode ) ) { 
+len = readlink ( path , buffer , sizeof ( buffer ) - 1 ) ; 
+if ( len >= 5 && ! memcmp ( "refs/" , buffer , 5 ) ) 
 return 0 ; 
-case GRAPH_PRE_COMMIT : 
-graph_output_pre_commit_line ( graph , sb ) ; 
-return 0 ; 
-case GRAPH_COMMIT : 
-graph_output_commit_line ( graph , sb ) ; 
-return 1 ; 
-case GRAPH_POST_MERGE : 
-graph_output_post_merge_line ( graph , sb ) ; 
+return - 1 ; 
+} 
+fd = open ( path , O_RDONLY ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+if ( fd < 0 ) 
+return - 1 ; 
+len = read_in_full ( fd , buffer , sizeof ( buffer ) - 1 ) ; 
+close ( fd ) ; 
+if ( len < 4 ) 
+return - 1 ; 
+if ( ! memcmp ( "ref:" , buffer , 4 ) ) { 
+buf = buffer + 4 ; 
+len -= 4 ; 
+while ( len && isspace ( * buf ) ) 
+buf ++ , len -- ; 
+if ( len >= 5 && ! memcmp ( "refs/" , buf , 5 ) ) 
 return 0 ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-case GRAPH_COLLAPSING : 
-graph_output_collapsing_line ( graph , sb ) ; 
+} 
+if ( ! get_sha1_hex ( buffer , sha1 ) ) 
+return 0 ; 
+return - 1 ; 
+} 
+static struct passwd * getpw_str ( const char * username , size_t len ) 
+{ 
+struct passwd * pw ; 
+char * username_z = xmemdupz ( username , len ) ; 
+pw = getpwnam ( username_z ) ; 
+free ( username_z ) ; 
+return pw ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+char * expand_user_path ( const char * path , int real_home ) 
+{ 
+struct strbuf user_path = STRBUF_INIT ; 
+const char * to_copy = path ; 
+if ( path == NULL ) 
+goto return_null ; 
+if ( path [ 0 ] == '~' ) { 
+const char * first_slash = strchrnul ( path , '/' ) ; 
+const char * username = path + 1 ; 
+size_t username_len = first_slash - username ; 
+if ( username_len == 0 ) { 
+const char * home = getenv ( "HOME" ) ; 
+if ( ! home ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo}
+\begin{minted}[fontsize=\tiny]{c}
+goto return_null ; 
+if ( real_home ) 
+strbuf_addstr ( & user_path , real_path ( home ) ) ; 
+else 
+strbuf_addstr ( & user_path , home ) ; \end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+
+static int get_st_mode_bits ( const char * path , int * mode ) 
+{ 
+struct stat st ; 
+if ( lstat ( path , & st ) < 0 ) 
+return - 1 ; 
+* mode = st . st_mode ; 
 return 0 ; 
 } 
-assert ( 0 ) ; 
-return 0 ; 
+static char bad_path [ ] = "/bad-path/" ; 
+static struct strbuf * get_pathname ( void ) 
+{ 
+static struct strbuf pathname_array [ 4 ] = { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+STRBUF_INIT , STRBUF_INIT , STRBUF_INIT , STRBUF_INIT 
+} ; 
+static int index ; 
+struct strbuf * sb = & pathname_array [ index ] ; 
+index = ( index + 1 ) % ARRAY_SIZE ( pathname_array ) ; 
+strbuf_reset ( sb ) ; 
+return sb ; 
 } 
-static void graph_padding_line ( struct git_graph * graph , struct strbuf * sb ) 
+static char * cleanup_path ( char * path ) 
+{ 
+if ( ! memcmp ( path , "./" , 2 ) ) { 
+path += 2 ; 
+while ( * path == '/' ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+path ++ ; 
+} 
+return path ; 
+} 
+static void strbuf_cleanup_path ( struct strbuf * sb ) 
+{ 
+char * path = cleanup_path ( sb -> buf ) ; 
+if ( path > sb -> buf ) 
+strbuf_remove ( sb , 0 , path - sb -> buf ) ; 
+} 
+char * mksnpath ( char * buf , size_t n , const char * fmt , ... ) 
+{ 
+va_list args ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+unsigned len ; 
+va_start ( args , fmt ) ; 
+len = vsnprintf ( buf , n , fmt , args ) ; 
+va_end ( args ) ; 
+if ( len >= n ) { 
+strlcpy ( buf , bad_path , n ) ; 
+return buf ; 
+} 
+return cleanup_path ( buf ) ; 
+} 
+static int dir_prefix ( const char * buf , const char * dir ) 
+{ 
+int len = strlen ( dir ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+return ! strncmp ( buf , dir , len ) && 
+( is_dir_sep ( buf [ len ] ) || buf [ len ] == '\0' ) ; 
+} 
+static int is_dir_file ( const char * buf , const char * dir , const char * file ) 
+{ 
+int len = strlen ( dir ) ; 
+if ( strncmp ( buf , dir , len ) || ! is_dir_sep ( buf [ len ] ) ) 
+return 0 ; 
+while ( is_dir_sep ( buf [ len ] ) ) 
+len ++ ; 
+return ! strcmp ( buf + len , file ) ; 
+} 
+static void replace_dir ( struct strbuf * buf , int len , const char * newdir ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+int newlen = strlen ( newdir ) ; 
+int need_sep = ( buf -> buf [ len ] && ! is_dir_sep ( buf -> buf [ len ] ) ) && 
+! is_dir_sep ( newdir [ newlen - 1 ] ) ; 
+if ( need_sep ) 
+len -- ; 
+strbuf_splice ( buf , 0 , len , newdir , newlen ) ; 
+if ( need_sep ) 
+buf -> buf [ newlen ] = '/' ; 
+} 
+struct common_dir { 
+unsigned ignore_garbage : 1 ; 
+unsigned is_dir : 1 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+unsigned exclude : 1 ; 
+const char * dirname ; 
+} ; 
+static struct common_dir common_list [ ] = { 
+{ 0 , 1 , 0 , "branches" } , 
+{ 0 , 1 , 0 , "hooks" } , 
+{ 0 , 1 , 0 , "info" } , 
+{ 0 , 0 , 1 , "info/sparse-checkout" } , 
+{ 1 , 1 , 0 , "logs" } , 
+{ 1 , 1 , 1 , "logs/HEAD" } , 
+{ 0 , 1 , 1 , "logs/refs/bisect" } , 
+{ 0 , 1 , 0 , "lost-found" } , 
+{ 0 , 1 , 0 , "objects" } , 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+{ 0 , 1 , 0 , "refs" } , 
+{ 0 , 1 , 1 , "refs/bisect" } , 
+{ 0 , 1 , 0 , "remotes" } , 
+{ 0 , 1 , 0 , "worktrees" } , 
+{ 0 , 1 , 0 , "rr-cache" } , 
+{ 0 , 1 , 0 , "svn" } , 
+{ 0 , 0 , 0 , "config" } , 
+{ 1 , 0 , 0 , "gc.pid" } , 
+{ 0 , 0 , 0 , "packed-refs" } , 
+{ 0 , 0 , 0 , "shallow" } , 
+{ 0 , 0 , 0 , NULL } 
+} ; 
+struct trie { 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+struct trie * children [ 256 ] ; 
+int len ; 
+char * contents ; 
+void * value ; 
+} ; 
+static struct trie * make_trie_node ( const char * key , void * value ) 
+{ 
+struct trie * new_node = xcalloc ( 1 , sizeof ( * new_node ) ) ; 
+new_node -> len = strlen ( key ) ; 
+if ( new_node -> len ) { 
+new_node -> contents = xmalloc ( new_node -> len ) ; 
+memcpy ( new_node -> contents , key , new_node -> len ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+new_node -> value = value ; 
+return new_node ; 
+} 
+static void * add_to_trie ( struct trie * root , const char * key , void * value ) 
+{ 
+struct trie * child ; 
+void * old ; 
+int i ; 
+if ( ! * key ) { 
+old = root -> value ; 
+root -> value = value ; 
+return old ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+for ( i = 0 ; i < root -> len ; i ++ ) { 
+if ( root -> contents [ i ] == key [ i ] ) 
+continue ; 
+child = malloc ( sizeof ( * child ) ) ; 
+memcpy ( child -> children , root -> children , sizeof ( root -> children ) ) ; 
+child -> len = root -> len - i - 1 ; 
+if ( child -> len ) { 
+child -> contents = xstrndup ( root -> contents + i + 1 , 
+child -> len ) ; 
+} 
+child -> value = root -> value ; 
+root -> value = NULL ; 
+root -> len = i ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+memset ( root -> children , 0 , sizeof ( root -> children ) ) ; 
+root -> children [ ( unsigned char ) root -> contents [ i ] ] = child ; 
+root -> children [ ( unsigned char ) key [ i ] ] = 
+make_trie_node ( key + i + 1 , value ) ; 
+return NULL ; 
+} 
+if ( key [ i ] ) { 
+child = root -> children [ ( unsigned char ) key [ root -> len ] ] ; 
+if ( child ) { 
+return add_to_trie ( child , key + root -> len + 1 , value ) ; 
+} else { 
+child = make_trie_node ( key + root -> len + 1 , value ) ; 
+root -> children [ ( unsigned char ) key [ root -> len ] ] = child ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+return NULL ; 
+} 
+} 
+old = root -> value ; 
+root -> value = value ; 
+return old ; 
+} 
+typedef int ( * match_fn ) ( const char * unmatched , void * data , void * baton ) ; 
+static int trie_find ( struct trie * root , const char * key , match_fn fn , 
+void * baton ) 
 { 
 int i ; 
-int chars_written = 0 ; 
-if ( graph -> state != GRAPH_COMMIT ) { 
-graph_next_line ( graph , sb ) ; 
+int result ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{C\'odigo}
+\frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+struct trie * child ; 
+if ( ! * key ) { 
+if ( root -> value && ! root -> len ) 
+return fn ( key , root -> value , baton ) ; 
+else 
+return - 1 ; 
+} 
+for ( i = 0 ; i < root -> len ; i ++ ) { 
+if ( key [ i ] == '/' && key [ i + 1 ] == '/' ) { 
+key ++ ; 
+continue ; 
+} 
+if ( root -> contents [ i ] != key [ i ] ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+return - 1 ; 
+} 
+key += i ; 
+if ( ! * key ) 
+return fn ( key , root -> value , baton ) ; 
+while ( key [ 0 ] == '/' && key [ 1 ] == '/' ) 
+key ++ ; 
+child = root -> children [ ( unsigned char ) * key ] ; 
+if ( child ) 
+result = trie_find ( child , key + 1 , fn , baton ) ; 
+else 
+result = - 1 ; 
+if ( result >= 0 || ( * key != '/' && * key != 0 ) ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+return result ; 
+if ( root -> value ) 
+return fn ( key , root -> value , baton ) ; 
+else 
+return - 1 ; 
+} 
+static struct trie common_trie ; 
+static int common_trie_done_setup ; 
+static void init_common_trie ( void ) 
+{ 
+struct common_dir * p ; 
+if ( common_trie_done_setup ) 
 return ; 
-} 
-for ( i = 0 ; i < graph -> num_columns ; i ++ ) { 
-struct column * col = & graph -> columns [ i ] ; 
-strbuf_write_column ( sb , col , '|' ) ; 
-chars_written ++ ; 
-if ( col -> commit == graph -> commit && graph -> num_parents > 2 ) { 
-int len = ( graph -> num_parents - 2 ) * 2 ; 
-strbuf_addchars ( sb , ' ' , len ) ; 
-chars_written += len ; 
-} else { 
-strbuf_addch ( sb , ' ' ) ; 
-chars_written ++ ; 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{C\'odigo}
+\frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
+for ( p = common_list ; p -> dirname ; p ++ ) 
+add_to_trie ( & common_trie , p -> dirname , p ) ; 
+common_trie_done_setup = 1 ; 
 } 
-} 
-graph_pad_horizontally ( graph , sb , chars_written ) ; 
-graph -> prev_state = GRAPH_PADDING ; 
-} 
-int graph_is_commit_finished ( struct git_graph const * graph ) 
+static int check_common ( const char * unmatched , void * value , void * baton ) 
 { 
-return ( graph -> state == GRAPH_PADDING ) ; 
-} 
-void graph_show_commit ( struct git_graph * graph ) 
-{ 
-struct strbuf msgbuf = STRBUF_INIT ; 
-int shown_commit_line = 0 ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph_show_line_prefix ( default_diffopt ) ; 
-if ( ! graph ) 
-return ; 
-if ( graph_is_commit_finished ( graph ) ) { 
-graph_show_padding ( graph ) ; 
-shown_commit_line = 1 ; 
-} 
-while ( ! shown_commit_line && ! graph_is_commit_finished ( graph ) ) { 
-shown_commit_line = graph_next_line ( graph , & msgbuf ) ; 
-fwrite ( msgbuf . buf , sizeof ( char ) , msgbuf . len , 
-graph -> revs -> diffopt . file ) ; 
-if ( ! shown_commit_line ) { 
-putc ( '\n' , graph -> revs -> diffopt . file ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-graph_show_line_prefix ( & graph -> revs -> diffopt ) ; 
-} 
-strbuf_setlen ( & msgbuf , 0 ) ; 
-} 
-strbuf_release ( & msgbuf ) ; 
-} 
-void graph_show_oneline ( struct git_graph * graph ) 
-{ 
-struct strbuf msgbuf = STRBUF_INIT ; 
-graph_show_line_prefix ( default_diffopt ) ; 
-if ( ! graph ) 
-return ; 
-graph_next_line ( graph , & msgbuf ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-fwrite ( msgbuf . buf , sizeof ( char ) , msgbuf . len , graph -> revs -> diffopt . file ) ; 
-strbuf_release ( & msgbuf ) ; 
-} 
-void graph_show_padding ( struct git_graph * graph ) 
-{ 
-struct strbuf msgbuf = STRBUF_INIT ; 
-graph_show_line_prefix ( default_diffopt ) ; 
-if ( ! graph ) 
-return ; 
-graph_padding_line ( graph , & msgbuf ) ; 
-fwrite ( msgbuf . buf , sizeof ( char ) , msgbuf . len , graph -> revs -> diffopt . file ) ; 
-strbuf_release ( & msgbuf ) ; 
-} 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-int graph_show_remainder ( struct git_graph * graph ) 
-{ 
-struct strbuf msgbuf = STRBUF_INIT ; 
-int shown = 0 ; 
-graph_show_line_prefix ( default_diffopt ) ; 
-if ( ! graph ) 
+struct common_dir * dir = value ; 
+if ( ! dir ) 
 return 0 ; 
-if ( graph_is_commit_finished ( graph ) ) 
+if ( dir -> is_dir && ( unmatched [ 0 ] == 0 || unmatched [ 0 ] == '/' ) ) 
+return ! dir -> exclude ; 
+if ( ! dir -> is_dir && unmatched [ 0 ] == 0 ) 
+return ! dir -> exclude ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
 return 0 ; 
-for ( ; ; ) { 
-graph_next_line ( graph , & msgbuf ) ; 
-fwrite ( msgbuf . buf , sizeof ( char ) , msgbuf . len , 
-graph -> revs -> diffopt . file ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-strbuf_setlen ( & msgbuf , 0 ) ; 
-shown = 1 ; 
-if ( ! graph_is_commit_finished ( graph ) ) { 
-putc ( '\n' , graph -> revs -> diffopt . file ) ; 
-graph_show_line_prefix ( & graph -> revs -> diffopt ) ; 
-} else { 
-break ; 
 } 
-} 
-strbuf_release ( & msgbuf ) ; 
-return shown ; 
-} 
-static void graph_show_strbuf ( struct git_graph * graph , 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-FILE * file , 
-struct strbuf const * sb ) 
+static void update_common_dir ( struct strbuf * buf , int git_dir_len , 
+const char * common_dir ) 
 { 
-char * p ; 
-p = sb -> buf ; 
-while ( p ) { 
-size_t len ; 
-char * next_p = strchr ( p , '\n' ) ; 
-if ( next_p ) { 
-next_p ++ ; 
-len = next_p - p ; 
-} else { 
-len = ( sb -> buf + sb -> len ) - p ; 
+char * base = buf -> buf + git_dir_len ; 
+init_common_trie ( ) ; 
+if ( ! common_dir ) 
+common_dir = get_git_common_dir ( ) ; 
+if ( trie_find ( & common_trie , base , check_common , NULL ) > 0 ) 
+replace_dir ( buf , git_dir_len , common_dir ) ; 
+} 
+void report_linked_checkout_garbage ( void ) 
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{C\'odigo}
+\frametitle{C\'odigo con los Errores}
 \begin{minted}[fontsize=\tiny]{c}
-} 
-fwrite ( p , sizeof ( char ) , len , file ) ; 
-if ( next_p && * next_p != '\0' ) 
-graph_show_oneline ( graph ) ; 
-p = next_p ; 
-} 
-} 
-void graph_show_commit_msg ( struct git_graph * graph , 
-FILE * file , 
-struct strbuf const * sb ) 
 { 
-int newline_terminated ; 
-graph_show_strbuf ( graph , file , sb ) ; 
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{C\'odigo}
-\begin{minted}[fontsize=\tiny]{c}
-if ( ! graph ) 
+struct strbuf sb = STRBUF_INIT ; 
+const struct common_dir * p ; 
+int len ; 
+if ( ! git_common_dir_env ) 
 return ; 
-newline_terminated = ( sb -> len && sb -> buf [ sb -> len - 1 ] == '\n' ) ; 
-if ( ! graph_is_commit_finished ( graph ) ) { 
-if ( ! newline_terminated ) 
-putc ( '\n' , file ) ; 
-graph_show_remainder ( graph ) ; 
-if ( newline_terminated ) 
-putc ( '\n' , file ) ; 
+strbuf_addf ( & sb , "%s/" , get_git_dir ( ) ) ; 
+len = sb . len ; 
+for ( p = common_list ; p -> dirname ; p ++ ) { 
+const char * path = p -> dirname ; 
+if ( p -> ignore_garbage ) 
+continue ; 
+strbuf_setlen ( & sb , len ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_addstr ( & sb , path ) ; 
+if ( file_exists ( sb . buf ) ) 
+report_garbage ( PACKDIR_FILE_GARBAGE , sb . buf ) ; 
 } 
-} \end{minted}
+strbuf_release ( & sb ) ; 
+} 
+static void adjust_git_path ( struct strbuf * buf , int git_dir_len ) 
+{ 
+const char * base = buf -> buf + git_dir_len ; 
+if ( git_graft_env && is_dir_file ( base , "info" , "grafts" ) ) 
+strbuf_splice ( buf , 0 , buf -> len , 
+get_graft_file ( ) , strlen ( get_graft_file ( ) ) ) ; 
+else if ( git_index_env && ! strcmp ( base , "index" ) ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_splice ( buf , 0 , buf -> len , 
+get_index_file ( ) , strlen ( get_index_file ( ) ) ) ; 
+else if ( git_db_env && dir_prefix ( base , "objects" ) ) 
+replace_dir ( buf , git_dir_len + 7 , get_object_directory ( ) ) ; 
+else if ( git_hooks_path && dir_prefix ( base , "hooks" ) ) 
+replace_dir ( buf , git_dir_len + 5 , git_hooks_path ) ; 
+else if ( git_common_dir_env ) 
+update_common_dir ( buf , git_dir_len , NULL ) ; 
+} 
+static void do_git_path ( const struct worktree * wt , struct strbuf * buf , 
+const char * fmt , va_list args ) 
+{ 
+int gitdir_len ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+strbuf_addstr ( buf , get_worktree_git_dir ( wt ) ) ; 
+if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
+strbuf_addch ( buf , '/' ) ; 
+gitdir_len = buf -> len ; 
+strbuf_vaddf ( buf , fmt , args ) ; 
+adjust_git_path ( buf , gitdir_len ) ; 
+strbuf_cleanup_path ( buf ) ; 
+} 
+char * git_path_buf ( struct strbuf * buf , const char * fmt , ... ) 
+{ 
+va_list args ; 
+strbuf_reset ( buf ) ; 
+va_start ( args , fmt ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+do_git_path ( NULL , buf , fmt , args ) ; 
+va_end ( args ) ; 
+return buf -> buf ; 
+} 
+void strbuf_git_path ( struct strbuf * sb , const char * fmt , ... ) 
+{ 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_path ( NULL , sb , fmt , args ) ; 
+va_end ( args ) ; 
+} 
+const char * git_path ( const char * fmt , ... ) 
+{ 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+struct strbuf * pathname = get_pathname ( ) ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_path ( NULL , pathname , fmt , args ) ; 
+va_end ( args ) ; 
+return pathname -> buf ; 
+} 
+char * git_pathdup ( const char * fmt , ... ) 
+{ 
+struct strbuf path = STRBUF_INIT ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_path ( NULL , & path , fmt , args ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+va_end ( args ) ; 
+return strbuf_detach ( & path , NULL ) ; 
+} 
+char * mkpathdup ( const char * fmt , ... ) 
+{ 
+struct strbuf sb = STRBUF_INIT ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+strbuf_vaddf ( & sb , fmt , args ) ; 
+va_end ( args ) ; 
+strbuf_cleanup_path ( & sb ) ; 
+return strbuf_detach ( & sb , NULL ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+const char * mkpath ( const char * fmt , ... ) 
+{ 
+va_list args ; 
+struct strbuf * pathname = get_pathname ( ) ; 
+va_start ( args , fmt ) ; 
+strbuf_vaddf ( pathname , fmt , args ) ; 
+va_end ( args ) ; 
+return cleanup_path ( pathname -> buf ) ; 
+} 
+const char * worktree_git_path ( const struct worktree * wt , const char * fmt , ... ) 
+{ 
+struct strbuf * pathname = get_pathname ( ) ; 
+va_list args ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+va_start ( args , fmt ) ; 
+do_git_path ( wt , pathname , fmt , args ) ; 
+va_end ( args ) ; 
+return pathname -> buf ; 
+} 
+static int do_submodule_path ( struct strbuf * buf , const char * path , 
+const char * fmt , va_list args ) 
+{ 
+struct strbuf git_submodule_common_dir = STRBUF_INIT ; 
+struct strbuf git_submodule_dir = STRBUF_INIT ; 
+int ret ; 
+ret = submodule_to_gitdir ( & git_submodule_dir , path ) ; 
+if ( ret ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+goto cleanup ; 
+strbuf_complete ( & git_submodule_dir , '/' ) ; 
+strbuf_addbuf ( buf , & git_submodule_dir ) ; 
+strbuf_vaddf ( buf , fmt , args ) ; 
+if ( get_common_dir_noenv ( & git_submodule_common_dir , git_submodule_dir . buf ) ) 
+update_common_dir ( buf , git_submodule_dir . len , git_submodule_common_dir . buf ) ; 
+strbuf_cleanup_path ( buf ) ; 
+cleanup : 
+strbuf_release ( & git_submodule_dir ) ; 
+strbuf_release ( & git_submodule_common_dir ) ; 
+return ret ; 
+} 
+char * git_pathdup_submodule ( const char * path , const char * fmt , ... ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+int err ; 
+va_list args ; 
+struct strbuf buf = STRBUF_INIT ; 
+va_start ( args , fmt ) ; 
+err = do_submodule_path ( & buf , path , fmt , args ) ; 
+va_end ( args ) ; 
+if ( err ) { 
+strbuf_release ( & buf ) ; 
+return NULL ; 
+} 
+return strbuf_detach ( & buf , NULL ) ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+int strbuf_git_path_submodule ( struct strbuf * buf , const char * path , 
+const char * fmt , ... ) 
+{ 
+int err ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+err = do_submodule_path ( buf , path , fmt , args ) ; 
+va_end ( args ) ; 
+return err ; 
+} 
+static void do_git_common_path ( struct strbuf * buf , 
+const char * fmt , 
+va_list args ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+{ 
+strbuf_addstr ( buf , get_git_common_dir ( ) ) ; 
+if ( buf -> len && ! is_dir_sep ( buf -> buf [ buf -> len - 1 ] ) ) 
+strbuf_addch ( buf , '/' ) ; 
+strbuf_vaddf ( buf , fmt , args ) ; 
+strbuf_cleanup_path ( buf ) ; 
+} 
+const char * git_common_path ( const char * fmt , ... ) 
+{ 
+struct strbuf * pathname = get_pathname ( ) ; 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_common_path ( pathname , fmt , args ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+va_end ( args ) ; 
+return pathname -> buf ; 
+} 
+void strbuf_git_common_path ( struct strbuf * sb , const char * fmt , ... ) 
+{ 
+va_list args ; 
+va_start ( args , fmt ) ; 
+do_git_common_path ( sb , fmt , args ) ; 
+va_end ( args ) ; 
+} 
+int validate_headref ( const char * path ) 
+{ 
+struct stat st ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+char * buf , buffer [ 256 ] ; 
+unsigned char sha1 [ 20 ] ; 
+int fd ; 
+ssize_t len ; 
+if ( lstat ( path , & st ) < 0 ) 
+return - 1 ; 
+if ( S_ISLNK ( st . st_mode ) ) { 
+len = readlink ( path , buffer , sizeof ( buffer ) - 1 ) ; 
+if ( len >= 5 && ! memcmp ( "refs/" , buffer , 5 ) ) 
+return 0 ; 
+return - 1 ; 
+} 
+fd = open ( path , O_RDONLY ) ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+if ( fd < 0 ) 
+return - 1 ; 
+len = read_in_full ( fd , buffer , sizeof ( buffer ) - 1 ) ; 
+close ( fd ) ; 
+if ( len < 4 ) 
+return - 1 ; 
+if ( ! memcmp ( "ref:" , buffer , 4 ) ) { 
+buf = buffer + 4 ; 
+len -= 4 ; 
+while ( len && isspace ( * buf ) ) 
+buf ++ , len -- ; 
+if ( len >= 5 && ! memcmp ( "refs/" , buf , 5 ) ) 
+return 0 ; 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+} 
+if ( ! get_sha1_hex ( buffer , sha1 ) ) 
+return 0 ; 
+return - 1 ; 
+} 
+static struct passwd * getpw_str ( const char * username , size_t len ) 
+{ 
+struct passwd * pw ; 
+char * username_z = xmemdupz ( username , len ) ; 
+pw = getpwnam ( username_z ) ; 
+free ( username_z ) ; 
+return pw ; 
+} 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+char * expand_user_path ( const char * path , int real_home ) 
+{ 
+struct strbuf user_path = STRBUF_INIT ; 
+const char * to_copy = path ; 
+if ( path == NULL ) 
+goto return_null ; 
+if ( path [ 0 ] == '~' ) { 
+const char * first_slash = strchrnul ( path , '/' ) ; 
+const char * username = path + 1 ; 
+size_t username_len = first_slash - username ; 
+if ( username_len == 0 ) { 
+const char * home = getenv ( "HOME" ) ; 
+if ( ! home ) 
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{C\'odigo con los Errores}
+\begin{minted}[fontsize=\tiny]{c}
+goto return_null ; 
+if ( real_home ) 
+strbuf_addstr ( & user_path , real_path ( home ) ) ; 
+else 
+/*Pruebas/test01.c:472:39 syntax error, unexpected $end*/
+strbuf_addstr ( & user_path , home ) ; \end{minted}
 \end{frame}
 \end{document}

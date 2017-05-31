@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}refs/bisect\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}remotes\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}worktrees\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}rr\PYGZhy{}cache\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}svn\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}config\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}gc.pid\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}packed\PYGZhy{}refs\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}shallow\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{trie} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

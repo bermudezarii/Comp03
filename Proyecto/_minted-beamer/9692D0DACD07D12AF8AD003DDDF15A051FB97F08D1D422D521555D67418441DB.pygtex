@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{trie} \PYG{o}{*} \PYG{n}{child} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{o}{*} \PYG{n}{key} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{root} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{value} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!} \PYG{n}{root} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{len} \PYG{p}{)}
+\PYG{k}{return} \PYG{n}{fn} \PYG{p}{(} \PYG{n}{key} \PYG{p}{,} \PYG{n}{root} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{value} \PYG{p}{,} \PYG{n}{baton} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else}
+\PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{for} \PYG{p}{(} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{root} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{len} \PYG{p}{;} \PYG{n}{i} \PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{key} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{key} \PYG{p}{[} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{key} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{continue} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{root} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{contents} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{o}{!=} \PYG{n}{key} \PYG{p}{[} \PYG{n}{i} \PYG{p}{]} \PYG{p}{)}
+\end{Verbatim}

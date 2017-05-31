@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{do\PYGZus{}git\PYGZus{}path} \PYG{p}{(} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{fmt} \PYG{p}{,} \PYG{n}{args} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{va\PYGZus{}end} \PYG{p}{(} \PYG{n}{args} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{strbuf\PYGZus{}git\PYGZus{}path} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{fmt} \PYG{p}{,} \PYG{p}{...} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{va\PYGZus{}list} \PYG{n}{args} \PYG{p}{;}
+\PYG{n}{va\PYGZus{}start} \PYG{p}{(} \PYG{n}{args} \PYG{p}{,} \PYG{n}{fmt} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{do\PYGZus{}git\PYGZus{}path} \PYG{p}{(} \PYG{n+nb}{NULL} \PYG{p}{,} \PYG{n}{sb} \PYG{p}{,} \PYG{n}{fmt} \PYG{p}{,} \PYG{n}{args} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{va\PYGZus{}end} \PYG{p}{(} \PYG{n}{args} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{git\PYGZus{}path} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{fmt} \PYG{p}{,} \PYG{p}{...} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\end{Verbatim}

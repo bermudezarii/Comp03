@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{o}{!} \PYG{n}{strncmp} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{dir} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{p}{(} \PYG{n}{is\PYGZus{}dir\PYGZus{}sep} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{len} \PYG{p}{]} \PYG{p}{)} \PYG{o}{||} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{len} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}0\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{is\PYGZus{}dir\PYGZus{}file} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{dir} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{file} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{len} \PYG{o}{=} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{dir} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{strncmp} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{dir} \PYG{p}{,} \PYG{n}{len} \PYG{p}{)} \PYG{o}{||} \PYG{o}{!} \PYG{n}{is\PYGZus{}dir\PYGZus{}sep} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{len} \PYG{p}{]} \PYG{p}{)} \PYG{p}{)}
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{is\PYGZus{}dir\PYGZus{}sep} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{[} \PYG{n}{len} \PYG{p}{]} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{len} \PYG{o}{++} \PYG{p}{;}
+\PYG{k}{return} \PYG{o}{!} \PYG{n}{strcmp} \PYG{p}{(} \PYG{n}{buf} \PYG{o}{+} \PYG{n}{len} \PYG{p}{,} \PYG{n}{file} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{replace\PYGZus{}dir} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{len} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{newdir} \PYG{p}{)}
+\end{Verbatim}

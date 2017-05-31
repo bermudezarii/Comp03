@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{path} \PYG{o}{++} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{n}{path} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{strbuf\PYGZus{}cleanup\PYGZus{}path} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{o}{=} \PYG{n}{cleanup\PYGZus{}path} \PYG{p}{(} \PYG{n}{sb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{path} \PYG{o}{\PYGZgt{}} \PYG{n}{sb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)}
+\PYG{n}{strbuf\PYGZus{}remove} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{path} \PYG{o}{\PYGZhy{}} \PYG{n}{sb} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{mksnpath} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{n} \PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{fmt} \PYG{p}{,} \PYG{p}{...} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{va\PYGZus{}list} \PYG{n}{args} \PYG{p}{;}
+\end{Verbatim}

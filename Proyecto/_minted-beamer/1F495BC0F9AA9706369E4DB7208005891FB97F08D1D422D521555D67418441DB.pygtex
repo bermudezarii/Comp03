@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{return} \PYG{l+m+mi}{0} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{update\PYGZus{}common\PYGZus{}dir} \PYG{p}{(} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{git\PYGZus{}dir\PYGZus{}len} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{common\PYGZus{}dir} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{base} \PYG{o}{=} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{buf} \PYG{o}{+} \PYG{n}{git\PYGZus{}dir\PYGZus{}len} \PYG{p}{;}
+\PYG{n}{init\PYGZus{}common\PYGZus{}trie} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{common\PYGZus{}dir} \PYG{p}{)}
+\PYG{n}{common\PYGZus{}dir} \PYG{o}{=} \PYG{n}{get\PYGZus{}git\PYGZus{}common\PYGZus{}dir} \PYG{p}{(} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{trie\PYGZus{}find} \PYG{p}{(} \PYG{o}{\PYGZam{}} \PYG{n}{common\PYGZus{}trie} \PYG{p}{,} \PYG{n}{base} \PYG{p}{,} \PYG{n}{check\PYGZus{}common} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{p}{)}
+\PYG{n}{replace\PYGZus{}dir} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{git\PYGZus{}dir\PYGZus{}len} \PYG{p}{,} \PYG{n}{common\PYGZus{}dir} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{report\PYGZus{}linked\PYGZus{}checkout\PYGZus{}garbage} \PYG{p}{(} \PYG{k+kt}{void} \PYG{p}{)}
+\end{Verbatim}

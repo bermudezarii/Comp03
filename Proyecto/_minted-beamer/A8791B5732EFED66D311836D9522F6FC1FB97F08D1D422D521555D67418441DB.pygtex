@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{unsigned} \PYG{n+nl}{exclude} \PYG{p}{:} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{dirname} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{common\PYGZus{}dir} \PYG{n}{common\PYGZus{}list} \PYG{p}{[} \PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}branches\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}hooks\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}info\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}info/sparse\PYGZhy{}checkout\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}logs\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}logs/HEAD\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}logs/refs/bisect\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}lost\PYGZhy{}found\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\PYG{p}{\PYGZob{}} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}objects\PYGZdq{}} \PYG{p}{\PYGZcb{}} \PYG{p}{,}
+\end{Verbatim}

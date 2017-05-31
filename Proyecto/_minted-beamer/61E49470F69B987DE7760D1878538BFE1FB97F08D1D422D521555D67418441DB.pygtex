@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{strbuf\PYGZus{}splice} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{l+m+mi}{0} \PYG{p}{,} \PYG{n}{buf} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{len} \PYG{p}{,}
+\PYG{n}{get\PYGZus{}index\PYGZus{}file} \PYG{p}{(} \PYG{p}{)} \PYG{p}{,} \PYG{n}{strlen} \PYG{p}{(} \PYG{n}{get\PYGZus{}index\PYGZus{}file} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{git\PYGZus{}db\PYGZus{}env} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{dir\PYGZus{}prefix} \PYG{p}{(} \PYG{n}{base} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}objects\PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{replace\PYGZus{}dir} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{git\PYGZus{}dir\PYGZus{}len} \PYG{o}{+} \PYG{l+m+mi}{7} \PYG{p}{,} \PYG{n}{get\PYGZus{}object\PYGZus{}directory} \PYG{p}{(} \PYG{p}{)} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{git\PYGZus{}hooks\PYGZus{}path} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{dir\PYGZus{}prefix} \PYG{p}{(} \PYG{n}{base} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}hooks\PYGZdq{}} \PYG{p}{)} \PYG{p}{)}
+\PYG{n}{replace\PYGZus{}dir} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{git\PYGZus{}dir\PYGZus{}len} \PYG{o}{+} \PYG{l+m+mi}{5} \PYG{p}{,} \PYG{n}{git\PYGZus{}hooks\PYGZus{}path} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(} \PYG{n}{git\PYGZus{}common\PYGZus{}dir\PYGZus{}env} \PYG{p}{)}
+\PYG{n}{update\PYGZus{}common\PYGZus{}dir} \PYG{p}{(} \PYG{n}{buf} \PYG{p}{,} \PYG{n}{git\PYGZus{}dir\PYGZus{}len} \PYG{p}{,} \PYG{n+nb}{NULL} \PYG{p}{)} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{void} \PYG{n}{do\PYGZus{}git\PYGZus{}path} \PYG{p}{(} \PYG{k}{const} \PYG{k}{struct} \PYG{n}{worktree} \PYG{o}{*} \PYG{n}{wt} \PYG{p}{,} \PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{buf} \PYG{p}{,}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{fmt} \PYG{p}{,} \PYG{k+kt}{va\PYGZus{}list} \PYG{n}{args} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{gitdir\PYGZus{}len} \PYG{p}{;}
+\end{Verbatim}

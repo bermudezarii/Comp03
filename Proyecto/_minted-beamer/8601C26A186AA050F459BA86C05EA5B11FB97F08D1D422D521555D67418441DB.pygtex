@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{char} \PYG{o}{*} \PYG{n+nf}{expand\PYGZus{}user\PYGZus{}path} \PYG{p}{(} \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{real\PYGZus{}home} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{n}{user\PYGZus{}path} \PYG{o}{=} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{to\PYGZus{}copy} \PYG{o}{=} \PYG{n}{path} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{path} \PYG{o}{==} \PYG{n+nb}{NULL} \PYG{p}{)}
+\PYG{k}{goto} \PYG{n}{return\PYGZus{}null} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{path} \PYG{p}{[} \PYG{l+m+mi}{0} \PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZti{}\PYGZsq{}} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{first\PYGZus{}slash} \PYG{o}{=} \PYG{n}{strchrnul} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{username} \PYG{o}{=} \PYG{n}{path} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k+kt}{size\PYGZus{}t} \PYG{n}{username\PYGZus{}len} \PYG{o}{=} \PYG{n}{first\PYGZus{}slash} \PYG{o}{\PYGZhy{}} \PYG{n}{username} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{username\PYGZus{}len} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{home} \PYG{o}{=} \PYG{n}{getenv} \PYG{p}{(} \PYG{l+s}{\PYGZdq{}HOME\PYGZdq{}} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{home} \PYG{p}{)}
+\end{Verbatim}

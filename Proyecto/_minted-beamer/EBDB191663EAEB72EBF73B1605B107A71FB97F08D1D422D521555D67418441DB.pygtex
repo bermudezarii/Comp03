@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{,} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{,} \PYG{n}{STRBUF\PYGZus{}INIT} \PYG{p}{,} \PYG{n}{STRBUF\PYGZus{}INIT}
+\PYG{p}{\PYGZcb{}} \PYG{p}{;}
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{index} \PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{strbuf} \PYG{o}{*} \PYG{n}{sb} \PYG{o}{=} \PYG{o}{\PYGZam{}} \PYG{n}{pathname\PYGZus{}array} \PYG{p}{[} \PYG{n}{index} \PYG{p}{]} \PYG{p}{;}
+\PYG{n}{index} \PYG{o}{=} \PYG{p}{(} \PYG{n}{index} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{ARRAY\PYGZus{}SIZE} \PYG{p}{(} \PYG{n}{pathname\PYGZus{}array} \PYG{p}{)} \PYG{p}{;}
+\PYG{n}{strbuf\PYGZus{}reset} \PYG{p}{(} \PYG{n}{sb} \PYG{p}{)} \PYG{p}{;}
+\PYG{k}{return} \PYG{n}{sb} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{cleanup\PYGZus{}path} \PYG{p}{(} \PYG{k+kt}{char} \PYG{o}{*} \PYG{n}{path} \PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{o}{!} \PYG{n}{memcmp} \PYG{p}{(} \PYG{n}{path} \PYG{p}{,} \PYG{l+s}{\PYGZdq{}./\PYGZdq{}} \PYG{p}{,} \PYG{l+m+mi}{2} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{path} \PYG{o}{+=} \PYG{l+m+mi}{2} \PYG{p}{;}
+\PYG{k}{while} \PYG{p}{(} \PYG{o}{*} \PYG{n}{path} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}} \PYG{p}{)}
+\end{Verbatim}
