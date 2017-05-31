@@ -1,9 +1,9 @@
-\frametitle{C\'odigo con los Errores}
+\frametitle{C\'odigo}
 \begin{minted}[fontsize=\tiny]{c}
-files_for_each_reflog_ent ,
-files_for_each_reflog_ent_reverse ,
-files_reflog_exists ,
-files_create_reflog ,
-files_delete_reflog ,
-/*Pruebas/error.c:2228:19 syntax error, unexpected $end*/
-files_reflog_expir \end{minted}
+
+for_each_string_list_item ( refname , refnames ) {
+if ( get_packed_ref ( refs , refname -> string ) ) {
+needs_repacking = 1 ;
+break ;
+}
+} \end{minted}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{for\PYGZus{}each\PYGZus{}string\PYGZus{}list\PYGZus{}item} \PYG{p}{(} \PYG{n}{refname} \PYG{p}{,} \PYG{n}{refnames} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{get\PYGZus{}packed\PYGZus{}ref} \PYG{p}{(} \PYG{n}{refs} \PYG{p}{,} \PYG{n}{refname} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{string} \PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n}{needs\PYGZus{}repacking} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;}
+\PYG{k}{break} \PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

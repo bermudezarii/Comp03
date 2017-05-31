@@ -134,7 +134,6 @@ int main(int argc, char *argv[])
                 memset(gramaticas,0,sizeof(gramaticas));
                 yyparse();
                 if(banderaSyntaxError == 0){
-                    printf("El archivo ingresado esta bien léxica y sintácticamente. (: \n");
                 }
             }
             fclose(tmpfile);

@@ -49,7 +49,7 @@ bool existeInclude(char *include)
 
 
 void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
-			printf("Entro include\n");
+			
 	        char *includeArreglado; //El valor del include sin los ""
             char includeGCC[100]= "";
             char nombreTemporal[100] = "";
@@ -101,7 +101,7 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                         yyin =archivoActual; //Se le dice a flex cuál archivo se estará leyendo
                     }else 
                     {
-                        printf("**El archivo de entrada de include no existe.**\n");
+                        printf("No se encuentra el archivo: %s\n",includeArreglado);
                     }
 
                 }
@@ -110,7 +110,7 @@ void include(FILE* archivoActual,FILE* archivoTemporal, int ntoken){
                 */
 
                 else{
-                    printf("Inclusión duplicada de %s\n", includeArreglado); //Se notifica el error, revisar esta validación
+                    //printf("Inclusión duplicada de %s\n", includeArreglado); //Se notifica el error, revisar esta validación
                 }
             }
 
